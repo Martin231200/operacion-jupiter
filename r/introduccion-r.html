@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introducción a R – Operación Jupyter</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-574f58f4068bb8f43535e6e9c10c5508.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Operación Jupyter</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-introducción" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Introducción</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-introducción">    
+        <li>
+    <a class="dropdown-item" href="../python/introduccion-python.html">
+ <span class="dropdown-text">Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../r/introduccion-r.html">
+ <span class="dropdown-text">R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../julia/introduccion-julia.html">
+ <span class="dropdown-text">Julia</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../libros/index.html"> 
+<span class="menu-text">Libros</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../semblanza/index.html"> 
+<span class="menu-text">Semblanza de los profesores</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#lenguajes-de-programación-de-código-libre" id="toc-lenguajes-de-programación-de-código-libre" class="nav-link active" data-scroll-target="#lenguajes-de-programación-de-código-libre">Lenguajes de programación de código libre</a>
+  <ul class="collapse">
+  <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link" data-scroll-target="#r-y-rstudio">R y RStudio</a>
+  <ul class="collapse">
+  <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
+  <li><a href="#ventajas-y-desventajas-de-r" id="toc-ventajas-y-desventajas-de-r" class="nav-link" data-scroll-target="#ventajas-y-desventajas-de-r">Ventajas y desventajas de R</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
+  <ul class="collapse">
+  <li><a href="#correr-en-r-o-rstudio" id="toc-correr-en-r-o-rstudio" class="nav-link" data-scroll-target="#correr-en-r-o-rstudio">Correr en R o RStudio</a></li>
+  <li><a href="#correr-r-en-google-colab" id="toc-correr-r-en-google-colab" class="nav-link" data-scroll-target="#correr-r-en-google-colab">Correr R en Google colab</a></li>
+  <li><a href="#ventajas-de-las-diferentes-interfaces" id="toc-ventajas-de-las-diferentes-interfaces" class="nav-link" data-scroll-target="#ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</a></li>
+  </ul></li>
+  <li><a href="#online-tutorials-and-support" id="toc-online-tutorials-and-support" class="nav-link" data-scroll-target="#online-tutorials-and-support">Online tutorials and support</a></li>
+  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
+  <ul class="collapse">
+  <li><a href="#comandos-basicos" id="toc-comandos-basicos" class="nav-link" data-scroll-target="#comandos-basicos">Comandos basicos</a></li>
+  <li><a href="#to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages." id="toc-to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages." class="nav-link" data-scroll-target="#to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages.">To cite R in publications use: R Core Team (2024). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation("pkgname")’ for citing R packages.</a></li>
+  </ul></li>
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">Tipos de datos</a>
+  <ul class="collapse">
+  <li><a href="#enteros-y-reales" id="toc-enteros-y-reales" class="nav-link" data-scroll-target="#enteros-y-reales">Enteros y reales</a></li>
+  <li><a href="#booleanos" id="toc-booleanos" class="nav-link" data-scroll-target="#booleanos">Booleanos</a></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
+  </ul></li>
+  <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a></li>
+  <li><a href="#estructuras-secuencias-decisiones-y-repeticiones" id="toc-estructuras-secuencias-decisiones-y-repeticiones" class="nav-link" data-scroll-target="#estructuras-secuencias-decisiones-y-repeticiones">Estructuras: secuencias, decisiones y repeticiones</a>
+  <ul class="collapse">
+  <li><a href="#secuencias" id="toc-secuencias" class="nav-link" data-scroll-target="#secuencias">Secuencias</a></li>
+  <li><a href="#estructura-if" id="toc-estructura-if" class="nav-link" data-scroll-target="#estructura-if">Estructura "if"</a></li>
+  <li><a href="#estructura-if-else" id="toc-estructura-if-else" class="nav-link" data-scroll-target="#estructura-if-else">Estructura "if-else"</a></li>
+  <li><a href="#estructura-for" id="toc-estructura-for" class="nav-link" data-scroll-target="#estructura-for">Estructura "for"</a></li>
+  <li><a href="#estructura-while" id="toc-estructura-while" class="nav-link" data-scroll-target="#estructura-while">Estructura "while"</a></li>
+  <li><a href="#estructura-repeat" id="toc-estructura-repeat" class="nav-link" data-scroll-target="#estructura-repeat">Estructura "repeat"</a></li>
+  </ul></li>
+  <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
+  <ul class="collapse">
+  <li><a href="#vectores" id="toc-vectores" class="nav-link" data-scroll-target="#vectores">Vectores</a></li>
+  <li><a href="#factores" id="toc-factores" class="nav-link" data-scroll-target="#factores">Factores</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a></li>
+  <li><a href="#arreglos" id="toc-arreglos" class="nav-link" data-scroll-target="#arreglos">Arreglos</a></li>
+  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes">Dataframes</a></li>
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
+  </ul></li>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones">Funciones</a></li>
+  <li><a href="#particularidades-de-cada-lenguaje" id="toc-particularidades-de-cada-lenguaje" class="nav-link" data-scroll-target="#particularidades-de-cada-lenguaje">Particularidades de cada lenguaje</a>
+  <ul class="collapse">
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
+  </ul></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introducción a R</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lenguajes-de-programación-de-código-libre" class="level1">
+<h1>Lenguajes de programación de código libre</h1>
+<section id="r-y-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-y-rstudio">R y RStudio</h2>
+<section id="características" class="level3">
+<h3 class="anchored" data-anchor-id="características">Características</h3>
+<ul>
+<li><p>R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos</p></li>
+<li><p>A diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)</p></li>
+<li><p>Es un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación</p></li>
+<li><p>R es competencia de Excel, Phyton, SPSS y STATA</p></li>
+<li><p>Se parece a Matlab y su sintaxis recuerda a C / C++</p></li>
+<li><p>R fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team</p></li>
+<li><p>La versión beta más estable fue lanzada hasta el año 2000</p></li>
+<li><p>RStudio es un entorno de desarrollo integrado (IDE) para R</p></li>
+</ul>
+</section>
+<section id="ventajas-y-desventajas-de-r" class="level3">
+<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-r">Ventajas y desventajas de R</h3>
+<ul>
+<li><p>Es un software libre</p></li>
+<li><p>No hay responsabilidad en caso de errores en el código</p></li>
+<li><p>Es uno de los primeros lenguajes en recibir los nuevos temas</p></li>
+<li><p>Tiene una fácil conectividad y compatibilidad con otros lenguajes de programación</p></li>
+<li><p>No tiene límite (teórico) en la lectura de bases de datos</p></li>
+<li><p>Suele volverse más lento el análisis con grandes bases de datos</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="interfases-y-ambientes-colaborativos" class="level1">
+<h1>Interfases y ambientes colaborativos</h1>
+<section id="correr-en-r-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="correr-en-r-o-rstudio">Correr en R o RStudio</h2>
+<p>Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación.</p>
+<p>Para instalar R y RStudio se siguen los siguientes pasos:</p>
+<ul>
+<li><p>Primero se debe instalar R</p></li>
+<li><p>Dependiendo de las características del sistema operativo, se puede encontrar en&nbsp;https://www.r-project.org/&nbsp;el archivo de instalación adecuado</p></li>
+<li><p>Después de elegir el idioma, acepte los términos</p></li>
+<li><p>Al final de la instalación busque la carpeta en donde se guardó (generalmente&nbsp;<em>Aplicaciones</em>) para inicarlo</p></li>
+<li><p>Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.</p></li>
+<li><p>Se descarga RStudio en&nbsp;https://www.rstudio.com/, actualmente disponible en&nbsp;https://posit.co/, en donde se va a la pestaña "Open Source", de donde se puede descargar.</p></li>
+</ul>
+</section>
+<section id="correr-r-en-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="correr-r-en-google-colab">Correr R en Google colab</h2>
+<p>Para usar R en Google Colab, se siguen los siguientes pasos:</p>
+<ul>
+<li><p>Abre Google Colab (<u>https://colab.research.google.com/</u>)</p></li>
+<li><p>Crea un nuevo notebook</p></li>
+<li><p>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos:</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>#OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)!</p>
+<p>#Se ejecuta solamente una vez</p>
+<p>!apt-get update</p>
+<p>!apt-get install -y r-base</p>
+<p>!apt-get install -y r-base-dev</p>
+</blockquote>
+<ul>
+<li>Instalar los paquetes requeridos en R:</li>
+</ul>
+<blockquote class="blockquote">
+<p>!R -e "install.packages('nombre_del_paquete’)”</p>
+</blockquote>
+<ul>
+<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar "R”)</li>
+</ul>
+</section>
+<section id="ventajas-de-las-diferentes-interfaces" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</h2>
+<p>Las ventajas de RStudio en comparación con Google Colab son:</p>
+<ul>
+<li><p>Se tiene en cada momento un registro de las variables definidos y sus valores</p></li>
+<li><p>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac)</p></li>
+</ul>
+<p>Ventajas de correr en Google Colab:</p>
+<ul>
+<li><p>El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo</p></li>
+<li><p>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...)</p></li>
+</ul>
+<p>Desventajas de correr en Google Colab:</p>
+<ul>
+<li><p>Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.</p></li>
+<li><p>El IDE tiene menos opciones que en RStudio</p></li>
+<li><p>El sistema Markdown de colab no es el mismo que en RStudio</p></li>
+</ul>
+</section>
+</section>
+<section id="online-tutorials-and-support" class="level1">
+<h1>Online tutorials and support</h1>
+<ul>
+<li><p>Manual de referencia oficial:&nbsp;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</p></li>
+<li><p><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.statmethods.net%2Findex.html">https://www.statmethods.net/index.html</a></p></li>
+<li><p><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.coursera.org%2Fhttps%3A%2F%2Frpubs.com%2F">https://www.coursera.org/https://rpubs.com/</a></p></li>
+</ul>
+</section>
+<section id="primeros-pasos" class="level1">
+<h1>Primeros pasos</h1>
+<section id="comandos-basicos" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-basicos">Comandos basicos</h2>
+<p>Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</p>
+<p>#Licencia de R</p>
+<p>license()</p>
+<p>#Contribuyentes</p>
+<p>contributors()</p>
+<p>#Cita</p>
+<p>citation()</p>
+<p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son:</p>
+</section>
+<section id="to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages." class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages.">To cite R in publications use: R Core Team (2024). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation("pkgname")’ for citing R packages.</h2>
+<p>Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos.</p>
+<p>Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
+<p>#Ayuda</p>
+<p>help(seq)</p>
+<p>help.start()</p>
+<p>? seq</p>
+<p>#Salir del programa</p>
+<p>q()</p>
+</section>
+</section>
+<section id="tipos-de-datos" class="level1">
+<h1>Tipos de datos</h1>
+<section id="enteros-y-reales" class="level2">
+<h2 class="anchored" data-anchor-id="enteros-y-reales">Enteros y reales</h2>
+<p>En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.</p>
+<p>#Real (double) por defecto</p>
+<p>x &lt;- 5</p>
+<p>class(x)</p>
+<p>#Entero explícito</p>
+<p>y &lt;- 5L</p>
+<p>class(y)</p>
+<p>is.integer(y)</p>
+</section>
+<section id="booleanos" class="level2">
+<h2 class="anchored" data-anchor-id="booleanos">Booleanos</h2>
+<p>El tipo lógico (logical) toma los valores TRUE y FALSE (o sus abreviaturas T y F). Se generan al evaluar comparaciones y se combinan con los operadores &amp; (y), | (o) y ! (negación); las versiones &amp;&amp; y || evalúan un solo elemento y se usan en condicionales.</p>
+<p>a &lt;- TRUE</p>
+<p>b &lt;- FALSE</p>
+<p>a &amp; b</p>
+<p>a | b</p>
+<p>!a</p>
+<p>5 &gt; 3</p>
+</section>
+<section id="strings" class="level2">
+<h2 class="anchored" data-anchor-id="strings">Strings</h2>
+<p>El tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.</p>
+<p>s &lt;- "Operación Jupyter"</p>
+<p>class(s)</p>
+<p>nchar(s)</p>
+<p>s2 &lt;- paste("Hola", "mundo")</p>
+</section>
+</section>
+<section id="declaración-de-variables" class="level1">
+<h1>Declaración de variables</h1>
+<p>R no requiere declarar el tipo de una variable: el tipo se infiere del valor asignado y puede cambiar si se reasigna. El operador de asignación preferido es &lt;-, aunque = también funciona dentro de una instrucción; -&gt; asigna de izquierda a derecha. Los nombres de variables deben empezar con una letra o un punto (no seguido de número) y distinguen mayúsculas de minúsculas.</p>
+<p>x &lt;- 10</p>
+<p>x = 10</p>
+<p>10 -&gt; x</p>
+<p>mi_variable.1 &lt;- 3.14</p>
+</section>
+<section id="estructuras-secuencias-decisiones-y-repeticiones" class="level1">
+<h1>Estructuras: secuencias, decisiones y repeticiones</h1>
+<section id="secuencias" class="level2">
+<h2 class="anchored" data-anchor-id="secuencias">Secuencias</h2>
+<p>El operador : genera una secuencia de enteros consecutivos; la función seq() permite controlar el incremento y seq_len()/seq_along() generan secuencias a partir de la longitud de un objeto.</p>
+<p>1:10</p>
+<p>seq(0, 1, by = 0.25)</p>
+<p>seq_len(5)</p>
+</section>
+<section id="estructura-if" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-if">Estructura "if"</h2>
+<p>if (x &gt; 0) {</p>
+<p>print("positivo")</p>
+<p>}</p>
+</section>
+<section id="estructura-if-else" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-if-else">Estructura "if-else"</h2>
+<p>if (x &gt; 0) {</p>
+<p>print("positivo")</p>
+<p>} else {</p>
+<p>print("no positivo")</p>
+<p>}</p>
+</section>
+<section id="estructura-for" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-for">Estructura "for"</h2>
+<p>for (i in 1:5) {</p>
+<p>print(i)</p>
+<p>}</p>
+</section>
+<section id="estructura-while" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-while">Estructura "while"</h2>
+<p>i &lt;- 1</p>
+<p>while (i &lt;= 5) {</p>
+<p>print(i)</p>
+<p>i &lt;- i + 1</p>
+<p>}</p>
+</section>
+<section id="estructura-repeat" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-repeat">Estructura "repeat"</h2>
+<p>repeat ejecuta el bloque indefinidamente hasta encontrar un break; es el equivalente en R de un bucle “do-while”.</p>
+<p>i &lt;- 1</p>
+<p>repeat {</p>
+<p>print(i)</p>
+<p>i &lt;- i + 1</p>
+<p>if (i &gt; 5) break</p>
+<p>}</p>
+</section>
+</section>
+<section id="estructuras-de-datos-y-objetos" class="level1">
+<h1>Estructuras de datos y objetos</h1>
+<section id="vectores" class="level2">
+<h2 class="anchored" data-anchor-id="vectores">Vectores</h2>
+<p>El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().</p>
+<p>v &lt;- c(1, 2, 3, 4)</p>
+<p>v[2]</p>
+<p>length(v)</p>
+</section>
+<section id="factores" class="level2">
+<h2 class="anchored" data-anchor-id="factores">Factores</h2>
+<p>Los factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).</p>
+<p>f &lt;- factor(c("bajo", "alto", "medio"))</p>
+<p>levels(f)</p>
+</section>
+<section id="matrices" class="level2">
+<h2 class="anchored" data-anchor-id="matrices">Matrices</h2>
+<p>Una matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.</p>
+<p>m &lt;- matrix(1:6, nrow = 2, ncol = 3)</p>
+<p>dim(m)</p>
+</section>
+<section id="arreglos" class="level2">
+<h2 class="anchored" data-anchor-id="arreglos">Arreglos</h2>
+<p>array() generaliza la matriz a más de dos dimensiones.</p>
+<p>a &lt;- array(1:24, dim = c(2, 3, 4))</p>
+<p>dim(a)</p>
+</section>
+<section id="dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="dataframes">Dataframes</h2>
+<p>El data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.</p>
+<p>df &lt;- data.frame(nombre = c("A", "B"), valor = c(1, 2))</p>
+<p>str(df)</p>
+</section>
+<section id="listas" class="level2">
+<h2 class="anchored" data-anchor-id="listas">Listas</h2>
+<p>La lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.</p>
+<p>lst &lt;- list(numero = 1, texto = "hola", vector = c(1,2,3))</p>
+<p>lst$texto</p>
+</section>
+</section>
+<section id="funciones" class="level1">
+<h1>Funciones</h1>
+<p>Las funciones se definen con function(), pueden tener argumentos con valores por defecto, y devuelven el valor de la última expresión evaluada (o el indicado con return()).</p>
+<p>suma &lt;- function(a, b = 0) {</p>
+<p>return(a + b)</p>
+<p>}</p>
+<p>suma(3, 4)</p>
+<p>suma(3)</p>
+</section>
+<section id="particularidades-de-cada-lenguaje" class="level1">
+<h1>Particularidades de cada lenguaje</h1>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<ul>
+<li><p>Indexado desde 1 (no desde 0).</p></li>
+<li><p>Vectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.</p></li>
+<li><p>Orientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.</p></li>
+<li><p>Asignación con &lt;- como convención, aunque = es válido.</p></li>
+</ul>
+</section>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
+<ul>
+<li><p>Indexado desde 0.</p></li>
+<li><p>Lenguaje de propósito general; su uso en ciencia de datos depende de bibliotecas externas (NumPy, pandas, Matplotlib).</p></li>
+<li><p>Sintaxis basada en indentación en vez de llaves para delimitar bloques.</p></li>
+<li><p>Tipado dinámico, igual que R, pero con una sintaxis orientada a objetos más explícita (todo es un objeto con métodos).</p></li>
+</ul>
+</section>
+<section id="julia" class="level2">
+<h2 class="anchored" data-anchor-id="julia">Julia</h2>
+<ul>
+<li><p>Indexado desde 1, como R.</p></li>
+<li><p>Diseñado para desempeño numérico: se compila “just-in-time” (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.</p></li>
+<li><p>Nació explícitamente para resolver el “problema de los dos lenguajes” (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).</p></li>
+<li><p>Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</p></li>
+</ul>
+<p>Nota: las particularidades de Julia se documentan aquí con base en las características generales del lenguaje; al no contar todavía con el notebook de Julia del proyecto, conviene revisarlas junto con el material específico cuando esté disponible.</p>
+</section>
+</section>
+<section id="conclusiones" class="level1">
+<h1>Conclusiones</h1>
+<p>Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo. Para quien ya conoce uno de los tres, la transición a los otros es principalmente de sintaxis: la lógica de secuencias, condicionales, ciclos y funciones es la misma, y las diferencias reales aparecen en el manejo de estructuras de datos (vectorizado en R y Julia, basado en bibliotecas en Python) y en el ecosistema de cada uno.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
