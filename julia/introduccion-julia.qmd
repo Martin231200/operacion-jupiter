@@ -1,0 +1,5 @@
+---
+title: "Introducción a Julia"
+---
+
+Contenido pendiente: aún no se cuenta con el notebook o material fuente de Julia para este proyecto. Cuando esté disponible, seguirá la misma estructura que las páginas de R y Python (instalación, tipos de datos, estructuras de control, estructuras de datos, funciones, particularidades).

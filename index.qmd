@@ -1,0 +1,21 @@
+---
+title: "Operación Jupyter"
+subtitle: "Tutoriales de R, Python y Julia"
+---
+
+## Sobre el proyecto
+
+Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — **R**, **Python** y **Julia** — pensados para quien empieza desde cero.
+
+Usa el menú **Introducción** para entrar al tutorial de cada lenguaje. Las secciones **Libros** y **Semblanza de los profesores** están en construcción.
+
+### Cómo usar este sitio
+
+Cada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:
+
+- Instalación e interfaces (RStudio, Google Colab, Jupyter)
+- Tipos de datos y declaración de variables
+- Estructuras de control (secuencias, decisiones, repeticiones)
+- Estructuras de datos y objetos
+- Funciones
+- Particularidades del lenguaje

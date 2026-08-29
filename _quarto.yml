@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Operación Jupyter"
+  description: "Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - text: Introducción
+        menu:
+          - href: python/introduccion-python.ipynb
+            text: Python
+          - href: r/introduccion-r.qmd
+            text: R
+          - href: julia/introduccion-julia.qmd
+            text: Julia
+      - href: libros/index.qmd
+        text: Libros
+      - href: semblanza/index.qmd
+        text: Semblanza de los profesores
+  page-footer:
+    center: "Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    lang: es
