@@ -2,4 +2,14 @@
 title: "Semblanza de los profesores"
 ---
 
-Contenido pendiente. Esta sección se completará con las semblanzas publicadas en el sitio de Google Sites.
+Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.
+
+::: {layout-ncol=4}
+![Ann Godelieve Wellens](img/ann_wellens.png)
+
+![Víctor Damián Pinilla Morán](img/victor_pinilla.png)
+
+![Edgar Ali Ramos Gómez](img/edgar_ramos.png)
+
+![Armando Moisés Pérez Silva](img/armando_perez.png)
+:::
