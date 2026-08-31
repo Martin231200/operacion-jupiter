@@ -1,152 +1,5 @@
 [
   {
-    "objectID": "semblanza/index.html",
-    "href": "semblanza/index.html",
-    "title": "Semblanza de los profesores",
-    "section": "",
-    "text": "Contenido pendiente. Esta sección se completará con las semblanzas publicadas en el sitio de Google Sites."
-  },
-  {
-    "objectID": "python/introduccion-python.html",
-    "href": "python/introduccion-python.html",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "",
-    "text": "Python fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde & Informatica (CWI) en los Países Bajos.\nEl nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python."
-  },
-  {
-    "objectID": "python/introduccion-python.html#instalación",
-    "href": "python/introduccion-python.html#instalación",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Instalación",
-    "text": "Instalación\nLa instalación consiste en descargar el kernel de Python directamente de su página web en la dirección python.org El usuario puede escoger el editor que mejor le convenga."
-  },
-  {
-    "objectID": "python/introduccion-python.html#comandos-básicos",
-    "href": "python/introduccion-python.html#comandos-básicos",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Comandos básicos",
-    "text": "Comandos básicos"
-  },
-  {
-    "objectID": "python/introduccion-python.html#mensaje",
-    "href": "python/introduccion-python.html#mensaje",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Mensaje",
-    "text": "Mensaje\n\nprint(\"La porra los saluda\")\n\nLa porra los saluda"
-  },
-  {
-    "objectID": "python/introduccion-python.html#operadores-matemáticos",
-    "href": "python/introduccion-python.html#operadores-matemáticos",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Operadores matemáticos",
-    "text": "Operadores matemáticos\n\n4 + 7\n\n11\n\n\n\n55 - 9\n\n46\n\n\n\n78 * 9\n\n702\n\n\n\n85 / 3\n\n28.333333333333332\n\n\n\n85 // 3\n\n28\n\n\n\n6 ** 3\n\n216\n\n\n\nminutos = 105\nminutos / 60\n\n1.75\n\n\n\nminutos = 105\nhoras = minutos // 60\nhoras\n\n1\n\n\n\nresto = minutos - horas * 60\nresto\n\n45\n\n\n\nresto2 = minutos % 60\nresto2\n\n45"
-  },
-  {
-    "objectID": "python/introduccion-python.html#expresiones",
-    "href": "python/introduccion-python.html#expresiones",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Expresiones",
-    "text": "Expresiones\n\n5 ** 2 + 2 * 3\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta"
-  },
-  {
-    "objectID": "python/introduccion-python.html#tipos-de-variables",
-    "href": "python/introduccion-python.html#tipos-de-variables",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Tipos de variables",
-    "text": "Tipos de variables\n\na = 45\nb = 13.6\nc = \"Maldita_primavera\"\nd = True\ne = False\n\nFunción type () Devuelve el tipo de una variable\n\ntype(a)\n\nint\n\n\n\ntype(b)\n\nfloat\n\n\n\ntype(c)\n\nstr\n\n\n\ntype(d)\n\nbool\n\n\n\ntype(e)\n\nbool\n\n\n\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\nTrue\n\n\n\n10 == 5\n\nFalse\n\n\n\nx = 5\ny = 7\n\n\nx == y\n\nFalse"
-  },
-  {
-    "objectID": "python/introduccion-python.html#operadores-relacionales",
-    "href": "python/introduccion-python.html#operadores-relacionales",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Operadores relacionales",
-    "text": "Operadores relacionales\n\nx != y               # x no es igual a y\n\nTrue\n\n\n\nx &gt; y                # x es mayor que y\n\nFalse\n\n\n\nx &gt;= y               # x es mayor o igual a y\n\nFalse\n\n\n\nx &lt; y               # x es menor o igual a y\n\nTrue"
-  },
-  {
-    "objectID": "python/introduccion-python.html#operadores-lógicos",
-    "href": "python/introduccion-python.html#operadores-lógicos",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Operadores lógicos",
-    "text": "Operadores lógicos\n\nx &gt; 0 and x &lt; 10\n\nTrue\n\n\n\nx % 2 == 0 or x % 3 == 0\n\nFalse\n\n\n\nnot x &gt; y\n\nTrue"
-  },
-  {
-    "objectID": "python/introduccion-python.html#declaración-import",
-    "href": "python/introduccion-python.html#declaración-import",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Declaración “import”",
-    "text": "Declaración “import”\nVarias funciones de Python no se instalan de incio y que el usuario debe hacerlo. Por ejemplo, la librería math\n\nimport math\n\nMath tiene varios métodos de uso matemático, por ejemplo, el valor de \\(\\pi\\)\n\nmath.pi\n\n3.141592653589793\n\n\n\ng=64\nmath.sqrt(g)\n\n8.0\n\n\n\nmath.pow(g,3)\n\n262144.0\n\n\n\nn=2\n\n\n19 + n + round(math.pi) * 2\n\n27\n\n\n\nint('111',2)\n\n7"
-  },
-  {
-    "objectID": "python/introduccion-python.html#funciones-definidas-por-el-usuario",
-    "href": "python/introduccion-python.html#funciones-definidas-por-el-usuario",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Funciones definidas por el usuario",
-    "text": "Funciones definidas por el usuario\nForma general de una función:\n$ def  (argumentos):$ \\ $ calculos $ \\ $ return (resultados)$\n\ndef saludos():\n  print(\"Saludos gente\")\n  print(\"La porra los saluda\")\n\n\nsaludos()\n\nSaludos gente\nLa porra los saluda\n\n\n\ndef pide_pi():\n  numero_pi = math.pi\n  return numero_pi\n\n\npide_pi()\n\n3.141592653589793\n\n\n\ndef repetir(palabra, n):\n    print(palabra * n)\n\n\nspam = 'Spam, '\nrepetir(spam, 4)\n\nSpam, Spam, Spam, Spam, \n\n\n\ndef primeras_dos_lineas():\n    repetir(spam, 4)\n    repetir(spam, 4)\n\n\nprimeras_dos_lineas()\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \n\n\n\ndef ultimas_tres_lineas():\n    repetir(spam, 2)\n    print('(Lovely Spam, Wonderful Spam!)')\n    repetir(spam, 2)\n\n\nultimas_tres_lineas()\n\nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\ndef coro():\n    primeras_dos_lineas()\n    ultimas_tres_lineas()\n\n\ncoro()\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\nCiclos\nLa estructura de repetición FOR tiene la siguiente sintaxis:\nfor \\(&lt;var&gt;\\) in \\(range(valor):\\)\n\nfor i in range(2):\n    print(i)\n\n0\n1\n\n\n\nfor i in range(2):\n    print(\"Coro\", i)\n    coro()\n    print()\n\nCoro 0\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nCoro 1\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\ndef n_coros(n):\n    for i in range(n):\n        coro()\n        print()\n\n\nn_coros(5)\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVariables y parámetros locales\nLas variables y parámentros locales son aquellas cuya influencia se remita a una función.\n\ndef dos_partes(parte1,parte2):\n  total = parte1 + parte2\n  print(total)\n\n\nparte1='yo '\nparte2='y tu '\ndos_partes(parte1,parte2)\n\nyo y tu \n\n\n\n\nEstructura de decisión\n\nx\n\n5\n\n\n\ny\n\n7\n\n\n\nif x &gt; 0:\n    print('x is positive')  # Decisión sencilla\n\nx is positive\n\n\n\nif x % 2 == 0:\n    print('x es par')\nelse:\n    print('x es non')  # Decisión doble\n\nx es non\n\n\n\nif x &lt; y:\n    print('x es menor que y')\nelif x &gt; y:\n    print('x es mayor que y')\nelse:\n    print('x y y son iguales') # Decisiones anidadas\n\nx es menor que y\n\n\ntambién puede escribirse como:\n\nif x &lt; y:\n    print('x es menor que y')\nelse:\n    if x &gt; y:\n           print('x es mayor que y')\n    else:\n          print('x y y son iguales') # Decisiones anidadas\n\nx es menor que y\n\n\n\nif 0 &lt; x:\n    if x &lt; 10:\n        print('x es un número positivo de un solo dígito.')\n\nx es un número positivo de un solo dígito.\n\n\n\na=10\na\n\n10\n\n\n\nb=5\nb\n\n5\n\n\n\nif a &lt; b:\n    print('a es menor que b')\nelse:\n    print('b es menor que a')\n\nb es menor que a\n\n\n\na,b=10,5\nprint(f\"{'a' if a&lt;b else 'b'} es menor\")\n\nb es menor"
-  },
-  {
-    "objectID": "python/introduccion-python.html#estructuras-de-datos-y-objetos",
-    "href": "python/introduccion-python.html#estructuras-de-datos-y-objetos",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Estructuras de datos y objetos",
-    "text": "Estructuras de datos y objetos\n\nListas\nUna lista es una secuencia de valores, no deben ser del mismo tipo necesariamente. Se crean utilizando corchetes [ ]\n\nLista_1 = [1,2,3,4,5]\nLista_1\n\n[1, 2, 3, 4, 5]\n\n\n\nSopes = ['Pollo', 'Chorizo', 'Frijol']\nSopes\n\n['Pollo', 'Chorizo', 'Frijol']\n\n\nPuede haber listas “anidadas”\n\nt = ['spam', 2.0, 5, [10, 20]]\nt\n\n['spam', 2.0, 5, [10, 20]]\n\n\nPuede haber listas vacias\n\nVacia = []\nVacia\n\n[]\n\n\n‘List’ nuestra los componentes de la lista\n\nlist(Sopes)\n\n['Pollo', 'Chorizo', 'Frijol']\n\n\n‘Len’ devuelve el número de componentes de la lista\n\nlen(t)\n\n4\n\n\nSe puede leer un elemento en específico de una lista\n\nSopes[2]\n\n'Frijol'\n\n\nY se puede cambiar un elemento\nSopes[1] = ‘Tasajo’ Sopes[1]\n\nSopes\n\n['Pollo', 'Chorizo', 'Frijol']\n\n\nEsto implica que las listas son mutables, es decir, se pueden modificar\nEl operador ‘in’ indica si un determinado elemento pertenece a la lista\n\n'Tasajo' in Sopes\n\nFalse\n\n\n\n'Chorizo' in Sopes\n\nTrue\n\n\nSe puede trabajar con segmentos de una lista.\n\nLetras = ['a','b','c','d','e','f','g']\nLetras\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g']\n\n\n\nLetras[1:3]\n\n['b', 'c']\n\n\nOjo: el índice empieza en la posición ‘0’\n\nElemento de la lista\nElemento de la lista\n\n\nLetras[0:3]\n\n['a', 'b', 'c']\n\n\nQue es lo mismo que\n\nLetras[:3]\n\n['a', 'b', 'c']\n\n\nFunciona igual de una posición inicial hasta el final\n\nLetras[2:]\n\n['c', 'd', 'e', 'f', 'g']\n\n\nO la lista completa\n\nLetras[:]\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g']\n\n\nLas listas se pueden concatenar\n\nConc=Sopes+Letras\nConc\n\n['Pollo', 'Chorizo', 'Frijol', 'a', 'b', 'c', 'd', 'e', 'f', 'g']\n\n\nO se pueden repetir\n\nSopes*4\n\n['Pollo',\n 'Chorizo',\n 'Frijol',\n 'Pollo',\n 'Chorizo',\n 'Frijol',\n 'Pollo',\n 'Chorizo',\n 'Frijol',\n 'Pollo',\n 'Chorizo',\n 'Frijol']\n\n\n\n[Sopes] * 4\n\n[['Pollo', 'Chorizo', 'Frijol'],\n ['Pollo', 'Chorizo', 'Frijol'],\n ['Pollo', 'Chorizo', 'Frijol'],\n ['Pollo', 'Chorizo', 'Frijol']]\n\n\nSólo para listas con elementos numéricos\n\nsum(Lista_1)\n\n15\n\n\n\nmin(Lista_1)\n\n1\n\n\n\nmax(Lista_1)\n\n5\n\n\n\n\nMétodos\nappend’ agrega al final un elemento a una Lista\n\nSopes.append('Rajas')\nSopes\n\n['Pollo', 'Chorizo', 'Frijol', 'Rajas']\n\n\n‘extend’ agrega elementos tomados de una lista adicional\n\nSopes.extend(['Elote', 'Queso'])\nSopes\n\n['Pollo', 'Chorizo', 'Frijol', 'Rajas', 'Elote', 'Queso']\n\n\n‘pop’ elimina el elemento de determinado índice\n\nSopes.pop(3)\nSopes\n\n['Pollo', 'Chorizo', 'Frijol', 'Elote', 'Queso']\n\n\n‘remove’ elimina el elemento\n\nSopes.remove('Pollo')\nSopes\n\n['Chorizo', 'Frijol', 'Elote', 'Queso']\n\n\n\nSopes.remove('Carne')\n\n\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\n/tmp/ipython-input-2967898739.py in &lt;cell line: 0&gt;()\n----&gt; 1 Sopes.remove('Carne')\n\nValueError: list.remove(x): x not in list\n\n\n\nUna cadena no es una lista, es una secuencia de caracteres, que no es lo mismo que una lista de caracteres\n\nNombre = 'Juan'\nNombre\n\n'Juan'\n\n\n‘list’ divide una cadena en sus elementos\n\nn=list(Nombre)\nn\n\n['J', 'u', 'a', 'n']\n\n\n‘split’ en palabras\n\nUltra='La porra te saluda'\nUltra\n\n'La porra te saluda'\n\n\n\nUltra.split()\n\n['La', 'porra', 'te', 'saluda']\n\n\nEn este método se puede establecer el delimitador\n\nf='ex-comadre'\ng=f.split('-')\ng\n\n['ex', 'comadre']\n\n\n‘join’ permite concatenar listas de cadenas en una sola. Se sugiere invocarlo en el delimitador y que la lista sea el argumento\n\nh=['waiting','for','a','girl','like','you']\nh\n\n['waiting', 'for', 'a', 'girl', 'like', 'you']\n\n\n\ndelimiter = ' '\nj = delimiter.join(h)\nj\n\n'waiting for a girl like you'\n\n\nSe puede recorrer una lista con un ciclo contador (for)\n\nfor sopes in Sopes:\n  print(sopes)\n\nChorizo\nFrijol\nElote\nQueso\n\n\n\nfor palabra in Ultra.split():\n  print(palabra)\n\nLa\nporra\nte\nsaluda\n\n\n‘sorted’ ordena los elementos de una lista sin modificarla\n\nsorted(Sopes)\n\n['Chorizo', 'Elote', 'Frijol', 'Queso']\n\n\n\nSopes\n\n['Chorizo', 'Frijol', 'Elote', 'Queso']\n\n\n\nsorted('Ultra')\n\n['U', 'a', 'l', 'r', 't']\n\n\nEl resultado es una lista, si se desea convertirlo en una cadena\n\n''.join(sorted('Ultra'))\n\n'Ualrt'"
-  },
-  {
-    "objectID": "python/introduccion-python.html#diccionarios",
-    "href": "python/introduccion-python.html#diccionarios",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Diccionarios",
-    "text": "Diccionarios\nUn diccionario es una colección mutable no ordenada de pares de datos ‘llave:valor’ donde la llaves es única pero el valor no necesariamente\n\nmi_dicc = {'nombre':'Juan', 'edad':25 , 'profesión':'ingeniero'} # 'nombre' es la llave, 'Juan' es el valor... Los diccionarios se crean con {}\nmi_dicc\n\n{'nombre': 'Juan', 'edad': 25, 'profesión': 'ingeniero'}\n\n\nPara obtener un valor a partir de la llave\n\nprint(mi_dicc['nombre'])\n\nJuan\n\n\nPara agregar un valor\n\nmi_dicc['ciudad'] = 'Ciudad de México'\nmi_dicc\n\n{'nombre': 'Juan',\n 'edad': 25,\n 'profesión': 'ingeniero',\n 'ciudad': 'Ciudad de México'}\n\n\nPara modificar un valor\n\nmi_dicc['edad'] = 30\nmi_dicc\n\n{'nombre': 'Juan',\n 'edad': 30,\n 'profesión': 'ingeniero',\n 'ciudad': 'Ciudad de México'}\n\n\nPara eliminar un valor\n\ndel mi_dicc['profesión']\nmi_dicc\n\n{'nombre': 'Juan', 'edad': 30, 'ciudad': 'Ciudad de México'}\n\n\nEn un diccionario, el error producido es ‘key error’\n\nmi_dicc['llave']\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\n/tmp/ipython-input-3499734797.py in &lt;cell line: 0&gt;()\n----&gt; 1 mi_dicc['llave']\n\nKeyError: 'llave'\n\n\n\n\nlen(mi_dicc)\n\n3\n\n\n\nmi_dicc\n\n{'nombre': 'Juan', 'edad': 30, 'ciudad': 'Ciudad de México'}\n\n\n\n'nombre' in mi_dicc #opera sobre la llave\n\nTrue"
-  },
-  {
-    "objectID": "python/introduccion-python.html#tuplas",
-    "href": "python/introduccion-python.html#tuplas",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Tuplas",
-    "text": "Tuplas\nUna tupla es una secuencia de valores de cualquier tipo indexados por números enteros; a diferencia de las listas, son inmutables\n\nz = 'c','o','m','p','u','t','a','c','i','o','n'\nz\n\n('c', 'o', 'm', 'p', 'u', 't', 'a', 'c', 'i', 'o', 'n')\n\n\n\ntype(z)\n\ntuple\n\n\nNo es necesario el uso de parentésis\n\nz1 = 'W', # Una tupla de un sólo elemento debe terminar con una ','\ntype(z1)\n\ntuple\n\n\n\nz2 = 'W' # De lo contrario, es una cadena\ntype(z2)\n\nstr\n\n\n\nz3 = tuple('Cadena')\nz3\n\n('C', 'a', 'd', 'e', 'n', 'a')\n\n\n\nz[2]\n\n'm'\n\n\n\nz[1:3] # La mayoría de los operadores que se aplican a listas también se pueden aplicar a tuplas\n\n('o', 'm')\n\n\n\ntuple('arr')+tuple('ooooz')\n\n('a', 'r', 'r', 'o', 'o', 'o', 'o', 'z')\n\n\n\ntuple('gol')*4\n\n('g', 'o', 'l', 'g', 'o', 'l', 'g', 'o', 'l', 'g', 'o', 'l')\n\n\n\nsorted(z)\n\n['a', 'c', 'c', 'i', 'm', 'n', 'o', 'o', 'p', 't', 'u']\n\n\n\nreversed(z)\n\n&lt;reversed at 0x7be14bf726e0&gt;\n\n\n\ntuple(reversed(z))\n\n('n', 'o', 'i', 'c', 'a', 't', 'u', 'p', 'm', 'o', 'c')\n\n\n\nz.remove('o')\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\n/tmp/ipython-input-3082548791.py in &lt;cell line: 0&gt;()\n----&gt; 1 z.remove('o')\n\nAttributeError: 'tuple' object has no attribute 'remove'"
-  },
-  {
-    "objectID": "python/introduccion-python.html#arreglos",
-    "href": "python/introduccion-python.html#arreglos",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Arreglos",
-    "text": "Arreglos\nNumpy es una librería fundamental para la computación científica con Python. Permite la creación y manipulación de arreglos (arrays) multidimensionales. Además, ofrece una amplia gama de funciones matemáticas y estadísticas.\n\nimport numpy as np\n# Figura 1\n\n\nArreglo de una dimensión\n\ndata1=[1,2,3]\narr_1d=np.array(data1)\nprint(arr_1d) #Figura 2\n\n[1 2 3]\n\n\n\n\nArreglo de dos dimensiones\n\ndata2=[[1,2],[3,4]]\narr_2d=np.array(data2)\nprint(arr_2d) #Figura 2\n\n[[1 2]\n [3 4]]\n\n\n\n\nArreglo de tres dimensiones\n\ndata3 = [[[1, 2, 3],[4, 5, 6],[7, 8, 9]],\n         [[1, 2, 3],[4, 5, 6],[7, 8, 9]],\n         [[1, 2, 3],[4, 5, 6],[7, 8, 9]]]\narr_3d = np.array(data3)\nprint(arr_3d) #Figura 3\n\n[[[1 2 3]\n  [4 5 6]\n  [7 8 9]]\n\n [[1 2 3]\n  [4 5 6]\n  [7 8 9]]\n\n [[1 2 3]\n  [4 5 6]\n  [7 8 9]]]"
-  },
-  {
-    "objectID": "python/introduccion-python.html#creación-de-arreglos",
-    "href": "python/introduccion-python.html#creación-de-arreglos",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Creación de arreglos",
-    "text": "Creación de arreglos\nFunciones adicionales para crear un arreglo\n\n# Arreglo cuyos valores son todos 0\na = np.zeros((2,3))\nprint(a)\n\n[[0. 0. 0.]\n [0. 0. 0.]]\n\n\n\n# Arreglo cuyos valores son todos 1\nb = np.ones((2,3,4))\nprint(b)\n\n[[[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]\n\n [[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]]\n\n\n\n# Arreglo cuyos valores son todos \"8\", o cualquier otro valore indicado en el segundo parámentro\nc = np.full((3,4),8)\nprint(c)\n\n[[8 8 8 8]\n [8 8 8 8]\n [8 8 8 8]]\n\n\nCreación de un arreglo básado en función de rangos\n\na=np.linspace(1,10,4) # (mínimo, máximo, no. de elementos)\nprint(a)\n\n[ 1.  4.  7. 10.]\n\n\n\na2=np.arange(9)\nprint(a2)\n\n[0 1 2 3 4 5 6 7 8]\n\n\n\na3=np.arange(1,11,2) # (mínimo, máximo, paso)\nprint(a3)\n\n[1 3 5 7 9]\n\n\n\n# Inicialización del arreglo con valores aleatorios\nb=np.random.rand(2,3,2)\nprint(b)\n\n[[[0.58961366 0.7826446 ]\n  [0.51061397 0.38084648]\n  [0.94427869 0.45175176]]\n\n [[0.20652389 0.49396422]\n  [0.63214339 0.22043267]\n  [0.8513416  0.89711989]]]\n\n\n\n# Inicialización del arreglo con valores aleatorios con una distribución normal\nc=np.random.randn(2,3)\nprint(c)\n\n[[-0.35567627  0.73770074  0.75545374]\n [ 0.75522022  0.04958392  0.90407643]]\n\n\n\nimport matplotlib.pyplot as plt\n\n\nm=np.random.randn(1000000)\nplt.hist(m,bins=200)\nplt.show()"
-  },
-  {
-    "objectID": "python/introduccion-python.html#características-de-un-arreglo",
-    "href": "python/introduccion-python.html#características-de-un-arreglo",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Características de un arreglo",
-    "text": "Características de un arreglo\nEn numpy (figura 3):\n\nCada dimensión se denomina axis\nEl número de dimensiones se denomina rank\nLa lista de dimensiones con su correspondiente longitud se denomina shape\nEl número total de elementos se denomina size\n\n\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\nA[0][1]\n\nnp.int64(2)\n\n\n\nA[1]\n\narray([4, 5, 6])\n\n\n\nA[1:3][1:3]\n\narray([[7, 8, 9]])\n\n\n\nA = np.array([[1,2],[3,4]])\nB = np.array([[5,6],[7,8]])\nprint(A+B)\n\n[[ 6  8]\n [10 12]]\n\n\n\nC = np.dot(A,B)\nprint(C)\n\n[[19 22]\n [43 50]]\n\n\n\nD = A.T\nprint(D)\n\n[[1 3]\n [2 4]]\n\n\n\nF=np.arange(1,10,1) # arreglo de una dimensión\nprint(F)\n\n[1 2 3 4 5 6 7 8 9]\n\n\n\nprint(F[5])\n\n6\n\n\n\nprint(F[2:5])\n\n[3 4 5]\n\n\n\nprint(F[4:])\n\n[5 6 7 8 9]\n\n\n\nprint(F[0::3])\n\n[1 4 7]\n\n\nAreglo multidemsional\n\ndata=[[1,2,3],[4,5,6],[7,8,9]]\narreglo_multi=np.array(data)\nprint(arreglo_multi)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\nprint(arreglo_multi[0,2]) #figura 4\n\n3\n\n\n\nprint(arreglo_multi[2:])\n\n[[7 8 9]]\n\n\n\nprint(arreglo_multi[1:,1:])\n\n[[5 6]\n [8 9]]"
-  },
-  {
-    "objectID": "python/introduccion-python.html#modificación-de-un-arreglo",
-    "href": "python/introduccion-python.html#modificación-de-un-arreglo",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Modificación de un arreglo",
-    "text": "Modificación de un arreglo\n\narreglo1=np.arange(12)\nprint(arreglo1)\n\n[ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n\n\nprint(\"shape\",arreglo1.shape)\n\nshape (12,)\n\n\n\nprint(\"arreglo1: \", arreglo1)\n\narreglo1:  [ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n\n\narreglo1.shape=(4,3)\nprint(\"Shape: \", arreglo1.shape)\n\nShape:  (4, 3)\n\n\n\nprint(\"Arreglo1:\\n\", arreglo1) # Devuelve un nuevo arreglo con los mismos datos\n\nArreglo1:\n [[ 0  1  2]\n [ 3  4  5]\n [ 6  7  8]\n [ 9 10 11]]\n\n\n\narreglo2=arreglo1.reshape(3,4)\nprint(\"Shape:\" , arreglo2.shape)\n\nShape: (3, 4)\n\n\n\nprint(\"Arreglo2: \\n\",arreglo2)\n\nArreglo2: \n [[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n\nModificaciones en un arreglo impactan en el precedente\n\narreglo2[0,1]=20\n\n\nprint(\"Arreglo2: \\n\", arreglo2)\n\nArreglo2: \n [[ 0 20  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n\n\nprint(\"Arreglo1: \\n\", arreglo1)\n\nArreglo1: \n [[ 0 20  2]\n [ 3  4  5]\n [ 6  7  8]\n [ 9 10 11]]"
-  },
-  {
-    "objectID": "python/introduccion-python.html#añadir-y-eliminar-elementos-de-un-arreglo",
-    "href": "python/introduccion-python.html#añadir-y-eliminar-elementos-de-un-arreglo",
-    "title": "Proyecto Jupyter: Aprendamos Python",
-    "section": "Añadir y eliminar elementos de un arreglo",
-    "text": "Añadir y eliminar elementos de un arreglo\n\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\nb=np.delete(A,1,axis=0)\nprint(b)\n\n[[1 2 3]\n [7 8 9]]\n\n\n\nc=np.append(b,[[10,11,12]],axis=0)\nprint(c)\n\n[[ 1  2  3]\n [ 7  8  9]\n [10 11 12]]"
-  },
-  {
-    "objectID": "julia/introduccion-julia.html",
-    "href": "julia/introduccion-julia.html",
-    "title": "Introducción a Julia",
-    "section": "",
-    "text": "Contenido pendiente: aún no se cuenta con el notebook o material fuente de Julia para este proyecto. Cuando esté disponible, seguirá la misma estructura que las páginas de R y Python (instalación, tipos de datos, estructuras de control, estructuras de datos, funciones, particularidades)."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Operación Jupyter",
@@ -159,13 +12,6 @@
     "title": "Operación Jupyter",
     "section": "",
     "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero.\nUsa el menú Introducción para entrar al tutorial de cada lenguaje. Las secciones Libros y Semblanza de los profesores están en construcción.\n\n\nCada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:\n\nInstalación e interfaces (RStudio, Google Colab, Jupyter)\nTipos de datos y declaración de variables\nEstructuras de control (secuencias, decisiones, repeticiones)\nEstructuras de datos y objetos\nFunciones\nParticularidades del lenguaje"
-  },
-  {
-    "objectID": "libros/index.html",
-    "href": "libros/index.html",
-    "title": "Libros",
-    "section": "",
-    "text": "Contenido pendiente. Esta sección se completará con el material que la profesora compartió en el sitio de Google Sites (bibliografía y libros de apoyo del proyecto)."
   },
   {
     "objectID": "r/introduccion-r.html",
@@ -341,5 +187,159 @@
     "title": "Introducción a R",
     "section": "Julia",
     "text": "Julia\n\nIndexado desde 1, como R.\nDiseñado para desempeño numérico: se compila “just-in-time” (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.\nNació explícitamente para resolver el “problema de los dos lenguajes” (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).\nSoporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.\n\nNota: las particularidades de Julia se documentan aquí con base en las características generales del lenguaje; al no contar todavía con el notebook de Julia del proyecto, conviene revisarlas junto con el material específico cuando esté disponible."
+  },
+  {
+    "objectID": "libros/index.html",
+    "href": "libros/index.html",
+    "title": "Libros",
+    "section": "",
+    "text": "Contenido pendiente. Esta sección se completará con el material que la profesora compartió en el sitio de Google Sites (bibliografía y libros de apoyo del proyecto)."
+  },
+  {
+    "objectID": "semblanza/index.html",
+    "href": "semblanza/index.html",
+    "title": "Semblanza de los profesores",
+    "section": "",
+    "text": "Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.\n\n\n\n\n\n\nAnn Godelieve Wellens\n\n\n\n\n\n\n\nVíctor Damián Pinilla Morán\n\n\n\n\n\n\n\nEdgar Ali Ramos Gómez\n\n\n\n\n\n\n\nArmando Moisés Pérez Silva"
+  },
+  {
+    "objectID": "python/introduccion-python.html",
+    "href": "python/introduccion-python.html",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "",
+    "text": "Python fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde & Informatica (CWI) en los Países Bajos.\nEl nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python."
+  },
+  {
+    "objectID": "python/introduccion-python.html#instalación",
+    "href": "python/introduccion-python.html#instalación",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Instalación",
+    "text": "Instalación\nLa instalación consiste en descargar el kernel de Python directamente de su página web en la dirección python.org El usuario puede escoger el editor que mejor le convenga."
+  },
+  {
+    "objectID": "python/introduccion-python.html#comandos-básicos",
+    "href": "python/introduccion-python.html#comandos-básicos",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Comandos básicos",
+    "text": "Comandos básicos"
+  },
+  {
+    "objectID": "python/introduccion-python.html#mensaje",
+    "href": "python/introduccion-python.html#mensaje",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Mensaje",
+    "text": "Mensaje\n\nprint(\"La porra los saluda\")\n\nLa porra los saluda"
+  },
+  {
+    "objectID": "python/introduccion-python.html#operadores-matemáticos",
+    "href": "python/introduccion-python.html#operadores-matemáticos",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Operadores matemáticos",
+    "text": "Operadores matemáticos\n\n4 + 7\n\n11\n\n\n\n55 - 9\n\n46\n\n\n\n78 * 9\n\n702\n\n\n\n85 / 3\n\n28.333333333333332\n\n\n\n85 // 3\n\n28\n\n\n\n6 ** 3\n\n216\n\n\n\nminutos = 105\nminutos / 60\n\n1.75\n\n\n\nminutos = 105\nhoras = minutos // 60\nhoras\n\n1\n\n\n\nresto = minutos - horas * 60\nresto\n\n45\n\n\n\nresto2 = minutos % 60\nresto2\n\n45"
+  },
+  {
+    "objectID": "python/introduccion-python.html#expresiones",
+    "href": "python/introduccion-python.html#expresiones",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Expresiones",
+    "text": "Expresiones\n\n5 ** 2 + 2 * 3\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta"
+  },
+  {
+    "objectID": "python/introduccion-python.html#tipos-de-variables",
+    "href": "python/introduccion-python.html#tipos-de-variables",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Tipos de variables",
+    "text": "Tipos de variables\n\na = 45\nb = 13.6\nc = \"Maldita_primavera\"\nd = True\ne = False\n\nFunción type () Devuelve el tipo de una variable\n\ntype(a)\n\nint\n\n\n\ntype(b)\n\nfloat\n\n\n\ntype(c)\n\nstr\n\n\n\ntype(d)\n\nbool\n\n\n\ntype(e)\n\nbool\n\n\n\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\nTrue\n\n\n\n10 == 5\n\nFalse\n\n\n\nx = 5\ny = 7\n\n\nx == y\n\nFalse"
+  },
+  {
+    "objectID": "python/introduccion-python.html#operadores-relacionales",
+    "href": "python/introduccion-python.html#operadores-relacionales",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Operadores relacionales",
+    "text": "Operadores relacionales\n\nx != y               # x no es igual a y\n\nTrue\n\n\n\nx &gt; y                # x es mayor que y\n\nFalse\n\n\n\nx &gt;= y               # x es mayor o igual a y\n\nFalse\n\n\n\nx &lt; y               # x es menor o igual a y\n\nTrue"
+  },
+  {
+    "objectID": "python/introduccion-python.html#operadores-lógicos",
+    "href": "python/introduccion-python.html#operadores-lógicos",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Operadores lógicos",
+    "text": "Operadores lógicos\n\nx &gt; 0 and x &lt; 10\n\nTrue\n\n\n\nx % 2 == 0 or x % 3 == 0\n\nFalse\n\n\n\nnot x &gt; y\n\nTrue"
+  },
+  {
+    "objectID": "python/introduccion-python.html#declaración-import",
+    "href": "python/introduccion-python.html#declaración-import",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Declaración “import”",
+    "text": "Declaración “import”\nVarias funciones de Python no se instalan de incio y que el usuario debe hacerlo. Por ejemplo, la librería math\n\nimport math\n\nMath tiene varios métodos de uso matemático, por ejemplo, el valor de \\(\\pi\\)\n\nmath.pi\n\n3.141592653589793\n\n\n\ng=64\nmath.sqrt(g)\n\n8.0\n\n\n\nmath.pow(g,3)\n\n262144.0\n\n\n\nn=2\n\n\n19 + n + round(math.pi) * 2\n\n27\n\n\n\nint('111',2)\n\n7"
+  },
+  {
+    "objectID": "python/introduccion-python.html#funciones-definidas-por-el-usuario",
+    "href": "python/introduccion-python.html#funciones-definidas-por-el-usuario",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Funciones definidas por el usuario",
+    "text": "Funciones definidas por el usuario\nForma general de una función:\n$ def  (argumentos):$ \\ $ calculos $ \\ $ return (resultados)$\n\ndef saludos():\n  print(\"Saludos gente\")\n  print(\"La porra los saluda\")\n\n\nsaludos()\n\nSaludos gente\nLa porra los saluda\n\n\n\ndef pide_pi():\n  numero_pi = math.pi\n  return numero_pi\n\n\npide_pi()\n\n3.141592653589793\n\n\n\ndef repetir(palabra, n):\n    print(palabra * n)\n\n\nspam = 'Spam, '\nrepetir(spam, 4)\n\nSpam, Spam, Spam, Spam, \n\n\n\ndef primeras_dos_lineas():\n    repetir(spam, 4)\n    repetir(spam, 4)\n\n\nprimeras_dos_lineas()\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \n\n\n\ndef ultimas_tres_lineas():\n    repetir(spam, 2)\n    print('(Lovely Spam, Wonderful Spam!)')\n    repetir(spam, 2)\n\n\nultimas_tres_lineas()\n\nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\ndef coro():\n    primeras_dos_lineas()\n    ultimas_tres_lineas()\n\n\ncoro()\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\nCiclos\nLa estructura de repetición FOR tiene la siguiente sintaxis:\nfor \\(&lt;var&gt;\\) in \\(range(valor):\\)\n\nfor i in range(2):\n    print(i)\n\n0\n1\n\n\n\nfor i in range(2):\n    print(\"Coro\", i)\n    coro()\n    print()\n\nCoro 0\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nCoro 1\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\ndef n_coros(n):\n    for i in range(n):\n        coro()\n        print()\n\n\nn_coros(5)\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVariables y parámetros locales\nLas variables y parámentros locales son aquellas cuya influencia se remita a una función.\n\ndef dos_partes(parte1,parte2):\n  total = parte1 + parte2\n  print(total)\n\n\nparte1='yo '\nparte2='y tu '\ndos_partes(parte1,parte2)\n\nyo y tu \n\n\n\n\nEstructura de decisión\n\nx\n\n5\n\n\n\ny\n\n7\n\n\n\nif x &gt; 0:\n    print('x is positive')  # Decisión sencilla\n\nx is positive\n\n\n\nif x % 2 == 0:\n    print('x es par')\nelse:\n    print('x es non')  # Decisión doble\n\nx es non\n\n\n\nif x &lt; y:\n    print('x es menor que y')\nelif x &gt; y:\n    print('x es mayor que y')\nelse:\n    print('x y y son iguales') # Decisiones anidadas\n\nx es menor que y\n\n\ntambién puede escribirse como:\n\nif x &lt; y:\n    print('x es menor que y')\nelse:\n    if x &gt; y:\n           print('x es mayor que y')\n    else:\n          print('x y y son iguales') # Decisiones anidadas\n\nx es menor que y\n\n\n\nif 0 &lt; x:\n    if x &lt; 10:\n        print('x es un número positivo de un solo dígito.')\n\nx es un número positivo de un solo dígito.\n\n\n\na=10\na\n\n10\n\n\n\nb=5\nb\n\n5\n\n\n\nif a &lt; b:\n    print('a es menor que b')\nelse:\n    print('b es menor que a')\n\nb es menor que a\n\n\n\na,b=10,5\nprint(f\"{'a' if a&lt;b else 'b'} es menor\")\n\nb es menor"
+  },
+  {
+    "objectID": "python/introduccion-python.html#estructuras-de-datos-y-objetos",
+    "href": "python/introduccion-python.html#estructuras-de-datos-y-objetos",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Estructuras de datos y objetos",
+    "text": "Estructuras de datos y objetos\n\nListas\nUna lista es una secuencia de valores, no deben ser del mismo tipo necesariamente. Se crean utilizando corchetes [ ]\n\nLista_1 = [1,2,3,4,5]\nLista_1\n\n[1, 2, 3, 4, 5]\n\n\n\nSopes = ['Pollo', 'Chorizo', 'Frijol']\nSopes\n\n['Pollo', 'Chorizo', 'Frijol']\n\n\nPuede haber listas “anidadas”\n\nt = ['spam', 2.0, 5, [10, 20]]\nt\n\n['spam', 2.0, 5, [10, 20]]\n\n\nPuede haber listas vacias\n\nVacia = []\nVacia\n\n[]\n\n\n‘List’ nuestra los componentes de la lista\n\nlist(Sopes)\n\n['Pollo', 'Chorizo', 'Frijol']\n\n\n‘Len’ devuelve el número de componentes de la lista\n\nlen(t)\n\n4\n\n\nSe puede leer un elemento en específico de una lista\n\nSopes[2]\n\n'Frijol'\n\n\nY se puede cambiar un elemento\nSopes[1] = ‘Tasajo’ Sopes[1]\n\nSopes\n\n['Pollo', 'Chorizo', 'Frijol']\n\n\nEsto implica que las listas son mutables, es decir, se pueden modificar\nEl operador ‘in’ indica si un determinado elemento pertenece a la lista\n\n'Tasajo' in Sopes\n\nFalse\n\n\n\n'Chorizo' in Sopes\n\nTrue\n\n\nSe puede trabajar con segmentos de una lista.\n\nLetras = ['a','b','c','d','e','f','g']\nLetras\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g']\n\n\n\nLetras[1:3]\n\n['b', 'c']\n\n\nOjo: el índice empieza en la posición ‘0’\n\nElemento de la lista\nElemento de la lista\n\n\nLetras[0:3]\n\n['a', 'b', 'c']\n\n\nQue es lo mismo que\n\nLetras[:3]\n\n['a', 'b', 'c']\n\n\nFunciona igual de una posición inicial hasta el final\n\nLetras[2:]\n\n['c', 'd', 'e', 'f', 'g']\n\n\nO la lista completa\n\nLetras[:]\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g']\n\n\nLas listas se pueden concatenar\n\nConc=Sopes+Letras\nConc\n\n['Pollo', 'Chorizo', 'Frijol', 'a', 'b', 'c', 'd', 'e', 'f', 'g']\n\n\nO se pueden repetir\n\nSopes*4\n\n['Pollo',\n 'Chorizo',\n 'Frijol',\n 'Pollo',\n 'Chorizo',\n 'Frijol',\n 'Pollo',\n 'Chorizo',\n 'Frijol',\n 'Pollo',\n 'Chorizo',\n 'Frijol']\n\n\n\n[Sopes] * 4\n\n[['Pollo', 'Chorizo', 'Frijol'],\n ['Pollo', 'Chorizo', 'Frijol'],\n ['Pollo', 'Chorizo', 'Frijol'],\n ['Pollo', 'Chorizo', 'Frijol']]\n\n\nSólo para listas con elementos numéricos\n\nsum(Lista_1)\n\n15\n\n\n\nmin(Lista_1)\n\n1\n\n\n\nmax(Lista_1)\n\n5\n\n\n\n\nMétodos\nappend’ agrega al final un elemento a una Lista\n\nSopes.append('Rajas')\nSopes\n\n['Pollo', 'Chorizo', 'Frijol', 'Rajas']\n\n\n‘extend’ agrega elementos tomados de una lista adicional\n\nSopes.extend(['Elote', 'Queso'])\nSopes\n\n['Pollo', 'Chorizo', 'Frijol', 'Rajas', 'Elote', 'Queso']\n\n\n‘pop’ elimina el elemento de determinado índice\n\nSopes.pop(3)\nSopes\n\n['Pollo', 'Chorizo', 'Frijol', 'Elote', 'Queso']\n\n\n‘remove’ elimina el elemento\n\nSopes.remove('Pollo')\nSopes\n\n['Chorizo', 'Frijol', 'Elote', 'Queso']\n\n\n\nSopes.remove('Carne')\n\n\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\n/tmp/ipython-input-2967898739.py in &lt;cell line: 0&gt;()\n----&gt; 1 Sopes.remove('Carne')\n\nValueError: list.remove(x): x not in list\n\n\n\nUna cadena no es una lista, es una secuencia de caracteres, que no es lo mismo que una lista de caracteres\n\nNombre = 'Juan'\nNombre\n\n'Juan'\n\n\n‘list’ divide una cadena en sus elementos\n\nn=list(Nombre)\nn\n\n['J', 'u', 'a', 'n']\n\n\n‘split’ en palabras\n\nUltra='La porra te saluda'\nUltra\n\n'La porra te saluda'\n\n\n\nUltra.split()\n\n['La', 'porra', 'te', 'saluda']\n\n\nEn este método se puede establecer el delimitador\n\nf='ex-comadre'\ng=f.split('-')\ng\n\n['ex', 'comadre']\n\n\n‘join’ permite concatenar listas de cadenas en una sola. Se sugiere invocarlo en el delimitador y que la lista sea el argumento\n\nh=['waiting','for','a','girl','like','you']\nh\n\n['waiting', 'for', 'a', 'girl', 'like', 'you']\n\n\n\ndelimiter = ' '\nj = delimiter.join(h)\nj\n\n'waiting for a girl like you'\n\n\nSe puede recorrer una lista con un ciclo contador (for)\n\nfor sopes in Sopes:\n  print(sopes)\n\nChorizo\nFrijol\nElote\nQueso\n\n\n\nfor palabra in Ultra.split():\n  print(palabra)\n\nLa\nporra\nte\nsaluda\n\n\n‘sorted’ ordena los elementos de una lista sin modificarla\n\nsorted(Sopes)\n\n['Chorizo', 'Elote', 'Frijol', 'Queso']\n\n\n\nSopes\n\n['Chorizo', 'Frijol', 'Elote', 'Queso']\n\n\n\nsorted('Ultra')\n\n['U', 'a', 'l', 'r', 't']\n\n\nEl resultado es una lista, si se desea convertirlo en una cadena\n\n''.join(sorted('Ultra'))\n\n'Ualrt'"
+  },
+  {
+    "objectID": "python/introduccion-python.html#diccionarios",
+    "href": "python/introduccion-python.html#diccionarios",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Diccionarios",
+    "text": "Diccionarios\nUn diccionario es una colección mutable no ordenada de pares de datos ‘llave:valor’ donde la llaves es única pero el valor no necesariamente\n\nmi_dicc = {'nombre':'Juan', 'edad':25 , 'profesión':'ingeniero'} # 'nombre' es la llave, 'Juan' es el valor... Los diccionarios se crean con {}\nmi_dicc\n\n{'nombre': 'Juan', 'edad': 25, 'profesión': 'ingeniero'}\n\n\nPara obtener un valor a partir de la llave\n\nprint(mi_dicc['nombre'])\n\nJuan\n\n\nPara agregar un valor\n\nmi_dicc['ciudad'] = 'Ciudad de México'\nmi_dicc\n\n{'nombre': 'Juan',\n 'edad': 25,\n 'profesión': 'ingeniero',\n 'ciudad': 'Ciudad de México'}\n\n\nPara modificar un valor\n\nmi_dicc['edad'] = 30\nmi_dicc\n\n{'nombre': 'Juan',\n 'edad': 30,\n 'profesión': 'ingeniero',\n 'ciudad': 'Ciudad de México'}\n\n\nPara eliminar un valor\n\ndel mi_dicc['profesión']\nmi_dicc\n\n{'nombre': 'Juan', 'edad': 30, 'ciudad': 'Ciudad de México'}\n\n\nEn un diccionario, el error producido es ‘key error’\n\nmi_dicc['llave']\n\n\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\n/tmp/ipython-input-3499734797.py in &lt;cell line: 0&gt;()\n----&gt; 1 mi_dicc['llave']\n\nKeyError: 'llave'\n\n\n\n\nlen(mi_dicc)\n\n3\n\n\n\nmi_dicc\n\n{'nombre': 'Juan', 'edad': 30, 'ciudad': 'Ciudad de México'}\n\n\n\n'nombre' in mi_dicc #opera sobre la llave\n\nTrue"
+  },
+  {
+    "objectID": "python/introduccion-python.html#tuplas",
+    "href": "python/introduccion-python.html#tuplas",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Tuplas",
+    "text": "Tuplas\nUna tupla es una secuencia de valores de cualquier tipo indexados por números enteros; a diferencia de las listas, son inmutables\n\nz = 'c','o','m','p','u','t','a','c','i','o','n'\nz\n\n('c', 'o', 'm', 'p', 'u', 't', 'a', 'c', 'i', 'o', 'n')\n\n\n\ntype(z)\n\ntuple\n\n\nNo es necesario el uso de parentésis\n\nz1 = 'W', # Una tupla de un sólo elemento debe terminar con una ','\ntype(z1)\n\ntuple\n\n\n\nz2 = 'W' # De lo contrario, es una cadena\ntype(z2)\n\nstr\n\n\n\nz3 = tuple('Cadena')\nz3\n\n('C', 'a', 'd', 'e', 'n', 'a')\n\n\n\nz[2]\n\n'm'\n\n\n\nz[1:3] # La mayoría de los operadores que se aplican a listas también se pueden aplicar a tuplas\n\n('o', 'm')\n\n\n\ntuple('arr')+tuple('ooooz')\n\n('a', 'r', 'r', 'o', 'o', 'o', 'o', 'z')\n\n\n\ntuple('gol')*4\n\n('g', 'o', 'l', 'g', 'o', 'l', 'g', 'o', 'l', 'g', 'o', 'l')\n\n\n\nsorted(z)\n\n['a', 'c', 'c', 'i', 'm', 'n', 'o', 'o', 'p', 't', 'u']\n\n\n\nreversed(z)\n\n&lt;reversed at 0x7be14bf726e0&gt;\n\n\n\ntuple(reversed(z))\n\n('n', 'o', 'i', 'c', 'a', 't', 'u', 'p', 'm', 'o', 'c')\n\n\n\nz.remove('o')\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\n/tmp/ipython-input-3082548791.py in &lt;cell line: 0&gt;()\n----&gt; 1 z.remove('o')\n\nAttributeError: 'tuple' object has no attribute 'remove'"
+  },
+  {
+    "objectID": "python/introduccion-python.html#arreglos",
+    "href": "python/introduccion-python.html#arreglos",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Arreglos",
+    "text": "Arreglos\nNumpy es una librería fundamental para la computación científica con Python. Permite la creación y manipulación de arreglos (arrays) multidimensionales. Además, ofrece una amplia gama de funciones matemáticas y estadísticas.\n\nimport numpy as np\n# Figura 1\n\n\nArreglo de una dimensión\n\ndata1=[1,2,3]\narr_1d=np.array(data1)\nprint(arr_1d) #Figura 2\n\n[1 2 3]\n\n\n\n\nArreglo de dos dimensiones\n\ndata2=[[1,2],[3,4]]\narr_2d=np.array(data2)\nprint(arr_2d) #Figura 2\n\n[[1 2]\n [3 4]]\n\n\n\n\nArreglo de tres dimensiones\n\ndata3 = [[[1, 2, 3],[4, 5, 6],[7, 8, 9]],\n         [[1, 2, 3],[4, 5, 6],[7, 8, 9]],\n         [[1, 2, 3],[4, 5, 6],[7, 8, 9]]]\narr_3d = np.array(data3)\nprint(arr_3d) #Figura 3\n\n[[[1 2 3]\n  [4 5 6]\n  [7 8 9]]\n\n [[1 2 3]\n  [4 5 6]\n  [7 8 9]]\n\n [[1 2 3]\n  [4 5 6]\n  [7 8 9]]]"
+  },
+  {
+    "objectID": "python/introduccion-python.html#creación-de-arreglos",
+    "href": "python/introduccion-python.html#creación-de-arreglos",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Creación de arreglos",
+    "text": "Creación de arreglos\nFunciones adicionales para crear un arreglo\n\n# Arreglo cuyos valores son todos 0\na = np.zeros((2,3))\nprint(a)\n\n[[0. 0. 0.]\n [0. 0. 0.]]\n\n\n\n# Arreglo cuyos valores son todos 1\nb = np.ones((2,3,4))\nprint(b)\n\n[[[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]\n\n [[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]]\n\n\n\n# Arreglo cuyos valores son todos \"8\", o cualquier otro valore indicado en el segundo parámentro\nc = np.full((3,4),8)\nprint(c)\n\n[[8 8 8 8]\n [8 8 8 8]\n [8 8 8 8]]\n\n\nCreación de un arreglo básado en función de rangos\n\na=np.linspace(1,10,4) # (mínimo, máximo, no. de elementos)\nprint(a)\n\n[ 1.  4.  7. 10.]\n\n\n\na2=np.arange(9)\nprint(a2)\n\n[0 1 2 3 4 5 6 7 8]\n\n\n\na3=np.arange(1,11,2) # (mínimo, máximo, paso)\nprint(a3)\n\n[1 3 5 7 9]\n\n\n\n# Inicialización del arreglo con valores aleatorios\nb=np.random.rand(2,3,2)\nprint(b)\n\n[[[0.58961366 0.7826446 ]\n  [0.51061397 0.38084648]\n  [0.94427869 0.45175176]]\n\n [[0.20652389 0.49396422]\n  [0.63214339 0.22043267]\n  [0.8513416  0.89711989]]]\n\n\n\n# Inicialización del arreglo con valores aleatorios con una distribución normal\nc=np.random.randn(2,3)\nprint(c)\n\n[[-0.35567627  0.73770074  0.75545374]\n [ 0.75522022  0.04958392  0.90407643]]\n\n\n\nimport matplotlib.pyplot as plt\n\n\nm=np.random.randn(1000000)\nplt.hist(m,bins=200)\nplt.show()"
+  },
+  {
+    "objectID": "python/introduccion-python.html#características-de-un-arreglo",
+    "href": "python/introduccion-python.html#características-de-un-arreglo",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Características de un arreglo",
+    "text": "Características de un arreglo\nEn numpy (figura 3):\n\nCada dimensión se denomina axis\nEl número de dimensiones se denomina rank\nLa lista de dimensiones con su correspondiente longitud se denomina shape\nEl número total de elementos se denomina size\n\n\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\nA[0][1]\n\nnp.int64(2)\n\n\n\nA[1]\n\narray([4, 5, 6])\n\n\n\nA[1:3][1:3]\n\narray([[7, 8, 9]])\n\n\n\nA = np.array([[1,2],[3,4]])\nB = np.array([[5,6],[7,8]])\nprint(A+B)\n\n[[ 6  8]\n [10 12]]\n\n\n\nC = np.dot(A,B)\nprint(C)\n\n[[19 22]\n [43 50]]\n\n\n\nD = A.T\nprint(D)\n\n[[1 3]\n [2 4]]\n\n\n\nF=np.arange(1,10,1) # arreglo de una dimensión\nprint(F)\n\n[1 2 3 4 5 6 7 8 9]\n\n\n\nprint(F[5])\n\n6\n\n\n\nprint(F[2:5])\n\n[3 4 5]\n\n\n\nprint(F[4:])\n\n[5 6 7 8 9]\n\n\n\nprint(F[0::3])\n\n[1 4 7]\n\n\nAreglo multidemsional\n\ndata=[[1,2,3],[4,5,6],[7,8,9]]\narreglo_multi=np.array(data)\nprint(arreglo_multi)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\nprint(arreglo_multi[0,2]) #figura 4\n\n3\n\n\n\nprint(arreglo_multi[2:])\n\n[[7 8 9]]\n\n\n\nprint(arreglo_multi[1:,1:])\n\n[[5 6]\n [8 9]]"
+  },
+  {
+    "objectID": "python/introduccion-python.html#modificación-de-un-arreglo",
+    "href": "python/introduccion-python.html#modificación-de-un-arreglo",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Modificación de un arreglo",
+    "text": "Modificación de un arreglo\n\narreglo1=np.arange(12)\nprint(arreglo1)\n\n[ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n\n\nprint(\"shape\",arreglo1.shape)\n\nshape (12,)\n\n\n\nprint(\"arreglo1: \", arreglo1)\n\narreglo1:  [ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n\n\narreglo1.shape=(4,3)\nprint(\"Shape: \", arreglo1.shape)\n\nShape:  (4, 3)\n\n\n\nprint(\"Arreglo1:\\n\", arreglo1) # Devuelve un nuevo arreglo con los mismos datos\n\nArreglo1:\n [[ 0  1  2]\n [ 3  4  5]\n [ 6  7  8]\n [ 9 10 11]]\n\n\n\narreglo2=arreglo1.reshape(3,4)\nprint(\"Shape:\" , arreglo2.shape)\n\nShape: (3, 4)\n\n\n\nprint(\"Arreglo2: \\n\",arreglo2)\n\nArreglo2: \n [[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n\nModificaciones en un arreglo impactan en el precedente\n\narreglo2[0,1]=20\n\n\nprint(\"Arreglo2: \\n\", arreglo2)\n\nArreglo2: \n [[ 0 20  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n\n\nprint(\"Arreglo1: \\n\", arreglo1)\n\nArreglo1: \n [[ 0 20  2]\n [ 3  4  5]\n [ 6  7  8]\n [ 9 10 11]]"
+  },
+  {
+    "objectID": "python/introduccion-python.html#añadir-y-eliminar-elementos-de-un-arreglo",
+    "href": "python/introduccion-python.html#añadir-y-eliminar-elementos-de-un-arreglo",
+    "title": "Proyecto Jupyter: Aprendamos Python",
+    "section": "Añadir y eliminar elementos de un arreglo",
+    "text": "Añadir y eliminar elementos de un arreglo\n\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\nb=np.delete(A,1,axis=0)\nprint(b)\n\n[[1 2 3]\n [7 8 9]]\n\n\n\nc=np.append(b,[[10,11,12]],axis=0)\nprint(c)\n\n[[ 1  2  3]\n [ 7  8  9]\n [10 11 12]]"
+  },
+  {
+    "objectID": "julia/introduccion-julia.html",
+    "href": "julia/introduccion-julia.html",
+    "title": "Introducción a Julia",
+    "section": "",
+    "text": "Contenido pendiente: aún no se cuenta con el notebook o material fuente de Julia para este proyecto. Cuando esté disponible, seguirá la misma estructura que las páginas de R y Python (instalación, tipos de datos, estructuras de control, estructuras de datos, funciones, particularidades)."
   }
 ]
