@@ -13,7 +13,7 @@ website:
         menu:
           - href: python/introduccion-python.ipynb
             text: Python
-          - href: r/introduccion-r.qmd
+          - href: r/introduccion-r.ipynb
             text: R
           - href: julia/introduccion-julia.qmd
             text: Julia
