@@ -1,0 +1,85 @@
+---
+title: "Ejercicios verificables: Julia"
+---
+
+Mismos cuatro ejercicios que en Python y R. Este código está listo para correr, pero el sitio aún no lo ejecuta automáticamente (hace falta instalar Julia y el kernel IJulia).
+
+## 1. Matemáticas: verificar si un número es primo
+
+```julia
+function es_primo(n)
+    if n < 2
+        return false
+    end
+    for i in 2:isqrt(n)
+        if n % i == 0
+            return false
+        end
+    end
+    return true
+end
+
+casos = Dict(7 => true, 15 => false, 2 => true, 97 => true)
+for (n, esperado) in casos
+    resultado = es_primo(n)
+    @assert resultado == esperado "Falló en n=$n"
+    println("es_primo($n) = $resultado  [correcto]")
+end
+```
+
+## 2. Estadística descriptiva
+
+```julia
+using Statistics
+
+datos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]
+
+media = mean(datos)
+mediana = median(datos)
+desv_std = std(datos)
+
+@assert round(media, digits=2) == 15.9
+@assert mediana == 15.0
+@assert round(desv_std, digits=2) == 6.01
+
+println("Media: ", media)
+println("Mediana: ", mediana)
+println("Desviación estándar: ", round(desv_std, digits=2))
+```
+
+## 3. Resolver una ecuación cuadrática
+
+```julia
+function resolver_cuadratica(a, b, c)
+    disc = b^2 - 4*a*c
+    x1 = (-b + sqrt(disc)) / (2*a)
+    x2 = (-b - sqrt(disc)) / (2*a)
+    return x1, x2
+end
+
+a, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0 -> raíces 1 y 2
+x1, x2 = resolver_cuadratica(a, b, c)
+
+for x in (x1, x2)
+    valor = a*x^2 + b*x + c
+    @assert abs(valor) < 1e-9
+end
+
+println("Raíces: ", x1, ", ", x2)
+println("Ambas raíces satisfacen la ecuación (verificado)")
+```
+
+## 4. Graficar una función
+
+```julia
+using Plots
+
+x = range(-10, 10, length=100)
+y = x .^ 2
+
+plot(x, y, title="f(x) = x^2", xlabel="x", ylabel="f(x)", legend=false)
+```
+
+## Ejercicio propuesto
+
+Modifica el ejercicio 2 para calcular también la varianza (`var(datos)`) y agrega tu propio `@assert` para verificarla.

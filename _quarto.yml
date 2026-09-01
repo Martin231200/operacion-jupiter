@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: _site
-
 website:
   title: "Operación Jupyter"
   description: "Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM"
@@ -17,13 +16,22 @@ website:
             text: R
           - href: julia/introduccion-julia.qmd
             text: Julia
+      - text: Tutoriales
+        menu:
+          - href: tutoriales/index.qmd
+            text: Comparación
+          - href: tutoriales/ejercicios-python.ipynb
+            text: Ejercicios Python
+          - href: tutoriales/ejercicios-r.ipynb
+            text: Ejercicios R
+          - href: tutoriales/ejercicios-julia.qmd
+            text: Ejercicios Julia
       - href: libros/index.qmd
         text: Libros
       - href: semblanza/index.qmd
         text: Semblanza de los profesores
   page-footer:
     center: "Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM"
-
 format:
   html:
     theme: cosmo
