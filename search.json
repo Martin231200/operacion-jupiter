@@ -1,5 +1,89 @@
 [
   {
+    "objectID": "tutoriales/ejercicios-julia.html",
+    "href": "tutoriales/ejercicios-julia.html",
+    "title": "Ejercicios verificables: Julia",
+    "section": "",
+    "text": "Mismos cuatro ejercicios que en Python y R. Este código está listo para correr, pero el sitio aún no lo ejecuta automáticamente (hace falta instalar Julia y el kernel IJulia)."
+  },
+  {
+    "objectID": "tutoriales/ejercicios-julia.html#matemáticas-verificar-si-un-número-es-primo",
+    "href": "tutoriales/ejercicios-julia.html#matemáticas-verificar-si-un-número-es-primo",
+    "title": "Ejercicios verificables: Julia",
+    "section": "1. Matemáticas: verificar si un número es primo",
+    "text": "1. Matemáticas: verificar si un número es primo\nfunction es_primo(n)\n    if n &lt; 2\n        return false\n    end\n    for i in 2:isqrt(n)\n        if n % i == 0\n            return false\n        end\n    end\n    return true\nend\n\ncasos = Dict(7 =&gt; true, 15 =&gt; false, 2 =&gt; true, 97 =&gt; true)\nfor (n, esperado) in casos\n    resultado = es_primo(n)\n    @assert resultado == esperado \"Falló en n=$n\"\n    println(\"es_primo($n) = $resultado  [correcto]\")\nend"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-julia.html#estadística-descriptiva",
+    "href": "tutoriales/ejercicios-julia.html#estadística-descriptiva",
+    "title": "Ejercicios verificables: Julia",
+    "section": "2. Estadística descriptiva",
+    "text": "2. Estadística descriptiva\nusing Statistics\n\ndatos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]\n\nmedia = mean(datos)\nmediana = median(datos)\ndesv_std = std(datos)\n\n@assert round(media, digits=2) == 15.9\n@assert mediana == 15.0\n@assert round(desv_std, digits=2) == 6.01\n\nprintln(\"Media: \", media)\nprintln(\"Mediana: \", mediana)\nprintln(\"Desviación estándar: \", round(desv_std, digits=2))"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-julia.html#resolver-una-ecuación-cuadrática",
+    "href": "tutoriales/ejercicios-julia.html#resolver-una-ecuación-cuadrática",
+    "title": "Ejercicios verificables: Julia",
+    "section": "3. Resolver una ecuación cuadrática",
+    "text": "3. Resolver una ecuación cuadrática\nfunction resolver_cuadratica(a, b, c)\n    disc = b^2 - 4*a*c\n    x1 = (-b + sqrt(disc)) / (2*a)\n    x2 = (-b - sqrt(disc)) / (2*a)\n    return x1, x2\nend\n\na, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2\nx1, x2 = resolver_cuadratica(a, b, c)\n\nfor x in (x1, x2)\n    valor = a*x^2 + b*x + c\n    @assert abs(valor) &lt; 1e-9\nend\n\nprintln(\"Raíces: \", x1, \", \", x2)\nprintln(\"Ambas raíces satisfacen la ecuación (verificado)\")"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-julia.html#graficar-una-función",
+    "href": "tutoriales/ejercicios-julia.html#graficar-una-función",
+    "title": "Ejercicios verificables: Julia",
+    "section": "4. Graficar una función",
+    "text": "4. Graficar una función\nusing Plots\n\nx = range(-10, 10, length=100)\ny = x .^ 2\n\nplot(x, y, title=\"f(x) = x^2\", xlabel=\"x\", ylabel=\"f(x)\", legend=false)"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-julia.html#ejercicio-propuesto",
+    "href": "tutoriales/ejercicios-julia.html#ejercicio-propuesto",
+    "title": "Ejercicios verificables: Julia",
+    "section": "Ejercicio propuesto",
+    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (var(datos)) y agrega tu propio @assert para verificarla."
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python.html",
+    "href": "tutoriales/ejercicios-python.html",
+    "title": "Ejercicios verificables: Python",
+    "section": "",
+    "text": "Cada ejercicio corre el cálculo y compara el resultado contra el valor esperado con assert. Si la celda corre sin error, el resultado es correcto."
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python.html#matemáticas-verificar-si-un-número-es-primo",
+    "href": "tutoriales/ejercicios-python.html#matemáticas-verificar-si-un-número-es-primo",
+    "title": "Ejercicios verificables: Python",
+    "section": "1. Matemáticas: verificar si un número es primo",
+    "text": "1. Matemáticas: verificar si un número es primo\n\ndef es_primo(n):\n    if n &lt; 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ncasos = {7: True, 15: False, 2: True, 1: False, 97: True}\nfor n, esperado in casos.items():\n    resultado = es_primo(n)\n    assert resultado == esperado, f\"Falló en n={n}\"\n    print(f\"es_primo({n}) = {resultado}  [correcto]\")"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python.html#estadística-descriptiva",
+    "href": "tutoriales/ejercicios-python.html#estadística-descriptiva",
+    "title": "Ejercicios verificables: Python",
+    "section": "2. Estadística descriptiva",
+    "text": "2. Estadística descriptiva\nSe calculan media, mediana y desviación estándar de un conjunto de datos y se comparan contra los valores esperados.\n\nimport statistics as st\n\ndatos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]\n\nmedia = st.mean(datos)\nmediana = st.median(datos)\ndesv_std = st.stdev(datos)\n\nassert round(media, 2) == 15.9\nassert mediana == 15.0\nassert round(desv_std, 2) == 6.01\n\nprint(f\"Media: {media}\")\nprint(f\"Mediana: {mediana}\")\nprint(f\"Desviación estándar: {round(desv_std, 2)}\")"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python.html#resolver-una-ecuación-cuadrática",
+    "href": "tutoriales/ejercicios-python.html#resolver-una-ecuación-cuadrática",
+    "title": "Ejercicios verificables: Python",
+    "section": "3. Resolver una ecuación cuadrática",
+    "text": "3. Resolver una ecuación cuadrática\nSe resuelve \\(ax^2+bx+c=0\\) con la fórmula general y se verifica sustituyendo las raíces en la ecuación original.\n\nimport math\n\ndef resolver_cuadratica(a, b, c):\n    disc = b**2 - 4*a*c\n    x1 = (-b + math.sqrt(disc)) / (2*a)\n    x2 = (-b - math.sqrt(disc)) / (2*a)\n    return x1, x2\n\na, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0  -&gt;  raíces 1 y 2\nx1, x2 = resolver_cuadratica(a, b, c)\n\nfor x in (x1, x2):\n    valor = a*x**2 + b*x + c\n    assert abs(valor) &lt; 1e-9, f\"x={x} no satisface la ecuación\"\n\nprint(f\"Raíces: {x1}, {x2}\")\nprint(\"Ambas raíces satisfacen la ecuación (verificado)\")"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python.html#graficar-una-función",
+    "href": "tutoriales/ejercicios-python.html#graficar-una-función",
+    "title": "Ejercicios verificables: Python",
+    "section": "4. Graficar una función",
+    "text": "4. Graficar una función\nSe grafica \\(f(x) = x^2\\) para confirmar visualmente su forma.\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(-10, 10, 100)\ny = x**2\n\nplt.plot(x, y)\nplt.title(\"f(x) = x^2\")\nplt.xlabel(\"x\")\nplt.ylabel(\"f(x)\")\nplt.grid(True)\nplt.show()"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python.html#ejercicio-propuesto",
+    "href": "tutoriales/ejercicios-python.html#ejercicio-propuesto",
+    "title": "Ejercicios verificables: Python",
+    "section": "Ejercicio propuesto",
+    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (st.variance(datos)) y agrega tu propio assert para verificarla."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Operación Jupyter",
@@ -341,5 +425,68 @@
     "title": "Introducción a Julia",
     "section": "",
     "text": "Contenido pendiente: aún no se cuenta con el notebook o material fuente de Julia para este proyecto. Cuando esté disponible, seguirá la misma estructura que las páginas de R y Python (instalación, tipos de datos, estructuras de control, estructuras de datos, funciones, particularidades)."
+  },
+  {
+    "objectID": "tutoriales/index.html",
+    "href": "tutoriales/index.html",
+    "title": "Tutoriales comparativos",
+    "section": "",
+    "text": "Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado."
+  },
+  {
+    "objectID": "tutoriales/index.html#comparación-de-lenguajes",
+    "href": "tutoriales/index.html#comparación-de-lenguajes",
+    "title": "Tutoriales comparativos",
+    "section": "Comparación de lenguajes",
+    "text": "Comparación de lenguajes\n\n\n\n\n\n\n\n\n\nAspecto\nPython\nR\nJulia\n\n\n\n\nIndexado\nDesde 0\nDesde 1\nDesde 1\n\n\nBloques de código\nIndentación obligatoria\nLlaves { }\nend para cerrar bloques\n\n\nAsignación\n=\n&lt;- (convención)\n=\n\n\nTipado\nDinámico\nDinámico\nDinámico, con despacho múltiple\n\n\nEstructura de datos principal\nLista / numpy.array\nVector (nativo)\nArray (nativo)\n\n\nManejo de datos tabulares\npandas.DataFrame\ndata.frame (nativo)\nDataFrames.jl\n\n\nVisualización\nmatplotlib\nplot() / ggplot2\nPlots.jl\n\n\nEnfoque original\nPropósito general\nEstadística y gráficos\nCómputo numérico de alto desempeño\n\n\nEjecución\nInterpretado\nInterpretado\nCompilado JIT (más rápido en cómputo pesado)"
+  },
+  {
+    "objectID": "tutoriales/index.html#ventajas-y-desventajas",
+    "href": "tutoriales/index.html#ventajas-y-desventajas",
+    "title": "Tutoriales comparativos",
+    "section": "Ventajas y desventajas",
+    "text": "Ventajas y desventajas\nPython\n\nA favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.\nEn contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.\n\nR\n\nA favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.\nEn contra: fuera de estadística y visualización es menos versátil que Python.\n\nJulia\n\nA favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.\nEn contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT)."
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r.html",
+    "href": "tutoriales/ejercicios-r.html",
+    "title": "Ejercicios verificables: R",
+    "section": "",
+    "text": "Mismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. Cada uno verifica el resultado con stopifnot() (equivalente en R a assert)."
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r.html#matemáticas-verificar-si-un-número-es-primo",
+    "href": "tutoriales/ejercicios-r.html#matemáticas-verificar-si-un-número-es-primo",
+    "title": "Ejercicios verificables: R",
+    "section": "1. Matemáticas: verificar si un número es primo",
+    "text": "1. Matemáticas: verificar si un número es primo\n\nes_primo &lt;- function(n) {\n  if (n &lt; 2) return(FALSE)\n  for (i in 2:floor(sqrt(n))) {\n    if (n %% i == 0) return(FALSE)\n  }\n  return(TRUE)\n}\n\ncasos &lt;- list(`7` = TRUE, `15` = FALSE, `2` = TRUE, `97` = TRUE)\nfor (n in names(casos)) {\n  resultado &lt;- es_primo(as.numeric(n))\n  stopifnot(resultado == casos[[n]])\n  cat(sprintf(\"es_primo(%s) = %s  [correcto]\\n\", n, resultado))\n}"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r.html#estadística-descriptiva",
+    "href": "tutoriales/ejercicios-r.html#estadística-descriptiva",
+    "title": "Ejercicios verificables: R",
+    "section": "2. Estadística descriptiva",
+    "text": "2. Estadística descriptiva\n\ndatos &lt;- c(12, 15, 12, 18, 21, 15, 15, 9, 30, 12)\n\nmedia &lt;- mean(datos)\nmediana &lt;- median(datos)\ndesv_std &lt;- sd(datos)\n\nstopifnot(round(media, 2) == 15.9)\nstopifnot(mediana == 15.0)\nstopifnot(round(desv_std, 2) == 6.01)\n\ncat(\"Media:\", media, \"\\n\")\ncat(\"Mediana:\", mediana, \"\\n\")\ncat(\"Desviación estándar:\", round(desv_std, 2), \"\\n\")"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r.html#resolver-una-ecuación-cuadrática",
+    "href": "tutoriales/ejercicios-r.html#resolver-una-ecuación-cuadrática",
+    "title": "Ejercicios verificables: R",
+    "section": "3. Resolver una ecuación cuadrática",
+    "text": "3. Resolver una ecuación cuadrática\n\nresolver_cuadratica &lt;- function(a, b, c) {\n  disc &lt;- b^2 - 4*a*c\n  x1 &lt;- (-b + sqrt(disc)) / (2*a)\n  x2 &lt;- (-b - sqrt(disc)) / (2*a)\n  return(c(x1, x2))\n}\n\na &lt;- 1; b &lt;- -3; c &lt;- 2  # x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2\nraices &lt;- resolver_cuadratica(a, b, c)\n\nfor (x in raices) {\n  valor &lt;- a*x^2 + b*x + c\n  stopifnot(abs(valor) &lt; 1e-9)\n}\n\ncat(\"Raíces:\", raices, \"\\n\")\ncat(\"Ambas raíces satisfacen la ecuación (verificado)\\n\")"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r.html#graficar-una-función",
+    "href": "tutoriales/ejercicios-r.html#graficar-una-función",
+    "title": "Ejercicios verificables: R",
+    "section": "4. Graficar una función",
+    "text": "4. Graficar una función\n\nx &lt;- seq(-10, 10, length.out = 100)\ny &lt;- x^2\n\nplot(x, y, type = \"l\",\n     main = \"f(x) = x^2\",\n     xlab = \"x\", ylab = \"f(x)\")\ngrid()"
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r.html#ejercicio-propuesto",
+    "href": "tutoriales/ejercicios-r.html#ejercicio-propuesto",
+    "title": "Ejercicios verificables: R",
+    "section": "Ejercicio propuesto",
+    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (var(datos)) y agrega tu propio stopifnot() para verificarla."
   }
 ]

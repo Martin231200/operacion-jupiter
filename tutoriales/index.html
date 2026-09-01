@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a Julia – Operación Jupyter</title>
+<title>Tutoriales comparativos – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -160,15 +160,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#comparación-de-lenguajes" id="toc-comparación-de-lenguajes" class="nav-link active" data-scroll-target="#comparación-de-lenguajes">Comparación de lenguajes</a></li>
+  <li><a href="#ventajas-y-desventajas" id="toc-ventajas-y-desventajas" class="nav-link" data-scroll-target="#ventajas-y-desventajas">Ventajas y desventajas</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción a Julia</h1>
+<h1 class="title">Tutoriales comparativos</h1>
 </div>
 
 
@@ -185,9 +192,107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Contenido pendiente: aún no se cuenta con el notebook o material fuente de Julia para este proyecto. Cuando esté disponible, seguirá la misma estructura que las páginas de R y Python (instalación, tipos de datos, estructuras de control, estructuras de datos, funciones, particularidades).</p>
+<p>Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado.</p>
+<ul>
+<li><a href="../tutoriales/ejercicios-python.html">Ejercicios en Python</a></li>
+<li><a href="../tutoriales/ejercicios-r.html">Ejercicios en R</a></li>
+<li><a href="../tutoriales/ejercicios-julia.html">Ejercicios en Julia</a></li>
+</ul>
+<section id="comparación-de-lenguajes" class="level2">
+<h2 class="anchored" data-anchor-id="comparación-de-lenguajes">Comparación de lenguajes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspecto</th>
+<th>Python</th>
+<th>R</th>
+<th>Julia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indexado</td>
+<td>Desde 0</td>
+<td>Desde 1</td>
+<td>Desde 1</td>
+</tr>
+<tr class="even">
+<td>Bloques de código</td>
+<td>Indentación obligatoria</td>
+<td>Llaves <code>{ }</code></td>
+<td><code>end</code> para cerrar bloques</td>
+</tr>
+<tr class="odd">
+<td>Asignación</td>
+<td><code>=</code></td>
+<td><code>&lt;-</code> (convención)</td>
+<td><code>=</code></td>
+</tr>
+<tr class="even">
+<td>Tipado</td>
+<td>Dinámico</td>
+<td>Dinámico</td>
+<td>Dinámico, con despacho múltiple</td>
+</tr>
+<tr class="odd">
+<td>Estructura de datos principal</td>
+<td>Lista / <code>numpy.array</code></td>
+<td>Vector (nativo)</td>
+<td>Array (nativo)</td>
+</tr>
+<tr class="even">
+<td>Manejo de datos tabulares</td>
+<td><code>pandas.DataFrame</code></td>
+<td><code>data.frame</code> (nativo)</td>
+<td><code>DataFrames.jl</code></td>
+</tr>
+<tr class="odd">
+<td>Visualización</td>
+<td><code>matplotlib</code></td>
+<td><code>plot()</code> / <code>ggplot2</code></td>
+<td><code>Plots.jl</code></td>
+</tr>
+<tr class="even">
+<td>Enfoque original</td>
+<td>Propósito general</td>
+<td>Estadística y gráficos</td>
+<td>Cómputo numérico de alto desempeño</td>
+</tr>
+<tr class="odd">
+<td>Ejecución</td>
+<td>Interpretado</td>
+<td>Interpretado</td>
+<td>Compilado JIT (más rápido en cómputo pesado)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ventajas-y-desventajas" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h2>
+<p><strong>Python</strong></p>
+<ul>
+<li>A favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.</li>
+<li>En contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.</li>
+</ul>
+<p><strong>R</strong></p>
+<ul>
+<li>A favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.</li>
+<li>En contra: fuera de estadística y visualización es menos versátil que Python.</li>
+</ul>
+<p><strong>Julia</strong></p>
+<ul>
+<li>A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.</li>
+<li>En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

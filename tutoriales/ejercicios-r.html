@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a Julia – Operación Jupyter</title>
+<title>Ejercicios verificables: R – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -160,15 +195,25 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#matemáticas-verificar-si-un-número-es-primo" id="toc-matemáticas-verificar-si-un-número-es-primo" class="nav-link active" data-scroll-target="#matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</a></li>
+  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">2. Estadística descriptiva</a></li>
+  <li><a href="#resolver-una-ecuación-cuadrática" id="toc-resolver-una-ecuación-cuadrática" class="nav-link" data-scroll-target="#resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</a></li>
+  <li><a href="#graficar-una-función" id="toc-graficar-una-función" class="nav-link" data-scroll-target="#graficar-una-función">4. Graficar una función</a></li>
+  <li><a href="#ejercicio-propuesto" id="toc-ejercicio-propuesto" class="nav-link" data-scroll-target="#ejercicio-propuesto">Ejercicio propuesto</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción a Julia</h1>
+<h1 class="title">Ejercicios verificables: R</h1>
 </div>
 
 
@@ -185,9 +230,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Contenido pendiente: aún no se cuenta con el notebook o material fuente de Julia para este proyecto. Cuando esté disponible, seguirá la misma estructura que las páginas de R y Python (instalación, tipos de datos, estructuras de control, estructuras de datos, funciones, particularidades).</p>
+<p>Mismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. Cada uno verifica el resultado con <code>stopifnot()</code> (equivalente en R a <code>assert</code>).</p>
+<section id="matemáticas-verificar-si-un-número-es-primo" class="level2">
+<h2 class="anchored" data-anchor-id="matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</h2>
+<div id="cell-3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>es_primo <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n <span class="sc">&lt;</span> <span class="dv">2</span>) <span class="fu">return</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="fu">floor</span>(<span class="fu">sqrt</span>(n))) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (n <span class="sc">%%</span> i <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="cn">FALSE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="cn">TRUE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>casos <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">7</span><span class="st">`</span> <span class="ot">=</span> <span class="cn">TRUE</span>, <span class="st">`</span><span class="at">15</span><span class="st">`</span> <span class="ot">=</span> <span class="cn">FALSE</span>, <span class="st">`</span><span class="at">2</span><span class="st">`</span> <span class="ot">=</span> <span class="cn">TRUE</span>, <span class="st">`</span><span class="at">97</span><span class="st">`</span> <span class="ot">=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">names</span>(casos)) {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  resultado <span class="ot">&lt;-</span> <span class="fu">es_primo</span>(<span class="fu">as.numeric</span>(n))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(resultado <span class="sc">==</span> casos[[n]])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"es_primo(%s) = %s  [correcto]</span><span class="sc">\n</span><span class="st">"</span>, n, resultado))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="estadística-descriptiva" class="level2">
+<h2 class="anchored" data-anchor-id="estadística-descriptiva">2. Estadística descriptiva</h2>
+<div id="cell-5" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">30</span>, <span class="dv">12</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(datos)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(datos)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>desv_std <span class="ot">&lt;-</span> <span class="fu">sd</span>(datos)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">round</span>(media, <span class="dv">2</span>) <span class="sc">==</span> <span class="fl">15.9</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(mediana <span class="sc">==</span> <span class="fl">15.0</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">round</span>(desv_std, <span class="dv">2</span>) <span class="sc">==</span> <span class="fl">6.01</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media:"</span>, media, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mediana:"</span>, mediana, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desviación estándar:"</span>, <span class="fu">round</span>(desv_std, <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="resolver-una-ecuación-cuadrática" class="level2">
+<h2 class="anchored" data-anchor-id="resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</h2>
+<div id="cell-7" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>resolver_cuadratica <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, c) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  disc <span class="ot">&lt;-</span> b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>a<span class="sc">*</span>c</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  x1 <span class="ot">&lt;-</span> (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(disc)) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>a)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  x2 <span class="ot">&lt;-</span> (<span class="sc">-</span>b <span class="sc">-</span> <span class="fu">sqrt</span>(disc)) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>a)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(x1, x2))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span>; b <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span>; c <span class="ot">&lt;-</span> <span class="dv">2</span>  <span class="co"># x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>raices <span class="ot">&lt;-</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> raices) {</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  valor <span class="ot">&lt;-</span> a<span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> b<span class="sc">*</span>x <span class="sc">+</span> c</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">abs</span>(valor) <span class="sc">&lt;</span> <span class="fl">1e-9</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Raíces:"</span>, raices, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Ambas raíces satisfacen la ecuación (verificado)</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="graficar-una-función" class="level2">
+<h2 class="anchored" data-anchor-id="graficar-una-función">4. Graficar una función</h2>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"f(x) = x^2"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>, <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="ejercicio-propuesto" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-propuesto">Ejercicio propuesto</h2>
+<p>Modifica el ejercicio 2 para calcular también la varianza (<code>var(datos)</code>) y agrega tu propio <code>stopifnot()</code> para verificarla.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
