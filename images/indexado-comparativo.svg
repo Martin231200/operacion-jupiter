@@ -1,0 +1,32 @@
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <text x="20" y="25" font-size="14" font-weight="bold" fill="#0C447C">Python (indexado desde 0)</text>
+  <g transform="translate(20,35)">
+    <rect x="0" y="0" width="60" height="50" fill="#E6F1FB" stroke="#378ADD" stroke-width="2"/>
+    <rect x="60" y="0" width="60" height="50" fill="#E6F1FB" stroke="#378ADD" stroke-width="2"/>
+    <rect x="120" y="0" width="60" height="50" fill="#E6F1FB" stroke="#378ADD" stroke-width="2"/>
+    <rect x="180" y="0" width="60" height="50" fill="#E6F1FB" stroke="#378ADD" stroke-width="2"/>
+    <text x="30" y="30" text-anchor="middle" font-size="14">"a"</text>
+    <text x="90" y="30" text-anchor="middle" font-size="14">"b"</text>
+    <text x="150" y="30" text-anchor="middle" font-size="14">"c"</text>
+    <text x="210" y="30" text-anchor="middle" font-size="14">"d"</text>
+    <text x="30" y="68" text-anchor="middle" font-size="12" fill="#0C447C">0</text>
+    <text x="90" y="68" text-anchor="middle" font-size="12" fill="#0C447C">1</text>
+    <text x="150" y="68" text-anchor="middle" font-size="12" fill="#0C447C">2</text>
+    <text x="210" y="68" text-anchor="middle" font-size="12" fill="#0C447C">3</text>
+  </g>
+  <text x="20" y="145" font-size="14" font-weight="bold" fill="#085041">R y Julia (indexado desde 1)</text>
+  <g transform="translate(20,155)">
+    <rect x="0" y="0" width="60" height="50" fill="#E1F5EE" stroke="#1D9E75" stroke-width="2"/>
+    <rect x="60" y="0" width="60" height="50" fill="#E1F5EE" stroke="#1D9E75" stroke-width="2"/>
+    <rect x="120" y="0" width="60" height="50" fill="#E1F5EE" stroke="#1D9E75" stroke-width="2"/>
+    <rect x="180" y="0" width="60" height="50" fill="#E1F5EE" stroke="#1D9E75" stroke-width="2"/>
+    <text x="30" y="30" text-anchor="middle" font-size="14">"a"</text>
+    <text x="90" y="30" text-anchor="middle" font-size="14">"b"</text>
+    <text x="150" y="30" text-anchor="middle" font-size="14">"c"</text>
+    <text x="210" y="30" text-anchor="middle" font-size="14">"d"</text>
+    <text x="30" y="68" text-anchor="middle" font-size="12" fill="#085041">1</text>
+    <text x="90" y="68" text-anchor="middle" font-size="12" fill="#085041">2</text>
+    <text x="150" y="68" text-anchor="middle" font-size="12" fill="#085041">3</text>
+    <text x="210" y="68" text-anchor="middle" font-size="12" fill="#085041">4</text>
+  </g>
+</svg>

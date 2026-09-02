@@ -1,0 +1,10 @@
+---
+title: "Julia: Particularidades"
+---
+
+# Particularidades de Julia
+
+- Indexado desde 1, como R.
+- Vectorizado por diseño, como R y NumPy en Python.
+- El operador `.` aplica una función elemento a elemento sobre un array (ej. `x .^ 2`).
+- Multiple dispatch: distinto de la programación orientada a objetos clásica de Python.

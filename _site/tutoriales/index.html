@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a Julia – Operación Jupyter</title>
+<title>Tutoriales comparativos – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -274,44 +239,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#lenguajes-de-programación-de-código-libre" id="toc-lenguajes-de-programación-de-código-libre" class="nav-link active" data-scroll-target="#lenguajes-de-programación-de-código-libre">Lenguajes de programación de código libre</a>
-  <ul class="collapse">
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a>
-  <ul class="collapse">
-  <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
-  <li><a href="#ventajas-y-desventajas-de-julia" id="toc-ventajas-y-desventajas-de-julia" class="nav-link" data-scroll-target="#ventajas-y-desventajas-de-julia">Ventajas y desventajas de Julia</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
-  <ul class="collapse">
-  <li><a href="#instalar-julia" id="toc-instalar-julia" class="nav-link" data-scroll-target="#instalar-julia">Instalar Julia</a></li>
-  <li><a href="#usar-julia-en-jupyter" id="toc-usar-julia-en-jupyter" class="nav-link" data-scroll-target="#usar-julia-en-jupyter">Usar Julia en Jupyter</a></li>
-  <li><a href="#julia-en-google-colab" id="toc-julia-en-google-colab" class="nav-link" data-scroll-target="#julia-en-google-colab">Julia en Google Colab</a></li>
-  </ul></li>
-  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a></li>
-  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">Tipos de datos</a>
-  <ul class="collapse">
-  <li><a href="#enteros-y-reales" id="toc-enteros-y-reales" class="nav-link" data-scroll-target="#enteros-y-reales">Enteros y reales</a></li>
-  <li><a href="#booleanos" id="toc-booleanos" class="nav-link" data-scroll-target="#booleanos">Booleanos</a></li>
-  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
-  </ul></li>
-  <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a></li>
-  <li><a href="#estructuras-secuencias-decisiones-y-repeticiones" id="toc-estructuras-secuencias-decisiones-y-repeticiones" class="nav-link" data-scroll-target="#estructuras-secuencias-decisiones-y-repeticiones">Estructuras: secuencias, decisiones y repeticiones</a>
-  <ul class="collapse">
-  <li><a href="#secuencias" id="toc-secuencias" class="nav-link" data-scroll-target="#secuencias">Secuencias</a></li>
-  <li><a href="#estructura-if" id="toc-estructura-if" class="nav-link" data-scroll-target="#estructura-if">Estructura “if”</a></li>
-  <li><a href="#estructura-if-else" id="toc-estructura-if-else" class="nav-link" data-scroll-target="#estructura-if-else">Estructura “if-else”</a></li>
-  <li><a href="#estructura-for" id="toc-estructura-for" class="nav-link" data-scroll-target="#estructura-for">Estructura “for”</a></li>
-  <li><a href="#estructura-while" id="toc-estructura-while" class="nav-link" data-scroll-target="#estructura-while">Estructura “while”</a></li>
-  </ul></li>
-  <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
-  <ul class="collapse">
-  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">Arrays</a></li>
-  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios">Diccionarios</a></li>
-  <li><a href="#tuplas" id="toc-tuplas" class="nav-link" data-scroll-target="#tuplas">Tuplas</a></li>
-  </ul></li>
-  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones">Funciones</a></li>
-  <li><a href="#particularidades-de-julia" id="toc-particularidades-de-julia" class="nav-link" data-scroll-target="#particularidades-de-julia">Particularidades de Julia</a></li>
+  <li><a href="#un-mismo-dato-tres-formas-de-contarlo" id="toc-un-mismo-dato-tres-formas-de-contarlo" class="nav-link active" data-scroll-target="#un-mismo-dato-tres-formas-de-contarlo">Un mismo dato, tres formas de contarlo</a></li>
+  <li><a href="#comparación-de-lenguajes" id="toc-comparación-de-lenguajes" class="nav-link" data-scroll-target="#comparación-de-lenguajes">Comparación de lenguajes</a></li>
+  <li><a href="#ventajas-y-desventajas" id="toc-ventajas-y-desventajas" class="nav-link" data-scroll-target="#ventajas-y-desventajas">Ventajas y desventajas</a></li>
   </ul>
 </nav>
     </div>
@@ -320,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción a Julia</h1>
+<h1 class="title">Tutoriales comparativos</h1>
 </div>
 
 
@@ -337,178 +267,142 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado.</p>
+<ul>
+<li><a href="../tutoriales/quiz-comparativo.html">Quiz interactivo</a> — preguntas con retroalimentación al instante (✓ / ✗)</li>
+<li><a href="../tutoriales/ejercicios-python.html">Ejercicios en Python</a></li>
+<li><a href="../tutoriales/ejercicios-r.html">Ejercicios en R</a></li>
+<li><a href="../tutoriales/ejercicios-julia.html">Ejercicios en Julia</a></li>
+</ul>
+<section id="un-mismo-dato-tres-formas-de-contarlo" class="level2">
+<h2 class="anchored" data-anchor-id="un-mismo-dato-tres-formas-de-contarlo">Un mismo dato, tres formas de contarlo</h2>
+<p><img src="../images/indexado-comparativo.svg" class="img-fluid"></p>
+</section>
+<section id="comparación-de-lenguajes" class="level2">
+<h2 class="anchored" data-anchor-id="comparación-de-lenguajes">Comparación de lenguajes</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspecto</th>
+<th>Python</th>
+<th>R</th>
+<th>Julia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Indexado</td>
+<td>Desde 0</td>
+<td>Desde 1</td>
+<td>Desde 1</td>
+</tr>
+<tr class="even">
+<td>Bloques de código</td>
+<td>Indentación obligatoria</td>
+<td>Llaves <code>{ }</code></td>
+<td><code>end</code> para cerrar bloques</td>
+</tr>
+<tr class="odd">
+<td>Asignación</td>
+<td><code>=</code></td>
+<td><code>&lt;-</code> (convención)</td>
+<td><code>=</code></td>
+</tr>
+<tr class="even">
+<td>Tipado</td>
+<td>Dinámico</td>
+<td>Dinámico</td>
+<td>Dinámico, con despacho múltiple</td>
+</tr>
+<tr class="odd">
+<td>Estructura de datos principal</td>
+<td>Lista / <code>numpy.array</code></td>
+<td>Vector (nativo)</td>
+<td>Array (nativo)</td>
+</tr>
+<tr class="even">
+<td>Manejo de datos tabulares</td>
+<td><code>pandas.DataFrame</code></td>
+<td><code>data.frame</code> (nativo)</td>
+<td><code>DataFrames.jl</code></td>
+</tr>
+<tr class="odd">
+<td>Visualización</td>
+<td><code>matplotlib</code></td>
+<td><code>plot()</code> / <code>ggplot2</code></td>
+<td><code>Plots.jl</code></td>
+</tr>
+<tr class="even">
+<td>Enfoque original</td>
+<td>Propósito general</td>
+<td>Estadística y gráficos</td>
+<td>Cómputo numérico de alto desempeño</td>
+</tr>
+<tr class="odd">
+<td>Ejecución</td>
+<td>Interpretado</td>
+<td>Interpretado</td>
+<td>Compilado JIT (más rápido en cómputo pesado)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ventajas-y-desventajas" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.</li>
+<li>En contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>R
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.</li>
+<li>En contra: fuera de estadística y visualización es menos versátil que Python.</li>
+</ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Nota
+<span class="screen-reader-only">Importante</span>Julia
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Este contenido se basa en características generales y documentadas del lenguaje Julia. Aún no contamos con material específico del proyecto para esta sección — se actualizará cuando la profa comparta el notebook correspondiente.</p>
+<ul>
+<li>A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.</li>
+<li>En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).</li>
+</ul>
 </div>
 </div>
-<section id="lenguajes-de-programación-de-código-libre" class="level1">
-<h1>Lenguajes de programación de código libre</h1>
-<section id="julia" class="level2">
-<h2 class="anchored" data-anchor-id="julia">Julia</h2>
-<section id="características" class="level3">
-<h3 class="anchored" data-anchor-id="características">Características</h3>
-<ul>
-<li>Julia es un lenguaje compilado “just-in-time” (JIT): traduce el código a máquina la primera vez que se ejecuta una función, lo que le da un desempeño cercano a C manteniendo una sintaxis de alto nivel.</li>
-<li>Fue creado en 2012 por Jeff Bezanson, Stefan Karpinski, Viral Shah y Alan Edelman en el MIT.</li>
-<li>Busca resolver el “problema de los dos lenguajes”: prototipar en un lenguaje interpretado y luego reescribir en uno compilado para producción — con Julia no hace falta reescribir.</li>
-<li>Tiene soporte nativo para <em>multiple dispatch</em>: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</li>
-<li>Es software libre, con licencia MIT.</li>
-</ul>
-</section>
-<section id="ventajas-y-desventajas-de-julia" class="level3">
-<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-julia">Ventajas y desventajas de Julia</h3>
-<ul>
-<li>A favor: desempeño cercano a lenguajes compilados manteniendo sintaxis de alto nivel.</li>
-<li>A favor: diseñado desde cero para cómputo científico y numérico.</li>
-<li>En contra: comunidad y ecosistema de paquetes más pequeños que Python o R.</li>
-<li>En contra: la primera vez que corre una función puede sentirse lenta por la compilación JIT (“time to first plot”).</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="interfases-y-ambientes-colaborativos" class="level1">
-<h1>Interfases y ambientes colaborativos</h1>
-<section id="instalar-julia" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-julia">Instalar Julia</h2>
-<ul>
-<li>Se descarga desde <a href="https://julialang.org/downloads/">https://julialang.org/downloads/</a>, eligiendo el instalador según el sistema operativo.</li>
-<li>Al terminar la instalación, Julia se puede correr desde su propia consola (REPL) o integrado a un editor como VS Code (con la extensión oficial de Julia).</li>
-</ul>
-</section>
-<section id="usar-julia-en-jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="usar-julia-en-jupyter">Usar Julia en Jupyter</h2>
-<p>Para que Julia aparezca como opción al crear un notebook, hace falta instalar el paquete <code>IJulia</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"IJulia"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Este paso registra el kernel de Julia en Jupyter automáticamente.</p>
-</section>
-<section id="julia-en-google-colab" class="level2">
-<h2 class="anchored" data-anchor-id="julia-en-google-colab">Julia en Google Colab</h2>
-<p>A diferencia de Python, Colab no tiene soporte oficial integrado para Julia — se puede usar instalándolo manualmente en la primera celda de cada sesión, aunque es menos práctico que RStudio o Jupyter local.</p>
-</section>
-</section>
-<section id="primeros-pasos" class="level1">
-<h1>Primeros pasos</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la versión instalada</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cn">VERSION</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ayuda sobre una función</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>?println</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="tipos-de-datos" class="level1">
-<h1>Tipos de datos</h1>
-<section id="enteros-y-reales" class="level2">
-<h2 class="anchored" data-anchor-id="enteros-y-reales">Enteros y reales</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span>        <span class="co"># Int64</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.14</span>     <span class="co"># Float64</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(y)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="booleanos" class="level2">
-<h2 class="anchored" data-anchor-id="booleanos">Booleanos</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">&amp;&amp;</span> b   <span class="co"># y lógico</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">||</span> b   <span class="co"># o lógico</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>!a       <span class="co"># negación</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="strings" class="level2">
-<h2 class="anchored" data-anchor-id="strings">Strings</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(s)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> <span class="fu">string</span>(<span class="st">"Hola"</span>, <span class="st">" "</span>, <span class="st">"mundo"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="declaración-de-variables" class="level1">
-<h1>Declaración de variables</h1>
-<p>Julia no requiere declarar el tipo de una variable — se infiere del valor asignado, aunque se puede fijar explícitamente si se desea.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">10</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">::</span><span class="dt">Int64 </span><span class="op">=</span> <span class="fl">10</span>   <span class="co"># con tipo explícito (opcional)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructuras-secuencias-decisiones-y-repeticiones" class="level1">
-<h1>Estructuras: secuencias, decisiones y repeticiones</h1>
-<section id="secuencias" class="level2">
-<h2 class="anchored" data-anchor-id="secuencias">Secuencias</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">collect</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">:</span><span class="fl">10</span>)   <span class="co"># con incremento</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-if" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-if">Estructura “if”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="fl">0</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"positivo"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-if-else" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-if-else">Estructura “if-else”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="fl">0</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"positivo"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"no positivo"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-for" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-for">Estructura “for”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(i)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-while" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-while">Estructura “while”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="fl">5</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(i)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="fl">1</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="estructuras-de-datos-y-objetos" class="level1">
-<h1>Estructuras de datos y objetos</h1>
-<section id="arrays" class="level2">
-<h2 class="anchored" data-anchor-id="arrays">Arrays</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>]   <span class="co"># indexado desde 1</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>v[<span class="fl">1</span>]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="diccionarios" class="level2">
-<h2 class="anchored" data-anchor-id="diccionarios">Diccionarios</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fu">Dict</span>(<span class="st">"a"</span> <span class="op">=&gt;</span> <span class="fl">1</span>, <span class="st">"b"</span> <span class="op">=&gt;</span> <span class="fl">2</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"a"</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="tuplas" class="level2">
-<h2 class="anchored" data-anchor-id="tuplas">Tuplas</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="fl">1</span>, <span class="st">"dos"</span>, <span class="fl">3.0</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>t[<span class="fl">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="funciones" class="level1">
-<h1>Funciones</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a, b<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">suma</span>(<span class="fl">3</span>, <span class="fl">4</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">suma</span>(<span class="fl">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="particularidades-de-julia" class="level1">
-<h1>Particularidades de Julia</h1>
-<ul>
-<li>Indexado desde 1, como R.</li>
-<li>Vectorizado por diseño, como R y NumPy en Python.</li>
-<li>El operador <code>.</code> aplica una función elemento a elemento sobre un array (ej. <code>x .^ 2</code>).</li>
-<li>Multiple dispatch: distinto de la programación orientada a objetos clásica de Python.</li>
-</ul>
 
 
 </section>

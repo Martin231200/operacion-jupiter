@@ -1,0 +1,109 @@
+---
+title: "Mi progreso"
+format:
+  html:
+    include-in-header:
+      - text: <link rel="stylesheet" href="tutoriales/quiz.css">
+---
+
+Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más).
+
+<div style="margin: 1rem 0 1.5rem;">
+  <div style="background: #E5E7EB; border-radius: 8px; height: 14px; overflow: hidden;">
+    <div id="barra-progreso" style="background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;"></div>
+  </div>
+  <p id="texto-progreso" style="font-size: 13px; color: #6B7280; margin: 6px 0 0;">0 de 0 completado</p>
+</div>
+
+<div id="progreso-container"></div>
+
+<script>
+const secciones = [
+  { titulo: "Python", items: [
+    ["py-01", "Introducción e instalación"],
+    ["py-02", "Entrada de datos y operadores"],
+    ["py-03", "Funciones"],
+    ["py-04", "Estructuras de datos"],
+    ["py-05", "Arreglos"],
+    ["py-06", "Funciones estadísticas"],
+  ]},
+  { titulo: "R", items: [
+    ["r-01", "Introducción e instalación"],
+    ["r-02", "Tipos de datos y variables"],
+    ["r-03", "Estructuras de control"],
+    ["r-04", "Estructuras de datos"],
+    ["r-05", "Funciones"],
+    ["r-06", "Particularidades"],
+  ]},
+  { titulo: "Julia", items: [
+    ["jl-01", "Introducción e instalación"],
+    ["jl-02", "Tipos de datos y variables"],
+    ["jl-03", "Estructuras de control"],
+    ["jl-04", "Estructuras de datos"],
+    ["jl-05", "Funciones"],
+    ["jl-06", "Particularidades"],
+  ]},
+  { titulo: "Tutoriales", items: [
+    ["tut-quiz", "Quiz interactivo"],
+    ["tut-py", "Ejercicios Python"],
+    ["tut-r", "Ejercicios R"],
+    ["tut-jl", "Ejercicios Julia"],
+  ]},
+];
+
+const STORAGE_KEY = "operacion-jupiter-progreso";
+function cargarEstado() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch (e) { return {}; }
+}
+function guardarEstado(estado) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+}
+
+const estado = cargarEstado();
+const root = document.getElementById('progreso-container');
+let totalItems = 0;
+
+secciones.forEach(sec => {
+  const bloque = document.createElement('div');
+  bloque.className = 'quiz-card';
+
+  const h = document.createElement('p');
+  h.className = 'quiz-question';
+  h.textContent = sec.titulo;
+  bloque.appendChild(h);
+
+  sec.items.forEach(([id, label]) => {
+    totalItems++;
+    const row = document.createElement('label');
+    row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:6px 0;font-size:14px;cursor:pointer;';
+
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = !!estado[id];
+    cb.style.cssText = 'width:18px;height:18px;cursor:pointer;';
+    cb.onchange = () => {
+      estado[id] = cb.checked;
+      guardarEstado(estado);
+      actualizarBarra();
+    };
+
+    const span = document.createElement('span');
+    span.textContent = label;
+
+    row.appendChild(cb);
+    row.appendChild(span);
+    bloque.appendChild(row);
+  });
+
+  root.appendChild(bloque);
+});
+
+function actualizarBarra() {
+  const completados = Object.values(estado).filter(Boolean).length;
+  const pct = totalItems ? Math.round((completados / totalItems) * 100) : 0;
+  document.getElementById('barra-progreso').style.width = pct + '%';
+  document.getElementById('texto-progreso').textContent = completados + ' de ' + totalItems + ' completado (' + pct + '%)';
+}
+actualizarBarra();
+</script>

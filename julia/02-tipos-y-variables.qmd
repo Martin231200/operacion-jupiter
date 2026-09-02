@@ -1,0 +1,41 @@
+---
+title: "Julia: Tipos de datos y variables"
+---
+
+# Tipos de datos
+
+## Enteros y reales
+
+```julia
+x = 5        # Int64
+y = 3.14     # Float64
+typeof(x)
+typeof(y)
+```
+
+## Booleanos
+
+```julia
+a = true
+b = false
+a && b   # y lógico
+a || b   # o lógico
+!a       # negación
+```
+
+## Strings
+
+```julia
+s = "Operación Jupyter"
+length(s)
+s2 = string("Hola", " ", "mundo")
+```
+
+# Declaración de variables
+
+Julia no requiere declarar el tipo de una variable — se infiere del valor asignado, aunque se puede fijar explícitamente si se desea.
+
+```julia
+x = 10
+x::Int64 = 10   # con tipo explícito (opcional)
+```

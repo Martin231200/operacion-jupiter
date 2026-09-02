@@ -4,9 +4,14 @@ title: "Tutoriales comparativos"
 
 Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado.
 
+- [Quiz interactivo](quiz-comparativo.qmd) — preguntas con retroalimentación al instante (✓ / ✗)
 - [Ejercicios en Python](ejercicios-python.ipynb)
 - [Ejercicios en R](ejercicios-r.ipynb)
 - [Ejercicios en Julia](ejercicios-julia.qmd)
+
+## Un mismo dato, tres formas de contarlo
+
+![](../images/indexado-comparativo.svg)
 
 ## Comparación de lenguajes
 
@@ -24,17 +29,20 @@ Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en
 
 ## Ventajas y desventajas
 
-**Python**
-
+::: {.callout-note}
+## Python
 - A favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.
 - En contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.
+:::
 
-**R**
-
+::: {.callout-tip}
+## R
 - A favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.
 - En contra: fuera de estadística y visualización es menos versátil que Python.
+:::
 
-**Julia**
-
+::: {.callout-important}
+## Julia
 - A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.
 - En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).
+:::

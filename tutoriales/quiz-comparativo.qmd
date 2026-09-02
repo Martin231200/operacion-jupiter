@@ -1,0 +1,65 @@
+---
+title: "Quiz comparativo: Python, R y Julia"
+format:
+  html:
+    include-in-header:
+      - text: <link rel="stylesheet" href="quiz.css">
+---
+
+Responde y recibe retroalimentación al instante: ✓ verde si aciertas, ✗ rojo si no, con la explicación de por qué.
+
+<div id="quiz-container"></div>
+
+<script src="quiz.js"></script>
+<script>
+renderQuiz('quiz-container', [
+  {
+    q: "¿Desde qué número se indexa el primer elemento de una lista/vector en Python?",
+    opciones: ["0", "1", "-1"],
+    correcta: 0,
+    exp: "Python indexa desde 0. R y Julia, en cambio, indexan desde 1."
+  },
+  {
+    q: "¿Cómo se cierra un bloque de código (if, for, function) en Julia?",
+    opciones: ["Con una llave }", "Con la palabra end", "Con indentación, como Python"],
+    correcta: 1,
+    exp: "Julia usa la palabra clave end para cerrar bloques — ni llaves ni indentación obligatoria."
+  },
+  {
+    q: "¿Cuál es el operador de asignación que es la convención en R?",
+    opciones: ["=", "<-", ":="],
+    correcta: 1,
+    exp: "R usa <- por convención (aunque = también funciona dentro de una instrucción)."
+  },
+  {
+    q: "¿Qué biblioteca se usa en Python para trabajar con datos tabulares tipo hoja de cálculo?",
+    opciones: ["pandas", "DataFrames.jl", "No hace falta, ya es nativo"],
+    correcta: 0,
+    exp: "pandas.DataFrame es el estándar en Python. R lo tiene nativo (data.frame) y Julia usa DataFrames.jl."
+  },
+  {
+    q: "¿Qué lenguaje de los tres compila 'just-in-time' (JIT) buscando desempeño cercano a C?",
+    opciones: ["Python", "R", "Julia"],
+    correcta: 2,
+    exp: "Julia fue diseñado desde cero para cómputo numérico de alto desempeño usando compilación JIT."
+  },
+  {
+    q: "¿Cuál de estos NO tiene indentación obligatoria para delimitar bloques de código?",
+    opciones: ["Python", "R", "Los tres la requieren"],
+    correcta: 1,
+    exp: "R usa llaves { } para delimitar bloques; la indentación es solo estética, no obligatoria."
+  },
+  {
+    q: "¿Qué lenguaje fue creado originalmente para estadística y generación de gráficos?",
+    opciones: ["Python", "R", "Julia"],
+    correcta: 1,
+    exp: "R nació en 1995 como lenguaje de dominio específico para estadística, inspirado en el lenguaje S."
+  },
+  {
+    q: "¿Cómo se llama la función nativa en R para calcular la desviación estándar?",
+    opciones: ["std()", "sd()", "stdev()"],
+    correcta: 1,
+    exp: "En R es sd(). En Python (módulo statistics) es stdev(); en Julia (paquete Statistics) es std()."
+  }
+]);
+</script>

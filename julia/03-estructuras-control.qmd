@@ -1,0 +1,48 @@
+---
+title: "Julia: Estructuras de control"
+---
+
+# Estructuras: secuencias, decisiones y repeticiones
+
+## Secuencias
+
+```julia
+1:10
+collect(1:2:10)   # con incremento
+```
+
+## Estructura "if"
+
+```julia
+if x > 0
+    println("positivo")
+end
+```
+
+## Estructura "if-else"
+
+```julia
+if x > 0
+    println("positivo")
+else
+    println("no positivo")
+end
+```
+
+## Estructura "for"
+
+```julia
+for i in 1:5
+    println(i)
+end
+```
+
+## Estructura "while"
+
+```julia
+i = 1
+while i <= 5
+    println(i)
+    i += 1
+end
+```

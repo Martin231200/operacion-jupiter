@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a Julia – Operación Jupyter</title>
+<title>Lenguajes de programación de código libre – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -274,44 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#lenguajes-de-programación-de-código-libre" id="toc-lenguajes-de-programación-de-código-libre" class="nav-link active" data-scroll-target="#lenguajes-de-programación-de-código-libre">Lenguajes de programación de código libre</a>
-  <ul class="collapse">
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a>
+  <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a>
   <ul class="collapse">
   <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
-  <li><a href="#ventajas-y-desventajas-de-julia" id="toc-ventajas-y-desventajas-de-julia" class="nav-link" data-scroll-target="#ventajas-y-desventajas-de-julia">Ventajas y desventajas de Julia</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
-  <ul class="collapse">
-  <li><a href="#instalar-julia" id="toc-instalar-julia" class="nav-link" data-scroll-target="#instalar-julia">Instalar Julia</a></li>
-  <li><a href="#usar-julia-en-jupyter" id="toc-usar-julia-en-jupyter" class="nav-link" data-scroll-target="#usar-julia-en-jupyter">Usar Julia en Jupyter</a></li>
-  <li><a href="#julia-en-google-colab" id="toc-julia-en-google-colab" class="nav-link" data-scroll-target="#julia-en-google-colab">Julia en Google Colab</a></li>
-  </ul></li>
-  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a></li>
-  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">Tipos de datos</a>
-  <ul class="collapse">
-  <li><a href="#enteros-y-reales" id="toc-enteros-y-reales" class="nav-link" data-scroll-target="#enteros-y-reales">Enteros y reales</a></li>
-  <li><a href="#booleanos" id="toc-booleanos" class="nav-link" data-scroll-target="#booleanos">Booleanos</a></li>
-  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
-  </ul></li>
-  <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a></li>
-  <li><a href="#estructuras-secuencias-decisiones-y-repeticiones" id="toc-estructuras-secuencias-decisiones-y-repeticiones" class="nav-link" data-scroll-target="#estructuras-secuencias-decisiones-y-repeticiones">Estructuras: secuencias, decisiones y repeticiones</a>
-  <ul class="collapse">
-  <li><a href="#secuencias" id="toc-secuencias" class="nav-link" data-scroll-target="#secuencias">Secuencias</a></li>
-  <li><a href="#estructura-if" id="toc-estructura-if" class="nav-link" data-scroll-target="#estructura-if">Estructura “if”</a></li>
-  <li><a href="#estructura-if-else" id="toc-estructura-if-else" class="nav-link" data-scroll-target="#estructura-if-else">Estructura “if-else”</a></li>
-  <li><a href="#estructura-for" id="toc-estructura-for" class="nav-link" data-scroll-target="#estructura-for">Estructura “for”</a></li>
-  <li><a href="#estructura-while" id="toc-estructura-while" class="nav-link" data-scroll-target="#estructura-while">Estructura “while”</a></li>
-  </ul></li>
-  <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
-  <ul class="collapse">
-  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">Arrays</a></li>
-  <li><a href="#diccionarios" id="toc-diccionarios" class="nav-link" data-scroll-target="#diccionarios">Diccionarios</a></li>
-  <li><a href="#tuplas" id="toc-tuplas" class="nav-link" data-scroll-target="#tuplas">Tuplas</a></li>
-  </ul></li>
-  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones">Funciones</a></li>
-  <li><a href="#particularidades-de-julia" id="toc-particularidades-de-julia" class="nav-link" data-scroll-target="#particularidades-de-julia">Particularidades de Julia</a></li>
   </ul>
 </nav>
     </div>
@@ -320,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción a Julia</h1>
+<h1 class="title">Lenguajes de programación de código libre</h1>
 </div>
 
 
@@ -337,180 +303,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Este contenido se basa en características generales y documentadas del lenguaje Julia. Aún no contamos con material específico del proyecto para esta sección — se actualizará cuando la profa comparta el notebook correspondiente.</p>
-</div>
-</div>
-<section id="lenguajes-de-programación-de-código-libre" class="level1">
-<h1>Lenguajes de programación de código libre</h1>
-<section id="julia" class="level2">
-<h2 class="anchored" data-anchor-id="julia">Julia</h2>
+<section id="r-y-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-y-rstudio">R y RStudio</h2>
 <section id="características" class="level3">
 <h3 class="anchored" data-anchor-id="características">Características</h3>
 <ul>
-<li>Julia es un lenguaje compilado “just-in-time” (JIT): traduce el código a máquina la primera vez que se ejecuta una función, lo que le da un desempeño cercano a C manteniendo una sintaxis de alto nivel.</li>
-<li>Fue creado en 2012 por Jeff Bezanson, Stefan Karpinski, Viral Shah y Alan Edelman en el MIT.</li>
-<li>Busca resolver el “problema de los dos lenguajes”: prototipar en un lenguaje interpretado y luego reescribir en uno compilado para producción — con Julia no hace falta reescribir.</li>
-<li>Tiene soporte nativo para <em>multiple dispatch</em>: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</li>
-<li>Es software libre, con licencia MIT.</li>
+<li>R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos</li>
+<li>A diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)</li>
+<li>Es un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación</li>
+<li>R es competencia de Excel, Phyton, SPSS y STATA</li>
+<li>Se parece a Matlab y su sintaxis recuerda a C / C++</li>
+<li>R fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team</li>
+<li>La versión beta más estable fue lanzada hasta el año 2000</li>
+<li>RStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R</li>
+<li>Es un software libre</li>
+<li>No hay responsabilidad en caso de errores en el código</li>
+<li>Es uno de los primeros lenguajes en recibir los nuevos temas</li>
+<li>Tiene una fácil conectividad y compatibilidad con otros lenguajes de programación</li>
+<li>No tiene límite (teórico) en la lectura de bases de datos</li>
+<li>Suele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:</li>
+<li>Primero se debe instalar R</li>
+<li>Dependiendo de las características del sistema operativo, se puede encontrar en&nbsp;https://www.r-project.org/&nbsp;el archivo de instalación adecuado</li>
+<li>Después de elegir el idioma, acepte los términos</li>
+<li>Al final de la instalación busque la carpeta en donde se guardó (generalmente&nbsp;<em>Aplicaciones</em>) para inicarlo</li>
+<li>Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.</li>
+<li>Se descarga RStudio en&nbsp;https://www.rstudio.com/, actualmente disponible en&nbsp;https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:</li>
+<li>Abre Google Colab (<u>https://colab.research.google.com/</u>)</li>
+<li>Crea un nuevo notebook</li>
+<li>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev</li>
+<li>Instalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”</li>
+<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:</li>
+<li>Se tiene en cada momento un registro de las variables definidos y sus valores</li>
+<li>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:</li>
+<li>El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo</li>
+<li>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:</li>
+<li>Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.</li>
+<li>El IDE tiene menos opciones que en RStudio</li>
+<li>El sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support</li>
+<li>Manual de referencia oficial:&nbsp;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</li>
+<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.statmethods.net%2Findex.html">https://www.statmethods.net/index.html</a></li>
+<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.coursera.org%2Fhttps%3A%2F%2Frpubs.com%2F">https://www.coursera.org/https://rpubs.com/</a> # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</li>
 </ul>
-</section>
-<section id="ventajas-y-desventajas-de-julia" class="level3">
-<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-julia">Ventajas y desventajas de Julia</h3>
-<ul>
-<li>A favor: desempeño cercano a lenguajes compilados manteniendo sintaxis de alto nivel.</li>
-<li>A favor: diseñado desde cero para cómputo científico y numérico.</li>
-<li>En contra: comunidad y ecosistema de paquetes más pequeños que Python o R.</li>
-<li>En contra: la primera vez que corre una función puede sentirse lenta por la compilación JIT (“time to first plot”).</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="interfases-y-ambientes-colaborativos" class="level1">
-<h1>Interfases y ambientes colaborativos</h1>
-<section id="instalar-julia" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-julia">Instalar Julia</h2>
-<ul>
-<li>Se descarga desde <a href="https://julialang.org/downloads/">https://julialang.org/downloads/</a>, eligiendo el instalador según el sistema operativo.</li>
-<li>Al terminar la instalación, Julia se puede correr desde su propia consola (REPL) o integrado a un editor como VS Code (con la extensión oficial de Julia).</li>
-</ul>
-</section>
-<section id="usar-julia-en-jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="usar-julia-en-jupyter">Usar Julia en Jupyter</h2>
-<p>Para que Julia aparezca como opción al crear un notebook, hace falta instalar el paquete <code>IJulia</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"IJulia"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Este paso registra el kernel de Julia en Jupyter automáticamente.</p>
-</section>
-<section id="julia-en-google-colab" class="level2">
-<h2 class="anchored" data-anchor-id="julia-en-google-colab">Julia en Google Colab</h2>
-<p>A diferencia de Python, Colab no tiene soporte oficial integrado para Julia — se puede usar instalándolo manualmente en la primera celda de cada sesión, aunque es menos práctico que RStudio o Jupyter local.</p>
-</section>
-</section>
-<section id="primeros-pasos" class="level1">
-<h1>Primeros pasos</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la versión instalada</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cn">VERSION</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ayuda sobre una función</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>?println</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="tipos-de-datos" class="level1">
-<h1>Tipos de datos</h1>
-<section id="enteros-y-reales" class="level2">
-<h2 class="anchored" data-anchor-id="enteros-y-reales">Enteros y reales</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5</span>        <span class="co"># Int64</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.14</span>     <span class="co"># Float64</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(y)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="booleanos" class="level2">
-<h2 class="anchored" data-anchor-id="booleanos">Booleanos</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">&amp;&amp;</span> b   <span class="co"># y lógico</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">||</span> b   <span class="co"># o lógico</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>!a       <span class="co"># negación</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="strings" class="level2">
-<h2 class="anchored" data-anchor-id="strings">Strings</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(s)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> <span class="fu">string</span>(<span class="st">"Hola"</span>, <span class="st">" "</span>, <span class="st">"mundo"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="declaración-de-variables" class="level1">
-<h1>Declaración de variables</h1>
-<p>Julia no requiere declarar el tipo de una variable — se infiere del valor asignado, aunque se puede fijar explícitamente si se desea.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">10</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">::</span><span class="dt">Int64 </span><span class="op">=</span> <span class="fl">10</span>   <span class="co"># con tipo explícito (opcional)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructuras-secuencias-decisiones-y-repeticiones" class="level1">
-<h1>Estructuras: secuencias, decisiones y repeticiones</h1>
-<section id="secuencias" class="level2">
-<h2 class="anchored" data-anchor-id="secuencias">Secuencias</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">collect</span>(<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">:</span><span class="fl">10</span>)   <span class="co"># con incremento</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-if" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-if">Estructura “if”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="fl">0</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"positivo"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-if-else" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-if-else">Estructura “if-else”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="fl">0</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"positivo"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"no positivo"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-for" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-for">Estructura “for”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(i)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estructura-while" class="level2">
-<h2 class="anchored" data-anchor-id="estructura-while">Estructura “while”</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;=</span> <span class="fl">5</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(i)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="fl">1</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="estructuras-de-datos-y-objetos" class="level1">
-<h1>Estructuras de datos y objetos</h1>
-<section id="arrays" class="level2">
-<h2 class="anchored" data-anchor-id="arrays">Arrays</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>]   <span class="co"># indexado desde 1</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>v[<span class="fl">1</span>]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="diccionarios" class="level2">
-<h2 class="anchored" data-anchor-id="diccionarios">Diccionarios</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fu">Dict</span>(<span class="st">"a"</span> <span class="op">=&gt;</span> <span class="fl">1</span>, <span class="st">"b"</span> <span class="op">=&gt;</span> <span class="fl">2</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"a"</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="tuplas" class="level2">
-<h2 class="anchored" data-anchor-id="tuplas">Tuplas</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="fl">1</span>, <span class="st">"dos"</span>, <span class="fl">3.0</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>t[<span class="fl">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="funciones" class="level1">
-<h1>Funciones</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">suma</span>(a, b<span class="op">=</span><span class="fl">0</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">suma</span>(<span class="fl">3</span>, <span class="fl">4</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">suma</span>(<span class="fl">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="particularidades-de-julia" class="level1">
-<h1>Particularidades de Julia</h1>
-<ul>
-<li>Indexado desde 1, como R.</li>
-<li>Vectorizado por diseño, como R y NumPy en Python.</li>
-<li>El operador <code>.</code> aplica una función elemento a elemento sobre un array (ej. <code>x .^ 2</code>).</li>
-<li>Multiple dispatch: distinto de la programación orientada a objetos clásica de Python.</li>
-</ul>
+<div id="cell-2" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Licencia de R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Contribuyentes</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contributors</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Cita</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-<em>r-a-language-and-environment-for-statistical-computing</em>.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
+<div id="cell-4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ayuda</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(seq)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">help.start</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>? seq</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Salir del programa</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

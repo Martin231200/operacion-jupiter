@@ -1,0 +1,14 @@
+---
+title: "Julia: Funciones"
+---
+
+# Funciones
+
+```julia
+function suma(a, b=0)
+    return a + b
+end
+
+suma(3, 4)
+suma(3)
+```

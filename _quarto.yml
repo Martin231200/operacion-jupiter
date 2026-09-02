@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+
 website:
   title: "Operación Jupyter"
   description: "Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM"
@@ -8,18 +9,56 @@ website:
     left:
       - href: index.qmd
         text: Inicio
-      - text: Introducción
+      - href: progreso.qmd
+        text: Mi progreso
+      - text: Python
         menu:
-          - href: python/introduccion-python.ipynb
-            text: Python
-          - href: r/introduccion-r.ipynb
-            text: R
-          - href: julia/introduccion-julia.qmd
-            text: Julia
+          - href: python/01-introduccion.ipynb
+            text: Introducción e instalación
+          - href: python/02-entrada-datos-operadores.ipynb
+            text: Entrada de datos y operadores
+          - href: python/03-funciones.ipynb
+            text: Funciones
+          - href: python/04-estructuras-datos.ipynb
+            text: Estructuras de datos
+          - href: python/05-arreglos.ipynb
+            text: Arreglos
+          - href: python/06-funciones-estadisticas.ipynb
+            text: Funciones estadísticas
+      - text: R
+        menu:
+          - href: r/01-introduccion.ipynb
+            text: Introducción e instalación
+          - href: r/02-tipos-y-variables.ipynb
+            text: Tipos de datos y variables
+          - href: r/03-estructuras-control.ipynb
+            text: Estructuras de control
+          - href: r/04-estructuras-datos.ipynb
+            text: Estructuras de datos
+          - href: r/05-funciones.ipynb
+            text: Funciones
+          - href: r/06-particularidades.ipynb
+            text: Particularidades
+      - text: Julia
+        menu:
+          - href: julia/01-introduccion.qmd
+            text: Introducción e instalación
+          - href: julia/02-tipos-y-variables.qmd
+            text: Tipos de datos y variables
+          - href: julia/03-estructuras-control.qmd
+            text: Estructuras de control
+          - href: julia/04-estructuras-datos.qmd
+            text: Estructuras de datos
+          - href: julia/05-funciones.qmd
+            text: Funciones
+          - href: julia/06-particularidades.qmd
+            text: Particularidades
       - text: Tutoriales
         menu:
           - href: tutoriales/index.qmd
             text: Comparación
+          - href: tutoriales/quiz-comparativo.qmd
+            text: Quiz interactivo
           - href: tutoriales/ejercicios-python.ipynb
             text: Ejercicios Python
           - href: tutoriales/ejercicios-r.ipynb
@@ -31,10 +70,14 @@ website:
       - href: semblanza/index.qmd
         text: Semblanza de los profesores
   page-footer:
-    center: "Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM"
+    left: "Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM"
+    right:
+      - href: tutoriales/ficha-comparativa.pdf
+        text: "Descargar ficha comparativa (PDF)"
+
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, custom.scss]
     css: styles.css
     toc: true
     lang: es

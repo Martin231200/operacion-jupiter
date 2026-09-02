@@ -1,0 +1,27 @@
+---
+title: "Julia: Estructuras de datos"
+---
+
+# Estructuras de datos y objetos
+
+## Arrays
+
+```julia
+v = [1, 2, 3, 4]   # indexado desde 1
+v[1]
+length(v)
+```
+
+## Diccionarios
+
+```julia
+d = Dict("a" => 1, "b" => 2)
+d["a"]
+```
+
+## Tuplas
+
+```julia
+t = (1, "dos", 3.0)
+t[2]
+```
