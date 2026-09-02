@@ -1,0 +1,88 @@
+---
+title: "Ejercicios en vivo: R (webR)"
+engine: knitr
+filters:
+  - webr
+---
+
+Edita el código directamente aquí y dale **Run** — corre de verdad en tu navegador, sin instalar R. Si el ejercicio pasa la verificación (`stopifnot`), no marca error; si algo falla, verás el mensaje de error ahí mismo.
+
+
+# Ejercicios verificables: R
+
+Mismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. Cada uno verifica el resultado con `stopifnot()` (equivalente en R a `assert`).
+
+## 1. Matemáticas: verificar si un número es primo
+
+```{webr-r}
+es_primo <- function(n) {
+  if (n < 2) return(FALSE)
+  for (i in 2:floor(sqrt(n))) {
+    if (n %% i == 0) return(FALSE)
+  }
+  return(TRUE)
+}
+
+casos <- list(`7` = TRUE, `15` = FALSE, `2` = TRUE, `97` = TRUE)
+for (n in names(casos)) {
+  resultado <- es_primo(as.numeric(n))
+  stopifnot(resultado == casos[[n]])
+  cat(sprintf("es_primo(%s) = %s  [correcto]\n", n, resultado))
+}
+```
+
+## 2. Estadística descriptiva
+
+```{webr-r}
+datos <- c(12, 15, 12, 18, 21, 15, 15, 9, 30, 12)
+
+media <- mean(datos)
+mediana <- median(datos)
+desv_std <- sd(datos)
+
+stopifnot(round(media, 2) == 15.9)
+stopifnot(mediana == 15.0)
+stopifnot(round(desv_std, 2) == 6.01)
+
+cat("Media:", media, "\n")
+cat("Mediana:", mediana, "\n")
+cat("Desviación estándar:", round(desv_std, 2), "\n")
+```
+
+## 3. Resolver una ecuación cuadrática
+
+```{webr-r}
+resolver_cuadratica <- function(a, b, c) {
+  disc <- b^2 - 4*a*c
+  x1 <- (-b + sqrt(disc)) / (2*a)
+  x2 <- (-b - sqrt(disc)) / (2*a)
+  return(c(x1, x2))
+}
+
+a <- 1; b <- -3; c <- 2  # x^2 - 3x + 2 = 0 -> raíces 1 y 2
+raices <- resolver_cuadratica(a, b, c)
+
+for (x in raices) {
+  valor <- a*x^2 + b*x + c
+  stopifnot(abs(valor) < 1e-9)
+}
+
+cat("Raíces:", raices, "\n")
+cat("Ambas raíces satisfacen la ecuación (verificado)\n")
+```
+
+## 4. Graficar una función
+
+```{webr-r}
+x <- seq(-10, 10, length.out = 100)
+y <- x^2
+
+plot(x, y, type = "l",
+     main = "f(x) = x^2",
+     xlab = "x", ylab = "f(x)")
+grid()
+```
+
+## Ejercicio propuesto
+
+Modifica el ejercicio 2 para calcular también la varianza (`var(datos)`) y agrega tu propio `stopifnot()` para verificarla.

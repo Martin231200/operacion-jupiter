@@ -13,6 +13,10 @@ Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en
 
 ![](../images/indexado-comparativo.svg)
 
+## Las mismas ideas, tres cajas de herramientas
+
+![](../images/estructuras-datos-comparativo.svg)
+
 ## Comparación de lenguajes
 
 | Aspecto | Python | R | Julia |

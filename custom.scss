@@ -1,27 +1,34 @@
 /*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 $primary:   #2C5F8A;
 $body-bg:   #FFFFFF;
 $link-color: $primary;
+$font-family-sans-serif: "Inter", -apple-system, sans-serif;
+$font-family-monospace: "JetBrains Mono", "Courier New", monospace;
 
 $python-color: #2C5F8A;
 $r-color:      #1B7A5C;
 $julia-color:  #7B4EA3;
 
 /*-- scss:rules --*/
+body { font-family: $font-family-sans-serif; }
+code, pre { font-family: $font-family-monospace !important; }
+
 .navbar {
-  background-color: $primary !important;
+  background: linear-gradient(135deg, #2C5F8A 0%, #1B4A6E 100%) !important;
 }
 .navbar-title, .navbar-nav .nav-link {
   color: #FFFFFF !important;
+  font-weight: 500;
 }
 .navbar-nav .nav-link:hover {
-  color: #E8F0F8 !important;
+  color: #BFDBFE !important;
 }
 
-h1, h2 {
-  border-bottom: 2px solid #E8ECEF;
-  padding-bottom: 0.3rem;
-}
+h1 { font-weight: 700; color: #1B4A6E; }
+h2 { font-weight: 600; color: #2C5F8A; }
+h3 { font-weight: 600; color: #3D7CB0; }
 
 .badge-python { background-color: $python-color; color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; }
 .badge-r      { background-color: $r-color;      color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; }
@@ -30,14 +37,28 @@ h1, h2 {
 div.callout-note    { border-left-color: $python-color; }
 div.callout-tip      { border-left-color: $r-color; }
 div.callout-important{ border-left-color: $julia-color; }
+div.callout-warning  { border-left-color: #D97706; }
+
+code {
+  color: #B4519A;
+  background: #F5F0F7;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code {
+  color: inherit;
+  background: none;
+  padding: 0;
+}
 
 table {
   border-radius: 8px;
   overflow: hidden;
 }
 thead {
-  background-color: #F0F4F8;
+  background: linear-gradient(135deg, #2C5F8A 0%, #1B4A6E 100%);
 }
+thead th { color: white !important; }
 
 /*-- scss:rules --*/
 .content h1 { margin-top: 2.5rem; }
@@ -52,6 +73,7 @@ thead {
 img {
   border-radius: 8px;
   margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .navbar-nav .dropdown-menu {

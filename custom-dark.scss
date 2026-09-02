@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+$primary:   #5B9BD5;
+$body-bg:   #1A1D21;
+$body-color: #E5E7EB;
+
+/*-- scss:rules --*/
+.navbar {
+  background-color: #12253A !important;
+}
+.quiz-card {
+  background: #23272E !important;
+  border-color: #3A3F47 !important;
+}
+.quiz-question { color: #E5E7EB !important; }
+.quiz-options button {
+  background: #2A2F38 !important;
+  border-color: #3A3F47 !important;
+  color: #E5E7EB !important;
+}

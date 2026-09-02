@@ -7,13 +7,38 @@ subtitle: "Tutoriales de R, Python y Julia"
 
 Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — **R**, **Python** y **Julia** — pensados para quien empieza desde cero.
 
-Usa los menús **Python**, **R** y **Julia** para entrar a cada tutorial (dividido en mini-secciones), o **Tutoriales** para ejercicios comparativos y un quiz interactivo. Las secciones **Libros** y **Semblanza de los profesores** están en construcción.
+## Elige un lenguaje
+
+::: {style="display:flex; gap:16px; flex-wrap:wrap; margin: 1.5rem 0;"}
+
+::: {style="flex:1; min-width:220px; background:#E6F1FB; border-left:4px solid #378ADD; border-radius:10px; padding:18px;"}
+### Python
+Propósito general, ecosistema enorme, fácil de aprender.
+
+[Empezar →](python/01-introduccion.ipynb)
+:::
+
+::: {style="flex:1; min-width:220px; background:#E1F5EE; border-left:4px solid #1D9E75; border-radius:10px; padding:18px;"}
+### R
+Estadística y gráficos, con RStudio como su entorno natural.
+
+[Empezar →](r/01-introduccion.ipynb)
+:::
+
+::: {style="flex:1; min-width:220px; background:#EEEDFE; border-left:4px solid #7F77DD; border-radius:10px; padding:18px;"}
+### Julia
+Cómputo numérico de alto desempeño con sintaxis de alto nivel.
+
+[Empezar →](julia/01-introduccion.qmd)
+:::
+
+:::
+
+También puedes ir directo a los **[Tutoriales comparativos](tutoriales/index.qmd)** (ejercicios, quiz, ficha descargable) o revisar **[Mi progreso](progreso.qmd)**.
 
 ## Cómo se arma el sitio
 
 ![](images/flujo-proyecto.svg)
-
-Cada lenguaje se escribe como notebook o página, y Quarto arma automáticamente el sitio publicado en GitHub Pages.
 
 ### Cómo usar este sitio
 

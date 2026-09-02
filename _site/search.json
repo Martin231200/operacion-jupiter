@@ -151,14 +151,14 @@
     "href": "index.html",
     "title": "Operación Jupyter",
     "section": "",
-    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero.\nUsa los menús Python, R y Julia para entrar a cada tutorial (dividido en mini-secciones), o Tutoriales para ejercicios comparativos y un quiz interactivo. Las secciones Libros y Semblanza de los profesores están en construcción."
+    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero."
   },
   {
     "objectID": "index.html#sobre-el-proyecto",
     "href": "index.html#sobre-el-proyecto",
     "title": "Operación Jupyter",
     "section": "",
-    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero.\nUsa los menús Python, R y Julia para entrar a cada tutorial (dividido en mini-secciones), o Tutoriales para ejercicios comparativos y un quiz interactivo. Las secciones Libros y Semblanza de los profesores están en construcción."
+    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero."
   },
   {
     "objectID": "libros/index.html",
@@ -347,21 +347,33 @@
     "href": "tutoriales/index.html",
     "title": "Tutoriales comparativos",
     "section": "",
-    "text": "Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado."
+    "text": "Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado.",
+    "crumbs": [
+      "Tutoriales",
+      "Comparación"
+    ]
   },
   {
     "objectID": "tutoriales/index.html#comparación-de-lenguajes",
     "href": "tutoriales/index.html#comparación-de-lenguajes",
     "title": "Tutoriales comparativos",
     "section": "Comparación de lenguajes",
-    "text": "Comparación de lenguajes\n\n\n\n\n\n\n\n\n\nAspecto\nPython\nR\nJulia\n\n\n\n\nIndexado\nDesde 0\nDesde 1\nDesde 1\n\n\nBloques de código\nIndentación obligatoria\nLlaves { }\nend para cerrar bloques\n\n\nAsignación\n=\n&lt;- (convención)\n=\n\n\nTipado\nDinámico\nDinámico\nDinámico, con despacho múltiple\n\n\nEstructura de datos principal\nLista / numpy.array\nVector (nativo)\nArray (nativo)\n\n\nManejo de datos tabulares\npandas.DataFrame\ndata.frame (nativo)\nDataFrames.jl\n\n\nVisualización\nmatplotlib\nplot() / ggplot2\nPlots.jl\n\n\nEnfoque original\nPropósito general\nEstadística y gráficos\nCómputo numérico de alto desempeño\n\n\nEjecución\nInterpretado\nInterpretado\nCompilado JIT (más rápido en cómputo pesado)"
+    "text": "Comparación de lenguajes\n\n\n\n\n\n\n\n\n\nAspecto\nPython\nR\nJulia\n\n\n\n\nIndexado\nDesde 0\nDesde 1\nDesde 1\n\n\nBloques de código\nIndentación obligatoria\nLlaves { }\nend para cerrar bloques\n\n\nAsignación\n=\n&lt;- (convención)\n=\n\n\nTipado\nDinámico\nDinámico\nDinámico, con despacho múltiple\n\n\nEstructura de datos principal\nLista / numpy.array\nVector (nativo)\nArray (nativo)\n\n\nManejo de datos tabulares\npandas.DataFrame\ndata.frame (nativo)\nDataFrames.jl\n\n\nVisualización\nmatplotlib\nplot() / ggplot2\nPlots.jl\n\n\nEnfoque original\nPropósito general\nEstadística y gráficos\nCómputo numérico de alto desempeño\n\n\nEjecución\nInterpretado\nInterpretado\nCompilado JIT (más rápido en cómputo pesado)",
+    "crumbs": [
+      "Tutoriales",
+      "Comparación"
+    ]
   },
   {
     "objectID": "tutoriales/index.html#ventajas-y-desventajas",
     "href": "tutoriales/index.html#ventajas-y-desventajas",
     "title": "Tutoriales comparativos",
     "section": "Ventajas y desventajas",
-    "text": "Ventajas y desventajas\n\n\n\n\n\n\nNotaPython\n\n\n\n\nA favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.\nEn contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.\n\n\n\n\n\n\n\n\n\nTipR\n\n\n\n\nA favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.\nEn contra: fuera de estadística y visualización es menos versátil que Python.\n\n\n\n\n\n\n\n\n\nImportanteJulia\n\n\n\n\nA favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.\nEn contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT)."
+    "text": "Ventajas y desventajas\n\n\n\n\n\n\nNotaPython\n\n\n\n\nA favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.\nEn contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.\n\n\n\n\n\n\n\n\n\nTipR\n\n\n\n\nA favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.\nEn contra: fuera de estadística y visualización es menos versátil que Python.\n\n\n\n\n\n\n\n\n\nImportanteJulia\n\n\n\n\nA favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.\nEn contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).",
+    "crumbs": [
+      "Tutoriales",
+      "Comparación"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-python.html",
@@ -466,14 +478,22 @@
     "href": "r/01-introduccion.html",
     "title": "Lenguajes de programación de código libre",
     "section": "",
-    "text": "R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos\nA diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)\nEs un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación\nR es competencia de Excel, Phyton, SPSS y STATA\nSe parece a Matlab y su sintaxis recuerda a C / C++\nR fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team\nLa versión beta más estable fue lanzada hasta el año 2000\nRStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R\nEs un software libre\nNo hay responsabilidad en caso de errores en el código\nEs uno de los primeros lenguajes en recibir los nuevos temas\nTiene una fácil conectividad y compatibilidad con otros lenguajes de programación\nNo tiene límite (teórico) en la lectura de bases de datos\nSuele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:\nPrimero se debe instalar R\nDependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado\nDespués de elegir el idioma, acepte los términos\nAl final de la instalación busque la carpeta en donde se guardó (generalmente Aplicaciones) para inicarlo\nPara facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.\nSe descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:\nAbre Google Colab (https://colab.research.google.com/)\nCrea un nuevo notebook\nPor defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev\nInstalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”\nUsar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:\nSe tiene en cada momento un registro de las variables definidos y sus valores\nSe puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:\nEl código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo\nNo hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:\nAunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.\nEl IDE tiene menos opciones que en RStudio\nEl sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support\nManual de referencia oficial: https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf\nhttps://www.statmethods.net/index.html\nhttps://www.coursera.org/https://rpubs.com/ # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:\n\n\n#Licencia de R\nlicense()\n#Contribuyentes\ncontributors()\n#Cita\ncitation()\n\nLa ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-r-a-language-and-environment-for-statistical-computing.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.\n\n#Ayuda\nhelp(seq)\nhelp.start()\n? seq\n#Salir del programa\nq()"
+    "text": "R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos\nA diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)\nEs un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación\nR es competencia de Excel, Phyton, SPSS y STATA\nSe parece a Matlab y su sintaxis recuerda a C / C++\nR fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team\nLa versión beta más estable fue lanzada hasta el año 2000\nRStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R\nEs un software libre\nNo hay responsabilidad en caso de errores en el código\nEs uno de los primeros lenguajes en recibir los nuevos temas\nTiene una fácil conectividad y compatibilidad con otros lenguajes de programación\nNo tiene límite (teórico) en la lectura de bases de datos\nSuele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:\nPrimero se debe instalar R\nDependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado\nDespués de elegir el idioma, acepte los términos\nAl final de la instalación busque la carpeta en donde se guardó (generalmente Aplicaciones) para inicarlo\nPara facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.\nSe descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:\nAbre Google Colab (https://colab.research.google.com/)\nCrea un nuevo notebook\nPor defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev\nInstalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”\nUsar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:\nSe tiene en cada momento un registro de las variables definidos y sus valores\nSe puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:\nEl código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo\nNo hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:\nAunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.\nEl IDE tiene menos opciones que en RStudio\nEl sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support\nManual de referencia oficial: https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf\nhttps://www.statmethods.net/index.html\nhttps://www.coursera.org/https://rpubs.com/ # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:\n\n\n\n\n\n\n\nTip¿Cómo se organiza un notebook?\n\n\n\nUn notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.\n\n\n\n\n#Licencia de R\nlicense()\n#Contribuyentes\ncontributors()\n#Cita\ncitation()\n\nLa ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-r-a-language-and-environment-for-statistical-computing.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.\n\n#Ayuda\nhelp(seq)\nhelp.start()\n? seq\n#Salir del programa\nq()",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "r/01-introduccion.html#r-y-rstudio",
     "href": "r/01-introduccion.html#r-y-rstudio",
     "title": "Lenguajes de programación de código libre",
     "section": "",
-    "text": "R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos\nA diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)\nEs un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación\nR es competencia de Excel, Phyton, SPSS y STATA\nSe parece a Matlab y su sintaxis recuerda a C / C++\nR fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team\nLa versión beta más estable fue lanzada hasta el año 2000\nRStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R\nEs un software libre\nNo hay responsabilidad en caso de errores en el código\nEs uno de los primeros lenguajes en recibir los nuevos temas\nTiene una fácil conectividad y compatibilidad con otros lenguajes de programación\nNo tiene límite (teórico) en la lectura de bases de datos\nSuele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:\nPrimero se debe instalar R\nDependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado\nDespués de elegir el idioma, acepte los términos\nAl final de la instalación busque la carpeta en donde se guardó (generalmente Aplicaciones) para inicarlo\nPara facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.\nSe descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:\nAbre Google Colab (https://colab.research.google.com/)\nCrea un nuevo notebook\nPor defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev\nInstalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”\nUsar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:\nSe tiene en cada momento un registro de las variables definidos y sus valores\nSe puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:\nEl código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo\nNo hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:\nAunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.\nEl IDE tiene menos opciones que en RStudio\nEl sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support\nManual de referencia oficial: https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf\nhttps://www.statmethods.net/index.html\nhttps://www.coursera.org/https://rpubs.com/ # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:\n\n\n#Licencia de R\nlicense()\n#Contribuyentes\ncontributors()\n#Cita\ncitation()\n\nLa ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-r-a-language-and-environment-for-statistical-computing.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.\n\n#Ayuda\nhelp(seq)\nhelp.start()\n? seq\n#Salir del programa\nq()"
+    "text": "R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos\nA diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)\nEs un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación\nR es competencia de Excel, Phyton, SPSS y STATA\nSe parece a Matlab y su sintaxis recuerda a C / C++\nR fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team\nLa versión beta más estable fue lanzada hasta el año 2000\nRStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R\nEs un software libre\nNo hay responsabilidad en caso de errores en el código\nEs uno de los primeros lenguajes en recibir los nuevos temas\nTiene una fácil conectividad y compatibilidad con otros lenguajes de programación\nNo tiene límite (teórico) en la lectura de bases de datos\nSuele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:\nPrimero se debe instalar R\nDependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado\nDespués de elegir el idioma, acepte los términos\nAl final de la instalación busque la carpeta en donde se guardó (generalmente Aplicaciones) para inicarlo\nPara facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.\nSe descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:\nAbre Google Colab (https://colab.research.google.com/)\nCrea un nuevo notebook\nPor defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev\nInstalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”\nUsar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:\nSe tiene en cada momento un registro de las variables definidos y sus valores\nSe puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:\nEl código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo\nNo hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:\nAunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.\nEl IDE tiene menos opciones que en RStudio\nEl sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support\nManual de referencia oficial: https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf\nhttps://www.statmethods.net/index.html\nhttps://www.coursera.org/https://rpubs.com/ # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:\n\n\n\n\n\n\n\nTip¿Cómo se organiza un notebook?\n\n\n\nUn notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.\n\n\n\n\n#Licencia de R\nlicense()\n#Contribuyentes\ncontributors()\n#Cita\ncitation()\n\nLa ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-r-a-language-and-environment-for-statistical-computing.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.\n\n#Ayuda\nhelp(seq)\nhelp.start()\n? seq\n#Salir del programa\nq()",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "python/05-arreglos.html",
@@ -536,28 +556,44 @@
     "href": "python/01-introduccion.html",
     "title": "Proyecto Jupyter: Aprendamos Python",
     "section": "",
-    "text": "Python fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde & Informatica (CWI) en los Países Bajos.\nEl nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python."
+    "text": "Nota¿Cómo se organiza un notebook?\n\n\n\nUn notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.\nPython fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde & Informatica (CWI) en los Países Bajos.\nEl nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "python/01-introduccion.html#instalación",
     "href": "python/01-introduccion.html#instalación",
     "title": "Proyecto Jupyter: Aprendamos Python",
     "section": "Instalación",
-    "text": "Instalación\nLa instalación consiste en descargar el kernel de Python directamente de su página web en la dirección python.org El usuario puede escoger el editor que mejor le convenga."
+    "text": "Instalación\nLa instalación consiste en descargar el kernel de Python directamente de su página web en la dirección python.org El usuario puede escoger el editor que mejor le convenga.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "python/01-introduccion.html#comandos-básicos",
     "href": "python/01-introduccion.html#comandos-básicos",
     "title": "Proyecto Jupyter: Aprendamos Python",
     "section": "Comandos básicos",
-    "text": "Comandos básicos"
+    "text": "Comandos básicos",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "python/01-introduccion.html#mensaje",
     "href": "python/01-introduccion.html#mensaje",
     "title": "Proyecto Jupyter: Aprendamos Python",
     "section": "Mensaje",
-    "text": "Mensaje\n\nprint(\"La porra los saluda\")\n\nLa porra los saluda"
+    "text": "Mensaje\n\nprint(\"La porra los saluda\")\n\nLa porra los saluda",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "julia/06-particularidades.html",
@@ -816,42 +852,66 @@
     "href": "python/02-entrada-datos-operadores.html",
     "title": "Entrada de datos",
     "section": "",
-    "text": "print(\"¿Cuál es tu nombre?\")\nz= input()\nprint(z)\n\n¿Cuál es tu nombre?\nHugo\nHugo\nprint(\"Su nombre es:\", z)\n\nSu nombre es: Indiana Jones"
+    "text": "print(\"¿Cuál es tu nombre?\")\nz= input()\nprint(z)\n\n¿Cuál es tu nombre?\nHugo\nHugo\nprint(\"Su nombre es:\", z)\n\nSu nombre es: Indiana Jones",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
   },
   {
     "objectID": "python/02-entrada-datos-operadores.html#operadores-matemáticos",
     "href": "python/02-entrada-datos-operadores.html#operadores-matemáticos",
     "title": "Entrada de datos",
     "section": "Operadores matemáticos",
-    "text": "Operadores matemáticos\n\n4 + 7\n\n11\n\n\n\n55 - 9\n\n46\n\n\n\n78 * 9\n\n702\n\n\n\n85 / 3\n\n28.333333333333332\n\n\n\n85 // 3\n\n28\n\n\n\n6 ** 3\n\n216\n\n\n\nminutos = 105\nminutos / 60\n\n1.75\n\n\n\nminutos = 105\nhoras = minutos // 60\nhoras\n\n1\n\n\n\nresto = minutos - horas * 60\nresto\n\n45\n\n\n\nresto2 = minutos % 60\nresto2\n\n45"
+    "text": "Operadores matemáticos\n\n4 + 7\n\n11\n\n\n\n55 - 9\n\n46\n\n\n\n78 * 9\n\n702\n\n\n\n85 / 3\n\n28.333333333333332\n\n\n\n85 // 3\n\n28\n\n\n\n6 ** 3\n\n216\n\n\n\nminutos = 105\nminutos / 60\n\n1.75\n\n\n\nminutos = 105\nhoras = minutos // 60\nhoras\n\n1\n\n\n\nresto = minutos - horas * 60\nresto\n\n45\n\n\n\nresto2 = minutos % 60\nresto2\n\n45",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
   },
   {
     "objectID": "python/02-entrada-datos-operadores.html#expresiones",
     "href": "python/02-entrada-datos-operadores.html#expresiones",
     "title": "Entrada de datos",
     "section": "Expresiones",
-    "text": "Expresiones\n\n5 ** 2 + 2 * 3\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta"
+    "text": "Expresiones\n\n5 ** 2 + 2 * 3\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
   },
   {
     "objectID": "python/02-entrada-datos-operadores.html#tipos-de-variables",
     "href": "python/02-entrada-datos-operadores.html#tipos-de-variables",
     "title": "Entrada de datos",
     "section": "Tipos de variables",
-    "text": "Tipos de variables\n\na = 45\nb = 13.6\nc = \"Maldita_primavera\"\nd = True\ne = False\n\nFunción type () Devuelve el tipo de una variable\n\ntype(a)\n\nint\n\n\n\ntype(b)\n\nfloat\n\n\n\ntype(c)\n\nstr\n\n\n\ntype(d)\n\nbool\n\n\n\ntype(e)\n\nbool\n\n\n\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\nTrue\n\n\n\n10 == 5\n\nFalse\n\n\n\nx = 5\ny = 7\n\n\nx == y\n\nFalse"
+    "text": "Tipos de variables\n\na = 45\nb = 13.6\nc = \"Maldita_primavera\"\nd = True\ne = False\n\nFunción type () Devuelve el tipo de una variable\n\ntype(a)\n\nint\n\n\n\ntype(b)\n\nfloat\n\n\n\ntype(c)\n\nstr\n\n\n\ntype(d)\n\nbool\n\n\n\ntype(e)\n\nbool\n\n\n\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\nTrue\n\n\n\n10 == 5\n\nFalse\n\n\n\nx = 5\ny = 7\n\n\nx == y\n\nFalse",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
   },
   {
     "objectID": "python/02-entrada-datos-operadores.html#operadores-relacionales",
     "href": "python/02-entrada-datos-operadores.html#operadores-relacionales",
     "title": "Entrada de datos",
     "section": "Operadores relacionales",
-    "text": "Operadores relacionales\n\nx != y               # x no es igual a y\n\nTrue\n\n\n\nx &gt; y                # x es mayor que y\n\nFalse\n\n\n\nx &gt;= y               # x es mayor o igual a y\n\nFalse\n\n\n\nx &lt; y               # x es menor o igual a y\n\nTrue"
+    "text": "Operadores relacionales\n\nx != y               # x no es igual a y\n\nTrue\n\n\n\nx &gt; y                # x es mayor que y\n\nFalse\n\n\n\nx &gt;= y               # x es mayor o igual a y\n\nFalse\n\n\n\nx &lt; y               # x es menor o igual a y\n\nTrue",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
   },
   {
     "objectID": "python/02-entrada-datos-operadores.html#operadores-lógicos",
     "href": "python/02-entrada-datos-operadores.html#operadores-lógicos",
     "title": "Entrada de datos",
     "section": "Operadores lógicos",
-    "text": "Operadores lógicos\n\nx &gt; 0 and x &lt; 10\n\nTrue\n\n\n\nx % 2 == 0 or x % 3 == 0\n\nFalse\n\n\n\nnot x &gt; y\n\nTrue"
+    "text": "Operadores lógicos\n\nx &gt; 0 and x &lt; 10\n\nTrue\n\n\n\nx % 2 == 0 or x % 3 == 0\n\nFalse\n\n\n\nnot x &gt; y\n\nTrue",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
   },
   {
     "objectID": "python/04-estructuras-datos.html",
@@ -1061,7 +1121,11 @@
     "href": "tutoriales/index.html#un-mismo-dato-tres-formas-de-contarlo",
     "title": "Tutoriales comparativos",
     "section": "Un mismo dato, tres formas de contarlo",
-    "text": "Un mismo dato, tres formas de contarlo"
+    "text": "Un mismo dato, tres formas de contarlo",
+    "crumbs": [
+      "Tutoriales",
+      "Comparación"
+    ]
   },
   {
     "objectID": "tutoriales/quiz-comparativo.html",
@@ -1075,7 +1139,7 @@
     "href": "index.html#cómo-se-arma-el-sitio",
     "title": "Operación Jupyter",
     "section": "Cómo se arma el sitio",
-    "text": "Cómo se arma el sitio\n\nCada lenguaje se escribe como notebook o página, y Quarto arma automáticamente el sitio publicado en GitHub Pages.\n\nCómo usar este sitio\nCada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:\n\nInstalación e interfaces (RStudio, Google Colab, Jupyter)\nTipos de datos y declaración de variables\nEstructuras de control (secuencias, decisiones, repeticiones)\nEstructuras de datos y objetos\nFunciones\nParticularidades del lenguaje"
+    "text": "Cómo se arma el sitio\n\n\nCómo usar este sitio\nCada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:\n\nInstalación e interfaces (RStudio, Google Colab, Jupyter)\nTipos de datos y declaración de variables\nEstructuras de control (secuencias, decisiones, repeticiones)\nEstructuras de datos y objetos\nFunciones\nParticularidades del lenguaje"
   },
   {
     "objectID": "progreso.html",
@@ -1083,5 +1147,23 @@
     "title": "Mi progreso",
     "section": "",
     "text": "Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más).\n\n\n&lt;div id=\"barra-progreso\" style=\"background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;\"&gt;&lt;/div&gt;\n\n\n0 de 0 completado"
+  },
+  {
+    "objectID": "index.html#elige-un-lenguaje",
+    "href": "index.html#elige-un-lenguaje",
+    "title": "Operación Jupyter",
+    "section": "Elige un lenguaje",
+    "text": "Elige un lenguaje\n\n\nPython\nPropósito general, ecosistema enorme, fácil de aprender.\nEmpezar →\n\n\nR\nEstadística y gráficos, con RStudio como su entorno natural.\nEmpezar →\n\n\nJulia\nCómputo numérico de alto desempeño con sintaxis de alto nivel.\nEmpezar →\n\n\nTambién puedes ir directo a los Tutoriales comparativos (ejercicios, quiz, ficha descargable) o revisar Mi progreso."
+  },
+  {
+    "objectID": "tutoriales/index.html#las-mismas-ideas-tres-cajas-de-herramientas",
+    "href": "tutoriales/index.html#las-mismas-ideas-tres-cajas-de-herramientas",
+    "title": "Tutoriales comparativos",
+    "section": "Las mismas ideas, tres cajas de herramientas",
+    "text": "Las mismas ideas, tres cajas de herramientas",
+    "crumbs": [
+      "Tutoriales",
+      "Comparación"
+    ]
   }
 ]
