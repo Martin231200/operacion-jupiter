@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ejercicios verificables: Julia – Operación Jupyter</title>
+<title>Lenguajes de programación de código libre – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -282,11 +282,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#matemáticas-verificar-si-un-número-es-primo" id="toc-matemáticas-verificar-si-un-número-es-primo" class="nav-link active" data-scroll-target="#matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</a></li>
-  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">2. Estadística descriptiva</a></li>
-  <li><a href="#resolver-una-ecuación-cuadrática" id="toc-resolver-una-ecuación-cuadrática" class="nav-link" data-scroll-target="#resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</a></li>
-  <li><a href="#graficar-una-función" id="toc-graficar-una-función" class="nav-link" data-scroll-target="#graficar-una-función">4. Graficar una función</a></li>
-  <li><a href="#ejercicio-propuesto" id="toc-ejercicio-propuesto" class="nav-link" data-scroll-target="#ejercicio-propuesto">Ejercicio propuesto</a></li>
+  <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a>
+  <ul class="collapse">
+  <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -295,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ejercicios verificables: Julia</h1>
+<h1 class="title">Lenguajes de programación de código libre</h1>
 </div>
 
 
@@ -312,80 +311,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Mismos cuatro ejercicios que en Python y R. Este código está listo para correr, pero el sitio aún no lo ejecuta automáticamente (hace falta instalar Julia y el kernel IJulia).</p>
-<section id="matemáticas-verificar-si-un-número-es-primo" class="level2">
-<h2 class="anchored" data-anchor-id="matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">es_primo</span>(n)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="fl">2</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">2</span><span class="op">:</span><span class="fu">isqrt</span>(n)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">%</span> i <span class="op">==</span> <span class="fl">0</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">false</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">true</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>casos <span class="op">=</span> <span class="fu">Dict</span>(<span class="fl">7</span> <span class="op">=&gt;</span> <span class="cn">true</span>, <span class="fl">15</span> <span class="op">=&gt;</span> <span class="cn">false</span>, <span class="fl">2</span> <span class="op">=&gt;</span> <span class="cn">true</span>, <span class="fl">97</span> <span class="op">=&gt;</span> <span class="cn">true</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n, esperado) <span class="kw">in</span> casos</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> <span class="fu">es_primo</span>(n)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> resultado <span class="op">==</span> esperado <span class="st">"Falló en n=</span><span class="sc">$</span>n<span class="st">"</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"es_primo(</span><span class="sc">$</span>n<span class="st">) = </span><span class="sc">$</span>resultado<span class="st">  [correcto]"</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="estadística-descriptiva" class="level2">
-<h2 class="anchored" data-anchor-id="estadística-descriptiva">2. Estadística descriptiva</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> [<span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">30</span>, <span class="fl">12</span>]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(datos)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>mediana <span class="op">=</span> <span class="fu">median</span>(datos)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>desv_std <span class="op">=</span> <span class="fu">std</span>(datos)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">15.9</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mediana <span class="op">==</span> <span class="fl">15.0</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">6.01</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Mediana: "</span>, mediana)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Desviación estándar: "</span>, <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="resolver-una-ecuación-cuadrática" class="level2">
-<h2 class="anchored" data-anchor-id="resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    disc <span class="op">=</span> b<span class="op">^</span><span class="fl">2</span> <span class="op">-</span> <span class="fl">4</span><span class="op">*</span>a<span class="op">*</span>c</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> (<span class="op">-</span>b <span class="op">-</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x1, x2</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="fl">1</span>, <span class="op">-</span><span class="fl">3</span>, <span class="fl">2</span>  <span class="co"># x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>x1, x2 <span class="op">=</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> (x1, x2)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    valor <span class="op">=</span> a<span class="op">*</span>x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> <span class="fu">abs</span>(valor) <span class="op">&lt;</span> <span class="fl">1e-9</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Raíces: "</span>, x1, <span class="st">", "</span>, x2)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Ambas raíces satisfacen la ecuación (verificado)"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="graficar-una-función" class="level2">
-<h2 class="anchored" data-anchor-id="graficar-una-función">4. Graficar una función</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span>, length<span class="op">=</span><span class="fl">100</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">.^</span> <span class="fl">2</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, title<span class="op">=</span><span class="st">"f(x) = x^2"</span>, xlabel<span class="op">=</span><span class="st">"x"</span>, ylabel<span class="op">=</span><span class="st">"f(x)"</span>, legend<span class="op">=</span><span class="cn">false</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="ejercicio-propuesto" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-propuesto">Ejercicio propuesto</h2>
-<p>Modifica el ejercicio 2 para calcular también la varianza (<code>var(datos)</code>) y agrega tu propio <code>@assert</code> para verificarla.</p>
+<section id="r-y-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-y-rstudio">R y RStudio</h2>
+<section id="características" class="level3">
+<h3 class="anchored" data-anchor-id="características">Características</h3>
+<ul>
+<li>R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos</li>
+<li>A diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)</li>
+<li>Es un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación</li>
+<li>R es competencia de Excel, Phyton, SPSS y STATA</li>
+<li>Se parece a Matlab y su sintaxis recuerda a C / C++</li>
+<li>R fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team</li>
+<li>La versión beta más estable fue lanzada hasta el año 2000</li>
+<li>RStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R</li>
+<li>Es un software libre</li>
+<li>No hay responsabilidad en caso de errores en el código</li>
+<li>Es uno de los primeros lenguajes en recibir los nuevos temas</li>
+<li>Tiene una fácil conectividad y compatibilidad con otros lenguajes de programación</li>
+<li>No tiene límite (teórico) en la lectura de bases de datos</li>
+<li>Suele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:</li>
+<li>Primero se debe instalar R</li>
+<li>Dependiendo de las características del sistema operativo, se puede encontrar en&nbsp;https://www.r-project.org/&nbsp;el archivo de instalación adecuado</li>
+<li>Después de elegir el idioma, acepte los términos</li>
+<li>Al final de la instalación busque la carpeta en donde se guardó (generalmente&nbsp;<em>Aplicaciones</em>) para inicarlo</li>
+<li>Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.</li>
+<li>Se descarga RStudio en&nbsp;https://www.rstudio.com/, actualmente disponible en&nbsp;https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:</li>
+<li>Abre Google Colab (<u>https://colab.research.google.com/</u>)</li>
+<li>Crea un nuevo notebook</li>
+<li>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev</li>
+<li>Instalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”</li>
+<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:</li>
+<li>Se tiene en cada momento un registro de las variables definidos y sus valores</li>
+<li>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:</li>
+<li>El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo</li>
+<li>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:</li>
+<li>Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.</li>
+<li>El IDE tiene menos opciones que en RStudio</li>
+<li>El sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support</li>
+<li>Manual de referencia oficial:&nbsp;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</li>
+<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.statmethods.net%2Findex.html">https://www.statmethods.net/index.html</a></li>
+<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.coursera.org%2Fhttps%3A%2F%2Frpubs.com%2F">https://www.coursera.org/https://rpubs.com/</a> # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</li>
+</ul>
+<div id="cell-2" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Licencia de R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Contribuyentes</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contributors</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Cita</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-<em>r-a-language-and-environment-for-statistical-computing</em>.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
+<div id="cell-4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ayuda</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(seq)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">help.start</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>? seq</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Salir del programa</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
