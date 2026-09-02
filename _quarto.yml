@@ -10,9 +10,6 @@ website:
   description: "Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM"
   page-navigation: true
 
-execute:
-  freeze: auto
-
   navbar:
     left:
       - href: index.qmd
