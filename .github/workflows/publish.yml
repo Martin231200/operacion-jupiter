@@ -28,10 +28,16 @@ jobs:
         with:
           r-version: 'release'
 
-      - name: Install IRkernel
-        run: |
-          Rscript -e 'install.packages(c("IRkernel", "knitr", "rmarkdown"), repos="https://cloud.r-project.org")'
-          Rscript -e 'IRkernel::installspec(user = FALSE)'
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::IRkernel
+            any::knitr
+            any::rmarkdown
+
+      - name: Register R kernel with Jupyter
+        run: Rscript -e 'IRkernel::installspec(user = FALSE)'
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
