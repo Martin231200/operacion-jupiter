@@ -2,7 +2,12 @@
 title: "Ejercicios verificables: Julia"
 ---
 
-Mismos cuatro ejercicios que en Python y R. Este código está listo para correr, pero el sitio aún no lo ejecuta automáticamente (hace falta instalar Julia y el kernel IJulia).
+::: {.callout-important}
+## Sobre las salidas de esta página
+A diferencia de Python y R, todavía no existe una forma madura de ejecutar Julia en vivo dentro del navegador (lo que sí existe para R con webR y para Python con Pyodide). Por eso el código de esta página **no es editable ni se ejecuta al momento** — las salidas que ves abajo de cada bloque fueron calculadas de antemano, con los mismos valores que ya verificamos en Python y R para los mismos ejercicios.
+:::
+
+Mismos cuatro ejercicios que en Python y R, para comparar directamente la sintaxis.
 
 ## 1. Matemáticas: verificar si un número es primo
 
@@ -27,6 +32,14 @@ for (n, esperado) in casos
 end
 ```
 
+**Salida:**
+```
+es_primo(7) = true  [correcto]
+es_primo(15) = false  [correcto]
+es_primo(2) = true  [correcto]
+es_primo(97) = true  [correcto]
+```
+
 ## 2. Estadística descriptiva
 
 ```julia
@@ -45,6 +58,13 @@ desv_std = std(datos)
 println("Media: ", media)
 println("Mediana: ", mediana)
 println("Desviación estándar: ", round(desv_std, digits=2))
+```
+
+**Salida:**
+```
+Media: 15.9
+Mediana: 15.0
+Desviación estándar: 6.01
 ```
 
 ## 3. Resolver una ecuación cuadrática
@@ -69,6 +89,12 @@ println("Raíces: ", x1, ", ", x2)
 println("Ambas raíces satisfacen la ecuación (verificado)")
 ```
 
+**Salida:**
+```
+Raíces: 2.0, 1.0
+Ambas raíces satisfacen la ecuación (verificado)
+```
+
 ## 4. Graficar una función
 
 ```julia
@@ -79,6 +105,10 @@ y = x .^ 2
 
 plot(x, y, title="f(x) = x^2", xlabel="x", ylabel="f(x)", legend=false)
 ```
+
+**Salida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):**
+
+![](img/salida-grafica-julia.png)
 
 ## Ejercicio propuesto
 

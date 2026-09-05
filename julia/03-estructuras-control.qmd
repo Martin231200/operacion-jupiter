@@ -11,7 +11,9 @@ title: "Julia: Estructuras de control"
 collect(1:2:10)   # con incremento
 ```
 
-## Estructura "if"
+:::: {.panel-tabset}
+
+#### Estructura "if"
 
 ```julia
 if x > 0
@@ -19,7 +21,7 @@ if x > 0
 end
 ```
 
-## Estructura "if-else"
+#### Estructura "if-else"
 
 ```julia
 if x > 0
@@ -29,7 +31,7 @@ else
 end
 ```
 
-## Estructura "for"
+#### Estructura "for"
 
 ```julia
 for i in 1:5
@@ -37,7 +39,7 @@ for i in 1:5
 end
 ```
 
-## Estructura "while"
+#### Estructura "while"
 
 ```julia
 i = 1
@@ -46,3 +48,5 @@ while i <= 5
     i += 1
 end
 ```
+
+::::

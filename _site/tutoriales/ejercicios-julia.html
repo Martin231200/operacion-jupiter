@@ -71,16 +71,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../tutoriales/ejercicios-r-webr.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-77a0e48be1646b22ae3bfe653f3d14ea.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ac0b5c0ff6a6275a86c7e0c78427c5ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f25488dd8c1b0298410c4592b5f89f85.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +118,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -134,122 +301,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Python</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
-        <li>
-    <a class="dropdown-item" href="../python/01-introduccion.html">
- <span class="dropdown-text">Introducción e instalación</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../progreso.html"> 
+<span class="menu-text">Mi progreso</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/02-entrada-datos-operadores.html">
- <span class="dropdown-text">Entrada de datos y operadores</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../glosario.html"> 
+<span class="menu-text">Glosario</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/03-funciones.html">
- <span class="dropdown-text">Funciones</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../python/01-introduccion.html"> 
+<span class="menu-text">Python</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/04-estructuras-datos.html">
- <span class="dropdown-text">Estructuras de datos</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../r/01-introduccion.html"> 
+<span class="menu-text">R</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/05-arreglos.html">
- <span class="dropdown-text">Arreglos</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../julia/01-introduccion.html"> 
+<span class="menu-text">Julia</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/06-funciones-estadisticas.html">
- <span class="dropdown-text">Funciones estadísticas</span></a>
+  <li class="nav-item">
+    <a class="nav-link active" href="../tutoriales/index.html" aria-current="page"> 
+<span class="menu-text">Tutoriales</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">R</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-r">    
-        <li>
-    <a class="dropdown-item" href="../r/01-introduccion.html">
- <span class="dropdown-text">Introducción e instalación</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/02-tipos-y-variables.html">
- <span class="dropdown-text">Tipos de datos y variables</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/03-estructuras-control.html">
- <span class="dropdown-text">Estructuras de control</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/04-estructuras-datos.html">
- <span class="dropdown-text">Estructuras de datos</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/05-funciones.html">
- <span class="dropdown-text">Funciones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/06-particularidades.html">
- <span class="dropdown-text">Particularidades</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-julia" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Julia</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-julia">    
-        <li>
-    <a class="dropdown-item" href="../julia/01-introduccion.html">
- <span class="dropdown-text">Introducción e instalación</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/02-tipos-y-variables.html">
- <span class="dropdown-text">Tipos de datos y variables</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/03-estructuras-control.html">
- <span class="dropdown-text">Estructuras de control</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/04-estructuras-datos.html">
- <span class="dropdown-text">Estructuras de datos</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/05-funciones.html">
- <span class="dropdown-text">Funciones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/06-particularidades.html">
- <span class="dropdown-text">Particularidades</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutoriales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tutoriales</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutoriales">    
-        <li>
-    <a class="dropdown-item" href="../tutoriales/index.html">
- <span class="dropdown-text">Comparación</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/ejercicios-python.html">
- <span class="dropdown-text">Ejercicios Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/ejercicios-r.html">
- <span class="dropdown-text">Ejercicios R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/ejercicios-julia.html">
- <span class="dropdown-text">Ejercicios Julia</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../libros/index.html"> 
 <span class="menu-text">Libros</span></a>
@@ -261,19 +336,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutoriales/ejercicios-julia.html">Ejercicios Julia</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/quiz-comparativo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz interactivo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/ejercicios-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/ejercicios-python-pyodide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios Python (en vivo)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/ejercicios-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/ejercicios-r-webr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios R (en vivo)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/ejercicios-julia.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Ejercicios Julia</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#matemáticas-verificar-si-un-número-es-primo" id="toc-matemáticas-verificar-si-un-número-es-primo" class="nav-link active" data-scroll-target="#matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</a></li>
   <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">2. Estadística descriptiva</a></li>
   <li><a href="#resolver-una-ecuación-cuadrática" id="toc-resolver-una-ecuación-cuadrática" class="nav-link" data-scroll-target="#resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</a></li>
@@ -285,9 +420,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ejercicios verificables: Julia</h1>
+<div class="quarto-title-block"><div><h1 class="title">Ejercicios verificables: Julia</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -304,7 +440,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Mismos cuatro ejercicios que en Python y R. Este código está listo para correr, pero el sitio aún no lo ejecuta automáticamente (hace falta instalar Julia y el kernel IJulia).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Sobre las salidas de esta página
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A diferencia de Python y R, todavía no existe una forma madura de ejecutar Julia en vivo dentro del navegador (lo que sí existe para R con webR y para Python con Pyodide). Por eso el código de esta página <strong>no es editable ni se ejecuta al momento</strong> — las salidas que ves abajo de cada bloque fueron calculadas de antemano, con los mismos valores que ya verificamos en Python y R para los mismos ejercicios.</p>
+</div>
+</div>
+<p>Mismos cuatro ejercicios que en Python y R, para comparar directamente la sintaxis.</p>
 <section id="matemáticas-verificar-si-un-número-es-primo" class="level2">
 <h2 class="anchored" data-anchor-id="matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">es_primo</span>(n)</span>
@@ -325,64 +474,93 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> resultado <span class="op">==</span> esperado <span class="st">"Falló en n=</span><span class="sc">$</span>n<span class="st">"</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"es_primo(</span><span class="sc">$</span>n<span class="st">) = </span><span class="sc">$</span>resultado<span class="st">  [correcto]"</span>)</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong></p>
+<pre><code>es_primo(7) = true  [correcto]
+es_primo(15) = false  [correcto]
+es_primo(2) = true  [correcto]
+es_primo(97) = true  [correcto]</code></pre>
 </section>
 <section id="estadística-descriptiva" class="level2">
 <h2 class="anchored" data-anchor-id="estadística-descriptiva">2. Estadística descriptiva</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> [<span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">30</span>, <span class="fl">12</span>]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(datos)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>mediana <span class="op">=</span> <span class="fu">median</span>(datos)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>desv_std <span class="op">=</span> <span class="fu">std</span>(datos)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">15.9</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mediana <span class="op">==</span> <span class="fl">15.0</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">6.01</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Mediana: "</span>, mediana)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Desviación estándar: "</span>, <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> [<span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">30</span>, <span class="fl">12</span>]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(datos)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>mediana <span class="op">=</span> <span class="fu">median</span>(datos)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>desv_std <span class="op">=</span> <span class="fu">std</span>(datos)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">15.9</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mediana <span class="op">==</span> <span class="fl">15.0</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">6.01</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Mediana: "</span>, mediana)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Desviación estándar: "</span>, <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong></p>
+<pre><code>Media: 15.9
+Mediana: 15.0
+Desviación estándar: 6.01</code></pre>
 </section>
 <section id="resolver-una-ecuación-cuadrática" class="level2">
 <h2 class="anchored" data-anchor-id="resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    disc <span class="op">=</span> b<span class="op">^</span><span class="fl">2</span> <span class="op">-</span> <span class="fl">4</span><span class="op">*</span>a<span class="op">*</span>c</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> (<span class="op">-</span>b <span class="op">-</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x1, x2</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="fl">1</span>, <span class="op">-</span><span class="fl">3</span>, <span class="fl">2</span>  <span class="co"># x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>x1, x2 <span class="op">=</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> (x1, x2)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    valor <span class="op">=</span> a<span class="op">*</span>x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> <span class="fu">abs</span>(valor) <span class="op">&lt;</span> <span class="fl">1e-9</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Raíces: "</span>, x1, <span class="st">", "</span>, x2)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Ambas raíces satisfacen la ecuación (verificado)"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    disc <span class="op">=</span> b<span class="op">^</span><span class="fl">2</span> <span class="op">-</span> <span class="fl">4</span><span class="op">*</span>a<span class="op">*</span>c</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> (<span class="op">-</span>b <span class="op">-</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x1, x2</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="fl">1</span>, <span class="op">-</span><span class="fl">3</span>, <span class="fl">2</span>  <span class="co"># x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>x1, x2 <span class="op">=</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> (x1, x2)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    valor <span class="op">=</span> a<span class="op">*</span>x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> <span class="fu">abs</span>(valor) <span class="op">&lt;</span> <span class="fl">1e-9</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Raíces: "</span>, x1, <span class="st">", "</span>, x2)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Ambas raíces satisfacen la ecuación (verificado)"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong></p>
+<pre><code>Raíces: 2.0, 1.0
+Ambas raíces satisfacen la ecuación (verificado)</code></pre>
 </section>
 <section id="graficar-una-función" class="level2">
 <h2 class="anchored" data-anchor-id="graficar-una-función">4. Graficar una función</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span>, length<span class="op">=</span><span class="fl">100</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">.^</span> <span class="fl">2</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, title<span class="op">=</span><span class="st">"f(x) = x^2"</span>, xlabel<span class="op">=</span><span class="st">"x"</span>, ylabel<span class="op">=</span><span class="st">"f(x)"</span>, legend<span class="op">=</span><span class="cn">false</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span>, length<span class="op">=</span><span class="fl">100</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">.^</span> <span class="fl">2</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, title<span class="op">=</span><span class="st">"f(x) = x^2"</span>, xlabel<span class="op">=</span><span class="st">"x"</span>, ylabel<span class="op">=</span><span class="st">"f(x)"</span>, legend<span class="op">=</span><span class="cn">false</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):</strong></p>
+<p><img src="img/salida-grafica-julia.png" class="img-fluid"></p>
 </section>
 <section id="ejercicio-propuesto" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-propuesto">Ejercicio propuesto</h2>
 <p>Modifica el ejercicio 2 para calcular también la varianza (<code>var(datos)</code>) y agrega tu propio <code>@assert</code> para verificarla.</p>
 
 
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -451,6 +629,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -781,20 +1010,152 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../tutoriales/ejercicios-r-webr.html" class="pagination-link" aria-label="Ejercicios R (en vivo)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ejercicios R (en vivo)</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ejercicios verificables: Julia"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sobre las salidas de esta página</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>A diferencia de Python y R, todavía no existe una forma madura de ejecutar Julia en vivo dentro del navegador (lo que sí existe para R con webR y para Python con Pyodide). Por eso el código de esta página **no es editable ni se ejecuta al momento** — las salidas que ves abajo de cada bloque fueron calculadas de antemano, con los mismos valores que ya verificamos en Python y R para los mismos ejercicios.</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>Mismos cuatro ejercicios que en Python y R, para comparar directamente la sintaxis.</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Matemáticas: verificar si un número es primo</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">es_primo</span>(n)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="fl">2</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">2</span><span class="op">:</span><span class="fu">isqrt</span>(n)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n <span class="op">%</span> i <span class="op">==</span> <span class="fl">0</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="cn">false</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">true</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>casos <span class="op">=</span> <span class="fu">Dict</span>(<span class="fl">7</span> <span class="op">=&gt;</span> <span class="cn">true</span>, <span class="fl">15</span> <span class="op">=&gt;</span> <span class="cn">false</span>, <span class="fl">2</span> <span class="op">=&gt;</span> <span class="cn">true</span>, <span class="fl">97</span> <span class="op">=&gt;</span> <span class="cn">true</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n, esperado) <span class="kw">in</span> casos</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> <span class="fu">es_primo</span>(n)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> resultado <span class="op">==</span> esperado <span class="st">"Falló en n=</span><span class="sc">$</span>n<span class="st">"</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">println</span>(<span class="st">"es_primo(</span><span class="sc">$</span>n<span class="st">) = </span><span class="sc">$</span>resultado<span class="st">  [correcto]"</span>)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>**Salida:**</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="in">es_primo(7) = true  [correcto]</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="in">es_primo(15) = false  [correcto]</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="in">es_primo(2) = true  [correcto]</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="in">es_primo(97) = true  [correcto]</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Estadística descriptiva</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> [<span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">30</span>, <span class="fl">12</span>]</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(datos)</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>mediana <span class="op">=</span> <span class="fu">median</span>(datos)</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>desv_std <span class="op">=</span> <span class="fu">std</span>(datos)</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">15.9</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mediana <span class="op">==</span> <span class="fl">15.0</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">6.01</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media)</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Mediana: "</span>, mediana)</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Desviación estándar: "</span>, <span class="fu">round</span>(desv_std, digits<span class="op">=</span><span class="fl">2</span>))</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>**Salida:**</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="in">Media: 15.9</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="in">Mediana: 15.0</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a><span class="in">Desviación estándar: 6.01</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Resolver una ecuación cuadrática</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>    disc <span class="op">=</span> b<span class="op">^</span><span class="fl">2</span> <span class="op">-</span> <span class="fl">4</span><span class="op">*</span>a<span class="op">*</span>c</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>    x1 <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    x2 <span class="op">=</span> (<span class="op">-</span>b <span class="op">-</span> <span class="fu">sqrt</span>(disc)) <span class="op">/</span> (<span class="fl">2</span><span class="op">*</span>a)</span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x1, x2</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="fl">1</span>, <span class="op">-</span><span class="fl">3</span>, <span class="fl">2</span>  <span class="co"># x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>x1, x2 <span class="op">=</span> <span class="fu">resolver_cuadratica</span>(a, b, c)</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> (x1, x2)</span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>    valor <span class="op">=</span> a<span class="op">*</span>x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> b<span class="op">*</span>x <span class="op">+</span> c</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>    <span class="pp">@assert</span> <span class="fu">abs</span>(valor) <span class="op">&lt;</span> <span class="fl">1e-9</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Raíces: "</span>, x1, <span class="st">", "</span>, x2)</span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Ambas raíces satisfacen la ecuación (verificado)"</span>)</span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>**Salida:**</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="in">Raíces: 2.0, 1.0</span></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a><span class="in">Ambas raíces satisfacen la ecuación (verificado)</span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Graficar una función</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span>, length<span class="op">=</span><span class="fl">100</span>)</span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">.^</span> <span class="fl">2</span></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, title<span class="op">=</span><span class="st">"f(x) = x^2"</span>, xlabel<span class="op">=</span><span class="st">"x"</span>, ylabel<span class="op">=</span><span class="st">"f(x)"</span>, legend<span class="op">=</span><span class="cn">false</span>)</span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>**Salida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):**</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/salida-grafica-julia.png)</span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio propuesto</span></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>Modifica el ejercicio 2 para calcular también la varianza (<span class="in">`var(datos)`</span>) y agrega tu propio <span class="in">`@assert`</span> para verificarla.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
 <p>Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM</p>
-</div>
-    <div class="nav-footer-right">
+</div>   
+    <div class="nav-footer-center">
       &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../tutoriales/ficha-comparativa.pdf">
+<p>Descargar ficha comparativa (PDF)</p>
+</a>
+  </li>  
+</ul>
     </div>
   </div>
 </footer>
+<script src="../reading-time.js"></script>
 
 
 

@@ -9,6 +9,7 @@ website:
   title: "Operación Jupyter"
   description: "Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM"
   page-navigation: true
+  bread-crumbs: true
 
   navbar:
     left:
@@ -16,6 +17,8 @@ website:
         text: Inicio
       - href: progreso.qmd
         text: Mi progreso
+      - href: glosario.qmd
+        text: Glosario
       - href: python/01-introduccion.ipynb
         text: Python
       - href: r/01-introduccion.ipynb
@@ -114,3 +117,6 @@ format:
     code-fold: show
     code-tools: true
     code-summary: "Ver/ocultar código"
+    code-copy: true
+    include-after-body:
+      - text: <script src="/reading-time.js"></script>

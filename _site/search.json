@@ -429,14 +429,22 @@
     "href": "r/03-estructuras-control.html",
     "title": "Estructuras: secuencias, decisiones y repeticiones",
     "section": "",
-    "text": "El operador : genera una secuencia de enteros consecutivos; la función seq() permite controlar el incremento y seq_len()/seq_along() generan secuencias a partir de la longitud de un objeto. 1:10\n\nseq(0, 1, by = 0.25)\nseq_len(5)"
+    "text": "El operador : genera una secuencia de enteros consecutivos; la función seq() permite controlar el incremento y seq_len()/seq_along() generan secuencias a partir de la longitud de un objeto. 1:10\n\n\nVer/ocultar código\nseq(0, 1, by = 0.25)\nseq_len(5)\n\n\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”Estructura “repeat”\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n} else {\nprint(\"no positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nfor (i in 1:5) {\nprint(i)\n}\n\n\n\n\n\n\nVer/ocultar código\ni &lt;- 1\nwhile (i &lt;= 5) {\nprint(i)\ni &lt;- i + 1\n}\n\n\n\n\nrepeat ejecuta el bloque indefinidamente hasta encontrar un break; es el equivalente en R de un bucle “do-while”.\n\n\nVer/ocultar código\ni &lt;- 1\nrepeat {\nprint(i)\ni &lt;- i + 1\nif (i &gt; 5) break\n}",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
   },
   {
     "objectID": "r/03-estructuras-control.html#secuencias",
     "href": "r/03-estructuras-control.html#secuencias",
     "title": "Estructuras: secuencias, decisiones y repeticiones",
     "section": "",
-    "text": "El operador : genera una secuencia de enteros consecutivos; la función seq() permite controlar el incremento y seq_len()/seq_along() generan secuencias a partir de la longitud de un objeto. 1:10\n\nseq(0, 1, by = 0.25)\nseq_len(5)"
+    "text": "El operador : genera una secuencia de enteros consecutivos; la función seq() permite controlar el incremento y seq_len()/seq_along() generan secuencias a partir de la longitud de un objeto. 1:10\n\n\nVer/ocultar código\nseq(0, 1, by = 0.25)\nseq_len(5)\n\n\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”Estructura “repeat”\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n} else {\nprint(\"no positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nfor (i in 1:5) {\nprint(i)\n}\n\n\n\n\n\n\nVer/ocultar código\ni &lt;- 1\nwhile (i &lt;= 5) {\nprint(i)\ni &lt;- i + 1\n}\n\n\n\n\nrepeat ejecuta el bloque indefinidamente hasta encontrar un break; es el equivalente en R de un bucle “do-while”.\n\n\nVer/ocultar código\ni &lt;- 1\nrepeat {\nprint(i)\ni &lt;- i + 1\nif (i &gt; 5) break\n}",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
   },
   {
     "objectID": "r/03-estructuras-control.html#estructura-if",
@@ -607,14 +615,22 @@
     "href": "julia/04-estructuras-datos.html",
     "title": "Julia: Estructuras de datos",
     "section": "",
-    "text": "v = [1, 2, 3, 4]   # indexado desde 1\nv[1]\nlength(v)\n\n\n\nd = Dict(\"a\" =&gt; 1, \"b\" =&gt; 2)\nd[\"a\"]\n\n\n\nt = (1, \"dos\", 3.0)\nt[2]"
+    "text": "v = [1, 2, 3, 4]   # indexado desde 1\nv[1]\nlength(v)\n\nDiccionariosTuplas\n\n\nd = Dict(\"a\" =&gt; 1, \"b\" =&gt; 2)\nd[\"a\"]\n\n\nt = (1, \"dos\", 3.0)\nt[2]",
+    "crumbs": [
+      "Julia",
+      "Estructuras de datos"
+    ]
   },
   {
     "objectID": "julia/04-estructuras-datos.html#arrays",
     "href": "julia/04-estructuras-datos.html#arrays",
     "title": "Julia: Estructuras de datos",
     "section": "",
-    "text": "v = [1, 2, 3, 4]   # indexado desde 1\nv[1]\nlength(v)"
+    "text": "v = [1, 2, 3, 4]   # indexado desde 1\nv[1]\nlength(v)\n\nDiccionariosTuplas\n\n\nd = Dict(\"a\" =&gt; 1, \"b\" =&gt; 2)\nd[\"a\"]\n\n\nt = (1, \"dos\", 3.0)\nt[2]",
+    "crumbs": [
+      "Julia",
+      "Estructuras de datos"
+    ]
   },
   {
     "objectID": "julia/04-estructuras-datos.html#diccionarios",
@@ -698,14 +714,22 @@
     "href": "julia/03-estructuras-control.html",
     "title": "Julia: Estructuras de control",
     "section": "",
-    "text": "1:10\ncollect(1:2:10)   # con incremento\n\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\n\nfor i in 1:5\n    println(i)\nend\n\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend"
+    "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend",
+    "crumbs": [
+      "Julia",
+      "Estructuras de control"
+    ]
   },
   {
     "objectID": "julia/03-estructuras-control.html#secuencias",
     "href": "julia/03-estructuras-control.html#secuencias",
     "title": "Julia: Estructuras de control",
     "section": "",
-    "text": "1:10\ncollect(1:2:10)   # con incremento"
+    "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend",
+    "crumbs": [
+      "Julia",
+      "Estructuras de control"
+    ]
   },
   {
     "objectID": "julia/03-estructuras-control.html#estructura-if",
@@ -974,14 +998,22 @@
     "href": "r/04-estructuras-datos.html",
     "title": "Estructuras de datos y objetos",
     "section": "",
-    "text": "El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().\n\nv &lt;- c(1, 2, 3, 4)\n\nv[2]\n\nlength(v)"
+    "text": "El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().\n\n\nVer/ocultar código\nv &lt;- c(1, 2, 3, 4)\n\n\nv[2]\n\n\nVer/ocultar código\nlength(v)\n\n\n\nFactoresMatricesArreglosDataframesListas\n\n\nLos factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).\n\n\nVer/ocultar código\nf &lt;- factor(c(\"bajo\", \"alto\", \"medio\"))\nlevels(f)\n\n\n\n\nUna matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.\n\n\nVer/ocultar código\nm &lt;- matrix(1:6, nrow = 2, ncol = 3)\ndim(m)\n\n\n\n\narray() generaliza la matriz a más de dos dimensiones.\n\n\nVer/ocultar código\na &lt;- array(1:24, dim = c(2, 3, 4))\ndim(a)\n\n\n\n\nEl data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.\n\n\nVer/ocultar código\ndf &lt;- data.frame(nombre = c(\"A\", \"B\"), valor = c(1, 2))\nstr(df)\n\n\n\n\nLa lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.\n\n\nVer/ocultar código\nlst &lt;- list(numero = 1, texto = \"hola\", vector = c(1,2,3))\nlst\\$texto",
+    "crumbs": [
+      "R",
+      "Estructuras de datos"
+    ]
   },
   {
     "objectID": "r/04-estructuras-datos.html#vectores",
     "href": "r/04-estructuras-datos.html#vectores",
     "title": "Estructuras de datos y objetos",
     "section": "",
-    "text": "El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().\n\nv &lt;- c(1, 2, 3, 4)\n\nv[2]\n\nlength(v)"
+    "text": "El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().\n\n\nVer/ocultar código\nv &lt;- c(1, 2, 3, 4)\n\n\nv[2]\n\n\nVer/ocultar código\nlength(v)\n\n\n\nFactoresMatricesArreglosDataframesListas\n\n\nLos factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).\n\n\nVer/ocultar código\nf &lt;- factor(c(\"bajo\", \"alto\", \"medio\"))\nlevels(f)\n\n\n\n\nUna matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.\n\n\nVer/ocultar código\nm &lt;- matrix(1:6, nrow = 2, ncol = 3)\ndim(m)\n\n\n\n\narray() generaliza la matriz a más de dos dimensiones.\n\n\nVer/ocultar código\na &lt;- array(1:24, dim = c(2, 3, 4))\ndim(a)\n\n\n\n\nEl data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.\n\n\nVer/ocultar código\ndf &lt;- data.frame(nombre = c(\"A\", \"B\"), valor = c(1, 2))\nstr(df)\n\n\n\n\nLa lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.\n\n\nVer/ocultar código\nlst &lt;- list(numero = 1, texto = \"hola\", vector = c(1,2,3))\nlst\\$texto",
+    "crumbs": [
+      "R",
+      "Estructuras de datos"
+    ]
   },
   {
     "objectID": "r/04-estructuras-datos.html#factores",
@@ -1037,42 +1069,66 @@
     "href": "tutoriales/ejercicios-julia.html",
     "title": "Ejercicios verificables: Julia",
     "section": "",
-    "text": "Mismos cuatro ejercicios que en Python y R. Este código está listo para correr, pero el sitio aún no lo ejecuta automáticamente (hace falta instalar Julia y el kernel IJulia)."
+    "text": "ImportanteSobre las salidas de esta página\n\n\n\nA diferencia de Python y R, todavía no existe una forma madura de ejecutar Julia en vivo dentro del navegador (lo que sí existe para R con webR y para Python con Pyodide). Por eso el código de esta página no es editable ni se ejecuta al momento — las salidas que ves abajo de cada bloque fueron calculadas de antemano, con los mismos valores que ya verificamos en Python y R para los mismos ejercicios.\nMismos cuatro ejercicios que en Python y R, para comparar directamente la sintaxis.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Julia"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-julia.html#matemáticas-verificar-si-un-número-es-primo",
     "href": "tutoriales/ejercicios-julia.html#matemáticas-verificar-si-un-número-es-primo",
     "title": "Ejercicios verificables: Julia",
     "section": "1. Matemáticas: verificar si un número es primo",
-    "text": "1. Matemáticas: verificar si un número es primo\nfunction es_primo(n)\n    if n &lt; 2\n        return false\n    end\n    for i in 2:isqrt(n)\n        if n % i == 0\n            return false\n        end\n    end\n    return true\nend\n\ncasos = Dict(7 =&gt; true, 15 =&gt; false, 2 =&gt; true, 97 =&gt; true)\nfor (n, esperado) in casos\n    resultado = es_primo(n)\n    @assert resultado == esperado \"Falló en n=$n\"\n    println(\"es_primo($n) = $resultado  [correcto]\")\nend"
+    "text": "1. Matemáticas: verificar si un número es primo\nfunction es_primo(n)\n    if n &lt; 2\n        return false\n    end\n    for i in 2:isqrt(n)\n        if n % i == 0\n            return false\n        end\n    end\n    return true\nend\n\ncasos = Dict(7 =&gt; true, 15 =&gt; false, 2 =&gt; true, 97 =&gt; true)\nfor (n, esperado) in casos\n    resultado = es_primo(n)\n    @assert resultado == esperado \"Falló en n=$n\"\n    println(\"es_primo($n) = $resultado  [correcto]\")\nend\nSalida:\nes_primo(7) = true  [correcto]\nes_primo(15) = false  [correcto]\nes_primo(2) = true  [correcto]\nes_primo(97) = true  [correcto]",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Julia"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-julia.html#estadística-descriptiva",
     "href": "tutoriales/ejercicios-julia.html#estadística-descriptiva",
     "title": "Ejercicios verificables: Julia",
     "section": "2. Estadística descriptiva",
-    "text": "2. Estadística descriptiva\nusing Statistics\n\ndatos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]\n\nmedia = mean(datos)\nmediana = median(datos)\ndesv_std = std(datos)\n\n@assert round(media, digits=2) == 15.9\n@assert mediana == 15.0\n@assert round(desv_std, digits=2) == 6.01\n\nprintln(\"Media: \", media)\nprintln(\"Mediana: \", mediana)\nprintln(\"Desviación estándar: \", round(desv_std, digits=2))"
+    "text": "2. Estadística descriptiva\nusing Statistics\n\ndatos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]\n\nmedia = mean(datos)\nmediana = median(datos)\ndesv_std = std(datos)\n\n@assert round(media, digits=2) == 15.9\n@assert mediana == 15.0\n@assert round(desv_std, digits=2) == 6.01\n\nprintln(\"Media: \", media)\nprintln(\"Mediana: \", mediana)\nprintln(\"Desviación estándar: \", round(desv_std, digits=2))\nSalida:\nMedia: 15.9\nMediana: 15.0\nDesviación estándar: 6.01",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Julia"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-julia.html#resolver-una-ecuación-cuadrática",
     "href": "tutoriales/ejercicios-julia.html#resolver-una-ecuación-cuadrática",
     "title": "Ejercicios verificables: Julia",
     "section": "3. Resolver una ecuación cuadrática",
-    "text": "3. Resolver una ecuación cuadrática\nfunction resolver_cuadratica(a, b, c)\n    disc = b^2 - 4*a*c\n    x1 = (-b + sqrt(disc)) / (2*a)\n    x2 = (-b - sqrt(disc)) / (2*a)\n    return x1, x2\nend\n\na, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2\nx1, x2 = resolver_cuadratica(a, b, c)\n\nfor x in (x1, x2)\n    valor = a*x^2 + b*x + c\n    @assert abs(valor) &lt; 1e-9\nend\n\nprintln(\"Raíces: \", x1, \", \", x2)\nprintln(\"Ambas raíces satisfacen la ecuación (verificado)\")"
+    "text": "3. Resolver una ecuación cuadrática\nfunction resolver_cuadratica(a, b, c)\n    disc = b^2 - 4*a*c\n    x1 = (-b + sqrt(disc)) / (2*a)\n    x2 = (-b - sqrt(disc)) / (2*a)\n    return x1, x2\nend\n\na, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2\nx1, x2 = resolver_cuadratica(a, b, c)\n\nfor x in (x1, x2)\n    valor = a*x^2 + b*x + c\n    @assert abs(valor) &lt; 1e-9\nend\n\nprintln(\"Raíces: \", x1, \", \", x2)\nprintln(\"Ambas raíces satisfacen la ecuación (verificado)\")\nSalida:\nRaíces: 2.0, 1.0\nAmbas raíces satisfacen la ecuación (verificado)",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Julia"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-julia.html#graficar-una-función",
     "href": "tutoriales/ejercicios-julia.html#graficar-una-función",
     "title": "Ejercicios verificables: Julia",
     "section": "4. Graficar una función",
-    "text": "4. Graficar una función\nusing Plots\n\nx = range(-10, 10, length=100)\ny = x .^ 2\n\nplot(x, y, title=\"f(x) = x^2\", xlabel=\"x\", ylabel=\"f(x)\", legend=false)"
+    "text": "4. Graficar una función\nusing Plots\n\nx = range(-10, 10, length=100)\ny = x .^ 2\n\nplot(x, y, title=\"f(x) = x^2\", xlabel=\"x\", ylabel=\"f(x)\", legend=false)\nSalida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Julia"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-julia.html#ejercicio-propuesto",
     "href": "tutoriales/ejercicios-julia.html#ejercicio-propuesto",
     "title": "Ejercicios verificables: Julia",
     "section": "Ejercicio propuesto",
-    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (var(datos)) y agrega tu propio @assert para verificarla."
+    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (var(datos)) y agrega tu propio @assert para verificarla.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Julia"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-r.html",
@@ -1297,5 +1353,12 @@
       "Tutoriales",
       "Ejercicios Python (en vivo)"
     ]
+  },
+  {
+    "objectID": "glosario.html",
+    "href": "glosario.html",
+    "title": "Glosario",
+    "section": "",
+    "text": "Términos comunes que aparecen a lo largo de los tutoriales, con su equivalente o particularidad en cada lenguaje cuando aplica.\nKernel — el motor que ejecuta el código de un notebook. Cada lenguaje tiene el suyo: python3 para Python, ir (IRkernel) para R. Julia usa IJulia.\nNotebook — documento que combina celdas de código (se ejecutan) y celdas de texto/Markdown (solo se muestran formateadas). Extensión .ipynb.\nVector / Array / Lista — la estructura de datos secuencial básica de cada lenguaje. En R se llama vector (mismo tipo obligatorio), en Julia array (mismo tipo, tipado), en Python lista (cualquier tipo mezclado).\nDataFrame — estructura tabular tipo hoja de cálculo. Nativa en R (data.frame), vía biblioteca en Python (pandas.DataFrame) y en Julia (DataFrames.jl).\nIndexado — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.\nTipado dinámico — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.\nCompilación JIT (just-in-time) — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Así funciona Julia, lo que le da su desempeño.\nDespacho múltiple (multiple dispatch) — el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero. Particularidad de Julia.\nVectorización — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. Presente en R y Julia por diseño; en Python se logra con bibliotecas como NumPy.\nwebR / Pyodide — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios “en vivo” de este sitio."
   }
 ]
