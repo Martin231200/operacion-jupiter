@@ -79,13 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8afacc67dfac02dabd84b240e507bceb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a86a9c8886f94a0b3d4ac81fd6cf606d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8afacc67dfac02dabd84b240e507bceb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-77a0e48be1646b22ae3bfe653f3d14ea.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-e0165f7418be0d64d855a2fc46ce23c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c6a11ede1600726ea730b2618d00628e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-c146bdbbfa99e8b45f8a0e1584ac56b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-e0165f7418be0d64d855a2fc46ce23c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -399,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#operadores-matemáticos" id="toc-operadores-matemáticos" class="nav-link active" data-scroll-target="#operadores-matemáticos">Operadores matemáticos</a></li>
   <li><a href="#expresiones" id="toc-expresiones" class="nav-link" data-scroll-target="#expresiones">Expresiones</a></li>
   <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables">Tipos de variables</a></li>
@@ -414,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Entrada de datos</h1>
+<div class="quarto-title-block"><div><h1 class="title">Entrada de datos</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -432,9 +432,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742427038194,&quot;user_tz&quot;:360,&quot;elapsed&quot;:10466,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ee778d4c-1331-4ff9-a1d0-4fa2322443a8">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¿Cuál es tu nombre?"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span> <span class="bu">input</span>()</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>¿Cuál es tu nombre?
 Hugo
@@ -442,7 +445,10 @@ Hugo</code></pre>
 </div>
 </div>
 <div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742424045687,&quot;user_tz&quot;:360,&quot;elapsed&quot;:45,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="03b43645-7e8f-4e89-ab49-5f9bdda25e96">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Su nombre es:"</span>, z)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Su nombre es: Indiana Jones</code></pre>
 </div>
@@ -450,66 +456,96 @@ Hugo</code></pre>
 <section id="operadores-matemáticos" class="level2">
 <h2 class="anchored" data-anchor-id="operadores-matemáticos">Operadores matemáticos</h2>
 <div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422200298,&quot;user_tz&quot;:360,&quot;elapsed&quot;:15,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="6804a621-1738-4072-9633-90ba11009c81">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">+</span> <span class="dv">7</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>11</code></pre>
 </div>
 </div>
 <div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422201689,&quot;user_tz&quot;:360,&quot;elapsed&quot;:16,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="c61985a4-6a20-4419-9a98-e07cb34a7e00">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">55</span> <span class="op">-</span> <span class="dv">9</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>46</code></pre>
 </div>
 </div>
 <div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422211430,&quot;user_tz&quot;:360,&quot;elapsed&quot;:8,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="26f7a66a-3133-407e-cc22-3bb788d6f62c">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">78</span> <span class="op">*</span> <span class="dv">9</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>702</code></pre>
 </div>
 </div>
 <div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422275096,&quot;user_tz&quot;:360,&quot;elapsed&quot;:24,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f4226c5d-02b5-4d92-ab3d-46580d3b1622">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">85</span> <span class="op">/</span> <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>28.333333333333332</code></pre>
 </div>
 </div>
 <div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422281760,&quot;user_tz&quot;:360,&quot;elapsed&quot;:8,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="825d30a2-eb36-4b75-c2c6-baad13c4e771">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">85</span> <span class="op">//</span> <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>28</code></pre>
 </div>
 </div>
 <div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422321041,&quot;user_tz&quot;:360,&quot;elapsed&quot;:9,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f3521661-7ab7-4e66-95db-84abb998ab10">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="op">**</span> <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>216</code></pre>
 </div>
 </div>
 <div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438542267,&quot;user_tz&quot;:360,&quot;elapsed&quot;:12,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="1669cfab-5716-4931-b1a5-4b54ed276bc1">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>minutos <span class="op">=</span> <span class="dv">105</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>minutos <span class="op">/</span> <span class="dv">60</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="69">
 <pre><code>1.75</code></pre>
 </div>
 </div>
 <div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438591184,&quot;user_tz&quot;:360,&quot;elapsed&quot;:14,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="97af51f0-5bf4-4713-ff71-7b445367f9a5">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>minutos <span class="op">=</span> <span class="dv">105</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>horas <span class="op">=</span> minutos <span class="op">//</span> <span class="dv">60</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>horas</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="70">
 <pre><code>1</code></pre>
 </div>
 </div>
 <div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438642484,&quot;user_tz&quot;:360,&quot;elapsed&quot;:7,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="0a707d6f-a704-40b0-ae8e-d422372dcaeb">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>resto <span class="op">=</span> minutos <span class="op">-</span> horas <span class="op">*</span> <span class="dv">60</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>resto</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="71">
 <pre><code>45</code></pre>
 </div>
 </div>
 <div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438677590,&quot;user_tz&quot;:360,&quot;elapsed&quot;:7,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="272710e1-158a-44bf-d4cd-ccb525424872">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>resto2 <span class="op">=</span> minutos <span class="op">%</span> <span class="dv">60</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>resto2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="72">
 <pre><code>45</code></pre>
 </div>
@@ -518,7 +554,10 @@ Hugo</code></pre>
 <section id="expresiones" class="level2">
 <h2 class="anchored" data-anchor-id="expresiones">Expresiones</h2>
 <div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422409287,&quot;user_tz&quot;:360,&quot;elapsed&quot;:7,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ae747a7c-a04b-4d4c-a359-c6436d0ff1c5">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>31</code></pre>
 </div>
@@ -528,61 +567,91 @@ Hugo</code></pre>
 <section id="tipos-de-variables" class="level2">
 <h2 class="anchored" data-anchor-id="tipos-de-variables">Tipos de variables</h2>
 <div id="cell-19" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">45</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">13.6</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="st">"Maldita_primavera"</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> <span class="va">False</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <p>Función type () Devuelve el tipo de una variable</p>
 <div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422921711,&quot;user_tz&quot;:360,&quot;elapsed&quot;:34,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ec7a68f3-fbcd-41b2-e6d3-e406deebe85e">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(a)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>int</code></pre>
 </div>
 </div>
 <div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422928364,&quot;user_tz&quot;:360,&quot;elapsed&quot;:23,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="38e1627a-cd95-4809-cdbf-18002293d256">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(b)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>float</code></pre>
 </div>
 </div>
 <div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742422935880,&quot;user_tz&quot;:360,&quot;elapsed&quot;:38,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ed20712e-b1f8-40a5-cffe-684d2cdfee43">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(c)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>str</code></pre>
 </div>
 </div>
 <div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742424153817,&quot;user_tz&quot;:360,&quot;elapsed&quot;:23,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="571fcc16-3a9a-4bab-9a64-bf2d570efe2b">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(d)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>bool</code></pre>
 </div>
 </div>
 <div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742424177221,&quot;user_tz&quot;:360,&quot;elapsed&quot;:39,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="92046702-7640-413e-fae9-09794c386325">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(e)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>bool</code></pre>
 </div>
 </div>
 <div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438875000,&quot;user_tz&quot;:360,&quot;elapsed&quot;:49,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="528b3fa0-d193-4653-964e-632665377e31">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="op">==</span> <span class="dv">10</span> <span class="co">#El doble signo = implica comparación El signo sencillo = implica asignación</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="75">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div id="cell-27" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438883488,&quot;user_tz&quot;:360,&quot;elapsed&quot;:10,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="7552f8de-78d9-463a-956a-982bec539d2d">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="op">==</span> <span class="dv">5</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="76">
 <pre><code>False</code></pre>
 </div>
 </div>
 <div id="cell-28" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">7</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742438966315,&quot;user_tz&quot;:360,&quot;elapsed&quot;:18,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ca7e4f80-9343-4eed-f9b3-5f32bb33be44">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">==</span> y</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="78">
 <pre><code>False</code></pre>
 </div>
@@ -591,25 +660,37 @@ Hugo</code></pre>
 <section id="operadores-relacionales" class="level2">
 <h2 class="anchored" data-anchor-id="operadores-relacionales">Operadores relacionales</h2>
 <div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439031595,&quot;user_tz&quot;:360,&quot;elapsed&quot;:8,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="554fbecf-21f0-410b-b89c-bd2b2796031b">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">!=</span> y               <span class="co"># x no es igual a y</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="79">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439052912,&quot;user_tz&quot;:360,&quot;elapsed&quot;:4,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="793af915-aa1a-49f6-aea0-c040bfae7e7b">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">&gt;</span> y                <span class="co"># x es mayor que y</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="80">
 <pre><code>False</code></pre>
 </div>
 </div>
 <div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439083243,&quot;user_tz&quot;:360,&quot;elapsed&quot;:7,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="3604c8d1-d8f0-4881-f4f9-f42eba26f110">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">&gt;=</span> y               <span class="co"># x es mayor o igual a y</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="81">
 <pre><code>False</code></pre>
 </div>
 </div>
 <div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439097243,&quot;user_tz&quot;:360,&quot;elapsed&quot;:9,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="dd3a537f-cf4d-47f3-d537-1b88f5bd00f5">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">&lt;</span> y               <span class="co"># x es menor o igual a y</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="82">
 <pre><code>True</code></pre>
 </div>
@@ -618,19 +699,28 @@ Hugo</code></pre>
 <section id="operadores-lógicos" class="level2">
 <h2 class="anchored" data-anchor-id="operadores-lógicos">Operadores lógicos</h2>
 <div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439134527,&quot;user_tz&quot;:360,&quot;elapsed&quot;:37,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f44acb56-c1fc-442a-b67c-e2c0ae7663b6">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">10</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="83">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div id="cell-37" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439157738,&quot;user_tz&quot;:360,&quot;elapsed&quot;:43,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="86b70b40-d787-478b-f97e-c655e37f927c">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> x <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="84">
 <pre><code>False</code></pre>
 </div>
 </div>
 <div id="cell-38" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742439196119,&quot;user_tz&quot;:360,&quot;elapsed&quot;:5,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="9d9d68b6-b4a7-4eed-918d-38bf4307c297">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">not</span> x <span class="op">&gt;</span> y</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="85">
 <pre><code>True</code></pre>
 </div>
@@ -723,6 +813,57 @@ Hugo</code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
