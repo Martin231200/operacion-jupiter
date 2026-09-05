@@ -5,9 +5,18 @@ project:
 execute:
   freeze: auto
 
+date-modified: last-modified
+date-format: "D [de] MMMM, YYYY"
+
 website:
   title: "Operación Jupyter"
   description: "Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM"
+  site-url: "https://martin231200.github.io/operacion-jupiter"
+  favicon: images/favicon.png
+  open-graph:
+    image: images/social-preview.png
+  twitter-card:
+    image: images/social-preview.png
   page-navigation: true
   bread-crumbs: true
 
@@ -120,3 +129,4 @@ format:
     code-copy: true
     include-after-body:
       - text: <script src="/reading-time.js"></script>
+      - text: <script src="/share-button.js"></script>

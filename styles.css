@@ -1,4 +1,25 @@
-/* Ajustes menores de estilo para Operación Jupyter */
-.navbar-title {
-  font-weight: 600;
+
+/* Animación suave al cargar la página */
+main.content {
+  animation: fadeIn 0.35s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos de impresión: ocultar navegación y quedarse solo con el contenido */
+@media print {
+  .navbar, .sidebar, .sidebar-navigation, #quarto-sidebar,
+  .page-navigation, .page-footer, #toc-title, nav.toc-active,
+  .code-tools-dropdown, .quarto-title-banner + p button {
+    display: none !important;
+  }
+  main.content {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  body {
+    animation: none !important;
+  }
 }

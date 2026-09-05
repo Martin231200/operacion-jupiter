@@ -1,0 +1,13 @@
+---
+title: "Página no encontrada"
+---
+
+No encontramos esta página — puede que el enlace esté roto o la página se haya movido.
+
+Prueba desde aquí:
+
+- [Volver al Inicio](index.qmd)
+- [Ver los tutoriales de Python](python/01-introduccion.ipynb)
+- [Ver los tutoriales de R](r/01-introduccion.ipynb)
+- [Ver los tutoriales de Julia](julia/01-introduccion.qmd)
+- [Ir a Tutoriales comparativos](tutoriales/index.qmd)
