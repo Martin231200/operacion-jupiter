@@ -1,0 +1,25 @@
+---
+title: "Glosario"
+---
+
+Términos comunes que aparecen a lo largo de los tutoriales, con su equivalente o particularidad en cada lenguaje cuando aplica.
+
+**Kernel** — el motor que ejecuta el código de un notebook. Cada lenguaje tiene el suyo: `python3` para Python, `ir` (IRkernel) para R. Julia usa `IJulia`.
+
+**Notebook** — documento que combina celdas de código (se ejecutan) y celdas de texto/Markdown (solo se muestran formateadas). Extensión `.ipynb`.
+
+**Vector / Array / Lista** — la estructura de datos secuencial básica de cada lenguaje. En R se llama *vector* (mismo tipo obligatorio), en Julia *array* (mismo tipo, tipado), en Python *lista* (cualquier tipo mezclado).
+
+**DataFrame** — estructura tabular tipo hoja de cálculo. Nativa en R (`data.frame`), vía biblioteca en Python (`pandas.DataFrame`) y en Julia (`DataFrames.jl`).
+
+**Indexado** — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.
+
+**Tipado dinámico** — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.
+
+**Compilación JIT (*just-in-time*)** — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Así funciona Julia, lo que le da su desempeño.
+
+**Despacho múltiple (*multiple dispatch*)** — el comportamiento de una función puede depender del tipo de **todos** sus argumentos, no solo del primero. Particularidad de Julia.
+
+**Vectorización** — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. Presente en R y Julia por diseño; en Python se logra con bibliotecas como NumPy.
+
+**webR / Pyodide** — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios "en vivo" de este sitio.
