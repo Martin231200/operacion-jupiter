@@ -1,0 +1,100 @@
+---
+title: "Ejercicios en vivo: Python (Pyodide)"
+engine: knitr
+filters:
+  - pyodide
+---
+
+Edita el código directamente aquí y dale **Run** — corre de verdad en tu navegador, sin instalar Python. Si el ejercicio pasa la verificación (`assert`), no marca error; si algo falla, verás el mensaje de error ahí mismo.
+
+
+# Ejercicios verificables: Python
+
+Cada ejercicio corre el cálculo y compara el resultado contra el valor esperado con `assert`. Si la celda corre sin error, el resultado es correcto.
+
+## 1. Matemáticas: verificar si un número es primo
+
+```{pyodide-python}
+def es_primo(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+casos = {7: True, 15: False, 2: True, 1: False, 97: True}
+for n, esperado in casos.items():
+    resultado = es_primo(n)
+    assert resultado == esperado, f"Falló en n={n}"
+    print(f"es_primo({n}) = {resultado}  [correcto]")
+```
+
+## 2. Estadística descriptiva
+
+Se calculan media, mediana y desviación estándar de un conjunto de datos y se comparan contra los valores esperados.
+
+```{pyodide-python}
+import statistics as st
+
+datos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]
+
+media = st.mean(datos)
+mediana = st.median(datos)
+desv_std = st.stdev(datos)
+
+assert round(media, 2) == 15.9
+assert mediana == 15.0
+assert round(desv_std, 2) == 6.01
+
+print(f"Media: {media}")
+print(f"Mediana: {mediana}")
+print(f"Desviación estándar: {round(desv_std, 2)}")
+```
+
+## 3. Resolver una ecuación cuadrática
+
+Se resuelve $ax^2+bx+c=0$ con la fórmula general y se verifica sustituyendo las raíces en la ecuación original.
+
+```{pyodide-python}
+import math
+
+def resolver_cuadratica(a, b, c):
+    disc = b**2 - 4*a*c
+    x1 = (-b + math.sqrt(disc)) / (2*a)
+    x2 = (-b - math.sqrt(disc)) / (2*a)
+    return x1, x2
+
+a, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0  ->  raíces 1 y 2
+x1, x2 = resolver_cuadratica(a, b, c)
+
+for x in (x1, x2):
+    valor = a*x**2 + b*x + c
+    assert abs(valor) < 1e-9, f"x={x} no satisface la ecuación"
+
+print(f"Raíces: {x1}, {x2}")
+print("Ambas raíces satisfacen la ecuación (verificado)")
+```
+
+## 4. Graficar una función
+
+Se grafica $f(x) = x^2$ para confirmar visualmente su forma.
+
+```{pyodide-python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-10, 10, 100)
+y = x**2
+
+plt.plot(x, y)
+plt.title("f(x) = x^2")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.grid(True)
+plt.show()
+```
+
+## Ejercicio propuesto
+
+Modifica el ejercicio 2 para calcular también la varianza (`st.variance(datos)`) y agrega tu propio `assert` para verificarla.

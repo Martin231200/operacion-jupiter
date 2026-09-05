@@ -589,7 +589,7 @@
     "href": "python/01-introduccion.html#mensaje",
     "title": "Proyecto Jupyter: Aprendamos Python",
     "section": "Mensaje",
-    "text": "Mensaje\n\nprint(\"La porra los saluda\")\n\nLa porra los saluda",
+    "text": "Mensaje\n\n\nVer/ocultar código\nprint(\"La porra los saluda\")\n\n\nLa porra los saluda",
     "crumbs": [
       "Python",
       "Introducción e instalación"
@@ -1164,6 +1164,138 @@
     "crumbs": [
       "Tutoriales",
       "Comparación"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r-webr.html",
+    "href": "tutoriales/ejercicios-r-webr.html",
+    "title": "Ejercicios en vivo: R (webR)",
+    "section": "",
+    "text": "Edita el código directamente aquí y dale Run — corre de verdad en tu navegador, sin instalar R. Si el ejercicio pasa la verificación (stopifnot), no marca error; si algo falla, verás el mensaje de error ahí mismo.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios R (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r-webr.html#matemáticas-verificar-si-un-número-es-primo",
+    "href": "tutoriales/ejercicios-r-webr.html#matemáticas-verificar-si-un-número-es-primo",
+    "title": "Ejercicios en vivo: R (webR)",
+    "section": "1. Matemáticas: verificar si un número es primo",
+    "text": "1. Matemáticas: verificar si un número es primo\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios R (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r-webr.html#estadística-descriptiva",
+    "href": "tutoriales/ejercicios-r-webr.html#estadística-descriptiva",
+    "title": "Ejercicios en vivo: R (webR)",
+    "section": "2. Estadística descriptiva",
+    "text": "2. Estadística descriptiva\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios R (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r-webr.html#resolver-una-ecuación-cuadrática",
+    "href": "tutoriales/ejercicios-r-webr.html#resolver-una-ecuación-cuadrática",
+    "title": "Ejercicios en vivo: R (webR)",
+    "section": "3. Resolver una ecuación cuadrática",
+    "text": "3. Resolver una ecuación cuadrática\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios R (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r-webr.html#graficar-una-función",
+    "href": "tutoriales/ejercicios-r-webr.html#graficar-una-función",
+    "title": "Ejercicios en vivo: R (webR)",
+    "section": "4. Graficar una función",
+    "text": "4. Graficar una función\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios R (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-r-webr.html#ejercicio-propuesto",
+    "href": "tutoriales/ejercicios-r-webr.html#ejercicio-propuesto",
+    "title": "Ejercicios en vivo: R (webR)",
+    "section": "Ejercicio propuesto",
+    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (var(datos)) y agrega tu propio stopifnot() para verificarla.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios R (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python-pyodide.html",
+    "href": "tutoriales/ejercicios-python-pyodide.html",
+    "title": "Ejercicios en vivo: Python (Pyodide)",
+    "section": "",
+    "text": "Edita el código directamente aquí y dale Run — corre de verdad en tu navegador, sin instalar Python. Si el ejercicio pasa la verificación (assert), no marca error; si algo falla, verás el mensaje de error ahí mismo.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Python (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python-pyodide.html#matemáticas-verificar-si-un-número-es-primo",
+    "href": "tutoriales/ejercicios-python-pyodide.html#matemáticas-verificar-si-un-número-es-primo",
+    "title": "Ejercicios en vivo: Python (Pyodide)",
+    "section": "1. Matemáticas: verificar si un número es primo",
+    "text": "1. Matemáticas: verificar si un número es primo\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Python (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python-pyodide.html#estadística-descriptiva",
+    "href": "tutoriales/ejercicios-python-pyodide.html#estadística-descriptiva",
+    "title": "Ejercicios en vivo: Python (Pyodide)",
+    "section": "2. Estadística descriptiva",
+    "text": "2. Estadística descriptiva\nSe calculan media, mediana y desviación estándar de un conjunto de datos y se comparan contra los valores esperados.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Python (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python-pyodide.html#resolver-una-ecuación-cuadrática",
+    "href": "tutoriales/ejercicios-python-pyodide.html#resolver-una-ecuación-cuadrática",
+    "title": "Ejercicios en vivo: Python (Pyodide)",
+    "section": "3. Resolver una ecuación cuadrática",
+    "text": "3. Resolver una ecuación cuadrática\nSe resuelve \\(ax^2+bx+c=0\\) con la fórmula general y se verifica sustituyendo las raíces en la ecuación original.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Python (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python-pyodide.html#graficar-una-función",
+    "href": "tutoriales/ejercicios-python-pyodide.html#graficar-una-función",
+    "title": "Ejercicios en vivo: Python (Pyodide)",
+    "section": "4. Graficar una función",
+    "text": "4. Graficar una función\nSe grafica \\(f(x) = x^2\\) para confirmar visualmente su forma.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Python (en vivo)"
+    ]
+  },
+  {
+    "objectID": "tutoriales/ejercicios-python-pyodide.html#ejercicio-propuesto",
+    "href": "tutoriales/ejercicios-python-pyodide.html#ejercicio-propuesto",
+    "title": "Ejercicios en vivo: Python (Pyodide)",
+    "section": "Ejercicio propuesto",
+    "text": "Ejercicio propuesto\nModifica el ejercicio 2 para calcular también la varianza (st.variance(datos)) y agrega tu propio assert para verificarla.",
+    "crumbs": [
+      "Tutoriales",
+      "Ejercicios Python (en vivo)"
     ]
   }
 ]

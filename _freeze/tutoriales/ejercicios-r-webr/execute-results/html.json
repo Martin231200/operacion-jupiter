@@ -1,0 +1,15 @@
+{
+  "hash": "245d4292679840f0460f62cba0c336d3",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Ejercicios en vivo: R (webR)\"\nengine: knitr\nfilters:\n  - webr\n---\n\nEdita el código directamente aquí y dale **Run** — corre de verdad en tu navegador, sin instalar R. Si el ejercicio pasa la verificación (`stopifnot`), no marca error; si algo falla, verás el mensaje de error ahí mismo.\n\n\n# Ejercicios verificables: R\n\nMismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. Cada uno verifica el resultado con `stopifnot()` (equivalente en R a `assert`).\n\n## 1. Matemáticas: verificar si un número es primo\n\n```{webr-r}\nes_primo <- function(n) {\n  if (n < 2) return(FALSE)\n  for (i in 2:floor(sqrt(n))) {\n    if (n %% i == 0) return(FALSE)\n  }\n  return(TRUE)\n}\n\ncasos <- list(`7` = TRUE, `15` = FALSE, `2` = TRUE, `97` = TRUE)\nfor (n in names(casos)) {\n  resultado <- es_primo(as.numeric(n))\n  stopifnot(resultado == casos[[n]])\n  cat(sprintf(\"es_primo(%s) = %s  [correcto]\\n\", n, resultado))\n}\n```\n\n## 2. Estadística descriptiva\n\n```{webr-r}\ndatos <- c(12, 15, 12, 18, 21, 15, 15, 9, 30, 12)\n\nmedia <- mean(datos)\nmediana <- median(datos)\ndesv_std <- sd(datos)\n\nstopifnot(round(media, 2) == 15.9)\nstopifnot(mediana == 15.0)\nstopifnot(round(desv_std, 2) == 6.01)\n\ncat(\"Media:\", media, \"\\n\")\ncat(\"Mediana:\", mediana, \"\\n\")\ncat(\"Desviación estándar:\", round(desv_std, 2), \"\\n\")\n```\n\n## 3. Resolver una ecuación cuadrática\n\n```{webr-r}\nresolver_cuadratica <- function(a, b, c) {\n  disc <- b^2 - 4*a*c\n  x1 <- (-b + sqrt(disc)) / (2*a)\n  x2 <- (-b - sqrt(disc)) / (2*a)\n  return(c(x1, x2))\n}\n\na <- 1; b <- -3; c <- 2  # x^2 - 3x + 2 = 0 -> raíces 1 y 2\nraices <- resolver_cuadratica(a, b, c)\n\nfor (x in raices) {\n  valor <- a*x^2 + b*x + c\n  stopifnot(abs(valor) < 1e-9)\n}\n\ncat(\"Raíces:\", raices, \"\\n\")\ncat(\"Ambas raíces satisfacen la ecuación (verificado)\\n\")\n```\n\n## 4. Graficar una función\n\n```{webr-r}\nx <- seq(-10, 10, length.out = 100)\ny <- x^2\n\nplot(x, y, type = \"l\",\n     main = \"f(x) = x^2\",\n     xlab = \"x\", ylab = \"f(x)\")\ngrid()\n```\n\n## Ejercicio propuesto\n\nModifica el ejercicio 2 para calcular también la varianza (`var(datos)`) y agrega tu propio `stopifnot()` para verificarla.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

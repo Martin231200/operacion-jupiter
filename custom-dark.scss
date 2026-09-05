@@ -1,19 +1,83 @@
 /*-- scss:defaults --*/
-$primary:   #5B9BD5;
-$body-bg:   #1A1D21;
+$primary:    #6EA8DC;
+$body-bg:    #14171C;
 $body-color: #E5E7EB;
+$link-color: #6EA8DC;
+$font-family-sans-serif: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+$font-family-monospace: 'JetBrains Mono', 'Courier New', monospace;
 
 /*-- scss:rules --*/
+body { font-family: $font-family-sans-serif; }
+code, pre, .sourceCode { font-family: $font-family-monospace !important; }
+
 .navbar {
-  background-color: #12253A !important;
+  background: linear-gradient(135deg, #1B2733 0%, #10161C 100%) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
+.navbar-title, .navbar-nav .nav-link {
+  color: #E5E7EB !important;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+  color: #8FC1F5 !important;
+}
+
+.sidebar-navigation .active {
+  color: #8FC1F5 !important;
+  font-weight: 700;
+}
+
+h1, h2 {
+  border-bottom: 2px solid #2A2F38;
+  padding-bottom: 0.3rem;
+  color: #F3F4F6;
+}
+h3, h4 { color: #E5E7EB; }
+
+a { color: #6EA8DC; }
+a:hover { color: #8FC1F5; }
+
+.callout {
+  background: #1C2128 !important;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+div.callout-note    { border-left-color: #6EA8DC; }
+div.callout-tip      { border-left-color: #4FBE8D; }
+div.callout-important{ border-left-color: #B79CE0; }
+div.callout-warning  { border-left-color: #E0A94F; }
+
+pre, .sourceCode, div.cell-output {
+  background: #1C2128 !important;
+  border: 1px solid #2A2F38;
+  border-radius: 8px;
+}
+
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+thead { background-color: #232830 !important; color: #F3F4F6 !important; }
+tr:nth-child(even) td { background-color: #191D23; }
+
 .quiz-card {
-  background: #23272E !important;
-  border-color: #3A3F47 !important;
+  background: #1C2128 !important;
+  border: 1px solid #2A2F38 !important;
 }
-.quiz-question { color: #E5E7EB !important; }
+.quiz-question { color: #F3F4F6 !important; }
 .quiz-options button {
-  background: #2A2F38 !important;
+  background: #232830 !important;
   border-color: #3A3F47 !important;
   color: #E5E7EB !important;
+}
+.quiz-options button:hover:not(:disabled) { background: #2A303A !important; }
+
+img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.page-footer {
+  background: #10161C;
+  color: #9CA3AF;
 }

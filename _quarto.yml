@@ -87,6 +87,8 @@ website:
           text: "Quiz interactivo"
         - href: tutoriales/ejercicios-python.ipynb
           text: "Ejercicios Python"
+        - href: tutoriales/ejercicios-python-pyodide.qmd
+          text: "Ejercicios Python (en vivo)"
         - href: tutoriales/ejercicios-r.ipynb
           text: "Ejercicios R"
         - href: tutoriales/ejercicios-r-webr.qmd
@@ -107,4 +109,8 @@ format:
       dark: [darkly, custom-dark.scss]
     css: styles.css
     toc: true
+    toc-depth: 2
     lang: es
+    code-fold: show
+    code-tools: true
+    code-summary: "Ver/ocultar código"

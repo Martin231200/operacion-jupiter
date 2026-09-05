@@ -1,0 +1,15 @@
+{
+  "hash": "084e2e71a45dae4ae7ddae30a3237329",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Ejercicios en vivo: Python (Pyodide)\"\nengine: knitr\nfilters:\n  - pyodide\n---\n\nEdita el código directamente aquí y dale **Run** — corre de verdad en tu navegador, sin instalar Python. Si el ejercicio pasa la verificación (`assert`), no marca error; si algo falla, verás el mensaje de error ahí mismo.\n\n\n# Ejercicios verificables: Python\n\nCada ejercicio corre el cálculo y compara el resultado contra el valor esperado con `assert`. Si la celda corre sin error, el resultado es correcto.\n\n## 1. Matemáticas: verificar si un número es primo\n\n```{pyodide-python}\ndef es_primo(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\ncasos = {7: True, 15: False, 2: True, 1: False, 97: True}\nfor n, esperado in casos.items():\n    resultado = es_primo(n)\n    assert resultado == esperado, f\"Falló en n={n}\"\n    print(f\"es_primo({n}) = {resultado}  [correcto]\")\n```\n\n## 2. Estadística descriptiva\n\nSe calculan media, mediana y desviación estándar de un conjunto de datos y se comparan contra los valores esperados.\n\n```{pyodide-python}\nimport statistics as st\n\ndatos = [12, 15, 12, 18, 21, 15, 15, 9, 30, 12]\n\nmedia = st.mean(datos)\nmediana = st.median(datos)\ndesv_std = st.stdev(datos)\n\nassert round(media, 2) == 15.9\nassert mediana == 15.0\nassert round(desv_std, 2) == 6.01\n\nprint(f\"Media: {media}\")\nprint(f\"Mediana: {mediana}\")\nprint(f\"Desviación estándar: {round(desv_std, 2)}\")\n```\n\n## 3. Resolver una ecuación cuadrática\n\nSe resuelve $ax^2+bx+c=0$ con la fórmula general y se verifica sustituyendo las raíces en la ecuación original.\n\n```{pyodide-python}\nimport math\n\ndef resolver_cuadratica(a, b, c):\n    disc = b**2 - 4*a*c\n    x1 = (-b + math.sqrt(disc)) / (2*a)\n    x2 = (-b - math.sqrt(disc)) / (2*a)\n    return x1, x2\n\na, b, c = 1, -3, 2  # x^2 - 3x + 2 = 0  ->  raíces 1 y 2\nx1, x2 = resolver_cuadratica(a, b, c)\n\nfor x in (x1, x2):\n    valor = a*x**2 + b*x + c\n    assert abs(valor) < 1e-9, f\"x={x} no satisface la ecuación\"\n\nprint(f\"Raíces: {x1}, {x2}\")\nprint(\"Ambas raíces satisfacen la ecuación (verificado)\")\n```\n\n## 4. Graficar una función\n\nSe grafica $f(x) = x^2$ para confirmar visualmente su forma.\n\n```{pyodide-python}\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(-10, 10, 100)\ny = x**2\n\nplt.plot(x, y)\nplt.title(\"f(x) = x^2\")\nplt.xlabel(\"x\")\nplt.ylabel(\"f(x)\")\nplt.grid(True)\nplt.show()\n```\n\n## Ejercicio propuesto\n\nModifica el ejercicio 2 para calcular también la varianza (`st.variance(datos)`) y agrega tu propio `assert` para verificarla.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
