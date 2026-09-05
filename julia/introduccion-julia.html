@@ -80,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-32a2e5cbb060358a28328d2de32db2d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ac0b5c0ff6a6275a86c7e0c78427c5ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -133,10 +133,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../progreso.html"> 
-<span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -239,10 +235,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../tutoriales/index.html">
  <span class="dropdown-text">Comparación</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/quiz-comparativo.html">
- <span class="dropdown-text">Quiz interactivo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tutoriales/ejercicios-python.html">
@@ -595,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/Martin231200\.github\.io\/operacion-jupiter\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -926,19 +918,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM</p>
-</div>   
-    <div class="nav-footer-center">
       &nbsp;
-    </div>
+    </div>   
+    <div class="nav-footer-center">
+<p>Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM</p>
+</div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="../tutoriales/ficha-comparativa.pdf">
-<p>Descargar ficha comparativa (PDF)</p>
-</a>
-  </li>  
-</ul>
+      &nbsp;
     </div>
   </div>
 </footer>

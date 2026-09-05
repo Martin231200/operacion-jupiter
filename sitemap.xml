@@ -2,122 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/python/06-funciones-estadisticas.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
   </url>
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/python/01-introduccion.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
   </url>
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/python/03-funciones.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/python/introduccion-python.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/quiz-comparativo.html</loc>
-    <lastmod>2026-09-02T19:47:23.826Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/index.html</loc>
-    <lastmod>2026-09-02T19:47:23.826Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/semblanza/index.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/01-introduccion.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/03-estructuras-control.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/04-estructuras-datos.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/02-tipos-y-variables.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/02-tipos-y-variables.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/introduccion-julia.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/03-estructuras-control.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/06-particularidades.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/index.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/01-introduccion.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/05-funciones.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/julia/04-estructuras-datos.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/libros/index.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/introduccion-r.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/06-particularidades.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/r/05-funciones.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/progreso.html</loc>
-    <lastmod>2026-09-02T19:47:23.823Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-julia.html</loc>
-    <lastmod>2026-09-02T19:47:23.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-python.html</loc>
-    <lastmod>2026-09-02T19:47:23.826Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
   </url>
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-r.html</loc>
-    <lastmod>2026-09-02T19:47:23.826Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-python.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/index.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/semblanza/index.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/r/01-introduccion.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/r/03-estructuras-control.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/r/04-estructuras-datos.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/libros/index.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/julia/04-estructuras-datos.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/julia/03-estructuras-control.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/julia/06-particularidades.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/index.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/julia/01-introduccion.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/julia/05-funciones.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/julia/02-tipos-y-variables.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/r/02-tipos-y-variables.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/r/06-particularidades.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/r/05-funciones.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/progreso.html</loc>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-julia.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-r-webr.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Martin231200.github.io/operacion-jupiter/tutoriales/quiz-comparativo.html</loc>
+    <lastmod>2026-09-05T15:10:59.358Z</lastmod>
   </url>
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/python/04-estructuras-datos.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
   </url>
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/python/05-arreglos.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
   </url>
   <url>
     <loc>https://Martin231200.github.io/operacion-jupiter/python/02-entrada-datos-operadores.html</loc>
-    <lastmod>2026-09-02T19:47:23.824Z</lastmod>
+    <lastmod>2026-09-05T15:10:59.357Z</lastmod>
   </url>
 </urlset>

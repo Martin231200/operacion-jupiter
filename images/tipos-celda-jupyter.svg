@@ -1,0 +1,24 @@
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="20" y="20" width="260" height="70" rx="8" fill="#F5F0F7" stroke="#B4519A" stroke-width="2"/>
+  <text x="35" y="45" font-size="13" font-weight="bold" fill="#7A2E68">Celda de código</text>
+  <text x="35" y="65" font-size="11" fill="#7A2E68" font-family="monospace">print("hola")</text>
+  <text x="35" y="80" font-size="10" fill="#9B5A89">Se ejecuta, muestra resultado</text>
+
+  <rect x="320" y="20" width="260" height="70" rx="8" fill="#E6F1FB" stroke="#378ADD" stroke-width="2"/>
+  <text x="335" y="45" font-size="13" font-weight="bold" fill="#0C447C"># Celda de texto (Markdown)</text>
+  <text x="335" y="65" font-size="11" fill="#0C447C">Explicaciones, títulos, imágenes</text>
+  <text x="335" y="80" font-size="10" fill="#3D7CB0">No se ejecuta como código</text>
+
+  <line x1="150" y1="90" x2="150" y2="110" stroke="#9AA5B1" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="450" y1="90" x2="450" y2="110" stroke="#9AA5B1" stroke-width="2" marker-end="url(#a2)"/>
+
+  <rect x="20" y="120" width="560" height="60" rx="8" fill="#EAF3DE" stroke="#639922" stroke-width="2"/>
+  <text x="300" y="145" text-anchor="middle" font-size="13" font-weight="bold" fill="#27500A">Notebook (.ipynb)</text>
+  <text x="300" y="163" text-anchor="middle" font-size="11" fill="#27500A">alterna celdas de código y texto en orden, de arriba hacia abajo</text>
+
+  <defs>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9AA5B1"/>
+    </marker>
+  </defs>
+</svg>
