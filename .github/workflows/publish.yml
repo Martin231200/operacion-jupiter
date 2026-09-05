@@ -30,7 +30,7 @@ jobs:
 
       - name: Install IRkernel
         run: |
-          Rscript -e 'install.packages("IRkernel", repos="https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("IRkernel", "knitr", "rmarkdown"), repos="https://cloud.r-project.org")'
           Rscript -e 'IRkernel::installspec(user = FALSE)'
 
       - name: Set up Quarto
