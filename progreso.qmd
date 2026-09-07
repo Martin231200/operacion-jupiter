@@ -3,7 +3,7 @@ title: "Mi progreso"
 format:
   html:
     include-in-header:
-      - text: <link rel="stylesheet" href="tutoriales/quiz.css">
+      - text: <link rel="stylesheet" href="tutoriales/quiz.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 ---
 
 Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más).
@@ -26,6 +26,8 @@ const secciones = [
     ["py-04", "Estructuras de datos"],
     ["py-05", "Arreglos"],
     ["py-06", "Funciones estadísticas"],
+    ["py-07", "Ejercicios de ingeniería"],
+    ["py-08", "Visualización"],
   ]},
   { titulo: "R", items: [
     ["r-01", "Introducción e instalación"],
@@ -34,6 +36,8 @@ const secciones = [
     ["r-04", "Estructuras de datos"],
     ["r-05", "Funciones"],
     ["r-06", "Particularidades"],
+    ["r-07", "Ejercicios de ingeniería"],
+    ["r-08", "Visualización"],
   ]},
   { titulo: "Julia", items: [
     ["jl-01", "Introducción e instalación"],
@@ -42,6 +46,8 @@ const secciones = [
     ["jl-04", "Estructuras de datos"],
     ["jl-05", "Funciones"],
     ["jl-06", "Particularidades"],
+    ["jl-07", "Ejercicios de ingeniería"],
+    ["jl-08", "Visualización"],
   ]},
   { titulo: "Tutoriales", items: [
     ["tut-quiz", "Quiz interactivo"],
@@ -99,6 +105,46 @@ secciones.forEach(sec => {
   root.appendChild(bloque);
 });
 
+function generarCertificado() {
+  const nombre = document.getElementById('nombre-certificado').value.trim() || "Participante";
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: "landscape", unit: "pt", format: "letter" });
+
+  const w = doc.internal.pageSize.getWidth();
+  const h = doc.internal.pageSize.getHeight();
+
+  doc.setDrawColor(44, 95, 138);
+  doc.setLineWidth(6);
+  doc.rect(20, 20, w - 40, h - 40);
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(28);
+  doc.setTextColor(44, 95, 138);
+  doc.text("Certificado de finalización", w / 2, 130, { align: "center" });
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(14);
+  doc.setTextColor(60, 60, 60);
+  doc.text("Operación Jupyter — Tutoriales de Python, R y Julia", w / 2, 165, { align: "center" });
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(24);
+  doc.setTextColor(20, 20, 20);
+  doc.text(nombre, w / 2, 230, { align: "center" });
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(13);
+  doc.setTextColor(80, 80, 80);
+  doc.text("completó el recorrido completo del sitio", w / 2, 260, { align: "center" });
+
+  const fecha = new Date().toLocaleDateString("es-MX", { year: "numeric", month: "long", day: "numeric" });
+  doc.setFontSize(11);
+  doc.text(fecha, w / 2, 320, { align: "center" });
+  doc.text("Servicio Social — Facultad de Ingeniería, UNAM", w / 2, 340, { align: "center" });
+
+  doc.save("certificado-operacion-jupyter.pdf");
+}
+
 function actualizarBarra() {
   const completados = Object.values(estado).filter(Boolean).length;
   const pct = totalItems ? Math.round((completados / totalItems) * 100) : 0;
@@ -111,7 +157,11 @@ function actualizarBarra() {
       celebracion = document.createElement('div');
       celebracion.id = 'celebracion-progreso';
       celebracion.style.cssText = 'margin-top:14px;padding:14px 18px;border-radius:10px;background:#E1F5EE;color:#0B4A38;font-weight:600;text-align:center;';
-      celebracion.textContent = '🎉 ¡Completaste todo el recorrido de Operación Jupyter!';
+      celebracion.innerHTML =
+        '🎉 ¡Completaste todo el recorrido de Operación Jupyter!<br><br>' +
+        '<input id="nombre-certificado" type="text" placeholder="Tu nombre para el certificado" ' +
+        'style="padding:6px 10px;border-radius:6px;border:1px solid #A7D9C4;font-weight:normal;margin-right:8px;">' +
+        '<button onclick="generarCertificado()" style="padding:7px 14px;border-radius:8px;border:none;background:#1D9E75;color:white;font-weight:600;cursor:pointer;">Descargar certificado (PDF)</button>';
       document.getElementById('progreso-container').insertAdjacentElement('beforebegin', celebracion);
     }
   } else if (celebracion) {
