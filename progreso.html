@@ -113,6 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="tutoriales/quiz.css">
 
 
@@ -323,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Glosario</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./recursos.qmd"> 
+    <a class="nav-link" href="./recursos.html"> 
 <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
@@ -493,6 +494,19 @@ function actualizarBarra() {
   const pct = totalItems ? Math.round((completados / totalItems) * 100) : 0;
   document.getElementById('barra-progreso').style.width = pct + '%';
   document.getElementById('texto-progreso').textContent = completados + ' de ' + totalItems + ' completado (' + pct + '%)';
+
+  let celebracion = document.getElementById('celebracion-progreso');
+  if (pct === 100) {
+    if (!celebracion) {
+      celebracion = document.createElement('div');
+      celebracion.id = 'celebracion-progreso';
+      celebracion.style.cssText = 'margin-top:14px;padding:14px 18px;border-radius:10px;background:#E1F5EE;color:#0B4A38;font-weight:600;text-align:center;';
+      celebracion.textContent = '🎉 ¡Completaste todo el recorrido de Operación Jupyter!';
+      document.getElementById('progreso-container').insertAdjacentElement('beforebegin', celebracion);
+    }
+  } else if (celebracion) {
+    celebracion.remove();
+  }
 }
 actualizarBarra();
 </script>
@@ -1072,9 +1086,22 @@ actualizarBarra();
 <span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pct <span class="op">=</span> totalItems <span class="op">?</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((completados <span class="op">/</span> totalItems) <span class="op">*</span> <span class="dv">100</span>) <span class="op">:</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'barra-progreso'</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">width</span> <span class="op">=</span> pct <span class="op">+</span> <span class="st">'%'</span><span class="op">;</span></span>
 <span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'texto-progreso'</span>)<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> completados <span class="op">+</span> <span class="st">' de '</span> <span class="op">+</span> totalItems <span class="op">+</span> <span class="st">' completado ('</span> <span class="op">+</span> pct <span class="op">+</span> <span class="st">'%)'</span><span class="op">;</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="fu">actualizarBarra</span>()<span class="op">;</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> celebracion <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'celebracion-progreso'</span>)<span class="op">;</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (pct <span class="op">===</span> <span class="dv">100</span>) {</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="op">!</span>celebracion) {</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>      celebracion <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      celebracion<span class="op">.</span><span class="at">id</span> <span class="op">=</span> <span class="st">'celebracion-progreso'</span><span class="op">;</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>      celebracion<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">cssText</span> <span class="op">=</span> <span class="st">'margin-top:14px;padding:14px 18px;border-radius:10px;background:#E1F5EE;color:#0B4A38;font-weight:600;text-align:center;'</span><span class="op">;</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>      celebracion<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">'🎉 ¡Completaste todo el recorrido de Operación Jupyter!'</span><span class="op">;</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>      <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'progreso-container'</span>)<span class="op">.</span><span class="fu">insertAdjacentElement</span>(<span class="st">'beforebegin'</span><span class="op">,</span> celebracion)<span class="op">;</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (celebracion) {</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>    celebracion<span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="fu">actualizarBarra</span>()<span class="op">;</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1098,6 +1125,7 @@ actualizarBarra();
 </footer>
 <script src="./reading-time.js"></script>
 <script src="./share-button.js"></script>
+<script src="./skip-link.js"></script>
 
 
 
