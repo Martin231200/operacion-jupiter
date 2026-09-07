@@ -108,7 +108,7 @@ plot(x, y, title="f(x) = x^2", xlabel="x", ylabel="f(x)", legend=false)
 
 **Salida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):**
 
-![](img/salida-grafica-julia.png)
+![Gráfica de la función f(x) = x al cuadrado, una parábola](img/salida-grafica-julia.png)
 
 ## Ejercicio propuesto
 

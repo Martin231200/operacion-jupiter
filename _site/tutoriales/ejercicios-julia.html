@@ -72,6 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../tutoriales/ejercicios-r-webr.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -84,7 +85,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f25488dd8c1b0298410c4592b5f89f85.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-5557d5e906760380132ec05260cd84f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -113,9 +114,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Ejercicios verificables: Julia – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/tutoriales/images/social-preview.png">
+<meta property="og:site_name" content="Operación Jupyter">
+<meta name="twitter:title" content="Ejercicios verificables: Julia – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/tutoriales/images/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -310,6 +320,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Glosario</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../recursos.qmd"> 
+<span class="menu-text">Recursos</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../python/01-introduccion.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
@@ -432,6 +446,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de última modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">6 de septiembre, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -534,7 +554,12 @@ Ambas raíces satisfacen la ecuación (verificado)</code></pre>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y, title<span class="op">=</span><span class="st">"f(x) = x^2"</span>, xlabel<span class="op">=</span><span class="st">"x"</span>, ylabel<span class="op">=</span><span class="st">"f(x)"</span>, legend<span class="op">=</span><span class="cn">false</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Salida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):</strong></p>
-<p><img src="img/salida-grafica-julia.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/salida-grafica-julia.png" class="img-fluid figure-img"></p>
+<figcaption>Gráfica de la función f(x) = x al cuadrado, una parábola</figcaption>
+</figure>
+</div>
 </section>
 <section id="ejercicio-propuesto" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicio-propuesto">Ejercicio propuesto</h2>
@@ -683,7 +708,7 @@ Ambas raíces satisfacen la ecuación (verificado)</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/martin231200\.github\.io\/operacion-jupiter");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1129,7 +1154,7 @@ Ambas raíces satisfacen la ecuación (verificado)</code></pre>
 <span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>**Salida (ilustrativa — misma función graficada con otra herramienta, ya que aquí no corre Julia real):**</span>
 <span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/salida-grafica-julia.png)</span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="al">![Gráfica de la función f(x) = x al cuadrado, una parábola](img/salida-grafica-julia.png)</span></span>
 <span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio propuesto</span></span>
 <span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a></span>
@@ -1156,6 +1181,8 @@ Ambas raíces satisfacen la ecuación (verificado)</code></pre>
   </div>
 </footer>
 <script src="../reading-time.js"></script>
+<script src="../share-button.js"></script>
+<script src="../skip-link.js"></script>
 
 
 

@@ -2,13 +2,21 @@
 title: "Julia: Introducción e instalación"
 ---
 
----
-title: "Introducción a Julia"
----
+::: {.callout-tip}
+## ¿Cómo se organiza un notebook?
+Un notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.
+:::
+
+![Comparación de una celda de código (se ejecuta y muestra resultado) contra una celda de texto Markdown (solo se renderiza)](../images/tipos-celda-jupyter.svg)
 
 ::: {.callout-important}
 ## Nota
 Este contenido se basa en características generales y documentadas del lenguaje Julia. Aún no contamos con material específico del proyecto para esta sección — se actualizará cuando la profa comparta el notebook correspondiente.
+:::
+
+::: {.callout-tip}
+## Tip
+Julia comparte con R el indexado desde 1 y con Python la asignación con `=`. Si ya conoces cualquiera de los dos, la sintaxis básica te va a resultar familiar — la diferencia grande está en el desempeño, no en la forma de escribir el código.
 :::
 
 # Lenguajes de programación de código libre

@@ -1,0 +1,34 @@
+---
+title: "Recursos"
+---
+
+Enlaces oficiales para instalar, aprender más, o resolver dudas en cada lenguaje.
+
+## Python
+
+- [python.org](https://www.python.org/downloads/) — instalación oficial
+- [Documentación oficial](https://docs.python.org/es/3/)
+- [NumPy](https://numpy.org/doc/), [pandas](https://pandas.pydata.org/docs/), [Matplotlib](https://matplotlib.org/stable/)
+
+## R
+
+- [r-project.org](https://www.r-project.org/) — instalación oficial
+- [posit.co](https://posit.co/) — RStudio
+- [Manual de referencia (CRAN)](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+- [statmethods.net](https://www.statmethods.net/index.html)
+
+## Julia
+
+- [julialang.org](https://julialang.org/downloads/) — instalación oficial
+- [Documentación oficial](https://docs.julialang.org/)
+- [JuliaHub](https://juliahub.com/) — paquetes y recursos
+
+## Entornos
+
+- [Google Colab](https://colab.research.google.com/) — Jupyter en la nube, Python nativo
+- [Jupyter](https://jupyter.org/) — el proyecto original
+
+## Este proyecto
+
+- [Repositorio en GitHub](https://github.com/Martin231200/operacion-jupiter)
+- [Reportar un error o sugerencia](https://github.com/Martin231200/operacion-jupiter/issues)

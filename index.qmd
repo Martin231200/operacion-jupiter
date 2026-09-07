@@ -38,7 +38,7 @@ También puedes ir directo a los **[Tutoriales comparativos](tutoriales/index.qm
 
 ## Cómo se arma el sitio
 
-![](images/flujo-proyecto.svg)
+![Diagrama de flujo: los notebooks de Python, R y Julia se combinan con Quarto, que construye el sitio y lo publica en GitHub Pages](images/flujo-proyecto.svg)
 
 ### Cómo usar este sitio
 

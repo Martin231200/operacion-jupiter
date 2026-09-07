@@ -104,6 +104,19 @@ function actualizarBarra() {
   const pct = totalItems ? Math.round((completados / totalItems) * 100) : 0;
   document.getElementById('barra-progreso').style.width = pct + '%';
   document.getElementById('texto-progreso').textContent = completados + ' de ' + totalItems + ' completado (' + pct + '%)';
+
+  let celebracion = document.getElementById('celebracion-progreso');
+  if (pct === 100) {
+    if (!celebracion) {
+      celebracion = document.createElement('div');
+      celebracion.id = 'celebracion-progreso';
+      celebracion.style.cssText = 'margin-top:14px;padding:14px 18px;border-radius:10px;background:#E1F5EE;color:#0B4A38;font-weight:600;text-align:center;';
+      celebracion.textContent = '🎉 ¡Completaste todo el recorrido de Operación Jupyter!';
+      document.getElementById('progreso-container').insertAdjacentElement('beforebegin', celebracion);
+    }
+  } else if (celebracion) {
+    celebracion.remove();
+  }
 }
 actualizarBarra();
 </script>

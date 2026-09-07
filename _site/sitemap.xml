@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://martin231200.github.io/operacion-jupiter/index.html</loc>
-    <lastmod>2026-09-02T20:27:03.763Z</lastmod>
+    <lastmod>2026-09-07T02:47:05.530Z</lastmod>
   </url>
   <url>
     <loc>https://martin231200.github.io/operacion-jupiter/glosario.html</loc>
@@ -19,5 +19,25 @@
   <url>
     <loc>https://martin231200.github.io/operacion-jupiter/python/07-ejercicios-ingenieria.html</loc>
     <lastmod>2026-09-07T02:35:39.804Z</lastmod>
+  </url>
+  <url>
+    <loc>https://martin231200.github.io/operacion-jupiter/tutoriales/index.html</loc>
+    <lastmod>2026-09-07T02:48:09.489Z</lastmod>
+  </url>
+  <url>
+    <loc>https://martin231200.github.io/operacion-jupiter/r/01-introduccion.html</loc>
+    <lastmod>2026-09-07T02:49:29.415Z</lastmod>
+  </url>
+  <url>
+    <loc>https://martin231200.github.io/operacion-jupiter/julia/01-introduccion.html</loc>
+    <lastmod>2026-09-07T02:48:36.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://martin231200.github.io/operacion-jupiter/python/01-introduccion.html</loc>
+    <lastmod>2026-09-07T02:49:01.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://martin231200.github.io/operacion-jupiter/tutoriales/ejercicios-julia.html</loc>
+    <lastmod>2026-09-07T02:48:09.457Z</lastmod>
   </url>
 </urlset>

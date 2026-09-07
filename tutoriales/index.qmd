@@ -11,11 +11,11 @@ Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en
 
 ## Un mismo dato, tres formas de contarlo
 
-![](../images/indexado-comparativo.svg)
+![Comparación visual: Python indexa un vector desde 0, mientras que R y Julia lo indexan desde 1](../images/indexado-comparativo.svg)
 
 ## Las mismas ideas, tres cajas de herramientas
 
-![](../images/estructuras-datos-comparativo.svg)
+![Comparación de estructuras de datos: lista en Python, vector en R, array en Julia](../images/estructuras-datos-comparativo.svg)
 
 ## Comparación de lenguajes
 

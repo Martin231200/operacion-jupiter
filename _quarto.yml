@@ -135,6 +135,9 @@ format:
     code-tools: true
     code-summary: "Ver/ocultar código"
     code-copy: true
+    include-in-header:
+      - text: <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     include-after-body:
       - text: <script src="/reading-time.js"></script>
       - text: <script src="/share-button.js"></script>
+      - text: <script src="/skip-link.js"></script>
