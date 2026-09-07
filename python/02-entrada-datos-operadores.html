@@ -435,6 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables">Tipos de variables</a></li>
   <li><a href="#operadores-relacionales" id="toc-operadores-relacionales" class="nav-link" data-scroll-target="#operadores-relacionales">Operadores relacionales</a></li>
   <li><a href="#operadores-lógicos" id="toc-operadores-lógicos" class="nav-link" data-scroll-target="#operadores-lógicos">Operadores lógicos</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -761,8 +762,58 @@ Hugo</code></pre>
 <pre><code>True</code></pre>
 </div>
 </div>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres problemas cortos aplicando lo visto, con contexto de ingeniería.</p>
+<section id="conversión-de-temperatura-reales" class="level3">
+<h3 class="anchored" data-anchor-id="conversión-de-temperatura-reales">1. Conversión de temperatura (reales)</h3>
+<p>Convierte 23.5 °C a Fahrenheit con <code>F = C * 9/5 + 32</code>.</p>
+<div id="cell-41" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">23.5</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> c <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> f <span class="op">==</span> <span class="fl">74.3</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss"> °C = </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss"> °F"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="verificar-tolerancia-de-una-pieza-booleano" class="level3">
+<h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-booleano">2. Verificar tolerancia de una pieza (booleano)</h3>
+<p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
+<div id="cell-43" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="fl">4.97</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>pasa <span class="op">=</span> <span class="bu">abs</span>(peso <span class="op">-</span> nominal) <span class="op">&lt;=</span> tolerancia</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> pasa <span class="op">==</span> <span class="va">True</span></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"¿Pasa la prueba? </span><span class="sc">{</span>pasa<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="etiqueta-de-producto-strings" class="level3">
+<h3 class="anchored" data-anchor-id="etiqueta-de-producto-strings">3. Etiqueta de producto (strings)</h3>
+<p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para el código <code>"ENG"</code>, lote <code>2026</code>, pieza número <code>47</code>.</p>
+<div id="cell-45" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="op">=</span> <span class="st">"ENG"</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>lote <span class="op">=</span> <span class="dv">2026</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>numero_pieza <span class="op">=</span> <span class="dv">47</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>codigo<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>lote<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>numero_pieza<span class="sc">:04d}</span><span class="ss">"</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> etiqueta <span class="op">==</span> <span class="st">"ENG-2026-0047"</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(etiqueta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1266,6 +1317,7 @@ Hugo</code></pre>
 <script src="../share-button.js"></script>
 <script src="../skip-link.js"></script>
 <script src="../ver-tambien.js"></script>
+<script src="../keyboard-nav.js"></script>
 
 
 

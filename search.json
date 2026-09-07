@@ -531,6 +531,17 @@
     ]
   },
   {
+    "objectID": "julia/02-tipos-y-variables.html#ejercicios",
+    "href": "julia/02-tipos-y-variables.html#ejercicios",
+    "title": "Julia: Tipos de datos y variables",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería. Mismos valores verificados que en Python y R.\n\n1. Conversión de temperatura (reales)\nc = 23.5\nf = c * 9/5 + 32\n\n@assert f == 74.3\nprintln(c, \" °C = \", f, \" °F\")\nSalida: 23.5 °C = 74.3 °F\n\n\n2. Verificar tolerancia de una pieza (booleano)\npeso = 4.97\nnominal = 5.0\ntolerancia = 0.05\n\npasa = abs(peso - nominal) &lt;= tolerancia\n@assert pasa == true\nprintln(\"¿Pasa la prueba? \", pasa)\nSalida: ¿Pasa la prueba? true\n\n\n3. Etiqueta de producto (strings)\ncodigo = \"ENG\"\nlote = 2026\nnumero_pieza = 47\n\netiqueta = \"$codigo-$lote-\" * lpad(numero_pieza, 4, \"0\")\n@assert etiqueta == \"ENG-2026-0047\"\nprintln(etiqueta)\nSalida: ENG-2026-0047",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
+  },
+  {
     "objectID": "julia/08-visualizacion.html",
     "href": "julia/08-visualizacion.html",
     "title": "Julia: Visualización",
@@ -855,6 +866,17 @@
     "title": "Tipos de datos",
     "section": "Strings",
     "text": "Strings\nEl tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.\n\n\nVer/ocultar código\ns &lt;- \"Operación Jupyter\"\nclass(s)\nnchar(s)\ns2 &lt;- paste(\"Hola\", \"mundo\")",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
+  },
+  {
+    "objectID": "r/02-tipos-y-variables.html#ejercicios",
+    "href": "r/02-tipos-y-variables.html#ejercicios",
+    "title": "Tipos de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería.\n\n1. Conversión de temperatura (reales)\nConvierte 23.5 °C a Fahrenheit con F = C * 9/5 + 32.\n\n\nVer/ocultar código\nc &lt;- 23.5\nf &lt;- c * 9/5 + 32\n\nstopifnot(f == 74.3)\ncat(c, \"°C =\", f, \"°F\\n\")\n\n\n\n\n2. Verificar tolerancia de una pieza (booleano)\nUna pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?\n\n\nVer/ocultar código\npeso &lt;- 4.97\nnominal &lt;- 5.0\ntolerancia &lt;- 0.05\n\npasa &lt;- abs(peso - nominal) &lt;= tolerancia\nstopifnot(pasa == TRUE)\ncat(\"¿Pasa la prueba?\", pasa, \"\\n\")\n\n\n\n\n3. Etiqueta de producto (strings)\nArma la etiqueta CÓDIGO-LOTE-NÚMERO (número con 4 dígitos) para el código \"ENG\", lote 2026, pieza número 47.\n\n\nVer/ocultar código\ncodigo &lt;- \"ENG\"\nlote &lt;- 2026\nnumero_pieza &lt;- 47\n\netiqueta &lt;- sprintf(\"%s-%d-%04d\", codigo, lote, numero_pieza)\nstopifnot(etiqueta == \"ENG-2026-0047\")\nprint(etiqueta)",
     "crumbs": [
       "R",
       "Tipos de datos y variables"
@@ -1280,6 +1302,17 @@
     "title": "Entrada de datos",
     "section": "Operadores lógicos",
     "text": "Operadores lógicos\n\n\nVer/ocultar código\nx &gt; 0 and x &lt; 10\n\n\nTrue\n\n\n\n\nVer/ocultar código\nx % 2 == 0 or x % 3 == 0\n\n\nFalse\n\n\n\n\nVer/ocultar código\nnot x &gt; y\n\n\nTrue",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#ejercicios",
+    "href": "python/02-entrada-datos-operadores.html#ejercicios",
+    "title": "Entrada de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería.\n\n1. Conversión de temperatura (reales)\nConvierte 23.5 °C a Fahrenheit con F = C * 9/5 + 32.\n\n\nVer/ocultar código\nc = 23.5\nf = c * 9/5 + 32\n\nassert f == 74.3\nprint(f\"{c} °C = {f} °F\")\n\n\n\n\n2. Verificar tolerancia de una pieza (booleano)\nUna pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?\n\n\nVer/ocultar código\npeso = 4.97\nnominal = 5.0\ntolerancia = 0.05\n\npasa = abs(peso - nominal) &lt;= tolerancia\nassert pasa == True\nprint(f\"¿Pasa la prueba? {pasa}\")\n\n\n\n\n3. Etiqueta de producto (strings)\nArma la etiqueta CÓDIGO-LOTE-NÚMERO (número con 4 dígitos) para el código \"ENG\", lote 2026, pieza número 47.\n\n\nVer/ocultar código\ncodigo = \"ENG\"\nlote = 2026\nnumero_pieza = 47\n\netiqueta = f\"{codigo}-{lote}-{numero_pieza:04d}\"\nassert etiqueta == \"ENG-2026-0047\"\nprint(etiqueta)",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
