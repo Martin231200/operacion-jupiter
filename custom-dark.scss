@@ -6,8 +6,10 @@ $link-color: #6EA8DC;
 $font-family-sans-serif: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 $font-family-monospace: 'JetBrains Mono', 'Courier New', monospace;
 
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&display=swap');
+
 /*-- scss:rules --*/
-body { font-family: $font-family-sans-serif; }
+body { font-family: $font-family-sans-serif; font-size: 16.5px; line-height: 1.65; }
 code, pre, .sourceCode { font-family: $font-family-monospace !important; }
 
 .navbar {
@@ -26,10 +28,12 @@ code, pre, .sourceCode { font-family: $font-family-monospace !important; }
   font-weight: 700;
 }
 
-h1, h2 {
+h1, h2, h3 {
+  font-family: 'Lexend', 'Inter', sans-serif;
   border-bottom: 2px solid #2A2F38;
   padding-bottom: 0.3rem;
   color: #F3F4F6;
+  letter-spacing: -0.01em;
 }
 h3, h4 { color: #E5E7EB; }
 
@@ -80,4 +84,10 @@ img {
 .page-footer {
   background: #10161C;
   color: #9CA3AF;
+}
+
+.ejercicio-instrucciones {
+  background: #1C2128 !important;
+  border-left-color: #6EA8DC !important;
+  color: #E5E7EB;
 }

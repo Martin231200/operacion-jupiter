@@ -1360,5 +1360,170 @@
     "title": "Glosario",
     "section": "",
     "text": "Términos comunes que aparecen a lo largo de los tutoriales, con su equivalente o particularidad en cada lenguaje cuando aplica.\nKernel — el motor que ejecuta el código de un notebook. Cada lenguaje tiene el suyo: python3 para Python, ir (IRkernel) para R. Julia usa IJulia.\nNotebook — documento que combina celdas de código (se ejecutan) y celdas de texto/Markdown (solo se muestran formateadas). Extensión .ipynb.\nVector / Array / Lista — la estructura de datos secuencial básica de cada lenguaje. En R se llama vector (mismo tipo obligatorio), en Julia array (mismo tipo, tipado), en Python lista (cualquier tipo mezclado).\nDataFrame — estructura tabular tipo hoja de cálculo. Nativa en R (data.frame), vía biblioteca en Python (pandas.DataFrame) y en Julia (DataFrames.jl).\nIndexado — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.\nTipado dinámico — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.\nCompilación JIT (just-in-time) — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Así funciona Julia, lo que le da su desempeño.\nDespacho múltiple (multiple dispatch) — el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero. Particularidad de Julia.\nVectorización — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. Presente en R y Julia por diseño; en Python se logra con bibliotecas como NumPy.\nwebR / Pyodide — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios “en vivo” de este sitio."
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html",
+    "href": "r/07-ejercicios-ingenieria.html",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "",
+    "text": "Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale Run — corre en tu navegador, sin instalar R. A la derecha tienes el planteamiento y, al final de cada uno, cómo se vería el mismo cálculo en Python y Julia.",
+    "crumbs": [
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html#esfuerzo-mecánico-ley-de-hooke",
+    "href": "r/07-ejercicios-ingenieria.html#esfuerzo-mecánico-ley-de-hooke",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "1. Esfuerzo mecánico (Ley de Hooke)",
+    "text": "1. Esfuerzo mecánico (Ley de Hooke)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna barra de sección transversal A = 2 cm² (0.0002 m²) soporta una carga axial F = 5000 N. Calcula el esfuerzo normal σ = F / A en MPa y verifica que dé 25 MPa.\nRelevancia: es el primer cálculo de cualquier análisis de resistencia de materiales.\n\n\nEn Python:\nF = 5000\nA = 0.0002\nesfuerzo = F / A\nassert round(esfuerzo / 1e6, 2) == 25.0\nEn Julia:\nF = 5000\nA = 0.0002\nesfuerzo = F / A\n@assert round(esfuerzo / 1e6, digits=2) == 25.0",
+    "crumbs": [
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "href": "r/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "2. Control de calidad (tolerancia dimensional)",
+    "text": "2. Control de calidad (tolerancia dimensional)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUn lote de 8 piezas se mide con un diámetro nominal de 20 mm y tolerancia de ±0.05 mm. Calcula media y desviación estándar, y verifica si todas caen dentro de tolerancia.\nRelevancia: control estadístico de procesos (SPC) para aceptar o rechazar un lote.\n\n\nEn Python:\nimport statistics as st\ndiametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]\nmedia = st.mean(diametros)\ndentro_tolerancia = all(abs(d - 20) &lt;= 0.05 for d in diametros)\nassert round(media, 4) == 20.0012\nEn Julia:\nusing Statistics\ndiametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]\nmedia = mean(diametros)\n@assert round(media, digits=4) == 20.0012",
+    "crumbs": [
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "href": "r/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "3. Cinemática (MRUA)",
+    "text": "3. Cinemática (MRUA)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUn carro transportador parte con velocidad inicial 4 m/s y acelera a 2 m/s² durante 5 segundos. Calcula posición y velocidad final.\nRelevancia: diseño de bandas transportadoras o brazos robóticos en líneas de producción.\n\n\nEn Python:\nv0, a, t = 4, 2, 5\nposicion = v0*t + 0.5*a*t**2\nvelocidad_final = v0 + a*t\nassert posicion == 45.0\nEn Julia:\nv0, a, t = 4, 2, 5\nposicion = v0*t + 0.5*a*t^2\n@assert posicion == 45.0",
+    "crumbs": [
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "href": "r/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "4. Eficiencia de una máquina",
+    "text": "4. Eficiencia de una máquina\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna máquina recibe 4000 J de energía y entrega 3200 J de trabajo útil. Calcula su eficiencia en porcentaje.\nRelevancia: comparar el desempeño real de motores o bombas contra su capacidad teórica.\n\n\nEn Python:\ntrabajo_util, energia_entrada = 3200, 4000\neficiencia = trabajo_util / energia_entrada * 100\nassert eficiencia == 80.0\nEn Julia:\ntrabajo_util, energia_entrada = 3200, 4000\neficiencia = trabajo_util / energia_entrada * 100\n@assert eficiencia == 80.0",
+    "crumbs": [
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "julia/07-ejercicios-ingenieria.html",
+    "href": "julia/07-ejercicios-ingenieria.html",
+    "title": "Julia: Ejercicios de ingeniería",
+    "section": "",
+    "text": "Importante\n\n\n\nRecuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.\nCuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.",
+    "crumbs": [
+      "Julia",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "julia/07-ejercicios-ingenieria.html#esfuerzo-mecánico-ley-de-hooke",
+    "href": "julia/07-ejercicios-ingenieria.html#esfuerzo-mecánico-ley-de-hooke",
+    "title": "Julia: Ejercicios de ingeniería",
+    "section": "1. Esfuerzo mecánico (Ley de Hooke)",
+    "text": "1. Esfuerzo mecánico (Ley de Hooke)\n\n\nF = 5000       # fuerza en N\nA = 0.0002     # área en m^2\n\nesfuerzo = F / A  # Pa\n\n@assert round(esfuerzo / 1e6, digits=2) == 25.0\nprintln(\"Esfuerzo: \", esfuerzo / 1e6, \" MPa\")\nSalida: Esfuerzo: 25.0 MPa\n\n\nPlanteamiento\nUna barra de sección transversal A = 2 cm² (0.0002 m²) soporta una carga axial F = 5000 N. Calcula el esfuerzo normal σ = F / A en MPa.\nRelevancia: primer cálculo de cualquier análisis de resistencia de materiales.\n\n\nEn Python: esfuerzo = F / A · En R: esfuerzo &lt;- F / A — la lógica es idéntica, solo cambia el operador de asignación.",
+    "crumbs": [
+      "Julia",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "julia/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "href": "julia/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "title": "Julia: Ejercicios de ingeniería",
+    "section": "2. Control de calidad (tolerancia dimensional)",
+    "text": "2. Control de calidad (tolerancia dimensional)\n\n\nusing Statistics\ndiametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]\nnominal = 20.0\ntolerancia = 0.05\n\nmedia = mean(diametros)\ndentro_tolerancia = all(abs.(diametros .- nominal) .&lt;= tolerancia)\n\n@assert round(media, digits=4) == 20.0012\nprintln(\"Media: \", media, \" mm — dentro de tolerancia: \", dentro_tolerancia)\nSalida: Media: 20.0012 mm — dentro de tolerancia: true\n\n\nPlanteamiento\nUn lote de 8 piezas con diámetro nominal 20 mm y tolerancia ±0.05 mm. Calcula media y verifica si todas caen dentro de tolerancia.\nRelevancia: control estadístico de procesos (SPC).\n\n\nNota de sintaxis: el . antes de operadores (.-, .&lt;=) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).",
+    "crumbs": [
+      "Julia",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "julia/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "href": "julia/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "title": "Julia: Ejercicios de ingeniería",
+    "section": "3. Cinemática (MRUA)",
+    "text": "3. Cinemática (MRUA)\n\n\nv0, a, t = 4, 2, 5\n\nposicion = v0*t + 0.5*a*t^2\nvelocidad_final = v0 + a*t\n\n@assert posicion == 45.0\nprintln(\"Posición: \", posicion, \" m, velocidad final: \", velocidad_final, \" m/s\")\nSalida: Posición: 45.0 m, velocidad final: 14 m/s\n\n\nPlanteamiento\nUn carro transportador parte con velocidad inicial 4 m/s y acelera a 2 m/s² durante 5 segundos.\nRelevancia: diseño de bandas transportadoras o brazos robóticos.",
+    "crumbs": [
+      "Julia",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "julia/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "href": "julia/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "title": "Julia: Ejercicios de ingeniería",
+    "section": "4. Eficiencia de una máquina",
+    "text": "4. Eficiencia de una máquina\n\n\ntrabajo_util, energia_entrada = 3200, 4000\neficiencia = trabajo_util / energia_entrada * 100\n\n@assert eficiencia == 80.0\nprintln(\"Eficiencia: \", eficiencia, \"%\")\nSalida: Eficiencia: 80.0%\n\n\nPlanteamiento\nUna máquina recibe 4000 J y entrega 3200 J de trabajo útil.\nRelevancia: comparar el desempeño real contra la capacidad teórica de motores o bombas.",
+    "crumbs": [
+      "Julia",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html",
+    "href": "python/07-ejercicios-ingenieria.html",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "",
+    "text": "Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale Run — corre en tu navegador, sin instalar nada. A la derecha tienes el planteamiento y, al final de cada uno, cómo se vería el mismo cálculo en R y Julia.",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#esfuerzo-mecánico-ley-de-hooke",
+    "href": "python/07-ejercicios-ingenieria.html#esfuerzo-mecánico-ley-de-hooke",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "1. Esfuerzo mecánico (Ley de Hooke)",
+    "text": "1. Esfuerzo mecánico (Ley de Hooke)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna barra de sección transversal A = 2 cm² (0.0002 m²) soporta una carga axial F = 5000 N. Calcula el esfuerzo normal σ = F / A en MPa y verifica que dé 25 MPa.\nRelevancia: es el primer cálculo de cualquier análisis de resistencia de materiales — de aquí se parte para comparar contra el esfuerzo de fluencia del material.\n\n\nEn R:\nF &lt;- 5000\nA &lt;- 0.0002\nesfuerzo &lt;- F / A\nstopifnot(round(esfuerzo / 1e6, 2) == 25.0)\nEn Julia:\nF = 5000\nA = 0.0002\nesfuerzo = F / A\n@assert round(esfuerzo / 1e6, digits=2) == 25.0",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "href": "python/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "2. Control de calidad (tolerancia dimensional)",
+    "text": "2. Control de calidad (tolerancia dimensional)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUn lote de 8 piezas se mide con un diámetro nominal de 20 mm y tolerancia de ±0.05 mm. Calcula la media y desviación estándar del lote, y verifica si todas las piezas caen dentro de tolerancia.\nRelevancia: control estadístico de procesos (SPC) — así se decide si un lote de producción se acepta o se rechaza.\n\n\nEn R:\ndiametros &lt;- c(20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00)\nmedia &lt;- mean(diametros)\ndentro_tolerancia &lt;- all(abs(diametros - 20) &lt;= 0.05)\nstopifnot(round(media, 4) == 20.0012)\nEn Julia:\nusing Statistics\ndiametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]\nmedia = mean(diametros)\ndentro_tolerancia = all(abs.(diametros .- 20) .&lt;= 0.05)\n@assert round(media, digits=4) == 20.0012",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#cinemática-movimiento-rectilíneo-uniformemente-acelerado",
+    "href": "python/07-ejercicios-ingenieria.html#cinemática-movimiento-rectilíneo-uniformemente-acelerado",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "3. Cinemática (movimiento rectilíneo uniformemente acelerado)",
+    "text": "3. Cinemática (movimiento rectilíneo uniformemente acelerado)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUn carro transportador parte con velocidad inicial 4 m/s y acelera a 2 m/s² durante 5 segundos. Calcula la posición y velocidad final con las ecuaciones de MRUA.\nRelevancia: diseño de bandas transportadoras, brazos robóticos o cualquier sistema con movimiento controlado en una línea de producción.\n\n\nEn R:\nv0 &lt;- 4; a &lt;- 2; t &lt;- 5\nposicion &lt;- v0*t + 0.5*a*t^2\nvelocidad_final &lt;- v0 + a*t\nstopifnot(posicion == 45.0)\nEn Julia:\nv0, a, t = 4, 2, 5\nposicion = v0*t + 0.5*a*t^2\nvelocidad_final = v0 + a*t\n@assert posicion == 45.0",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "href": "python/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "4. Eficiencia de una máquina",
+    "text": "4. Eficiencia de una máquina\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna máquina recibe 4000 J de energía y entrega 3200 J de trabajo útil (el resto se pierde como calor o fricción). Calcula su eficiencia en porcentaje.\nRelevancia: comparar el desempeño real de motores, bombas o sistemas mecánicos contra su capacidad teórica.\n\n\nEn R:\ntrabajo_util &lt;- 3200\nenergia_entrada &lt;- 4000\neficiencia &lt;- trabajo_util / energia_entrada * 100\nstopifnot(eficiencia == 80.0)\nEn Julia:\ntrabajo_util, energia_entrada = 3200, 4000\neficiencia = trabajo_util / energia_entrada * 100\n@assert eficiencia == 80.0",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
   }
 ]

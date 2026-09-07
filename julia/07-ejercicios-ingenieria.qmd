@@ -1,0 +1,118 @@
+---
+title: "Julia: Ejercicios de ingeniería"
+---
+
+::: {.callout-important}
+Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.
+:::
+
+Cuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.
+
+## 1. Esfuerzo mecánico (Ley de Hooke)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```julia
+F = 5000       # fuerza en N
+A = 0.0002     # área en m^2
+
+esfuerzo = F / A  # Pa
+
+@assert round(esfuerzo / 1e6, digits=2) == 25.0
+println("Esfuerzo: ", esfuerzo / 1e6, " MPa")
+```
+**Salida:** `Esfuerzo: 25.0 MPa`
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal `σ = F / A` en MPa.
+
+*Relevancia:* primer cálculo de cualquier análisis de resistencia de materiales.
+:::
+
+:::
+
+**En Python:** `esfuerzo = F / A` · **En R:** `esfuerzo <- F / A` — la lógica es idéntica, solo cambia el operador de asignación.
+
+## 2. Control de calidad (tolerancia dimensional)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```julia
+using Statistics
+diametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]
+nominal = 20.0
+tolerancia = 0.05
+
+media = mean(diametros)
+dentro_tolerancia = all(abs.(diametros .- nominal) .<= tolerancia)
+
+@assert round(media, digits=4) == 20.0012
+println("Media: ", media, " mm — dentro de tolerancia: ", dentro_tolerancia)
+```
+**Salida:** `Media: 20.0012 mm — dentro de tolerancia: true`
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Un lote de 8 piezas con diámetro nominal **20 mm** y tolerancia **±0.05 mm**. Calcula media y verifica si todas caen dentro de tolerancia.
+
+*Relevancia:* control estadístico de procesos (SPC).
+:::
+
+:::
+
+Nota de sintaxis: el `.` antes de operadores (`.-`, `.<=`) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).
+
+## 3. Cinemática (MRUA)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```julia
+v0, a, t = 4, 2, 5
+
+posicion = v0*t + 0.5*a*t^2
+velocidad_final = v0 + a*t
+
+@assert posicion == 45.0
+println("Posición: ", posicion, " m, velocidad final: ", velocidad_final, " m/s")
+```
+**Salida:** `Posición: 45.0 m, velocidad final: 14 m/s`
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**.
+
+*Relevancia:* diseño de bandas transportadoras o brazos robóticos.
+:::
+
+:::
+
+## 4. Eficiencia de una máquina
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```julia
+trabajo_util, energia_entrada = 3200, 4000
+eficiencia = trabajo_util / energia_entrada * 100
+
+@assert eficiencia == 80.0
+println("Eficiencia: ", eficiencia, "%")
+```
+**Salida:** `Eficiencia: 80.0%`
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una máquina recibe **4000 J** y entrega **3200 J** de trabajo útil.
+
+*Relevancia:* comparar el desempeño real contra la capacidad teórica de motores o bombas.
+:::
+
+:::

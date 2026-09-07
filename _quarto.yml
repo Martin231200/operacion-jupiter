@@ -28,6 +28,8 @@ website:
         text: Mi progreso
       - href: glosario.qmd
         text: Glosario
+      - href: recursos.qmd
+        text: Recursos
       - href: python/01-introduccion.ipynb
         text: Python
       - href: r/01-introduccion.ipynb
@@ -57,6 +59,8 @@ website:
           text: "Arreglos"
         - href: python/06-funciones-estadisticas.ipynb
           text: "Funciones estadísticas"
+        - href: python/07-ejercicios-ingenieria.qmd
+          text: "Ejercicios de ingeniería"
 
     - title: "R"
       style: docked
@@ -73,6 +77,8 @@ website:
           text: "Funciones"
         - href: r/06-particularidades.ipynb
           text: "Particularidades"
+        - href: r/07-ejercicios-ingenieria.qmd
+          text: "Ejercicios de ingeniería"
 
     - title: "Julia"
       style: docked
@@ -89,6 +95,8 @@ website:
           text: "Funciones"
         - href: julia/06-particularidades.qmd
           text: "Particularidades"
+        - href: julia/07-ejercicios-ingenieria.qmd
+          text: "Ejercicios de ingeniería"
 
     - title: "Tutoriales"
       style: docked

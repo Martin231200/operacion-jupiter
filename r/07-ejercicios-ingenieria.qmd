@@ -1,0 +1,178 @@
+---
+title: "R: Ejercicios de ingeniería"
+engine: knitr
+filters:
+  - webr
+---
+
+Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale **Run** — corre en tu navegador, sin instalar R. A la derecha tienes el planteamiento y, al final de cada uno, cómo se vería el mismo cálculo en Python y Julia.
+
+## 1. Esfuerzo mecánico (Ley de Hooke)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{webr-r}
+F <- 5000       # fuerza en N
+A <- 0.0002     # área en m^2
+
+esfuerzo <- F / A  # Pa
+
+stopifnot(round(esfuerzo / 1e6, 2) == 25.0)
+cat("Esfuerzo:", esfuerzo / 1e6, "MPa\n")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal `σ = F / A` en MPa y verifica que dé 25 MPa.
+
+*Relevancia:* es el primer cálculo de cualquier análisis de resistencia de materiales.
+:::
+
+:::
+
+**En Python:**
+```python
+F = 5000
+A = 0.0002
+esfuerzo = F / A
+assert round(esfuerzo / 1e6, 2) == 25.0
+```
+
+**En Julia:**
+```julia
+F = 5000
+A = 0.0002
+esfuerzo = F / A
+@assert round(esfuerzo / 1e6, digits=2) == 25.0
+```
+
+## 2. Control de calidad (tolerancia dimensional)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{webr-r}
+diametros <- c(20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00)
+nominal <- 20.0
+tolerancia <- 0.05
+
+media <- mean(diametros)
+desv <- sd(diametros)
+dentro_tolerancia <- all(abs(diametros - nominal) <= tolerancia)
+
+stopifnot(round(media, 4) == 20.0012)
+stopifnot(dentro_tolerancia == TRUE)
+cat("Media:", media, "mm, desviación:", round(desv,3), "mm\n")
+cat("Todas dentro de tolerancia:", dentro_tolerancia, "\n")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Un lote de 8 piezas se mide con un diámetro nominal de **20 mm** y tolerancia de **±0.05 mm**. Calcula media y desviación estándar, y verifica si todas caen dentro de tolerancia.
+
+*Relevancia:* control estadístico de procesos (SPC) para aceptar o rechazar un lote.
+:::
+
+:::
+
+**En Python:**
+```python
+import statistics as st
+diametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]
+media = st.mean(diametros)
+dentro_tolerancia = all(abs(d - 20) <= 0.05 for d in diametros)
+assert round(media, 4) == 20.0012
+```
+
+**En Julia:**
+```julia
+using Statistics
+diametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]
+media = mean(diametros)
+@assert round(media, digits=4) == 20.0012
+```
+
+## 3. Cinemática (MRUA)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{webr-r}
+v0 <- 4   # velocidad inicial, m/s
+a <- 2    # aceleración, m/s^2
+t <- 5    # tiempo, s
+
+posicion <- v0*t + 0.5*a*t^2
+velocidad_final <- v0 + a*t
+
+stopifnot(posicion == 45.0)
+stopifnot(velocidad_final == 14)
+cat("Posición final:", posicion, "m, velocidad final:", velocidad_final, "m/s\n")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**. Calcula posición y velocidad final.
+
+*Relevancia:* diseño de bandas transportadoras o brazos robóticos en líneas de producción.
+:::
+
+:::
+
+**En Python:**
+```python
+v0, a, t = 4, 2, 5
+posicion = v0*t + 0.5*a*t**2
+velocidad_final = v0 + a*t
+assert posicion == 45.0
+```
+
+**En Julia:**
+```julia
+v0, a, t = 4, 2, 5
+posicion = v0*t + 0.5*a*t^2
+@assert posicion == 45.0
+```
+
+## 4. Eficiencia de una máquina
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{webr-r}
+trabajo_util <- 3200      # J
+energia_entrada <- 4000   # J
+
+eficiencia <- trabajo_util / energia_entrada * 100
+
+stopifnot(eficiencia == 80.0)
+cat("Eficiencia:", eficiencia, "%\n")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una máquina recibe **4000 J** de energía y entrega **3200 J** de trabajo útil. Calcula su eficiencia en porcentaje.
+
+*Relevancia:* comparar el desempeño real de motores o bombas contra su capacidad teórica.
+:::
+
+:::
+
+**En Python:**
+```python
+trabajo_util, energia_entrada = 3200, 4000
+eficiencia = trabajo_util / energia_entrada * 100
+assert eficiencia == 80.0
+```
+
+**En Julia:**
+```julia
+trabajo_util, energia_entrada = 3200, 4000
+eficiencia = trabajo_util / energia_entrada * 100
+@assert eficiencia == 80.0
+```

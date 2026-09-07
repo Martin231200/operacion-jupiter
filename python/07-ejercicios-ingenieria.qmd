@@ -1,0 +1,182 @@
+---
+title: "Python: Ejercicios de ingeniería"
+engine: knitr
+filters:
+  - pyodide
+---
+
+Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale **Run** — corre en tu navegador, sin instalar nada. A la derecha tienes el planteamiento y, al final de cada uno, cómo se vería el mismo cálculo en R y Julia.
+
+## 1. Esfuerzo mecánico (Ley de Hooke)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{pyodide-python}
+F = 5000       # fuerza en N
+A = 0.0002     # área en m^2
+
+esfuerzo = F / A  # Pa
+
+assert round(esfuerzo / 1e6, 2) == 25.0
+print(f"Esfuerzo: {esfuerzo/1e6} MPa")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal `σ = F / A` en MPa y verifica que dé 25 MPa.
+
+*Relevancia:* es el primer cálculo de cualquier análisis de resistencia de materiales — de aquí se parte para comparar contra el esfuerzo de fluencia del material.
+:::
+
+:::
+
+**En R:**
+```r
+F <- 5000
+A <- 0.0002
+esfuerzo <- F / A
+stopifnot(round(esfuerzo / 1e6, 2) == 25.0)
+```
+
+**En Julia:**
+```julia
+F = 5000
+A = 0.0002
+esfuerzo = F / A
+@assert round(esfuerzo / 1e6, digits=2) == 25.0
+```
+
+## 2. Control de calidad (tolerancia dimensional)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{pyodide-python}
+import statistics as st
+
+diametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]  # mm
+nominal = 20.0
+tolerancia = 0.05
+
+media = st.mean(diametros)
+desv = st.stdev(diametros)
+dentro_tolerancia = all(abs(d - nominal) <= tolerancia for d in diametros)
+
+assert round(media, 4) == 20.0012
+assert dentro_tolerancia == True
+print(f"Media: {media} mm, desviación: {round(desv,3)} mm")
+print(f"Todas las piezas dentro de tolerancia: {dentro_tolerancia}")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Un lote de 8 piezas se mide con un diámetro nominal de **20 mm** y tolerancia de **±0.05 mm**. Calcula la media y desviación estándar del lote, y verifica si **todas** las piezas caen dentro de tolerancia.
+
+*Relevancia:* control estadístico de procesos (SPC) — así se decide si un lote de producción se acepta o se rechaza.
+:::
+
+:::
+
+**En R:**
+```r
+diametros <- c(20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00)
+media <- mean(diametros)
+dentro_tolerancia <- all(abs(diametros - 20) <= 0.05)
+stopifnot(round(media, 4) == 20.0012)
+```
+
+**En Julia:**
+```julia
+using Statistics
+diametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]
+media = mean(diametros)
+dentro_tolerancia = all(abs.(diametros .- 20) .<= 0.05)
+@assert round(media, digits=4) == 20.0012
+```
+
+## 3. Cinemática (movimiento rectilíneo uniformemente acelerado)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{pyodide-python}
+v0 = 4   # velocidad inicial, m/s
+a = 2    # aceleración, m/s^2
+t = 5    # tiempo, s
+
+posicion = v0*t + 0.5*a*t**2
+velocidad_final = v0 + a*t
+
+assert posicion == 45.0
+assert velocidad_final == 14
+print(f"Posición final: {posicion} m, velocidad final: {velocidad_final} m/s")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**. Calcula la posición y velocidad final con las ecuaciones de MRUA.
+
+*Relevancia:* diseño de bandas transportadoras, brazos robóticos o cualquier sistema con movimiento controlado en una línea de producción.
+:::
+
+:::
+
+**En R:**
+```r
+v0 <- 4; a <- 2; t <- 5
+posicion <- v0*t + 0.5*a*t^2
+velocidad_final <- v0 + a*t
+stopifnot(posicion == 45.0)
+```
+
+**En Julia:**
+```julia
+v0, a, t = 4, 2, 5
+posicion = v0*t + 0.5*a*t^2
+velocidad_final = v0 + a*t
+@assert posicion == 45.0
+```
+
+## 4. Eficiencia de una máquina
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```{pyodide-python}
+trabajo_util = 3200      # J
+energia_entrada = 4000   # J
+
+eficiencia = trabajo_util / energia_entrada * 100
+
+assert eficiencia == 80.0
+print(f"Eficiencia: {eficiencia}%")
+```
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una máquina recibe **4000 J** de energía y entrega **3200 J** de trabajo útil (el resto se pierde como calor o fricción). Calcula su eficiencia en porcentaje.
+
+*Relevancia:* comparar el desempeño real de motores, bombas o sistemas mecánicos contra su capacidad teórica.
+:::
+
+:::
+
+**En R:**
+```r
+trabajo_util <- 3200
+energia_entrada <- 4000
+eficiencia <- trabajo_util / energia_entrada * 100
+stopifnot(eficiencia == 80.0)
+```
+
+**En Julia:**
+```julia
+trabajo_util, energia_entrada = 3200, 4000
+eficiencia = trabajo_util / energia_entrada * 100
+@assert eficiencia == 80.0
+```
