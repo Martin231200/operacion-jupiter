@@ -39,3 +39,44 @@ Julia no requiere declarar el tipo de una variable — se infiere del valor asig
 x = 10
 x::Int64 = 10   # con tipo explícito (opcional)
 ```
+
+## Ejercicios
+
+Tres problemas cortos aplicando lo visto, con contexto de ingeniería. Mismos valores verificados que en Python y R.
+
+### 1. Conversión de temperatura (reales)
+
+```julia
+c = 23.5
+f = c * 9/5 + 32
+
+@assert f == 74.3
+println(c, " °C = ", f, " °F")
+```
+**Salida:** `23.5 °C = 74.3 °F`
+
+### 2. Verificar tolerancia de una pieza (booleano)
+
+```julia
+peso = 4.97
+nominal = 5.0
+tolerancia = 0.05
+
+pasa = abs(peso - nominal) <= tolerancia
+@assert pasa == true
+println("¿Pasa la prueba? ", pasa)
+```
+**Salida:** `¿Pasa la prueba? true`
+
+### 3. Etiqueta de producto (strings)
+
+```julia
+codigo = "ENG"
+lote = 2026
+numero_pieza = 47
+
+etiqueta = "$codigo-$lote-" * lpad(numero_pieza, 4, "0")
+@assert etiqueta == "ENG-2026-0047"
+println(etiqueta)
+```
+**Salida:** `ENG-2026-0047`

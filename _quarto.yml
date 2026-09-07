@@ -148,3 +148,4 @@ format:
       - text: <script src="/share-button.js"></script>
       - text: <script src="/skip-link.js"></script>
       - text: <script src="/ver-tambien.js"></script>
+      - text: <script src="/keyboard-nav.js"></script>
