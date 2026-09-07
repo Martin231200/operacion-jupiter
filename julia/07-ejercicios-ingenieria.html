@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a Julia – Operación Jupyter</title>
+<title>Julia: Ejercicios de ingeniería – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../julia/02-tipos-y-variables.html" rel="next">
+<link href="../julia/06-particularidades.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -117,10 +117,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Introducción a Julia – Operación Jupyter">
+<meta property="og:title" content="Julia: Ejercicios de ingeniería – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/julia/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Introducción a Julia – Operación Jupyter">
+<meta name="twitter:title" content="Julia: Ejercicios de ingeniería – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/julia/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -356,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../julia/01-introduccion.html">Introducción e instalación</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../julia/07-ejercicios-ingenieria.html">Ejercicios de ingeniería</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -370,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../julia/01-introduccion.html" class="sidebar-item-text sidebar-link active">
+  <a href="../julia/01-introduccion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción e instalación</span></a>
   </div>
 </li>
@@ -406,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../julia/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link">
+  <a href="../julia/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Ejercicios de ingeniería</span></a>
   </div>
 </li>
@@ -420,17 +422,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#lenguajes-de-programación-de-código-libre" id="toc-lenguajes-de-programación-de-código-libre" class="nav-link active" data-scroll-target="#lenguajes-de-programación-de-código-libre">Lenguajes de programación de código libre</a>
-  <ul class="collapse">
-  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
-  </ul></li>
-  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
-  <ul class="collapse">
-  <li><a href="#instalar-julia" id="toc-instalar-julia" class="nav-link" data-scroll-target="#instalar-julia">Instalar Julia</a></li>
-  <li><a href="#usar-julia-en-jupyter" id="toc-usar-julia-en-jupyter" class="nav-link" data-scroll-target="#usar-julia-en-jupyter">Usar Julia en Jupyter</a></li>
-  <li><a href="#julia-en-google-colab" id="toc-julia-en-google-colab" class="nav-link" data-scroll-target="#julia-en-google-colab">Julia en Google Colab</a></li>
-  </ul></li>
-  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a></li>
+  <li><a href="#esfuerzo-mecánico-ley-de-hooke" id="toc-esfuerzo-mecánico-ley-de-hooke" class="nav-link active" data-scroll-target="#esfuerzo-mecánico-ley-de-hooke">1. Esfuerzo mecánico (Ley de Hooke)</a></li>
+  <li><a href="#control-de-calidad-tolerancia-dimensional" id="toc-control-de-calidad-tolerancia-dimensional" class="nav-link" data-scroll-target="#control-de-calidad-tolerancia-dimensional">2. Control de calidad (tolerancia dimensional)</a></li>
+  <li><a href="#cinemática-mrua" id="toc-cinemática-mrua" class="nav-link" data-scroll-target="#cinemática-mrua">3. Cinemática (MRUA)</a></li>
+  <li><a href="#eficiencia-de-una-máquina" id="toc-eficiencia-de-una-máquina" class="nav-link" data-scroll-target="#eficiencia-de-una-máquina">4. Eficiencia de una máquina</a></li>
   </ul>
 </nav>
     </div>
@@ -440,7 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Introducción a Julia</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Julia: Ejercicios de ingeniería</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -469,69 +464,96 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Nota
+Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Este contenido se basa en características generales y documentadas del lenguaje Julia. Aún no contamos con material específico del proyecto para esta sección — se actualizará cuando la profa comparta el notebook correspondiente.</p>
+<p>Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.</p>
 </div>
 </div>
-<section id="lenguajes-de-programación-de-código-libre" class="level1">
-<h1>Lenguajes de programación de código libre</h1>
-<section id="julia" class="level2">
-<h2 class="anchored" data-anchor-id="julia">Julia</h2>
-<section id="características" class="level3">
-<h3 class="anchored" data-anchor-id="características">Características</h3>
-<ul>
-<li>Julia es un lenguaje compilado “just-in-time” (JIT): traduce el código a máquina la primera vez que se ejecuta una función, lo que le da un desempeño cercano a C manteniendo una sintaxis de alto nivel.</li>
-<li>Fue creado en 2012 por Jeff Bezanson, Stefan Karpinski, Viral Shah y Alan Edelman en el MIT.</li>
-<li>Busca resolver el “problema de los dos lenguajes”: prototipar en un lenguaje interpretado y luego reescribir en uno compilado para producción — con Julia no hace falta reescribir.</li>
-<li>Tiene soporte nativo para <em>multiple dispatch</em>: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</li>
-<li>Es software libre, con licencia MIT.</li>
-</ul>
+<p>Cuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.</p>
+<section id="esfuerzo-mecánico-ley-de-hooke" class="level2">
+<h2 class="anchored" data-anchor-id="esfuerzo-mecánico-ley-de-hooke">1. Esfuerzo mecánico (Ley de Hooke)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">5000</span>       <span class="co"># fuerza en N</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span>     <span class="co"># área en m^2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A  <span class="co"># Pa</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Esfuerzo: "</span>, esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, <span class="st">" MPa"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>Esfuerzo: 25.0 MPa</code></p>
+</div>
+<section id="planteamiento" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento">Planteamiento</h4>
+<p>Una barra de sección transversal <strong>A = 2 cm² (0.0002 m²)</strong> soporta una carga axial <strong>F = 5000 N</strong>. Calcula el esfuerzo normal <code>σ = F / A</code> en MPa.</p>
+<p><em>Relevancia:</em> primer cálculo de cualquier análisis de resistencia de materiales.</p>
 </section>
-<section id="ventajas-y-desventajas-de-julia" class="level3">
-<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-julia">Ventajas y desventajas de Julia</h3>
-<ul>
-<li>A favor: desempeño cercano a lenguajes compilados manteniendo sintaxis de alto nivel.</li>
-<li>A favor: diseñado desde cero para cómputo científico y numérico.</li>
-<li>En contra: comunidad y ecosistema de paquetes más pequeños que Python o R.</li>
-<li>En contra: la primera vez que corre una función puede sentirse lenta por la compilación JIT (“time to first plot”).</li>
-</ul>
+</div>
+<p><strong>En Python:</strong> <code>esfuerzo = F / A</code> · <strong>En R:</strong> <code>esfuerzo &lt;- F / A</code> — la lógica es idéntica, solo cambia el operador de asignación.</p>
 </section>
+<section id="control-de-calidad-tolerancia-dimensional" class="level2">
+<h2 class="anchored" data-anchor-id="control-de-calidad-tolerancia-dimensional">2. Control de calidad (tolerancia dimensional)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">20.0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(diametros)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>dentro_tolerancia <span class="op">=</span> <span class="fu">all</span>(<span class="fu">abs</span>.(diametros <span class="op">.-</span> nominal) <span class="op">.&lt;=</span> tolerancia)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media, <span class="st">" mm — dentro de tolerancia: "</span>, dentro_tolerancia)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>Media: 20.0012 mm — dentro de tolerancia: true</code></p>
+</div>
+<section id="planteamiento-1" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-1">Planteamiento</h4>
+<p>Un lote de 8 piezas con diámetro nominal <strong>20 mm</strong> y tolerancia <strong>±0.05 mm</strong>. Calcula media y verifica si todas caen dentro de tolerancia.</p>
+<p><em>Relevancia:</em> control estadístico de procesos (SPC).</p>
 </section>
+</div>
+<p>Nota de sintaxis: el <code>.</code> antes de operadores (<code>.-</code>, <code>.&lt;=</code>) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).</p>
 </section>
-<section id="interfases-y-ambientes-colaborativos" class="level1">
-<h1>Interfases y ambientes colaborativos</h1>
-<section id="instalar-julia" class="level2">
-<h2 class="anchored" data-anchor-id="instalar-julia">Instalar Julia</h2>
-<ul>
-<li>Se descarga desde <a href="https://julialang.org/downloads/">https://julialang.org/downloads/</a>, eligiendo el instalador según el sistema operativo.</li>
-<li>Al terminar la instalación, Julia se puede correr desde su propia consola (REPL) o integrado a un editor como VS Code (con la extensión oficial de Julia).</li>
-</ul>
+<section id="cinemática-mrua" class="level2">
+<h2 class="anchored" data-anchor-id="cinemática-mrua">3. Cinemática (MRUA)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">5</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">^</span><span class="fl">2</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>velocidad_final <span class="op">=</span> v0 <span class="op">+</span> a<span class="op">*</span>t</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Posición: "</span>, posicion, <span class="st">" m, velocidad final: "</span>, velocidad_final, <span class="st">" m/s"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>Posición: 45.0 m, velocidad final: 14 m/s</code></p>
+</div>
+<section id="planteamiento-2" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-2">Planteamiento</h4>
+<p>Un carro transportador parte con velocidad inicial <strong>4 m/s</strong> y acelera a <strong>2 m/s²</strong> durante <strong>5 segundos</strong>.</p>
+<p><em>Relevancia:</em> diseño de bandas transportadoras o brazos robóticos.</p>
 </section>
-<section id="usar-julia-en-jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="usar-julia-en-jupyter">Usar Julia en Jupyter</h2>
-<p>Para que Julia aparezca como opción al crear un notebook, hace falta instalar el paquete <code>IJulia</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"IJulia"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Este paso registra el kernel de Julia en Jupyter automáticamente.</p>
+</div>
 </section>
-<section id="julia-en-google-colab" class="level2">
-<h2 class="anchored" data-anchor-id="julia-en-google-colab">Julia en Google Colab</h2>
-<p>A diferencia de Python, Colab no tiene soporte oficial integrado para Julia — se puede usar instalándolo manualmente en la primera celda de cada sesión, aunque es menos práctico que RStudio o Jupyter local.</p>
+<section id="eficiencia-de-una-máquina" class="level2">
+<h2 class="anchored" data-anchor-id="eficiencia-de-una-máquina">4. Eficiencia de una máquina</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="fl">3200</span>, <span class="fl">4000</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="fl">100</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Eficiencia: "</span>, eficiencia, <span class="st">"%"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>Eficiencia: 80.0%</code></p>
+</div>
+<section id="planteamiento-3" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-3">Planteamiento</h4>
+<p>Una máquina recibe <strong>4000 J</strong> y entrega <strong>3200 J</strong> de trabajo útil.</p>
+<p><em>Relevancia:</em> comparar el desempeño real contra la capacidad teórica de motores o bombas.</p>
 </section>
-</section>
-<section id="primeros-pasos" class="level1">
-<h1>Primeros pasos</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la versión instalada</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cn">VERSION</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ayuda sobre una función</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>?println</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 <!-- -->
@@ -1005,79 +1027,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../julia/06-particularidades.html" class="pagination-link" aria-label="Particularidades">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Particularidades</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../julia/02-tipos-y-variables.html" class="pagination-link" aria-label="Tipos de datos y variables">
-        <span class="nav-page-text">Tipos de datos y variables</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Introducción e instalación"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>title: "Introducción a Julia"</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nota</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>Este contenido se basa en características generales y documentadas del lenguaje Julia. Aún no contamos con material específico del proyecto para esta sección — se actualizará cuando la profa comparta el notebook correspondiente.</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lenguajes de programación de código libre</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Julia</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Características</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Julia es un lenguaje compilado "just-in-time" (JIT): traduce el código a máquina la primera vez que se ejecuta una función, lo que le da un desempeño cercano a C manteniendo una sintaxis de alto nivel.</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fue creado en 2012 por Jeff Bezanson, Stefan Karpinski, Viral Shah y Alan Edelman en el MIT.</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Busca resolver el "problema de los dos lenguajes": prototipar en un lenguaje interpretado y luego reescribir en uno compilado para producción — con Julia no hace falta reescribir.</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tiene soporte nativo para *multiple dispatch*: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Es software libre, con licencia MIT.</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ventajas y desventajas de Julia</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: desempeño cercano a lenguajes compilados manteniendo sintaxis de alto nivel.</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: diseñado desde cero para cómputo científico y numérico.</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: comunidad y ecosistema de paquetes más pequeños que Python o R.</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: la primera vez que corre una función puede sentirse lenta por la compilación JIT ("time to first plot").</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Interfases y ambientes colaborativos</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalar Julia</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Se descarga desde <span class="co">[</span><span class="ot">https://julialang.org/downloads/</span><span class="co">](https://julialang.org/downloads/)</span>, eligiendo el instalador según el sistema operativo.</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Al terminar la instalación, Julia se puede correr desde su propia consola (REPL) o integrado a un editor como VS Code (con la extensión oficial de Julia).</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Usar Julia en Jupyter</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>Para que Julia aparezca como opción al crear un notebook, hace falta instalar el paquete <span class="in">`IJulia`</span>:</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Pkg</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="bu">Pkg</span>.<span class="fu">add</span>(<span class="st">"IJulia"</span>)</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>Este paso registra el kernel de Julia en Jupyter automáticamente.</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Julia en Google Colab</span></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>A diferencia de Python, Colab no tiene soporte oficial integrado para Julia — se puede usar instalándolo manualmente en la primera celda de cada sesión, aunque es menos práctico que RStudio o Jupyter local.</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="fu"># Primeros pasos</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la versión instalada</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="cn">VERSION</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Ayuda sobre una función</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>?println</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Ejercicios de ingeniería"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Cuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Esfuerzo mecánico (Ley de Hooke)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">5000</span>       <span class="co"># fuerza en N</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span>     <span class="co"># área en m^2</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A  <span class="co"># Pa</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Esfuerzo: "</span>, esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, <span class="st">" MPa"</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Esfuerzo: 25.0 MPa`</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal <span class="in">`σ = F / A`</span> en MPa.</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>*Relevancia:* primer cálculo de cualquier análisis de resistencia de materiales.</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>**En Python:** `esfuerzo = F / A` · **En R:** <span class="in">`esfuerzo &lt;- F / A`</span> — la lógica es idéntica, solo cambia el operador de asignación.</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Control de calidad (tolerancia dimensional)</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">20.0</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(diametros)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>dentro_tolerancia <span class="op">=</span> <span class="fu">all</span>(<span class="fu">abs</span>.(diametros <span class="op">.-</span> nominal) <span class="op">.&lt;=</span> tolerancia)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media, <span class="st">" mm — dentro de tolerancia: "</span>, dentro_tolerancia)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Media: 20.0012 mm — dentro de tolerancia: true`</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>Un lote de 8 piezas con diámetro nominal **20 mm** y tolerancia **±0.05 mm**. Calcula media y verifica si todas caen dentro de tolerancia.</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>*Relevancia:* control estadístico de procesos (SPC).</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>Nota de sintaxis: el <span class="in">`.`</span> antes de operadores (<span class="in">`.-`</span>, <span class="in">`.&lt;=`</span>) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Cinemática (MRUA)</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">5</span></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">^</span><span class="fl">2</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>velocidad_final <span class="op">=</span> v0 <span class="op">+</span> a<span class="op">*</span>t</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Posición: "</span>, posicion, <span class="st">" m, velocidad final: "</span>, velocidad_final, <span class="st">" m/s"</span>)</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Posición: 45.0 m, velocidad final: 14 m/s`</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**.</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>*Relevancia:* diseño de bandas transportadoras o brazos robóticos.</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Eficiencia de una máquina</span></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="fl">3200</span>, <span class="fl">4000</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="fl">100</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Eficiencia: "</span>, eficiencia, <span class="st">"%"</span>)</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Eficiencia: 80.0%`</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>Una máquina recibe **4000 J** y entrega **3200 J** de trabajo útil.</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>*Relevancia:* comparar el desempeño real contra la capacidad teórica de motores o bombas.</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

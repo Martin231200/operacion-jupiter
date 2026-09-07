@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ejercicios en vivo: R (webR) – Operación Jupyter</title>
+<title>R: Ejercicios de ingeniería – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,8 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tutoriales/ejercicios-julia.html" rel="next">
-<link href="../tutoriales/ejercicios-r.html" rel="prev">
+<link href="../r/06-particularidades.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -415,7 +414,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"es_primo <- function(n) {\n  if (n < 2) return(FALSE)\n  for (i in 2:floor(sqrt(n))) {\n    if (n %% i == 0) return(FALSE)\n  }\n  return(TRUE)\n}\n\ncasos <- list(`7` = TRUE, `15` = FALSE, `2` = TRUE, `97` = TRUE)\nfor (n in names(casos)) {\n  resultado <- es_primo(as.numeric(n))\n  stopifnot(resultado == casos[[n]])\n  cat(sprintf(\"es_primo(%s) = %s  [correcto]\\n\", n, resultado))\n}","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"datos <- c(12, 15, 12, 18, 21, 15, 15, 9, 30, 12)\n\nmedia <- mean(datos)\nmediana <- median(datos)\ndesv_std <- sd(datos)\n\nstopifnot(round(media, 2) == 15.9)\nstopifnot(mediana == 15.0)\nstopifnot(round(desv_std, 2) == 6.01)\n\ncat(\"Media:\", media, \"\\n\")\ncat(\"Mediana:\", mediana, \"\\n\")\ncat(\"Desviación estándar:\", round(desv_std, 2), \"\\n\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"resolver_cuadratica <- function(a, b, c) {\n  disc <- b^2 - 4*a*c\n  x1 <- (-b + sqrt(disc)) / (2*a)\n  x2 <- (-b - sqrt(disc)) / (2*a)\n  return(c(x1, x2))\n}\n\na <- 1; b <- -3; c <- 2  # x^2 - 3x + 2 = 0 -> raíces 1 y 2\nraices <- resolver_cuadratica(a, b, c)\n\nfor (x in raices) {\n  valor <- a*x^2 + b*x + c\n  stopifnot(abs(valor) < 1e-9)\n}\n\ncat(\"Raíces:\", raices, \"\\n\")\ncat(\"Ambas raíces satisfacen la ecuación (verificado)\\n\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"x <- seq(-10, 10, length.out = 100)\ny <- x^2\n\nplot(x, y, type = \"l\",\n     main = \"f(x) = x^2\",\n     xlab = \"x\", ylab = \"f(x)\")\ngrid()","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"F <- 5000       # fuerza en N\nA <- 0.0002     # área en m^2\n\nesfuerzo <- F / A  # Pa\n\nstopifnot(round(esfuerzo / 1e6, 2) == 25.0)\ncat(\"Esfuerzo:\", esfuerzo / 1e6, \"MPa\\n\")","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"diametros <- c(20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00)\nnominal <- 20.0\ntolerancia <- 0.05\n\nmedia <- mean(diametros)\ndesv <- sd(diametros)\ndentro_tolerancia <- all(abs(diametros - nominal) <= tolerancia)\n\nstopifnot(round(media, 4) == 20.0012)\nstopifnot(dentro_tolerancia == TRUE)\ncat(\"Media:\", media, \"mm, desviación:\", round(desv,3), \"mm\\n\")\ncat(\"Todas dentro de tolerancia:\", dentro_tolerancia, \"\\n\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"v0 <- 4   # velocidad inicial, m/s\na <- 2    # aceleración, m/s^2\nt <- 5    # tiempo, s\n\nposicion <- v0*t + 0.5*a*t^2\nvelocidad_final <- v0 + a*t\n\nstopifnot(posicion == 45.0)\nstopifnot(velocidad_final == 14)\ncat(\"Posición final:\", posicion, \"m, velocidad final:\", velocidad_final, \"m/s\\n\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"trabajo_util <- 3200      # J\nenergia_entrada <- 4000   # J\n\neficiencia <- trabajo_util / energia_entrada * 100\n\nstopifnot(eficiencia == 80.0)\ncat(\"Eficiencia:\", eficiencia, \"%\\n\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1671,13 +1670,13 @@ globalThis.qwebrExecuteCode = async function (
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Ejercicios en vivo: R (webR) – Operación Jupyter">
+<meta property="og:title" content="R: Ejercicios de ingeniería – Operación Jupyter">
 <meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
-<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/tutoriales/images/social-preview.png">
+<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Ejercicios en vivo: R (webR) – Operación Jupyter">
+<meta name="twitter:title" content="R: Ejercicios de ingeniería – Operación Jupyter">
 <meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
-<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/tutoriales/images/social-preview.png">
+<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -1881,7 +1880,7 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../r/01-introduccion.html"> 
+    <a class="nav-link active" href="../r/01-introduccion.html" aria-current="page"> 
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
@@ -1889,7 +1888,7 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Julia</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../tutoriales/index.html" aria-current="page"> 
+    <a class="nav-link" href="../tutoriales/index.html"> 
 <span class="menu-text">Tutoriales</span></a>
   </li>  
   <li class="nav-item">
@@ -1912,7 +1911,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutoriales/ejercicios-r-webr.html">Ejercicios R (en vivo)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/07-ejercicios-ingenieria.html">Ejercicios de ingeniería</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1926,44 +1925,44 @@ globalThis.qwebrExecuteCode = async function (
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Comparación</span></a>
+  <a href="../r/01-introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción e instalación</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/quiz-comparativo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quiz interactivo</span></a>
+  <a href="../r/02-tipos-y-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tipos de datos y variables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/ejercicios-python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios Python</span></a>
+  <a href="../r/03-estructuras-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de control</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/ejercicios-python-pyodide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios Python (en vivo)</span></a>
+  <a href="../r/04-estructuras-datos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de datos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/ejercicios-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios R</span></a>
+  <a href="../r/05-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funciones</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/ejercicios-r-webr.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Ejercicios R (en vivo)</span></a>
+  <a href="../r/06-particularidades.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particularidades</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/ejercicios-julia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios Julia</span></a>
+  <a href="../r/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Ejercicios de ingeniería</span></a>
   </div>
 </li>
     </ul>
@@ -1976,14 +1975,10 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#ejercicios-verificables-r" id="toc-ejercicios-verificables-r" class="nav-link active" data-scroll-target="#ejercicios-verificables-r">Ejercicios verificables: R</a>
-  <ul class="collapse">
-  <li><a href="#matemáticas-verificar-si-un-número-es-primo" id="toc-matemáticas-verificar-si-un-número-es-primo" class="nav-link" data-scroll-target="#matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</a></li>
-  <li><a href="#estadística-descriptiva" id="toc-estadística-descriptiva" class="nav-link" data-scroll-target="#estadística-descriptiva">2. Estadística descriptiva</a></li>
-  <li><a href="#resolver-una-ecuación-cuadrática" id="toc-resolver-una-ecuación-cuadrática" class="nav-link" data-scroll-target="#resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</a></li>
-  <li><a href="#graficar-una-función" id="toc-graficar-una-función" class="nav-link" data-scroll-target="#graficar-una-función">4. Graficar una función</a></li>
-  <li><a href="#ejercicio-propuesto" id="toc-ejercicio-propuesto" class="nav-link" data-scroll-target="#ejercicio-propuesto">Ejercicio propuesto</a></li>
-  </ul></li>
+  <li><a href="#esfuerzo-mecánico-ley-de-hooke" id="toc-esfuerzo-mecánico-ley-de-hooke" class="nav-link active" data-scroll-target="#esfuerzo-mecánico-ley-de-hooke">1. Esfuerzo mecánico (Ley de Hooke)</a></li>
+  <li><a href="#control-de-calidad-tolerancia-dimensional" id="toc-control-de-calidad-tolerancia-dimensional" class="nav-link" data-scroll-target="#control-de-calidad-tolerancia-dimensional">2. Control de calidad (tolerancia dimensional)</a></li>
+  <li><a href="#cinemática-mrua" id="toc-cinemática-mrua" class="nav-link" data-scroll-target="#cinemática-mrua">3. Cinemática (MRUA)</a></li>
+  <li><a href="#eficiencia-de-una-máquina" id="toc-eficiencia-de-una-máquina" class="nav-link" data-scroll-target="#eficiencia-de-una-máquina">4. Eficiencia de una máquina</a></li>
   </ul>
 </nav>
     </div>
@@ -2277,7 +2272,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Ejercicios en vivo: R (webR)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">R: Ejercicios de ingeniería</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -2300,38 +2295,104 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>Edita el código directamente aquí y dale <strong>Run</strong> — corre de verdad en tu navegador, sin instalar R. Si el ejercicio pasa la verificación (<code>stopifnot</code>), no marca error; si algo falla, verás el mensaje de error ahí mismo.</p>
-<section id="ejercicios-verificables-r" class="level1">
-<h1>Ejercicios verificables: R</h1>
-<p>Mismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. Cada uno verifica el resultado con <code>stopifnot()</code> (equivalente en R a <code>assert</code>).</p>
-<section id="matemáticas-verificar-si-un-número-es-primo" class="level2">
-<h2 class="anchored" data-anchor-id="matemáticas-verificar-si-un-número-es-primo">1. Matemáticas: verificar si un número es primo</h2>
+<p>Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale <strong>Run</strong> — corre en tu navegador, sin instalar R. A la derecha tienes el planteamiento y, al final de cada uno, cómo se vería el mismo cálculo en Python y Julia.</p>
+<section id="esfuerzo-mecánico-ley-de-hooke" class="level2">
+<h2 class="anchored" data-anchor-id="esfuerzo-mecánico-ley-de-hooke">1. Esfuerzo mecánico (Ley de Hooke)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<section id="planteamiento" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento">Planteamiento</h4>
+<p>Una barra de sección transversal <strong>A = 2 cm² (0.0002 m²)</strong> soporta una carga axial <strong>F = 5000 N</strong>. Calcula el esfuerzo normal <code>σ = F / A</code> en MPa y verifica que dé 25 MPa.</p>
+<p><em>Relevancia:</em> es el primer cálculo de cualquier análisis de resistencia de materiales.</p>
 </section>
-<section id="estadística-descriptiva" class="level2">
-<h2 class="anchored" data-anchor-id="estadística-descriptiva">2. Estadística descriptiva</h2>
+</div>
+<p><strong>En Python:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="dv">5000</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>En Julia:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">5000</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="control-de-calidad-tolerancia-dimensional" class="level2">
+<h2 class="anchored" data-anchor-id="control-de-calidad-tolerancia-dimensional">2. Control de calidad (tolerancia dimensional)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<section id="planteamiento-1" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-1">Planteamiento</h4>
+<p>Un lote de 8 piezas se mide con un diámetro nominal de <strong>20 mm</strong> y tolerancia de <strong>±0.05 mm</strong>. Calcula media y desviación estándar, y verifica si todas caen dentro de tolerancia.</p>
+<p><em>Relevancia:</em> control estadístico de procesos (SPC) para aceptar o rechazar un lote.</p>
 </section>
-<section id="resolver-una-ecuación-cuadrática" class="level2">
-<h2 class="anchored" data-anchor-id="resolver-una-ecuación-cuadrática">3. Resolver una ecuación cuadrática</h2>
+</div>
+<p><strong>En Python:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statistics <span class="im">as</span> st</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> st.mean(diametros)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dentro_tolerancia <span class="op">=</span> <span class="bu">all</span>(<span class="bu">abs</span>(d <span class="op">-</span> <span class="dv">20</span>) <span class="op">&lt;=</span> <span class="fl">0.05</span> <span class="cf">for</span> d <span class="kw">in</span> diametros)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">round</span>(media, <span class="dv">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>En Julia:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(diametros)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cinemática-mrua" class="level2">
+<h2 class="anchored" data-anchor-id="cinemática-mrua">3. Cinemática (MRUA)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<section id="planteamiento-2" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-2">Planteamiento</h4>
+<p>Un carro transportador parte con velocidad inicial <strong>4 m/s</strong> y acelera a <strong>2 m/s²</strong> durante <strong>5 segundos</strong>. Calcula posición y velocidad final.</p>
+<p><em>Relevancia:</em> diseño de bandas transportadoras o brazos robóticos en líneas de producción.</p>
 </section>
-<section id="graficar-una-función" class="level2">
-<h2 class="anchored" data-anchor-id="graficar-una-función">4. Graficar una función</h2>
+</div>
+<p><strong>En Python:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>velocidad_final <span class="op">=</span> v0 <span class="op">+</span> a<span class="op">*</span>t</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>En Julia:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">5</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">^</span><span class="fl">2</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="eficiencia-de-una-máquina" class="level2">
+<h2 class="anchored" data-anchor-id="eficiencia-de-una-máquina">4. Eficiencia de una máquina</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+<section id="planteamiento-3" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-3">Planteamiento</h4>
+<p>Una máquina recibe <strong>4000 J</strong> de energía y entrega <strong>3200 J</strong> de trabajo útil. Calcula su eficiencia en porcentaje.</p>
+<p><em>Relevancia:</em> comparar el desempeño real de motores o bombas contra su capacidad teórica.</p>
 </section>
-<section id="ejercicio-propuesto" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-propuesto">Ejercicio propuesto</h2>
-<p>Modifica el ejercicio 2 para calcular también la varianza (<code>var(datos)</code>) y agrega tu propio <code>stopifnot()</code> para verificarla.</p>
+</div>
+<p><strong>En Python:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="dv">3200</span>, <span class="dv">4000</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>En Julia:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="fl">3200</span>, <span class="fl">4000</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="fl">100</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -2801,104 +2862,191 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tutoriales/ejercicios-r.html" class="pagination-link" aria-label="Ejercicios R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ejercicios R</span>
+      <a href="../r/06-particularidades.html" class="pagination-link" aria-label="Particularidades">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Particularidades</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tutoriales/ejercicios-julia.html" class="pagination-link" aria-label="Ejercicios Julia">
-        <span class="nav-page-text">Ejercicios Julia</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ejercicios en vivo: R (webR)"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">engine:</span><span class="co"> knitr</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - webr</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Edita el código directamente aquí y dale **Run** — corre de verdad en tu navegador, sin instalar R. Si el ejercicio pasa la verificación (<span class="in">`stopifnot`</span>), no marca error; si algo falla, verás el mensaje de error ahí mismo.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Ejercicios verificables: R</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Mismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. Cada uno verifica el resultado con <span class="in">`stopifnot()`</span> (equivalente en R a <span class="in">`assert`</span>).</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Matemáticas: verificar si un número es primo</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">es_primo &lt;- function(n) {</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">  if (n &lt; 2) return(FALSE)</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 2:floor(sqrt(n))) {</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">    if (n %% i == 0) return(FALSE)</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">  return(TRUE)</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="in">casos &lt;- list(`7` = TRUE, `15` = FALSE, `2` = TRUE, `97` = TRUE)</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">for (n in names(casos)) {</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">  resultado &lt;- es_primo(as.numeric(n))</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">  stopifnot(resultado == casos[[n]])</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">  cat(sprintf("es_primo(%s) = %s  [correcto]\n", n, resultado))</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Estadística descriptiva</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">datos &lt;- c(12, 15, 12, 18, 21, 15, 15, 9, 30, 12)</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">media &lt;- mean(datos)</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">mediana &lt;- median(datos)</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">desv_std &lt;- sd(datos)</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(round(media, 2) == 15.9)</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(mediana == 15.0)</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(round(desv_std, 2) == 6.01)</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Media:", media, "\n")</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Mediana:", mediana, "\n")</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Desviación estándar:", round(desv_std, 2), "\n")</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Resolver una ecuación cuadrática</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">resolver_cuadratica &lt;- function(a, b, c) {</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="in">  disc &lt;- b^2 - 4*a*c</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="in">  x1 &lt;- (-b + sqrt(disc)) / (2*a)</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">  x2 &lt;- (-b - sqrt(disc)) / (2*a)</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="in">  return(c(x1, x2))</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="in">a &lt;- 1; b &lt;- -3; c &lt;- 2  # x^2 - 3x + 2 = 0 -&gt; raíces 1 y 2</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="in">raices &lt;- resolver_cuadratica(a, b, c)</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="in">for (x in raices) {</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">  valor &lt;- a*x^2 + b*x + c</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="in">  stopifnot(abs(valor) &lt; 1e-9)</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Raíces:", raices, "\n")</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Ambas raíces satisfacen la ecuación (verificado)\n")</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Graficar una función</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- seq(-10, 10, length.out = 100)</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="in">y &lt;- x^2</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="in">plot(x, y, type = "l",</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="in">     main = "f(x) = x^2",</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="in">     xlab = "x", ylab = "f(x)")</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="in">grid()</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicio propuesto</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Modifica el ejercicio 2 para calcular también la varianza (<span class="in">`var(datos)`</span>) y agrega tu propio <span class="in">`stopifnot()`</span> para verificarla.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "R: Ejercicios de ingeniería"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">engine:</span><span class="co"> knitr</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - webr</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale **Run** — corre en tu navegador, sin instalar R. A la derecha tienes el planteamiento y, al final de cada uno, cómo se vería el mismo cálculo en Python y Julia.</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Esfuerzo mecánico (Ley de Hooke)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="in">F &lt;- 5000       # fuerza en N</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="in">A &lt;- 0.0002     # área en m^2</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="in">esfuerzo &lt;- F / A  # Pa</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(round(esfuerzo / 1e6, 2) == 25.0)</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Esfuerzo:", esfuerzo / 1e6, "MPa\n")</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal <span class="in">`σ = F / A`</span> en MPa y verifica que dé 25 MPa.</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>*Relevancia:* es el primer cálculo de cualquier análisis de resistencia de materiales.</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>**En Python:**</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="dv">5000</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, <span class="dv">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>**En Julia:**</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">5000</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Control de calidad (tolerancia dimensional)</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="in">diametros &lt;- c(20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00)</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="in">nominal &lt;- 20.0</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="in">tolerancia &lt;- 0.05</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="in">media &lt;- mean(diametros)</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="in">desv &lt;- sd(diametros)</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="in">dentro_tolerancia &lt;- all(abs(diametros - nominal) &lt;= tolerancia)</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(round(media, 4) == 20.0012)</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(dentro_tolerancia == TRUE)</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Media:", media, "mm, desviación:", round(desv,3), "mm\n")</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Todas dentro de tolerancia:", dentro_tolerancia, "\n")</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>Un lote de 8 piezas se mide con un diámetro nominal de **20 mm** y tolerancia de **±0.05 mm**. Calcula media y desviación estándar, y verifica si todas caen dentro de tolerancia.</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>*Relevancia:* control estadístico de procesos (SPC) para aceptar o rechazar un lote.</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>**En Python:**</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statistics <span class="im">as</span> st</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> st.mean(diametros)</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>dentro_tolerancia <span class="op">=</span> <span class="bu">all</span>(<span class="bu">abs</span>(d <span class="op">-</span> <span class="dv">20</span>) <span class="op">&lt;=</span> <span class="fl">0.05</span> <span class="cf">for</span> d <span class="kw">in</span> diametros)</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">round</span>(media, <span class="dv">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>**En Julia:**</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(diametros)</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Cinemática (MRUA)</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="in">v0 &lt;- 4   # velocidad inicial, m/s</span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="in">a &lt;- 2    # aceleración, m/s^2</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="in">t &lt;- 5    # tiempo, s</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="in">posicion &lt;- v0*t + 0.5*a*t^2</span></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a><span class="in">velocidad_final &lt;- v0 + a*t</span></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(posicion == 45.0)</span></span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(velocidad_final == 14)</span></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Posición final:", posicion, "m, velocidad final:", velocidad_final, "m/s\n")</span></span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**. Calcula posición y velocidad final.</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>*Relevancia:* diseño de bandas transportadoras o brazos robóticos en líneas de producción.</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a>**En Python:**</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>velocidad_final <span class="op">=</span> v0 <span class="op">+</span> a<span class="op">*</span>t</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>**En Julia:**</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">5</span></span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">^</span><span class="fl">2</span></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Eficiencia de una máquina</span></span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr-r}</span></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a><span class="in">trabajo_util &lt;- 3200      # J</span></span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a><span class="in">energia_entrada &lt;- 4000   # J</span></span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a><span class="in">eficiencia &lt;- trabajo_util / energia_entrada * 100</span></span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="in">stopifnot(eficiencia == 80.0)</span></span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="in">cat("Eficiencia:", eficiencia, "%\n")</span></span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>Una máquina recibe **4000 J** de energía y entrega **3200 J** de trabajo útil. Calcula su eficiencia en porcentaje.</span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>*Relevancia:* comparar el desempeño real de motores o bombas contra su capacidad teórica.</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a>**En Python:**</span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="dv">3200</span>, <span class="dv">4000</span></span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>**En Julia:**</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="fl">3200</span>, <span class="fl">4000</span></span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="fl">100</span></span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
