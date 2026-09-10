@@ -88,6 +88,17 @@
     ]
   },
   {
+    "objectID": "python/03-funciones.html#ejercicios",
+    "href": "python/03-funciones.html#ejercicios",
+    "title": "Funciones nativas",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con estructuras de control, contexto de ingeniería.\n\n1. Consumo total de energía (ciclo for)\nSuma el consumo (kWh) de 5 máquinas: [120, 95, 150, 80, 110].\n\n\nVer/ocultar código\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos:\n    total += c\n\nassert total == 555\nprint(f\"Consumo total: {total} kWh\")\n\n\n\n\n2. Clasificar estado por temperatura (if/elif/else)\nClasifica una máquina: normal si temp &lt; 60, alerta si &lt; 85, crítico en otro caso. Prueba con 45, 70 y 90 °C.\n\n\nVer/ocultar código\ndef clasificar(temp):\n    if temp &lt; 60:\n        return \"normal\"\n    elif temp &lt; 85:\n        return \"alerta\"\n    else:\n        return \"critico\"\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\nassert resultados == [\"normal\", \"alerta\", \"critico\"]\nprint(resultados)\n\n\n\n\n3. Simular llenado de un tanque (while)\nUn tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda en alcanzar o superar el objetivo?\n\n\nVer/ocultar código\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo:\n    nivel += tasa\n    minutos += 1\n\nassert minutos == 12\nprint(f\"Minutos: {minutos}, nivel final: {nivel} L\")",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
     "objectID": "python/07-ejercicios-ingenieria.html",
     "href": "python/07-ejercicios-ingenieria.html",
     "title": "Python: Ejercicios de ingeniería",
@@ -579,7 +590,7 @@
     "href": "julia/03-estructuras-control.html",
     "title": "Julia: Estructuras de control",
     "section": "",
-    "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend",
+    "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend\n\n\n\n\n\n\nTres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.\n\n\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos\n    global total += c\nend\n\n@assert total == 555\nprintln(\"Consumo total: \", total, \" kWh\")\nSalida: Consumo total: 555 kWh\n\n\n\nfunction clasificar(temp)\n    if temp &lt; 60\n        return \"normal\"\n    elseif temp &lt; 85\n        return \"alerta\"\n    else\n        return \"critico\"\n    end\nend\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\n@assert resultados == [\"normal\", \"alerta\", \"critico\"]\nprintln(resultados)\nSalida: [\"normal\", \"alerta\", \"critico\"]\n\n\n\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo\n    global nivel += tasa\n    global minutos += 1\nend\n\n@assert minutos == 12\nprintln(\"Minutos: \", minutos, \", nivel final: \", nivel, \" L\")\nSalida: Minutos: 12, nivel final: 540 L",
     "crumbs": [
       "Julia",
       "Estructuras de control"
@@ -591,6 +602,17 @@
     "title": "Julia: Estructuras de control",
     "section": "",
     "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend",
+    "crumbs": [
+      "Julia",
+      "Estructuras de control"
+    ]
+  },
+  {
+    "objectID": "julia/03-estructuras-control.html#ejercicios",
+    "href": "julia/03-estructuras-control.html#ejercicios",
+    "title": "Julia: Estructuras de control",
+    "section": "",
+    "text": "Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.\n\n\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos\n    global total += c\nend\n\n@assert total == 555\nprintln(\"Consumo total: \", total, \" kWh\")\nSalida: Consumo total: 555 kWh\n\n\n\nfunction clasificar(temp)\n    if temp &lt; 60\n        return \"normal\"\n    elseif temp &lt; 85\n        return \"alerta\"\n    else\n        return \"critico\"\n    end\nend\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\n@assert resultados == [\"normal\", \"alerta\", \"critico\"]\nprintln(resultados)\nSalida: [\"normal\", \"alerta\", \"critico\"]\n\n\n\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo\n    global nivel += tasa\n    global minutos += 1\nend\n\n@assert minutos == 12\nprintln(\"Minutos: \", minutos, \", nivel final: \", nivel, \" L\")\nSalida: Minutos: 12, nivel final: 540 L",
     "crumbs": [
       "Julia",
       "Estructuras de control"
@@ -921,6 +943,17 @@
     "title": "Estructuras: secuencias, decisiones y repeticiones",
     "section": "",
     "text": "El operador : genera una secuencia de enteros consecutivos; la función seq() permite controlar el incremento y seq_len()/seq_along() generan secuencias a partir de la longitud de un objeto. 1:10\n\n\nVer/ocultar código\nseq(0, 1, by = 0.25)\nseq_len(5)\n\n\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”Estructura “repeat”\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n} else {\nprint(\"no positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nfor (i in 1:5) {\nprint(i)\n}\n\n\n\n\n\n\nVer/ocultar código\ni &lt;- 1\nwhile (i &lt;= 5) {\nprint(i)\ni &lt;- i + 1\n}\n\n\n\n\nrepeat ejecuta el bloque indefinidamente hasta encontrar un break; es el equivalente en R de un bucle “do-while”.\n\n\nVer/ocultar código\ni &lt;- 1\nrepeat {\nprint(i)\ni &lt;- i + 1\nif (i &gt; 5) break\n}",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
+  },
+  {
+    "objectID": "r/03-estructuras-control.html#ejercicios",
+    "href": "r/03-estructuras-control.html#ejercicios",
+    "title": "Estructuras: secuencias, decisiones y repeticiones",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con estructuras de control, contexto de ingeniería.\n\n1. Consumo total de energía (ciclo for)\nSuma el consumo (kWh) de 5 máquinas: c(120, 95, 150, 80, 110).\n\n\nVer/ocultar código\nconsumos &lt;- c(120, 95, 150, 80, 110)\ntotal &lt;- 0\nfor (c in consumos) {\n  total &lt;- total + c\n}\n\nstopifnot(total == 555)\ncat(\"Consumo total:\", total, \"kWh\\n\")\n\n\n\n\n2. Clasificar estado por temperatura (if/else if/else)\nClasifica una máquina: \"normal\" si temp &lt; 60, \"alerta\" si &lt; 85, \"critico\" en otro caso. Prueba con 45, 70 y 90 °C.\n\n\nVer/ocultar código\nclasificar &lt;- function(temp) {\n  if (temp &lt; 60) {\n    return(\"normal\")\n  } else if (temp &lt; 85) {\n    return(\"alerta\")\n  } else {\n    return(\"critico\")\n  }\n}\n\nresultados &lt;- sapply(c(45, 70, 90), clasificar)\nstopifnot(all(resultados == c(\"normal\", \"alerta\", \"critico\")))\nprint(resultados)\n\n\n\n\n3. Simular llenado de un tanque (while)\nUn tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda en alcanzar o superar el objetivo?\n\n\nVer/ocultar código\nnivel &lt;- 0\nobjetivo &lt;- 500\ntasa &lt;- 45\nminutos &lt;- 0\n\nwhile (nivel &lt; objetivo) {\n  nivel &lt;- nivel + tasa\n  minutos &lt;- minutos + 1\n}\n\nstopifnot(minutos == 12)\ncat(\"Minutos:\", minutos, \", nivel final:\", nivel, \"L\\n\")",
     "crumbs": [
       "R",
       "Estructuras de control"

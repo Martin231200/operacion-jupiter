@@ -461,6 +461,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#declaración-import" id="toc-declaración-import" class="nav-link active" data-scroll-target="#declaración-import">Declaración “import”</a></li>
   <li><a href="#funciones-definidas-por-el-usuario" id="toc-funciones-definidas-por-el-usuario" class="nav-link" data-scroll-target="#funciones-definidas-por-el-usuario">Funciones definidas por el usuario</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -482,7 +483,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de septiembre, 2026</p>
+      <p class="date-modified">10 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -973,6 +974,66 @@ Spam, Spam,
 <div class="cell-output cell-output-stdout">
 <pre><code>b es menor</code></pre>
 </div>
+</div>
+</section>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres problemas cortos con estructuras de control, contexto de ingeniería.</p>
+<section id="consumo-total-de-energía-ciclo-for" class="level3">
+<h3 class="anchored" data-anchor-id="consumo-total-de-energía-ciclo-for">1. Consumo total de energía (ciclo <code>for</code>)</h3>
+<p>Suma el consumo (kWh) de 5 máquinas: <code>[120, 95, 150, 80, 110]</code>.</p>
+<div id="cell-62" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>consumos <span class="op">=</span> [<span class="dv">120</span>, <span class="dv">95</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">110</span>]</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> consumos:</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> c</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> total <span class="op">==</span> <span class="dv">555</span></span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Consumo total: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss"> kWh"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="clasificar-estado-por-temperatura-ifelifelse" class="level3">
+<h3 class="anchored" data-anchor-id="clasificar-estado-por-temperatura-ifelifelse">2. Clasificar estado por temperatura (<code>if</code>/<code>elif</code>/<code>else</code>)</h3>
+<p>Clasifica una máquina: <code>normal</code> si temp &lt; 60, <code>alerta</code> si &lt; 85, <code>crítico</code> en otro caso. Prueba con 45, 70 y 90 °C.</p>
+<div id="cell-64" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clasificar(temp):</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">&lt;</span> <span class="dv">60</span>:</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"normal"</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> temp <span class="op">&lt;</span> <span class="dv">85</span>:</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"alerta"</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"critico"</span></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>resultados <span class="op">=</span> [clasificar(t) <span class="cf">for</span> t <span class="kw">in</span> [<span class="dv">45</span>, <span class="dv">70</span>, <span class="dv">90</span>]]</span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> resultados <span class="op">==</span> [<span class="st">"normal"</span>, <span class="st">"alerta"</span>, <span class="st">"critico"</span>]</span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultados)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="simular-llenado-de-un-tanque-while" class="level3">
+<h3 class="anchored" data-anchor-id="simular-llenado-de-un-tanque-while">3. Simular llenado de un tanque (<code>while</code>)</h3>
+<p>Un tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda en alcanzar o superar el objetivo?</p>
+<div id="cell-66" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>nivel <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>objetivo <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>tasa <span class="op">=</span> <span class="dv">45</span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>minutos <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nivel <span class="op">&lt;</span> objetivo:</span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>    nivel <span class="op">+=</span> tasa</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>    minutos <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> minutos <span class="op">==</span> <span class="dv">12</span></span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Minutos: </span><span class="sc">{</span>minutos<span class="sc">}</span><span class="ss">, nivel final: </span><span class="sc">{</span>nivel<span class="sc">}</span><span class="ss"> L"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 
 

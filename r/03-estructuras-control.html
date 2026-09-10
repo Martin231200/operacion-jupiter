@@ -431,6 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#secuencias" id="toc-secuencias" class="nav-link active" data-scroll-target="#secuencias">Secuencias</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -452,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">7 de septiembre, 2026</p>
+      <p class="date-modified">10 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -536,8 +537,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres problemas cortos con estructuras de control, contexto de ingeniería.</p>
+<section id="consumo-total-de-energía-ciclo-for" class="level3">
+<h3 class="anchored" data-anchor-id="consumo-total-de-energía-ciclo-for">1. Consumo total de energía (ciclo <code>for</code>)</h3>
+<p>Suma el consumo (kWh) de 5 máquinas: <code>c(120, 95, 150, 80, 110)</code>.</p>
+<div id="cell-17" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>consumos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">95</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">110</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (c <span class="cf">in</span> consumos) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  total <span class="ot">&lt;-</span> total <span class="sc">+</span> c</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(total <span class="sc">==</span> <span class="dv">555</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Consumo total:"</span>, total, <span class="st">"kWh</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="clasificar-estado-por-temperatura-ifelse-ifelse" class="level3">
+<h3 class="anchored" data-anchor-id="clasificar-estado-por-temperatura-ifelse-ifelse">2. Clasificar estado por temperatura (<code>if</code>/<code>else if</code>/<code>else</code>)</h3>
+<p>Clasifica una máquina: <code>"normal"</code> si temp &lt; 60, <code>"alerta"</code> si &lt; 85, <code>"critico"</code> en otro caso. Prueba con 45, 70 y 90 °C.</p>
+<div id="cell-19" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>clasificar <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (temp <span class="sc">&lt;</span> <span class="dv">60</span>) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"normal"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (temp <span class="sc">&lt;</span> <span class="dv">85</span>) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"alerta"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"critico"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">70</span>, <span class="dv">90</span>), clasificar)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">all</span>(resultados <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"normal"</span>, <span class="st">"alerta"</span>, <span class="st">"critico"</span>)))</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultados)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="simular-llenado-de-un-tanque-while" class="level3">
+<h3 class="anchored" data-anchor-id="simular-llenado-de-un-tanque-while">3. Simular llenado de un tanque (<code>while</code>)</h3>
+<p>Un tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda en alcanzar o superar el objetivo?</p>
+<div id="cell-21" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nivel <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>objetivo <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>tasa <span class="ot">&lt;-</span> <span class="dv">45</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>minutos <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (nivel <span class="sc">&lt;</span> objetivo) {</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  nivel <span class="ot">&lt;-</span> nivel <span class="sc">+</span> tasa</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  minutos <span class="ot">&lt;-</span> minutos <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(minutos <span class="sc">==</span> <span class="dv">12</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Minutos:"</span>, minutos, <span class="st">", nivel final:"</span>, nivel, <span class="st">"L</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
