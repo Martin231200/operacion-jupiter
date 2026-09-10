@@ -543,21 +543,33 @@
     "href": "python/03-funciones.html",
     "title": "Funciones nativas",
     "section": "",
-    "text": "len(c)\n\n17\nint(b)\n\n13\nfloat(a)\n\n45.0\npi = 3.141592654\nround(pi, 4)\n\n3.1416\nedad = input(\"¿Cuál es tu edad en números enteros? \")\n\n¿Cuál es tu edad en números enteros? 23\nedad_real = float(edad)\ntype(edad_real)\n\nfloat\nOtras estrucutras en forma de arreglos: listas (list), diccionarios, tuplas, conjuntos (set) y los dataframes"
+    "text": "Ver/ocultar código\nlen(c)\n\n\n17\nVer/ocultar código\nint(b)\n\n\n13\nVer/ocultar código\nfloat(a)\n\n\n45.0\nVer/ocultar código\npi = 3.141592654\nVer/ocultar código\nround(pi, 4)\n\n\n3.1416\nVer/ocultar código\nedad = input(\"¿Cuál es tu edad en números enteros? \")\n\n\n¿Cuál es tu edad en números enteros? 23\nVer/ocultar código\nedad_real = float(edad)\nVer/ocultar código\ntype(edad_real)\n\n\nfloat\nOtras estrucutras en forma de arreglos: listas (list), diccionarios, tuplas, conjuntos (set) y los dataframes",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
   },
   {
     "objectID": "python/03-funciones.html#declaración-import",
     "href": "python/03-funciones.html#declaración-import",
     "title": "Funciones nativas",
     "section": "Declaración “import”",
-    "text": "Declaración “import”\nVarias funciones de Python no se instalan de incio y que el usuario debe hacerlo. Por ejemplo, la librería math\n\nimport math\n\nMath tiene varios métodos de uso matemático, por ejemplo, el valor de \\(\\pi\\)\n\nmath.pi\n\n3.141592653589793\n\n\n\ng=64\nmath.sqrt(g)\n\n8.0\n\n\n\nmath.pow(g,3)\n\n262144.0\n\n\n\nn=2\n\n\n19 + n + round(math.pi) * 2\n\n27\n\n\n\nint('111',2)\n\n7"
+    "text": "Declaración “import”\nVarias funciones de Python no se instalan de incio y que el usuario debe hacerlo. Por ejemplo, la librería math\n\n\nVer/ocultar código\nimport math\n\n\nMath tiene varios métodos de uso matemático, por ejemplo, el valor de \\(\\pi\\)\n\n\nVer/ocultar código\nmath.pi\n\n\n3.141592653589793\n\n\n\n\nVer/ocultar código\ng=64\nmath.sqrt(g)\n\n\n8.0\n\n\n\n\nVer/ocultar código\nmath.pow(g,3)\n\n\n262144.0\n\n\n\n\nVer/ocultar código\nn=2\n\n\n\n\nVer/ocultar código\n19 + n + round(math.pi) * 2\n\n\n27\n\n\n\n\nVer/ocultar código\nint('111',2)\n\n\n7",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
   },
   {
     "objectID": "python/03-funciones.html#funciones-definidas-por-el-usuario",
     "href": "python/03-funciones.html#funciones-definidas-por-el-usuario",
     "title": "Funciones nativas",
     "section": "Funciones definidas por el usuario",
-    "text": "Funciones definidas por el usuario\nForma general de una función:\n$ def  (argumentos):$ \\ $ calculos $ \\ $ return (resultados)$\n\ndef saludos():\n  print(\"Saludos gente\")\n  print(\"La porra los saluda\")\n\n\nsaludos()\n\nSaludos gente\nLa porra los saluda\n\n\n\ndef pide_pi():\n  numero_pi = math.pi\n  return numero_pi\n\n\npide_pi()\n\n3.141592653589793\n\n\n\ndef repetir(palabra, n):\n    print(palabra * n)\n\n\nspam = 'Spam, '\nrepetir(spam, 4)\n\nSpam, Spam, Spam, Spam, \n\n\n\ndef primeras_dos_lineas():\n    repetir(spam, 4)\n    repetir(spam, 4)\n\n\nprimeras_dos_lineas()\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \n\n\n\ndef ultimas_tres_lineas():\n    repetir(spam, 2)\n    print('(Lovely Spam, Wonderful Spam!)')\n    repetir(spam, 2)\n\n\nultimas_tres_lineas()\n\nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\ndef coro():\n    primeras_dos_lineas()\n    ultimas_tres_lineas()\n\n\ncoro()\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\nCiclos\nLa estructura de repetición FOR tiene la siguiente sintaxis:\nfor \\(&lt;var&gt;\\) in \\(range(valor):\\)\n\nfor i in range(2):\n    print(i)\n\n0\n1\n\n\n\nfor i in range(2):\n    print(\"Coro\", i)\n    coro()\n    print()\n\nCoro 0\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nCoro 1\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\ndef n_coros(n):\n    for i in range(n):\n        coro()\n        print()\n\n\nn_coros(5)\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVariables y parámetros locales\nLas variables y parámentros locales son aquellas cuya influencia se remita a una función.\n\ndef dos_partes(parte1,parte2):\n  total = parte1 + parte2\n  print(total)\n\n\nparte1='yo '\nparte2='y tu '\ndos_partes(parte1,parte2)\n\nyo y tu \n\n\n\n\nEstructura de decisión\n\nx\n\n5\n\n\n\ny\n\n7\n\n\n\nif x &gt; 0:\n    print('x is positive')  # Decisión sencilla\n\nx is positive\n\n\n\nif x % 2 == 0:\n    print('x es par')\nelse:\n    print('x es non')  # Decisión doble\n\nx es non\n\n\n\nif x &lt; y:\n    print('x es menor que y')\nelif x &gt; y:\n    print('x es mayor que y')\nelse:\n    print('x y y son iguales') # Decisiones anidadas\n\nx es menor que y\n\n\ntambién puede escribirse como:\n\nif x &lt; y:\n    print('x es menor que y')\nelse:\n    if x &gt; y:\n           print('x es mayor que y')\n    else:\n          print('x y y son iguales') # Decisiones anidadas\n\nx es menor que y\n\n\n\nif 0 &lt; x:\n    if x &lt; 10:\n        print('x es un número positivo de un solo dígito.')\n\nx es un número positivo de un solo dígito.\n\n\n\na=10\na\n\n10\n\n\n\nb=5\nb\n\n5\n\n\n\nif a &lt; b:\n    print('a es menor que b')\nelse:\n    print('b es menor que a')\n\nb es menor que a\n\n\n\na,b=10,5\nprint(f\"{'a' if a&lt;b else 'b'} es menor\")\n\nb es menor"
+    "text": "Funciones definidas por el usuario\nForma general de una función:\n$ def  (argumentos):$ \\ $ calculos $ \\ $ return (resultados)$\n\n\nVer/ocultar código\ndef saludos():\n  print(\"Saludos gente\")\n  print(\"La porra los saluda\")\n\n\n\n\nVer/ocultar código\nsaludos()\n\n\nSaludos gente\nLa porra los saluda\n\n\n\n\nVer/ocultar código\ndef pide_pi():\n  numero_pi = math.pi\n  return numero_pi\n\n\n\n\nVer/ocultar código\npide_pi()\n\n\n3.141592653589793\n\n\n\n\nVer/ocultar código\ndef repetir(palabra, n):\n    print(palabra * n)\n\n\n\n\nVer/ocultar código\nspam = 'Spam, '\nrepetir(spam, 4)\n\n\nSpam, Spam, Spam, Spam, \n\n\n\n\nVer/ocultar código\ndef primeras_dos_lineas():\n    repetir(spam, 4)\n    repetir(spam, 4)\n\n\n\n\nVer/ocultar código\nprimeras_dos_lineas()\n\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \n\n\n\n\nVer/ocultar código\ndef ultimas_tres_lineas():\n    repetir(spam, 2)\n    print('(Lovely Spam, Wonderful Spam!)')\n    repetir(spam, 2)\n\n\n\n\nVer/ocultar código\nultimas_tres_lineas()\n\n\nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\nVer/ocultar código\ndef coro():\n    primeras_dos_lineas()\n    ultimas_tres_lineas()\n\n\n\n\nVer/ocultar código\ncoro()\n\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\nCiclos\nLa estructura de repetición FOR tiene la siguiente sintaxis:\nfor \\(&lt;var&gt;\\) in \\(range(valor):\\)\n\n\nVer/ocultar código\nfor i in range(2):\n    print(i)\n\n\n0\n1\n\n\n\n\nVer/ocultar código\nfor i in range(2):\n    print(\"Coro\", i)\n    coro()\n    print()\n\n\nCoro 0\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nCoro 1\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVer/ocultar código\ndef n_coros(n):\n    for i in range(n):\n        coro()\n        print()\n\n\n\n\nVer/ocultar código\nn_coros(5)\n\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVariables y parámetros locales\nLas variables y parámentros locales son aquellas cuya influencia se remita a una función.\n\n\nVer/ocultar código\ndef dos_partes(parte1,parte2):\n  total = parte1 + parte2\n  print(total)\n\n\n\n\nVer/ocultar código\nparte1='yo '\nparte2='y tu '\ndos_partes(parte1,parte2)\n\n\nyo y tu \n\n\n\n\nEstructura de decisión\n\n\nVer/ocultar código\nx\n\n\n5\n\n\n\n\nVer/ocultar código\ny\n\n\n7\n\n\n\n\nVer/ocultar código\nif x &gt; 0:\n    print('x is positive')  # Decisión sencilla\n\n\nx is positive\n\n\n\n\nVer/ocultar código\nif x % 2 == 0:\n    print('x es par')\nelse:\n    print('x es non')  # Decisión doble\n\n\nx es non\n\n\n\n\nVer/ocultar código\nif x &lt; y:\n    print('x es menor que y')\nelif x &gt; y:\n    print('x es mayor que y')\nelse:\n    print('x y y son iguales') # Decisiones anidadas\n\n\nx es menor que y\n\n\ntambién puede escribirse como:\n\n\nVer/ocultar código\nif x &lt; y:\n    print('x es menor que y')\nelse:\n    if x &gt; y:\n           print('x es mayor que y')\n    else:\n          print('x y y son iguales') # Decisiones anidadas\n\n\nx es menor que y\n\n\n\n\nVer/ocultar código\nif 0 &lt; x:\n    if x &lt; 10:\n        print('x es un número positivo de un solo dígito.')\n\n\nx es un número positivo de un solo dígito.\n\n\n\n\nVer/ocultar código\na=10\na\n\n\n10\n\n\n\n\nVer/ocultar código\nb=5\nb\n\n\n5\n\n\n\n\nVer/ocultar código\nif a &lt; b:\n    print('a es menor que b')\nelse:\n    print('b es menor que a')\n\n\nb es menor que a\n\n\n\n\nVer/ocultar código\na,b=10,5\nprint(f\"{'a' if a&lt;b else 'b'} es menor\")\n\n\nb es menor",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
   },
   {
     "objectID": "python/01-introduccion.html",
@@ -651,28 +663,44 @@
     "href": "julia/02-tipos-y-variables.html",
     "title": "Julia: Tipos de datos y variables",
     "section": "",
-    "text": "x = 5        # Int64\ny = 3.14     # Float64\ntypeof(x)\ntypeof(y)\n\n\n\na = true\nb = false\na && b   # y lógico\na || b   # o lógico\n!a       # negación\n\n\n\ns = \"Operación Jupyter\"\nlength(s)\ns2 = string(\"Hola\", \" \", \"mundo\")"
+    "text": "x = 5        # Int64\ny = 3.14     # Float64\ntypeof(x)\ntypeof(y)\n\n\n\na = true\nb = false\na && b   # y lógico\na || b   # o lógico\n!a       # negación\n\n\n\ns = \"Operación Jupyter\"\nlength(s)\ns2 = string(\"Hola\", \" \", \"mundo\")",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "julia/02-tipos-y-variables.html#enteros-y-reales",
     "href": "julia/02-tipos-y-variables.html#enteros-y-reales",
     "title": "Julia: Tipos de datos y variables",
     "section": "",
-    "text": "x = 5        # Int64\ny = 3.14     # Float64\ntypeof(x)\ntypeof(y)"
+    "text": "x = 5        # Int64\ny = 3.14     # Float64\ntypeof(x)\ntypeof(y)",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "julia/02-tipos-y-variables.html#booleanos",
     "href": "julia/02-tipos-y-variables.html#booleanos",
     "title": "Julia: Tipos de datos y variables",
     "section": "",
-    "text": "a = true\nb = false\na && b   # y lógico\na || b   # o lógico\n!a       # negación"
+    "text": "a = true\nb = false\na && b   # y lógico\na || b   # o lógico\n!a       # negación",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "julia/02-tipos-y-variables.html#strings",
     "href": "julia/02-tipos-y-variables.html#strings",
     "title": "Julia: Tipos de datos y variables",
     "section": "",
-    "text": "s = \"Operación Jupyter\"\nlength(s)\ns2 = string(\"Hola\", \" \", \"mundo\")"
+    "text": "s = \"Operación Jupyter\"\nlength(s)\ns2 = string(\"Hola\", \" \", \"mundo\")",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "julia/01-introduccion.html",
@@ -734,7 +762,7 @@
     "href": "julia/03-estructuras-control.html",
     "title": "Julia: Estructuras de control",
     "section": "",
-    "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend",
+    "text": "1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend\n\n\n\n\n\n\nTres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.\n\n\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos\n    global total += c\nend\n\n@assert total == 555\nprintln(\"Consumo total: \", total, \" kWh\")\nSalida: Consumo total: 555 kWh\n\n\n\nfunction clasificar(temp)\n    if temp &lt; 60\n        return \"normal\"\n    elseif temp &lt; 85\n        return \"alerta\"\n    else\n        return \"critico\"\n    end\nend\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\n@assert resultados == [\"normal\", \"alerta\", \"critico\"]\nprintln(resultados)\nSalida: [\"normal\", \"alerta\", \"critico\"]\n\n\n\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo\n    global nivel += tasa\n    global minutos += 1\nend\n\n@assert minutos == 12\nprintln(\"Minutos: \", minutos, \", nivel final: \", nivel, \" L\")\nSalida: Minutos: 12, nivel final: 540 L",
     "crumbs": [
       "Julia",
       "Estructuras de control"
@@ -896,7 +924,7 @@
     "href": "python/02-entrada-datos-operadores.html",
     "title": "Entrada de datos",
     "section": "",
-    "text": "print(\"¿Cuál es tu nombre?\")\nz= input()\nprint(z)\n\n¿Cuál es tu nombre?\nHugo\nHugo\nprint(\"Su nombre es:\", z)\n\nSu nombre es: Indiana Jones",
+    "text": "Ver/ocultar código\nprint(\"¿Cuál es tu nombre?\")\nz= input()\nprint(z)\n\n\n¿Cuál es tu nombre?\nHugo\nHugo\nVer/ocultar código\nprint(\"Su nombre es:\", z)\n\n\nSu nombre es: Indiana Jones",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
@@ -907,7 +935,7 @@
     "href": "python/02-entrada-datos-operadores.html#operadores-matemáticos",
     "title": "Entrada de datos",
     "section": "Operadores matemáticos",
-    "text": "Operadores matemáticos\n\n4 + 7\n\n11\n\n\n\n55 - 9\n\n46\n\n\n\n78 * 9\n\n702\n\n\n\n85 / 3\n\n28.333333333333332\n\n\n\n85 // 3\n\n28\n\n\n\n6 ** 3\n\n216\n\n\n\nminutos = 105\nminutos / 60\n\n1.75\n\n\n\nminutos = 105\nhoras = minutos // 60\nhoras\n\n1\n\n\n\nresto = minutos - horas * 60\nresto\n\n45\n\n\n\nresto2 = minutos % 60\nresto2\n\n45",
+    "text": "Operadores matemáticos\n\n\nVer/ocultar código\n4 + 7\n\n\n11\n\n\n\n\nVer/ocultar código\n55 - 9\n\n\n46\n\n\n\n\nVer/ocultar código\n78 * 9\n\n\n702\n\n\n\n\nVer/ocultar código\n85 / 3\n\n\n28.333333333333332\n\n\n\n\nVer/ocultar código\n85 // 3\n\n\n28\n\n\n\n\nVer/ocultar código\n6 ** 3\n\n\n216\n\n\n\n\nVer/ocultar código\nminutos = 105\nminutos / 60\n\n\n1.75\n\n\n\n\nVer/ocultar código\nminutos = 105\nhoras = minutos // 60\nhoras\n\n\n1\n\n\n\n\nVer/ocultar código\nresto = minutos - horas * 60\nresto\n\n\n45\n\n\n\n\nVer/ocultar código\nresto2 = minutos % 60\nresto2\n\n\n45",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
@@ -918,7 +946,7 @@
     "href": "python/02-entrada-datos-operadores.html#expresiones",
     "title": "Entrada de datos",
     "section": "Expresiones",
-    "text": "Expresiones\n\n5 ** 2 + 2 * 3\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta",
+    "text": "Expresiones\n\n\nVer/ocultar código\n5 ** 2 + 2 * 3\n\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
@@ -929,7 +957,7 @@
     "href": "python/02-entrada-datos-operadores.html#tipos-de-variables",
     "title": "Entrada de datos",
     "section": "Tipos de variables",
-    "text": "Tipos de variables\n\na = 45\nb = 13.6\nc = \"Maldita_primavera\"\nd = True\ne = False\n\nFunción type () Devuelve el tipo de una variable\n\ntype(a)\n\nint\n\n\n\ntype(b)\n\nfloat\n\n\n\ntype(c)\n\nstr\n\n\n\ntype(d)\n\nbool\n\n\n\ntype(e)\n\nbool\n\n\n\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\nTrue\n\n\n\n10 == 5\n\nFalse\n\n\n\nx = 5\ny = 7\n\n\nx == y\n\nFalse",
+    "text": "Tipos de variables\n\n\nVer/ocultar código\na = 45\nb = 13.6\nc = \"Maldita_primavera\"\nd = True\ne = False\n\n\nFunción type () Devuelve el tipo de una variable\n\n\nVer/ocultar código\ntype(a)\n\n\nint\n\n\n\n\nVer/ocultar código\ntype(b)\n\n\nfloat\n\n\n\n\nVer/ocultar código\ntype(c)\n\n\nstr\n\n\n\n\nVer/ocultar código\ntype(d)\n\n\nbool\n\n\n\n\nVer/ocultar código\ntype(e)\n\n\nbool\n\n\n\n\nVer/ocultar código\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\n\nTrue\n\n\n\n\nVer/ocultar código\n10 == 5\n\n\nFalse\n\n\n\n\nVer/ocultar código\nx = 5\ny = 7\n\n\n\n\nVer/ocultar código\nx == y\n\n\nFalse",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
@@ -940,7 +968,7 @@
     "href": "python/02-entrada-datos-operadores.html#operadores-relacionales",
     "title": "Entrada de datos",
     "section": "Operadores relacionales",
-    "text": "Operadores relacionales\n\nx != y               # x no es igual a y\n\nTrue\n\n\n\nx &gt; y                # x es mayor que y\n\nFalse\n\n\n\nx &gt;= y               # x es mayor o igual a y\n\nFalse\n\n\n\nx &lt; y               # x es menor o igual a y\n\nTrue",
+    "text": "Operadores relacionales\n\n\nVer/ocultar código\nx != y               # x no es igual a y\n\n\nTrue\n\n\n\n\nVer/ocultar código\nx &gt; y                # x es mayor que y\n\n\nFalse\n\n\n\n\nVer/ocultar código\nx &gt;= y               # x es mayor o igual a y\n\n\nFalse\n\n\n\n\nVer/ocultar código\nx &lt; y               # x es menor o igual a y\n\n\nTrue",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
@@ -951,7 +979,7 @@
     "href": "python/02-entrada-datos-operadores.html#operadores-lógicos",
     "title": "Entrada de datos",
     "section": "Operadores lógicos",
-    "text": "Operadores lógicos\n\nx &gt; 0 and x &lt; 10\n\nTrue\n\n\n\nx % 2 == 0 or x % 3 == 0\n\nFalse\n\n\n\nnot x &gt; y\n\nTrue",
+    "text": "Operadores lógicos\n\n\nVer/ocultar código\nx &gt; 0 and x &lt; 10\n\n\nTrue\n\n\n\n\nVer/ocultar código\nx % 2 == 0 or x % 3 == 0\n\n\nFalse\n\n\n\n\nVer/ocultar código\nnot x &gt; y\n\n\nTrue",
     "crumbs": [
       "Python",
       "Entrada de datos y operadores"
@@ -990,28 +1018,44 @@
     "href": "r/02-tipos-y-variables.html",
     "title": "Tipos de datos",
     "section": "",
-    "text": "En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.\n\n#Real (double) por defecto\nx &lt;- 5\nclass(x)\n#Entero explícito\ny &lt;- 5L\nclass(y)\nis.integer(y)"
+    "text": "En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.\n\n\nVer/ocultar código\n#Real (double) por defecto\nx &lt;- 5\nclass(x)\n#Entero explícito\ny &lt;- 5L\nclass(y)\nis.integer(y)",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "r/02-tipos-y-variables.html#enteros-y-reales",
     "href": "r/02-tipos-y-variables.html#enteros-y-reales",
     "title": "Tipos de datos",
     "section": "",
-    "text": "En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.\n\n#Real (double) por defecto\nx &lt;- 5\nclass(x)\n#Entero explícito\ny &lt;- 5L\nclass(y)\nis.integer(y)"
+    "text": "En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.\n\n\nVer/ocultar código\n#Real (double) por defecto\nx &lt;- 5\nclass(x)\n#Entero explícito\ny &lt;- 5L\nclass(y)\nis.integer(y)",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "r/02-tipos-y-variables.html#booleanos",
     "href": "r/02-tipos-y-variables.html#booleanos",
     "title": "Tipos de datos",
     "section": "Booleanos",
-    "text": "Booleanos\nEl tipo lógico (logical) toma los valores TRUE y FALSE (o sus abreviaturas T y F). Se generan al evaluar comparaciones y se combinan con los operadores & (y), | (o) y ! (negación); las versiones && y || evalúan un solo elemento y se usan en condicionales.\n\na &lt;- TRUE\nb &lt;- FALSE\na & b\na | b\n!a\n5 &gt; 3"
+    "text": "Booleanos\nEl tipo lógico (logical) toma los valores TRUE y FALSE (o sus abreviaturas T y F). Se generan al evaluar comparaciones y se combinan con los operadores & (y), | (o) y ! (negación); las versiones && y || evalúan un solo elemento y se usan en condicionales.\n\n\nVer/ocultar código\na &lt;- TRUE\nb &lt;- FALSE\na & b\na | b\n!a\n5 &gt; 3",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "r/02-tipos-y-variables.html#strings",
     "href": "r/02-tipos-y-variables.html#strings",
     "title": "Tipos de datos",
     "section": "Strings",
-    "text": "Strings\nEl tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.\n\ns &lt;- \"Operación Jupyter\"\nclass(s)\nnchar(s)\ns2 &lt;- paste(\"Hola\", \"mundo\")"
+    "text": "Strings\nEl tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.\n\n\nVer/ocultar código\ns &lt;- \"Operación Jupyter\"\nclass(s)\nnchar(s)\ns2 &lt;- paste(\"Hola\", \"mundo\")",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
   },
   {
     "objectID": "r/04-estructuras-datos.html",
@@ -1544,6 +1588,213 @@
     "crumbs": [
       "Python",
       "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "recursos.html",
+    "href": "recursos.html",
+    "title": "Recursos",
+    "section": "",
+    "text": "Enlaces oficiales para instalar, aprender más, o resolver dudas en cada lenguaje."
+  },
+  {
+    "objectID": "recursos.html#python",
+    "href": "recursos.html#python",
+    "title": "Recursos",
+    "section": "Python",
+    "text": "Python\n\npython.org — instalación oficial\nDocumentación oficial\nNumPy, pandas, Matplotlib"
+  },
+  {
+    "objectID": "recursos.html#r",
+    "href": "recursos.html#r",
+    "title": "Recursos",
+    "section": "R",
+    "text": "R\n\nr-project.org — instalación oficial\nposit.co — RStudio\nManual de referencia (CRAN)\nstatmethods.net"
+  },
+  {
+    "objectID": "recursos.html#julia",
+    "href": "recursos.html#julia",
+    "title": "Recursos",
+    "section": "Julia",
+    "text": "Julia\n\njulialang.org — instalación oficial\nDocumentación oficial\nJuliaHub — paquetes y recursos"
+  },
+  {
+    "objectID": "recursos.html#entornos",
+    "href": "recursos.html#entornos",
+    "title": "Recursos",
+    "section": "Entornos",
+    "text": "Entornos\n\nGoogle Colab — Jupyter en la nube, Python nativo\nJupyter — el proyecto original"
+  },
+  {
+    "objectID": "recursos.html#este-proyecto",
+    "href": "recursos.html#este-proyecto",
+    "title": "Recursos",
+    "section": "Este proyecto",
+    "text": "Este proyecto\n\nRepositorio en GitHub\nReportar un error o sugerencia"
+  },
+  {
+    "objectID": "r/03-estructuras-control.html#ejercicios",
+    "href": "r/03-estructuras-control.html#ejercicios",
+    "title": "Estructuras: secuencias, decisiones y repeticiones",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con estructuras de control, contexto de ingeniería.\n\n1. Consumo total de energía (ciclo for)\nSuma el consumo (kWh) de 5 máquinas: c(120, 95, 150, 80, 110).\n\n\nVer/ocultar código\nconsumos &lt;- c(120, 95, 150, 80, 110)\ntotal &lt;- 0\nfor (c in consumos) {\n  total &lt;- total + c\n}\n\nstopifnot(total == 555)\ncat(\"Consumo total:\", total, \"kWh\\n\")\n\n\n\n\n2. Clasificar estado por temperatura (if/else if/else)\nClasifica una máquina: \"normal\" si temp &lt; 60, \"alerta\" si &lt; 85, \"critico\" en otro caso. Prueba con 45, 70 y 90 °C.\n\n\nVer/ocultar código\nclasificar &lt;- function(temp) {\n  if (temp &lt; 60) {\n    return(\"normal\")\n  } else if (temp &lt; 85) {\n    return(\"alerta\")\n  } else {\n    return(\"critico\")\n  }\n}\n\nresultados &lt;- sapply(c(45, 70, 90), clasificar)\nstopifnot(all(resultados == c(\"normal\", \"alerta\", \"critico\")))\nprint(resultados)\n\n\n\n\n3. Simular llenado de un tanque (while)\nUn tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda en alcanzar o superar el objetivo?\n\n\nVer/ocultar código\nnivel &lt;- 0\nobjetivo &lt;- 500\ntasa &lt;- 45\nminutos &lt;- 0\n\nwhile (nivel &lt; objetivo) {\n  nivel &lt;- nivel + tasa\n  minutos &lt;- minutos + 1\n}\n\nstopifnot(minutos == 12)\ncat(\"Minutos:\", minutos, \", nivel final:\", nivel, \"L\\n\")",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
+  },
+  {
+    "objectID": "python/08-visualizacion.html",
+    "href": "python/08-visualizacion.html",
+    "title": "Visualización",
+    "section": "",
+    "text": "Los gráficos básicos: una línea (tendencia continua) y barras (comparar categorías).",
+    "crumbs": [
+      "Python",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "python/08-visualizacion.html#gráfica-de-línea",
+    "href": "python/08-visualizacion.html#gráfica-de-línea",
+    "title": "Visualización",
+    "section": "Gráfica de línea",
+    "text": "Gráfica de línea\n\n\nVer/ocultar código\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.title(\"Onda senoidal\")\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.grid(True, alpha=0.3)\nplt.show()",
+    "crumbs": [
+      "Python",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "python/08-visualizacion.html#gráfica-de-barras",
+    "href": "python/08-visualizacion.html#gráfica-de-barras",
+    "title": "Visualización",
+    "section": "Gráfica de barras",
+    "text": "Gráfica de barras\n\n\nVer/ocultar código\ncategorias = [\"A\", \"B\", \"C\", \"D\"]\nvalores = [23, 45, 12, 38]\n\nplt.bar(categorias, valores, color=\"#378ADD\")\nplt.title(\"Comparación por categoría\")\nplt.ylabel(\"Valor\")\nplt.show()",
+    "crumbs": [
+      "Python",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#ejercicios",
+    "href": "python/02-entrada-datos-operadores.html#ejercicios",
+    "title": "Entrada de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería.\n\n1. Conversión de temperatura (reales)\nConvierte 23.5 °C a Fahrenheit con F = C * 9/5 + 32.\n\n\nVer/ocultar código\nc = 23.5\nf = c * 9/5 + 32\n\nassert f == 74.3\nprint(f\"{c} °C = {f} °F\")\n\n\n\n\n2. Verificar tolerancia de una pieza (booleano)\nUna pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?\n\n\nVer/ocultar código\npeso = 4.97\nnominal = 5.0\ntolerancia = 0.05\n\npasa = abs(peso - nominal) &lt;= tolerancia\nassert pasa == True\nprint(f\"¿Pasa la prueba? {pasa}\")\n\n\n\n\n3. Etiqueta de producto (strings)\nArma la etiqueta CÓDIGO-LOTE-NÚMERO (número con 4 dígitos) para el código \"ENG\", lote 2026, pieza número 47.\n\n\nVer/ocultar código\ncodigo = \"ENG\"\nlote = 2026\nnumero_pieza = 47\n\netiqueta = f\"{codigo}-{lote}-{numero_pieza:04d}\"\nassert etiqueta == \"ENG-2026-0047\"\nprint(etiqueta)",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "julia/08-visualizacion.html",
+    "href": "julia/08-visualizacion.html",
+    "title": "Julia: Visualización",
+    "section": "",
+    "text": "Importante\n\n\n\nCódigo real, salidas ilustrativas generadas con otra herramienta (mismo resultado matemático) — Julia no corre en vivo en este sitio todavía.",
+    "crumbs": [
+      "Julia",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "julia/08-visualizacion.html#gráfica-de-línea",
+    "href": "julia/08-visualizacion.html#gráfica-de-línea",
+    "title": "Julia: Visualización",
+    "section": "Gráfica de línea",
+    "text": "Gráfica de línea\nusing Plots\n\nx = range(0, 10, length=100)\ny = sin.(x)\n\nplot(x, y, title=\"Onda senoidal\", xlabel=\"x\", ylabel=\"sin(x)\", legend=false)",
+    "crumbs": [
+      "Julia",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "julia/08-visualizacion.html#gráfica-de-barras",
+    "href": "julia/08-visualizacion.html#gráfica-de-barras",
+    "title": "Julia: Visualización",
+    "section": "Gráfica de barras",
+    "text": "Gráfica de barras\ncategorias = [\"A\", \"B\", \"C\", \"D\"]\nvalores = [23, 45, 12, 38]\n\nbar(categorias, valores, title=\"Comparación por categoría\", ylabel=\"Valor\", legend=false)",
+    "crumbs": [
+      "Julia",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "julia/02-tipos-y-variables.html#ejercicios",
+    "href": "julia/02-tipos-y-variables.html#ejercicios",
+    "title": "Julia: Tipos de datos y variables",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería. Mismos valores verificados que en Python y R.\n\n1. Conversión de temperatura (reales)\nc = 23.5\nf = c * 9/5 + 32\n\n@assert f == 74.3\nprintln(c, \" °C = \", f, \" °F\")\nSalida: 23.5 °C = 74.3 °F\n\n\n2. Verificar tolerancia de una pieza (booleano)\npeso = 4.97\nnominal = 5.0\ntolerancia = 0.05\n\npasa = abs(peso - nominal) &lt;= tolerancia\n@assert pasa == true\nprintln(\"¿Pasa la prueba? \", pasa)\nSalida: ¿Pasa la prueba? true\n\n\n3. Etiqueta de producto (strings)\ncodigo = \"ENG\"\nlote = 2026\nnumero_pieza = 47\n\netiqueta = \"$codigo-$lote-\" * lpad(numero_pieza, 4, \"0\")\n@assert etiqueta == \"ENG-2026-0047\"\nprintln(etiqueta)\nSalida: ENG-2026-0047",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
+  },
+  {
+    "objectID": "julia/03-estructuras-control.html#ejercicios",
+    "href": "julia/03-estructuras-control.html#ejercicios",
+    "title": "Julia: Estructuras de control",
+    "section": "",
+    "text": "Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.\n\n\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos\n    global total += c\nend\n\n@assert total == 555\nprintln(\"Consumo total: \", total, \" kWh\")\nSalida: Consumo total: 555 kWh\n\n\n\nfunction clasificar(temp)\n    if temp &lt; 60\n        return \"normal\"\n    elseif temp &lt; 85\n        return \"alerta\"\n    else\n        return \"critico\"\n    end\nend\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\n@assert resultados == [\"normal\", \"alerta\", \"critico\"]\nprintln(resultados)\nSalida: [\"normal\", \"alerta\", \"critico\"]\n\n\n\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo\n    global nivel += tasa\n    global minutos += 1\nend\n\n@assert minutos == 12\nprintln(\"Minutos: \", minutos, \", nivel final: \", nivel, \" L\")\nSalida: Minutos: 12, nivel final: 540 L",
+    "crumbs": [
+      "Julia",
+      "Estructuras de control"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html#ejercicios",
+    "href": "python/03-funciones.html#ejercicios",
+    "title": "Funciones nativas",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con estructuras de control, contexto de ingeniería.\n\n1. Consumo total de energía (ciclo for)\nSuma el consumo (kWh) de 5 máquinas: [120, 95, 150, 80, 110].\n\n\nVer/ocultar código\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos:\n    total += c\n\nassert total == 555\nprint(f\"Consumo total: {total} kWh\")\n\n\n\n\n2. Clasificar estado por temperatura (if/elif/else)\nClasifica una máquina: normal si temp &lt; 60, alerta si &lt; 85, crítico en otro caso. Prueba con 45, 70 y 90 °C.\n\n\nVer/ocultar código\ndef clasificar(temp):\n    if temp &lt; 60:\n        return \"normal\"\n    elif temp &lt; 85:\n        return \"alerta\"\n    else:\n        return \"critico\"\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\nassert resultados == [\"normal\", \"alerta\", \"critico\"]\nprint(resultados)\n\n\n\n\n3. Simular llenado de un tanque (while)\nUn tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda en alcanzar o superar el objetivo?\n\n\nVer/ocultar código\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo:\n    nivel += tasa\n    minutos += 1\n\nassert minutos == 12\nprint(f\"Minutos: {minutos}, nivel final: {nivel} L\")",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "r/02-tipos-y-variables.html#ejercicios",
+    "href": "r/02-tipos-y-variables.html#ejercicios",
+    "title": "Tipos de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería.\n\n1. Conversión de temperatura (reales)\nConvierte 23.5 °C a Fahrenheit con F = C * 9/5 + 32.\n\n\nVer/ocultar código\nc &lt;- 23.5\nf &lt;- c * 9/5 + 32\n\nstopifnot(f == 74.3)\ncat(c, \"°C =\", f, \"°F\\n\")\n\n\n\n\n2. Verificar tolerancia de una pieza (booleano)\nUna pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?\n\n\nVer/ocultar código\npeso &lt;- 4.97\nnominal &lt;- 5.0\ntolerancia &lt;- 0.05\n\npasa &lt;- abs(peso - nominal) &lt;= tolerancia\nstopifnot(pasa == TRUE)\ncat(\"¿Pasa la prueba?\", pasa, \"\\n\")\n\n\n\n\n3. Etiqueta de producto (strings)\nArma la etiqueta CÓDIGO-LOTE-NÚMERO (número con 4 dígitos) para el código \"ENG\", lote 2026, pieza número 47.\n\n\nVer/ocultar código\ncodigo &lt;- \"ENG\"\nlote &lt;- 2026\nnumero_pieza &lt;- 47\n\netiqueta &lt;- sprintf(\"%s-%d-%04d\", codigo, lote, numero_pieza)\nstopifnot(etiqueta == \"ENG-2026-0047\")\nprint(etiqueta)",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
+  },
+  {
+    "objectID": "r/08-visualizacion.html",
+    "href": "r/08-visualizacion.html",
+    "title": "Visualización",
+    "section": "",
+    "text": "Los gráficos básicos: una línea (tendencia continua) y barras (comparar categorías).",
+    "crumbs": [
+      "R",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "r/08-visualizacion.html#gráfica-de-línea",
+    "href": "r/08-visualizacion.html#gráfica-de-línea",
+    "title": "Visualización",
+    "section": "Gráfica de línea",
+    "text": "Gráfica de línea\n\n\nVer/ocultar código\nx &lt;- seq(0, 10, length.out = 100)\ny &lt;- sin(x)\n\nplot(x, y, type = \"l\", col = \"#378ADD\", lwd = 2,\n     main = \"Onda senoidal\", xlab = \"x\", ylab = \"sin(x)\")\ngrid()",
+    "crumbs": [
+      "R",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "r/08-visualizacion.html#gráfica-de-barras",
+    "href": "r/08-visualizacion.html#gráfica-de-barras",
+    "title": "Visualización",
+    "section": "Gráfica de barras",
+    "text": "Gráfica de barras\n\n\nVer/ocultar código\ncategorias &lt;- c(\"A\", \"B\", \"C\", \"D\")\nvalores &lt;- c(23, 45, 12, 38)\n\nbarplot(valores, names.arg = categorias, col = \"#378ADD\",\n        main = \"Comparación por categoría\", ylab = \"Valor\")",
+    "crumbs": [
+      "R",
+      "Visualización"
     ]
   }
 ]

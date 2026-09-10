@@ -71,16 +71,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../r/03-estructuras-control.html" rel="next">
+<link href="../r/01-introduccion.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-77a0e48be1646b22ae3bfe653f3d14ea.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ac0b5c0ff6a6275a86c7e0c78427c5ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5557d5e906760380132ec05260cd84f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,12 +115,183 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Tipos de datos – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
+<meta property="og:site_name" content="Operación Jupyter">
+<meta name="twitter:title" content="Tipos de datos – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -134,122 +312,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Python</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-python">    
-        <li>
-    <a class="dropdown-item" href="../python/01-introduccion.html">
- <span class="dropdown-text">Introducción e instalación</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../progreso.html"> 
+<span class="menu-text">Mi progreso</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/02-entrada-datos-operadores.html">
- <span class="dropdown-text">Entrada de datos y operadores</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../glosario.html"> 
+<span class="menu-text">Glosario</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/03-funciones.html">
- <span class="dropdown-text">Funciones</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../recursos.html"> 
+<span class="menu-text">Recursos</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/04-estructuras-datos.html">
- <span class="dropdown-text">Estructuras de datos</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../python/01-introduccion.html"> 
+<span class="menu-text">Python</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/05-arreglos.html">
- <span class="dropdown-text">Arreglos</span></a>
+  <li class="nav-item">
+    <a class="nav-link active" href="../r/01-introduccion.html" aria-current="page"> 
+<span class="menu-text">R</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../python/06-funciones-estadisticas.html">
- <span class="dropdown-text">Funciones estadísticas</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../julia/01-introduccion.html"> 
+<span class="menu-text">Julia</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">R</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-r">    
-        <li>
-    <a class="dropdown-item" href="../r/01-introduccion.html">
- <span class="dropdown-text">Introducción e instalación</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../tutoriales/index.html"> 
+<span class="menu-text">Tutoriales</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../r/02-tipos-y-variables.html">
- <span class="dropdown-text">Tipos de datos y variables</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/03-estructuras-control.html">
- <span class="dropdown-text">Estructuras de control</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/04-estructuras-datos.html">
- <span class="dropdown-text">Estructuras de datos</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/05-funciones.html">
- <span class="dropdown-text">Funciones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../r/06-particularidades.html">
- <span class="dropdown-text">Particularidades</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-julia" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Julia</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-julia">    
-        <li>
-    <a class="dropdown-item" href="../julia/01-introduccion.html">
- <span class="dropdown-text">Introducción e instalación</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/02-tipos-y-variables.html">
- <span class="dropdown-text">Tipos de datos y variables</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/03-estructuras-control.html">
- <span class="dropdown-text">Estructuras de control</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/04-estructuras-datos.html">
- <span class="dropdown-text">Estructuras de datos</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/05-funciones.html">
- <span class="dropdown-text">Funciones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../julia/06-particularidades.html">
- <span class="dropdown-text">Particularidades</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutoriales" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tutoriales</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutoriales">    
-        <li>
-    <a class="dropdown-item" href="../tutoriales/index.html">
- <span class="dropdown-text">Comparación</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/ejercicios-python.html">
- <span class="dropdown-text">Ejercicios Python</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/ejercicios-r.html">
- <span class="dropdown-text">Ejercicios R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tutoriales/ejercicios-julia.html">
- <span class="dropdown-text">Ejercicios Julia</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../libros/index.html"> 
 <span class="menu-text">Libros</span></a>
@@ -261,32 +351,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/02-tipos-y-variables.html">Tipos de datos y variables</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/01-introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción e instalación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/02-tipos-y-variables.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tipos de datos y variables</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/03-estructuras-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/04-estructuras-datos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/05-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/06-particularidades.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particularidades</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios de ingeniería</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/08-visualizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualización</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#enteros-y-reales" id="toc-enteros-y-reales" class="nav-link active" data-scroll-target="#enteros-y-reales">Enteros y reales</a></li>
   <li><a href="#booleanos" id="toc-booleanos" class="nav-link" data-scroll-target="#booleanos">Booleanos</a></li>
   <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
-  <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a></li>
+  <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a>
+  <ul class="collapse">
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tipos de datos</h1>
+<div class="quarto-title-block"><div><h1 class="title">Tipos de datos</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -295,6 +455,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de última modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">6 de septiembre, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -307,6 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="enteros-y-reales">Enteros y reales</h2>
 <p>En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.</p>
 <div id="cell-2" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Real (double) por defecto</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span>
@@ -314,48 +482,124 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span>L</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(y)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(y)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="booleanos" class="level2">
 <h2 class="anchored" data-anchor-id="booleanos">Booleanos</h2>
 <p>El tipo lógico (logical) toma los valores TRUE y FALSE (o sus abreviaturas T y F). Se generan al evaluar comparaciones y se combinan con los operadores &amp; (y), | (o) y ! (negación); las versiones &amp;&amp; y || evalúan un solo elemento y se usan en condicionales.</p>
 <div id="cell-4" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">&amp;</span> b</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>a <span class="sc">|</span> b</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>a</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">3</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="strings" class="level2">
 <h2 class="anchored" data-anchor-id="strings">Strings</h2>
 <p>El tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.</p>
 <div id="cell-6" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">"Operación Jupyter"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(s)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(s)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Hola"</span>, <span class="st">"mundo"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="declaración-de-variables" class="level1">
 <h1>Declaración de variables</h1>
 <p>R no requiere declarar el tipo de una variable: el tipo se infiere del valor asignado y puede cambiar si se reasigna. El operador de asignación preferido es &lt;-, aunque = también funciona dentro de una instrucción; -&gt; asigna de izquierda a derecha. Los nombres de variables deben empezar con una letra o un punto (no seguido de número) y distinguen mayúsculas de minúsculas.</p>
 <div id="cell-8" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">10</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="ot">-&gt;</span> x</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <div id="cell-9" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mi_variable<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fl">3.14</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres problemas cortos aplicando lo visto, con contexto de ingeniería.</p>
+<section id="conversión-de-temperatura-reales" class="level3">
+<h3 class="anchored" data-anchor-id="conversión-de-temperatura-reales">1. Conversión de temperatura (reales)</h3>
+<p>Convierte 23.5 °C a Fahrenheit con <code>F = C * 9/5 + 32</code>.</p>
+<div id="cell-12" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">23.5</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(f <span class="sc">==</span> <span class="fl">74.3</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(c, <span class="st">"°C ="</span>, f, <span class="st">"°F</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="verificar-tolerancia-de-una-pieza-booleano" class="level3">
+<h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-booleano">2. Verificar tolerancia de una pieza (booleano)</h3>
+<p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
+<div id="cell-14" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fl">4.97</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nominal <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>pasa <span class="ot">&lt;-</span> <span class="fu">abs</span>(peso <span class="sc">-</span> nominal) <span class="sc">&lt;=</span> tolerancia</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(pasa <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"¿Pasa la prueba?"</span>, pasa, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="etiqueta-de-producto-strings" class="level3">
+<h3 class="anchored" data-anchor-id="etiqueta-de-producto-strings">3. Etiqueta de producto (strings)</h3>
+<p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para el código <code>"ENG"</code>, lote <code>2026</code>, pieza número <code>47</code>.</p>
+<div id="cell-16" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="st">"ENG"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lote <span class="ot">&lt;-</span> <span class="dv">2026</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>numero_pieza <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"%s-%d-%04d"</span>, codigo, lote, numero_pieza)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(etiqueta <span class="sc">==</span> <span class="st">"ENG-2026-0047"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(etiqueta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -425,9 +669,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       });
       clipboardModal.on('success', onCopySuccess);
     }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/martin231200\.github\.io\/operacion-jupiter");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -754,20 +1049,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../r/01-introduccion.html" class="pagination-link" aria-label="Introducción e instalación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introducción e instalación</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../r/03-estructuras-control.html" class="pagination-link" aria-label="Estructuras de control">
+        <span class="nav-page-text">Estructuras de control</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
 <p>Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM</p>
-</div>
-    <div class="nav-footer-right">
+</div>   
+    <div class="nav-footer-center">
       &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../tutoriales/ficha-comparativa.pdf">
+<p>Descargar ficha comparativa (PDF)</p>
+</a>
+  </li>  
+</ul>
     </div>
   </div>
 </footer>
+<script src="../reading-time.js"></script>
+<script src="../share-button.js"></script>
+<script src="../skip-link.js"></script>
+<script src="../ver-tambien.js"></script>
+<script src="../keyboard-nav.js"></script>
 
 
 

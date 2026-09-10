@@ -50,3 +50,58 @@ end
 ```
 
 ::::
+
+## Ejercicios
+
+Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.
+
+### 1. Consumo total de energía (ciclo `for`)
+
+```julia
+consumos = [120, 95, 150, 80, 110]
+total = 0
+for c in consumos
+    global total += c
+end
+
+@assert total == 555
+println("Consumo total: ", total, " kWh")
+```
+**Salida:** `Consumo total: 555 kWh`
+
+### 2. Clasificar estado por temperatura (`if`/`elseif`/`else`)
+
+```julia
+function clasificar(temp)
+    if temp < 60
+        return "normal"
+    elseif temp < 85
+        return "alerta"
+    else
+        return "critico"
+    end
+end
+
+resultados = [clasificar(t) for t in [45, 70, 90]]
+@assert resultados == ["normal", "alerta", "critico"]
+println(resultados)
+```
+**Salida:** `["normal", "alerta", "critico"]`
+
+### 3. Simular llenado de un tanque (`while`)
+
+```julia
+nivel = 0
+objetivo = 500
+tasa = 45
+minutos = 0
+
+while nivel < objetivo
+    global nivel += tasa
+    global minutos += 1
+end
+
+@assert minutos == 12
+println("Minutos: ", minutos, ", nivel final: ", nivel, " L")
+```
+**Salida:** `Minutos: 12, nivel final: 540 L`
