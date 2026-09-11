@@ -428,7 +428,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#particularidades-de-julia" id="toc-particularidades-de-julia" class="nav-link active" data-scroll-target="#particularidades-de-julia">Particularidades de Julia</a></li>
+  <li><a href="#particularidades-de-cada-lenguaje" id="toc-particularidades-de-cada-lenguaje" class="nav-link active" data-scroll-target="#particularidades-de-cada-lenguaje">Particularidades de cada lenguaje</a>
+  <ul class="collapse">
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  <li><a href="#ejercicios-particularidades-de-julia" id="toc-ejercicios-particularidades-de-julia" class="nav-link" data-scroll-target="#ejercicios-particularidades-de-julia">Ejercicios: particularidades de Julia</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -450,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">10 de septiembre, 2026</p>
+      <p class="date-modified">11 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -461,18 +468,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="particularidades-de-julia" class="level1">
-<h1>Particularidades de Julia</h1>
+<section id="particularidades-de-cada-lenguaje" class="level1">
+<h1>Particularidades de cada lenguaje</h1>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<ul>
+<li>Indexado desde 1 (no desde 0).</li>
+<li>Vectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.</li>
+<li>Orientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.</li>
+<li>Asignación con <code>&lt;-</code> como convención, aunque <code>=</code> es válido.</li>
+</ul>
+</section>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
+<ul>
+<li>Indexado desde 0.</li>
+<li>Lenguaje de propósito general; su uso en ciencia de datos depende de bibliotecas externas (NumPy, pandas, Matplotlib).</li>
+<li>Sintaxis basada en indentación en vez de llaves para delimitar bloques.</li>
+<li>Tipado dinámico, igual que R, pero con una sintaxis orientada a objetos más explícita (todo es un objeto con métodos).</li>
+</ul>
+</section>
+<section id="julia" class="level2">
+<h2 class="anchored" data-anchor-id="julia">Julia</h2>
 <ul>
 <li>Indexado desde 1, como R.</li>
-<li>Vectorizado por diseño, como R y NumPy en Python.</li>
-<li>El operador <code>.</code> aplica una función elemento a elemento sobre un array (ej. <code>x .^ 2</code>).</li>
-<li>Multiple dispatch: distinto de la programación orientada a objetos clásica de Python.</li>
+<li>Diseñado para desempeño numérico: se compila “just-in-time” (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.</li>
+<li>Nació explícitamente para resolver el “problema de los dos lenguajes” (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).</li>
+<li>Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</li>
 </ul>
+</section>
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
+<p>Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo.</p>
+</section>
+<section id="ejercicios-particularidades-de-julia" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-julia">Ejercicios: particularidades de Julia</h2>
+<p>Tres problemas que muestran características propias del lenguaje.</p>
+<section id="vectorización-nativa-sin-ciclo-explícito" class="level3">
+<h3 class="anchored" data-anchor-id="vectorización-nativa-sin-ciclo-explícito">1. Vectorización nativa (sin ciclo explícito)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> [<span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> valores <span class="op">.*</span> <span class="fl">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> doble <span class="op">==</span> [<span class="fl">20</span>, <span class="fl">40</span>, <span class="fl">60</span>, <span class="fl">80</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(doble)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>[20, 40, 60, 80]</code></p>
+<p>Nota de sintaxis: el <code>.</code> antes del operador (<code>.*</code>) aplica la multiplicación elemento a elemento. En R esto es automático; en Julia hay que ser explícito con el punto.</p>
+</section>
+<section id="indexado-desde-1" class="level3">
+<h3 class="anchored" data-anchor-id="indexado-desde-1">2. Indexado desde 1</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>primero <span class="op">=</span> etiquetas[<span class="fl">1</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> primero <span class="op">==</span> <span class="st">"sensor1"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(primero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>sensor1</code></p>
+</section>
+<section id="tipado-dinámico" class="level3">
+<h3 class="anchored" data-anchor-id="tipado-dinámico">3. Tipado dinámico</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"ahora soy texto"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> tipo1 <span class="op">==</span> <span class="dt">Int64</span> <span class="op">&amp;&amp;</span> tipo2 <span class="op">==</span> <span class="dt">String</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(tipo1, <span class="st">" "</span>, tipo2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>Int64 String</code></p>
 
 
 <!-- -->
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -952,16 +1019,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Particularidades"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Particularidades de Julia</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indexado desde 1, como R.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Vectorizado por diseño, como R y NumPy en Python.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El operador <span class="in">`.`</span> aplica una función elemento a elemento sobre un array (ej. <span class="in">`x .^ 2`</span>).</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiple dispatch: distinto de la programación orientada a objetos clásica de Python.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Particularidades"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Particularidades de cada lenguaje</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## R</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indexado desde 1 (no desde 0).</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Vectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Orientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Asignación con <span class="in">`&lt;-`</span> como convención, aunque <span class="in">`=`</span> es válido.</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indexado desde 0.</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lenguaje de propósito general; su uso en ciencia de datos depende de bibliotecas externas (NumPy, pandas, Matplotlib).</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sintaxis basada en indentación en vez de llaves para delimitar bloques.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tipado dinámico, igual que R, pero con una sintaxis orientada a objetos más explícita (todo es un objeto con métodos).</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Julia</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indexado desde 1, como R.</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Diseñado para desempeño numérico: se compila "just-in-time" (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Nació explícitamente para resolver el "problema de los dos lenguajes" (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusiones</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo.</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios: particularidades de Julia</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>Tres problemas que muestran características propias del lenguaje.</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Vectorización nativa (sin ciclo explícito)</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> [<span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>]</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> valores <span class="op">.*</span> <span class="fl">2</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> doble <span class="op">==</span> [<span class="fl">20</span>, <span class="fl">40</span>, <span class="fl">60</span>, <span class="fl">80</span>]</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(doble)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`[20, 40, 60, 80]`</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>Nota de sintaxis: el <span class="in">`.`</span> antes del operador (<span class="in">`.*`</span>) aplica la multiplicación elemento a elemento. En R esto es automático; en Julia hay que ser explícito con el punto.</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Indexado desde 1</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>primero <span class="op">=</span> etiquetas[<span class="fl">1</span>]</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> primero <span class="op">==</span> <span class="st">"sensor1"</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(primero)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`sensor1`</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Tipado dinámico</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"ahora soy texto"</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> tipo1 <span class="op">==</span> <span class="dt">Int64</span> <span class="op">&amp;&amp;</span> tipo2 <span class="op">==</span> <span class="dt">String</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(tipo1, <span class="st">" "</span>, tipo2)</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Int64 String`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

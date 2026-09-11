@@ -432,6 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#instalación" id="toc-instalación" class="nav-link active" data-scroll-target="#instalación">Instalación</a></li>
   <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
   <li><a href="#mensaje" id="toc-mensaje" class="nav-link" data-scroll-target="#mensaje">Mensaje</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -453,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">10 de septiembre, 2026</p>
+      <p class="date-modified">11 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -477,7 +478,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Un notebook se arma con dos tipos de celda: de <strong>código</strong> (se ejecuta y muestra resultado) y de <strong>texto/Markdown</strong> (solo se renderiza como texto formateado). Así se ven lado a lado:</p>
 </div>
 </div>
-<p><img src="../images/tipos-celda.svg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tipos-celda.svg" class="img-fluid figure-img"></p>
+<figcaption>Comparación de una celda de código (se ejecuta y muestra resultado) contra una celda de texto Markdown (solo se renderiza)</figcaption>
+</figure>
+</div>
 <p>Python fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde &amp; Informatica (CWI) en los Países Bajos.</p>
 <p>El nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python.</p>
 <section id="instalación" class="level2">
@@ -498,8 +504,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>La porra los saluda</code></pre>
 </div>
 </div>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres calentamientos para confirmar que tu entorno funciona.</p>
+<section id="mensaje-de-bienvenida-formateado" class="level3">
+<h3 class="anchored" data-anchor-id="mensaje-de-bienvenida-formateado">1. Mensaje de bienvenida formateado</h3>
+<p>Arma el mensaje <code>"Bienvenido a {proyecto} (v{version})"</code> con <code>proyecto="Operación Jupyter"</code> y <code>version=1</code>.</p>
+<div id="cell-12" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="ss">f"Bienvenido a </span><span class="sc">{</span>nombre_proyecto<span class="sc">}</span><span class="ss"> (v</span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">)"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> mensaje <span class="op">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mensaje)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="verificar-el-entorno-con-una-operación-simple" class="level3">
+<h3 class="anchored" data-anchor-id="verificar-el-entorno-con-una-operación-simple">2. Verificar el entorno con una operación simple</h3>
+<p>Calcula 2 elevado a la 10 — si tu entorno corre bien, debe dar 1024.</p>
+<div id="cell-14" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="dv">2</span><span class="op">**</span><span class="dv">10</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> resultado <span class="op">==</span> <span class="dv">1024</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="contar-caracteres-de-un-mensaje-de-bitácora" class="level3">
+<h3 class="anchored" data-anchor-id="contar-caracteres-de-un-mensaje-de-bitácora">3. Contar caracteres de un mensaje de bitácora</h3>
+<p>¿Cuántos caracteres tiene <code>"Sistema iniciado correctamente"</code>?</p>
+<div id="cell-16" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="op">=</span> <span class="st">"Sistema iniciado correctamente"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>longitud <span class="op">=</span> <span class="bu">len</span>(mensaje_log)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longitud <span class="op">==</span> <span class="dv">30</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(longitud)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

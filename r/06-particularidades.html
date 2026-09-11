@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -85,9 +120,11 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Particularidades de cada lenguaje – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
 <meta name="twitter:title" content="Particularidades de cada lenguaje – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -394,6 +431,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#r" id="toc-r" class="nav-link active" data-scroll-target="#r">R</a></li>
+  <li><a href="#ejercicios-particularidades-de-r" id="toc-ejercicios-particularidades-de-r" class="nav-link" data-scroll-target="#ejercicios-particularidades-de-r">Ejercicios: particularidades de R</a></li>
   </ul>
 </nav>
     </div>
@@ -403,7 +441,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Particularidades de cada lenguaje</h1>
+<div class="quarto-title-block"><div><h1 class="title">Particularidades de cada lenguaje</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -415,7 +453,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">10 de septiembre, 2026</p>
+      <p class="date-modified">11 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -442,8 +480,57 @@ ul.task-list li input[type="checkbox"] {
 <li>Nació explícitamente para resolver el “problema de los dos lenguajes” (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).</li>
 <li>Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero. Nota: las particularidades de Julia se documentan aquí con base en las características generales del lenguaje; al no contar todavía con el notebook de Julia del proyecto, conviene revisarlas junto con el material específico cuando esté disponible. # Conclusiones Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo. Para quien ya conoce uno de los tres, la transición a los otros es principalmente de sintaxis: la lógica de secuencias, condicionales, ciclos y funciones es la misma, y las diferencias reales aparecen en el manejo de estructuras de datos (vectorizado en R y Julia, basado en bibliotecas en Python) y en el ecosistema de cada uno.</li>
 </ul>
+</section>
+<section id="ejercicios-particularidades-de-r" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-r">Ejercicios: particularidades de R</h2>
+<p>Tres problemas que muestran características propias del lenguaje.</p>
+<section id="vectorización-nativa-sin-ciclo-explícito" class="level3">
+<h3 class="anchored" data-anchor-id="vectorización-nativa-sin-ciclo-explícito">1. Vectorización nativa (sin ciclo explícito)</h3>
+<p>Multiplica el vector <code>c(10, 20, 30, 40)</code> por 2 — en R esto es automático, no hace falta ninguna biblioteca extra.</p>
+<div id="cell-4" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>doble <span class="ot">&lt;-</span> valores <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">all</span>(doble <span class="sc">==</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>)))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(doble)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="indexado-desde-1" class="level3">
+<h3 class="anchored" data-anchor-id="indexado-desde-1">2. Indexado desde 1</h3>
+<p>Accede al primer elemento de <code>c("sensor1", "sensor2", "sensor3")</code>.</p>
+<div id="cell-6" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>primero <span class="ot">&lt;-</span> etiquetas[<span class="dv">1</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(primero <span class="sc">==</span> <span class="st">"sensor1"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(primero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="tipado-dinámico" class="level3">
+<h3 class="anchored" data-anchor-id="tipado-dinámico">3. Tipado dinámico</h3>
+<p>Asigna <code>10</code> a una variable, revisa su clase, luego reasígnale un texto y revisa la clase otra vez.</p>
+<div id="cell-8" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="ot">&lt;-</span> <span class="fu">class</span>(x)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"ahora soy texto"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="ot">&lt;-</span> <span class="fu">class</span>(x)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(tipo1 <span class="sc">==</span> <span class="st">"numeric"</span>, tipo2 <span class="sc">==</span> <span class="st">"character"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(tipo1, tipo2, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

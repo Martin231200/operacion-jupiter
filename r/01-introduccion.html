@@ -119,9 +119,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Lenguajes de programación de código libre – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
 <meta name="twitter:title" content="Lenguajes de programación de código libre – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -428,6 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -449,7 +452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">10 de septiembre, 2026</p>
+      <p class="date-modified">11 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -507,14 +510,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
+<span class="screen-reader-only">Tip</span>¿Cómo se organiza un notebook?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Los vectores de R (y los arrays de Julia) exigen que todos los elementos sean del mismo tipo; las listas de Python no. Así se compara la misma estructura en los tres lenguajes:</p>
+<p>Un notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.</p>
 </div>
 </div>
-<p><img src="../images/comparacion-estructuras.svg" class="img-fluid"></p>
+<p><img src="../images/tipos-celda-jupyter.svg" class="img-fluid"></p>
 <div id="cell-3" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
@@ -536,6 +539,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>? seq</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Salir del programa</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres calentamientos para confirmar que tu entorno funciona.</p>
+<section id="mensaje-de-bienvenida-formateado" class="level3">
+<h3 class="anchored" data-anchor-id="mensaje-de-bienvenida-formateado">1. Mensaje de bienvenida formateado</h3>
+<p>Arma el mensaje <code>"Bienvenido a {proyecto} (v{version})"</code> con <code>proyecto="Operación Jupyter"</code> y <code>version=1</code>.</p>
+<div id="cell-8" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="ot">&lt;-</span> <span class="st">"Operación Jupyter"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>version <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mensaje <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"Bienvenido a %s (v%d)"</span>, nombre_proyecto, version)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(mensaje <span class="sc">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mensaje)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="verificar-el-entorno-con-una-operación-simple" class="level3">
+<h3 class="anchored" data-anchor-id="verificar-el-entorno-con-una-operación-simple">2. Verificar el entorno con una operación simple</h3>
+<p>Calcula 2 elevado a la 10 — si tu entorno corre bien, debe dar 1024.</p>
+<div id="cell-10" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">^</span><span class="dv">10</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(resultado <span class="sc">==</span> <span class="dv">1024</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="contar-caracteres-de-un-mensaje-de-bitácora" class="level3">
+<h3 class="anchored" data-anchor-id="contar-caracteres-de-un-mensaje-de-bitácora">3. Contar caracteres de un mensaje de bitácora</h3>
+<p>¿Cuántos caracteres tiene <code>"Sistema iniciado correctamente"</code>?</p>
+<div id="cell-12" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="ot">&lt;-</span> <span class="st">"Sistema iniciado correctamente"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>longitud <span class="ot">&lt;-</span> <span class="fu">nchar</span>(mensaje_log)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(longitud <span class="sc">==</span> <span class="dv">30</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(longitud)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 
