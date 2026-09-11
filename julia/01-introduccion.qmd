@@ -1,13 +1,6 @@
 ---
-title: "Julia: Introducción e instalación"
+title: "Introducción a Julia"
 ---
-
-::: {.callout-tip}
-## ¿Cómo se organiza un notebook?
-Un notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.
-:::
-
-![Comparación de una celda de código (se ejecuta y muestra resultado) contra una celda de texto Markdown (solo se renderiza)](../images/tipos-celda-jupyter.svg)
 
 ::: {.callout-important}
 ## Nota
@@ -72,3 +65,38 @@ VERSION
 # Salir del REPL
 exit()
 ```
+
+## Ejercicios
+
+Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).
+
+### 1. Mensaje de bienvenida formateado
+
+```julia
+nombre_proyecto = "Operación Jupyter"
+version = 1
+
+mensaje = "Bienvenido a $nombre_proyecto (v$version)"
+@assert mensaje == "Bienvenido a Operación Jupyter (v1)"
+println(mensaje)
+```
+**Salida:** `Bienvenido a Operación Jupyter (v1)`
+
+### 2. Verificar el entorno con una operación simple
+
+```julia
+resultado = 2^10
+@assert resultado == 1024
+println(resultado)
+```
+**Salida:** `1024`
+
+### 3. Contar caracteres de un mensaje de bitácora
+
+```julia
+mensaje_log = "Sistema iniciado correctamente"
+longitud = length(mensaje_log)
+@assert longitud == 30
+println(longitud)
+```
+**Salida:** `30`

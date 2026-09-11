@@ -2,8 +2,6 @@
 title: "Julia: Funciones"
 ---
 
-# Funciones
-
 ```julia
 function suma(a, b=0)
     return a + b
@@ -12,3 +10,52 @@ end
 suma(3, 4)
 suma(3)
 ```
+
+## Ejercicios
+
+Tres problemas enfocados en definir funciones propias, con contexto de ingeniería.
+
+### 1. Área de una sección circular (valor por defecto)
+
+```julia
+function area_circular(radio, tolerancia=0)
+    return round(pi * radio^2, digits=2) + tolerancia
+end
+
+resultado = area_circular(5)
+@assert resultado == 78.54
+println(resultado)
+```
+**Salida:** `78.54`
+
+### 2. Conversión con múltiples retornos
+
+```julia
+function convertir_metros(m)
+    pies = round(m * 3.28084, digits=2)
+    pulgadas = round(m * 39.3701, digits=2)
+    return pies, pulgadas
+end
+
+pies, pulgadas = convertir_metros(10)
+@assert pies == 32.81 && pulgadas == 393.7
+println(pies, " ", pulgadas)
+```
+**Salida:** `32.81 393.7`
+
+### 3. Validación antes de calcular (raíz cuadrada segura)
+
+```julia
+function raiz_segura(x)
+    if x < 0
+        return nothing
+    end
+    return sqrt(x)
+end
+
+r1 = raiz_segura(16)
+r2 = raiz_segura(-4)
+@assert r1 == 4.0 && r2 === nothing
+println(r1, " ", r2)
+```
+**Salida:** `4.0 nothing`
