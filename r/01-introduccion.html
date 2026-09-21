@@ -430,6 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a></li>
+  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
@@ -452,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">11 de septiembre, 2026</p>
+      <p class="date-modified">21 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -518,7 +519,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><img src="../images/tipos-celda-jupyter.svg" class="img-fluid"></p>
-<div id="cell-3" class="cell">
+</section>
+</section>
+<section id="términos-clave" class="level2">
+<h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
+<p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
+<p><em>(Dale clic a cualquier término subrayado para ver su explicación.)</em></p>
+<div id="cell-4" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Licencia de R</span></span>
@@ -530,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-<em>r-a-language-and-environment-for-statistical-computing</em>.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
-<div id="cell-5" class="cell">
+<div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ayuda</span></span>
@@ -542,14 +549,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres calentamientos para confirmar que tu entorno funciona.</p>
 <section id="mensaje-de-bienvenida-formateado" class="level3">
 <h3 class="anchored" data-anchor-id="mensaje-de-bienvenida-formateado">1. Mensaje de bienvenida formateado</h3>
 <p>Arma el mensaje <code>"Bienvenido a {proyecto} (v{version})"</code> con <code>proyecto="Operación Jupyter"</code> y <code>version=1</code>.</p>
-<div id="cell-8" class="cell">
+<div id="cell-9" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="ot">&lt;-</span> <span class="st">"Operación Jupyter"</span></span>
@@ -564,7 +570,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="verificar-el-entorno-con-una-operación-simple" class="level3">
 <h3 class="anchored" data-anchor-id="verificar-el-entorno-con-una-operación-simple">2. Verificar el entorno con una operación simple</h3>
 <p>Calcula 2 elevado a la 10 — si tu entorno corre bien, debe dar 1024.</p>
-<div id="cell-10" class="cell">
+<div id="cell-11" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">^</span><span class="dv">10</span></span>
@@ -576,7 +582,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="contar-caracteres-de-un-mensaje-de-bitácora" class="level3">
 <h3 class="anchored" data-anchor-id="contar-caracteres-de-un-mensaje-de-bitácora">3. Contar caracteres de un mensaje de bitácora</h3>
 <p>¿Cuántos caracteres tiene <code>"Sistema iniciado correctamente"</code>?</p>
-<div id="cell-12" class="cell">
+<div id="cell-13" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="ot">&lt;-</span> <span class="st">"Sistema iniciado correctamente"</span></span>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Julia: Estructuras de datos – Operación Jupyter</title>
+<title>Ejercicio aleatorio – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,30 +64,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../julia/05-funciones.html" rel="next">
-<link href="../julia/03-estructuras-control.html" rel="prev">
-<link href="../images/favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-77a0e48be1646b22ae3bfe653f3d14ea.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fb0ca0454f4d053837d01adf1dd4580f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-15ebad509fc9db2a8d09af7563d8df65.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-fb0ca0454f4d053837d01adf1dd4580f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-77a0e48be1646b22ae3bfe653f3d14ea.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-fb0ca0454f4d053837d01adf1dd4580f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-15ebad509fc9db2a8d09af7563d8df65.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-fb0ca0454f4d053837d01adf1dd4580f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,16 +116,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Julia: Estructuras de datos – Operación Jupyter">
-<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/julia/images/social-preview.png">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Ejercicio aleatorio – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Julia: Estructuras de datos – Operación Jupyter">
-<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/julia/images/social-preview.png">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta name="twitter:title" content="Ejercicio aleatorio – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/images/social-preview.png">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -296,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Operación Jupyter</span>
     </a>
   </div>
@@ -307,43 +311,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../progreso.html"> 
+    <a class="nav-link" href="./progreso.html"> 
 <span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../glosario.html"> 
+    <a class="nav-link" href="./glosario.html"> 
 <span class="menu-text">Glosario</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../recursos.html"> 
+    <a class="nav-link" href="./recursos.html"> 
 <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../python/01-introduccion.html"> 
+    <a class="nav-link" href="./python/01-introduccion.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../r/01-introduccion.html"> 
+    <a class="nav-link" href="./r/01-introduccion.html"> 
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../julia/01-introduccion.html" aria-current="page"> 
+    <a class="nav-link" href="./julia/01-introduccion.html"> 
 <span class="menu-text">Julia</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutoriales/index.html"> 
+    <a class="nav-link" href="./tutoriales/index.html"> 
 <span class="menu-text">Tutoriales</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../libros/index.html"> 
+    <a class="nav-link" href="./libros/index.html"> 
 <span class="menu-text">Libros</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../semblanza/index.html"> 
+    <a class="nav-link" href="./semblanza/index.html"> 
 <span class="menu-text">Semblanza de los profesores</span></a>
   </li>  
 </ul>
@@ -353,87 +357,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../julia/04-estructuras-datos.html">Estructuras de datos</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/01-introduccion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introducción e instalación</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/02-tipos-y-variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tipos de datos y variables</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/03-estructuras-control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Estructuras de control</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/04-estructuras-datos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Estructuras de datos</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/05-funciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Funciones</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/06-particularidades.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Particularidades</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios de ingeniería</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../julia/08-visualizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualización</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul class="collapse">
-  <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link active" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
-  <ul class="collapse">
-  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">Arrays</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -441,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Julia: Estructuras de datos</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Ejercicio aleatorio</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -464,32 +394,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="estructuras-de-datos-y-objetos" class="level1">
-<h1>Estructuras de datos y objetos</h1>
-<section id="arrays" class="level2">
-<h2 class="anchored" data-anchor-id="arrays">Arrays</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>]   <span class="co"># indexado desde 1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>v[<span class="fl">1</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Diccionarios</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Tuplas</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fu">Dict</span>(<span class="st">"a"</span> <span class="op">=&gt;</span> <span class="fl">1</span>, <span class="st">"b"</span> <span class="op">=&gt;</span> <span class="fl">2</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"a"</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Te mandamos a un ejercicio al azar de los 24 disponibles. Dale recargar (o vuelve a entrar a este link) para otro.</p>
+<div id="destino" style="padding:20px; text-align:center; color:#6B7280;">
+Eligiendo…
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="fl">1</span>, <span class="st">"dos"</span>, <span class="fl">3.0</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>t[<span class="fl">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
+<script>
+const paginas = [
+  "/python/01-introduccion.html", "/r/01-introduccion.html", "/julia/01-introduccion.html",
+  "/python/02-entrada-datos-operadores.html", "/r/02-tipos-y-variables.html", "/julia/02-tipos-y-variables.html",
+  "/python/03-funciones.html", "/r/03-estructuras-control.html", "/julia/03-estructuras-control.html",
+  "/r/05-funciones.html", "/julia/05-funciones.html",
+  "/python/06-funciones-estadisticas.html", "/r/06-particularidades.html", "/julia/06-particularidades.html",
+  "/python/07-ejercicios-ingenieria.html", "/r/07-ejercicios-ingenieria.html", "/julia/07-ejercicios-ingenieria.html",
+];
+
+const elegido = paginas[Math.floor(Math.random() * paginas.length)];
+setTimeout(function () {
+  window.location.href = elegido;
+}, 600);
+</script>
 
 
 <!-- -->
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -955,50 +882,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../julia/03-estructuras-control.html" class="pagination-link" aria-label="Estructuras de control">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Estructuras de control</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../julia/05-funciones.html" class="pagination-link" aria-label="Funciones">
-        <span class="nav-page-text">Funciones</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Estructuras de datos"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Estructuras de datos y objetos</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Arrays</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>]   <span class="co"># indexado desde 1</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>v[<span class="fl">1</span>]</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>:::: {.panel-tabset}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Diccionarios</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="fu">Dict</span>(<span class="st">"a"</span> <span class="op">=&gt;</span> <span class="fl">1</span>, <span class="st">"b"</span> <span class="op">=&gt;</span> <span class="fl">2</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"a"</span>]</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tuplas</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="fl">1</span>, <span class="st">"dos"</span>, <span class="fl">3.0</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>t[<span class="fl">2</span>]</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>::::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ejercicio aleatorio"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Te mandamos a un ejercicio al azar de los 24 disponibles. Dale recargar (o vuelve a entrar a este link) para otro.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"destino"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"padding:20px; text-align:center; color:#6B7280;"</span><span class="dt">&gt;</span>Eligiendo...<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> paginas <span class="op">=</span> [</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/python/01-introduccion.html"</span><span class="op">,</span> <span class="st">"/r/01-introduccion.html"</span><span class="op">,</span> <span class="st">"/julia/01-introduccion.html"</span><span class="op">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/python/02-entrada-datos-operadores.html"</span><span class="op">,</span> <span class="st">"/r/02-tipos-y-variables.html"</span><span class="op">,</span> <span class="st">"/julia/02-tipos-y-variables.html"</span><span class="op">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/python/03-funciones.html"</span><span class="op">,</span> <span class="st">"/r/03-estructuras-control.html"</span><span class="op">,</span> <span class="st">"/julia/03-estructuras-control.html"</span><span class="op">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/r/05-funciones.html"</span><span class="op">,</span> <span class="st">"/julia/05-funciones.html"</span><span class="op">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/python/06-funciones-estadisticas.html"</span><span class="op">,</span> <span class="st">"/r/06-particularidades.html"</span><span class="op">,</span> <span class="st">"/julia/06-particularidades.html"</span><span class="op">,</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"/python/07-ejercicios-ingenieria.html"</span><span class="op">,</span> <span class="st">"/r/07-ejercicios-ingenieria.html"</span><span class="op">,</span> <span class="st">"/julia/07-ejercicios-ingenieria.html"</span><span class="op">,</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> elegido <span class="op">=</span> paginas[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> paginas<span class="op">.</span><span class="at">length</span>)]<span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">setTimeout</span>(<span class="kw">function</span> () {</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">href</span> <span class="op">=</span> elegido<span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>}<span class="op">,</span> <span class="dv">600</span>)<span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1012,7 +919,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../tutoriales/ficha-comparativa.pdf">
+    <a class="nav-link" href="./tutoriales/ficha-comparativa.pdf">
 <p>Descargar ficha comparativa (PDF)</p>
 </a>
   </li>  
@@ -1020,11 +927,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </div>
 </footer>
-<script src="../reading-time.js"></script>
-<script src="../share-button.js"></script>
-<script src="../skip-link.js"></script>
-<script src="../ver-tambien.js"></script>
-<script src="../keyboard-nav.js"></script>
+<script src="./reading-time.js"></script>
+<script src="./share-button.js"></script>
+<script src="./skip-link.js"></script>
+<script src="./ver-tambien.js"></script>
+<script src="./keyboard-nav.js"></script>
 
 
 

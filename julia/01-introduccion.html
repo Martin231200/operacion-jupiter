@@ -436,6 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#instalar-julia" id="toc-instalar-julia" class="nav-link" data-scroll-target="#instalar-julia">Instalar Julia</a></li>
   <li><a href="#usar-julia-en-jupyter" id="toc-usar-julia-en-jupyter" class="nav-link" data-scroll-target="#usar-julia-en-jupyter">Usar Julia en Jupyter</a></li>
   <li><a href="#julia-en-google-colab" id="toc-julia-en-google-colab" class="nav-link" data-scroll-target="#julia-en-google-colab">Julia en Google Colab</a></li>
+  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
   </ul></li>
   <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
   <ul class="collapse">
@@ -462,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">11 de septiembre, 2026</p>
+      <p class="date-modified">21 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -543,6 +544,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="julia-en-google-colab" class="level2">
 <h2 class="anchored" data-anchor-id="julia-en-google-colab">Julia en Google Colab</h2>
 <p>A diferencia de Python, Colab no tiene soporte oficial integrado para Julia — se puede usar instalándolo manualmente en la primera celda de cada sesión, aunque es menos práctico que RStudio o Jupyter local.</p>
+</section>
+<section id="términos-clave" class="level2">
+<h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
+<p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
+<p><em>(Dale clic a cualquier término subrayado para ver su explicación.)</em></p>
 </section>
 </section>
 <section id="primeros-pasos" class="level1">
@@ -1119,53 +1125,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>A diferencia de Python, Colab no tiene soporte oficial integrado para Julia — se puede usar instalándolo manualmente en la primera celda de cada sesión, aunque es menos práctico que RStudio o Jupyter local.</span>
 <span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="fu"># Primeros pasos</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Términos clave</span></span>
 <span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la versión instalada</span></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="cn">VERSION</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>Un <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info-term"</span><span class="ot"> data-info</span><span class="op">=</span><span class="st">"Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb."</span><span class="dt">&gt;</span>notebook<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> corre gracias a un <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info-term"</span><span class="ot"> data-info</span><span class="op">=</span><span class="st">"El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia)."</span><span class="dt">&gt;</span>kernel<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span>, y cada <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info-term"</span><span class="ot"> data-info</span><span class="op">=</span><span class="st">"Cada bloque independiente de un notebook — de código o de texto/Markdown."</span><span class="dt">&gt;</span>celda<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> se ejecuta con <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info-term"</span><span class="ot"> data-info</span><span class="op">=</span><span class="st">"Atajo de teclado: corre la celda actual y salta a la siguiente."</span><span class="dt">&gt;</span>Shift + Enter<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span>. El texto explicativo se escribe en <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"info-term"</span><span class="ot"> data-info</span><span class="op">=</span><span class="st">"Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc."</span><span class="dt">&gt;</span>Markdown<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span>.</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>*(Dale clic a cualquier término subrayado para ver su explicación.)*</span>
 <span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Ayuda sobre una función</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>?println</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="fu"># Primeros pasos</span></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la versión instalada</span></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="cn">VERSION</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Ayuda sobre una función</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>?println</span>
 <span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Mensaje de bienvenida formateado</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</span>
 <span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="st">"Bienvenido a </span><span class="sc">$</span>nombre_proyecto<span class="st"> (v</span><span class="sc">$</span>version<span class="st">)"</span></span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mensaje <span class="op">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span></span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(mensaje)</span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Bienvenido a Operación Jupyter (v1)`</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Mensaje de bienvenida formateado</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="fl">1</span></span>
 <span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Verificar el entorno con una operación simple</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fl">10</span></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultado <span class="op">==</span> <span class="fl">1024</span></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultado)</span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`1024`</span></span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Contar caracteres de un mensaje de bitácora</span></span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="op">=</span> <span class="st">"Sistema iniciado correctamente"</span></span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>longitud <span class="op">=</span> <span class="fu">length</span>(mensaje_log)</span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> longitud <span class="op">==</span> <span class="fl">30</span></span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(longitud)</span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`30`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="st">"Bienvenido a </span><span class="sc">$</span>nombre_proyecto<span class="st"> (v</span><span class="sc">$</span>version<span class="st">)"</span></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mensaje <span class="op">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(mensaje)</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Bienvenido a Operación Jupyter (v1)`</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Verificar el entorno con una operación simple</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fl">10</span></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultado <span class="op">==</span> <span class="fl">1024</span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultado)</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`1024`</span></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Contar caracteres de un mensaje de bitácora</span></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="op">=</span> <span class="st">"Sistema iniciado correctamente"</span></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>longitud <span class="op">=</span> <span class="fu">length</span>(mensaje_log)</span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> longitud <span class="op">==</span> <span class="fl">30</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(longitud)</span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`30`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
