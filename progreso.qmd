@@ -14,6 +14,42 @@ Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se compar
   </div>
   <p id="texto-progreso" style="font-size: 13px; color: #6B7280; margin: 6px 0 0;">0 de 0 completado</p>
 </div>
+<div id="desglose-lenguajes" style="display:flex; gap:14px; margin:1.5rem 0; flex-wrap:wrap;"></div>
+
+<script>
+(function () {
+  const STORAGE_KEY = "operacion-jupiter-progreso";
+  function cargarEstado() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+
+  const estado = cargarEstado();
+  const grupos = { "Python": "py-", "R": "r-", "Julia": "jl-" };
+  const colores = { "Python": "#378ADD", "R": "#1D9E75", "Julia": "#7B4EA3" };
+
+  const cont = document.getElementById("desglose-lenguajes");
+  if (!cont) return;
+
+  Object.keys(grupos).forEach(function (nombre) {
+    const prefijo = grupos[nombre];
+    const claves = Object.keys(estado).filter(function (k) { return k.startsWith(prefijo); });
+    const total = claves.length || 8;
+    const completados = claves.filter(function (k) { return estado[k]; }).length;
+    const pct = total ? Math.round((completados / total) * 100) : 0;
+
+    const card = document.createElement("div");
+    card.style.cssText = "flex:1; min-width:160px; background:#F7F9FB; border-radius:10px; padding:12px 16px;";
+    card.innerHTML =
+      '<p style="font-weight:600; margin:0 0 6px; color:' + colores[nombre] + ';">' + nombre + '</p>' +
+      '<div style="background:#E5E7EB; border-radius:6px; height:8px; overflow:hidden;">' +
+        '<div style="background:' + colores[nombre] + '; height:100%; width:' + pct + '%;"></div>' +
+      '</div>' +
+      '<p style="font-size:12px; color:#6B7280; margin:6px 0 0;">' + completados + ' de ' + total + ' (' + pct + '%)</p>';
+    cont.appendChild(card);
+  });
+})();
+</script>
 
 <div id="progreso-container"></div>
 

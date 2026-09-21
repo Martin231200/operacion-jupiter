@@ -1,0 +1,162 @@
+---
+title: "Comparar los 3 a la vez"
+---
+
+Mismo ejercicio, mismo resultado, sintaxis lado a lado. (Por ahora un ejemplo — se puede extender a más ejercicios.)
+
+## Verificar tolerancia de una pieza
+
+::: {layout-ncol=3}
+
+#### Python
+```python
+peso = 4.97
+nominal = 5.0
+tolerancia = 0.05
+
+pasa = abs(peso - nominal) <= tolerancia
+assert pasa == True
+print(pasa)
+```
+
+#### R
+```r
+peso <- 4.97
+nominal <- 5.0
+tolerancia <- 0.05
+
+pasa <- abs(peso - nominal) <= tolerancia
+stopifnot(pasa == TRUE)
+print(pasa)
+```
+
+#### Julia
+```julia
+peso = 4.97
+nominal = 5.0
+tolerancia = 0.05
+
+pasa = abs(peso - nominal) <= tolerancia
+@assert pasa == true
+println(pasa)
+```
+
+:::
+
+**Salida en los tres:** `TRUE` / `True` / `true` — misma lógica, mismo resultado.
+
+## Consumo total de energía (ciclo `for`)
+
+::: {layout-ncol=3}
+
+#### Python
+```python
+consumos = [120, 95, 150, 80, 110]
+total = 0
+for c in consumos:
+    total += c
+
+assert total == 555
+print(total)
+```
+
+#### R
+```r
+consumos <- c(120, 95, 150, 80, 110)
+total <- 0
+for (c in consumos) {
+  total <- total + c
+}
+
+stopifnot(total == 555)
+print(total)
+```
+
+#### Julia
+```julia
+consumos = [120, 95, 150, 80, 110]
+total = 0
+for c in consumos
+    global total += c
+end
+
+@assert total == 555
+println(total)
+```
+
+:::
+
+**Salida en los tres:** `555`
+
+## Área de una sección circular (valor por defecto)
+
+::: {layout-ncol=3}
+
+#### Python
+```python
+import math
+def area_circular(radio, tolerancia=0.0):
+    return round(math.pi * radio**2, 2) + tolerancia
+
+assert area_circular(5) == 78.54
+```
+
+#### R
+```r
+area_circular <- function(radio, tolerancia = 0) {
+  round(pi * radio^2, 2) + tolerancia
+}
+
+stopifnot(area_circular(5) == 78.54)
+```
+
+#### Julia
+```julia
+function area_circular(radio, tolerancia=0)
+    return round(pi * radio^2, digits=2) + tolerancia
+end
+
+@assert area_circular(5) == 78.54
+```
+
+:::
+
+**Salida en los tres:** `78.54`
+
+## Tipado dinámico
+
+::: {layout-ncol=3}
+
+#### Python
+```python
+x = 10
+tipo1 = type(x).__name__
+x = "ahora soy texto"
+tipo2 = type(x).__name__
+print(tipo1, tipo2)
+```
+`int str`
+
+#### R
+```r
+x <- 10
+tipo1 <- class(x)
+x <- "ahora soy texto"
+tipo2 <- class(x)
+cat(tipo1, tipo2)
+```
+`numeric character`
+
+#### Julia
+```julia
+x = 10
+tipo1 = typeof(x)
+x = "ahora soy texto"
+tipo2 = typeof(x)
+println(tipo1, " ", tipo2)
+```
+`Int64 String`
+
+:::
+
+Este último muestra algo interesante: los tres son de **tipado dinámico** (nadie exige declarar el tipo), pero cada uno nombra sus tipos distinto — Python usa nombres cortos (`int`, `str`), R usa nombres más descriptivos (`numeric`, `character`), y Julia expone el tipo exacto con su tamaño (`Int64`, `String`).

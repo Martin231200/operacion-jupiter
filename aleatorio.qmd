@@ -1,0 +1,23 @@
+---
+title: "Ejercicio aleatorio"
+---
+
+Te mandamos a un ejercicio al azar de los 24 disponibles. Dale recargar (o vuelve a entrar a este link) para otro.
+
+<div id="destino" style="padding:20px; text-align:center; color:#6B7280;">Eligiendo...</div>
+
+<script>
+const paginas = [
+  "/python/01-introduccion.html", "/r/01-introduccion.html", "/julia/01-introduccion.html",
+  "/python/02-entrada-datos-operadores.html", "/r/02-tipos-y-variables.html", "/julia/02-tipos-y-variables.html",
+  "/python/03-funciones.html", "/r/03-estructuras-control.html", "/julia/03-estructuras-control.html",
+  "/r/05-funciones.html", "/julia/05-funciones.html",
+  "/python/06-funciones-estadisticas.html", "/r/06-particularidades.html", "/julia/06-particularidades.html",
+  "/python/07-ejercicios-ingenieria.html", "/r/07-ejercicios-ingenieria.html", "/julia/07-ejercicios-ingenieria.html",
+];
+
+const elegido = paginas[Math.floor(Math.random() * paginas.length)];
+setTimeout(function () {
+  window.location.href = elegido;
+}, 600);
+</script>
