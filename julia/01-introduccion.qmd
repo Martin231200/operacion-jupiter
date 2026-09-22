@@ -3,11 +3,13 @@ title: "Introducción a Julia"
 ---
 
 ::: {.callout-important}
+
 ## Nota
 Este contenido se basa en características generales y documentadas del lenguaje Julia. Aún no contamos con material específico del proyecto para esta sección — se actualizará cuando la profa comparta el notebook correspondiente.
 :::
 
 ::: {.callout-tip}
+
 ## Tip
 Julia comparte con R el indexado desde 1 y con Python la asignación con `=`. Si ya conoces cualquiera de los dos, la sintaxis básica te va a resultar familiar — la diferencia grande está en el desempeño, no en la forma de escribir el código.
 :::
@@ -62,6 +64,7 @@ Un <span class="info-term" data-info="Documento que combina celdas de código (s
 # Primeros pasos
 
 ```julia
+
 # Ver la versión instalada
 VERSION
 

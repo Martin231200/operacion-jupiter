@@ -37,7 +37,7 @@ Julia no requiere declarar el tipo de una variable — se infiere del valor asig
 
 ```julia
 x = 10
-x::Int64 = 10   # con tipo explícito (opcional)
+y::Int64 = 10   # con tipo explícito (opcional)
 ```
 
 ## Ejercicios

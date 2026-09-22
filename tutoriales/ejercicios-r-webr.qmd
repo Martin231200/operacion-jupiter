@@ -15,13 +15,14 @@ Mismos cuatro ejercicios que en Python, para comparar directamente la sintaxis. 
 ## 1. Matemáticas: verificar si un número es primo
 
 ```{webr-r}
+
 es_primo <- function(n) {
   if (n < 2) return(FALSE)
+  if (n < 4) return(TRUE)
   for (i in 2:floor(sqrt(n))) {
     if (n %% i == 0) return(FALSE)
   }
-  return(TRUE)
-}
+  return(TRUE)}
 
 casos <- list(`7` = TRUE, `15` = FALSE, `2` = TRUE, `97` = TRUE)
 for (n in names(casos)) {

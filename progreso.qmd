@@ -3,59 +3,28 @@ title: "Mi progreso"
 format:
   html:
     include-in-header:
-      - text: <link rel="stylesheet" href="tutoriales/quiz.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      - text: <link rel="stylesheet" href="tutoriales/quiz.css">
+    include-after-body:
+      - text: <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 ---
 
-Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más).
+Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más, y se pierde si borras los datos de navegación).
 
 <div style="margin: 1rem 0 1.5rem;">
-  <div style="background: #E5E7EB; border-radius: 8px; height: 14px; overflow: hidden;">
+  <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="barra-progreso-wrap"
+       style="background: #E5E7EB; border-radius: 8px; height: 14px; overflow: hidden;">
     <div id="barra-progreso" style="background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;"></div>
   </div>
   <p id="texto-progreso" style="font-size: 13px; color: #6B7280; margin: 6px 0 0;">0 de 0 completado</p>
 </div>
-<div id="desglose-lenguajes" style="display:flex; gap:14px; margin:1.5rem 0; flex-wrap:wrap;"></div>
 
-<script>
-(function () {
-  const STORAGE_KEY = "operacion-jupiter-progreso";
-  function cargarEstado() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
-    catch (e) { return {}; }
-  }
-
-  const estado = cargarEstado();
-  const grupos = { "Python": "py-", "R": "r-", "Julia": "jl-" };
-  const colores = { "Python": "#378ADD", "R": "#1D9E75", "Julia": "#7B4EA3" };
-
-  const cont = document.getElementById("desglose-lenguajes");
-  if (!cont) return;
-
-  Object.keys(grupos).forEach(function (nombre) {
-    const prefijo = grupos[nombre];
-    const claves = Object.keys(estado).filter(function (k) { return k.startsWith(prefijo); });
-    const total = claves.length || 8;
-    const completados = claves.filter(function (k) { return estado[k]; }).length;
-    const pct = total ? Math.round((completados / total) * 100) : 0;
-
-    const card = document.createElement("div");
-    card.style.cssText = "flex:1; min-width:160px; background:#F7F9FB; border-radius:10px; padding:12px 16px;";
-    card.innerHTML =
-      '<p style="font-weight:600; margin:0 0 6px; color:' + colores[nombre] + ';">' + nombre + '</p>' +
-      '<div style="background:#E5E7EB; border-radius:6px; height:8px; overflow:hidden;">' +
-        '<div style="background:' + colores[nombre] + '; height:100%; width:' + pct + '%;"></div>' +
-      '</div>' +
-      '<p style="font-size:12px; color:#6B7280; margin:6px 0 0;">' + completados + ' de ' + total + ' (' + pct + '%)</p>';
-    cont.appendChild(card);
-  });
-})();
-</script>
+<div id="desglose-lenguajes" style="display:flex; gap:14px; margin:0 0 1.5rem; flex-wrap:wrap;"></div>
 
 <div id="progreso-container"></div>
 
 <script>
 const secciones = [
-  { titulo: "Python", items: [
+  { titulo: "Python", prefijo: "py-", items: [
     ["py-01", "Introducción e instalación"],
     ["py-02", "Entrada de datos y operadores"],
     ["py-03", "Funciones"],
@@ -65,7 +34,7 @@ const secciones = [
     ["py-07", "Ejercicios de ingeniería"],
     ["py-08", "Visualización"],
   ]},
-  { titulo: "R", items: [
+  { titulo: "R", prefijo: "r-", items: [
     ["r-01", "Introducción e instalación"],
     ["r-02", "Tipos de datos y variables"],
     ["r-03", "Estructuras de control"],
@@ -75,7 +44,7 @@ const secciones = [
     ["r-07", "Ejercicios de ingeniería"],
     ["r-08", "Visualización"],
   ]},
-  { titulo: "Julia", items: [
+  { titulo: "Julia", prefijo: "jl-", items: [
     ["jl-01", "Introducción e instalación"],
     ["jl-02", "Tipos de datos y variables"],
     ["jl-03", "Estructuras de control"],
@@ -85,7 +54,7 @@ const secciones = [
     ["jl-07", "Ejercicios de ingeniería"],
     ["jl-08", "Visualización"],
   ]},
-  { titulo: "Tutoriales", items: [
+  { titulo: "Tutoriales", prefijo: "tut-", items: [
     ["tut-quiz", "Quiz interactivo"],
     ["tut-py", "Ejercicios Python"],
     ["tut-r", "Ejercicios R"],
@@ -93,18 +62,28 @@ const secciones = [
   ]},
 ];
 
+// Lista completa y única de ids válidos — el conteo SOLO considera estos,
+// para no arrastrar claves viejas o de otras versiones guardadas en localStorage.
+const idsValidos = secciones.flatMap(s => s.items.map(i => i[0]));
+const totalItems = idsValidos.length;
+
 const STORAGE_KEY = "operacion-jupiter-progreso";
+
 function cargarEstado() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
   catch (e) { return {}; }
 }
+
 function guardarEstado(estado) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+  } catch (e) {
+    console.warn("No se pudo guardar el progreso (localStorage no disponible):", e);
+  }
 }
 
 const estado = cargarEstado();
 const root = document.getElementById('progreso-container');
-let totalItems = 0;
 
 secciones.forEach(sec => {
   const bloque = document.createElement('div');
@@ -116,7 +95,6 @@ secciones.forEach(sec => {
   bloque.appendChild(h);
 
   sec.items.forEach(([id, label]) => {
-    totalItems++;
     const row = document.createElement('label');
     row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:6px 0;font-size:14px;cursor:pointer;';
 
@@ -128,6 +106,7 @@ secciones.forEach(sec => {
       estado[id] = cb.checked;
       guardarEstado(estado);
       actualizarBarra();
+      actualizarDesglose();
     };
 
     const span = document.createElement('span');
@@ -141,8 +120,13 @@ secciones.forEach(sec => {
   root.appendChild(bloque);
 });
 
+function contarCompletados() {
+  return idsValidos.filter(id => estado[id]).length;
+}
+
 function generarCertificado() {
-  const nombre = document.getElementById('nombre-certificado').value.trim() || "Participante";
+  const nombreInput = document.getElementById('nombre-certificado').value.trim();
+  const nombre = nombreInput || "Participante";
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ orientation: "landscape", unit: "pt", format: "letter" });
 
@@ -154,37 +138,50 @@ function generarCertificado() {
   doc.rect(20, 20, w - 40, h - 40);
 
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(28);
+  doc.setFontSize(26);
   doc.setTextColor(44, 95, 138);
-  doc.text("Certificado de finalización", w / 2, 130, { align: "center" });
-
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(14);
-  doc.setTextColor(60, 60, 60);
-  doc.text("Operación Jupyter — Tutoriales de Python, R y Julia", w / 2, 165, { align: "center" });
-
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(24);
-  doc.setTextColor(20, 20, 20);
-  doc.text(nombre, w / 2, 230, { align: "center" });
+  doc.text("Constancia de finalización", w / 2, 125, { align: "center" });
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(13);
+  doc.setTextColor(60, 60, 60);
+  doc.text("Operación Jupyter — Tutoriales de Python, R y Julia", w / 2, 158, { align: "center" });
+
+  // Nombre: se ajusta el tamaño de letra si es muy largo, para que no se salga del PDF
+  let fontSize = 22;
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(fontSize);
+  const maxWidth = w - 160;
+  while (doc.getTextWidth(nombre) > maxWidth && fontSize > 10) {
+    fontSize -= 1;
+    doc.setFontSize(fontSize);
+  }
+  doc.setTextColor(20, 20, 20);
+  doc.text(nombre, w / 2, 225, { align: "center", maxWidth: maxWidth });
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
   doc.setTextColor(80, 80, 80);
-  doc.text("completó el recorrido completo del sitio", w / 2, 260, { align: "center" });
+  doc.text("completó el recorrido del sitio de forma autónoma", w / 2, 255, { align: "center" });
 
   const fecha = new Date().toLocaleDateString("es-MX", { year: "numeric", month: "long", day: "numeric" });
-  doc.setFontSize(11);
-  doc.text(fecha, w / 2, 320, { align: "center" });
-  doc.text("Servicio Social — Facultad de Ingeniería, UNAM", w / 2, 340, { align: "center" });
+  doc.setFontSize(10);
+  doc.text(fecha, w / 2, 300, { align: "center" });
+  doc.text("Servicio Social — Facultad de Ingeniería, UNAM", w / 2, 316, { align: "center" });
 
-  doc.save("certificado-operacion-jupyter.pdf");
+  doc.setFontSize(8);
+  doc.setTextColor(140, 140, 140);
+  doc.text("Constancia generada automáticamente por el sitio, sin validez oficial ni firma institucional.", w / 2, 350, { align: "center" });
+
+  doc.save("constancia-operacion-jupiter.pdf");
 }
 
 function actualizarBarra() {
-  const completados = Object.values(estado).filter(Boolean).length;
+  const completados = contarCompletados();
   const pct = totalItems ? Math.round((completados / totalItems) * 100) : 0;
+
   document.getElementById('barra-progreso').style.width = pct + '%';
+  document.getElementById('barra-progreso-wrap').setAttribute('aria-valuenow', pct);
   document.getElementById('texto-progreso').textContent = completados + ' de ' + totalItems + ' completado (' + pct + '%)';
 
   let celebracion = document.getElementById('celebracion-progreso');
@@ -195,14 +192,39 @@ function actualizarBarra() {
       celebracion.style.cssText = 'margin-top:14px;padding:14px 18px;border-radius:10px;background:#E1F5EE;color:#0B4A38;font-weight:600;text-align:center;';
       celebracion.innerHTML =
         '🎉 ¡Completaste todo el recorrido de Operación Jupyter!<br><br>' +
-        '<input id="nombre-certificado" type="text" placeholder="Tu nombre para el certificado" ' +
+        '<input id="nombre-certificado" type="text" placeholder="Tu nombre para la constancia" ' +
         'style="padding:6px 10px;border-radius:6px;border:1px solid #A7D9C4;font-weight:normal;margin-right:8px;">' +
-        '<button onclick="generarCertificado()" style="padding:7px 14px;border-radius:8px;border:none;background:#1D9E75;color:white;font-weight:600;cursor:pointer;">Descargar certificado (PDF)</button>';
+        '<button onclick="generarCertificado()" style="padding:7px 14px;border-radius:8px;border:none;background:#1D9E75;color:white;font-weight:600;cursor:pointer;">Descargar constancia (PDF)</button>';
       document.getElementById('progreso-container').insertAdjacentElement('beforebegin', celebracion);
     }
   } else if (celebracion) {
     celebracion.remove();
   }
 }
+
+function actualizarDesglose() {
+  const cont = document.getElementById("desglose-lenguajes");
+  cont.innerHTML = "";
+  const colores = { "py-": "#378ADD", "r-": "#1D9E75", "jl-": "#7B4EA3", "tut-": "#7B4EA3" };
+
+  secciones.forEach(sec => {
+    const total = sec.items.length;
+    const completados = sec.items.filter(([id]) => estado[id]).length;
+    const pct = total ? Math.round((completados / total) * 100) : 0;
+    const color = colores[sec.prefijo] || "#2C5F8A";
+
+    const card = document.createElement("div");
+    card.style.cssText = "flex:1; min-width:150px; background:#F7F9FB; border-radius:10px; padding:12px 16px;";
+    card.innerHTML =
+      '<p style="font-weight:600; margin:0 0 6px; color:' + color + ';">' + sec.titulo + '</p>' +
+      '<div style="background:#E5E7EB; border-radius:6px; height:8px; overflow:hidden;">' +
+        '<div style="background:' + color + '; height:100%; width:' + pct + '%;"></div>' +
+      '</div>' +
+      '<p style="font-size:12px; color:#6B7280; margin:6px 0 0;">' + completados + ' de ' + total + ' (' + pct + '%)</p>';
+    cont.appendChild(card);
+  });
+}
+
 actualizarBarra();
+actualizarDesglose();
 </script>
