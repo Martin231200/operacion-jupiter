@@ -119,11 +119,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Lenguajes de programación de código libre – Operación Jupyter">
-<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
 <meta name="twitter:title" content="Lenguajes de programación de código libre – Operación Jupyter">
-<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -430,8 +428,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a></li>
+  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
+  <ul class="collapse">
+  <li><a href="#correr-en-r-o-rstudio" id="toc-correr-en-r-o-rstudio" class="nav-link" data-scroll-target="#correr-en-r-o-rstudio">Correr en R o RStudio</a></li>
+  <li><a href="#correr-r-en-google-colab" id="toc-correr-r-en-google-colab" class="nav-link" data-scroll-target="#correr-r-en-google-colab">Correr R en Google colab</a></li>
+  <li><a href="#ventajas-de-las-diferentes-interfaces" id="toc-ventajas-de-las-diferentes-interfaces" class="nav-link" data-scroll-target="#ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</a></li>
+  </ul></li>
+  <li><a href="#online-tutorials-and-support" id="toc-online-tutorials-and-support" class="nav-link" data-scroll-target="#online-tutorials-and-support">Online tutorials and support</a></li>
+  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
+  <ul class="collapse">
+  <li><a href="#comandos-basicos" id="toc-comandos-basicos" class="nav-link" data-scroll-target="#comandos-basicos">Comandos basicos</a></li>
   <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
+  <li><a href="#to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages." id="toc-to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages." class="nav-link" data-scroll-target="#to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages.">To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages.</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -453,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">21 de septiembre, 2026</p>
+      <p class="date-modified">22 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -476,35 +486,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Se parece a Matlab y su sintaxis recuerda a C / C++</li>
 <li>R fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team</li>
 <li>La versión beta más estable fue lanzada hasta el año 2000</li>
-<li>RStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R</li>
+<li>RStudio es un entorno de desarrollo integrado (IDE) para R</li>
+</ul>
+</section>
+<section id="ventajas-y-desventajas-de-r" class="level3">
+<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-r">Ventajas y desventajas de R</h3>
+<ul>
 <li>Es un software libre</li>
 <li>No hay responsabilidad en caso de errores en el código</li>
 <li>Es uno de los primeros lenguajes en recibir los nuevos temas</li>
 <li>Tiene una fácil conectividad y compatibilidad con otros lenguajes de programación</li>
 <li>No tiene límite (teórico) en la lectura de bases de datos</li>
-<li>Suele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:</li>
-<li>Primero se debe instalar R</li>
-<li>Dependiendo de las características del sistema operativo, se puede encontrar en&nbsp;https://www.r-project.org/&nbsp;el archivo de instalación adecuado</li>
-<li>Después de elegir el idioma, acepte los términos</li>
-<li>Al final de la instalación busque la carpeta en donde se guardó (generalmente&nbsp;<em>Aplicaciones</em>) para inicarlo</li>
-<li>Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.</li>
-<li>Se descarga RStudio en&nbsp;https://www.rstudio.com/, actualmente disponible en&nbsp;https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:</li>
-<li>Abre Google Colab (<u>https://colab.research.google.com/</u>)</li>
-<li>Crea un nuevo notebook</li>
-<li>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev</li>
-<li>Instalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”</li>
-<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:</li>
-<li>Se tiene en cada momento un registro de las variables definidos y sus valores</li>
-<li>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:</li>
-<li>El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo</li>
-<li>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:</li>
-<li>Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.</li>
-<li>El IDE tiene menos opciones que en RStudio</li>
-<li>El sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support</li>
+<li>Suele volverse más lento el análisis con grandes bases de datos</li>
+</ul>
+</section>
+</section>
+<section id="interfases-y-ambientes-colaborativos" class="level1">
+<h1>Interfases y ambientes colaborativos</h1>
+<section id="correr-en-r-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="correr-en-r-o-rstudio">Correr en R o RStudio</h2>
+<p>Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos: - Primero se debe instalar R - Dependiendo de las características del sistema operativo, se puede encontrar en&nbsp;https://www.r-project.org/&nbsp;el archivo de instalación adecuado - Después de elegir el idioma, acepte los términos - Al final de la instalación busque la carpeta en donde se guardó (generalmente&nbsp;<em>Aplicaciones</em>) para inicarlo - Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda. - Se descarga RStudio en&nbsp;https://www.rstudio.com/, actualmente disponible en&nbsp;https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar.</p>
+</section>
+<section id="correr-r-en-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="correr-r-en-google-colab">Correr R en Google colab</h2>
+<p>Para usar R en Google Colab, se siguen los siguientes pasos: - Abre Google Colab (<u>https://colab.research.google.com/</u>) - Crea un nuevo notebook - Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev - Instalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)” - Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”)</p>
+</section>
+<section id="ventajas-de-las-diferentes-interfaces" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</h2>
+<p>Las ventajas de RStudio en comparación con Google Colab son: - Se tiene en cada momento un registro de las variables definidos y sus valores - Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab: - El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo - No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab: - Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables. - El IDE tiene menos opciones que en RStudio - El sistema Markdown de colab no es el mismo que en RStudio</p>
+</section>
+</section>
+<section id="online-tutorials-and-support" class="level1">
+<h1>Online tutorials and support</h1>
+<ul>
 <li>Manual de referencia oficial:&nbsp;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</li>
 <li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.statmethods.net%2Findex.html">https://www.statmethods.net/index.html</a></li>
-<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.coursera.org%2Fhttps%3A%2F%2Frpubs.com%2F">https://www.coursera.org/https://rpubs.com/</a> # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</li>
+<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.coursera.org%2Fhttps%3A%2F%2Frpubs.com%2F">https://www.coursera.org/https://rpubs.com/</a></li>
 </ul>
+</section>
+<section id="primeros-pasos" class="level1">
+<h1>Primeros pasos</h1>
+<section id="comandos-basicos" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-basicos">Comandos basicos</h2>
+<p>Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -519,7 +543,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><img src="../images/tipos-celda-jupyter.svg" class="img-fluid"></p>
-</section>
 </section>
 <section id="términos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
@@ -536,7 +559,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-<em>r-a-language-and-environment-for-statistical-computing</em>.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
+<p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son:</p>
+</section>
+<section id="to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages." class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="to-cite-r-in-publications-use-r-core-team-2024.-_r-a-language-and-environment-for-statistical-computing_.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages.">To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages.</h2>
+<p>Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
 <div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
@@ -593,6 +620,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 </section>
 
