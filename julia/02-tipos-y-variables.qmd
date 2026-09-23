@@ -37,14 +37,23 @@ Julia no requiere declarar el tipo de una variable — se infiere del valor asig
 
 ```julia
 x = 10
-y::Int64 = 10   # con tipo explícito (opcional)
+y::Int64 = 20   # con tipo explícito (opcional)
+```
+
+Nota: no se puede anotar el tipo de una variable global que ya tiene un valor sin tipo (por ejemplo, hacer `x::Int64 = 30` después de `x = 10` da error desde Julia 1.8). Por eso aquí se usa un nombre distinto (`y`). Si el objetivo es solo mostrar la anotación de tipo, también funciona dentro de una función:
+
+```julia
+function ejemplo()
+    z::Int64 = 10
+    return z
+end
 ```
 
 ## Ejercicios
 
-Tres problemas cortos aplicando lo visto, con contexto de ingeniería. Mismos valores verificados que en Python y R.
+Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).
 
-### 1. Conversión de temperatura (reales)
+### 1. Conversión de temperatura
 
 ```julia
 c = 23.5

@@ -2,6 +2,25 @@
 title: "Julia: Funciones"
 ---
 
+## Funciones en Julia
+
+Definir una función se puede hacer de dos formas equivalentes:
+
+```julia
+function saludar(nombre)
+    return "Hola, $nombre"
+end
+
+# forma corta, para funciones de una sola línea:
+saludar(nombre) = "Hola, $nombre"
+```
+
+Julia también soporta funciones anónimas, útiles para pasarlas como argumento:
+
+```julia
+map(x -> x^2, [1, 2, 3])
+```
+
 ```julia
 function suma(a, b=0)
     return a + b
@@ -11,15 +30,35 @@ suma(3, 4)
 suma(3)
 ```
 
+## Multiple dispatch
+
+Julia permite anotar el tipo de los argumentos. Esto no es obligatorio, pero habilita **multiple dispatch**: el método que se ejecuta se elige según el tipo de *todos* los argumentos, no solo del primero como en la mayoría de los lenguajes orientados a objetos. Es la característica distintiva de Julia:
+
+```julia
+struct Circulo
+    radio
+end
+struct Rectangulo
+    base
+    altura
+end
+
+area(forma::Circulo) = pi * forma.radio^2
+area(forma::Rectangulo) = forma.base * forma.altura
+
+area(Circulo(5))          # usa el método para Circulo
+area(Rectangulo(4, 3))    # usa el método para Rectangulo — misma función, distinto código según el tipo
+```
+
 ## Ejercicios
 
 Tres problemas enfocados en definir funciones propias, con contexto de ingeniería.
 
-### 1. Área de una sección circular (valor por defecto)
+### 1. Área de una sección circular <span class="badge-dificultad basico">Básico</span> (valor por defecto)
 
 ```julia
-function area_circular(radio, tolerancia=0)
-    return round(pi * radio^2, digits=2) + tolerancia
+function area_circular(radio, decimales=2)
+    return round(pi * radio^2, digits=decimales)
 end
 
 resultado = area_circular(5)
@@ -28,7 +67,7 @@ println(resultado)
 ```
 **Salida:** `78.54`
 
-### 2. Conversión con múltiples retornos
+### 2. Conversión con múltiples retornos <span class="badge-dificultad intermedio">Intermedio</span>
 
 ```julia
 function convertir_metros(m)
@@ -43,7 +82,7 @@ println(pies, " ", pulgadas)
 ```
 **Salida:** `32.81 393.7`
 
-### 3. Validación antes de calcular (raíz cuadrada segura)
+### 3. Validación antes de calcular <span class="badge-dificultad intermedio">Intermedio</span> (raíz cuadrada segura)
 
 ```julia
 function raiz_segura(x)

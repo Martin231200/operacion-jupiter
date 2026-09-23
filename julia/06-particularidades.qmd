@@ -9,7 +9,7 @@ title: "Julia: Particularidades"
 - Indexado desde 1 (no desde 0).
 - Vectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.
 - Orientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.
-- Asignación con `<-` como convención, aunque `=` es válido.
+- Asignación con `<-` como convención, aunque `=` es válido (dentro de una llamada a función, `f(x = 3)`, el `=` no asigna: nombra un argumento).
 
 ## Python
 
@@ -21,9 +21,14 @@ title: "Julia: Particularidades"
 ## Julia
 
 - Indexado desde 1, como R.
-- Diseñado para desempeño numérico: se compila "just-in-time" (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.
+- Diseñado para desempeño numérico: se compila <span class="info-term" data-info="Just-in-time: el código se traduce a instrucciones de máquina la primera vez que se ejecuta una función, no antes de correrla. Así Julia logra desempeño cercano a C.">"just-in-time" (JIT)</span>, por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.
 - Nació explícitamente para resolver el "problema de los dos lenguajes" (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).
-- Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.
+- Soporte nativo para <span class="info-term" data-info="El comportamiento de una función puede depender del tipo de TODOS sus argumentos, no solo del primero — a diferencia de la programación orientada a objetos clásica.">multiple dispatch</span>: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.
+- **"Time to first plot"**: la primera vez que se llama una función, Julia la compila — eso hace que la primera ejecución se sienta lenta. Las llamadas siguientes son rápidas porque usan la versión ya compilada.
+
+## Nota sobre JIT en los tres lenguajes
+
+No solo Julia usa compilación JIT: Julia está diseñada desde cero alrededor de JIT/LLVM; R, desde la versión 3.4, compila a bytecode con JIT (paquete `compiler`, integrado); y Python (CPython, la implementación de referencia) es interpretado, aunque desde la versión 3.13 incluye un JIT experimental. La diferencia real es de grado y de diseño, no de "tiene JIT / no tiene JIT".
 
 ## Conclusiones
 
@@ -33,7 +38,7 @@ Los tres lenguajes permiten resolver problemas similares de programación y aná
 
 Tres problemas que muestran características propias del lenguaje.
 
-### 1. Vectorización nativa (sin ciclo explícito)
+### 1. Vectorización <span class="badge-dificultad basico">Básico</span> nativa (sin ciclo explícito)
 
 ```julia
 valores = [10, 20, 30, 40]
@@ -44,9 +49,9 @@ println(doble)
 ```
 **Salida:** `[20, 40, 60, 80]`
 
-Nota de sintaxis: el `.` antes del operador (`.*`) aplica la multiplicación elemento a elemento. En R esto es automático; en Julia hay que ser explícito con el punto.
+Nota de sintaxis: el `.` antes del operador (`.*`) aplica la multiplicación elemento a elemento. En Julia este broadcasting es **explícito** (hay que poner el punto); en R es automático; en Python hace falta NumPy.
 
-### 2. Indexado desde 1
+### 2. Indexado <span class="badge-dificultad basico">Básico</span> desde 1
 
 ```julia
 etiquetas = ["sensor1", "sensor2", "sensor3"]
@@ -57,7 +62,7 @@ println(primero)
 ```
 **Salida:** `sensor1`
 
-### 3. Tipado dinámico
+### 3. Tipado dinámico <span class="badge-dificultad intermedio">Intermedio</span>
 
 ```julia
 x = 10

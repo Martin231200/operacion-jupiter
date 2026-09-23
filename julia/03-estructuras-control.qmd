@@ -4,6 +4,16 @@ title: "Julia: Estructuras de control"
 
 # Estructuras: secuencias, decisiones y repeticiones
 
+La sintaxis de control en Julia se parece a la de Python en la lógica, pero usa `end` para cerrar cada bloque en vez de indentación — no importa cuántos espacios uses, lo que delimita el bloque es la palabra `end`.
+
+Un detalle importante: los rangos como `1:5` son **inclusivos en ambos extremos** (incluyen el 5), a diferencia de `range(1, 5)` en Python, que excluye el 5. Es una fuente común de errores de "off-by-one" al traducir código de Python a Julia.
+
+Julia también tiene comprensión de arreglos, similar a las list comprehensions de Python:
+
+```julia
+cuadrados = [x^2 for x in 1:5]
+```
+
 ## Secuencias
 
 ```julia
@@ -55,7 +65,7 @@ end
 
 Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.
 
-### 1. Consumo total de energía (ciclo `for`)
+### 1. Consumo total de energía <span class="badge-dificultad basico">Básico</span> (ciclo `for`)
 
 ```julia
 consumos = [120, 95, 150, 80, 110]
@@ -69,7 +79,7 @@ println("Consumo total: ", total, " kWh")
 ```
 **Salida:** `Consumo total: 555 kWh`
 
-### 2. Clasificar estado por temperatura (`if`/`elseif`/`else`)
+### 2. Clasificar estado por temperatura <span class="badge-dificultad intermedio">Intermedio</span> (`if`/`elseif`/`else`)
 
 ```julia
 function clasificar(temp)
@@ -88,7 +98,7 @@ println(resultados)
 ```
 **Salida:** `["normal", "alerta", "critico"]`
 
-### 3. Simular llenado de un tanque (`while`)
+### 3. Simular llenado de un tanque <span class="badge-dificultad intermedio">Intermedio</span> (`while`)
 
 ```julia
 nivel = 0
