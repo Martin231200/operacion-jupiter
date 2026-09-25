@@ -458,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">23 de septiembre, 2026</p>
+      <p class="date-modified">25 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -473,9 +473,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="r">R</h2>
 <ul>
 <li>Indexado desde 1 (no desde 0).</li>
-<li><span class="info-term" data-info="Aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. R y Julia lo hacen por diseño; Python necesita NumPy para lo mismo.">Vectorizado</span> por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.</li>
+<li>Vectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.</li>
 <li>Orientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.</li>
-<li>Asignación con &lt;- como convención, aunque = es válido.</li>
+<li>Asignación con <code>&lt;-</code> como convención, aunque <code>=</code> es válido (dentro de una llamada a función, <code>f(x = 3)</code>, el <code>=</code> no asigna: nombra un argumento).</li>
+<li><strong><code>NA</code> vs <code>NULL</code></strong>: <code>NA</code> representa un valor faltante dentro de un vector (y “contagia” el resultado de operaciones: <code>NA + 1</code> es <code>NA</code>). <code>NULL</code> representa la ausencia total de un valor, y no puede vivir dentro de un vector normal.</li>
+<li><strong>Reciclado de vectores</strong>: si operas dos vectores de distinto largo, R repite el más corto para completar la operación, a veces sin avisar (<code>c(1,2,3,4) + c(1,2)</code> da <code>2 4 4 6</code>) — útil cuando es intencional, fuente de bugs cuando no lo es.</li>
+<li><strong>Todo es un vector</strong>: incluso un solo número (<code>5</code>) es técnicamente un vector de longitud 1, no un tipo escalar separado.</li>
 </ul>
 </section>
 <section id="python" class="level2">
@@ -493,8 +496,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Indexado desde 1, como R.</li>
 <li>Diseñado para desempeño numérico: se compila “just-in-time” (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.</li>
 <li>Nació explícitamente para resolver el “problema de los dos lenguajes” (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).</li>
-<li>Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero. Nota: las particularidades de Julia se documentan aquí con base en las características generales del lenguaje; al no contar todavía con el notebook de Julia del proyecto, conviene revisarlas junto con el material específico cuando esté disponible.</li>
+<li>Soporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.</li>
 </ul>
+<p>Nota sobre JIT: no solo Julia lo usa — R, desde la versión 3.4, también compila a bytecode con JIT (paquete <code>compiler</code>), y Python (CPython) incluye un JIT experimental desde la 3.13. La diferencia es de diseño y madurez, no de “tiene JIT / no tiene JIT”.</p>
+<p>Nota: las particularidades de Julia se documentan aquí con base en las características generales del lenguaje; al no contar todavía con el notebook de Julia del proyecto, conviene revisarlas junto con el material específico cuando esté disponible.</p>
 </section>
 <section id="conclusiones" class="level1">
 <h1>Conclusiones</h1>
@@ -502,9 +507,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ejercicios-particularidades-de-r" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-r">Ejercicios: particularidades de R</h2>
 <p>Tres problemas que muestran características propias del lenguaje.</p>
-<section id="vectorización-nativa-sin-ciclo-explícito-básico" class="level3">
-<h3 class="anchored" data-anchor-id="vectorización-nativa-sin-ciclo-explícito-básico">1. Vectorización nativa (sin ciclo explícito) <span class="badge-dificultad basico">Básico</span></h3>
-<p>Multiplica el vector <code>c(10, 20, 30, 40)</code> por 2 — en R esto es automático, no hace falta ninguna biblioteca extra.</p>
+<section id="vectorización-básico-nativa-sin-ciclo-explícito" class="level3">
+<h3 class="anchored" data-anchor-id="vectorización-básico-nativa-sin-ciclo-explícito">1. Vectorización <span class="badge-dificultad basico">Básico</span> nativa (sin ciclo explícito)</h3>
+<p>Multiplica el vector <code>c(10, 20, 30, 40)</code> por 2 — en R esto es automático.</p>
 <div id="cell-4" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
@@ -516,8 +521,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="indexado-desde-1-básico" class="level3">
-<h3 class="anchored" data-anchor-id="indexado-desde-1-básico">2. Indexado desde 1 <span class="badge-dificultad basico">Básico</span></h3>
+<section id="indexado-básico-desde-1" class="level3">
+<h3 class="anchored" data-anchor-id="indexado-básico-desde-1">2. Indexado <span class="badge-dificultad basico">Básico</span> desde 1</h3>
 <p>Accede al primer elemento de <code>c("sensor1", "sensor2", "sensor3")</code>.</p>
 <div id="cell-6" class="cell">
 <details open="" class="code-fold">
