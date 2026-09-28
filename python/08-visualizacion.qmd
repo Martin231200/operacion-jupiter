@@ -1,0 +1,34 @@
+## Visualización en Python
+
+La librería más usada para gráficas es **Matplotlib**; la mayoría de las
+demás librerías de visualización (Seaborn, pandas `.plot()`) están
+construidas encima de ella.
+
+```python
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [1, 4, 9, 16]
+
+plt.plot(x, y)
+plt.xlabel("x")
+plt.ylabel("x al cuadrado")
+plt.title("Ejemplo de gráfica de línea")
+plt.show()
+```
+
+Para gráficas estadísticas más elaboradas (histogramas, boxplots, mapas de
+calor) con menos código, **Seaborn** suele ser más práctico:
+
+```python
+import seaborn as sns
+sns.histplot(datos)
+```
+
+`plt.show()` es necesario en un script normal para abrir la ventana de la
+gráfica; en un notebook de Jupyter/Colab normalmente no hace falta, porque la
+gráfica se muestra automáticamente debajo de la celda.
+
+> Recuerda agregar texto `alt` a las imágenes generadas cuando las insertes
+> como archivo estático en la página (ver nota de accesibilidad en el
+> glosario/checklist general).

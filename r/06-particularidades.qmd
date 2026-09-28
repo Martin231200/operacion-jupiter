@@ -1,0 +1,21 @@
+## Particularidades de R
+
+- **Indexado desde 1**, no desde 0.
+- **`NA` vs `NULL`**: `NA` es un valor faltante dentro de un vector y
+  "contagia" operaciones (`NA + 1` es `NA`). `NULL` representa ausencia
+  total de valor y no puede vivir dentro de un vector normal.
+- **Reciclado de vectores**: al operar dos vectores de distinto largo, R
+  repite el más corto:
+
+```r
+c(1, 2, 3, 4) + c(1, 2)   # 2 4 4 6 — recicla c(1,2) dos veces
+```
+
+- **Todo es un vector**: incluso un número solo es un vector de longitud 1.
+
+## JIT en R
+
+Desde la versión 3.4, el motor por defecto de R compila a bytecode con JIT
+(paquete `compiler`, integrado). No es exclusivo de Julia — Julia está
+diseñada desde cero alrededor de JIT/LLVM, mientras que R y Python (desde la
+3.13, de forma experimental) lo incorporaron después.

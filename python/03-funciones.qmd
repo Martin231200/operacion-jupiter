@@ -1,0 +1,33 @@
+## Funciones
+
+```python
+def nombre_funcion(argumentos):
+    # cálculos
+    return resultado
+```
+
+```python
+for variable in range(valor):
+    ...
+```
+
+`math` es parte de la librería estándar — **no requiere instalación**, solo
+importarla:
+
+```python
+import math
+```
+
+Las estructuras de datos nativas de Python son listas, tuplas, diccionarios
+y conjuntos. (Los DataFrames son de la librería **pandas**, no nativos del
+lenguaje — es un error común listarlos junto a las estructuras nativas.)
+
+Python permite argumentos con valor por defecto y argumentos con nombre:
+
+```python
+def calcular_area(base, altura=1):
+    return base * altura
+
+calcular_area(base=3, altura=5)   # el orden no importa si usas nombres
+calcular_area(3)                  # usa altura=1 por defecto
+```

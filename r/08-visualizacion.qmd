@@ -1,0 +1,21 @@
+## Visualización en R
+
+**Gráficos base** — incluidos, rápidos para exploración inicial:
+
+```r
+plot(x, y, main = "Ejemplo", xlab = "x", ylab = "y")
+```
+
+**`ggplot2`** — no viene por defecto (`install.packages("ggplot2")`), es el
+estándar para gráficos más elaborados, construido por capas con `+`:
+
+```r
+library(ggplot2)
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  labs(title = "Ejemplo", x = "x", y = "y")
+```
+
+Para empezar, los gráficos base bastan; `ggplot2` conviene cuando el
+resultado tiene que verse bien o vas a repetir el mismo tipo de gráfica
+muchas veces.

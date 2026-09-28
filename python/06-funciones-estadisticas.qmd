@@ -1,0 +1,38 @@
+## Funciones estadísticas
+
+La librería estándar de Python trae el módulo `statistics` (media, mediana,
+desviación estándar básicas), pero para trabajo estadístico real se usa
+**NumPy**:
+
+```python
+import numpy as np   # necesario antes de usar np — no viene precargado
+
+datos = [12, 15, 11, 18, 14]
+np.mean(datos)      # media
+np.median(datos)    # mediana
+np.std(datos)       # desviación estándar
+np.var(datos)       # varianza
+```
+
+> **Nota sobre `ddof`:** `np.std()` usa por defecto `ddof=0` (desviación
+> estándar poblacional). `statistics.stdev()` en Python, `sd()` en R y
+> `std()` en Julia usan `ddof=1` (muestral) por defecto. Con los mismos
+> datos esto da resultados distintos — no es un error, es una diferencia de
+> convención. Para comparar entre lenguajes, iguala el parámetro:
+> `np.std(datos, ddof=1)`.
+
+### Ejercicio
+
+Con las mediciones `[20.1, 19.8, 20.3, 19.9, 20.0, 20.2]` (en cm), calcula
+media y desviación estándar muestral (`ddof=1`), y determina si el rango de
+todas las mediciones está dentro de ±0.5 cm de la media.
+
+```python
+import numpy as np
+
+mediciones = np.array([20.1, 19.8, 20.3, 19.9, 20.0, 20.2])
+media = np.mean(mediciones)
+desv = np.std(mediciones, ddof=1)
+dentro_tolerancia = np.all(np.abs(mediciones - media) <= 0.5)
+print(media, desv, dentro_tolerancia)
+```

@@ -1,0 +1,18 @@
+## Entrada de datos
+
+`input()` siempre devuelve texto (`str`), aunque el usuario escriba un
+número:
+
+```python
+edad = input("¿Cuántos años tienes? ")   # str, incluso si escribes "20"
+edad = int(edad)                          # conversión explícita
+```
+
+## Operadores
+
+- **Aritméticos**: `+ - * / // % **` (`//` división entera, `%` residuo,
+  `**` potencia).
+- **De comparación**: `== != > < >= <=` — devuelven un booleano.
+- **Lógicos**: `and`, `or`, `not` (palabras completas, no `&&`/`||`/`!`).
+
+Un error común: `=` es asignación, `==` es comparación.

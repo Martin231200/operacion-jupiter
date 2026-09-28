@@ -1,0 +1,33 @@
+## Historia y contexto
+
+El proyecto R comenzó en 1993; la primera versión liberada fue en 1995; la
+versión 1.0.0 (considerada estable) salió en el año 2000.
+
+## Ventajas y desventajas
+
+- A favor: enfoque estadístico desde su diseño; `ggplot2` y el `tidyverse`
+  para análisis y visualización de datos; gran comunidad académica.
+- En contra: trabaja principalmente en memoria RAM, lo cual es una
+  limitación práctica con datasets muy grandes. La curva de aprendizaje de
+  su sintaxis (distinta a C/C++, más cercana a su predecesor S) puede ser
+  pronunciada al inicio.
+
+(No se lista "no hay responsabilidad en caso de errores" como ventaja — es
+una cláusula de licencia, no una característica del lenguaje.)
+
+## Instalación de paquetes
+
+```bash
+R -e "install.packages('nombre_del_paquete')"
+```
+
+## Notas sobre entornos
+
+`help.start()` y `q()` son del REPL interactivo de R / RStudio y no aplican
+directamente en Colab o Jupyter. Al día de hoy, Colab no ofrece "R" como tipo
+de entorno nativo, y `apt install r-base` no instala automáticamente el
+kernel `IRkernel` para Jupyter — hace falta instalarlo y registrarlo aparte.
+
+> Revisa los enlaces de esta página: hay una URL mal formada
+> (`coursera.org/https://rpubs.com/`) y varios envueltos en redirects de
+> `google.com/url` — usa la URL final directa.
