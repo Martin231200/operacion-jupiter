@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Proyecto Jupyter: Aprendamos Python – Operación Jupyter</title>
+<title>introduccion – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,7 +71,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../python/02-entrada-datos-operadores.html" rel="next">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -118,17 +117,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Proyecto Jupyter: Aprendamos Python – Operación Jupyter">
+<meta property="og:title" content="Operación Jupyter">
 <meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/python/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Proyecto Jupyter: Aprendamos Python – Operación Jupyter">
+<meta name="twitter:title" content="Operación Jupyter">
 <meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/python/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -316,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../glosario.html"> 
+    <a class="nav-link" href="../glosario.qmd"> 
 <span class="menu-text">Glosario</span></a>
   </li>  
   <li class="nav-item">
@@ -324,11 +323,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../python/01-introduccion.html" aria-current="page"> 
+    <a class="nav-link" href="../python/01-introduccion.ipynb"> 
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../r/01-introduccion.html"> 
+    <a class="nav-link" href="../r/01-introduccion.ipynb"> 
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
@@ -354,96 +353,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python/01-introduccion.html">Introducción e instalación</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/01-introduccion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Introducción e instalación</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/02-entrada-datos-operadores.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Entrada de datos y operadores</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/03-funciones.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Funciones</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/04-estructuras-datos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Estructuras de datos</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/05-arreglos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Arreglos</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/06-funciones-estadisticas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Funciones estadísticas</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios de ingeniería</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python/08-visualizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualización</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link active" data-scroll-target="#términos-clave">Términos clave</a></li>
+  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link active" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
   <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación">Instalación</a></li>
-  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
-  <li><a href="#mensaje" id="toc-mensaje" class="nav-link" data-scroll-target="#mensaje">Mensaje</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  <li><a href="#ventajas-y-desventajas" id="toc-ventajas-y-desventajas" class="nav-link" data-scroll-target="#ventajas-y-desventajas">Ventajas y desventajas</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Proyecto Jupyter: Aprendamos Python</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -455,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">25 de septiembre, 2026</p>
+      <p class="date-modified">28 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -466,96 +397,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Un notebook se arma con dos tipos de celda: de <strong>código</strong> (se ejecuta y muestra resultado) y de <strong>texto/Markdown</strong> (solo se renderiza como texto formateado). Así se ven lado a lado:</p>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/tipos-celda.svg" class="img-fluid figure-img"></p>
-<figcaption>Comparación de una celda de código (se ejecuta y muestra resultado) contra una celda de texto Markdown (solo se renderiza)</figcaption>
-</figure>
-</div>
-<section id="términos-clave" class="level2">
-<h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
-<p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
-<p><em>(Dale clic a cualquier término subrayado para ver su explicación.)</em></p>
-<p>Python fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde &amp; Informatica (CWI) en los Países Bajos.</p>
-<p>El nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python.</p>
+<section id="comandos-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-básicos">Comandos básicos</h2>
+<ul>
+<li><code>python archivo.py</code> — ejecuta un script de Python desde la terminal.</li>
+<li><code>python</code> (sin argumentos) — abre el intérprete interactivo (REPL); se sale con <code>exit()</code> o Ctrl+D.</li>
+<li><code>pip install nombre_paquete</code> — instala una librería externa.</li>
+<li><code>pip list</code> — muestra los paquetes instalados en el entorno actual.</li>
+<li><code>help(objeto)</code> — muestra la documentación de una función, clase o módulo.</li>
+<li><code>type(objeto)</code> — muestra el tipo de dato de una variable.</li>
+</ul>
+<p>En un notebook (Jupyter, Colab) estos mismos comandos se escriben en una celda y se ejecutan con Shift + Enter.</p>
 </section>
 <section id="instalación" class="level2">
 <h2 class="anchored" data-anchor-id="instalación">Instalación</h2>
-<p>La instalación consiste en descargar el kernel de Python directamente de su página web en la dirección <a href="https://www.python.org/downloads/">python.org</a> El usuario puede escoger el editor que mejor le convenga.</p>
+<p><strong>Opción 1 — Instalación local desde <a href="https://www.python.org/downloads/">python.org</a></strong></p>
+<p><strong>Opción 2 — Anaconda</strong> (recomendada para ciencia de datos): instala Python junto con NumPy, pandas, Matplotlib y el gestor de entornos <code>conda</code>.</p>
+<p><strong>Opción 3 — Jupyter</strong>, sobre una instalación existente:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install notebook</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Opción 4 — Google Colab</strong>: corre notebooks en el navegador sin instalar nada, con soporte nativo completo para Python (a diferencia de R y Julia).</p>
 </section>
-<section id="comandos-básicos" class="level2">
-<h2 class="anchored" data-anchor-id="comandos-básicos">Comandos básicos</h2>
-</section>
-<section id="mensaje" class="level2">
-<h2 class="anchored" data-anchor-id="mensaje">Mensaje</h2>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1742427263591,&quot;user_tz&quot;:360,&quot;elapsed&quot;:48,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="184cc657-9637-4e47-a56a-7c416585a24d">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La porra los saluda"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>La porra los saluda</code></pre>
-</div>
-</div>
-</section>
-<section id="ejercicios" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<p>Tres calentamientos para confirmar que tu entorno funciona.</p>
-<section id="mensaje-de-bienvenida-formateado" class="level3">
-<h3 class="anchored" data-anchor-id="mensaje-de-bienvenida-formateado">1. Mensaje de bienvenida formateado</h3>
-<p>Arma el mensaje <code>"Bienvenido a {proyecto} (v{version})"</code> con <code>proyecto="Operación Jupyter"</code> y <code>version=1</code>.</p>
-<div id="cell-13" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="ss">f"Bienvenido a </span><span class="sc">{</span>nombre_proyecto<span class="sc">}</span><span class="ss"> (v</span><span class="sc">{</span>version<span class="sc">}</span><span class="ss">)"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> mensaje <span class="op">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mensaje)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="verificar-el-entorno-con-una-operación-simple" class="level3">
-<h3 class="anchored" data-anchor-id="verificar-el-entorno-con-una-operación-simple">2. Verificar el entorno con una operación simple</h3>
-<p>Calcula 2 elevado a la 10 — si tu entorno corre bien, debe dar 1024.</p>
-<div id="cell-15" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="dv">2</span><span class="op">**</span><span class="dv">10</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> resultado <span class="op">==</span> <span class="dv">1024</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="contar-caracteres-de-un-mensaje-de-bitácora" class="level3">
-<h3 class="anchored" data-anchor-id="contar-caracteres-de-un-mensaje-de-bitácora">3. Contar caracteres de un mensaje de bitácora</h3>
-<p>¿Cuántos caracteres tiene <code>"Sistema iniciado correctamente"</code>?</p>
-<div id="cell-17" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="op">=</span> <span class="st">"Sistema iniciado correctamente"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>longitud <span class="op">=</span> <span class="bu">len</span>(mensaje_log)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> longitud <span class="op">==</span> <span class="dv">30</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(longitud)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
+<section id="ventajas-y-desventajas" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h2>
+<ul>
+<li>A favor: sintaxis simple y legible; ecosistema enorme de librerías; soporte nativo en Colab.</li>
+<li>En contra: al ser interpretado, suele ser más lento que lenguajes compilados para cómputo numérico intensivo. El manejo de entornos y versiones (pip vs conda, virtualenv) puede confundir al principio.</li>
+</ul>
 
 
-</section>
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -1022,16 +894,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../python/02-entrada-datos-operadores.html" class="pagination-link" aria-label="Entrada de datos y operadores">
-        <span class="nav-page-text">Entrada de datos y operadores</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comandos básicos</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`python archivo.py`</span> — ejecuta un script de Python desde la terminal.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`python`</span> (sin argumentos) — abre el intérprete interactivo (REPL); se sale</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  con <span class="in">`exit()`</span> o Ctrl+D.</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pip install nombre_paquete`</span> — instala una librería externa.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pip list`</span> — muestra los paquetes instalados en el entorno actual.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`help(objeto)`</span> — muestra la documentación de una función, clase o módulo.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`type(objeto)`</span> — muestra el tipo de dato de una variable.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>En un notebook (Jupyter, Colab) estos mismos comandos se escriben en una</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>celda y se ejecutan con Shift + Enter.</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalación</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>**Opción 1 — Instalación local desde [python.org](https://www.python.org/downloads/)**</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>**Opción 2 — Anaconda** (recomendada para ciencia de datos): instala Python</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>junto con NumPy, pandas, Matplotlib y el gestor de entornos <span class="in">`conda`</span>.</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>**Opción 3 — Jupyter**, sobre una instalación existente:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install notebook</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>**Opción 4 — Google Colab**: corre notebooks en el navegador sin instalar</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>nada, con soporte nativo completo para Python (a diferencia de R y Julia).</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ventajas y desventajas</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: sintaxis simple y legible; ecosistema enorme de librerías;</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  soporte nativo en Colab.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: al ser interpretado, suele ser más lento que lenguajes</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  compilados para cómputo numérico intensivo. El manejo de entornos y</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  versiones (pip vs conda, virtualenv) puede confundir al principio.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
