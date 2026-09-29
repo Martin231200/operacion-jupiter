@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>introduccion – Operación Jupyter</title>
+<title>Lenguajes de programación de código libre – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,6 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../r/02-tipos-y-variables.ipynb" rel="next">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -117,17 +118,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Operación Jupyter">
-<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta property="og:title" content="Lenguajes de programación de código libre – Operación Jupyter">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Operación Jupyter">
-<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta name="twitter:title" content="Lenguajes de programación de código libre – Operación Jupyter">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -323,11 +322,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../python/01-introduccion.ipynb"> 
+    <a class="nav-link" href="../python/01-introduccion.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../r/01-introduccion.ipynb"> 
+    <a class="nav-link active" href="../r/01-introduccion.html" aria-current="page"> 
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
@@ -353,29 +352,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/01-introduccion.html">Introducción e instalación</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/01-introduccion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introducción e instalación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/02-tipos-y-variables.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tipos de datos y variables</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/03-estructuras-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/04-estructuras-datos.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estructuras de datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/05-funciones.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/06-particularidades.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Particularidades</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/07-ejercicios-ingenieria.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios de ingeniería</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/08-visualizacion.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualización</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#historia-y-contexto" id="toc-historia-y-contexto" class="nav-link active" data-scroll-target="#historia-y-contexto">Historia y contexto</a></li>
-  <li><a href="#ventajas-y-desventajas" id="toc-ventajas-y-desventajas" class="nav-link" data-scroll-target="#ventajas-y-desventajas">Ventajas y desventajas</a></li>
-  <li><a href="#instalación-de-paquetes" id="toc-instalación-de-paquetes" class="nav-link" data-scroll-target="#instalación-de-paquetes">Instalación de paquetes</a></li>
-  <li><a href="#notas-sobre-entornos" id="toc-notas-sobre-entornos" class="nav-link" data-scroll-target="#notas-sobre-entornos">Notas sobre entornos</a></li>
+  <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a></li>
+  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
+  <ul class="collapse">
+  <li><a href="#correr-en-r-o-rstudio" id="toc-correr-en-r-o-rstudio" class="nav-link" data-scroll-target="#correr-en-r-o-rstudio">Correr en R o RStudio</a></li>
+  <li><a href="#correr-r-en-google-colab" id="toc-correr-r-en-google-colab" class="nav-link" data-scroll-target="#correr-r-en-google-colab">Correr R en Google Colab</a></li>
+  <li><a href="#ventajas-de-las-diferentes-interfaces" id="toc-ventajas-de-las-diferentes-interfaces" class="nav-link" data-scroll-target="#ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</a></li>
+  </ul></li>
+  <li><a href="#recursos-en-línea" id="toc-recursos-en-línea" class="nav-link" data-scroll-target="#recursos-en-línea">Recursos en línea</a></li>
+  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
+  <ul class="collapse">
+  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
+  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Lenguajes de programación de código libre</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -387,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">28 de septiembre, 2026</p>
+      <p class="date-modified">29 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -398,32 +472,161 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="historia-y-contexto" class="level2">
-<h2 class="anchored" data-anchor-id="historia-y-contexto">Historia y contexto</h2>
-<p>El proyecto R comenzó en 1993; la primera versión liberada fue en 1995; la versión 1.0.0 (considerada estable) salió en el año 2000.</p>
-</section>
-<section id="ventajas-y-desventajas" class="level2">
-<h2 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h2>
+<section id="r-y-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="r-y-rstudio">R y RStudio</h2>
+<section id="características" class="level3">
+<h3 class="anchored" data-anchor-id="características">Características</h3>
 <ul>
-<li>A favor: enfoque estadístico desde su diseño; <code>ggplot2</code> y el <code>tidyverse</code> para análisis y visualización de datos; gran comunidad académica.</li>
-<li>En contra: trabaja principalmente en memoria RAM, lo cual es una limitación práctica con datasets muy grandes. La curva de aprendizaje de su sintaxis (distinta a C/C++, más cercana a su predecesor S) puede ser pronunciada al inicio.</li>
+<li>R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos</li>
+<li>A diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)</li>
+<li>Es un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación</li>
+<li>R es competencia de Excel, Python, SPSS y STATA</li>
+<li>El proyecto R comenzó en 1993, inspirado en el lenguaje S. La primera versión liberada fue en 1995, y la versión 1.0.0 (considerada la primera estable) salió en el año 2000</li>
+<li>RStudio es un entorno de desarrollo integrado (IDE) para R</li>
 </ul>
-<p>(No se lista “no hay responsabilidad en caso de errores” como ventaja — es una cláusula de licencia, no una característica del lenguaje.)</p>
 </section>
-<section id="instalación-de-paquetes" class="level2">
-<h2 class="anchored" data-anchor-id="instalación-de-paquetes">Instalación de paquetes</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-e</span> <span class="st">"install.packages('nombre_del_paquete')"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ventajas-y-desventajas-de-r" class="level3">
+<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-r">Ventajas y desventajas de R</h3>
+<ul>
+<li>Es un software libre</li>
+<li>Es uno de los primeros lenguajes en recibir los nuevos temas de estadística</li>
+<li>Tiene una fácil conectividad y compatibilidad con otros lenguajes de programación</li>
+<li>Al trabajar principalmente en memoria RAM, el tamaño de las bases de datos que puede manejar cómodamente está limitado por la memoria disponible en el equipo</li>
+<li>Suele volverse más lento el análisis con grandes bases de datos</li>
+</ul>
 </section>
-<section id="notas-sobre-entornos" class="level2">
-<h2 class="anchored" data-anchor-id="notas-sobre-entornos">Notas sobre entornos</h2>
-<p><code>help.start()</code> y <code>q()</code> son del REPL interactivo de R / RStudio y no aplican directamente en Colab o Jupyter. Al día de hoy, Colab no ofrece “R” como tipo de entorno nativo, y <code>apt install r-base</code> no instala automáticamente el kernel <code>IRkernel</code> para Jupyter — hace falta instalarlo y registrarlo aparte.</p>
+</section>
+<section id="interfases-y-ambientes-colaborativos" class="level1">
+<h1>Interfases y ambientes colaborativos</h1>
+<section id="correr-en-r-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="correr-en-r-o-rstudio">Correr en R o RStudio</h2>
+<p>Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación.</p>
+<p>Para instalar R y RStudio se siguen los siguientes pasos:</p>
+<ul>
+<li>Primero se debe instalar R</li>
+<li>Dependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado</li>
+<li>Después de elegir el idioma, acepte los términos</li>
+<li>Al final de la instalación busque la carpeta en donde se guardó (generalmente <em>Aplicaciones</em>) para iniciarlo</li>
+<li>Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.</li>
+<li>Se descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar.</li>
+</ul>
+</section>
+<section id="correr-r-en-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="correr-r-en-google-colab">Correr R en Google Colab</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Por verificar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Al día de hoy, Google Colab no ofrece “R” como tipo de entorno de ejecución nativo desde el menú, y <code>apt install r-base</code> instala R pero no el kernel <code>IRkernel</code> de Jupyter automáticamente — hace falta instalarlo y registrarlo aparte. Los pasos de abajo pueden estar desactualizados; verifica el estado actual antes de seguirlos al pie de la letra.</p>
+</div>
+</div>
+<p>Para usar R en Google Colab, se siguen los siguientes pasos:</p>
+<ul>
+<li>Abre Google Colab (https://colab.research.google.com/)</li>
+<li>Crea un nuevo notebook</li>
+<li>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales. Instalar R en el entorno de Colab: en la primera celda de tu notebook, ejecuta estos comandos:</li>
+</ul>
 <blockquote class="blockquote">
-<p>Revisa los enlaces de esta página: hay una URL mal formada (<code>coursera.org/https://rpubs.com/</code>) y varios envueltos en redirects de <code>google.com/url</code> — usa la URL final directa.</p>
+<p>#OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)!</p>
+<p>#Se ejecuta solamente una vez</p>
+<p>!apt-get update</p>
+<p>!apt-get install -y r-base</p>
+<p>!apt-get install -y r-base-dev</p>
 </blockquote>
+<ul>
+<li>Instalar los paquetes requeridos en R:</li>
+</ul>
+<blockquote class="blockquote">
+<p>!R -e “install.packages(‘nombre_del_paquete’)”</p>
+</blockquote>
+<ul>
+<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”)</li>
+</ul>
+</section>
+<section id="ventajas-de-las-diferentes-interfaces" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</h2>
+<p>Las ventajas de RStudio en comparación con Google Colab son:</p>
+<ul>
+<li>Se tiene en cada momento un registro de las variables definidas y sus valores</li>
+<li>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac)</li>
+</ul>
+<p>Ventajas de correr en Google Colab:</p>
+<ul>
+<li>El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo</li>
+<li>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase)</li>
+</ul>
+<p>Desventajas de correr en Google Colab:</p>
+<ul>
+<li>Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.</li>
+<li>El IDE tiene menos opciones que en RStudio</li>
+<li>El sistema Markdown de Colab no es el mismo que en RStudio</li>
+</ul>
+</section>
+</section>
+<section id="recursos-en-línea" class="level1">
+<h1>Recursos en línea</h1>
+<ul>
+<li>Manual de referencia oficial (“An Introduction to R”): https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</li>
+<li>https://www.statmethods.net/index.html</li>
+<li>https://rpubs.com/</li>
+</ul>
+</section>
+<section id="primeros-pasos" class="level1">
+<h1>Primeros pasos</h1>
+<section id="comandos-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-básicos">Comandos básicos</h2>
+<p>Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>¿Cómo se organiza un notebook?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.</p>
+</div>
+</div>
+<p><img src="../images/tipos-celda-jupyter.svg" class="img-fluid"></p>
+</section>
+<section id="términos-clave" class="level2">
+<h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
+<p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
+<p><em>(Dale clic a cualquier término subrayado para ver su explicación.)</em></p>
+<div id="cell-4" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Licencia de R</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Contribuyentes</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contributors</span>()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Cita</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-<em>r-a-language-and-environment-for-statistical-computing</em>.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
+<div id="cell-6" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ayuda</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(seq)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>? seq</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Nota: help.start() abre un navegador con la documentacion completa y q() cierra</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#la sesion de R -- ambos son para la consola/RStudio interactivos, no funcionan</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#igual dentro de un notebook de Jupyter o Colab.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 
 
-<!-- -->
-
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -890,41 +1093,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Historia y contexto</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>El proyecto R comenzó en 1993; la primera versión liberada fue en 1995; la</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>versión 1.0.0 (considerada estable) salió en el año 2000.</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ventajas y desventajas</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: enfoque estadístico desde su diseño; <span class="in">`ggplot2`</span> y el <span class="in">`tidyverse`</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  para análisis y visualización de datos; gran comunidad académica.</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: trabaja principalmente en memoria RAM, lo cual es una</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  limitación práctica con datasets muy grandes. La curva de aprendizaje de</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  su sintaxis (distinta a C/C++, más cercana a su predecesor S) puede ser</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  pronunciada al inicio.</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>(No se lista "no hay responsabilidad en caso de errores" como ventaja — es</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>una cláusula de licencia, no una característica del lenguaje.)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instalación de paquetes</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">-e</span> <span class="st">"install.packages('nombre_del_paquete')"</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notas sobre entornos</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">`help.start()`</span> y <span class="in">`q()`</span> son del REPL interactivo de R / RStudio y no aplican</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>directamente en Colab o Jupyter. Al día de hoy, Colab no ofrece "R" como tipo</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>de entorno nativo, y <span class="in">`apt install r-base`</span> no instala automáticamente el</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>kernel <span class="in">`IRkernel`</span> para Jupyter — hace falta instalarlo y registrarlo aparte.</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Revisa los enlaces de esta página: hay una URL mal formada</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (</span><span class="in">`coursera.org/https://rpubs.com/`</span><span class="at">) y varios envueltos en redirects de</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="in">`google.com/url`</span><span class="at"> — usa la URL final directa.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../r/02-tipos-y-variables.ipynb" class="pagination-link" aria-label="Tipos de datos y variables">
+        <span class="nav-page-text">Tipos de datos y variables</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

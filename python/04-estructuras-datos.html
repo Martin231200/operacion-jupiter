@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>estructuras-datos – Operación Jupyter</title>
+<title>Python: estructuras de datos – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,6 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../python/05-arreglos.html" rel="next">
+<link href="../python/03-funciones.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -117,17 +119,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Operación Jupyter">
+<meta property="og:title" content="Python: estructuras de datos – Operación Jupyter">
 <meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/python/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Operación Jupyter">
+<meta name="twitter:title" content="Python: estructuras de datos – Operación Jupyter">
 <meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/python/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -323,11 +325,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../python/01-introduccion.ipynb"> 
+    <a class="nav-link active" href="../python/01-introduccion.html" aria-current="page"> 
 <span class="menu-text">Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../r/01-introduccion.ipynb"> 
+    <a class="nav-link" href="../r/01-introduccion.html"> 
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
@@ -353,26 +355,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python/04-estructuras-datos.html">Estructuras de datos</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/01-introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introducción e instalación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/02-entrada-datos-operadores.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Entrada de datos y operadores</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/03-funciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/04-estructuras-datos.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Estructuras de datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/05-arreglos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arreglos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/06-funciones-estadisticas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funciones estadísticas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/07-ejercicios-ingenieria.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios de ingeniería</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python/08-visualizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualización</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#estructuras-de-datos-en-python" id="toc-estructuras-de-datos-en-python" class="nav-link active" data-scroll-target="#estructuras-de-datos-en-python">Estructuras de datos en Python</a></li>
+  <li><a href="#listas-son-mutables" id="toc-listas-son-mutables" class="nav-link active" data-scroll-target="#listas-son-mutables">Listas son mutables</a></li>
+  <li><a href="#diccionarios-conservan-el-orden-de-inserción" id="toc-diccionarios-conservan-el-orden-de-inserción" class="nav-link" data-scroll-target="#diccionarios-conservan-el-orden-de-inserción">Diccionarios conservan el orden de inserción</a></li>
+  <li><a href="#min-y-max-también-sirven-con-texto" id="toc-min-y-max-también-sirven-con-texto" class="nav-link" data-scroll-target="#min-y-max-también-sirven-con-texto"><code>min</code> y <code>max</code> también sirven con texto</a></li>
+  <li><a href="#ejercicio" id="toc-ejercicio" class="nav-link" data-scroll-target="#ejercicio">Ejercicio</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Python: estructuras de datos</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -384,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">28 de septiembre, 2026</p>
+      <p class="date-modified">29 de septiembre, 2026</p>
     </div>
   </div>
     
@@ -395,44 +466,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="estructuras-de-datos-en-python" class="level2">
-<h2 class="anchored" data-anchor-id="estructuras-de-datos-en-python">Estructuras de datos en Python</h2>
-<p>Python tiene cuatro estructuras de datos nativas, y elegir la correcta depende de si necesitas orden, si los elementos se repiten, y si vas a modificarlos después de crearlos:</p>
-<ul>
-<li><strong>Lista</strong> <code>[1, 2, 3]</code> — mutable, ordenada, permite duplicados.</li>
-<li><strong>Tupla</strong> <code>(1, 2, 3)</code> — inmutable, ordenada, permite duplicados. Se usa cuando los datos no deben cambiar (por ejemplo, coordenadas).</li>
-<li><strong>Diccionario</strong> <code>{"clave": valor}</code> — pares clave-valor. Desde Python 3.7 conserva el orden de inserción (no es “no ordenado”, como a veces se dice).</li>
-<li><strong>Conjunto (set)</strong> <code>{1, 2, 3}</code> — sin duplicados, sin orden garantizado.</li>
-</ul>
-<section id="mutabilidad-de-listas" class="level3">
-<h3 class="anchored" data-anchor-id="mutabilidad-de-listas">Mutabilidad de listas</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Sopes <span class="op">=</span> [<span class="st">'Pozole'</span>, <span class="st">'Atole'</span>, <span class="st">'Tamales'</span>]</span>
+<p>Elegir la estructura correcta depende de si necesitas orden, si los elementos pueden repetirse y si vas a modificarlos.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estructura</th>
+<th>Sintaxis</th>
+<th>Mutable</th>
+<th>Orden</th>
+<th>Duplicados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lista</td>
+<td><code>[1, 2, 3]</code></td>
+<td>Sí</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr class="even">
+<td>Tupla</td>
+<td><code>(1, 2, 3)</code></td>
+<td>No</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+<tr class="odd">
+<td>Diccionario</td>
+<td><code>{"a": 1}</code></td>
+<td>Sí</td>
+<td>Orden de inserción</td>
+<td>Claves únicas</td>
+</tr>
+<tr class="even">
+<td>Conjunto</td>
+<td><code>{1, 2, 3}</code></td>
+<td>Sí</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<section id="listas-son-mutables" class="level2">
+<h2 class="anchored" data-anchor-id="listas-son-mutables">Listas son mutables</h2>
+<div id="5780a7a0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-29T13:29:45.871781Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-29T13:29:45.871154Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-29T13:29:45.877386Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-29T13:29:45.876481Z&quot;}}" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Sopes <span class="op">=</span> [<span class="st">'Pozole'</span>, <span class="st">'Atole'</span>, <span class="st">'Tamales'</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Sopes[<span class="dv">1</span>] <span class="op">=</span> <span class="st">'Tasajo'</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Sopes)              <span class="co"># ['Pozole', 'Tasajo', 'Tamales']</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Tasajo'</span> <span class="kw">in</span> Sopes)  <span class="co"># True</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Sopes)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Tasajo'</span> <span class="kw">in</span> Sopes)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Pozole', 'Tasajo', 'Tamales']
+True</code></pre>
+</div>
+</div>
 </section>
-<section id="min-y-max-no-son-solo-para-números" class="level3">
-<h3 class="anchored" data-anchor-id="min-y-max-no-son-solo-para-números">min() y max() no son solo para números</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>([<span class="st">"banana"</span>, <span class="st">"manzana"</span>, <span class="st">"kiwi"</span>])   <span class="co"># 'banana' (orden alfabético)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>])                  <span class="co"># 5</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="diccionarios-conservan-el-orden-de-inserción" class="level2">
+<h2 class="anchored" data-anchor-id="diccionarios-conservan-el-orden-de-inserción">Diccionarios conservan el orden de inserción</h2>
+<p>Desde Python 3.7, un diccionario recuerda el orden en que agregaste las claves.</p>
+<div id="4131ee8a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-29T13:29:45.879457Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-29T13:29:45.878802Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-29T13:29:45.883420Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-29T13:29:45.882632Z&quot;}}" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">"b"</span>: <span class="dv">1</span>, <span class="st">"a"</span>: <span class="dv">2</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"c"</span>] <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(d))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>['b', 'a', 'c']</code></pre>
+</div>
+</div>
 </section>
-<section id="ejercicio" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio">Ejercicio</h3>
-<p>Dado el diccionario <code>inventario = {"tornillos": 120, "tuercas": 340, "arandelas": 85}</code>:</p>
-<ol type="1">
-<li>Agrega la clave <code>"remaches"</code> con valor <code>200</code>.</li>
-<li>Imprime las claves en el mismo orden en que las agregaste (confirma que Python conserva el orden de inserción).</li>
-<li>Encuentra el material con menor cantidad usando <code>min()</code> sobre los valores.</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="op">=</span> {<span class="st">"tornillos"</span>: <span class="dv">120</span>, <span class="st">"tuercas"</span>: <span class="dv">340</span>, <span class="st">"arandelas"</span>: <span class="dv">85</span>}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>inventario[<span class="st">"remaches"</span>] <span class="op">=</span> <span class="dv">200</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(inventario.keys()))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(inventario, key<span class="op">=</span>inventario.get))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="min-y-max-también-sirven-con-texto" class="level2">
+<h2 class="anchored" data-anchor-id="min-y-max-también-sirven-con-texto"><code>min</code> y <code>max</code> también sirven con texto</h2>
+<div id="4fc2073e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-29T13:29:45.885021Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-29T13:29:45.884873Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-29T13:29:45.889183Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-29T13:29:45.888184Z&quot;}}" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>([<span class="st">"banana"</span>, <span class="st">"manzana"</span>, <span class="st">"kiwi"</span>]), <span class="bu">max</span>([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>]))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>banana 5</code></pre>
+</div>
+</div>
+</section>
+<section id="ejercicio" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio">Ejercicio</h2>
+<p>Con <code>inventario = {"tornillos": 120, "tuercas": 340, "arandelas": 85}</code>, agrega <code>"remaches": 200</code>, imprime las claves y encuentra el material con menor cantidad.</p>
+<div id="b0a17dea" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-29T13:29:45.890755Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-29T13:29:45.890560Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-29T13:29:45.895332Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-29T13:29:45.894434Z&quot;}}" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="op">=</span> {<span class="st">"tornillos"</span>: <span class="dv">120</span>, <span class="st">"tuercas"</span>: <span class="dv">340</span>, <span class="st">"arandelas"</span>: <span class="dv">85</span>}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>inventario[<span class="st">"remaches"</span>] <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(inventario.keys()))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(inventario, key<span class="op">=</span>inventario.get))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>['tornillos', 'tuercas', 'arandelas', 'remaches']
+arandelas</code></pre>
+</div>
+</div>
 
 
-<!-- -->
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -899,52 +1035,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estructuras de datos en Python</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Python tiene cuatro estructuras de datos nativas, y elegir la correcta</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>depende de si necesitas orden, si los elementos se repiten, y si vas a</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>modificarlos después de crearlos:</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lista** <span class="in">`[1, 2, 3]`</span> — mutable, ordenada, permite duplicados.</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tupla** <span class="in">`(1, 2, 3)`</span> — inmutable, ordenada, permite duplicados. Se usa</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  cuando los datos no deben cambiar (por ejemplo, coordenadas).</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Diccionario** <span class="in">`{"clave": valor}`</span> — pares clave-valor. Desde Python 3.7</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  conserva el orden de inserción (no es "no ordenado", como a veces se dice).</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Conjunto (set)** <span class="in">`{1, 2, 3}`</span> — sin duplicados, sin orden garantizado.</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mutabilidad de listas</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>Sopes <span class="op">=</span> [<span class="st">'Pozole'</span>, <span class="st">'Atole'</span>, <span class="st">'Tamales'</span>]</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>Sopes[<span class="dv">1</span>] <span class="op">=</span> <span class="st">'Tasajo'</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Sopes)              <span class="co"># ['Pozole', 'Tasajo', 'Tamales']</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Tasajo'</span> <span class="kw">in</span> Sopes)  <span class="co"># True</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### min() y max() no son solo para números</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>([<span class="st">"banana"</span>, <span class="st">"manzana"</span>, <span class="st">"kiwi"</span>])   <span class="co"># 'banana' (orden alfabético)</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">5</span>])                  <span class="co"># 5</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Ejercicio</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>Dado el diccionario <span class="in">`inventario = {"tornillos": 120, "tuercas": 340, "arandelas": 85}`</span>:</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Agrega la clave <span class="in">`"remaches"`</span> con valor <span class="in">`200`</span>.</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Imprime las claves en el mismo orden en que las agregaste (confirma que</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>   Python conserva el orden de inserción).</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Encuentra el material con menor cantidad usando <span class="in">`min()`</span> sobre los valores.</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>inventario <span class="op">=</span> {<span class="st">"tornillos"</span>: <span class="dv">120</span>, <span class="st">"tuercas"</span>: <span class="dv">340</span>, <span class="st">"arandelas"</span>: <span class="dv">85</span>}</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>inventario[<span class="st">"remaches"</span>] <span class="op">=</span> <span class="dv">200</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(inventario.keys()))</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(inventario, key<span class="op">=</span>inventario.get))</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../python/03-funciones.html" class="pagination-link" aria-label="Funciones">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Funciones</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../python/05-arreglos.html" class="pagination-link" aria-label="Arreglos">
+        <span class="nav-page-text">Arreglos</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

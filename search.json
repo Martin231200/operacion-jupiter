@@ -467,186 +467,246 @@
     ]
   },
   {
-    "objectID": "r/02-tipos-variables.html",
-    "href": "r/02-tipos-variables.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
-  },
-  {
-    "objectID": "r/02-tipos-variables.html#asignación-vs-nombrar-argumentos",
-    "href": "r/02-tipos-variables.html#asignación-vs-nombrar-argumentos",
-    "title": "",
-    "section": "Asignación vs nombrar argumentos",
-    "text": "Asignación vs nombrar argumentos\n= a nivel superior asigna, igual que &lt;-. Dentro de una llamada a función, = no asigna: nombra un argumento.\nx = 5        # asignación, equivalente a x &lt;- 5\nf(x = 3)     # aquí x = 3 nombra el argumento x de f, no crea una variable x"
-  },
-  {
-    "objectID": "r/02-tipos-variables.html#tipos-básicos",
-    "href": "r/02-tipos-variables.html#tipos-básicos",
-    "title": "",
-    "section": "Tipos básicos",
-    "text": "Tipos básicos\nR tiene tipos básicos como numeric, character, logical e integer. Una particularidad: incluso un solo valor es técnicamente un vector de longitud 1 — no existe un tipo “escalar” separado.\nx &lt;- 5\nis.vector(x)   # TRUE\nlength(x)      # 1"
-  },
-  {
     "objectID": "r/03-estructuras-control.html",
     "href": "r/03-estructuras-control.html",
-    "title": "",
+    "title": "Estructuras: secuencias, decisiones y repeticiones",
     "section": "",
-    "text": "Código"
+    "text": "R usa if/else de forma parecida a otros lenguajes, pero con una particularidad: if es una expresión, no solo una instrucción — puede devolver un valor directamente:\nPara repeticiones, R tiene for, while, y repeat. Sin embargo, en R se prefiere evitar los ciclos for explícitos cuando es posible, a favor de funciones vectorizadas que operan sobre el vector completo de una vez:\nEsta preferencia por vectorización en vez de ciclos explícitos es una de las diferencias de estilo más marcadas frente a Python.",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
   },
   {
-    "objectID": "r/03-estructuras-control.html#estructuras-de-control",
-    "href": "r/03-estructuras-control.html#estructuras-de-control",
-    "title": "",
-    "section": "Estructuras de control",
-    "text": "Estructuras de control\nif en R es una expresión, no solo una instrucción — puede devolver un valor directamente:\nresultado &lt;- if (x &gt; 0) \"positivo\" else \"no positivo\"\nPara repeticiones: for, while, y repeat (equivalente a while (TRUE) con break explícito).\nEn R se prefiere evitar ciclos for explícitos cuando es posible, a favor de operaciones vectorizadas:\n# Menos idiomático:\nresultado &lt;- numeric(length(x))\nfor (i in seq_along(x)) resultado[i] &lt;- x[i]^2\n\n# Más idiomático en R:\nresultado &lt;- x^2"
+    "objectID": "r/03-estructuras-control.html#secuencias",
+    "href": "r/03-estructuras-control.html#secuencias",
+    "title": "Estructuras: secuencias, decisiones y repeticiones",
+    "section": "Secuencias",
+    "text": "Secuencias\n\n\nVer/ocultar código\nseq(0, 1, by = 0.25)\nseq_len(5)\n\n\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”Estructura “repeat”\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nif (x &gt; 0) {\nprint(\"positivo\")\n} else {\nprint(\"no positivo\")\n}\n\n\n\n\n\n\nVer/ocultar código\nfor (i in 1:5) {\nprint(i)\n}\n\n\n\n\n\n\nVer/ocultar código\ni &lt;- 1\nwhile (i &lt;= 5) {\nprint(i)\ni &lt;- i + 1\n}\n\n\n\n\nrepeat ejecuta el bloque indefinidamente hasta encontrar un break; es el equivalente en R de un bucle “do-while”.\n\n\nVer/ocultar código\ni &lt;- 1\nrepeat {\nprint(i)\ni &lt;- i + 1\nif (i &gt; 5) break\n}",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
   },
   {
-    "objectID": "r/05-funciones.html",
-    "href": "r/05-funciones.html",
-    "title": "",
+    "objectID": "r/03-estructuras-control.html#ejercicios",
+    "href": "r/03-estructuras-control.html#ejercicios",
+    "title": "Estructuras: secuencias, decisiones y repeticiones",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con estructuras de control, contexto de ingeniería.\n\n1. Consumo total de energía Básico (ciclo for)\nSuma el consumo (kWh) de 5 máquinas: c(120, 95, 150, 80, 110).\n\n\nVer/ocultar código\nconsumos &lt;- c(120, 95, 150, 80, 110)\ntotal &lt;- 0\nfor (c in consumos) {\n  total &lt;- total + c\n}\n\nstopifnot(total == 555)\ncat(\"Consumo total:\", total, \"kWh\\n\")\n\n\n\n\n2. Clasificar estado por temperatura Intermedio (if/else if/else)\nClasifica una máquina: \"normal\" si temp &lt; 60, \"alerta\" si &lt; 85, \"critico\" en otro caso. Prueba con 45, 70 y 90 °C.\n\n\nVer/ocultar código\nclasificar &lt;- function(temp) {\n  if (temp &lt; 60) {\n    return(\"normal\")\n  } else if (temp &lt; 85) {\n    return(\"alerta\")\n  } else {\n    return(\"critico\")\n  }\n}\n\nresultados &lt;- sapply(c(45, 70, 90), clasificar)\nstopifnot(all(resultados == c(\"normal\", \"alerta\", \"critico\")))\nprint(resultados)\n\n\n\n\n3. Simular llenado de un tanque Intermedio (while)\nUn tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda?\n\n\nVer/ocultar código\nnivel &lt;- 0\nobjetivo &lt;- 500\ntasa &lt;- 45\nminutos &lt;- 0\n\nwhile (nivel &lt; objetivo) {\n  nivel &lt;- nivel + tasa\n  minutos &lt;- minutos + 1\n}\n\nstopifnot(minutos == 12)\ncat(\"Minutos:\", minutos, \", nivel final:\", nivel, \"L\\n\")",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
+  },
+  {
+    "objectID": "r/06-particularidades.html",
+    "href": "r/06-particularidades.html",
+    "title": "Particularidades de cada lenguaje",
     "section": "",
-    "text": "Código"
+    "text": "Indexado desde 1 (no desde 0).\nVectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.\nOrientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.\nAsignación con &lt;- como convención, aunque = es válido (dentro de una llamada a función, f(x = 3), el = no asigna: nombra un argumento).\nNA vs NULL: NA representa un valor faltante dentro de un vector (y “contagia” el resultado de operaciones: NA + 1 es NA). NULL representa la ausencia total de un valor, y no puede vivir dentro de un vector normal.\nReciclado de vectores: si operas dos vectores de distinto largo, R repite el más corto para completar la operación, a veces sin avisar (c(1,2,3,4) + c(1,2) da 2 4 4 6) — útil cuando es intencional, fuente de bugs cuando no lo es.\nTodo es un vector: incluso un solo número (5) es técnicamente un vector de longitud 1, no un tipo escalar separado.",
+    "crumbs": [
+      "R",
+      "Particularidades"
+    ]
   },
   {
-    "objectID": "r/05-funciones.html#funciones-en-r",
-    "href": "r/05-funciones.html#funciones-en-r",
-    "title": "",
-    "section": "Funciones en R",
-    "text": "Funciones en R\nsaludar &lt;- function(nombre) {\n  paste(\"Hola,\", nombre)\n}\nR permite argumentos con nombre en cualquier orden, y valores por defecto:\ncalcular_area &lt;- function(base, altura = 1) {\n  base * altura\n}\n\ncalcular_area(altura = 5, base = 3)  # el orden no importa si usas nombres\ncalcular_area(3)                      # usa altura = 1 por defecto\nTambién soporta funciones anónimas, útiles para pasarlas como argumento:\nsapply(1:5, function(x) x^2)"
-  },
-  {
-    "objectID": "r/08-visualizacion.html",
-    "href": "r/08-visualizacion.html",
-    "title": "",
+    "objectID": "r/06-particularidades.html#r",
+    "href": "r/06-particularidades.html#r",
+    "title": "Particularidades de cada lenguaje",
     "section": "",
-    "text": "Código"
+    "text": "Indexado desde 1 (no desde 0).\nVectorizado por diseño: las operaciones aritméticas se aplican elemento a elemento sin necesidad de bucles explícitos.\nOrientado a estadística y visualización de datos; ecosistema CRAN muy amplio para análisis estadístico.\nAsignación con &lt;- como convención, aunque = es válido (dentro de una llamada a función, f(x = 3), el = no asigna: nombra un argumento).\nNA vs NULL: NA representa un valor faltante dentro de un vector (y “contagia” el resultado de operaciones: NA + 1 es NA). NULL representa la ausencia total de un valor, y no puede vivir dentro de un vector normal.\nReciclado de vectores: si operas dos vectores de distinto largo, R repite el más corto para completar la operación, a veces sin avisar (c(1,2,3,4) + c(1,2) da 2 4 4 6) — útil cuando es intencional, fuente de bugs cuando no lo es.\nTodo es un vector: incluso un solo número (5) es técnicamente un vector de longitud 1, no un tipo escalar separado.",
+    "crumbs": [
+      "R",
+      "Particularidades"
+    ]
   },
   {
-    "objectID": "r/08-visualizacion.html#visualización-en-r",
-    "href": "r/08-visualizacion.html#visualización-en-r",
-    "title": "",
-    "section": "Visualización en R",
-    "text": "Visualización en R\nGráficos base — incluidos, rápidos para exploración inicial:\nplot(x, y, main = \"Ejemplo\", xlab = \"x\", ylab = \"y\")\nggplot2 — no viene por defecto (install.packages(\"ggplot2\")), es el estándar para gráficos más elaborados, construido por capas con +:\nlibrary(ggplot2)\nggplot(data, aes(x = x, y = y)) +\n  geom_point() +\n  labs(title = \"Ejemplo\", x = \"x\", y = \"y\")\nPara empezar, los gráficos base bastan; ggplot2 conviene cuando el resultado tiene que verse bien o vas a repetir el mismo tipo de gráfica muchas veces."
+    "objectID": "r/06-particularidades.html#python",
+    "href": "r/06-particularidades.html#python",
+    "title": "Particularidades de cada lenguaje",
+    "section": "Python",
+    "text": "Python\n\nIndexado desde 0.\nLenguaje de propósito general; su uso en ciencia de datos depende de bibliotecas externas (NumPy, pandas, Matplotlib).\nSintaxis basada en indentación en vez de llaves para delimitar bloques.\nTipado dinámico, igual que R, pero con una sintaxis orientada a objetos más explícita (todo es un objeto con métodos).",
+    "crumbs": [
+      "R",
+      "Particularidades"
+    ]
   },
   {
-    "objectID": "python/03-funciones.html",
-    "href": "python/03-funciones.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
+    "objectID": "r/06-particularidades.html#julia",
+    "href": "r/06-particularidades.html#julia",
+    "title": "Particularidades de cada lenguaje",
+    "section": "Julia",
+    "text": "Julia\n\nIndexado desde 1, como R.\nDiseñado para desempeño numérico: se compila “just-in-time” (JIT), por lo que puede acercarse a la velocidad de C manteniendo una sintaxis de alto nivel.\nNació explícitamente para resolver el “problema de los dos lenguajes” (prototipar en un lenguaje interpretado y reescribir en uno compilado para producción).\nSoporte nativo para multiple dispatch: el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero.\n\nNota sobre JIT: no solo Julia lo usa — R, desde la versión 3.4, también compila a bytecode con JIT (paquete compiler), y Python (CPython) incluye un JIT experimental desde la 3.13. La diferencia es de diseño y madurez, no de “tiene JIT / no tiene JIT”.\nNota: las particularidades de Julia se documentan aquí con base en las características generales del lenguaje; al no contar todavía con el notebook de Julia del proyecto, conviene revisarlas junto con el material específico cuando esté disponible.",
+    "crumbs": [
+      "R",
+      "Particularidades"
+    ]
   },
   {
-    "objectID": "python/03-funciones.html#funciones",
-    "href": "python/03-funciones.html#funciones",
-    "title": "",
-    "section": "Funciones",
-    "text": "Funciones\ndef nombre_funcion(argumentos):\n    # cálculos\n    return resultado\nfor variable in range(valor):\n    ...\nmath es parte de la librería estándar — no requiere instalación, solo importarla:\nimport math\nLas estructuras de datos nativas de Python son listas, tuplas, diccionarios y conjuntos. (Los DataFrames son de la librería pandas, no nativos del lenguaje — es un error común listarlos junto a las estructuras nativas.)\nPython permite argumentos con valor por defecto y argumentos con nombre:\ndef calcular_area(base, altura=1):\n    return base * altura\n\ncalcular_area(base=3, altura=5)   # el orden no importa si usas nombres\ncalcular_area(3)                  # usa altura=1 por defecto"
-  },
-  {
-    "objectID": "python/01-introduccion.html",
-    "href": "python/01-introduccion.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
-  },
-  {
-    "objectID": "python/01-introduccion.html#comandos-básicos",
-    "href": "python/01-introduccion.html#comandos-básicos",
-    "title": "",
-    "section": "Comandos básicos",
-    "text": "Comandos básicos\n\npython archivo.py — ejecuta un script de Python desde la terminal.\npython (sin argumentos) — abre el intérprete interactivo (REPL); se sale con exit() o Ctrl+D.\npip install nombre_paquete — instala una librería externa.\npip list — muestra los paquetes instalados en el entorno actual.\nhelp(objeto) — muestra la documentación de una función, clase o módulo.\ntype(objeto) — muestra el tipo de dato de una variable.\n\nEn un notebook (Jupyter, Colab) estos mismos comandos se escriben en una celda y se ejecutan con Shift + Enter."
-  },
-  {
-    "objectID": "python/01-introduccion.html#instalación",
-    "href": "python/01-introduccion.html#instalación",
-    "title": "",
-    "section": "Instalación",
-    "text": "Instalación\nOpción 1 — Instalación local desde python.org\nOpción 2 — Anaconda (recomendada para ciencia de datos): instala Python junto con NumPy, pandas, Matplotlib y el gestor de entornos conda.\nOpción 3 — Jupyter, sobre una instalación existente:\npip install notebook\njupyter notebook\nOpción 4 — Google Colab: corre notebooks en el navegador sin instalar nada, con soporte nativo completo para Python (a diferencia de R y Julia)."
-  },
-  {
-    "objectID": "python/01-introduccion.html#ventajas-y-desventajas",
-    "href": "python/01-introduccion.html#ventajas-y-desventajas",
-    "title": "",
-    "section": "Ventajas y desventajas",
-    "text": "Ventajas y desventajas\n\nA favor: sintaxis simple y legible; ecosistema enorme de librerías; soporte nativo en Colab.\nEn contra: al ser interpretado, suele ser más lento que lenguajes compilados para cómputo numérico intensivo. El manejo de entornos y versiones (pip vs conda, virtualenv) puede confundir al principio."
-  },
-  {
-    "objectID": "python/06-funciones-estadisticas.html",
-    "href": "python/06-funciones-estadisticas.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
-  },
-  {
-    "objectID": "python/06-funciones-estadisticas.html#funciones-estadísticas",
-    "href": "python/06-funciones-estadisticas.html#funciones-estadísticas",
-    "title": "",
-    "section": "Funciones estadísticas",
-    "text": "Funciones estadísticas\nLa librería estándar de Python trae el módulo statistics (media, mediana, desviación estándar básicas), pero para trabajo estadístico real se usa NumPy:\nimport numpy as np   # necesario antes de usar np — no viene precargado\n\ndatos = [12, 15, 11, 18, 14]\nnp.mean(datos)      # media\nnp.median(datos)    # mediana\nnp.std(datos)       # desviación estándar\nnp.var(datos)       # varianza\n\nNota sobre ddof: np.std() usa por defecto ddof=0 (desviación estándar poblacional). statistics.stdev() en Python, sd() en R y std() en Julia usan ddof=1 (muestral) por defecto. Con los mismos datos esto da resultados distintos — no es un error, es una diferencia de convención. Para comparar entre lenguajes, iguala el parámetro: np.std(datos, ddof=1).\n\n\nEjercicio\nCon las mediciones [20.1, 19.8, 20.3, 19.9, 20.0, 20.2] (en cm), calcula media y desviación estándar muestral (ddof=1), y determina si el rango de todas las mediciones está dentro de ±0.5 cm de la media.\nimport numpy as np\n\nmediciones = np.array([20.1, 19.8, 20.3, 19.9, 20.0, 20.2])\nmedia = np.mean(mediciones)\ndesv = np.std(mediciones, ddof=1)\ndentro_tolerancia = np.all(np.abs(mediciones - media) &lt;= 0.5)\nprint(media, desv, dentro_tolerancia)"
+    "objectID": "r/06-particularidades.html#ejercicios-particularidades-de-r",
+    "href": "r/06-particularidades.html#ejercicios-particularidades-de-r",
+    "title": "Particularidades de cada lenguaje",
+    "section": "Ejercicios: particularidades de R",
+    "text": "Ejercicios: particularidades de R\nTres problemas que muestran características propias del lenguaje.\n\n1. Vectorización Básico nativa (sin ciclo explícito)\nMultiplica el vector c(10, 20, 30, 40) por 2 — en R esto es automático.\n\n\nVer/ocultar código\nvalores &lt;- c(10, 20, 30, 40)\ndoble &lt;- valores * 2\n\nstopifnot(all(doble == c(20, 40, 60, 80)))\nprint(doble)\n\n\n\n\n2. Indexado Básico desde 1\nAccede al primer elemento de c(\"sensor1\", \"sensor2\", \"sensor3\").\n\n\nVer/ocultar código\netiquetas &lt;- c(\"sensor1\", \"sensor2\", \"sensor3\")\nprimero &lt;- etiquetas[1]\n\nstopifnot(primero == \"sensor1\")\nprint(primero)\n\n\n\n\n3. Tipado dinámico Intermedio\nAsigna 10 a una variable, revisa su clase, luego reasígnale un texto y revisa la clase otra vez.\n\n\nVer/ocultar código\nx &lt;- 10\ntipo1 &lt;- class(x)\n\nx &lt;- \"ahora soy texto\"\ntipo2 &lt;- class(x)\n\nstopifnot(tipo1 == \"numeric\", tipo2 == \"character\")\ncat(tipo1, tipo2, \"\\n\")",
+    "crumbs": [
+      "R",
+      "Particularidades"
+    ]
   },
   {
     "objectID": "python/08-visualizacion.html",
     "href": "python/08-visualizacion.html",
-    "title": "",
+    "title": "Python: visualización",
     "section": "",
-    "text": "Código"
+    "text": "Matplotlib es la librería base para graficar; Seaborn y pandas.plot() se construyen encima de ella.\n\n\nVer/ocultar código\nimport matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4]\ny = [1, 4, 9, 16]\n\nplt.plot(x, y, marker=\"o\")\nplt.xlabel(\"x\")\nplt.ylabel(\"x al cuadrado\")\nplt.title(\"Ejemplo de gráfica de línea\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nGráfica de línea con los puntos (1,1), (2,4), (3,9) y (4,16)\n\n\nPara gráficas estadísticas (histogramas, cajas, mapas de calor) con menos código, Seaborn suele ser más práctico:\n\n\nVer/ocultar código\nimport seaborn as sns\nimport numpy as np\n\nrng = np.random.default_rng(0)\ndatos = rng.normal(size=200)\nsns.histplot(datos)\n\n\n\n\n\n\n\n\n\nEn un script, plt.show() abre la ventana de la gráfica. En Jupyter o Colab normalmente no hace falta: la gráfica aparece debajo de la celda.",
+    "crumbs": [
+      "Python",
+      "Visualización"
+    ]
   },
   {
-    "objectID": "python/08-visualizacion.html#visualización-en-python",
-    "href": "python/08-visualizacion.html#visualización-en-python",
-    "title": "",
-    "section": "Visualización en Python",
-    "text": "Visualización en Python\nLa librería más usada para gráficas es Matplotlib; la mayoría de las demás librerías de visualización (Seaborn, pandas .plot()) están construidas encima de ella.\nimport matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4]\ny = [1, 4, 9, 16]\n\nplt.plot(x, y)\nplt.xlabel(\"x\")\nplt.ylabel(\"x al cuadrado\")\nplt.title(\"Ejemplo de gráfica de línea\")\nplt.show()\nPara gráficas estadísticas más elaboradas (histogramas, boxplots, mapas de calor) con menos código, Seaborn suele ser más práctico:\nimport seaborn as sns\nsns.histplot(datos)\nplt.show() es necesario en un script normal para abrir la ventana de la gráfica; en un notebook de Jupyter/Colab normalmente no hace falta, porque la gráfica se muestra automáticamente debajo de la celda.\n\nRecuerda agregar texto alt a las imágenes generadas cuando las insertes como archivo estático en la página (ver nota de accesibilidad en el glosario/checklist general)."
-  },
-  {
-    "objectID": "glosario-ampliado.html",
-    "href": "glosario-ampliado.html",
-    "title": "",
+    "objectID": "python/01-introduccion.html",
+    "href": "python/01-introduccion.html",
+    "title": "Python: introducción",
     "section": "",
-    "text": "Código\n\n\n\n\n\n\nTérminos nuevos para el glosario (agregar a los 10 existentes)\nREPL (Read-Eval-Print Loop) — El entorno interactivo donde escribes una línea de código, se ejecuta al momento, y ves el resultado inmediatamente. Python, R y Julia tienen su propio REPL.\nIDE (Integrated Development Environment / Entorno de Desarrollo Integrado) — Un programa que junta editor de código, ejecución y depuración en un solo lugar (ejemplos: RStudio para R, VS Code para cualquiera de los tres lenguajes).\nPaquete / biblioteca — Conjunto de código reutilizable, escrito por alguien más, que instalas y luego importas en tu programa (pip install en Python, install.packages() en R, ]add en Julia) para no reinventar funcionalidad ya existente.\nBroadcasting — Aplicar una operación elemento por elemento sobre un arreglo completo, sin escribir un ciclo explícito. En Python (NumPy) ocurre automáticamente al operar arreglos; en Julia requiere el operador . explícito (x .+ 1) — no es automático por diseño, hay que pedirlo.\nAserción (assert) — Una instrucción que verifica que una condición es verdadera y detiene el programa con un error si no lo es. Se usa para confirmar supuestos durante el desarrollo o las pruebas (assert en Python, stopifnot() en R, @assert en Julia).\n\n\nCorrección a un término existente\nSi el glosario actual dice que la vectorización es automática “por diseño” en Julia, es impreciso: Julia sí está optimizada para operaciones vectorizadas, pero el broadcasting requiere el operador . explícito (ver arriba) — no ocurre solo."
+    "text": "Python es un lenguaje de propósito general, de sintaxis legible y con un ecosistema enorme de librerías. Es una buena primera opción para aprender a programar.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Operación Jupyter",
+    "objectID": "python/01-introduccion.html#formas-de-usar-python",
+    "href": "python/01-introduccion.html#formas-de-usar-python",
+    "title": "Python: introducción",
+    "section": "Formas de usar Python",
+    "text": "Formas de usar Python\nInstalación local. Se descarga desde python.org y se usa desde la terminal o desde un editor como VS Code.\nAnaconda. Anaconda instala Python junto con NumPy, pandas y Matplotlib, además del gestor de entornos conda. Es cómoda para ciencia de datos.\nJupyter. Con Python ya instalado:\npip install notebook\njupyter notebook\nGoogle Colab. Corre notebooks en el navegador sin instalar nada. A diferencia de R y Julia, Python tiene soporte nativo completo.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#comandos-básicos",
+    "href": "python/01-introduccion.html#comandos-básicos",
+    "title": "Python: introducción",
+    "section": "Comandos básicos",
+    "text": "Comandos básicos\n\n\n\n\n\n\n\nComando\nQué hace\n\n\n\n\npython archivo.py\nEjecuta un script desde la terminal\n\n\npython\nAbre el intérprete interactivo (REPL); se sale con exit()\n\n\npip install paquete\nInstala una librería externa\n\n\npip list\nMuestra los paquetes instalados\n\n\nhelp(objeto)\nMuestra la documentación de una función o módulo\n\n\ntype(objeto)\nMuestra el tipo de dato de una variable\n\n\n\nEn un notebook, estos mismos comandos se escriben en una celda y se ejecutan con Shift + Enter.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#ventajas-y-desventajas",
+    "href": "python/01-introduccion.html#ventajas-y-desventajas",
+    "title": "Python: introducción",
+    "section": "Ventajas y desventajas",
+    "text": "Ventajas y desventajas\nA favor: sintaxis simple, ecosistema muy amplio, comunidad grande y soporte nativo en Colab.\nEn contra: al ser interpretado, suele ser más lento que un lenguaje compilado en cómputo numérico intensivo (por eso NumPy usa código en C por debajo). El manejo de entornos (pip, conda, venv) puede confundir al principio.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#ejercicios-de-calentamiento",
+    "href": "python/01-introduccion.html#ejercicios-de-calentamiento",
+    "title": "Python: introducción",
+    "section": "Ejercicios de calentamiento",
+    "text": "Ejercicios de calentamiento\n\n\nVer/ocultar código\nprint(\"Hola, Python\")\nprint(2 ** 10)\nprint(len(\"Operación Jupyter\"))\n\n\nHola, Python\n1024\n17",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html",
+    "href": "python/03-funciones.html",
+    "title": "Python: funciones",
     "section": "",
-    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero."
+    "text": "Una función agrupa instrucciones bajo un nombre para poder reutilizarlas.\nVer/ocultar código\ndef nombre_funcion(argumentos):\n    # cálculos\n    return resultado",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
   },
   {
-    "objectID": "index.html#sobre-el-proyecto",
-    "href": "index.html#sobre-el-proyecto",
-    "title": "Operación Jupyter",
+    "objectID": "python/03-funciones.html#argumentos-con-nombre-y-valores-por-defecto",
+    "href": "python/03-funciones.html#argumentos-con-nombre-y-valores-por-defecto",
+    "title": "Python: funciones",
+    "section": "Argumentos con nombre y valores por defecto",
+    "text": "Argumentos con nombre y valores por defecto\n\n\nVer/ocultar código\ndef calcular_area(base, altura=1):\n    return base * altura\n\nprint(calcular_area(base=3, altura=5))   # el orden no importa si usas nombres\nprint(calcular_area(3))                  # usa altura=1\n\n\n15\n3",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html#ciclos-con-range",
+    "href": "python/03-funciones.html#ciclos-con-range",
+    "title": "Python: funciones",
+    "section": "Ciclos con range",
+    "text": "Ciclos con range\n\n\nVer/ocultar código\nfor i in range(3):\n    print(i)\n\n\n0\n1\n2\n\n\nrange(3) produce 0, 1 y 2: excluye el último valor.",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html#librerías",
+    "href": "python/03-funciones.html#librerías",
+    "title": "Python: funciones",
+    "section": "Librerías",
+    "text": "Librerías\nmath viene con Python: solo se importa, no se instala.\n\n\nVer/ocultar código\nimport math\nprint(math.sqrt(16))\n\n\n4.0\n\n\nLas estructuras nativas de Python son listas, tuplas, diccionarios y conjuntos. Los DataFrames pertenecen a la librería pandas, no al lenguaje.",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "python/05-arreglos.html",
+    "href": "python/05-arreglos.html",
+    "title": "Python: arreglos con NumPy",
     "section": "",
-    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero."
+    "text": "NumPy es la librería estándar para arreglos numéricos. Frente a las listas, es más rápida y permite operar sobre todos los elementos a la vez, sin ciclos.\nVer/ocultar código\nimport numpy as np\n\nA = np.array([[1, 2, 3],\n              [4, 5, 6],\n              [7, 8, 9]])\nprint(A.ndim, A.shape)\n\n\n2 (3, 3)\nndim es el número de dimensiones. Evita llamarlo rank: en álgebra lineal, rank es el rango de una matriz, que es otra cosa.",
+    "crumbs": [
+      "Python",
+      "Arreglos"
+    ]
   },
   {
-    "objectID": "index.html#elige-un-lenguaje",
-    "href": "index.html#elige-un-lenguaje",
-    "title": "Operación Jupyter",
-    "section": "Elige un lenguaje",
-    "text": "Elige un lenguaje\n\n\nPython\nPropósito general, ecosistema enorme, fácil de aprender.\nEmpezar →\n\n\nR\nEstadística y gráficos, con RStudio como su entorno natural.\nEmpezar →\n\n\nJulia\nCómputo numérico de alto desempeño con sintaxis de alto nivel.\nEmpezar →\n\n\nTambién puedes ir directo a los Tutoriales comparativos (ejercicios, quiz, ficha descargable) o revisar Mi progreso."
+    "objectID": "python/05-arreglos.html#rebanadas-slicing",
+    "href": "python/05-arreglos.html#rebanadas-slicing",
+    "title": "Python: arreglos con NumPy",
+    "section": "Rebanadas (slicing)",
+    "text": "Rebanadas (slicing)\n\n\nVer/ocultar código\nprint(A[1:3][1:3])     # trampa: NO es una submatriz\nprint(A[1:3, 1:3])     # filas 1-2 y columnas 1-2\n\n\n[[7 8 9]]\n[[5 6]\n [8 9]]\n\n\nA[1:3] ya devuelve dos filas, y el segundo [1:3] se aplica a ese resultado, no a A. Para filas y columnas a la vez, usa una sola pareja de corchetes con coma.",
+    "crumbs": [
+      "Python",
+      "Arreglos"
+    ]
   },
   {
-    "objectID": "index.html#cómo-se-arma-el-sitio",
-    "href": "index.html#cómo-se-arma-el-sitio",
-    "title": "Operación Jupyter",
-    "section": "Cómo se arma el sitio",
-    "text": "Cómo se arma el sitio\n\n\n\nDiagrama de flujo: los notebooks de Python, R y Julia se combinan con Quarto, que construye el sitio y lo publica en GitHub Pages\n\n\n\nCómo usar este sitio\nCada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:\n\nInstalación e interfaces (RStudio, Google Colab, Jupyter)\nTipos de datos y declaración de variables\nEstructuras de control (secuencias, decisiones, repeticiones)\nEstructuras de datos y objetos\nFunciones\nParticularidades del lenguaje"
+    "objectID": "python/05-arreglos.html#reshape-no-modifica-.shape-sí",
+    "href": "python/05-arreglos.html#reshape-no-modifica-.shape-sí",
+    "title": "Python: arreglos con NumPy",
+    "section": "reshape no modifica; .shape sí",
+    "text": "reshape no modifica; .shape sí\n\n\nVer/ocultar código\nv = np.arange(9)\nB = v.reshape(3, 3)     # nuevo arreglo; v sigue igual\nprint(v.shape, B.shape)\n\nv.shape = (3, 3)        # esto modifica v en su lugar\nprint(v.shape)\n\n\n(9,) (3, 3)\n(3, 3)",
+    "crumbs": [
+      "Python",
+      "Arreglos"
+    ]
   },
   {
-    "objectID": "progreso.html",
-    "href": "progreso.html",
-    "title": "Mi progreso",
-    "section": "",
-    "text": "Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más, y se pierde si borras los datos de navegación).\n\n\n&lt;div id=\"barra-progreso\" style=\"background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;\"&gt;&lt;/div&gt;\n\n\n0 de 0 completado"
-  },
-  {
-    "objectID": "semblanza/index.html",
-    "href": "semblanza/index.html",
-    "title": "Semblanza de los profesores",
-    "section": "",
-    "text": "Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.\n\n\n\n\n\n\nAnn Godelieve Wellens\n\n\n\n\n\n\n\nVíctor Damián Pinilla Morán\n\n\n\n\n\n\n\nEdgar Ali Ramos Gómez\n\n\n\n\n\n\n\nArmando Moisés Pérez Silva"
+    "objectID": "python/05-arreglos.html#números-aleatorios-reproducibles",
+    "href": "python/05-arreglos.html#números-aleatorios-reproducibles",
+    "title": "Python: arreglos con NumPy",
+    "section": "Números aleatorios reproducibles",
+    "text": "Números aleatorios reproducibles\n\n\nVer/ocultar código\nrng = np.random.default_rng(42)   # semilla fija\nx = rng.normal(size=100)\nprint(round(float(x.mean()), 4), round(float(x.std(ddof=1)), 4))\n\n\n-0.0503 0.7767",
+    "crumbs": [
+      "Python",
+      "Arreglos"
+    ]
   },
   {
     "objectID": "comparar.html",
@@ -684,167 +744,275 @@
     "text": "Tipado dinámico\n\n\n\nPython\nx = 10\ntipo1 = type(x).__name__\nx = \"ahora soy texto\"\ntipo2 = type(x).__name__\nprint(tipo1, tipo2)\n\n\nint str\n\n\nR\nx &lt;- 10\ntipo1 &lt;- class(x)\nx &lt;- \"ahora soy texto\"\ntipo2 &lt;- class(x)\ncat(tipo1, tipo2)\n\n\n\n\nnumeric character\n\n\nJulia\nx = 10\ntipo1 = typeof(x)\nx = \"ahora soy texto\"\ntipo2 = typeof(x)\nprintln(tipo1, \" \", tipo2)\n\n\nInt64 String\n\n\n\nEste último muestra algo interesante: los tres son de tipado dinámico (nadie exige declarar el tipo), pero cada uno nombra sus tipos distinto — Python usa nombres cortos (int, str), R usa nombres más descriptivos (numeric, character), y Julia expone el tipo exacto con su tamaño (Int64, String)."
   },
   {
-    "objectID": "python/07-ejercicios-ingenieria.html",
-    "href": "python/07-ejercicios-ingenieria.html",
+    "objectID": "semblanza/index.html",
+    "href": "semblanza/index.html",
+    "title": "Semblanza de los profesores",
+    "section": "",
+    "text": "Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.\n\n\n\n\n\n\nAnn Godelieve Wellens\n\n\n\n\n\n\n\nVíctor Damián Pinilla Morán\n\n\n\n\n\n\n\nEdgar Ali Ramos Gómez\n\n\n\n\n\n\n\nArmando Moisés Pérez Silva"
+  },
+  {
+    "objectID": "progreso.html",
+    "href": "progreso.html",
+    "title": "Mi progreso",
+    "section": "",
+    "text": "Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más, y se pierde si borras los datos de navegación).\n\n\n&lt;div id=\"barra-progreso\" style=\"background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;\"&gt;&lt;/div&gt;\n\n\n0 de 0 completado"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Operación Jupyter",
+    "section": "",
+    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero."
+  },
+  {
+    "objectID": "index.html#sobre-el-proyecto",
+    "href": "index.html#sobre-el-proyecto",
+    "title": "Operación Jupyter",
+    "section": "",
+    "text": "Operación Jupyter es el proyecto de servicio social de la División de Ciencias Básicas, Facultad de Ingeniería, UNAM. Reúne tutoriales de introducción a tres lenguajes de programación de código libre — R, Python y Julia — pensados para quien empieza desde cero."
+  },
+  {
+    "objectID": "index.html#elige-un-lenguaje",
+    "href": "index.html#elige-un-lenguaje",
+    "title": "Operación Jupyter",
+    "section": "Elige un lenguaje",
+    "text": "Elige un lenguaje\n\n\nPython\nPropósito general, ecosistema enorme, fácil de aprender.\nEmpezar →\n\n\nR\nEstadística y gráficos, con RStudio como su entorno natural.\nEmpezar →\n\n\nJulia\nCómputo numérico de alto desempeño con sintaxis de alto nivel.\nEmpezar →\n\n\nTambién puedes ir directo a los Tutoriales comparativos (ejercicios, quiz, ficha descargable) o revisar Mi progreso."
+  },
+  {
+    "objectID": "index.html#cómo-se-arma-el-sitio",
+    "href": "index.html#cómo-se-arma-el-sitio",
+    "title": "Operación Jupyter",
+    "section": "Cómo se arma el sitio",
+    "text": "Cómo se arma el sitio\n\n\n\nDiagrama de flujo: los notebooks de Python, R y Julia se combinan con Quarto, que construye el sitio y lo publica en GitHub Pages\n\n\n\nCómo usar este sitio\nCada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:\n\nInstalación e interfaces (RStudio, Google Colab, Jupyter)\nTipos de datos y declaración de variables\nEstructuras de control (secuencias, decisiones, repeticiones)\nEstructuras de datos y objetos\nFunciones\nParticularidades del lenguaje"
+  },
+  {
+    "objectID": "glosario-ampliado.html",
+    "href": "glosario-ampliado.html",
     "title": "",
     "section": "",
-    "text": "Código",
+    "text": "Código\n\n\n\n\n\n\nTérminos nuevos para el glosario (agregar a los 10 existentes)\nREPL (Read-Eval-Print Loop) — El entorno interactivo donde escribes una línea de código, se ejecuta al momento, y ves el resultado inmediatamente. Python, R y Julia tienen su propio REPL.\nIDE (Integrated Development Environment / Entorno de Desarrollo Integrado) — Un programa que junta editor de código, ejecución y depuración en un solo lugar (ejemplos: RStudio para R, VS Code para cualquiera de los tres lenguajes).\nPaquete / biblioteca — Conjunto de código reutilizable, escrito por alguien más, que instalas y luego importas en tu programa (pip install en Python, install.packages() en R, ]add en Julia) para no reinventar funcionalidad ya existente.\nBroadcasting — Aplicar una operación elemento por elemento sobre un arreglo completo, sin escribir un ciclo explícito. En Python (NumPy) ocurre automáticamente al operar arreglos; en Julia requiere el operador . explícito (x .+ 1) — no es automático por diseño, hay que pedirlo.\nAserción (assert) — Una instrucción que verifica que una condición es verdadera y detiene el programa con un error si no lo es. Se usa para confirmar supuestos durante el desarrollo o las pruebas (assert en Python, stopifnot() en R, @assert en Julia).\n\n\nCorrección a un término existente\nSi el glosario actual dice que la vectorización es automática “por diseño” en Julia, es impreciso: Julia sí está optimizada para operaciones vectorizadas, pero el broadcasting requiere el operador . explícito (ver arriba) — no ocurre solo."
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html",
+    "href": "python/07-ejercicios-ingenieria.html",
+    "title": "Python: ejercicios de ingeniería",
+    "section": "",
+    "text": "Los mismos ejercicios aparecen en R y Julia para comparar resultados y sintaxis."
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#esfuerzo-normal",
+    "href": "python/07-ejercicios-ingenieria.html#esfuerzo-normal",
+    "title": "Python: ejercicios de ingeniería",
+    "section": "1. Esfuerzo normal",
+    "text": "1. Esfuerzo normal\nσ = F / A es la definición de esfuerzo. La ley de Hooke es otra relación: σ = E · ε, entre esfuerzo y deformación.\n\n\nVer/ocultar código\ndef esfuerzo(fuerza, area):\n    return fuerza / area\n\nprint(esfuerzo(5000, 0.002))    # N / m²\n\n\n2500000.0"
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#área-de-un-círculo-con-incertidumbre",
+    "href": "python/07-ejercicios-ingenieria.html#área-de-un-círculo-con-incertidumbre",
+    "title": "Python: ejercicios de ingeniería",
+    "section": "2. Área de un círculo con incertidumbre",
+    "text": "2. Área de un círculo con incertidumbre\nSumar una tolerancia directamente al área no tiene sentido dimensional. Lo correcto es propagar la incertidumbre del radio: ΔA ≈ 2πr·Δr.\n\n\nVer/ocultar código\nimport math\n\ndef area_circular(r):\n    return math.pi * r ** 2\n\ndef area_con_incertidumbre(r, dr):\n    return area_circular(r), 2 * math.pi * r * dr\n\nprint(area_con_incertidumbre(0.05, 0.001))\n\n\n(0.007853981633974483, 0.0003141592653589793)"
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#raíces-de-una-cuadrática",
+    "href": "python/07-ejercicios-ingenieria.html#raíces-de-una-cuadrática",
+    "title": "Python: ejercicios de ingeniería",
+    "section": "3. Raíces de una cuadrática",
+    "text": "3. Raíces de una cuadrática\n\n\nVer/ocultar código\ndef raices(a, b, c):\n    disc = b * b - 4 * a * c\n    return (-b + math.sqrt(disc)) / (2 * a), (-b - math.sqrt(disc)) / (2 * a)\n\nprint(raices(1, -3, 2))\n\n\n(2.0, 1.0)\n\n\nCon discriminante negativo, math.sqrt lanza ValueError: math domain error. R devuelve NaN y Julia lanza DomainError, buen punto de comparación."
+  },
+  {
+    "objectID": "python/07-ejercicios-ingenieria.html#verificar-con-tolerancia",
+    "href": "python/07-ejercicios-ingenieria.html#verificar-con-tolerancia",
+    "title": "Python: ejercicios de ingeniería",
+    "section": "4. Verificar con tolerancia",
+    "text": "4. Verificar con tolerancia\nCon datos = [19.98, 20.01, 19.99, 20.03, 20.00, 20.02, 19.97, 20.00], la media es 20.0. Para comparar números decimales usa tolerancia, no igualdad exacta:\n\n\nVer/ocultar código\ndatos = [19.98, 20.01, 19.99, 20.03, 20.00, 20.02, 19.97, 20.00]\nmedia = sum(datos) / len(datos)\nassert abs(media - 20.0) &lt; 1e-9\nprint(media)\n\n\n20.0"
+  },
+  {
+    "objectID": "python/06-funciones-estadisticas.html",
+    "href": "python/06-funciones-estadisticas.html",
+    "title": "Python: funciones estadísticas",
+    "section": "",
+    "text": "La librería estándar trae el módulo statistics; para trabajo serio se usa NumPy.\nVer/ocultar código\nimport numpy as np\n\nm = np.array([20.1, 19.8, 20.3, 19.9, 20.0, 20.2])\nprint(np.mean(m), np.median(m))\nprint(round(np.std(m, ddof=1), 4))\n\n\n20.05 20.05\n0.1871\nVer/ocultar código\nimport statistics\ndatos = [19.98, 20.01, 19.99, 20.03, 20.00, 20.02, 19.97, 20.00]\nprint(np.std(datos))                 # ddof=0\nprint(np.std(datos, ddof=1))         # ddof=1\nprint(statistics.stdev(datos))       # ddof=1\n\n\n0.018708286933870256\n0.02000000000000059\n0.02000000000000059",
     "crumbs": [
       "Python",
-      "Ejercicios de ingeniería"
+      "Funciones estadísticas"
     ]
   },
   {
-    "objectID": "python/07-ejercicios-ingenieria.html#ejercicios-de-ingeniería",
-    "href": "python/07-ejercicios-ingenieria.html#ejercicios-de-ingeniería",
-    "title": "",
-    "section": "Ejercicios de ingeniería",
-    "text": "Ejercicios de ingeniería\nEstos ejercicios combinan lo visto en las secciones anteriores (operadores, funciones, arreglos) aplicado a problemas típicos de ingeniería. La idea es resolver el mismo problema en Python, R y Julia y comparar tanto el resultado numérico como la forma de llegar a él en cada lenguaje.\n\nCálculo de esfuerzo (no es la Ley de Hooke)\nσ = F/A es la definición de esfuerzo, no la Ley de Hooke.\ndef esfuerzo(fuerza, area):\n    return fuerza / area\n\nLa Ley de Hooke relaciona esfuerzo y deformación: σ = E·ε, donde E es el módulo de elasticidad. Si quieres ilustrar Hooke específicamente, agrega ese cálculo por separado.\n\n\n\nÁrea circular — sin sumar tolerancia al área\nSumar una tolerancia directamente al área no tiene sentido dimensional. Si quieres modelar incertidumbre, propágala por separado:\nimport math\n\ndef area_circular(radio):\n    return math.pi * radio ** 2\n\ndef area_circular_con_incertidumbre(radio, incertidumbre_radio):\n    area = area_circular(radio)\n    error_area = 2 * math.pi * radio * incertidumbre_radio  # propagación de primer orden\n    return area, error_area\n\n\nDiscriminante negativo — comparación entre lenguajes\nCon discriminante negativo, cada lenguaje falla distinto — es buen material comparativo en vez de un bug oculto:\nimport math\n\ndef raices(a, b, c):\n    disc = b**2 - 4*a*c\n    return ((-b + math.sqrt(disc)) / (2*a), (-b - math.sqrt(disc)) / (2*a))\n\n# raices(1, 2, 5) lanza ValueError (dominio de sqrt) — en R da NaN, en Julia DomainError\n\n\nComparando valores entre lenguajes: usa tolerancia, no igualdad exacta\n# Evita: assert round(media, 4) == 20.0012  (depende de redondeo/representación)\nassert abs(media - 20.00125) &lt; 1e-9",
+    "objectID": "python/06-funciones-estadisticas.html#ejercicio",
+    "href": "python/06-funciones-estadisticas.html#ejercicio",
+    "title": "Python: funciones estadísticas",
+    "section": "Ejercicio",
+    "text": "Ejercicio\nCon las mediciones [20.1, 19.8, 20.3, 19.9, 20.0, 20.2] cm, verifica si todas están dentro de ±0.5 cm de la media.\n\n\nVer/ocultar código\ndentro = np.all(np.abs(m - m.mean()) &lt;= 0.5)\nprint(dentro)\n\n\nTrue",
     "crumbs": [
       "Python",
-      "Ejercicios de ingeniería"
+      "Funciones estadísticas"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html",
+    "href": "python/02-entrada-datos-operadores.html",
+    "title": "Python: entrada de datos y operadores",
+    "section": "",
+    "text": "input() siempre devuelve texto (str), aunque la persona escriba un número. Si vas a calcular con él, conviértelo:\n\n\nVer/ocultar código\nedad_texto = \"20\"     # así llegaría de input(\"¿Cuántos años tienes? \")\nprint(type(edad_texto))\nedad = int(edad_texto)   # conversión explícita\nprint(type(edad), edad)\n\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt; 20",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#entrada-de-datos",
+    "href": "python/02-entrada-datos-operadores.html#entrada-de-datos",
+    "title": "Python: entrada de datos y operadores",
+    "section": "",
+    "text": "input() siempre devuelve texto (str), aunque la persona escriba un número. Si vas a calcular con él, conviértelo:\n\n\nVer/ocultar código\nedad_texto = \"20\"     # así llegaría de input(\"¿Cuántos años tienes? \")\nprint(type(edad_texto))\nedad = int(edad_texto)   # conversión explícita\nprint(type(edad), edad)\n\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt; 20",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#operadores",
+    "href": "python/02-entrada-datos-operadores.html#operadores",
+    "title": "Python: entrada de datos y operadores",
+    "section": "Operadores",
+    "text": "Operadores\n\n\n\n\n\n\n\n\nFamilia\nOperadores\nNotas\n\n\n\n\nAritméticos\n+  -  *  /  //  %  **\n// división entera, % residuo, ** potencia\n\n\nComparación\n==  !=  &gt;  &lt;  &gt;=  &lt;=\nDevuelven True o False\n\n\nLógicos\nand or not\nPalabras completas, no && ni ||\n\n\n\n\n\nVer/ocultar código\nprint(7 / 2, 7 // 2, 7 % 2, 2 ** 3)\nprint(3 &gt; 2 and 5 == 5)\n\n\n3.5 3 1 8\nTrue\n\n\n\n\n\n\n\n\nAdvertencia\n\n\n\n= asigna un valor y == compara. Confundirlos es uno de los errores más comunes al empezar.",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
     ]
   },
   {
     "objectID": "python/04-estructuras-datos.html",
     "href": "python/04-estructuras-datos.html",
-    "title": "",
+    "title": "Python: estructuras de datos",
     "section": "",
-    "text": "Código"
-  },
-  {
-    "objectID": "python/04-estructuras-datos.html#estructuras-de-datos-en-python",
-    "href": "python/04-estructuras-datos.html#estructuras-de-datos-en-python",
-    "title": "",
-    "section": "Estructuras de datos en Python",
-    "text": "Estructuras de datos en Python\nPython tiene cuatro estructuras de datos nativas, y elegir la correcta depende de si necesitas orden, si los elementos se repiten, y si vas a modificarlos después de crearlos:\n\nLista [1, 2, 3] — mutable, ordenada, permite duplicados.\nTupla (1, 2, 3) — inmutable, ordenada, permite duplicados. Se usa cuando los datos no deben cambiar (por ejemplo, coordenadas).\nDiccionario {\"clave\": valor} — pares clave-valor. Desde Python 3.7 conserva el orden de inserción (no es “no ordenado”, como a veces se dice).\nConjunto (set) {1, 2, 3} — sin duplicados, sin orden garantizado.\n\n\nMutabilidad de listas\nSopes = ['Pozole', 'Atole', 'Tamales']\nSopes[1] = 'Tasajo'\nprint(Sopes)              # ['Pozole', 'Tasajo', 'Tamales']\nprint('Tasajo' in Sopes)  # True\n\n\nmin() y max() no son solo para números\nmin([\"banana\", \"manzana\", \"kiwi\"])   # 'banana' (orden alfabético)\nmax([3, 1, 4, 1, 5])                  # 5\n\n\nEjercicio\nDado el diccionario inventario = {\"tornillos\": 120, \"tuercas\": 340, \"arandelas\": 85}:\n\nAgrega la clave \"remaches\" con valor 200.\nImprime las claves en el mismo orden en que las agregaste (confirma que Python conserva el orden de inserción).\nEncuentra el material con menor cantidad usando min() sobre los valores.\n\ninventario = {\"tornillos\": 120, \"tuercas\": 340, \"arandelas\": 85}\ninventario[\"remaches\"] = 200\nprint(list(inventario.keys()))\nprint(min(inventario, key=inventario.get))"
-  },
-  {
-    "objectID": "python/05-arreglos.html",
-    "href": "python/05-arreglos.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
-  },
-  {
-    "objectID": "python/05-arreglos.html#arreglos-con-numpy",
-    "href": "python/05-arreglos.html#arreglos-con-numpy",
-    "title": "",
-    "section": "Arreglos con NumPy",
-    "text": "Arreglos con NumPy\nNumPy es la librería estándar de facto para trabajar con arreglos numéricos en Python. Sobre listas normales, gana en velocidad y en operaciones vectorizadas (aplicar una operación a todos los elementos a la vez, sin ciclos explícitos).\nimport numpy as np\n\narr = np.array([1, 2, 3, 4])\narr.ndim   # número de dimensiones del arreglo (NO se llama \"rank\")\n\nEvita el término “rank” para esto: en NumPy la propiedad se llama ndim, y “rank” en álgebra lineal se refiere al rango de una matriz, que es un concepto distinto.\n\n\nSlicing — cuidado con encadenar corchetes\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\n\nA[1:3][1:3]\n# Ojo: esto NO es una submatriz 2D. A[1:3] ya devuelve un arreglo de 2 filas,\n# y el segundo [1:3] actúa sobre ESE resultado, no sobre A. Para obtener una\n# submatriz de filas y columnas al mismo tiempo:\nA[1:3, 1:3]\n\n\nreshape() vs modificar .shape\nB = A.reshape(3, 3)   # devuelve un NUEVO arreglo; A no cambia\nprint(B)\n\nA.shape = (3, 3)      # esto SÍ modifica A in situ\n\n\nGeneración aleatoria reproducible\nrng = np.random.default_rng(42)   # semilla fija, para que el resultado sea reproducible\ndatos = rng.normal(size=100)\n\n\n\nDistribución de los datos generados"
-  },
-  {
-    "objectID": "python/02-entrada-datos-operadores.html",
-    "href": "python/02-entrada-datos-operadores.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
-  },
-  {
-    "objectID": "python/02-entrada-datos-operadores.html#entrada-de-datos",
-    "href": "python/02-entrada-datos-operadores.html#entrada-de-datos",
-    "title": "",
-    "section": "Entrada de datos",
-    "text": "Entrada de datos\ninput() siempre devuelve texto (str), aunque el usuario escriba un número:\nedad = input(\"¿Cuántos años tienes? \")   # str, incluso si escribes \"20\"\nedad = int(edad)                          # conversión explícita"
-  },
-  {
-    "objectID": "python/02-entrada-datos-operadores.html#operadores",
-    "href": "python/02-entrada-datos-operadores.html#operadores",
-    "title": "",
-    "section": "Operadores",
-    "text": "Operadores\n\nAritméticos: + - * / // % ** (// división entera, % residuo, ** potencia).\nDe comparación: == != &gt; &lt; &gt;= &lt;= — devuelven un booleano.\nLógicos: and, or, not (palabras completas, no &&/||/!).\n\nUn error común: = es asignación, == es comparación."
-  },
-  {
-    "objectID": "r/07-ejercicios-ingenieria.html",
-    "href": "r/07-ejercicios-ingenieria.html",
-    "title": "",
-    "section": "",
-    "text": "Código",
+    "text": "Elegir la estructura correcta depende de si necesitas orden, si los elementos pueden repetirse y si vas a modificarlos.",
     "crumbs": [
-      "R",
-      "Ejercicios de ingeniería"
+      "Python",
+      "Estructuras de datos"
     ]
   },
   {
-    "objectID": "r/07-ejercicios-ingenieria.html#ejercicios-de-ingeniería",
-    "href": "r/07-ejercicios-ingenieria.html#ejercicios-de-ingeniería",
-    "title": "",
-    "section": "Ejercicios de ingeniería",
-    "text": "Ejercicios de ingeniería\nLos mismos ejercicios que en Python y Julia (esfuerzo, área, estadística sobre mediciones), para comparar sintaxis y comportamiento entre lenguajes.\n\nEsfuerzo (no Ley de Hooke)\nesfuerzo &lt;- function(fuerza, area) fuerza / area\n\nLa Ley de Hooke es σ = E·ε; σ = F/A es la definición de esfuerzo.\n\n\n\nDesviación estándar — cuidado con ddof\nsd() en R usa n-1 (muestral) por defecto, a diferencia de np.std() en Python (ddof=0 por defecto). Con los mismos datos, los resultados no van a coincidir a menos que iguales la convención.\n\n\nDiscriminante negativo\nraices &lt;- function(a, b, c) {\n  disc &lt;- b^2 - 4*a*c\n  c((-b + sqrt(disc)) / (2*a), (-b - sqrt(disc)) / (2*a))\n}\n# con discriminante negativo, sqrt() en R da NaN (no error) — compáralo con\n# el ValueError de Python y el DomainError de Julia.\n\n\nComparar valores con tolerancia\nstopifnot(isTRUE(all.equal(media, 20.00125, tolerance = 1e-9)))",
+    "objectID": "python/04-estructuras-datos.html#listas-son-mutables",
+    "href": "python/04-estructuras-datos.html#listas-son-mutables",
+    "title": "Python: estructuras de datos",
+    "section": "Listas son mutables",
+    "text": "Listas son mutables\n\n\nVer/ocultar código\nSopes = ['Pozole', 'Atole', 'Tamales']\nSopes[1] = 'Tasajo'\nprint(Sopes)\nprint('Tasajo' in Sopes)\n\n\n['Pozole', 'Tasajo', 'Tamales']\nTrue",
     "crumbs": [
-      "R",
-      "Ejercicios de ingeniería"
+      "Python",
+      "Estructuras de datos"
     ]
   },
   {
-    "objectID": "r/04-estructuras-datos.html",
-    "href": "r/04-estructuras-datos.html",
-    "title": "",
-    "section": "",
-    "text": "Código"
+    "objectID": "python/04-estructuras-datos.html#diccionarios-conservan-el-orden-de-inserción",
+    "href": "python/04-estructuras-datos.html#diccionarios-conservan-el-orden-de-inserción",
+    "title": "Python: estructuras de datos",
+    "section": "Diccionarios conservan el orden de inserción",
+    "text": "Diccionarios conservan el orden de inserción\nDesde Python 3.7, un diccionario recuerda el orden en que agregaste las claves.\n\n\nVer/ocultar código\nd = {\"b\": 1, \"a\": 2}\nd[\"c\"] = 3\nprint(list(d))\n\n\n['b', 'a', 'c']",
+    "crumbs": [
+      "Python",
+      "Estructuras de datos"
+    ]
   },
   {
-    "objectID": "r/04-estructuras-datos.html#estructuras-de-datos-en-r",
-    "href": "r/04-estructuras-datos.html#estructuras-de-datos-en-r",
-    "title": "",
-    "section": "Estructuras de datos en R",
-    "text": "Estructuras de datos en R\n\nVector: secuencia de elementos del mismo tipo. Es la estructura más básica — incluso un solo número es técnicamente un vector de longitud 1.\nLista: como un vector, pero sus elementos pueden ser de tipos distintos, incluso otras listas o data frames.\nMatriz: un vector con dos dimensiones, todos del mismo tipo.\nData frame: una tabla donde cada columna puede ser de un tipo distinto (como una hoja de cálculo) — estructura central para análisis de datos.\n\nEl acceso cambia según la estructura: [ ] devuelve un subconjunto conservando la estructura original; [[ ]] devuelve el elemento individual (importante sobre todo en listas).\nlst &lt;- list(nombre = \"Ana\", edad = 25, texto = \"hola\")\nlst$texto        # acceso por nombre, sin backslash\nlst[[\"texto\"]]   # equivalente"
+    "objectID": "python/04-estructuras-datos.html#min-y-max-también-sirven-con-texto",
+    "href": "python/04-estructuras-datos.html#min-y-max-también-sirven-con-texto",
+    "title": "Python: estructuras de datos",
+    "section": "min y max también sirven con texto",
+    "text": "min y max también sirven con texto\n\n\nVer/ocultar código\nprint(min([\"banana\", \"manzana\", \"kiwi\"]), max([3, 1, 4, 1, 5]))\n\n\nbanana 5",
+    "crumbs": [
+      "Python",
+      "Estructuras de datos"
+    ]
+  },
+  {
+    "objectID": "python/04-estructuras-datos.html#ejercicio",
+    "href": "python/04-estructuras-datos.html#ejercicio",
+    "title": "Python: estructuras de datos",
+    "section": "Ejercicio",
+    "text": "Ejercicio\nCon inventario = {\"tornillos\": 120, \"tuercas\": 340, \"arandelas\": 85}, agrega \"remaches\": 200, imprime las claves y encuentra el material con menor cantidad.\n\n\nVer/ocultar código\ninventario = {\"tornillos\": 120, \"tuercas\": 340, \"arandelas\": 85}\ninventario[\"remaches\"] = 200\nprint(list(inventario.keys()))\nprint(min(inventario, key=inventario.get))\n\n\n['tornillos', 'tuercas', 'arandelas', 'remaches']\narandelas",
+    "crumbs": [
+      "Python",
+      "Estructuras de datos"
+    ]
   },
   {
     "objectID": "r/01-introduccion.html",
     "href": "r/01-introduccion.html",
-    "title": "",
+    "title": "Lenguajes de programación de código libre",
     "section": "",
-    "text": "Código"
+    "text": "R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos\nA diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)\nEs un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación\nR es competencia de Excel, Python, SPSS y STATA\nEl proyecto R comenzó en 1993, inspirado en el lenguaje S. La primera versión liberada fue en 1995, y la versión 1.0.0 (considerada la primera estable) salió en el año 2000\nRStudio es un entorno de desarrollo integrado (IDE) para R\n\n\n\n\n\nEs un software libre\nEs uno de los primeros lenguajes en recibir los nuevos temas de estadística\nTiene una fácil conectividad y compatibilidad con otros lenguajes de programación\nAl trabajar principalmente en memoria RAM, el tamaño de las bases de datos que puede manejar cómodamente está limitado por la memoria disponible en el equipo\nSuele volverse más lento el análisis con grandes bases de datos",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
   },
   {
-    "objectID": "r/01-introduccion.html#historia-y-contexto",
-    "href": "r/01-introduccion.html#historia-y-contexto",
-    "title": "",
-    "section": "Historia y contexto",
-    "text": "Historia y contexto\nEl proyecto R comenzó en 1993; la primera versión liberada fue en 1995; la versión 1.0.0 (considerada estable) salió en el año 2000."
-  },
-  {
-    "objectID": "r/01-introduccion.html#ventajas-y-desventajas",
-    "href": "r/01-introduccion.html#ventajas-y-desventajas",
-    "title": "",
-    "section": "Ventajas y desventajas",
-    "text": "Ventajas y desventajas\n\nA favor: enfoque estadístico desde su diseño; ggplot2 y el tidyverse para análisis y visualización de datos; gran comunidad académica.\nEn contra: trabaja principalmente en memoria RAM, lo cual es una limitación práctica con datasets muy grandes. La curva de aprendizaje de su sintaxis (distinta a C/C++, más cercana a su predecesor S) puede ser pronunciada al inicio.\n\n(No se lista “no hay responsabilidad en caso de errores” como ventaja — es una cláusula de licencia, no una característica del lenguaje.)"
-  },
-  {
-    "objectID": "r/01-introduccion.html#instalación-de-paquetes",
-    "href": "r/01-introduccion.html#instalación-de-paquetes",
-    "title": "",
-    "section": "Instalación de paquetes",
-    "text": "Instalación de paquetes\nR -e \"install.packages('nombre_del_paquete')\""
-  },
-  {
-    "objectID": "r/01-introduccion.html#notas-sobre-entornos",
-    "href": "r/01-introduccion.html#notas-sobre-entornos",
-    "title": "",
-    "section": "Notas sobre entornos",
-    "text": "Notas sobre entornos\nhelp.start() y q() son del REPL interactivo de R / RStudio y no aplican directamente en Colab o Jupyter. Al día de hoy, Colab no ofrece “R” como tipo de entorno nativo, y apt install r-base no instala automáticamente el kernel IRkernel para Jupyter — hace falta instalarlo y registrarlo aparte.\n\nRevisa los enlaces de esta página: hay una URL mal formada (coursera.org/https://rpubs.com/) y varios envueltos en redirects de google.com/url — usa la URL final directa."
-  },
-  {
-    "objectID": "r/06-particularidades.html",
-    "href": "r/06-particularidades.html",
-    "title": "",
+    "objectID": "r/01-introduccion.html#r-y-rstudio",
+    "href": "r/01-introduccion.html#r-y-rstudio",
+    "title": "Lenguajes de programación de código libre",
     "section": "",
-    "text": "Código"
+    "text": "R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos\nA diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)\nEs un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación\nR es competencia de Excel, Python, SPSS y STATA\nEl proyecto R comenzó en 1993, inspirado en el lenguaje S. La primera versión liberada fue en 1995, y la versión 1.0.0 (considerada la primera estable) salió en el año 2000\nRStudio es un entorno de desarrollo integrado (IDE) para R\n\n\n\n\n\nEs un software libre\nEs uno de los primeros lenguajes en recibir los nuevos temas de estadística\nTiene una fácil conectividad y compatibilidad con otros lenguajes de programación\nAl trabajar principalmente en memoria RAM, el tamaño de las bases de datos que puede manejar cómodamente está limitado por la memoria disponible en el equipo\nSuele volverse más lento el análisis con grandes bases de datos",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
   },
   {
-    "objectID": "r/06-particularidades.html#particularidades-de-r",
-    "href": "r/06-particularidades.html#particularidades-de-r",
-    "title": "",
-    "section": "Particularidades de R",
-    "text": "Particularidades de R\n\nIndexado desde 1, no desde 0.\nNA vs NULL: NA es un valor faltante dentro de un vector y “contagia” operaciones (NA + 1 es NA). NULL representa ausencia total de valor y no puede vivir dentro de un vector normal.\nReciclado de vectores: al operar dos vectores de distinto largo, R repite el más corto:\n\nc(1, 2, 3, 4) + c(1, 2)   # 2 4 4 6 — recicla c(1,2) dos veces\n\nTodo es un vector: incluso un número solo es un vector de longitud 1."
+    "objectID": "r/01-introduccion.html#correr-en-r-o-rstudio",
+    "href": "r/01-introduccion.html#correr-en-r-o-rstudio",
+    "title": "Lenguajes de programación de código libre",
+    "section": "Correr en R o RStudio",
+    "text": "Correr en R o RStudio\nLas ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación.\nPara instalar R y RStudio se siguen los siguientes pasos:\n\nPrimero se debe instalar R\nDependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado\nDespués de elegir el idioma, acepte los términos\nAl final de la instalación busque la carpeta en donde se guardó (generalmente Aplicaciones) para iniciarlo\nPara facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.\nSe descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar.",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
   },
   {
-    "objectID": "r/06-particularidades.html#jit-en-r",
-    "href": "r/06-particularidades.html#jit-en-r",
-    "title": "",
-    "section": "JIT en R",
-    "text": "JIT en R\nDesde la versión 3.4, el motor por defecto de R compila a bytecode con JIT (paquete compiler, integrado). No es exclusivo de Julia — Julia está diseñada desde cero alrededor de JIT/LLVM, mientras que R y Python (desde la 3.13, de forma experimental) lo incorporaron después."
+    "objectID": "r/01-introduccion.html#correr-r-en-google-colab",
+    "href": "r/01-introduccion.html#correr-r-en-google-colab",
+    "title": "Lenguajes de programación de código libre",
+    "section": "Correr R en Google Colab",
+    "text": "Correr R en Google Colab\n\n\n\n\n\n\nAdvertenciaPor verificar\n\n\n\nAl día de hoy, Google Colab no ofrece “R” como tipo de entorno de ejecución nativo desde el menú, y apt install r-base instala R pero no el kernel IRkernel de Jupyter automáticamente — hace falta instalarlo y registrarlo aparte. Los pasos de abajo pueden estar desactualizados; verifica el estado actual antes de seguirlos al pie de la letra.\n\n\nPara usar R en Google Colab, se siguen los siguientes pasos:\n\nAbre Google Colab (https://colab.research.google.com/)\nCrea un nuevo notebook\nPor defecto, Colab usa Python; para R se requieren algunos pasos adicionales. Instalar R en el entorno de Colab: en la primera celda de tu notebook, ejecuta estos comandos:\n\n\n#OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)!\n#Se ejecuta solamente una vez\n!apt-get update\n!apt-get install -y r-base\n!apt-get install -y r-base-dev\n\n\nInstalar los paquetes requeridos en R:\n\n\n!R -e “install.packages(‘nombre_del_paquete’)”\n\n\nUsar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”)",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "r/01-introduccion.html#ventajas-de-las-diferentes-interfaces",
+    "href": "r/01-introduccion.html#ventajas-de-las-diferentes-interfaces",
+    "title": "Lenguajes de programación de código libre",
+    "section": "Ventajas de las diferentes interfaces",
+    "text": "Ventajas de las diferentes interfaces\nLas ventajas de RStudio en comparación con Google Colab son:\n\nSe tiene en cada momento un registro de las variables definidas y sus valores\nSe puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac)\n\nVentajas de correr en Google Colab:\n\nEl código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo\nNo hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase)\n\nDesventajas de correr en Google Colab:\n\nAunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.\nEl IDE tiene menos opciones que en RStudio\nEl sistema Markdown de Colab no es el mismo que en RStudio",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "r/01-introduccion.html#comandos-básicos",
+    "href": "r/01-introduccion.html#comandos-básicos",
+    "title": "Lenguajes de programación de código libre",
+    "section": "Comandos básicos",
+    "text": "Comandos básicos\nSe puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:\n\n\n\n\n\n\nTip¿Cómo se organiza un notebook?\n\n\n\nUn notebook alterna celdas de código (se ejecutan) y celdas de texto (solo explican). Puedes correr una celda con Shift + Enter.",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "r/01-introduccion.html#términos-clave",
+    "href": "r/01-introduccion.html#términos-clave",
+    "title": "Lenguajes de programación de código libre",
+    "section": "Términos clave",
+    "text": "Términos clave\nUn notebook corre gracias a un kernel, y cada celda se ejecuta con Shift + Enter. El texto explicativo se escribe en Markdown.\n(Dale clic a cualquier término subrayado para ver su explicación.)\n\n\nVer/ocultar código\n#Licencia de R\nlicense()\n#Contribuyentes\ncontributors()\n#Cita\ncitation()\n\n\nLa ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. &lt;https://www.R-project.org/&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {https://www.R-project.org/}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-r-a-language-and-environment-for-statistical-computing.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.\n\n\nVer/ocultar código\n#Ayuda\nhelp(seq)\n? seq\n#Nota: help.start() abre un navegador con la documentacion completa y q() cierra\n#la sesion de R -- ambos son para la consola/RStudio interactivos, no funcionan\n#igual dentro de un notebook de Jupyter o Colab.",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
   },
   {
     "objectID": "tutoriales/ejercicios-python.html",
