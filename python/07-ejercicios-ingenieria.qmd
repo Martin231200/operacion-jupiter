@@ -1,0 +1,108 @@
+---
+title: "Python: Ejercicios de ingeniería"
+engine: knitr
+filters:
+  - pyodide
+---
+
+Cuatro problemas aplicados a ingeniería industrial y mecánica, más un quinto con sabor aeroespacial. Edita el código de la izquierda y dale **Run**.
+
+## 1. Cálculo de esfuerzo (no es la Ley de Hooke)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{pyodide-python}
+F = 5000
+A = 0.0002
+esfuerzo = F / A
+
+assert round(esfuerzo / 1e6, 2) == 25.0
+print(f"Esfuerzo: {esfuerzo/1e6} MPa")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Barra de sección **A = 2 cm² (0.0002 m²)**, carga axial **F = 5000 N**. σ = F/A es la *definición de esfuerzo* — la Ley de Hooke es σ = E·ε (relaciona esfuerzo y deformación).
+:::
+:::
+
+**En R:** `esfuerzo <- F / A` · **En Julia:** `esfuerzo = F / A`
+
+## 2. Control de calidad (tolerancia dimensional)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{pyodide-python}
+diametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]
+media = sum(diametros) / len(diametros)
+dentro_tolerancia = all(abs(d - 20) <= 0.05 for d in diametros)
+
+assert abs(media - 20.00125) < 1e-9
+print(f"Media: {media} mm — dentro de tolerancia: {dentro_tolerancia}")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Lote de 8 piezas, diámetro nominal 20 mm, tolerancia ±0.05 mm.
+
+*Nota:* se compara con tolerancia (`abs(a-b) < 1e-9`) en vez de igualdad exacta de decimales — más robusto ante redondeo.
+:::
+:::
+
+## 3. Cinemática (MRUA)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{pyodide-python}
+v0, a, t = 4, 2, 5
+posicion = v0*t + 0.5*a*t**2
+velocidad_final = v0 + a*t
+
+assert posicion == 45.0
+print(f"Posición: {posicion} m, velocidad final: {velocidad_final} m/s")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Velocidad inicial 4 m/s, aceleración 2 m/s², durante 5 s.
+:::
+:::
+
+## 4. Eficiencia de una máquina
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{pyodide-python}
+trabajo_util, energia_entrada = 3200, 4000
+eficiencia = trabajo_util / energia_entrada * 100
+
+assert eficiencia == 80.0
+print(f"Eficiencia: {eficiencia}%")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una máquina recibe 4000 J y entrega 3200 J de trabajo útil.
+:::
+:::
+
+## 5. Relación empuje-peso (aeroespacial)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{pyodide-python}
+T = 120000
+m = 8000
+g = 9.81
+W = m * g
+twr = T / W
+
+assert round(twr, 3) == 1.529
+print(f"Peso: {W} N — T/W: {round(twr, 3)}")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Aeronave de 8000 kg, empuje total 120 000 N.
+:::
+:::

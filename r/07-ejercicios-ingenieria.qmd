@@ -1,0 +1,109 @@
+---
+title: "R: Ejercicios de ingeniería"
+engine: knitr
+filters:
+  - webr
+---
+
+Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale **Run**. A la derecha tienes el planteamiento y, al final, cómo se ve en Python y Julia.
+
+## 1. Cálculo de esfuerzo (no es la Ley de Hooke)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{webr-r}
+F <- 5000
+A <- 0.0002
+esfuerzo <- F / A
+
+stopifnot(round(esfuerzo / 1e6, 2) == 25.0)
+cat("Esfuerzo:", esfuerzo / 1e6, "MPa\n")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una barra de sección **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. El esfuerzo normal se calcula como σ = F/A — esto es la *definición de esfuerzo*, no la Ley de Hooke (que relaciona esfuerzo y deformación: σ = E·ε).
+:::
+:::
+
+**En Python:** `esfuerzo = F / A` · **En Julia:** `esfuerzo = F / A`
+
+## 2. Control de calidad (tolerancia dimensional)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{webr-r}
+diametros <- c(20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00)
+media <- mean(diametros)
+dentro_tolerancia <- all(abs(diametros - 20) <= 0.05)
+
+stopifnot(isTRUE(all.equal(media, 20.00125, tolerance = 1e-9)))
+cat("Media:", media, "mm — dentro de tolerancia:", dentro_tolerancia, "\n")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Lote de 8 piezas, diámetro nominal 20 mm, tolerancia ±0.05 mm.
+
+*Nota:* aquí se usa `all.equal(..., tolerance=)` en vez de comparar decimales exactos — más robusto ante redondeo de punto flotante.
+:::
+:::
+
+## 3. Cinemática (MRUA)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{webr-r}
+v0 <- 4; a <- 2; t <- 5
+posicion <- v0*t + 0.5*a*t^2
+velocidad_final <- v0 + a*t
+
+stopifnot(posicion == 45.0)
+cat("Posición:", posicion, "m, velocidad final:", velocidad_final, "m/s\n")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Velocidad inicial 4 m/s, aceleración 2 m/s², durante 5 s.
+:::
+:::
+
+## 4. Eficiencia de una máquina
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{webr-r}
+trabajo_util <- 3200
+energia_entrada <- 4000
+eficiencia <- trabajo_util / energia_entrada * 100
+
+stopifnot(eficiencia == 80.0)
+cat("Eficiencia:", eficiencia, "%\n")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Una máquina recibe 4000 J y entrega 3200 J de trabajo útil.
+:::
+:::
+
+## 5. Relación empuje-peso (aeroespacial)
+
+::: {.ejercicio-split}
+::: {.ejercicio-codigo}
+```{webr-r}
+T <- 120000
+m <- 8000
+g <- 9.81
+W <- m * g
+twr <- T / W
+
+stopifnot(round(twr, 3) == 1.529)
+cat("Peso:", W, "N — T/W:", round(twr, 3), "\n")
+```
+:::
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Aeronave de 8000 kg, empuje total 120 000 N.
+:::
+:::
