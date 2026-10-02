@@ -83,9 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f25488dd8c1b0298410c4592b5f89f85.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-c43e58afad7f939bcda591b07ac371ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,6 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -322,6 +323,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Glosario</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./recursos.html"> 
+<span class="menu-text">Recursos</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./python/01-introduccion.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
@@ -378,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">5 de septiembre, 2026</p>
+      <p class="date-modified">2 de octubre, 2026</p>
     </div>
   </div>
     
@@ -392,14 +397,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Términos comunes que aparecen a lo largo de los tutoriales, con su equivalente o particularidad en cada lenguaje cuando aplica.</p>
 <p><strong>Kernel</strong> — el motor que ejecuta el código de un notebook. Cada lenguaje tiene el suyo: <code>python3</code> para Python, <code>ir</code> (IRkernel) para R. Julia usa <code>IJulia</code>.</p>
 <p><strong>Notebook</strong> — documento que combina celdas de código (se ejecutan) y celdas de texto/Markdown (solo se muestran formateadas). Extensión <code>.ipynb</code>.</p>
+<p><strong>REPL</strong> (<em>Read-Eval-Print Loop</em>) — la consola interactiva de un lenguaje: lees una línea, se evalúa, se imprime el resultado, y vuelve a empezar. Python, R y Julia tienen el suyo.</p>
+<p><strong>IDE</strong> (<em>Integrated Development Environment</em>) — un programa que junta editor de código, consola y herramientas de depuración en un solo lugar. RStudio es el IDE más común para R; VS Code se usa para los tres lenguajes.</p>
+<p><strong>Paquete / biblioteca</strong> — código ya escrito por alguien más que se puede reutilizar. En Python se instala con <code>pip</code>, en R con <code>install.packages()</code>, en Julia con <code>Pkg.add()</code>.</p>
 <p><strong>Vector / Array / Lista</strong> — la estructura de datos secuencial básica de cada lenguaje. En R se llama <em>vector</em> (mismo tipo obligatorio), en Julia <em>array</em> (mismo tipo, tipado), en Python <em>lista</em> (cualquier tipo mezclado).</p>
 <p><strong>DataFrame</strong> — estructura tabular tipo hoja de cálculo. Nativa en R (<code>data.frame</code>), vía biblioteca en Python (<code>pandas.DataFrame</code>) y en Julia (<code>DataFrames.jl</code>).</p>
 <p><strong>Indexado</strong> — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.</p>
 <p><strong>Tipado dinámico</strong> — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.</p>
-<p><strong>Compilación JIT (<em>just-in-time</em>)</strong> — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Así funciona Julia, lo que le da su desempeño.</p>
+<p><strong>Compilación JIT (<em>just-in-time</em>)</strong> — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Julia está diseñada alrededor de esto; R (desde 3.4) y Python (desde 3.13, experimental) también lo usan en menor medida.</p>
 <p><strong>Despacho múltiple (<em>multiple dispatch</em>)</strong> — el comportamiento de una función puede depender del tipo de <strong>todos</strong> sus argumentos, no solo del primero. Particularidad de Julia.</p>
-<p><strong>Vectorización</strong> — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. Presente en R y Julia por diseño; en Python se logra con bibliotecas como NumPy.</p>
-<p><strong>webR / Pyodide</strong> — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios “en vivo” de este sitio.</p>
+<p><strong>Vectorización</strong> — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. En R es automática; en Julia requiere el operador <code>.</code> explícito antes del operador (ej. <code>.*</code>); en Python se logra con bibliotecas como NumPy.</p>
+<p><strong>Broadcasting</strong> — la regla con la que un lenguaje aplica una operación entre arreglos de formas distintas (por ejemplo, sumar un escalar a un vector completo). NumPy lo hace automático; en Julia hay que usar el punto explícito.</p>
+<p><strong>Aserción</strong> (<code>assert</code> / <code>stopifnot</code> / <code>@assert</code>) — una instrucción que verifica que una condición sea verdadera y detiene el programa con error si no lo es. Así se “verifican” los ejercicios de este sitio.</p>
+<p><strong>webR / Pyodide</strong> — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios “en vivo” de este sitio. Julia todavía no tiene un equivalente maduro.</p>
 
 
 <!-- -->
@@ -880,21 +890,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Notebook** — documento que combina celdas de código (se ejecutan) y celdas de texto/Markdown (solo se muestran formateadas). Extensión <span class="in">`.ipynb`</span>.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**Vector / Array / Lista** — la estructura de datos secuencial básica de cada lenguaje. En R se llama *vector* (mismo tipo obligatorio), en Julia *array* (mismo tipo, tipado), en Python *lista* (cualquier tipo mezclado).</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**REPL** (*Read-Eval-Print Loop*) — la consola interactiva de un lenguaje: lees una línea, se evalúa, se imprime el resultado, y vuelve a empezar. Python, R y Julia tienen el suyo.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**DataFrame** — estructura tabular tipo hoja de cálculo. Nativa en R (<span class="in">`data.frame`</span>), vía biblioteca en Python (<span class="in">`pandas.DataFrame`</span>) y en Julia (<span class="in">`DataFrames.jl`</span>).</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**IDE** (*Integrated Development Environment*) — un programa que junta editor de código, consola y herramientas de depuración en un solo lugar. RStudio es el IDE más común para R; VS Code se usa para los tres lenguajes.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>**Indexado** — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>**Paquete / biblioteca** — código ya escrito por alguien más que se puede reutilizar. En Python se instala con <span class="in">`pip`</span>, en R con <span class="in">`install.packages()`</span>, en Julia con <span class="in">`Pkg.add()`</span>.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**Tipado dinámico** — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**Vector / Array / Lista** — la estructura de datos secuencial básica de cada lenguaje. En R se llama *vector* (mismo tipo obligatorio), en Julia *array* (mismo tipo, tipado), en Python *lista* (cualquier tipo mezclado).</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>**Compilación JIT (*just-in-time*)** — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Así funciona Julia, lo que le da su desempeño.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>**DataFrame** — estructura tabular tipo hoja de cálculo. Nativa en R (<span class="in">`data.frame`</span>), vía biblioteca en Python (<span class="in">`pandas.DataFrame`</span>) y en Julia (<span class="in">`DataFrames.jl`</span>).</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>**Despacho múltiple (*multiple dispatch*)** — el comportamiento de una función puede depender del tipo de **todos** sus argumentos, no solo del primero. Particularidad de Julia.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>**Indexado** — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>**Vectorización** — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. Presente en R y Julia por diseño; en Python se logra con bibliotecas como NumPy.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>**Tipado dinámico** — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>**webR / Pyodide** — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios "en vivo" de este sitio.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>**Compilación JIT (*just-in-time*)** — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Julia está diseñada alrededor de esto; R (desde 3.4) y Python (desde 3.13, experimental) también lo usan en menor medida.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Despacho múltiple (*multiple dispatch*)** — el comportamiento de una función puede depender del tipo de **todos** sus argumentos, no solo del primero. Particularidad de Julia.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>**Vectorización** — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. En R es automática; en Julia requiere el operador <span class="in">`.`</span> explícito antes del operador (ej. <span class="in">`.*`</span>); en Python se logra con bibliotecas como NumPy.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>**Broadcasting** — la regla con la que un lenguaje aplica una operación entre arreglos de formas distintas (por ejemplo, sumar un escalar a un vector completo). NumPy lo hace automático; en Julia hay que usar el punto explícito.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>**Aserción** (<span class="in">`assert`</span> / <span class="in">`stopifnot`</span> / <span class="in">`@assert`</span>) — una instrucción que verifica que una condición sea verdadera y detiene el programa con error si no lo es. Así se "verifican" los ejercicios de este sitio.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**webR / Pyodide** — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios "en vivo" de este sitio. Julia todavía no tiene un equivalente maduro.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -918,6 +938,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </footer>
 <script src="./reading-time.js"></script>
 <script src="./share-button.js"></script>
+<script src="./skip-link.js"></script>
+<script src="./ver-tambien.js"></script>
+<script src="./keyboard-nav.js"></script>
 
 
 

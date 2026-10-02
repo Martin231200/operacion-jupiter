@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python: introducción – Operación Jupyter</title>
+<title>Introducción a Python – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -118,11 +118,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Python: introducción – Operación Jupyter">
+<meta property="og:title" content="Introducción a Python – Operación Jupyter">
 <meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/python/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Python: introducción – Operación Jupyter">
+<meta name="twitter:title" content="Introducción a Python – Operación Jupyter">
 <meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/python/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../glosario.qmd"> 
+    <a class="nav-link" href="../glosario.html"> 
 <span class="menu-text">Glosario</span></a>
   </li>  
   <li class="nav-item">
@@ -409,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/07-ejercicios-ingenieria.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../python/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ejercicios de ingeniería</span></a>
   </div>
 </li>
@@ -429,10 +429,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#formas-de-usar-python" id="toc-formas-de-usar-python" class="nav-link active" data-scroll-target="#formas-de-usar-python">Formas de usar Python</a></li>
+  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link active" data-scroll-target="#términos-clave">Términos clave</a></li>
+  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación">Instalación</a></li>
   <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
-  <li><a href="#ventajas-y-desventajas" id="toc-ventajas-y-desventajas" class="nav-link" data-scroll-target="#ventajas-y-desventajas">Ventajas y desventajas</a></li>
-  <li><a href="#ejercicios-de-calentamiento" id="toc-ejercicios-de-calentamiento" class="nav-link" data-scroll-target="#ejercicios-de-calentamiento">Ejercicios de calentamiento</a></li>
+  <li><a href="#mensaje" id="toc-mensaje" class="nav-link" data-scroll-target="#mensaje">Mensaje</a></li>
   </ul>
 </nav>
     </div>
@@ -442,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Python: introducción</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Introducción a Python</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -454,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">29 de septiembre, 2026</p>
+      <p class="date-modified">2 de octubre, 2026</p>
     </div>
   </div>
     
@@ -465,77 +465,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Python es un lenguaje de propósito general, de sintaxis legible y con un ecosistema enorme de librerías. Es una buena primera opción para aprender a programar.</p>
-<section id="formas-de-usar-python" class="level2">
-<h2 class="anchored" data-anchor-id="formas-de-usar-python">Formas de usar Python</h2>
-<p><strong>Instalación local.</strong> Se descarga desde <a href="https://www.python.org/downloads/">python.org</a> y se usa desde la terminal o desde un editor como VS Code.</p>
-<p><strong>Anaconda.</strong> <a href="https://www.anaconda.com/download">Anaconda</a> instala Python junto con NumPy, pandas y Matplotlib, además del gestor de entornos <code>conda</code>. Es cómoda para ciencia de datos.</p>
-<p><strong>Jupyter.</strong> Con Python ya instalado:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un notebook se arma con dos tipos de celda: de <strong>código</strong> (se ejecuta y muestra resultado) y de <strong>texto/Markdown</strong> (solo se renderiza como texto formateado). Así se ven lado a lado:</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/tipos-celda.svg" class="img-fluid figure-img"></p>
+<figcaption>Comparación de una celda de código (se ejecuta y muestra resultado) contra una celda de texto Markdown (solo se renderiza)</figcaption>
+</figure>
+</div>
+<section id="términos-clave" class="level2">
+<h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
+<p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
+<p><em>(Dale clic a cualquier término subrayado para ver su explicación.)</em></p>
+<p>Python fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde &amp; Informatica (CWI) en los Países Bajos.</p>
+<p>El nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python.</p>
+</section>
+<section id="instalación" class="level2">
+<h2 class="anchored" data-anchor-id="instalación">Instalación</h2>
+<p>Python se puede usar de varias formas, según qué tan cómodo quieras tenerlo:</p>
+<p><strong>Opción 1 — Instalación local desde python.org</strong> Se descarga el instalador desde <a href="https://www.python.org/downloads/">python.org</a> según tu sistema operativo. Una vez instalado, puedes correrlo desde la terminal (<code>python</code>) o integrarlo a un editor como VS Code con la extensión oficial de Python.</p>
+<p><strong>Opción 2 — Anaconda (recomendada si vas a usar ciencia de datos)</strong> <a href="https://www.anaconda.com/download">Anaconda</a> instala Python junto con las librerías más usadas para cómputo científico (NumPy, pandas, Matplotlib) y el gestor de entornos <code>conda</code>, que evita conflictos entre proyectos que necesitan versiones distintas de una misma librería.</p>
+<p><strong>Opción 3 — Jupyter (para trabajar con notebooks)</strong> Si ya tienes Python instalado (por cualquiera de las dos opciones anteriores), Jupyter se instala con:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install notebook</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Google Colab.</strong> Corre notebooks en el navegador sin instalar nada. A diferencia de R y Julia, Python tiene soporte nativo completo.</p>
+<p>Esto abre Jupyter en tu navegador, donde puedes crear notebooks <code>.ipynb</code> con celdas de código y de texto.</p>
+<p><strong>Opción 4 — Google Colab (sin instalar nada)</strong> <a href="https://colab.research.google.com/">Colab</a> corre notebooks de Python directamente en el navegador, con los paquetes más comunes ya instalados y acceso gratuito a GPU. Es la forma más rápida de empezar si no quieres instalar nada en tu equipo — a diferencia de R y Julia, Python tiene soporte nativo completo en Colab.</p>
+<section id="ventajas-y-desventajas-de-python" class="level3">
+<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-python">Ventajas y desventajas de Python</h3>
+<ul>
+<li>A favor: sintaxis simple y legible, ideal para quien empieza a programar.</li>
+<li>A favor: ecosistema enorme de librerías (ciencia de datos, web, automatización, machine learning) y una comunidad muy grande, con mucha documentación.</li>
+<li>A favor: multiplataforma y con soporte nativo en Colab, sin instalar nada.</li>
+<li>En contra: al ser interpretado, suele ser más lento que lenguajes compilados para cómputo numérico intensivo (por eso existen NumPy y librerías en C/C++ por debajo, para compensar).</li>
+<li>En contra: el manejo de entornos y versiones (pip vs conda, virtualenv, etc.) puede ser confuso al principio.</li>
+</ul>
+</section>
 </section>
 <section id="comandos-básicos" class="level2">
 <h2 class="anchored" data-anchor-id="comandos-básicos">Comandos básicos</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Comando</th>
-<th>Qué hace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>python archivo.py</code></td>
-<td>Ejecuta un script desde la terminal</td>
-</tr>
-<tr class="even">
-<td><code>python</code></td>
-<td>Abre el intérprete interactivo (REPL); se sale con <code>exit()</code></td>
-</tr>
-<tr class="odd">
-<td><code>pip install paquete</code></td>
-<td>Instala una librería externa</td>
-</tr>
-<tr class="even">
-<td><code>pip list</code></td>
-<td>Muestra los paquetes instalados</td>
-</tr>
-<tr class="odd">
-<td><code>help(objeto)</code></td>
-<td>Muestra la documentación de una función o módulo</td>
-</tr>
-<tr class="even">
-<td><code>type(objeto)</code></td>
-<td>Muestra el tipo de dato de una variable</td>
-</tr>
-</tbody>
-</table>
-<p>En un notebook, estos mismos comandos se escriben en una celda y se ejecutan con Shift + Enter.</p>
+<p>Estos son los comandos que vas a usar todo el tiempo, ya sea en la consola de Python, en una celda de Jupyter o en la terminal:</p>
+<ul>
+<li><code>python archivo.py</code> — ejecuta un script de Python desde la terminal.</li>
+<li><code>python</code> (sin argumentos) — abre el intérprete interactivo (REPL); cada línea se ejecuta al momento. Se sale con <code>exit()</code> o Ctrl+D.</li>
+<li><code>pip install nombre_paquete</code> — instala una librería externa (por ejemplo <code>pip install numpy</code>).</li>
+<li><code>pip list</code> — muestra los paquetes instalados en el entorno actual.</li>
+<li><code>help(objeto)</code> — dentro del intérprete, muestra la documentación de una función, clase o módulo. Por ejemplo: <code>help(print)</code>.</li>
+<li><code>type(objeto)</code> — muestra el tipo de dato de una variable; útil para depurar.</li>
+</ul>
+<p>En un notebook (Jupyter, Colab), estos mismos comandos se escriben dentro de una celda de código y se ejecutan con Shift + Enter, igual que cualquier otro código de Python.</p>
 </section>
-<section id="ventajas-y-desventajas" class="level2">
-<h2 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h2>
-<p><strong>A favor:</strong> sintaxis simple, ecosistema muy amplio, comunidad grande y soporte nativo en Colab.</p>
-<p><strong>En contra:</strong> al ser interpretado, suele ser más lento que un lenguaje compilado en cómputo numérico intensivo (por eso NumPy usa código en C por debajo). El manejo de entornos (<code>pip</code>, <code>conda</code>, <code>venv</code>) puede confundir al principio.</p>
-</section>
-<section id="ejercicios-de-calentamiento" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicios-de-calentamiento">Ejercicios de calentamiento</h2>
-<div id="c3a4ff09" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-29T13:29:42.755568Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-29T13:29:42.755433Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-29T13:29:42.761335Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-29T13:29:42.760296Z&quot;}}" data-execution_count="1">
+<section id="mensaje" class="level2">
+<h2 class="anchored" data-anchor-id="mensaje">Mensaje</h2>
+<div id="cell-10" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, Python"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span> <span class="op">**</span> <span class="dv">10</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">"Operación Jupyter"</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bienvenido a Operación Jupyter"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hola, Python
-1024
-17</code></pre>
-</div>
 </div>
 
 

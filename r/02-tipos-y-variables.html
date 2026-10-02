@@ -85,9 +85,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-46b3a2eb852870670d1e4dd0464c0b59.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5557d5e906760380132ec05260cd84f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-c43e58afad7f939bcda591b07ac371ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -435,6 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a></li>
   <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a>
   <ul class="collapse">
+  <li><a href="#ejemplo-fuera-y-dentro-de-una-llamada" id="toc-ejemplo-fuera-y-dentro-de-una-llamada" class="nav-link" data-scroll-target="#ejemplo-fuera-y-dentro-de-una-llamada">Ejemplo: <code>=</code> fuera y dentro de una llamada</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
@@ -458,7 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">6 de septiembre, 2026</p>
+      <p class="date-modified">2 de octubre, 2026</p>
     </div>
   </div>
     
@@ -515,7 +516,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="declaración-de-variables" class="level1">
 <h1>Declaración de variables</h1>
-<p>R no requiere declarar el tipo de una variable: el tipo se infiere del valor asignado y puede cambiar si se reasigna. El operador de asignación preferido es &lt;-, aunque = también funciona dentro de una instrucción; -&gt; asigna de izquierda a derecha. Los nombres de variables deben empezar con una letra o un punto (no seguido de número) y distinguen mayúsculas de minúsculas.</p>
+<p>R no requiere declarar el tipo de una variable: el tipo se infiere del valor asignado y puede cambiar si se reasigna. El operador de asignación preferido es <code>&lt;-</code>; <code>-&gt;</code> asigna de izquierda a derecha. <code>=</code> también asigna, pero <strong>solo a nivel superior</strong> (fuera de una llamada a función) — <strong>dentro</strong> de una llamada, <code>f(x = 3)</code>, el <code>=</code> no asigna: nombra un argumento de esa función. Los nombres de variables deben empezar con una letra o un punto (no seguido de número) y distinguen mayúsculas de minúsculas.</p>
 <div id="cell-8" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
@@ -530,52 +531,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mi_variable<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fl">3.14</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<section id="ejemplo-fuera-y-dentro-de-una-llamada" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-fuera-y-dentro-de-una-llamada">Ejemplo: <code>=</code> fuera y dentro de una llamada</h2>
+<div id="cell-11" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span>        <span class="co"># asignación, equivalente a x &lt;- 5</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) x <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="at">x =</span> <span class="dv">3</span>)     <span class="co"># aquí x = 3 nombra el argumento x de f, no crea/reasigna una variable x</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos aplicando lo visto, con contexto de ingeniería.</p>
-<section id="conversión-de-temperatura-reales" class="level3">
-<h3 class="anchored" data-anchor-id="conversión-de-temperatura-reales">1. Conversión de temperatura (reales)</h3>
+<section id="conversión-de-temperatura-básico-reales" class="level3">
+<h3 class="anchored" data-anchor-id="conversión-de-temperatura-básico-reales">1. Conversión de temperatura <span class="badge-dificultad basico">Básico</span> (reales)</h3>
 <p>Convierte 23.5 °C a Fahrenheit con <code>F = C * 9/5 + 32</code>.</p>
-<div id="cell-12" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">23.5</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(f <span class="sc">==</span> <span class="fl">74.3</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(c, <span class="st">"°C ="</span>, f, <span class="st">"°F</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="verificar-tolerancia-de-una-pieza-booleano" class="level3">
-<h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-booleano">2. Verificar tolerancia de una pieza (booleano)</h3>
-<p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
 <div id="cell-14" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fl">4.97</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nominal <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>pasa <span class="ot">&lt;-</span> <span class="fu">abs</span>(peso <span class="sc">-</span> nominal) <span class="sc">&lt;=</span> tolerancia</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(pasa <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"¿Pasa la prueba?"</span>, pasa, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">23.5</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(f <span class="sc">==</span> <span class="fl">74.3</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(c, <span class="st">"°C ="</span>, f, <span class="st">"°F</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
-<section id="etiqueta-de-producto-strings" class="level3">
-<h3 class="anchored" data-anchor-id="etiqueta-de-producto-strings">3. Etiqueta de producto (strings)</h3>
-<p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para el código <code>"ENG"</code>, lote <code>2026</code>, pieza número <code>47</code>.</p>
+<section id="verificar-tolerancia-de-una-pieza-básico-booleano" class="level3">
+<h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-básico-booleano">2. Verificar tolerancia de una pieza <span class="badge-dificultad basico">Básico</span> (booleano)</h3>
+<p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
 <div id="cell-16" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="st">"ENG"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lote <span class="ot">&lt;-</span> <span class="dv">2026</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>numero_pieza <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fl">4.97</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>nominal <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"%s-%d-%04d"</span>, codigo, lote, numero_pieza)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(etiqueta <span class="sc">==</span> <span class="st">"ENG-2026-0047"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(etiqueta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>pasa <span class="ot">&lt;-</span> <span class="fu">abs</span>(peso <span class="sc">-</span> nominal) <span class="sc">&lt;=</span> tolerancia</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(pasa <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"¿Pasa la prueba?"</span>, pasa, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="etiqueta-de-producto-intermedio-strings" class="level3">
+<h3 class="anchored" data-anchor-id="etiqueta-de-producto-intermedio-strings">3. Etiqueta de producto <span class="badge-dificultad intermedio">Intermedio</span> (strings)</h3>
+<p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para código <code>"ENG"</code>, lote <code>2026</code>, pieza <code>47</code>.</p>
+<div id="cell-18" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="st">"ENG"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lote <span class="ot">&lt;-</span> <span class="dv">2026</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>numero_pieza <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"%s-%d-%04d"</span>, codigo, lote, numero_pieza)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(etiqueta <span class="sc">==</span> <span class="st">"ENG-2026-0047"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(etiqueta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 

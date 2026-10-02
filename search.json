@@ -467,6 +467,39 @@
     ]
   },
   {
+    "objectID": "r/04-estructuras-datos.html",
+    "href": "r/04-estructuras-datos.html",
+    "title": "Estructuras de datos en R",
+    "section": "",
+    "text": "R tiene cuatro estructuras de datos principales, y elegir la correcta depende de si tus datos son de un solo tipo o mixtos, y de si son de una o más dimensiones:\nEl acceso a elementos cambia según la estructura: con [ ] obtienes un subconjunto conservando la estructura original, y con [[ ]] obtienes el elemento individual (importante sobre todo en listas).",
+    "crumbs": [
+      "R",
+      "Estructuras de datos"
+    ]
+  },
+  {
+    "objectID": "r/04-estructuras-datos.html#vectores",
+    "href": "r/04-estructuras-datos.html#vectores",
+    "title": "Estructuras de datos en R",
+    "section": "Vectores",
+    "text": "Vectores\nEl vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().\n\n\nVer/ocultar código\nv &lt;- c(1, 2, 3, 4)\n\n\n\n\nVer/ocultar código\nv[2]\n\n\n\n\nVer/ocultar código\nlength(v)\n\n\n\nFactoresMatricesArreglosDataframesListas\n\n\nLos factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).\n\n\nVer/ocultar código\nf &lt;- factor(c(\"bajo\", \"alto\", \"medio\"))\nlevels(f)\n\n\n\n\nUna matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.\n\n\nVer/ocultar código\nm &lt;- matrix(1:6, nrow = 2, ncol = 3)\ndim(m)\n\n\n\n\narray() generaliza la matriz a más de dos dimensiones.\n\n\nVer/ocultar código\na &lt;- array(1:24, dim = c(2, 3, 4))\ndim(a)\n\n\n\n\nEl data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.\n\n\nVer/ocultar código\ndf &lt;- data.frame(nombre = c(\"A\", \"B\"), valor = c(1, 2))\nstr(df)\n\n\n\n\nLa lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.\n\n\nVer/ocultar código\nlst &lt;- list(numero = 1, texto = \"hola\", vector = c(1,2,3))\nlst$texto",
+    "crumbs": [
+      "R",
+      "Estructuras de datos"
+    ]
+  },
+  {
+    "objectID": "r/04-estructuras-datos.html#ejercicios",
+    "href": "r/04-estructuras-datos.html#ejercicios",
+    "title": "Estructuras de datos en R",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos, contexto de ingeniería.\n\n1. Vector: registrar una nueva medición Básico\nA c(12.4, 13.1, 11.9) agrégale 12.8 con c() y confirma que ahora tiene 4 elementos.\n\n\nVer/ocultar código\nmediciones &lt;- c(12.4, 13.1, 11.9)\nmediciones &lt;- c(mediciones, 12.8)\n\nstopifnot(length(mediciones) == 4)\nprint(mediciones)\n\n\n\n\n2. Lista: consultar inventario por código Básico\nDe list(P100=25, P200=40, P300=15), obtén cuántas piezas hay de P200.\n\n\nVer/ocultar código\ninventario &lt;- list(P100 = 25, P200 = 40, P300 = 15)\ndisponibles &lt;- inventario$P200\n\nstopifnot(disponibles == 40)\nprint(disponibles)\n\n\n\n\n3. Data frame: filtrar por columna Intermedio\nDe un data frame de piezas, obtén el nombre de la fila cuyo valor es 2.\n\n\nVer/ocultar código\ndf &lt;- data.frame(nombre = c(\"A\", \"B\"), valor = c(1, 2))\nresultado &lt;- df$nombre[df$valor == 2]\n\nstopifnot(resultado == \"B\")\nprint(resultado)",
+    "crumbs": [
+      "R",
+      "Estructuras de datos"
+    ]
+  },
+  {
     "objectID": "r/03-estructuras-control.html",
     "href": "r/03-estructuras-control.html",
     "title": "Estructuras: secuencias, decisiones y repeticiones",
@@ -555,154 +588,231 @@
     ]
   },
   {
-    "objectID": "python/08-visualizacion.html",
-    "href": "python/08-visualizacion.html",
-    "title": "Python: visualización",
+    "objectID": "r/02-tipos-y-variables.html",
+    "href": "r/02-tipos-y-variables.html",
+    "title": "Tipos de datos",
     "section": "",
-    "text": "Matplotlib es la librería base para graficar; Seaborn y pandas.plot() se construyen encima de ella.\n\n\nVer/ocultar código\nimport matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4]\ny = [1, 4, 9, 16]\n\nplt.plot(x, y, marker=\"o\")\nplt.xlabel(\"x\")\nplt.ylabel(\"x al cuadrado\")\nplt.title(\"Ejemplo de gráfica de línea\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nGráfica de línea con los puntos (1,1), (2,4), (3,9) y (4,16)\n\n\nPara gráficas estadísticas (histogramas, cajas, mapas de calor) con menos código, Seaborn suele ser más práctico:\n\n\nVer/ocultar código\nimport seaborn as sns\nimport numpy as np\n\nrng = np.random.default_rng(0)\ndatos = rng.normal(size=200)\nsns.histplot(datos)\n\n\n\n\n\n\n\n\n\nEn un script, plt.show() abre la ventana de la gráfica. En Jupyter o Colab normalmente no hace falta: la gráfica aparece debajo de la celda.",
+    "text": "En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.\n\n\nVer/ocultar código\n#Real (double) por defecto\nx &lt;- 5\nclass(x)\n#Entero explícito\ny &lt;- 5L\nclass(y)\nis.integer(y)",
     "crumbs": [
-      "Python",
-      "Visualización"
+      "R",
+      "Tipos de datos y variables"
     ]
   },
   {
-    "objectID": "python/01-introduccion.html",
-    "href": "python/01-introduccion.html",
-    "title": "Python: introducción",
+    "objectID": "r/02-tipos-y-variables.html#enteros-y-reales",
+    "href": "r/02-tipos-y-variables.html#enteros-y-reales",
+    "title": "Tipos de datos",
     "section": "",
-    "text": "Python es un lenguaje de propósito general, de sintaxis legible y con un ecosistema enorme de librerías. Es una buena primera opción para aprender a programar.",
+    "text": "En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.\n\n\nVer/ocultar código\n#Real (double) por defecto\nx &lt;- 5\nclass(x)\n#Entero explícito\ny &lt;- 5L\nclass(y)\nis.integer(y)",
     "crumbs": [
-      "Python",
-      "Introducción e instalación"
+      "R",
+      "Tipos de datos y variables"
     ]
   },
   {
-    "objectID": "python/01-introduccion.html#formas-de-usar-python",
-    "href": "python/01-introduccion.html#formas-de-usar-python",
-    "title": "Python: introducción",
-    "section": "Formas de usar Python",
-    "text": "Formas de usar Python\nInstalación local. Se descarga desde python.org y se usa desde la terminal o desde un editor como VS Code.\nAnaconda. Anaconda instala Python junto con NumPy, pandas y Matplotlib, además del gestor de entornos conda. Es cómoda para ciencia de datos.\nJupyter. Con Python ya instalado:\npip install notebook\njupyter notebook\nGoogle Colab. Corre notebooks en el navegador sin instalar nada. A diferencia de R y Julia, Python tiene soporte nativo completo.",
+    "objectID": "r/02-tipos-y-variables.html#booleanos",
+    "href": "r/02-tipos-y-variables.html#booleanos",
+    "title": "Tipos de datos",
+    "section": "Booleanos",
+    "text": "Booleanos\nEl tipo lógico (logical) toma los valores TRUE y FALSE (o sus abreviaturas T y F). Se generan al evaluar comparaciones y se combinan con los operadores & (y), | (o) y ! (negación); las versiones && y || evalúan un solo elemento y se usan en condicionales.\n\n\nVer/ocultar código\na &lt;- TRUE\nb &lt;- FALSE\na & b\na | b\n!a\n5 &gt; 3",
     "crumbs": [
-      "Python",
-      "Introducción e instalación"
+      "R",
+      "Tipos de datos y variables"
     ]
   },
   {
-    "objectID": "python/01-introduccion.html#comandos-básicos",
-    "href": "python/01-introduccion.html#comandos-básicos",
-    "title": "Python: introducción",
-    "section": "Comandos básicos",
-    "text": "Comandos básicos\n\n\n\n\n\n\n\nComando\nQué hace\n\n\n\n\npython archivo.py\nEjecuta un script desde la terminal\n\n\npython\nAbre el intérprete interactivo (REPL); se sale con exit()\n\n\npip install paquete\nInstala una librería externa\n\n\npip list\nMuestra los paquetes instalados\n\n\nhelp(objeto)\nMuestra la documentación de una función o módulo\n\n\ntype(objeto)\nMuestra el tipo de dato de una variable\n\n\n\nEn un notebook, estos mismos comandos se escriben en una celda y se ejecutan con Shift + Enter.",
+    "objectID": "r/02-tipos-y-variables.html#strings",
+    "href": "r/02-tipos-y-variables.html#strings",
+    "title": "Tipos de datos",
+    "section": "Strings",
+    "text": "Strings\nEl tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.\n\n\nVer/ocultar código\ns &lt;- \"Operación Jupyter\"\nclass(s)\nnchar(s)\ns2 &lt;- paste(\"Hola\", \"mundo\")",
     "crumbs": [
-      "Python",
-      "Introducción e instalación"
+      "R",
+      "Tipos de datos y variables"
     ]
   },
   {
-    "objectID": "python/01-introduccion.html#ventajas-y-desventajas",
-    "href": "python/01-introduccion.html#ventajas-y-desventajas",
-    "title": "Python: introducción",
-    "section": "Ventajas y desventajas",
-    "text": "Ventajas y desventajas\nA favor: sintaxis simple, ecosistema muy amplio, comunidad grande y soporte nativo en Colab.\nEn contra: al ser interpretado, suele ser más lento que un lenguaje compilado en cómputo numérico intensivo (por eso NumPy usa código en C por debajo). El manejo de entornos (pip, conda, venv) puede confundir al principio.",
+    "objectID": "r/02-tipos-y-variables.html#ejemplo-fuera-y-dentro-de-una-llamada",
+    "href": "r/02-tipos-y-variables.html#ejemplo-fuera-y-dentro-de-una-llamada",
+    "title": "Tipos de datos",
+    "section": "Ejemplo: = fuera y dentro de una llamada",
+    "text": "Ejemplo: = fuera y dentro de una llamada\n\n\nVer/ocultar código\nx = 5        # asignación, equivalente a x &lt;- 5\nf &lt;- function(x) x * 2\nf(x = 3)     # aquí x = 3 nombra el argumento x de f, no crea/reasigna una variable x",
     "crumbs": [
-      "Python",
-      "Introducción e instalación"
+      "R",
+      "Tipos de datos y variables"
     ]
   },
   {
-    "objectID": "python/01-introduccion.html#ejercicios-de-calentamiento",
-    "href": "python/01-introduccion.html#ejercicios-de-calentamiento",
-    "title": "Python: introducción",
-    "section": "Ejercicios de calentamiento",
-    "text": "Ejercicios de calentamiento\n\n\nVer/ocultar código\nprint(\"Hola, Python\")\nprint(2 ** 10)\nprint(len(\"Operación Jupyter\"))\n\n\nHola, Python\n1024\n17",
+    "objectID": "r/02-tipos-y-variables.html#ejercicios",
+    "href": "r/02-tipos-y-variables.html#ejercicios",
+    "title": "Tipos de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería.\n\n1. Conversión de temperatura Básico (reales)\nConvierte 23.5 °C a Fahrenheit con F = C * 9/5 + 32.\n\n\nVer/ocultar código\nc &lt;- 23.5\nf &lt;- c * 9/5 + 32\n\nstopifnot(f == 74.3)\ncat(c, \"°C =\", f, \"°F\\n\")\n\n\n\n\n2. Verificar tolerancia de una pieza Básico (booleano)\nUna pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?\n\n\nVer/ocultar código\npeso &lt;- 4.97\nnominal &lt;- 5.0\ntolerancia &lt;- 0.05\n\npasa &lt;- abs(peso - nominal) &lt;= tolerancia\nstopifnot(pasa == TRUE)\ncat(\"¿Pasa la prueba?\", pasa, \"\\n\")\n\n\n\n\n3. Etiqueta de producto Intermedio (strings)\nArma la etiqueta CÓDIGO-LOTE-NÚMERO (número con 4 dígitos) para código \"ENG\", lote 2026, pieza 47.\n\n\nVer/ocultar código\ncodigo &lt;- \"ENG\"\nlote &lt;- 2026\nnumero_pieza &lt;- 47\n\netiqueta &lt;- sprintf(\"%s-%d-%04d\", codigo, lote, numero_pieza)\nstopifnot(etiqueta == \"ENG-2026-0047\")\nprint(etiqueta)",
     "crumbs": [
-      "Python",
-      "Introducción e instalación"
+      "R",
+      "Tipos de datos y variables"
     ]
   },
   {
-    "objectID": "python/03-funciones.html",
-    "href": "python/03-funciones.html",
-    "title": "Python: funciones",
+    "objectID": "python/04-estructuras-datos.html#ejercicios",
+    "href": "python/04-estructuras-datos.html#ejercicios",
+    "title": "Estructuras de datos y objetos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con listas, diccionarios y tuplas, contexto de ingeniería.\n\n1. Lista: registrar una nueva medición Básico\nA la lista [12.4, 13.1, 11.9] agrégale 12.8 y confirma que ahora tiene 4 elementos.\n\n\nVer/ocultar código\nmediciones = [12.4, 13.1, 11.9]\nmediciones.append(12.8)\n\nassert len(mediciones) == 4\nprint(mediciones)\n\n\n\n\n2. Diccionario: consultar inventario por código Básico\nDe {\"P100\": 25, \"P200\": 40, \"P300\": 15}, obtén cuántas piezas hay de \"P200\".\n\n\nVer/ocultar código\ninventario = {\"P100\": 25, \"P200\": 40, \"P300\": 15}\ndisponibles = inventario[\"P200\"]\n\nassert disponibles == 40\nprint(disponibles)\n\n\n\n\n3. Tupla: coordenadas de un punto de inspección Intermedio\nDesempaqueta la tupla (12.5, 8.3) en x, y y verifica ambos valores.\n\n\nVer/ocultar código\npunto = (12.5, 8.3)\nx, y = punto\n\nassert x == 12.5 and y == 8.3\nprint(x, y)",
+    "crumbs": [
+      "Python",
+      "Estructuras de datos"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html",
+    "href": "python/02-entrada-datos-operadores.html",
+    "title": "Entrada de datos",
     "section": "",
-    "text": "Una función agrupa instrucciones bajo un nombre para poder reutilizarlas.\nVer/ocultar código\ndef nombre_funcion(argumentos):\n    # cálculos\n    return resultado",
+    "text": "input() siempre devuelve texto (str), aunque el usuario escriba un número — hay que convertirlo explícitamente si lo vas a usar en cálculos:\nVer/ocultar código\nprint(\"¿Cuál es tu nombre?\")\nz= input()\nprint(z)\n\n\n¿Cuál es tu nombre?\nHugo\nHugo\nVer/ocultar código\nprint(\"Su nombre es:\", z)\n\n\nSu nombre es: Indiana Jones\nPython distingue tres familias de operadores que conviene no confundir:\nUn error común de quien viene de otro lenguaje: = es asignación, == es comparación. Confundirlos es una de las causas más frecuentes de bugs para quien empieza.",
     "crumbs": [
       "Python",
-      "Funciones"
+      "Entrada de datos y operadores"
     ]
   },
   {
-    "objectID": "python/03-funciones.html#argumentos-con-nombre-y-valores-por-defecto",
-    "href": "python/03-funciones.html#argumentos-con-nombre-y-valores-por-defecto",
-    "title": "Python: funciones",
-    "section": "Argumentos con nombre y valores por defecto",
-    "text": "Argumentos con nombre y valores por defecto\n\n\nVer/ocultar código\ndef calcular_area(base, altura=1):\n    return base * altura\n\nprint(calcular_area(base=3, altura=5))   # el orden no importa si usas nombres\nprint(calcular_area(3))                  # usa altura=1\n\n\n15\n3",
+    "objectID": "python/02-entrada-datos-operadores.html#operadores-matemáticos",
+    "href": "python/02-entrada-datos-operadores.html#operadores-matemáticos",
+    "title": "Entrada de datos",
+    "section": "Operadores matemáticos",
+    "text": "Operadores matemáticos\n\n\nVer/ocultar código\n4 + 7\n\n\n11\n\n\n\n\nVer/ocultar código\n55 - 9\n\n\n46\n\n\n\n\nVer/ocultar código\n78 * 9\n\n\n702\n\n\n\n\nVer/ocultar código\n85 / 3\n\n\n28.333333333333332\n\n\n\n\nVer/ocultar código\n85 // 3\n\n\n28\n\n\n\n\nVer/ocultar código\n6 ** 3\n\n\n216\n\n\n\n\nVer/ocultar código\nminutos = 105\nminutos / 60\n\n\n1.75\n\n\n\n\nVer/ocultar código\nminutos = 105\nhoras = minutos // 60\nhoras\n\n\n1\n\n\n\n\nVer/ocultar código\nresto = minutos - horas * 60\nresto\n\n\n45\n\n\n\n\nVer/ocultar código\nresto2 = minutos % 60\nresto2\n\n\n45",
     "crumbs": [
       "Python",
-      "Funciones"
+      "Entrada de datos y operadores"
     ]
   },
   {
-    "objectID": "python/03-funciones.html#ciclos-con-range",
-    "href": "python/03-funciones.html#ciclos-con-range",
-    "title": "Python: funciones",
-    "section": "Ciclos con range",
-    "text": "Ciclos con range\n\n\nVer/ocultar código\nfor i in range(3):\n    print(i)\n\n\n0\n1\n2\n\n\nrange(3) produce 0, 1 y 2: excluye el último valor.",
+    "objectID": "python/02-entrada-datos-operadores.html#expresiones",
+    "href": "python/02-entrada-datos-operadores.html#expresiones",
+    "title": "Entrada de datos",
+    "section": "Expresiones",
+    "text": "Expresiones\n\n\nVer/ocultar código\n5 ** 2 + 2 * 3\n\n\n31\n\n\nPython respeta las prioridades de las operaciones : exponenciación o raíz, multiplicación o división y suma o resta",
     "crumbs": [
       "Python",
-      "Funciones"
+      "Entrada de datos y operadores"
     ]
   },
   {
-    "objectID": "python/03-funciones.html#librerías",
-    "href": "python/03-funciones.html#librerías",
-    "title": "Python: funciones",
-    "section": "Librerías",
-    "text": "Librerías\nmath viene con Python: solo se importa, no se instala.\n\n\nVer/ocultar código\nimport math\nprint(math.sqrt(16))\n\n\n4.0\n\n\nLas estructuras nativas de Python son listas, tuplas, diccionarios y conjuntos. Los DataFrames pertenecen a la librería pandas, no al lenguaje.",
+    "objectID": "python/02-entrada-datos-operadores.html#tipos-de-variables",
+    "href": "python/02-entrada-datos-operadores.html#tipos-de-variables",
+    "title": "Entrada de datos",
+    "section": "Tipos de variables",
+    "text": "Tipos de variables\n\n\nVer/ocultar código\na = 45\nb = 13.6\nc = \"Operacion_Jupyter\"\nd = True\ne = False\n\n\nFunción type () Devuelve el tipo de una variable\n\n\nVer/ocultar código\ntype(a)\n\n\nint\n\n\n\n\nVer/ocultar código\ntype(b)\n\n\nfloat\n\n\n\n\nVer/ocultar código\ntype(c)\n\n\nstr\n\n\n\n\nVer/ocultar código\ntype(d)\n\n\nbool\n\n\n\n\nVer/ocultar código\ntype(e)\n\n\nbool\n\n\n\n\nVer/ocultar código\n10 == 10 #El doble signo = implica comparación El signo sencillo = implica asignación\n\n\nTrue\n\n\n\n\nVer/ocultar código\n10 == 5\n\n\nFalse\n\n\n\n\nVer/ocultar código\nx = 5\ny = 7\n\n\n\n\nVer/ocultar código\nx == y\n\n\nFalse",
     "crumbs": [
       "Python",
-      "Funciones"
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#operadores-relacionales",
+    "href": "python/02-entrada-datos-operadores.html#operadores-relacionales",
+    "title": "Entrada de datos",
+    "section": "Operadores relacionales",
+    "text": "Operadores relacionales\n\n\nVer/ocultar código\nx != y               # x no es igual a y\n\n\nTrue\n\n\n\n\nVer/ocultar código\nx &gt; y                # x es mayor que y\n\n\nFalse\n\n\n\n\nVer/ocultar código\nx &gt;= y               # x es mayor o igual a y\n\n\nFalse\n\n\n\n\nVer/ocultar código\nx &lt; y               # x es menor que y\n\n\nTrue",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#operadores-lógicos",
+    "href": "python/02-entrada-datos-operadores.html#operadores-lógicos",
+    "title": "Entrada de datos",
+    "section": "Operadores lógicos",
+    "text": "Operadores lógicos\n\n\nVer/ocultar código\nx &gt; 0 and x &lt; 10\n\n\nTrue\n\n\n\n\nVer/ocultar código\nx % 2 == 0 or x % 3 == 0\n\n\nFalse\n\n\n\n\nVer/ocultar código\nnot x &gt; y\n\n\nTrue",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/02-entrada-datos-operadores.html#ejercicios",
+    "href": "python/02-entrada-datos-operadores.html#ejercicios",
+    "title": "Entrada de datos",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos aplicando lo visto, con contexto de ingeniería.\n\n1. Conversión de temperatura Básico (reales)\nConvierte 23.5 °C a Fahrenheit con F = C * 9/5 + 32.\n\n\nVer/ocultar código\nc = 23.5\nf = c * 9/5 + 32\n\nassert f == 74.3\nprint(f\"{c} °C = {f} °F\")\n\n\n\n\n2. Verificar tolerancia de una pieza Básico (booleano)\nUna pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?\n\n\nVer/ocultar código\npeso = 4.97\nnominal = 5.0\ntolerancia = 0.05\n\npasa = abs(peso - nominal) &lt;= tolerancia\nassert pasa == True\nprint(f\"¿Pasa la prueba? {pasa}\")\n\n\n\n\n3. Etiqueta de producto Intermedio (strings)\nArma la etiqueta CÓDIGO-LOTE-NÚMERO (número con 4 dígitos) para el código \"ENG\", lote 2026, pieza número 47.\n\n\nVer/ocultar código\ncodigo = \"ENG\"\nlote = 2026\nnumero_pieza = 47\n\netiqueta = f\"{codigo}-{lote}-{numero_pieza:04d}\"\nassert etiqueta == \"ENG-2026-0047\"\nprint(etiqueta)",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
+    "objectID": "python/06-funciones-estadisticas.html",
+    "href": "python/06-funciones-estadisticas.html",
+    "title": "Funciones estadísticas",
+    "section": "",
+    "text": "Ver/ocultar código\nimport numpy as np   # esta página es independiente de 05-arreglos, hay que importar de nuevo\nPython no trae funciones estadísticas avanzadas en su librería estándar más allá del módulo statistics (media, mediana, desviación estándar básicas). Para trabajo estadístico real se usa NumPy.\nVer/ocultar código\nW=np.arange(1,22,2)\nprint(\"Arreglo: \", W)\n\n\nArreglo:  [ 1  3  5  7  9 11 13 15 17 19 21]\nVer/ocultar código\nprint(W.mean())\n\n\n11.0\nVer/ocultar código\nprint(W.sum())\n\n\n121\nVer/ocultar código\nprint(W.min())\n\n\n1\nVer/ocultar código\nprint(W.max())\n\n\n21",
+    "crumbs": [
+      "Python",
+      "Funciones estadísticas"
+    ]
+  },
+  {
+    "objectID": "python/06-funciones-estadisticas.html#ejercicios-particularidades-de-python",
+    "href": "python/06-funciones-estadisticas.html#ejercicios-particularidades-de-python",
+    "title": "Funciones estadísticas",
+    "section": "Ejercicios: particularidades de Python",
+    "text": "Ejercicios: particularidades de Python\nTres problemas que muestran características propias del lenguaje.\n\n1. Vectorización Básico con NumPy (sin ciclo explícito)\nMultiplica [10, 20, 30, 40] por 2, usando NumPy en vez de un for.\n\n\nVer/ocultar código\nvalores = np.array([10, 20, 30, 40])\ndoble = valores * 2\n\nassert doble.tolist() == [20, 40, 60, 80]\nprint(doble)\n\n\n\n\n2. Indexado desde 0 Básico\nAccede al primer elemento de [\"sensor1\", \"sensor2\", \"sensor3\"].\n\n\nVer/ocultar código\netiquetas = [\"sensor1\", \"sensor2\", \"sensor3\"]\nprimero = etiquetas[0]\n\nassert primero == \"sensor1\"\nprint(primero)\n\n\n\n\n3. Tipado dinámico Intermedio\nAsigna 10, revisa su tipo, reasigna un texto y revisa otra vez.\n\n\nVer/ocultar código\nx = 10\ntipo1 = type(x).__name__\n\nx = \"ahora soy texto\"\ntipo2 = type(x).__name__\n\nassert tipo1 == \"int\" and tipo2 == \"str\"\nprint(tipo1, tipo2)",
+    "crumbs": [
+      "Python",
+      "Funciones estadísticas"
     ]
   },
   {
     "objectID": "python/05-arreglos.html",
     "href": "python/05-arreglos.html",
-    "title": "Python: arreglos con NumPy",
+    "title": "Arreglos",
     "section": "",
-    "text": "NumPy es la librería estándar para arreglos numéricos. Frente a las listas, es más rápida y permite operar sobre todos los elementos a la vez, sin ciclos.\nVer/ocultar código\nimport numpy as np\n\nA = np.array([[1, 2, 3],\n              [4, 5, 6],\n              [7, 8, 9]])\nprint(A.ndim, A.shape)\n\n\n2 (3, 3)\nndim es el número de dimensiones. Evita llamarlo rank: en álgebra lineal, rank es el rango de una matriz, que es otra cosa.",
+    "text": "Numpy es una librería fundamental para la computación científica con Python. Permite la creación y manipulación de arreglos (arrays) multidimensionales. Además, ofrece una amplia gama de funciones matemáticas y estadísticas.\nVer/ocultar código\nimport numpy as np",
     "crumbs": [
       "Python",
       "Arreglos"
     ]
   },
   {
-    "objectID": "python/05-arreglos.html#rebanadas-slicing",
-    "href": "python/05-arreglos.html#rebanadas-slicing",
-    "title": "Python: arreglos con NumPy",
-    "section": "Rebanadas (slicing)",
-    "text": "Rebanadas (slicing)\n\n\nVer/ocultar código\nprint(A[1:3][1:3])     # trampa: NO es una submatriz\nprint(A[1:3, 1:3])     # filas 1-2 y columnas 1-2\n\n\n[[7 8 9]]\n[[5 6]\n [8 9]]\n\n\nA[1:3] ya devuelve dos filas, y el segundo [1:3] se aplica a ese resultado, no a A. Para filas y columnas a la vez, usa una sola pareja de corchetes con coma.",
+    "objectID": "python/05-arreglos.html#creación-de-arreglos",
+    "href": "python/05-arreglos.html#creación-de-arreglos",
+    "title": "Arreglos",
+    "section": "Creación de arreglos",
+    "text": "Creación de arreglos\nFunciones adicionales para crear un arreglo\n\n\nVer/ocultar código\n# Arreglo cuyos valores son todos 0\na = np.zeros((2,3))\nprint(a)\n\n\n[[0. 0. 0.]\n [0. 0. 0.]]\n\n\n\n\nVer/ocultar código\n# Arreglo cuyos valores son todos 1\nb = np.ones((2,3,4))\nprint(b)\n\n\n[[[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]\n\n [[1. 1. 1. 1.]\n  [1. 1. 1. 1.]\n  [1. 1. 1. 1.]]]\n\n\n\n\nVer/ocultar código\n# Arreglo cuyos valores son todos \"8\", o cualquier otro valore indicado en el segundo parámentro\nc = np.full((3,4),8)\nprint(c)\n\n\n[[8 8 8 8]\n [8 8 8 8]\n [8 8 8 8]]\n\n\nCreación de un arreglo básado en función de rangos\n\n\nVer/ocultar código\na=np.linspace(1,10,4) # (mínimo, máximo, no. de elementos)\nprint(a)\n\n\n[ 1.  4.  7. 10.]\n\n\n\n\nVer/ocultar código\na2=np.arange(9)\nprint(a2)\n\n\n[0 1 2 3 4 5 6 7 8]\n\n\n\n\nVer/ocultar código\na3=np.arange(1,11,2) # (mínimo, máximo, paso)\nprint(a3)\n\n\n[1 3 5 7 9]\n\n\nPara que los resultados aleatorios sean reproducibles, conviene fijar una semilla:\n\n\nVer/ocultar código\nrng = np.random.default_rng(42)\n\n\n\n\nVer/ocultar código\n# Inicialización del arreglo con valores aleatorios\nb = rng.random((2,3,2))\nprint(b)\n\n\n\n\nVer/ocultar código\n# Inicialización del arreglo con valores aleatorios con una distribución normal\nc=np.random.randn(2,3)\nprint(c)\n\n\n[[-0.35567627  0.73770074  0.75545374]\n [ 0.75522022  0.04958392  0.90407643]]\n\n\n\n\nVer/ocultar código\nimport matplotlib.pyplot as plt\n\n\n\n\nVer/ocultar código\nm=np.random.randn(1000000)\nplt.hist(m,bins=200)\nplt.show()",
     "crumbs": [
       "Python",
       "Arreglos"
     ]
   },
   {
-    "objectID": "python/05-arreglos.html#reshape-no-modifica-.shape-sí",
-    "href": "python/05-arreglos.html#reshape-no-modifica-.shape-sí",
-    "title": "Python: arreglos con NumPy",
-    "section": "reshape no modifica; .shape sí",
-    "text": "reshape no modifica; .shape sí\n\n\nVer/ocultar código\nv = np.arange(9)\nB = v.reshape(3, 3)     # nuevo arreglo; v sigue igual\nprint(v.shape, B.shape)\n\nv.shape = (3, 3)        # esto modifica v en su lugar\nprint(v.shape)\n\n\n(9,) (3, 3)\n(3, 3)",
+    "objectID": "python/05-arreglos.html#características-de-un-arreglo",
+    "href": "python/05-arreglos.html#características-de-un-arreglo",
+    "title": "Arreglos",
+    "section": "Características de un arreglo",
+    "text": "Características de un arreglo\nEn NumPy:\n\nCada dimensión se denomina axis\nEl número de dimensiones se denomina ndim (evita el término “rank”: en NumPy es ndim; “rank” se confunde con el rango de una matriz en álgebra lineal)\nLa lista de dimensiones con su correspondiente longitud se denomina shape\nEl número total de elementos se denomina size\n\n\n\nVer/ocultar código\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\n\nVer/ocultar código\nA[0][1]\n\n\nnp.int64(2)\n\n\n\n\nVer/ocultar código\nA[1]\n\n\narray([4, 5, 6])\n\n\n\n\nVer/ocultar código\nA[1:3][1:3]\n# Ojo: esto NO es una submatriz 2D. A[1:3] ya devuelve un arreglo de 2 filas,\n# y [1:3] sobre ESE resultado solo puede devolver como máximo esas 2 filas.\n# Para una submatriz real (filas Y columnas a la vez), se usa una sola indexación:\n# A[1:3, 1:3]\n\n\n\n\nVer/ocultar código\nA = np.array([[1,2],[3,4]])\nB = np.array([[5,6],[7,8]])\nprint(A+B)\n\n\n[[ 6  8]\n [10 12]]\n\n\n\n\nVer/ocultar código\nC = np.dot(A,B)\nprint(C)\n\n\n[[19 22]\n [43 50]]\n\n\n\n\nVer/ocultar código\nD = A.T\nprint(D)\n\n\n[[1 3]\n [2 4]]\n\n\n\n\nVer/ocultar código\nF=np.arange(1,10,1) # arreglo de una dimensión\nprint(F)\n\n\n[1 2 3 4 5 6 7 8 9]\n\n\n\n\nVer/ocultar código\nprint(F[5])\n\n\n6\n\n\n\n\nVer/ocultar código\nprint(F[2:5])\n\n\n[3 4 5]\n\n\n\n\nVer/ocultar código\nprint(F[4:])\n\n\n[5 6 7 8 9]\n\n\n\n\nVer/ocultar código\nprint(F[0::3])\n\n\n[1 4 7]\n\n\nArreglo multidimensional\n\n\nVer/ocultar código\ndata=[[1,2,3],[4,5,6],[7,8,9]]\narreglo_multi=np.array(data)\nprint(arreglo_multi)\n\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\n\nVer/ocultar código\nprint(arreglo_multi[0,2]) #figura 4\n\n\n3\n\n\n\n\nVer/ocultar código\nprint(arreglo_multi[2:])\n\n\n[[7 8 9]]\n\n\n\n\nVer/ocultar código\nprint(arreglo_multi[1:,1:])\n\n\n[[5 6]\n [8 9]]",
     "crumbs": [
       "Python",
       "Arreglos"
     ]
   },
   {
-    "objectID": "python/05-arreglos.html#números-aleatorios-reproducibles",
-    "href": "python/05-arreglos.html#números-aleatorios-reproducibles",
-    "title": "Python: arreglos con NumPy",
-    "section": "Números aleatorios reproducibles",
-    "text": "Números aleatorios reproducibles\n\n\nVer/ocultar código\nrng = np.random.default_rng(42)   # semilla fija\nx = rng.normal(size=100)\nprint(round(float(x.mean()), 4), round(float(x.std(ddof=1)), 4))\n\n\n-0.0503 0.7767",
+    "objectID": "python/05-arreglos.html#modificación-de-un-arreglo",
+    "href": "python/05-arreglos.html#modificación-de-un-arreglo",
+    "title": "Arreglos",
+    "section": "Modificación de un arreglo",
+    "text": "Modificación de un arreglo\n\n\nVer/ocultar código\narreglo1=np.arange(12)\nprint(arreglo1)\n\n\n[ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n\n\n\nVer/ocultar código\nprint(\"shape\",arreglo1.shape)\n\n\nshape (12,)\n\n\n\n\nVer/ocultar código\nprint(\"arreglo1: \", arreglo1)\n\n\narreglo1:  [ 0  1  2  3  4  5  6  7  8  9 10 11]\n\n\n\n\nVer/ocultar código\narreglo1.shape=(4,3)\nprint(\"Shape: \", arreglo1.shape)\n\n\nShape:  (4, 3)\n\n\n\n\nVer/ocultar código\nprint(\"Arreglo1:\\n\", arreglo1)\n\n\n.reshape() devuelve un nuevo arreglo con los mismos datos (no modifica el original); en cambio, asignar .shape directamente SÍ modifica el arreglo original in situ (como se ve más abajo).\n\n\nVer/ocultar código\narreglo2=arreglo1.reshape(3,4)\nprint(\"Shape:\" , arreglo2.shape)\n\n\nShape: (3, 4)\n\n\n\n\nVer/ocultar código\nprint(\"Arreglo2: \\n\",arreglo2)\n\n\nArreglo2: \n [[ 0  1  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n\nModificaciones en un arreglo impactan en el precedente\n\n\nVer/ocultar código\narreglo2[0,1]=20\n\n\n\n\nVer/ocultar código\nprint(\"Arreglo2: \\n\", arreglo2)\n\n\nArreglo2: \n [[ 0 20  2  3]\n [ 4  5  6  7]\n [ 8  9 10 11]]\n\n\n\n\nVer/ocultar código\nprint(\"Arreglo1: \\n\", arreglo1)\n\n\nArreglo1: \n [[ 0 20  2]\n [ 3  4  5]\n [ 6  7  8]\n [ 9 10 11]]",
+    "crumbs": [
+      "Python",
+      "Arreglos"
+    ]
+  },
+  {
+    "objectID": "python/05-arreglos.html#añadir-y-eliminar-elementos-de-un-arreglo",
+    "href": "python/05-arreglos.html#añadir-y-eliminar-elementos-de-un-arreglo",
+    "title": "Arreglos",
+    "section": "Añadir y eliminar elementos de un arreglo",
+    "text": "Añadir y eliminar elementos de un arreglo\n\n\nVer/ocultar código\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\n\nVer/ocultar código\nb=np.delete(A,1,axis=0)\nprint(b)\n\n\n[[1 2 3]\n [7 8 9]]\n\n\n\n\nVer/ocultar código\nc=np.append(b,[[10,11,12]],axis=0)\nprint(c)\n\n\n[[ 1  2  3]\n [ 7  8  9]\n [10 11 12]]",
     "crumbs": [
       "Python",
       "Arreglos"
@@ -744,20 +854,6 @@
     "text": "Tipado dinámico\n\n\n\nPython\nx = 10\ntipo1 = type(x).__name__\nx = \"ahora soy texto\"\ntipo2 = type(x).__name__\nprint(tipo1, tipo2)\n\n\nint str\n\n\nR\nx &lt;- 10\ntipo1 &lt;- class(x)\nx &lt;- \"ahora soy texto\"\ntipo2 &lt;- class(x)\ncat(tipo1, tipo2)\n\n\n\n\nnumeric character\n\n\nJulia\nx = 10\ntipo1 = typeof(x)\nx = \"ahora soy texto\"\ntipo2 = typeof(x)\nprintln(tipo1, \" \", tipo2)\n\n\nInt64 String\n\n\n\nEste último muestra algo interesante: los tres son de tipado dinámico (nadie exige declarar el tipo), pero cada uno nombra sus tipos distinto — Python usa nombres cortos (int, str), R usa nombres más descriptivos (numeric, character), y Julia expone el tipo exacto con su tamaño (Int64, String)."
   },
   {
-    "objectID": "semblanza/index.html",
-    "href": "semblanza/index.html",
-    "title": "Semblanza de los profesores",
-    "section": "",
-    "text": "Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.\n\n\n\n\n\n\nAnn Godelieve Wellens\n\n\n\n\n\n\n\nVíctor Damián Pinilla Morán\n\n\n\n\n\n\n\nEdgar Ali Ramos Gómez\n\n\n\n\n\n\n\nArmando Moisés Pérez Silva"
-  },
-  {
-    "objectID": "progreso.html",
-    "href": "progreso.html",
-    "title": "Mi progreso",
-    "section": "",
-    "text": "Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más, y se pierde si borras los datos de navegación).\n\n\n&lt;div id=\"barra-progreso\" style=\"background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;\"&gt;&lt;/div&gt;\n\n\n0 de 0 completado"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Operación Jupyter",
@@ -786,155 +882,321 @@
     "text": "Cómo se arma el sitio\n\n\n\nDiagrama de flujo: los notebooks de Python, R y Julia se combinan con Quarto, que construye el sitio y lo publica en GitHub Pages\n\n\n\nCómo usar este sitio\nCada tutorial cubre, en el mismo orden para los tres lenguajes, para poder comparar directamente:\n\nInstalación e interfaces (RStudio, Google Colab, Jupyter)\nTipos de datos y declaración de variables\nEstructuras de control (secuencias, decisiones, repeticiones)\nEstructuras de datos y objetos\nFunciones\nParticularidades del lenguaje"
   },
   {
-    "objectID": "glosario-ampliado.html",
-    "href": "glosario-ampliado.html",
-    "title": "",
+    "objectID": "progreso.html",
+    "href": "progreso.html",
+    "title": "Mi progreso",
     "section": "",
-    "text": "Código\n\n\n\n\n\n\nTérminos nuevos para el glosario (agregar a los 10 existentes)\nREPL (Read-Eval-Print Loop) — El entorno interactivo donde escribes una línea de código, se ejecuta al momento, y ves el resultado inmediatamente. Python, R y Julia tienen su propio REPL.\nIDE (Integrated Development Environment / Entorno de Desarrollo Integrado) — Un programa que junta editor de código, ejecución y depuración en un solo lugar (ejemplos: RStudio para R, VS Code para cualquiera de los tres lenguajes).\nPaquete / biblioteca — Conjunto de código reutilizable, escrito por alguien más, que instalas y luego importas en tu programa (pip install en Python, install.packages() en R, ]add en Julia) para no reinventar funcionalidad ya existente.\nBroadcasting — Aplicar una operación elemento por elemento sobre un arreglo completo, sin escribir un ciclo explícito. En Python (NumPy) ocurre automáticamente al operar arreglos; en Julia requiere el operador . explícito (x .+ 1) — no es automático por diseño, hay que pedirlo.\nAserción (assert) — Una instrucción que verifica que una condición es verdadera y detiene el programa con un error si no lo es. Se usa para confirmar supuestos durante el desarrollo o las pruebas (assert en Python, stopifnot() en R, @assert en Julia).\n\n\nCorrección a un término existente\nSi el glosario actual dice que la vectorización es automática “por diseño” en Julia, es impreciso: Julia sí está optimizada para operaciones vectorizadas, pero el broadcasting requiere el operador . explícito (ver arriba) — no ocurre solo."
+    "text": "Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más, y se pierde si borras los datos de navegación).\n\n\n&lt;div id=\"barra-progreso\" style=\"background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;\"&gt;&lt;/div&gt;\n\n\n0 de 0 completado"
+  },
+  {
+    "objectID": "semblanza/index.html",
+    "href": "semblanza/index.html",
+    "title": "Semblanza de los profesores",
+    "section": "",
+    "text": "Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.\n\n\n\n\n\n\nAnn Godelieve Wellens\n\n\n\n\n\n\n\nVíctor Damián Pinilla Morán\n\n\n\n\n\n\n\nEdgar Ali Ramos Gómez\n\n\n\n\n\n\n\nArmando Moisés Pérez Silva"
+  },
+  {
+    "objectID": "glosario.html",
+    "href": "glosario.html",
+    "title": "Glosario",
+    "section": "",
+    "text": "Términos comunes que aparecen a lo largo de los tutoriales, con su equivalente o particularidad en cada lenguaje cuando aplica.\nKernel — el motor que ejecuta el código de un notebook. Cada lenguaje tiene el suyo: python3 para Python, ir (IRkernel) para R. Julia usa IJulia.\nNotebook — documento que combina celdas de código (se ejecutan) y celdas de texto/Markdown (solo se muestran formateadas). Extensión .ipynb.\nREPL (Read-Eval-Print Loop) — la consola interactiva de un lenguaje: lees una línea, se evalúa, se imprime el resultado, y vuelve a empezar. Python, R y Julia tienen el suyo.\nIDE (Integrated Development Environment) — un programa que junta editor de código, consola y herramientas de depuración en un solo lugar. RStudio es el IDE más común para R; VS Code se usa para los tres lenguajes.\nPaquete / biblioteca — código ya escrito por alguien más que se puede reutilizar. En Python se instala con pip, en R con install.packages(), en Julia con Pkg.add().\nVector / Array / Lista — la estructura de datos secuencial básica de cada lenguaje. En R se llama vector (mismo tipo obligatorio), en Julia array (mismo tipo, tipado), en Python lista (cualquier tipo mezclado).\nDataFrame — estructura tabular tipo hoja de cálculo. Nativa en R (data.frame), vía biblioteca en Python (pandas.DataFrame) y en Julia (DataFrames.jl).\nIndexado — la posición desde la que se cuenta el primer elemento de una colección. Python cuenta desde 0; R y Julia cuentan desde 1.\nTipado dinámico — el tipo de una variable se determina en tiempo de ejecución (no hay que declararlo). Los tres lenguajes lo son.\nCompilación JIT (just-in-time) — el código se traduce a instrucciones de máquina la primera vez que se ejecuta, no antes. Julia está diseñada alrededor de esto; R (desde 3.4) y Python (desde 3.13, experimental) también lo usan en menor medida.\nDespacho múltiple (multiple dispatch) — el comportamiento de una función puede depender del tipo de todos sus argumentos, no solo del primero. Particularidad de Julia.\nVectorización — aplicar una operación a todos los elementos de una colección a la vez, sin escribir un ciclo explícito. En R es automática; en Julia requiere el operador . explícito antes del operador (ej. .*); en Python se logra con bibliotecas como NumPy.\nBroadcasting — la regla con la que un lenguaje aplica una operación entre arreglos de formas distintas (por ejemplo, sumar un escalar a un vector completo). NumPy lo hace automático; en Julia hay que usar el punto explícito.\nAserción (assert / stopifnot / @assert) — una instrucción que verifica que una condición sea verdadera y detiene el programa con error si no lo es. Así se “verifican” los ejercicios de este sitio.\nwebR / Pyodide — tecnologías que permiten correr R o Python directamente en el navegador (WebAssembly), sin instalar nada ni depender de un servidor. Usadas en los ejercicios “en vivo” de este sitio. Julia todavía no tiene un equivalente maduro."
   },
   {
     "objectID": "python/07-ejercicios-ingenieria.html",
     "href": "python/07-ejercicios-ingenieria.html",
-    "title": "Python: ejercicios de ingeniería",
+    "title": "Python: Ejercicios de ingeniería",
     "section": "",
-    "text": "Los mismos ejercicios aparecen en R y Julia para comparar resultados y sintaxis."
+    "text": "Cuatro problemas aplicados a ingeniería industrial y mecánica, más un quinto con sabor aeroespacial. Edita el código de la izquierda y dale Run.",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
   },
   {
-    "objectID": "python/07-ejercicios-ingenieria.html#esfuerzo-normal",
-    "href": "python/07-ejercicios-ingenieria.html#esfuerzo-normal",
-    "title": "Python: ejercicios de ingeniería",
-    "section": "1. Esfuerzo normal",
-    "text": "1. Esfuerzo normal\nσ = F / A es la definición de esfuerzo. La ley de Hooke es otra relación: σ = E · ε, entre esfuerzo y deformación.\n\n\nVer/ocultar código\ndef esfuerzo(fuerza, area):\n    return fuerza / area\n\nprint(esfuerzo(5000, 0.002))    # N / m²\n\n\n2500000.0"
+    "objectID": "python/07-ejercicios-ingenieria.html#cálculo-de-esfuerzo-no-es-la-ley-de-hooke",
+    "href": "python/07-ejercicios-ingenieria.html#cálculo-de-esfuerzo-no-es-la-ley-de-hooke",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "1. Cálculo de esfuerzo (no es la Ley de Hooke)",
+    "text": "1. Cálculo de esfuerzo (no es la Ley de Hooke)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nBarra de sección A = 2 cm² (0.0002 m²), carga axial F = 5000 N. σ = F/A es la definición de esfuerzo — la Ley de Hooke es σ = E·ε (relaciona esfuerzo y deformación).\n\n\nEn R: esfuerzo &lt;- F / A · En Julia: esfuerzo = F / A",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
   },
   {
-    "objectID": "python/07-ejercicios-ingenieria.html#área-de-un-círculo-con-incertidumbre",
-    "href": "python/07-ejercicios-ingenieria.html#área-de-un-círculo-con-incertidumbre",
-    "title": "Python: ejercicios de ingeniería",
-    "section": "2. Área de un círculo con incertidumbre",
-    "text": "2. Área de un círculo con incertidumbre\nSumar una tolerancia directamente al área no tiene sentido dimensional. Lo correcto es propagar la incertidumbre del radio: ΔA ≈ 2πr·Δr.\n\n\nVer/ocultar código\nimport math\n\ndef area_circular(r):\n    return math.pi * r ** 2\n\ndef area_con_incertidumbre(r, dr):\n    return area_circular(r), 2 * math.pi * r * dr\n\nprint(area_con_incertidumbre(0.05, 0.001))\n\n\n(0.007853981633974483, 0.0003141592653589793)"
+    "objectID": "python/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "href": "python/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "2. Control de calidad (tolerancia dimensional)",
+    "text": "2. Control de calidad (tolerancia dimensional)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nLote de 8 piezas, diámetro nominal 20 mm, tolerancia ±0.05 mm.\nNota: se compara con tolerancia (abs(a-b) &lt; 1e-9) en vez de igualdad exacta de decimales — más robusto ante redondeo.",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
   },
   {
-    "objectID": "python/07-ejercicios-ingenieria.html#raíces-de-una-cuadrática",
-    "href": "python/07-ejercicios-ingenieria.html#raíces-de-una-cuadrática",
-    "title": "Python: ejercicios de ingeniería",
-    "section": "3. Raíces de una cuadrática",
-    "text": "3. Raíces de una cuadrática\n\n\nVer/ocultar código\ndef raices(a, b, c):\n    disc = b * b - 4 * a * c\n    return (-b + math.sqrt(disc)) / (2 * a), (-b - math.sqrt(disc)) / (2 * a)\n\nprint(raices(1, -3, 2))\n\n\n(2.0, 1.0)\n\n\nCon discriminante negativo, math.sqrt lanza ValueError: math domain error. R devuelve NaN y Julia lanza DomainError, buen punto de comparación."
+    "objectID": "python/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "href": "python/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "3. Cinemática (MRUA)",
+    "text": "3. Cinemática (MRUA)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nVelocidad inicial 4 m/s, aceleración 2 m/s², durante 5 s.",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
   },
   {
-    "objectID": "python/07-ejercicios-ingenieria.html#verificar-con-tolerancia",
-    "href": "python/07-ejercicios-ingenieria.html#verificar-con-tolerancia",
-    "title": "Python: ejercicios de ingeniería",
-    "section": "4. Verificar con tolerancia",
-    "text": "4. Verificar con tolerancia\nCon datos = [19.98, 20.01, 19.99, 20.03, 20.00, 20.02, 19.97, 20.00], la media es 20.0. Para comparar números decimales usa tolerancia, no igualdad exacta:\n\n\nVer/ocultar código\ndatos = [19.98, 20.01, 19.99, 20.03, 20.00, 20.02, 19.97, 20.00]\nmedia = sum(datos) / len(datos)\nassert abs(media - 20.0) &lt; 1e-9\nprint(media)\n\n\n20.0"
+    "objectID": "python/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "href": "python/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "4. Eficiencia de una máquina",
+    "text": "4. Eficiencia de una máquina\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna máquina recibe 4000 J y entrega 3200 J de trabajo útil.",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
   },
   {
-    "objectID": "python/06-funciones-estadisticas.html",
-    "href": "python/06-funciones-estadisticas.html",
-    "title": "Python: funciones estadísticas",
+    "objectID": "python/07-ejercicios-ingenieria.html#relación-empuje-peso-aeroespacial",
+    "href": "python/07-ejercicios-ingenieria.html#relación-empuje-peso-aeroespacial",
+    "title": "Python: Ejercicios de ingeniería",
+    "section": "5. Relación empuje-peso (aeroespacial)",
+    "text": "5. Relación empuje-peso (aeroespacial)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nAeronave de 8000 kg, empuje total 120 000 N.",
+    "crumbs": [
+      "Python",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html",
+    "href": "python/03-funciones.html",
+    "title": "Funciones nativas",
     "section": "",
-    "text": "La librería estándar trae el módulo statistics; para trabajo serio se usa NumPy.\nVer/ocultar código\nimport numpy as np\n\nm = np.array([20.1, 19.8, 20.3, 19.9, 20.0, 20.2])\nprint(np.mean(m), np.median(m))\nprint(round(np.std(m, ddof=1), 4))\n\n\n20.05 20.05\n0.1871\nVer/ocultar código\nimport statistics\ndatos = [19.98, 20.01, 19.99, 20.03, 20.00, 20.02, 19.97, 20.00]\nprint(np.std(datos))                 # ddof=0\nprint(np.std(datos, ddof=1))         # ddof=1\nprint(statistics.stdev(datos))       # ddof=1\n\n\n0.018708286933870256\n0.02000000000000059\n0.02000000000000059",
+    "text": "Ver/ocultar código\nlen(c)\n\n\n17\nVer/ocultar código\nint(b)\n\n\n13\nVer/ocultar código\nfloat(a)\n\n\n45.0\nVer/ocultar código\npi = 3.141592654\nVer/ocultar código\nround(pi, 4)\n\n\n3.1416\nVer/ocultar código\nedad = input(\"¿Cuál es tu edad en números enteros? \")\n\n\n¿Cuál es tu edad en números enteros? 23\nVer/ocultar código\nedad_real = float(edad)\nVer/ocultar código\ntype(edad_real)\n\n\nfloat\nOtras estructuras en forma de arreglos: listas (list), diccionarios, tuplas, conjuntos (set). (Los DataFrames son de la librería pandas, no nativos del lenguaje.)",
     "crumbs": [
       "Python",
-      "Funciones estadísticas"
+      "Funciones"
     ]
   },
   {
-    "objectID": "python/06-funciones-estadisticas.html#ejercicio",
-    "href": "python/06-funciones-estadisticas.html#ejercicio",
-    "title": "Python: funciones estadísticas",
-    "section": "Ejercicio",
-    "text": "Ejercicio\nCon las mediciones [20.1, 19.8, 20.3, 19.9, 20.0, 20.2] cm, verifica si todas están dentro de ±0.5 cm de la media.\n\n\nVer/ocultar código\ndentro = np.all(np.abs(m - m.mean()) &lt;= 0.5)\nprint(dentro)\n\n\nTrue",
+    "objectID": "python/03-funciones.html#declaración-import",
+    "href": "python/03-funciones.html#declaración-import",
+    "title": "Funciones nativas",
+    "section": "Declaración “import”",
+    "text": "Declaración “import”\nLa librería math es parte de la librería estándar de Python — no requiere instalación, solo importarla:\n\n\nVer/ocultar código\nimport math\n\n\nMath tiene varios métodos de uso matemático, por ejemplo, el valor de \\(\\pi\\)\n\n\nVer/ocultar código\nmath.pi\n\n\n3.141592653589793\n\n\n\n\nVer/ocultar código\ng=64\nmath.sqrt(g)\n\n\n8.0\n\n\n\n\nVer/ocultar código\nmath.pow(g,3)\n\n\n262144.0\n\n\n\n\nVer/ocultar código\nn=2\n\n\n\n\nVer/ocultar código\n19 + n + round(math.pi) * 2\n\n\n27\n\n\n\n\nVer/ocultar código\nint('111',2)\n\n\n7",
     "crumbs": [
       "Python",
-      "Funciones estadísticas"
+      "Funciones"
     ]
   },
   {
-    "objectID": "python/02-entrada-datos-operadores.html",
-    "href": "python/02-entrada-datos-operadores.html",
-    "title": "Python: entrada de datos y operadores",
+    "objectID": "python/03-funciones.html#funciones-definidas-por-el-usuario",
+    "href": "python/03-funciones.html#funciones-definidas-por-el-usuario",
+    "title": "Funciones nativas",
+    "section": "Funciones definidas por el usuario",
+    "text": "Funciones definidas por el usuario\nForma general de una función:\ndef nombre_funcion(argumentos):\n    # cálculos\n    return resultado\n\n\nVer/ocultar código\ndef saludos():\n  print(\"Saludos gente\")\n  print(\"Bienvenidos al curso\")\n\n\n\n\nVer/ocultar código\nsaludos()\n\n\nSaludos gente\nLa porra los saluda\n\n\n\n\nVer/ocultar código\ndef pide_pi():\n  numero_pi = math.pi\n  return numero_pi\n\n\n\n\nVer/ocultar código\npide_pi()\n\n\n3.141592653589793\n\n\n\n\nVer/ocultar código\ndef repetir(palabra, n):\n    print(palabra * n)\n\n\n\n\nVer/ocultar código\nspam = 'Spam, '\nrepetir(spam, 4)\n\n\nSpam, Spam, Spam, Spam, \n\n\n\n\nVer/ocultar código\ndef primeras_dos_lineas():\n    repetir(spam, 4)\n    repetir(spam, 4)\n\n\n\n\nVer/ocultar código\nprimeras_dos_lineas()\n\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \n\n\n\n\nVer/ocultar código\ndef ultimas_tres_lineas():\n    repetir(spam, 2)\n    print('(Lovely Spam, Wonderful Spam!)')\n    repetir(spam, 2)\n\n\n\n\nVer/ocultar código\nultimas_tres_lineas()\n\n\nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\nVer/ocultar código\ndef coro():\n    primeras_dos_lineas()\n    ultimas_tres_lineas()\n\n\n\n\nVer/ocultar código\ncoro()\n\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\nCiclos\nLa estructura de repetición for tiene la siguiente sintaxis:\nfor variable in range(valor):\n    ...\n\n\nVer/ocultar código\nfor i in range(2):\n    print(i)\n\n\n0\n1\n\n\n\n\nVer/ocultar código\nfor i in range(2):\n    print(\"Coro\", i)\n    coro()\n    print()\n\n\nCoro 0\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nCoro 1\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVer/ocultar código\ndef n_coros(n):\n    for i in range(n):\n        coro()\n        print()\n\n\n\n\nVer/ocultar código\nn_coros(5)\n\n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\nSpam, Spam, Spam, Spam, \nSpam, Spam, Spam, Spam, \nSpam, Spam, \n(Lovely Spam, Wonderful Spam!)\nSpam, Spam, \n\n\n\n\n\nVariables y parámetros locales\nLas variables y parámentros locales son aquellas cuya influencia se remita a una función.\n\n\nVer/ocultar código\ndef dos_partes(parte1,parte2):\n  total = parte1 + parte2\n  print(total)\n\n\n\n\nVer/ocultar código\nparte1='yo '\nparte2='y tu '\ndos_partes(parte1,parte2)\n\n\nyo y tu \n\n\n\n\nEstructura de decisión\n\n\nVer/ocultar código\nx = 5\ny = 7\nx\n\n\n\n\nVer/ocultar código\ny\n\n\n\n\nVer/ocultar código\nif x &gt; 0:\n    print('x es positivo')  # Decisión sencilla\n\n\n\n\nVer/ocultar código\nif x % 2 == 0:\n    print('x es par')\nelse:\n    print('x es impar')  # Decisión doble\n\n\n\n\nVer/ocultar código\nif x &lt; y:\n    print('x es menor que y')\nelif x &gt; y:\n    print('x es mayor que y')\nelse:\n    print('x y y son iguales') # Decisiones anidadas\n\n\nx es menor que y\n\n\ntambién puede escribirse como:\n\n\nVer/ocultar código\nif x &lt; y:\n    print('x es menor que y')\nelse:\n    if x &gt; y:\n           print('x es mayor que y')\n    else:\n          print('x y y son iguales') # Decisiones anidadas\n\n\nx es menor que y\n\n\n\n\nVer/ocultar código\nif 0 &lt; x:\n    if x &lt; 10:\n        print('x es un número positivo de un solo dígito.')\n\n\nx es un número positivo de un solo dígito.\n\n\n\n\nVer/ocultar código\na=10\na\n\n\n10\n\n\n\n\nVer/ocultar código\nb=5\nb\n\n\n5\n\n\n\n\nVer/ocultar código\nif a &lt; b:\n    print('a es menor que b')\nelse:\n    print('b es menor que a')\n\n\nb es menor que a\n\n\n\n\nVer/ocultar código\na,b=10,5\nprint(f\"{'a' if a&lt;b else 'b'} es menor\")\n\n\nb es menor",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html#ejercicios",
+    "href": "python/03-funciones.html#ejercicios",
+    "title": "Funciones nativas",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas cortos con estructuras de control, contexto de ingeniería.\n\n1. Consumo total de energía Básico (ciclo for)\nSuma el consumo (kWh) de 5 máquinas: [120, 95, 150, 80, 110].\n\n\nVer/ocultar código\nconsumos = [120, 95, 150, 80, 110]\ntotal = 0\nfor c in consumos:\n    total += c\n\nassert total == 555\nprint(f\"Consumo total: {total} kWh\")\n\n\n\n\n2. Clasificar estado por temperatura Intermedio (if/elif/else)\nClasifica una máquina: normal si temp &lt; 60, alerta si &lt; 85, crítico en otro caso. Prueba con 45, 70 y 90 °C.\n\n\nVer/ocultar código\ndef clasificar(temp):\n    if temp &lt; 60:\n        return \"normal\"\n    elif temp &lt; 85:\n        return \"alerta\"\n    else:\n        return \"critico\"\n\nresultados = [clasificar(t) for t in [45, 70, 90]]\nassert resultados == [\"normal\", \"alerta\", \"critico\"]\nprint(resultados)\n\n\n\n\n3. Simular llenado de un tanque Intermedio (while)\nUn tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda?\n\n\nVer/ocultar código\nnivel = 0\nobjetivo = 500\ntasa = 45\nminutos = 0\n\nwhile nivel &lt; objetivo:\n    nivel += tasa\n    minutos += 1\n\nassert minutos == 12\nprint(f\"Minutos: {minutos}, nivel final: {nivel} L\")",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "python/03-funciones.html#más-ejercicios-funciones",
+    "href": "python/03-funciones.html#más-ejercicios-funciones",
+    "title": "Funciones nativas",
+    "section": "Más ejercicios: funciones",
+    "text": "Más ejercicios: funciones\nTres problemas enfocados en definir funciones propias.\n\n4. Área de una sección circular Básico (valor por defecto)\nDefine area_circular(radio, decimales=2) que regrese el área redondeada. Prueba con radio 5.\n\n\nVer/ocultar código\nimport math\n\ndef area_circular(radio, decimales=2):\n    return round(math.pi * radio**2, decimales)\n\nresultado = area_circular(5)\nassert resultado == 78.54\nprint(resultado)\n\n\n\n\n5. Conversión con múltiples retornos Intermedio\nDefine convertir_metros(m) que regrese (pies, pulgadas) redondeados a 2 decimales. Prueba con 10 metros.\n\n\nVer/ocultar código\ndef convertir_metros(m):\n    pies = round(m * 3.28084, 2)\n    pulgadas = round(m * 39.3701, 2)\n    return pies, pulgadas\n\npies, pulgadas = convertir_metros(10)\nassert pies == 32.81 and pulgadas == 393.7\nprint(pies, pulgadas)\n\n\n\n\n6. Validación antes de calcular Intermedio (raíz cuadrada segura)\nDefine raiz_segura(x) que regrese None si x es negativo, o la raíz cuadrada si no. Prueba con 16 y -4.\n\n\nVer/ocultar código\ndef raiz_segura(x):\n    if x &lt; 0:\n        return None\n    return math.sqrt(x)\n\nr1 = raiz_segura(16)\nr2 = raiz_segura(-4)\nassert r1 == 4.0 and r2 is None\nprint(r1, r2)",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html",
+    "href": "python/01-introduccion.html",
+    "title": "Introducción a Python",
     "section": "",
-    "text": "input() siempre devuelve texto (str), aunque la persona escriba un número. Si vas a calcular con él, conviértelo:\n\n\nVer/ocultar código\nedad_texto = \"20\"     # así llegaría de input(\"¿Cuántos años tienes? \")\nprint(type(edad_texto))\nedad = int(edad_texto)   # conversión explícita\nprint(type(edad), edad)\n\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt; 20",
+    "text": "TipTip\n\n\n\nUn notebook se arma con dos tipos de celda: de código (se ejecuta y muestra resultado) y de texto/Markdown (solo se renderiza como texto formateado). Así se ven lado a lado:",
     "crumbs": [
       "Python",
-      "Entrada de datos y operadores"
+      "Introducción e instalación"
     ]
   },
   {
-    "objectID": "python/02-entrada-datos-operadores.html#entrada-de-datos",
-    "href": "python/02-entrada-datos-operadores.html#entrada-de-datos",
-    "title": "Python: entrada de datos y operadores",
+    "objectID": "python/01-introduccion.html#términos-clave",
+    "href": "python/01-introduccion.html#términos-clave",
+    "title": "Introducción a Python",
+    "section": "Términos clave",
+    "text": "Términos clave\nUn notebook corre gracias a un kernel, y cada celda se ejecuta con Shift + Enter. El texto explicativo se escribe en Markdown.\n(Dale clic a cualquier término subrayado para ver su explicación.)\nPython fue creado por Guido van Rossum a finales de los años 80 en el Centrum Wiskunde & Informatica (CWI) en los Países Bajos.\nEl nombre “Python” proviene de la afición de Guido van Rossum por el grupo de comedia británico Monty Python.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#instalación",
+    "href": "python/01-introduccion.html#instalación",
+    "title": "Introducción a Python",
+    "section": "Instalación",
+    "text": "Instalación\nPython se puede usar de varias formas, según qué tan cómodo quieras tenerlo:\nOpción 1 — Instalación local desde python.org Se descarga el instalador desde python.org según tu sistema operativo. Una vez instalado, puedes correrlo desde la terminal (python) o integrarlo a un editor como VS Code con la extensión oficial de Python.\nOpción 2 — Anaconda (recomendada si vas a usar ciencia de datos) Anaconda instala Python junto con las librerías más usadas para cómputo científico (NumPy, pandas, Matplotlib) y el gestor de entornos conda, que evita conflictos entre proyectos que necesitan versiones distintas de una misma librería.\nOpción 3 — Jupyter (para trabajar con notebooks) Si ya tienes Python instalado (por cualquiera de las dos opciones anteriores), Jupyter se instala con:\npip install notebook\njupyter notebook\nEsto abre Jupyter en tu navegador, donde puedes crear notebooks .ipynb con celdas de código y de texto.\nOpción 4 — Google Colab (sin instalar nada) Colab corre notebooks de Python directamente en el navegador, con los paquetes más comunes ya instalados y acceso gratuito a GPU. Es la forma más rápida de empezar si no quieres instalar nada en tu equipo — a diferencia de R y Julia, Python tiene soporte nativo completo en Colab.\n\nVentajas y desventajas de Python\n\nA favor: sintaxis simple y legible, ideal para quien empieza a programar.\nA favor: ecosistema enorme de librerías (ciencia de datos, web, automatización, machine learning) y una comunidad muy grande, con mucha documentación.\nA favor: multiplataforma y con soporte nativo en Colab, sin instalar nada.\nEn contra: al ser interpretado, suele ser más lento que lenguajes compilados para cómputo numérico intensivo (por eso existen NumPy y librerías en C/C++ por debajo, para compensar).\nEn contra: el manejo de entornos y versiones (pip vs conda, virtualenv, etc.) puede ser confuso al principio.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#comandos-básicos",
+    "href": "python/01-introduccion.html#comandos-básicos",
+    "title": "Introducción a Python",
+    "section": "Comandos básicos",
+    "text": "Comandos básicos\nEstos son los comandos que vas a usar todo el tiempo, ya sea en la consola de Python, en una celda de Jupyter o en la terminal:\n\npython archivo.py — ejecuta un script de Python desde la terminal.\npython (sin argumentos) — abre el intérprete interactivo (REPL); cada línea se ejecuta al momento. Se sale con exit() o Ctrl+D.\npip install nombre_paquete — instala una librería externa (por ejemplo pip install numpy).\npip list — muestra los paquetes instalados en el entorno actual.\nhelp(objeto) — dentro del intérprete, muestra la documentación de una función, clase o módulo. Por ejemplo: help(print).\ntype(objeto) — muestra el tipo de dato de una variable; útil para depurar.\n\nEn un notebook (Jupyter, Colab), estos mismos comandos se escriben dentro de una celda de código y se ejecutan con Shift + Enter, igual que cualquier otro código de Python.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#mensaje",
+    "href": "python/01-introduccion.html#mensaje",
+    "title": "Introducción a Python",
+    "section": "Mensaje",
+    "text": "Mensaje\n\n\nVer/ocultar código\nprint(\"Bienvenido a Operación Jupyter\")",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/08-visualizacion.html",
+    "href": "python/08-visualizacion.html",
+    "title": "Visualización en Python",
     "section": "",
-    "text": "input() siempre devuelve texto (str), aunque la persona escriba un número. Si vas a calcular con él, conviértelo:\n\n\nVer/ocultar código\nedad_texto = \"20\"     # así llegaría de input(\"¿Cuántos años tienes? \")\nprint(type(edad_texto))\nedad = int(edad_texto)   # conversión explícita\nprint(type(edad), edad)\n\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt; 20",
+    "text": "La librería más usada es Matplotlib; la mayoría de las demás (Seaborn, pandas .plot()) están construidas encima de ella. plt.show() es necesario en un script normal; en Jupyter/Colab normalmente no hace falta porque la gráfica se muestra sola debajo de la celda.",
     "crumbs": [
       "Python",
-      "Entrada de datos y operadores"
+      "Visualización"
     ]
   },
   {
-    "objectID": "python/02-entrada-datos-operadores.html#operadores",
-    "href": "python/02-entrada-datos-operadores.html#operadores",
-    "title": "Python: entrada de datos y operadores",
-    "section": "Operadores",
-    "text": "Operadores\n\n\n\n\n\n\n\n\nFamilia\nOperadores\nNotas\n\n\n\n\nAritméticos\n+  -  *  /  //  %  **\n// división entera, % residuo, ** potencia\n\n\nComparación\n==  !=  &gt;  &lt;  &gt;=  &lt;=\nDevuelven True o False\n\n\nLógicos\nand or not\nPalabras completas, no && ni ||\n\n\n\n\n\nVer/ocultar código\nprint(7 / 2, 7 // 2, 7 % 2, 2 ** 3)\nprint(3 &gt; 2 and 5 == 5)\n\n\n3.5 3 1 8\nTrue\n\n\n\n\n\n\n\n\nAdvertencia\n\n\n\n= asigna un valor y == compara. Confundirlos es uno de los errores más comunes al empezar.",
+    "objectID": "python/08-visualizacion.html#gráfica-de-línea",
+    "href": "python/08-visualizacion.html#gráfica-de-línea",
+    "title": "Visualización en Python",
+    "section": "Gráfica de línea",
+    "text": "Gráfica de línea\n\n\nVer/ocultar código\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.title(\"Onda senoidal\")\nplt.xlabel(\"x\")\nplt.ylabel(\"sin(x)\")\nplt.grid(True, alpha=0.3)\nplt.show()",
     "crumbs": [
       "Python",
-      "Entrada de datos y operadores"
+      "Visualización"
     ]
   },
   {
-    "objectID": "python/04-estructuras-datos.html",
-    "href": "python/04-estructuras-datos.html",
-    "title": "Python: estructuras de datos",
+    "objectID": "python/08-visualizacion.html#gráfica-de-barras",
+    "href": "python/08-visualizacion.html#gráfica-de-barras",
+    "title": "Visualización en Python",
+    "section": "Gráfica de barras",
+    "text": "Gráfica de barras\n\n\nVer/ocultar código\ncategorias = [\"A\", \"B\", \"C\", \"D\"]\nvalores = [23, 45, 12, 38]\n\nplt.bar(categorias, valores, color=\"#378ADD\")\nplt.title(\"Comparación por categoría\")\nplt.ylabel(\"Valor\")\nplt.show()",
+    "crumbs": [
+      "Python",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html",
+    "href": "r/07-ejercicios-ingenieria.html",
+    "title": "R: Ejercicios de ingeniería",
     "section": "",
-    "text": "Elegir la estructura correcta depende de si necesitas orden, si los elementos pueden repetirse y si vas a modificarlos.",
+    "text": "Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale Run. A la derecha tienes el planteamiento y, al final, cómo se ve en Python y Julia.",
     "crumbs": [
-      "Python",
-      "Estructuras de datos"
+      "R",
+      "Ejercicios de ingeniería"
     ]
   },
   {
-    "objectID": "python/04-estructuras-datos.html#listas-son-mutables",
-    "href": "python/04-estructuras-datos.html#listas-son-mutables",
-    "title": "Python: estructuras de datos",
-    "section": "Listas son mutables",
-    "text": "Listas son mutables\n\n\nVer/ocultar código\nSopes = ['Pozole', 'Atole', 'Tamales']\nSopes[1] = 'Tasajo'\nprint(Sopes)\nprint('Tasajo' in Sopes)\n\n\n['Pozole', 'Tasajo', 'Tamales']\nTrue",
+    "objectID": "r/07-ejercicios-ingenieria.html#cálculo-de-esfuerzo-no-es-la-ley-de-hooke",
+    "href": "r/07-ejercicios-ingenieria.html#cálculo-de-esfuerzo-no-es-la-ley-de-hooke",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "1. Cálculo de esfuerzo (no es la Ley de Hooke)",
+    "text": "1. Cálculo de esfuerzo (no es la Ley de Hooke)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna barra de sección A = 2 cm² (0.0002 m²) soporta una carga axial F = 5000 N. El esfuerzo normal se calcula como σ = F/A — esto es la definición de esfuerzo, no la Ley de Hooke (que relaciona esfuerzo y deformación: σ = E·ε).\n\n\nEn Python: esfuerzo = F / A · En Julia: esfuerzo = F / A",
     "crumbs": [
-      "Python",
-      "Estructuras de datos"
+      "R",
+      "Ejercicios de ingeniería"
     ]
   },
   {
-    "objectID": "python/04-estructuras-datos.html#diccionarios-conservan-el-orden-de-inserción",
-    "href": "python/04-estructuras-datos.html#diccionarios-conservan-el-orden-de-inserción",
-    "title": "Python: estructuras de datos",
-    "section": "Diccionarios conservan el orden de inserción",
-    "text": "Diccionarios conservan el orden de inserción\nDesde Python 3.7, un diccionario recuerda el orden en que agregaste las claves.\n\n\nVer/ocultar código\nd = {\"b\": 1, \"a\": 2}\nd[\"c\"] = 3\nprint(list(d))\n\n\n['b', 'a', 'c']",
+    "objectID": "r/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "href": "r/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "2. Control de calidad (tolerancia dimensional)",
+    "text": "2. Control de calidad (tolerancia dimensional)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nLote de 8 piezas, diámetro nominal 20 mm, tolerancia ±0.05 mm.\nNota: aquí se usa all.equal(..., tolerance=) en vez de comparar decimales exactos — más robusto ante redondeo de punto flotante.",
     "crumbs": [
-      "Python",
-      "Estructuras de datos"
+      "R",
+      "Ejercicios de ingeniería"
     ]
   },
   {
-    "objectID": "python/04-estructuras-datos.html#min-y-max-también-sirven-con-texto",
-    "href": "python/04-estructuras-datos.html#min-y-max-también-sirven-con-texto",
-    "title": "Python: estructuras de datos",
-    "section": "min y max también sirven con texto",
-    "text": "min y max también sirven con texto\n\n\nVer/ocultar código\nprint(min([\"banana\", \"manzana\", \"kiwi\"]), max([3, 1, 4, 1, 5]))\n\n\nbanana 5",
+    "objectID": "r/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "href": "r/07-ejercicios-ingenieria.html#cinemática-mrua",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "3. Cinemática (MRUA)",
+    "text": "3. Cinemática (MRUA)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nVelocidad inicial 4 m/s, aceleración 2 m/s², durante 5 s.",
     "crumbs": [
-      "Python",
-      "Estructuras de datos"
+      "R",
+      "Ejercicios de ingeniería"
     ]
   },
   {
-    "objectID": "python/04-estructuras-datos.html#ejercicio",
-    "href": "python/04-estructuras-datos.html#ejercicio",
-    "title": "Python: estructuras de datos",
-    "section": "Ejercicio",
-    "text": "Ejercicio\nCon inventario = {\"tornillos\": 120, \"tuercas\": 340, \"arandelas\": 85}, agrega \"remaches\": 200, imprime las claves y encuentra el material con menor cantidad.\n\n\nVer/ocultar código\ninventario = {\"tornillos\": 120, \"tuercas\": 340, \"arandelas\": 85}\ninventario[\"remaches\"] = 200\nprint(list(inventario.keys()))\nprint(min(inventario, key=inventario.get))\n\n\n['tornillos', 'tuercas', 'arandelas', 'remaches']\narandelas",
+    "objectID": "r/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "href": "r/07-ejercicios-ingenieria.html#eficiencia-de-una-máquina",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "4. Eficiencia de una máquina",
+    "text": "4. Eficiencia de una máquina\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nUna máquina recibe 4000 J y entrega 3200 J de trabajo útil.",
     "crumbs": [
-      "Python",
-      "Estructuras de datos"
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "r/07-ejercicios-ingenieria.html#relación-empuje-peso-aeroespacial",
+    "href": "r/07-ejercicios-ingenieria.html#relación-empuje-peso-aeroespacial",
+    "title": "R: Ejercicios de ingeniería",
+    "section": "5. Relación empuje-peso (aeroespacial)",
+    "text": "5. Relación empuje-peso (aeroespacial)\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlanteamiento\nAeronave de 8000 kg, empuje total 120 000 N.",
+    "crumbs": [
+      "R",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "r/05-funciones.html",
+    "href": "r/05-funciones.html",
+    "title": "Funciones",
+    "section": "",
+    "text": "Las funciones se definen con function(), pueden tener argumentos con valores por defecto, y devuelven el valor de la última expresión evaluada (o el indicado con return()).\nA diferencia de Python, R permite argumentos con nombre en cualquier orden al llamar la función, y valores por defecto:\nR también soporta funciones anónimas (sin nombre), útiles para pasarlas como argumento, por ejemplo dentro de sapply():\nVer/ocultar código\nsuma &lt;- function(a, b = 0) {\nreturn(a + b)\n}\nsuma(3, 4)\nsuma(3)",
+    "crumbs": [
+      "R",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "r/05-funciones.html#ejercicios",
+    "href": "r/05-funciones.html#ejercicios",
+    "title": "Funciones",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nTres problemas enfocados en definir funciones propias, con contexto de ingeniería.\n\n1. Área de una sección circular Básico (valor por defecto)\nDefine area_circular(radio, decimales=2) que regrese el área redondeada. Prueba con radio 5.\n\n\nVer/ocultar código\narea_circular &lt;- function(radio, decimales = 2) {\n  round(pi * radio^2, decimales)\n}\n\nresultado &lt;- area_circular(5)\nstopifnot(resultado == 78.54)\nprint(resultado)\n\n\n\n\n2. Conversión con múltiples retornos Intermedio\nDefine convertir_metros(m) que regrese una lista con pies y pulgadas. Prueba con 10 metros.\n\n\nVer/ocultar código\nconvertir_metros &lt;- function(m) {\n  pies &lt;- round(m * 3.28084, 2)\n  pulgadas &lt;- round(m * 39.3701, 2)\n  list(pies = pies, pulgadas = pulgadas)\n}\n\nresultado &lt;- convertir_metros(10)\nstopifnot(resultado$pies == 32.81, resultado$pulgadas == 393.7)\nprint(resultado)\n\n\n\n\n3. Validación antes de calcular Intermedio (raíz cuadrada segura)\nDefine raiz_segura(x) que regrese NA si x es negativo. Prueba con 16 y -4.\n\n\nVer/ocultar código\nraiz_segura &lt;- function(x) {\n  if (x &lt; 0) return(NA)\n  sqrt(x)\n}\n\nr1 &lt;- raiz_segura(16)\nr2 &lt;- raiz_segura(-4)\nstopifnot(r1 == 4, is.na(r2))\ncat(r1, r2, \"\\n\")",
+    "crumbs": [
+      "R",
+      "Funciones"
     ]
   },
   {
@@ -1012,6 +1274,39 @@
     "crumbs": [
       "R",
       "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "r/08-visualizacion.html",
+    "href": "r/08-visualizacion.html",
+    "title": "Visualización en R",
+    "section": "",
+    "text": "R tiene dos grandes formas de graficar:\nPara empezar, los gráficos base bastan; ggplot2 conviene cuando el resultado tiene que verse bien o se repite mucho.",
+    "crumbs": [
+      "R",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "r/08-visualizacion.html#gráfica-de-línea",
+    "href": "r/08-visualizacion.html#gráfica-de-línea",
+    "title": "Visualización en R",
+    "section": "Gráfica de línea",
+    "text": "Gráfica de línea\n\n\nVer/ocultar código\nx &lt;- seq(0, 10, length.out = 100)\ny &lt;- sin(x)\n\nplot(x, y, type = \"l\", col = \"#378ADD\", lwd = 2,\n     main = \"Onda senoidal\", xlab = \"x\", ylab = \"sin(x)\")\ngrid()",
+    "crumbs": [
+      "R",
+      "Visualización"
+    ]
+  },
+  {
+    "objectID": "r/08-visualizacion.html#gráfica-de-barras",
+    "href": "r/08-visualizacion.html#gráfica-de-barras",
+    "title": "Visualización en R",
+    "section": "Gráfica de barras",
+    "text": "Gráfica de barras\n\n\nVer/ocultar código\ncategorias &lt;- c(\"A\", \"B\", \"C\", \"D\")\nvalores &lt;- c(23, 45, 12, 38)\n\nbarplot(valores, names.arg = categorias, col = \"#378ADD\",\n        main = \"Comparación por categoría\", ylab = \"Valor\")",
+    "crumbs": [
+      "R",
+      "Visualización"
     ]
   },
   {
