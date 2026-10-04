@@ -119,11 +119,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Lenguajes de programación de código libre – Operación Jupyter">
-<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
 <meta name="twitter:title" content="Lenguajes de programación de código libre – Operación Jupyter">
-<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -430,8 +428,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link active" data-scroll-target="#r-y-rstudio">R y RStudio</a></li>
+  <li><a href="#interfases-y-ambientes-colaborativos" id="toc-interfases-y-ambientes-colaborativos" class="nav-link" data-scroll-target="#interfases-y-ambientes-colaborativos">Interfases y ambientes colaborativos</a>
+  <ul class="collapse">
+  <li><a href="#correr-en-r-o-rstudio" id="toc-correr-en-r-o-rstudio" class="nav-link" data-scroll-target="#correr-en-r-o-rstudio">Correr en R o RStudio</a></li>
+  <li><a href="#correr-r-en-google-colab" id="toc-correr-r-en-google-colab" class="nav-link" data-scroll-target="#correr-r-en-google-colab">Correr R en Google Colab</a></li>
+  <li><a href="#ventajas-de-las-diferentes-interfaces" id="toc-ventajas-de-las-diferentes-interfaces" class="nav-link" data-scroll-target="#ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</a></li>
+  </ul></li>
+  <li><a href="#recursos-en-línea" id="toc-recursos-en-línea" class="nav-link" data-scroll-target="#recursos-en-línea">Recursos en línea</a></li>
+  <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
+  <ul class="collapse">
+  <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
   <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -453,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">10 de septiembre, 2026</p>
+      <p class="date-modified">2 de octubre, 2026</p>
     </div>
   </div>
     
@@ -472,39 +480,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>R es un lenguaje interpretado, lo que significa que los usuarios acceden a sus funciones a través de un intérprete de línea de comandos</li>
 <li>A diferencia de Python y Java, R es un lenguaje de programación específico de dominio (diseñado para un campo en especial, en este caso orientado al cálculo estadístico y generación de gráficos)</li>
 <li>Es un software libre, lo que significa que no tiene costo en su descarga, uso y distribución e incluso modificación</li>
-<li>R es competencia de Excel, Phyton, SPSS y STATA</li>
-<li>Se parece a Matlab y su sintaxis recuerda a C / C++</li>
-<li>R fue desarrollado inicialmente por Ross Ihaka y Robert Gentleman en 1995 dentro de la Universidad de Auckland, Nueva Zelanda, y se encuentra en desarrollo constante por el R Development Core Team</li>
-<li>La versión beta más estable fue lanzada hasta el año 2000</li>
-<li>RStudio es un entorno de desarrollo integrado (IDE) para R ### Ventajas y desventajas de R</li>
+<li>R es competencia de Excel, Python, SPSS y STATA</li>
+<li>El proyecto R comenzó en 1993, inspirado en el lenguaje S. La primera versión liberada fue en 1995, y la versión 1.0.0 (considerada la primera estable) salió en el año 2000</li>
+<li>RStudio es un entorno de desarrollo integrado (IDE) para R</li>
+</ul>
+</section>
+<section id="ventajas-y-desventajas-de-r" class="level3">
+<h3 class="anchored" data-anchor-id="ventajas-y-desventajas-de-r">Ventajas y desventajas de R</h3>
+<ul>
 <li>Es un software libre</li>
-<li>No hay responsabilidad en caso de errores en el código</li>
-<li>Es uno de los primeros lenguajes en recibir los nuevos temas</li>
+<li>Es uno de los primeros lenguajes en recibir los nuevos temas de estadística</li>
 <li>Tiene una fácil conectividad y compatibilidad con otros lenguajes de programación</li>
-<li>No tiene límite (teórico) en la lectura de bases de datos</li>
-<li>Suele volverse más lento el análisis con grandes bases de datos # Interfases y ambientes colaborativos ## Correr en R o RStudio Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación. Para instalar R y RStudio se siguen los siguientes pasos:</li>
+<li>Al trabajar principalmente en memoria RAM, el tamaño de las bases de datos que puede manejar cómodamente está limitado por la memoria disponible en el equipo</li>
+<li>Suele volverse más lento el análisis con grandes bases de datos</li>
+</ul>
+</section>
+</section>
+<section id="interfases-y-ambientes-colaborativos" class="level1">
+<h1>Interfases y ambientes colaborativos</h1>
+<section id="correr-en-r-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="correr-en-r-o-rstudio">Correr en R o RStudio</h2>
+<p>Las ventajas de RStudio en comparación con R son principalmente que se tiene un ambiente integrado, en donde se marcan los errores y que las diferentes ventanas permiten tener un horizonte completo del estado de la simulación.</p>
+<p>Para instalar R y RStudio se siguen los siguientes pasos:</p>
+<ul>
 <li>Primero se debe instalar R</li>
-<li>Dependiendo de las características del sistema operativo, se puede encontrar en&nbsp;https://www.r-project.org/&nbsp;el archivo de instalación adecuado</li>
+<li>Dependiendo de las características del sistema operativo, se puede encontrar en https://www.r-project.org/ el archivo de instalación adecuado</li>
 <li>Después de elegir el idioma, acepte los términos</li>
-<li>Al final de la instalación busque la carpeta en donde se guardó (generalmente&nbsp;<em>Aplicaciones</em>) para inicarlo</li>
+<li>Al final de la instalación busque la carpeta en donde se guardó (generalmente <em>Aplicaciones</em>) para iniciarlo</li>
 <li>Para facilitar el proceso de información y bibliotecas es conveniente utilizar RStudio cuya interacción es más amigable. Es un entorno de desarrollo integrado (IDE, por sus siglas en inglés) que con la ayuda de una consola, un editor de código intuitivo, herramientas especiales de edición, visor de gráficos, entre otros, permite programar en R de una forma fácil y cómoda.</li>
-<li>Se descarga RStudio en&nbsp;https://www.rstudio.com/, actualmente disponible en&nbsp;https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar. ## Correr R en Google colab Para usar R en Google Colab, se siguen los siguientes pasos:</li>
-<li>Abre Google Colab (<u>https://colab.research.google.com/</u>)</li>
+<li>Se descarga RStudio en https://www.rstudio.com/, actualmente disponible en https://posit.co/, en donde se va a la pestaña “Open Source”, de donde se puede descargar.</li>
+</ul>
+</section>
+<section id="correr-r-en-google-colab" class="level2">
+<h2 class="anchored" data-anchor-id="correr-r-en-google-colab">Correr R en Google Colab</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Por verificar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Al día de hoy, Google Colab no ofrece “R” como tipo de entorno de ejecución nativo desde el menú, y <code>apt install r-base</code> instala R pero no el kernel <code>IRkernel</code> de Jupyter automáticamente — hace falta instalarlo y registrarlo aparte. Los pasos de abajo pueden estar desactualizados; verifica el estado actual antes de seguirlos al pie de la letra.</p>
+</div>
+</div>
+<p>Para usar R en Google Colab, se siguen los siguientes pasos:</p>
+<ul>
+<li>Abre Google Colab (https://colab.research.google.com/)</li>
 <li>Crea un nuevo notebook</li>
-<li>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales b. Instalar R en el entorno de Colab En la primera celda de tu notebook, ejecuta estos comandos: &gt; #OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)! &gt; &gt; #Se ejecuta solamente una vez &gt; &gt; !apt-get update &gt; &gt; !apt-get install -y r-base &gt; &gt; !apt-get install -y r-base-dev</li>
-<li>Instalar los paquetes requeridos en R: &gt; !R -e “install.packages('nombre_del_paquete’)”</li>
-<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”) ## Ventajas de las diferentes interfaces Las ventajas de RStudio en comparación con Google Colab son:</li>
-<li>Se tiene en cada momento un registro de las variables definidos y sus valores</li>
-<li>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac) Ventajas de correr en Google Colab:</li>
+<li>Por defecto, Colab usa Python; para R se requieren algunos pasos adicionales. Instalar R en el entorno de Colab: en la primera celda de tu notebook, ejecuta estos comandos:</li>
+</ul>
+<blockquote class="blockquote">
+<p>#OJO: estos comandos se corren en Python (antes de cambiar el entorno a R)!</p>
+<p>#Se ejecuta solamente una vez</p>
+<p>!apt-get update</p>
+<p>!apt-get install -y r-base</p>
+<p>!apt-get install -y r-base-dev</p>
+</blockquote>
+<ul>
+<li>Instalar los paquetes requeridos en R:</li>
+</ul>
+<blockquote class="blockquote">
+<p>!R -e “install.packages(‘nombre_del_paquete’)”</p>
+</blockquote>
+<ul>
+<li>Usar el kernel de R (Entorno de ejecución &gt; Cambiar tipo de entorno de ejecución &gt; Seleccionar “R”)</li>
+</ul>
+</section>
+<section id="ventajas-de-las-diferentes-interfaces" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-de-las-diferentes-interfaces">Ventajas de las diferentes interfaces</h2>
+<p>Las ventajas de RStudio en comparación con Google Colab son:</p>
+<ul>
+<li>Se tiene en cada momento un registro de las variables definidas y sus valores</li>
+<li>Se puede correr el código de línea en línea, o incluso partes de una línea (esto mismo se puede hacer en Colab, seleccionando la línea y picando CTRL-SHIFT-ENTER en Windows o COMMAND-SHIFT-ENTER en Mac)</li>
+</ul>
+<p>Ventajas de correr en Google Colab:</p>
+<ul>
 <li>El código desarrollado es fácilmente intercambiable con otros usuarios para trabajo colaborativo</li>
-<li>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase, ...) Desventajas de correr en Google Colab:</li>
+<li>No hace falta instalar R en la computadora por lo que es más flexible (por ejemplo, para uso en una tablet, para uso en clase)</li>
+</ul>
+<p>Desventajas de correr en Google Colab:</p>
+<ul>
 <li>Aunque el sistema está diseñado para Python, el sistema permite trabajar en R. Sin embargo, no se puede guardar el archivo resultante en formato .R, por lo que los códigos son poco intercambiables.</li>
 <li>El IDE tiene menos opciones que en RStudio</li>
-<li>El sistema Markdown de colab no es el mismo que en RStudio # Online tutorials and support</li>
-<li>Manual de referencia oficial:&nbsp;https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</li>
-<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.statmethods.net%2Findex.html">https://www.statmethods.net/index.html</a></li>
-<li><a href="https://www.google.com/url?q=https%3A%2F%2Fwww.coursera.org%2Fhttps%3A%2F%2Frpubs.com%2F">https://www.coursera.org/https://rpubs.com/</a> # Primeros pasos ## Comandos basicos Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</li>
+<li>El sistema Markdown de Colab no es el mismo que en RStudio</li>
 </ul>
+</section>
+</section>
+<section id="recursos-en-línea" class="level1">
+<h1>Recursos en línea</h1>
+<ul>
+<li>Manual de referencia oficial (“An Introduction to R”): https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</li>
+<li>https://www.statmethods.net/index.html</li>
+<li>https://rpubs.com/</li>
+</ul>
+</section>
+<section id="primeros-pasos" class="level1">
+<h1>Primeros pasos</h1>
+<section id="comandos-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-básicos">Comandos básicos</h2>
+<p>Se puede encontrar información general sobre la licencia de R, indicando que es un software libre, y sobre las personas que han contribuido al lenguaje, con las siguientes instrucciones:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -519,7 +596,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><img src="../images/tipos-celda-jupyter.svg" class="img-fluid"></p>
-</section>
 </section>
 <section id="términos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
@@ -542,53 +618,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ayuda</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(seq)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">help.start</span>()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>? seq</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Salir del programa</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">q</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="ejercicios" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<p>Tres calentamientos para confirmar que tu entorno funciona.</p>
-<section id="mensaje-de-bienvenida-formateado" class="level3">
-<h3 class="anchored" data-anchor-id="mensaje-de-bienvenida-formateado">1. Mensaje de bienvenida formateado</h3>
-<p>Arma el mensaje <code>"Bienvenido a {proyecto} (v{version})"</code> con <code>proyecto="Operación Jupyter"</code> y <code>version=1</code>.</p>
-<div id="cell-9" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="ot">&lt;-</span> <span class="st">"Operación Jupyter"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>version <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mensaje <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"Bienvenido a %s (v%d)"</span>, nombre_proyecto, version)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(mensaje <span class="sc">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mensaje)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="verificar-el-entorno-con-una-operación-simple" class="level3">
-<h3 class="anchored" data-anchor-id="verificar-el-entorno-con-una-operación-simple">2. Verificar el entorno con una operación simple</h3>
-<p>Calcula 2 elevado a la 10 — si tu entorno corre bien, debe dar 1024.</p>
-<div id="cell-11" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">^</span><span class="dv">10</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(resultado <span class="sc">==</span> <span class="dv">1024</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="contar-caracteres-de-un-mensaje-de-bitácora" class="level3">
-<h3 class="anchored" data-anchor-id="contar-caracteres-de-un-mensaje-de-bitácora">3. Contar caracteres de un mensaje de bitácora</h3>
-<p>¿Cuántos caracteres tiene <code>"Sistema iniciado correctamente"</code>?</p>
-<div id="cell-13" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="ot">&lt;-</span> <span class="st">"Sistema iniciado correctamente"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>longitud <span class="ot">&lt;-</span> <span class="fu">nchar</span>(mensaje_log)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(longitud <span class="sc">==</span> <span class="dv">30</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(longitud)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>? seq</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Nota: help.start() abre un navegador con la documentacion completa y q() cierra</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#la sesion de R -- ambos son para la consola/RStudio interactivos, no funcionan</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#igual dentro de un notebook de Jupyter o Colab.</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 

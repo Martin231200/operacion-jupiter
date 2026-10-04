@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Visualización – Operación Jupyter</title>
+<title>Visualización en R – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -118,11 +118,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Visualización – Operación Jupyter">
+<meta property="og:title" content="Visualización en R – Operación Jupyter">
 <meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta property="og:site_name" content="Operación Jupyter">
-<meta name="twitter:title" content="Visualización – Operación Jupyter">
+<meta name="twitter:title" content="Visualización en R – Operación Jupyter">
 <meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
 <meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -440,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Visualización</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Visualización en R</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -452,7 +452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">6 de septiembre, 2026</p>
+      <p class="date-modified">2 de octubre, 2026</p>
     </div>
   </div>
     
@@ -463,7 +463,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Los gráficos básicos: una línea (tendencia continua) y barras (comparar categorías).</p>
+<p>R tiene dos grandes formas de graficar:</p>
+<ul>
+<li><strong>Gráficos base</strong> (<code>plot()</code>, <code>hist()</code>, <code>boxplot()</code>): vienen incluidos, sin instalar nada.</li>
+<li><strong><code>ggplot2</code></strong>: parte del <code>tidyverse</code>, se instala con <code>install.packages("ggplot2")</code>, estándar para gráficos elaborados. Se construye por capas con <code>+</code>.</li>
+</ul>
+<p>Para empezar, los gráficos base bastan; <code>ggplot2</code> conviene cuando el resultado tiene que verse bien o se repite mucho.</p>
 <section id="gráfica-de-línea" class="level2">
 <h2 class="anchored" data-anchor-id="gráfica-de-línea">Gráfica de línea</h2>
 <div id="cell-3" class="cell">

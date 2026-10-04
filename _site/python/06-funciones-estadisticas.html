@@ -455,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha de última modificación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">10 de septiembre, 2026</p>
+      <p class="date-modified">2 de octubre, 2026</p>
     </div>
   </div>
     
@@ -466,47 +466,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975480655,&quot;user_tz&quot;:360,&quot;elapsed&quot;:32,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="91484c44-22bd-4a3c-c6ea-f4efc70df6c9">
+<div id="cell-2" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>W<span class="op">=</span>np.arange(<span class="dv">1</span>,<span class="dv">22</span>,<span class="dv">2</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Arreglo: "</span>, W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np   <span class="co"># esta página es independiente de 05-arreglos, hay que importar de nuevo</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Python no trae funciones estadísticas avanzadas en su librería estándar más allá del módulo <code>statistics</code> (media, mediana, desviación estándar básicas). Para trabajo estadístico real se usa <strong>NumPy</strong>.</p>
+<blockquote class="blockquote">
+<p><strong>Nota sobre desviación estándar:</strong> <code>np.std()</code> usa por defecto <code>ddof=0</code> (poblacional). <code>statistics.stdev()</code> en Python, <code>sd()</code> en R y <code>std()</code> en Julia usan <code>ddof=1</code> (muestral) por defecto. Con los mismos datos esto da resultados distintos — no es un error, es una diferencia de convención. Para comparar entre lenguajes: <code>np.std(datos, ddof=1)</code>.</p>
+</blockquote>
+<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975480655,&quot;user_tz&quot;:360,&quot;elapsed&quot;:32,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="91484c44-22bd-4a3c-c6ea-f4efc70df6c9">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>W<span class="op">=</span>np.arange(<span class="dv">1</span>,<span class="dv">22</span>,<span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Arreglo: "</span>, W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Arreglo:  [ 1  3  5  7  9 11 13 15 17 19 21]</code></pre>
 </div>
 </div>
-<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975489762,&quot;user_tz&quot;:360,&quot;elapsed&quot;:32,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="a69a3d07-ea7b-489f-8718-e93a8ae56008">
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975489762,&quot;user_tz&quot;:360,&quot;elapsed&quot;:32,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="a69a3d07-ea7b-489f-8718-e93a8ae56008">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.mean())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.mean())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>11.0</code></pre>
 </div>
 </div>
-<div id="cell-4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975500216,&quot;user_tz&quot;:360,&quot;elapsed&quot;:32,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="15411840-7053-4ca2-b459-27e63f19c73c">
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975500216,&quot;user_tz&quot;:360,&quot;elapsed&quot;:32,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="15411840-7053-4ca2-b459-27e63f19c73c">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.<span class="bu">sum</span>())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.<span class="bu">sum</span>())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>121</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975509701,&quot;user_tz&quot;:360,&quot;elapsed&quot;:278,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ef9ecdd8-4d3c-49d2-f6bf-32dfc9afcd0f">
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975509701,&quot;user_tz&quot;:360,&quot;elapsed&quot;:278,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="ef9ecdd8-4d3c-49d2-f6bf-32dfc9afcd0f">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.<span class="bu">min</span>())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.<span class="bu">min</span>())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975518070,&quot;user_tz&quot;:360,&quot;elapsed&quot;:34,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="a70f3a8d-7ebe-4d3f-cb7e-f3732cab9db7">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975518070,&quot;user_tz&quot;:360,&quot;elapsed&quot;:34,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="a70f3a8d-7ebe-4d3f-cb7e-f3732cab9db7">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.<span class="bu">max</span>())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(W.<span class="bu">max</span>())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>21</code></pre>
@@ -514,19 +524,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="funciones-universales" class="level1">
 <h1>Funciones universales</h1>
-<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975547605,&quot;user_tz&quot;:360,&quot;elapsed&quot;:39,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f02b0853-03cb-4176-c467-8215104f3537">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975547605,&quot;user_tz&quot;:360,&quot;elapsed&quot;:39,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f02b0853-03cb-4176-c467-8215104f3537">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.square(W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>np.square(W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="111">
 <pre><code>array([  1,   9,  25,  49,  81, 121, 169, 225, 289, 361, 441])</code></pre>
 </div>
 </div>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975559966,&quot;user_tz&quot;:360,&quot;elapsed&quot;:275,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="e5c02ba6-1104-421d-8379-af0d2abf4f4f">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975559966,&quot;user_tz&quot;:360,&quot;elapsed&quot;:275,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="e5c02ba6-1104-421d-8379-af0d2abf4f4f">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>np.sqrt(W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>np.sqrt(W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="112">
 <pre><code>array([1.        , 1.73205081, 2.23606798, 2.64575131, 3.        ,
@@ -534,10 +544,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
        4.58257569])</code></pre>
 </div>
 </div>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975568129,&quot;user_tz&quot;:360,&quot;elapsed&quot;:33,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f8485469-0bd0-4e94-8bbb-21caccbeff18">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975568129,&quot;user_tz&quot;:360,&quot;elapsed&quot;:33,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="f8485469-0bd0-4e94-8bbb-21caccbeff18">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>np.exp(W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.exp(W)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="113">
 <pre><code>array([2.71828183e+00, 2.00855369e+01, 1.48413159e+02, 1.09663316e+03,
@@ -546,16 +556,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Numpy aplica operaciones aritméticas sobre arreglos que no tienen la misma forma shape), esa propiedad se llama <strong>broadcasting</strong></p>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975594630,&quot;user_tz&quot;:360,&quot;elapsed&quot;:34,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="11610b5e-853b-48a5-e8d3-34de6e63f0e1">
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975594630,&quot;user_tz&quot;:360,&quot;elapsed&quot;:34,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="11610b5e-853b-48a5-e8d3-34de6e63f0e1">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>W1<span class="op">=</span>np.arange(<span class="dv">5</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>W2<span class="op">=</span>np.array([<span class="dv">3</span>])</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape W1: "</span>,W1.shape)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"W1: "</span>,W1)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape W2: "</span>,W2.shape)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"W2: "</span>,W2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>W1<span class="op">=</span>np.arange(<span class="dv">5</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>W2<span class="op">=</span>np.array([<span class="dv">3</span>])</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape W1: "</span>,W1.shape)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"W1: "</span>,W1)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape W2: "</span>,W2.shape)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"W2: "</span>,W2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Shape W1:  (5,)
@@ -565,10 +575,10 @@ Shape W2:  (1,)
 W2:  [3]</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975620164,&quot;user_tz&quot;:360,&quot;elapsed&quot;:45,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="2baf4c68-9fc4-48e4-ead1-0feac53e05e2">
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1755975620164,&quot;user_tz&quot;:360,&quot;elapsed&quot;:45,&quot;user&quot;:{&quot;displayName&quot;:&quot;Víctor Damián Pinilla Morán&quot;,&quot;userId&quot;:&quot;08431207832147990852&quot;}}}" data-outputid="2baf4c68-9fc4-48e4-ead1-0feac53e05e2">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>W1 <span class="op">+</span> W2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>W1 <span class="op">+</span> W2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="116">
 <pre><code>array([3, 4, 5, 6, 7])</code></pre>
@@ -577,50 +587,48 @@ W2:  [3]</code></pre>
 <section id="ejercicios-particularidades-de-python" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-python">Ejercicios: particularidades de Python</h2>
 <p>Tres problemas que muestran características propias del lenguaje.</p>
-<section id="vectorización-con-numpy-sin-ciclo-explícito" class="level3">
-<h3 class="anchored" data-anchor-id="vectorización-con-numpy-sin-ciclo-explícito">1. Vectorización con NumPy (sin ciclo explícito)</h3>
-<p>Multiplica el vector <code>[10, 20, 30, 40]</code> por 2, usando NumPy en vez de un <code>for</code>.</p>
-<div id="cell-16" class="cell">
-<details open="" class="code-fold">
-<summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>])</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> valores <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> doble.tolist() <span class="op">==</span> [<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>]</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doble)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="indexado-desde-0" class="level3">
-<h3 class="anchored" data-anchor-id="indexado-desde-0">2. Indexado desde 0</h3>
-<p>Accede al primer elemento de <code>["sensor1", "sensor2", "sensor3"]</code>.</p>
+<section id="vectorización-básico-con-numpy-sin-ciclo-explícito" class="level3">
+<h3 class="anchored" data-anchor-id="vectorización-básico-con-numpy-sin-ciclo-explícito">1. Vectorización <span class="badge-dificultad basico">Básico</span> con NumPy (sin ciclo explícito)</h3>
+<p>Multiplica <code>[10, 20, 30, 40]</code> por 2, usando NumPy en vez de un <code>for</code>.</p>
 <div id="cell-18" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>primero <span class="op">=</span> etiquetas[<span class="dv">0</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>])</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> valores <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> primero <span class="op">==</span> <span class="st">"sensor1"</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(primero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> doble.tolist() <span class="op">==</span> [<span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">60</span>, <span class="dv">80</span>]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doble)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
-<section id="tipado-dinámico" class="level3">
-<h3 class="anchored" data-anchor-id="tipado-dinámico">3. Tipado dinámico</h3>
-<p>Asigna <code>10</code> a una variable, revisa su tipo, luego reasígnale un texto y revisa el tipo otra vez.</p>
+<section id="indexado-desde-0-básico" class="level3">
+<h3 class="anchored" data-anchor-id="indexado-desde-0-básico">2. Indexado desde 0 <span class="badge-dificultad basico">Básico</span></h3>
+<p>Accede al primer elemento de <code>["sensor1", "sensor2", "sensor3"]</code>.</p>
 <div id="cell-20" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="op">=</span> <span class="bu">type</span>(x).<span class="va">__name__</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>primero <span class="op">=</span> etiquetas[<span class="dv">0</span>]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"ahora soy texto"</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="op">=</span> <span class="bu">type</span>(x).<span class="va">__name__</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> tipo1 <span class="op">==</span> <span class="st">"int"</span> <span class="kw">and</span> tipo2 <span class="op">==</span> <span class="st">"str"</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tipo1, tipo2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> primero <span class="op">==</span> <span class="st">"sensor1"</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(primero)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="tipado-dinámico-intermedio" class="level3">
+<h3 class="anchored" data-anchor-id="tipado-dinámico-intermedio">3. Tipado dinámico <span class="badge-dificultad intermedio">Intermedio</span></h3>
+<p>Asigna <code>10</code>, revisa su tipo, reasigna un texto y revisa otra vez.</p>
+<div id="cell-22" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="op">=</span> <span class="bu">type</span>(x).<span class="va">__name__</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"ahora soy texto"</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="op">=</span> <span class="bu">type</span>(x).<span class="va">__name__</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> tipo1 <span class="op">==</span> <span class="st">"int"</span> <span class="kw">and</span> tipo2 <span class="op">==</span> <span class="st">"str"</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tipo1, tipo2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 

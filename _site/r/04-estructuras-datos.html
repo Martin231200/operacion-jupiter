@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estructuras de datos y objetos – Operación Jupyter</title>
+<title>Estructuras de datos en R – Operación Jupyter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -73,6 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <link href="../r/05-funciones.html" rel="next">
 <link href="../r/03-estructuras-control.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f25488dd8c1b0298410c4592b5f89f85.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-5557d5e906760380132ec05260cd84f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-4bea931647122f070154d9932bc138eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -114,9 +115,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
 <link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Estructuras de datos en R – Operación Jupyter">
+<meta property="og:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta property="og:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
+<meta property="og:site_name" content="Operación Jupyter">
+<meta name="twitter:title" content="Estructuras de datos en R – Operación Jupyter">
+<meta name="twitter:description" content="Tutoriales de R, Python y Julia para Jupyter — servicio social, FI-UNAM">
+<meta name="twitter:image" content="https://martin231200.github.io/operacion-jupiter/r/images/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -307,8 +317,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../glosario.qmd"> 
+    <a class="nav-link" href="../glosario.html"> 
 <span class="menu-text">Glosario</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../recursos.html"> 
+<span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../python/01-introduccion.html"> 
@@ -394,6 +408,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Particularidades</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/07-ejercicios-ingenieria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios de ingeniería</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r/08-visualizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualización</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -404,7 +430,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#vectores" id="toc-vectores" class="nav-link active" data-scroll-target="#vectores">Vectores</a></li>
+  <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link active" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
+  <ul class="collapse">
+  <li><a href="#vectores" id="toc-vectores" class="nav-link" data-scroll-target="#vectores">Vectores</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -414,7 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Estructuras de datos y objetos</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Estructuras de datos en R</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Código</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Mostrar todo el código</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Ocultar todo el código</a></li></ul></div></div>
 </div>
 
 
@@ -423,6 +453,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de última modificación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2 de octubre, 2026</p>
+    </div>
+  </div>
     
   </div>
   
@@ -431,20 +467,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>R tiene cuatro estructuras de datos principales, y elegir la correcta depende de si tus datos son de un solo tipo o mixtos, y de si son de una o más dimensiones:</p>
+<ul>
+<li><strong>Vector</strong>: secuencia de elementos del mismo tipo. Es la estructura más básica — incluso un solo número es técnicamente un vector de longitud 1.</li>
+<li><strong>Lista</strong>: como un vector, pero sus elementos pueden ser de tipos distintos e incluso otras listas o data frames.</li>
+<li><strong>Matriz</strong>: un vector con dos dimensiones (filas y columnas), todos del mismo tipo.</li>
+<li><strong>Data frame</strong>: una tabla donde cada columna puede ser de un tipo distinto (como una hoja de cálculo).</li>
+</ul>
+<p>El acceso a elementos cambia según la estructura: con <code>[ ]</code> obtienes un subconjunto conservando la estructura original, y con <code>[[ ]]</code> obtienes el elemento individual (importante sobre todo en listas).</p>
+<section id="estructuras-de-datos-y-objetos" class="level1">
+<h1>Estructuras de datos y objetos</h1>
 <section id="vectores" class="level2">
 <h2 class="anchored" data-anchor-id="vectores">Vectores</h2>
 <p>El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().</p>
-<div id="cell-2" class="cell">
+<div id="cell-3" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>v[2]</p>
 <div id="cell-4" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="cell-5" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
@@ -452,58 +503,105 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Los factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).</p>
-<div id="cell-7" class="cell">
+<div id="cell-8" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"bajo"</span>, <span class="st">"alto"</span>, <span class="st">"medio"</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(f)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"bajo"</span>, <span class="st">"alto"</span>, <span class="st">"medio"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(f)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Una matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.</p>
-<div id="cell-9" class="cell">
+<div id="cell-10" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(m)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(m)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>array() generaliza la matriz a más de dos dimensiones.</p>
-<div id="cell-11" class="cell">
+<div id="cell-12" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(a)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(a)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p>El data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.</p>
-<div id="cell-13" class="cell">
+<div id="cell-14" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <p>La lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.</p>
-<div id="cell-15" class="cell">
+<div id="cell-16" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numero =</span> <span class="dv">1</span>, <span class="at">texto =</span> <span class="st">"hola"</span>, <span class="at">vector =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lst\<span class="sc">$</span>texto</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numero =</span> <span class="dv">1</span>, <span class="at">texto =</span> <span class="st">"hola"</span>, <span class="at">vector =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lst<span class="sc">$</span>texto</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
 </div>
 </div>
+</section>
+<section id="ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
+<p>Tres problemas cortos, contexto de ingeniería.</p>
+<section id="vector-registrar-una-nueva-medición-básico" class="level3">
+<h3 class="anchored" data-anchor-id="vector-registrar-una-nueva-medición-básico">1. Vector: registrar una nueva medición <span class="badge-dificultad basico">Básico</span></h3>
+<p>A <code>c(12.4, 13.1, 11.9)</code> agrégale <code>12.8</code> con <code>c()</code> y confirma que ahora tiene 4 elementos.</p>
+<div id="cell-20" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mediciones <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">12.4</span>, <span class="fl">13.1</span>, <span class="fl">11.9</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mediciones <span class="ot">&lt;-</span> <span class="fu">c</span>(mediciones, <span class="fl">12.8</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">length</span>(mediciones) <span class="sc">==</span> <span class="dv">4</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mediciones)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="lista-consultar-inventario-por-código-básico" class="level3">
+<h3 class="anchored" data-anchor-id="lista-consultar-inventario-por-código-básico">2. Lista: consultar inventario por código <span class="badge-dificultad basico">Básico</span></h3>
+<p>De <code>list(P100=25, P200=40, P300=15)</code>, obtén cuántas piezas hay de <code>P200</code>.</p>
+<div id="cell-22" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">P100 =</span> <span class="dv">25</span>, <span class="at">P200 =</span> <span class="dv">40</span>, <span class="at">P300 =</span> <span class="dv">15</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>disponibles <span class="ot">&lt;-</span> inventario<span class="sc">$</span>P200</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(disponibles <span class="sc">==</span> <span class="dv">40</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(disponibles)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="data-frame-filtrar-por-columna-intermedio" class="level3">
+<h3 class="anchored" data-anchor-id="data-frame-filtrar-por-columna-intermedio">3. Data frame: filtrar por columna <span class="badge-dificultad intermedio">Intermedio</span></h3>
+<p>De un data frame de piezas, obtén el nombre de la fila cuyo valor es 2.</p>
+<div id="cell-24" class="cell">
+<details open="" class="code-fold">
+<summary>Ver/ocultar código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> df<span class="sc">$</span>nombre[df<span class="sc">$</span>valor <span class="sc">==</span> <span class="dv">2</span>]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(resultado <span class="sc">==</span> <span class="st">"B"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -644,7 +742,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/martin231200\.github\.io\/operacion-jupiter");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1004,6 +1102,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </footer>
 <script src="../reading-time.js"></script>
+<script src="../share-button.js"></script>
+<script src="../skip-link.js"></script>
+<script src="../ver-tambien.js"></script>
+<script src="../keyboard-nav.js"></script>
 
 
 
