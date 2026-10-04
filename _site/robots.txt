@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://martin231200.github.io/operacion-jupiter/sitemap.xml

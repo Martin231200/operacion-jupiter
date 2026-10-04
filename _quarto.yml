@@ -1,6 +1,14 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - reading-time.js
+    - share-button.js
+    - skip-link.js
+    - ver-tambien.js
+    - keyboard-nav.js
+    - info-bubble.js
+    - info-bubble.css
 
 execute:
   freeze: auto
@@ -14,9 +22,9 @@ website:
   site-url: "https://martin231200.github.io/operacion-jupiter"
   favicon: images/favicon.png
   open-graph:
-    image: images/social-preview.png
+    image: /images/social-preview.png
   twitter-card:
-    image: images/social-preview.png
+    image: /images/social-preview.png
   page-navigation: true
   bread-crumbs: true
 
@@ -144,8 +152,8 @@ format:
     include-in-header:
       - text: <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     include-after-body:
-      - text: <script src="/reading-time.js"></script>
-      - text: <script src="/share-button.js"></script>
-      - text: <script src="/skip-link.js"></script>
-      - text: <script src="/ver-tambien.js"></script>
-      - text: <script src="/keyboard-nav.js"></script>
+      - text: <script src="/operacion-jupiter/reading-time.js"></script>
+      - text: <script src="/operacion-jupiter/share-button.js"></script>
+      - text: <script src="/operacion-jupiter/skip-link.js"></script>
+      - text: <script src="/operacion-jupiter/ver-tambien.js"></script>
+      - text: <script src="/operacion-jupiter/keyboard-nav.js"></script>

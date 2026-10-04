@@ -1,6 +1,9 @@
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 name: Publicar sitio Quarto
 
@@ -42,7 +45,12 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Render (solo verificar, sin publicar)
+        if: github.event_name == 'pull_request'
+        run: quarto render
+
       - name: Render y publicar en GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
