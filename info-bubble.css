@@ -1,0 +1,17 @@
+.info-term {
+  color: #2C5F8A;
+  border-bottom: 1px dashed #2C5F8A;
+  cursor: pointer;
+  font-weight: 500;
+}
+.info-bubble {
+  display: block;
+  background: #E6F1FB;
+  color: #0C447C;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 6px 0 10px;
+  max-width: 480px;
+  border-left: 3px solid #2C5F8A;
+}

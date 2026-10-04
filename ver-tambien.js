@@ -27,13 +27,14 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const path = rutaActual();
-    let match = null, idiomaActual = null;
+    let match = null, idiomaActual = null, base = "";
 
     for (const tema of subtemas) {
       for (const idioma of ["python", "r", "julia"]) {
         if (path.endsWith(tema[idioma])) {
           match = tema;
           idiomaActual = idioma;
+          base = path.slice(0, path.length - tema[idioma].length);
           break;
         }
       }
@@ -57,7 +58,7 @@
     linksWrap.style.cssText = "display:flex; gap:14px;";
     otros.forEach(l => {
       const a = document.createElement("a");
-      a.href = match[l];
+      a.href = base + match[l];
       a.textContent = nombresLenguaje[l];
       linksWrap.appendChild(a);
     });
