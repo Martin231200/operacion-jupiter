@@ -36,6 +36,11 @@ Cómputo numérico de alto desempeño con sintaxis de alto nivel.
 
 También puedes ir directo a los **[Tutoriales comparativos](tutoriales/index.qmd)** (ejercicios, quiz, ficha descargable) o revisar **[Mi progreso](progreso.qmd)**.
 
+## Más herramientas
+
+- [Comparar lenguajes](comparar.qmd): el mismo problema resuelto en Python, R y Julia.
+- [Ejercicio aleatorio](aleatorio.qmd): practica con uno al azar.
+
 ## Cómo se arma el sitio
 
 ![Diagrama de flujo: los notebooks de Python, R y Julia se combinan con Quarto, que construye el sitio y lo publica en GitHub Pages](images/flujo-proyecto.svg)
@@ -50,3 +55,9 @@ Cada tutorial cubre, en el mismo orden para los tres lenguajes, para poder compa
 - Estructuras de datos y objetos
 - Funciones
 - Particularidades del lenguaje
+- Ejercicios de ingeniería
+- Visualización
+
+### Cómo se ejecuta el código
+
+El código de **Python** y **R** se ejecuta en vivo en tu navegador, sin instalar nada. **Julia** todavía no tiene un equivalente maduro para el navegador, así que sus tutoriales muestran el código con salidas precalculadas.
