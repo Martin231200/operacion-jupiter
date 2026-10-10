@@ -2,4 +2,62 @@
 title: "Libros"
 ---
 
-Contenido pendiente. Esta sección se completará con el material que la profesora compartió en el sitio de Google Sites (bibliografía y libros de apoyo del proyecto).
+Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Los enlaces llevan al sitio de cada autor o proyecto. En cada lenguaje van primero los libros para empezar y después los de nivel intermedio o avanzado.
+
+## Python
+
+### Python para todos (Charles R. Severance)
+
+*Para empezar.* Introducción a Python 3 pensada para principiantes reales, sin requisitos previos de programación ni de matemáticas. Parte de ejemplos sencillos y avanza hacia el análisis de datos. Está traducido completo al español y se distribuye con licencia libre.
+
+[Leer el PDF en español](https://do1.dr-chuck.com/pythonlearn/ES_es/pythonlearn.pdf){target="_blank"}
+
+### Think Python, 3.ª edición (Allen B. Downey)
+
+*Para empezar.* Introducción a Python que enseña a pensar como programador: funciones, estructuras de datos y diseño orientado a objetos. Cada capítulo es un cuaderno de Jupyter, así que se puede leer y ejecutar el código en el mismo lugar. Está en inglés y tiene licencia Creative Commons.
+
+[Leer en línea (inglés)](https://allendowney.github.io/ThinkPython/){target="_blank"}
+
+### Python Data Science Handbook (Jake VanderPlas)
+
+*Nivel intermedio.* Recorre IPython, NumPy, Pandas, Matplotlib y Scikit-Learn con cuadernos de Jupyter ejecutables. Supone que ya conoces lo básico de Python. Está en inglés.
+
+[Leer en línea (inglés)](https://jakevdp.github.io/PythonDataScienceHandbook/){target="_blank"}
+
+## R
+
+### R para Ciencia de Datos (traducción al español)
+
+*Para empezar.* Versión en español de *R for Data Science*, mantenida por la comunidad. Enseña a importar, ordenar, transformar y visualizar datos con el tidyverse.
+
+[Leer en línea (español)](https://es.r4ds.hadley.nz/){target="_blank"}
+
+### R for Data Science, 2.ª edición (Wickham, Çetinkaya-Rundel y Grolemund)
+
+*Para empezar.* La edición más reciente de la obra anterior, completa y gratuita en línea. No exige experiencia previa. Está en inglés.
+
+[Leer en línea (inglés)](https://r4ds.hadley.nz/){target="_blank"}
+
+### Advanced R, 2.ª edición (Hadley Wickham)
+
+*Nivel avanzado.* Explica cómo funciona R por dentro: nombres y valores, funciones, entornos, programación funcional, orientación a objetos y depuración. Pensado para quien ya programa en R o viene de otro lenguaje. Está en inglés y tiene licencia Creative Commons.
+
+[Leer en línea (inglés)](https://adv-r.hadley.nz/){target="_blank"}
+
+## Julia
+
+### Think Julia (Ben Lauwens y Allen B. Downey)
+
+*Para empezar.* Adaptación a Julia del libro *Think Python*. Enseña a programar desde cero con Julia: variables, funciones, estructuras de datos y tipos, con ejercicios en cada capítulo. Su versión digital se publica con licencia Creative Commons.
+
+[Repositorio del libro en GitHub](https://github.com/BenLauwens/ThinkJulia.jl){target="_blank"}
+
+### Julia Data Science (Storopoli, Huijzer y Alonso)
+
+*Nivel intermedio.* Libro abierto sobre ciencia de datos con Julia, escrito para investigadores de cualquier área. Se puede leer en línea y también descargar en PDF. Está en inglés y tiene licencia Creative Commons.
+
+[Leer en línea (inglés)](https://juliadatascience.io){target="_blank"}
+
+::: {.callout-note}
+Todos los libros pertenecen a sus autores. Esta página solo enlaza a las copias que ellos mismos publican; si algún enlace deja de funcionar, avísanos.
+:::
