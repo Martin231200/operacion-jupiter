@@ -2,62 +2,146 @@
 title: "Libros"
 ---
 
-Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Los enlaces llevan al sitio de cada autor o proyecto. En cada lenguaje van primero los libros para empezar y después los de nivel intermedio o avanzado.
+Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Haz clic en la portada de cada libro para abrirlo en el sitio de su autor o proyecto (se abre en una pestaña nueva).
+
+```{=html}
+<style>
+.libros-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.75rem 1.5rem; margin: 1rem 0 2.5rem; }
+.libro { display: flex; flex-direction: column; text-decoration: none !important; color: inherit !important; }
+.libro:focus-visible { outline: 3px solid #378ADD; outline-offset: 4px; border-radius: 8px; }
+.portada { aspect-ratio: 3 / 4; display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem 1rem 1rem 1.5rem; color: #fff; border-radius: 3px 10px 10px 3px; box-shadow: inset 9px 0 0 rgba(0,0,0,.22), 0 6px 14px rgba(0,0,0,.28); transition: transform .15s ease, box-shadow .15s ease; }
+.libro:hover .portada, .libro:focus-visible .portada { transform: translateY(-5px); box-shadow: inset 9px 0 0 rgba(0,0,0,.22), 0 12px 20px rgba(0,0,0,.32); }
+.portada-python { background: linear-gradient(145deg, #2f77c4, #16487a); }
+.portada-r { background: linear-gradient(145deg, #168a68, #0b5a45); }
+.portada-julia { background: linear-gradient(145deg, #6d64cf, #463e99); }
+.portada .lang { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .9; }
+.portada .titulo { font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.portada .autor { font-size: .8rem; opacity: .92; line-height: 1.3; }
+.libro-info { padding: .75rem .15rem 0; }
+.libro-info p { margin: .35rem 0 .5rem; font-size: .9rem; line-height: 1.4; }
+.nivel { display: inline-block; font-size: .72rem; font-weight: 600; padding: .1rem .55rem; border-radius: 999px; border: 1px solid currentColor; opacity: .85; }
+.cta { font-weight: 600; font-size: .9rem; color: #378ADD; }
+.libro:hover .cta { text-decoration: underline; }
+</style>
+```
 
 ## Python
 
-### Python para todos (Charles R. Severance)
-
-*Para empezar.* Introducción a Python 3 pensada para principiantes reales, sin requisitos previos de programación ni de matemáticas. Parte de ejemplos sencillos y avanza hacia el análisis de datos. Está traducido completo al español y se distribuye con licencia libre.
-
-[Leer el PDF en español](https://do1.dr-chuck.com/pythonlearn/ES_es/pythonlearn.pdf){target="_blank"}
-
-### Think Python, 3.ª edición (Allen B. Downey)
-
-*Para empezar.* Introducción a Python que enseña a pensar como programador: funciones, estructuras de datos y diseño orientado a objetos. Cada capítulo es un cuaderno de Jupyter, así que se puede leer y ejecutar el código en el mismo lugar. Está en inglés y tiene licencia Creative Commons.
-
-[Leer en línea (inglés)](https://allendowney.github.io/ThinkPython/){target="_blank"}
-
-### Python Data Science Handbook (Jake VanderPlas)
-
-*Nivel intermedio.* Recorre IPython, NumPy, Pandas, Matplotlib y Scikit-Learn con cuadernos de Jupyter ejecutables. Supone que ya conoces lo básico de Python. Está en inglés.
-
-[Leer en línea (inglés)](https://jakevdp.github.io/PythonDataScienceHandbook/){target="_blank"}
+```{=html}
+<div class="libros-grid">
+<a class="libro" href="https://do1.dr-chuck.com/pythonlearn/ES_es/pythonlearn.pdf" target="_blank" rel="noopener" aria-label="Python para todos, de Charles R. Severance. Abrir PDF (se abre en una pestaña nueva)">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">Python para todos</span>
+<span class="autor">Charles R. Severance</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Introducción a Python 3 para principiantes reales, completa en español.</p>
+<span class="cta">Abrir PDF →</span>
+</div>
+</a>
+<a class="libro" href="https://allendowney.github.io/ThinkPython/" target="_blank" rel="noopener" aria-label="Think Python, 3.ª edición, de Allen B. Downey. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">Think Python, 3.ª edición</span>
+<span class="autor">Allen B. Downey</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Aprende a pensar como programador, con cuadernos de Jupyter ejecutables. En inglés.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank" rel="noopener" aria-label="Python Data Science Handbook, de Jake VanderPlas. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">Python Data Science Handbook</span>
+<span class="autor">Jake VanderPlas</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Nivel intermedio</span>
+<p>NumPy, Pandas, Matplotlib y Scikit-Learn en cuadernos ejecutables. En inglés.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+</div>
+```
 
 ## R
 
-### R para Ciencia de Datos (traducción al español)
-
-*Para empezar.* Versión en español de *R for Data Science*, mantenida por la comunidad. Enseña a importar, ordenar, transformar y visualizar datos con el tidyverse.
-
-[Leer en línea (español)](https://es.r4ds.hadley.nz/){target="_blank"}
-
-### R for Data Science, 2.ª edición (Wickham, Çetinkaya-Rundel y Grolemund)
-
-*Para empezar.* La edición más reciente de la obra anterior, completa y gratuita en línea. No exige experiencia previa. Está en inglés.
-
-[Leer en línea (inglés)](https://r4ds.hadley.nz/){target="_blank"}
-
-### Advanced R, 2.ª edición (Hadley Wickham)
-
-*Nivel avanzado.* Explica cómo funciona R por dentro: nombres y valores, funciones, entornos, programación funcional, orientación a objetos y depuración. Pensado para quien ya programa en R o viene de otro lenguaje. Está en inglés y tiene licencia Creative Commons.
-
-[Leer en línea (inglés)](https://adv-r.hadley.nz/){target="_blank"}
+```{=html}
+<div class="libros-grid">
+<a class="libro" href="https://es.r4ds.hadley.nz/" target="_blank" rel="noopener" aria-label="R para Ciencia de Datos, de Traducción al español de R for Data Science. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-r" aria-hidden="true">
+<span class="lang">R</span>
+<span class="titulo">R para Ciencia de Datos</span>
+<span class="autor">Traducción al español de R for Data Science</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Importar, ordenar, transformar y visualizar datos con el tidyverse. En español.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://r4ds.hadley.nz/" target="_blank" rel="noopener" aria-label="R for Data Science, 2.ª edición, de Wickham, Çetinkaya-Rundel y Grolemund. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-r" aria-hidden="true">
+<span class="lang">R</span>
+<span class="titulo">R for Data Science, 2.ª edición</span>
+<span class="autor">Wickham, Çetinkaya-Rundel y Grolemund</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>La edición más reciente, completa y gratuita en línea. En inglés.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://adv-r.hadley.nz/" target="_blank" rel="noopener" aria-label="Advanced R, 2.ª edición, de Hadley Wickham. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-r" aria-hidden="true">
+<span class="lang">R</span>
+<span class="titulo">Advanced R, 2.ª edición</span>
+<span class="autor">Hadley Wickham</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Nivel avanzado</span>
+<p>Cómo funciona R por dentro: funciones, entornos, objetos y depuración. En inglés.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+</div>
+```
 
 ## Julia
 
-### Think Julia (Ben Lauwens y Allen B. Downey)
-
-*Para empezar.* Adaptación a Julia del libro *Think Python*. Enseña a programar desde cero con Julia: variables, funciones, estructuras de datos y tipos, con ejercicios en cada capítulo. Su versión digital se publica con licencia Creative Commons.
-
-[Repositorio del libro en GitHub](https://github.com/BenLauwens/ThinkJulia.jl){target="_blank"}
-
-### Julia Data Science (Storopoli, Huijzer y Alonso)
-
-*Nivel intermedio.* Libro abierto sobre ciencia de datos con Julia, escrito para investigadores de cualquier área. Se puede leer en línea y también descargar en PDF. Está en inglés y tiene licencia Creative Commons.
-
-[Leer en línea (inglés)](https://juliadatascience.io){target="_blank"}
+```{=html}
+<div class="libros-grid">
+<a class="libro" href="https://github.com/BenLauwens/ThinkJulia.jl" target="_blank" rel="noopener" aria-label="Think Julia, de Ben Lauwens y Allen B. Downey. Ver en GitHub (se abre en una pestaña nueva)">
+<div class="portada portada-julia" aria-hidden="true">
+<span class="lang">Julia</span>
+<span class="titulo">Think Julia</span>
+<span class="autor">Ben Lauwens y Allen B. Downey</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Programar desde cero con Julia, con ejercicios en cada capítulo. En inglés.</p>
+<span class="cta">Ver en GitHub →</span>
+</div>
+</a>
+<a class="libro" href="https://juliadatascience.io" target="_blank" rel="noopener" aria-label="Julia Data Science, de Storopoli, Huijzer y Alonso. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-julia" aria-hidden="true">
+<span class="lang">Julia</span>
+<span class="titulo">Julia Data Science</span>
+<span class="autor">Storopoli, Huijzer y Alonso</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Nivel intermedio</span>
+<p>Ciencia de datos con Julia para investigadores de cualquier área. En inglés; también en PDF.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+</div>
+```
 
 ::: {.callout-note}
-Todos los libros pertenecen a sus autores. Esta página solo enlaza a las copias que ellos mismos publican; si algún enlace deja de funcionar, avísanos.
+Todos los libros pertenecen a sus autores. Las portadas de esta página son ilustrativas, y los enlaces llevan a las copias que los propios autores publican; si alguno deja de funcionar, avísanos.
 :::
