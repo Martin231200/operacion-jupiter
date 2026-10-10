@@ -235,28 +235,28 @@
     "href": "libros/index.html",
     "title": "Libros",
     "section": "",
-    "text": "Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Los enlaces llevan al sitio de cada autor o proyecto. En cada lenguaje van primero los libros para empezar y después los de nivel intermedio o avanzado."
+    "text": "Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Haz clic en la portada de cada libro para abrirlo en el sitio de su autor o proyecto (se abre en una pestaña nueva)."
   },
   {
     "objectID": "libros/index.html#python",
     "href": "libros/index.html#python",
     "title": "Libros",
     "section": "Python",
-    "text": "Python\n\nPython para todos (Charles R. Severance)\nPara empezar. Introducción a Python 3 pensada para principiantes reales, sin requisitos previos de programación ni de matemáticas. Parte de ejemplos sencillos y avanza hacia el análisis de datos. Está traducido completo al español y se distribuye con licencia libre.\nLeer el PDF en español\n\n\nThink Python, 3.ª edición (Allen B. Downey)\nPara empezar. Introducción a Python que enseña a pensar como programador: funciones, estructuras de datos y diseño orientado a objetos. Cada capítulo es un cuaderno de Jupyter, así que se puede leer y ejecutar el código en el mismo lugar. Está en inglés y tiene licencia Creative Commons.\nLeer en línea (inglés)\n\n\nPython Data Science Handbook (Jake VanderPlas)\nNivel intermedio. Recorre IPython, NumPy, Pandas, Matplotlib y Scikit-Learn con cuadernos de Jupyter ejecutables. Supone que ya conoces lo básico de Python. Está en inglés.\nLeer en línea (inglés)"
+    "text": "Python\n\n\n\nPython\nPython para todos\nCharles R. Severance\n\n\nPara empezar\nIntroducción a Python 3 para principiantes reales, completa en español.\nAbrir PDF →\n\n\n\n\nPython\nThink Python, 3.ª edición\nAllen B. Downey\n\n\nPara empezar\nAprende a pensar como programador, con cuadernos de Jupyter ejecutables. En inglés.\nLeer en línea →\n\n\n\n\nPython\nPython Data Science Handbook\nJake VanderPlas\n\n\nNivel intermedio\nNumPy, Pandas, Matplotlib y Scikit-Learn en cuadernos ejecutables. En inglés.\nLeer en línea →"
   },
   {
     "objectID": "libros/index.html#r",
     "href": "libros/index.html#r",
     "title": "Libros",
     "section": "R",
-    "text": "R\n\nR para Ciencia de Datos (traducción al español)\nPara empezar. Versión en español de R for Data Science, mantenida por la comunidad. Enseña a importar, ordenar, transformar y visualizar datos con el tidyverse.\nLeer en línea (español)\n\n\nR for Data Science, 2.ª edición (Wickham, Çetinkaya-Rundel y Grolemund)\nPara empezar. La edición más reciente de la obra anterior, completa y gratuita en línea. No exige experiencia previa. Está en inglés.\nLeer en línea (inglés)\n\n\nAdvanced R, 2.ª edición (Hadley Wickham)\nNivel avanzado. Explica cómo funciona R por dentro: nombres y valores, funciones, entornos, programación funcional, orientación a objetos y depuración. Pensado para quien ya programa en R o viene de otro lenguaje. Está en inglés y tiene licencia Creative Commons.\nLeer en línea (inglés)"
+    "text": "R\n\n\n\nR\nR para Ciencia de Datos\nTraducción al español de R for Data Science\n\n\nPara empezar\nImportar, ordenar, transformar y visualizar datos con el tidyverse. En español.\nLeer en línea →\n\n\n\n\nR\nR for Data Science, 2.ª edición\nWickham, Çetinkaya-Rundel y Grolemund\n\n\nPara empezar\nLa edición más reciente, completa y gratuita en línea. En inglés.\nLeer en línea →\n\n\n\n\nR\nAdvanced R, 2.ª edición\nHadley Wickham\n\n\nNivel avanzado\nCómo funciona R por dentro: funciones, entornos, objetos y depuración. En inglés.\nLeer en línea →"
   },
   {
     "objectID": "libros/index.html#julia",
     "href": "libros/index.html#julia",
     "title": "Libros",
     "section": "Julia",
-    "text": "Julia\n\nThink Julia (Ben Lauwens y Allen B. Downey)\nPara empezar. Adaptación a Julia del libro Think Python. Enseña a programar desde cero con Julia: variables, funciones, estructuras de datos y tipos, con ejercicios en cada capítulo. Su versión digital se publica con licencia Creative Commons.\nRepositorio del libro en GitHub\n\n\nJulia Data Science (Storopoli, Huijzer y Alonso)\nNivel intermedio. Libro abierto sobre ciencia de datos con Julia, escrito para investigadores de cualquier área. Se puede leer en línea y también descargar en PDF. Está en inglés y tiene licencia Creative Commons.\nLeer en línea (inglés)\n\n\n\n\n\n\nNota\n\n\n\nTodos los libros pertenecen a sus autores. Esta página solo enlaza a las copias que ellos mismos publican; si algún enlace deja de funcionar, avísanos."
+    "text": "Julia\n\n\n\nJulia\nThink Julia\nBen Lauwens y Allen B. Downey\n\n\nPara empezar\nProgramar desde cero con Julia, con ejercicios en cada capítulo. En inglés.\nVer en GitHub →\n\n\n\n\nJulia\nJulia Data Science\nStoropoli, Huijzer y Alonso\n\n\nNivel intermedio\nCiencia de datos con Julia para investigadores de cualquier área. En inglés; también en PDF.\nLeer en línea →\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nTodos los libros pertenecen a sus autores. Las portadas de esta página son ilustrativas, y los enlaces llevan a las copias que los propios autores publican; si alguno deja de funcionar, avísanos."
   },
   {
     "objectID": "recursos.html",
