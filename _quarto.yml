@@ -152,8 +152,8 @@ format:
     include-in-header:
       - text: <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     include-after-body:
-      - text: <script src="/operacion-jupiter/reading-time.js"></script>
-      - text: <script src="/operacion-jupiter/share-button.js"></script>
-      - text: <script src="/operacion-jupiter/skip-link.js"></script>
-      - text: <script src="/operacion-jupiter/ver-tambien.js"></script>
-      - text: <script src="/operacion-jupiter/keyboard-nav.js"></script>
+      - text: <script src="/reading-time.js"></script>
+      - text: <script src="/share-button.js"></script>
+      - text: <script src="/skip-link.js"></script>
+      - text: <script src="/ver-tambien.js"></script>
+      - text: <script src="/keyboard-nav.js"></script>

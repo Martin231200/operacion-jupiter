@@ -2,7 +2,7 @@
 title: "Libros"
 ---
 
-Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Haz clic en la portada de cada libro para abrirlo en el sitio de su autor o proyecto (se abre en una pestaña nueva).
+Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundizar después de los tutoriales. Haz clic en la portada de cada uno para abrirlo en el sitio de su autor o proyecto (se abre en una pestaña nueva). En cada lenguaje van primero los de nivel inicial.
 
 ```{=html}
 <style>
@@ -14,8 +14,9 @@ Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar despu
 .portada-python { background: linear-gradient(145deg, #2f77c4, #16487a); }
 .portada-r { background: linear-gradient(145deg, #168a68, #0b5a45); }
 .portada-julia { background: linear-gradient(145deg, #6d64cf, #463e99); }
+.portada-varios { background: linear-gradient(145deg, #5b6b7d, #2f3b48); }
 .portada .lang { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .9; }
-.portada .titulo { font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.portada .titulo { font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
 .portada .autor { font-size: .8rem; opacity: .92; line-height: 1.3; }
 .libro-info { padding: .75rem .15rem 0; }
 .libro-info p { margin: .35rem 0 .5rem; font-size: .9rem; line-height: 1.4; }
@@ -41,6 +42,18 @@ Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar despu
 <span class="cta">Abrir PDF →</span>
 </div>
 </a>
+<a class="libro" href="https://automatetheboringstuff.com/" target="_blank" rel="noopener" aria-label="Automate the Boring Stuff with Python, de Al Sweigart. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">Automate the Boring Stuff with Python</span>
+<span class="autor">Al Sweigart</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Python práctico para quien nunca ha programado: automatiza tareas con archivos, hojas de cálculo y la web. En inglés; gratis en línea.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
 <a class="libro" href="https://allendowney.github.io/ThinkPython/" target="_blank" rel="noopener" aria-label="Think Python, 3.ª edición, de Allen B. Downey. Leer en línea (se abre en una pestaña nueva)">
 <div class="portada portada-python" aria-hidden="true">
 <span class="lang">Python</span>
@@ -50,6 +63,18 @@ Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar despu
 <div class="libro-info">
 <span class="nivel">Para empezar</span>
 <p>Aprende a pensar como programador, con cuadernos de Jupyter ejecutables. En inglés.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/Index.html" target="_blank" rel="noopener" aria-label="Python Programming and Numerical Methods, de Kong, Siauw y Bayen. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">Python Programming and Numerical Methods</span>
+<span class="autor">Kong, Siauw y Bayen</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para ingeniería</span>
+<p>Programación en Python y métodos numéricos para ingeniería: álgebra lineal, raíces, integración y ecuaciones diferenciales. En inglés; versión interactiva gratuita.</p>
 <span class="cta">Leer en línea →</span>
 </div>
 </a>
@@ -136,6 +161,49 @@ Libros de apoyo, de acceso libre y gratuito, para quien quiere profundizar despu
 <div class="libro-info">
 <span class="nivel">Nivel intermedio</span>
 <p>Ciencia de datos con Julia para investigadores de cualquier área. En inglés; también en PDF.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://ocw.mit.edu/courses/18-s191-introduction-to-computational-thinking-fall-2020/" target="_blank" rel="noopener" aria-label="Introduction to Computational Thinking, de Edelman, Sanders, Sanderson, Schloss y Drake (MIT). Ver curso (se abre en una pestaña nueva)">
+<div class="portada portada-julia" aria-hidden="true">
+<span class="lang">Julia</span>
+<span class="titulo">Introduction to Computational Thinking</span>
+<span class="autor">Edelman, Sanders, Sanderson, Schloss y Drake (MIT)</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Curso abierto</span>
+<p>Curso del MIT que usa Julia para analizar imágenes, simular partículas y modelar epidemias y clima. En inglés; videos y tareas gratis.</p>
+<span class="cta">Ver curso →</span>
+</div>
+</a>
+</div>
+```
+
+## Más allá de un lenguaje
+
+```{=html}
+<div class="libros-grid">
+<a class="libro" href="https://www.statlearning.com/" target="_blank" rel="noopener" aria-label="An Introduction to Statistical Learning, de James, Witten, Hastie, Tibshirani (y Taylor). Ir a la página oficial (se abre en una pestaña nueva)">
+<div class="portada portada-varios" aria-hidden="true">
+<span class="lang">R y Python</span>
+<span class="titulo">An Introduction to Statistical Learning</span>
+<span class="autor">James, Witten, Hastie, Tibshirani (y Taylor)</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Nivel intermedio</span>
+<p>Estadística y aprendizaje automático con prácticas en R y en Python (hay una edición para cada uno). En inglés; PDF gratuito en la página oficial.</p>
+<span class="cta">Ir a la página oficial →</span>
+</div>
+</a>
+<a class="libro" href="https://clauswilke.com/dataviz/" target="_blank" rel="noopener" aria-label="Fundamentals of Data Visualization, de Claus O. Wilke. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-varios" aria-hidden="true">
+<span class="lang">Visualización</span>
+<span class="titulo">Fundamentals of Data Visualization</span>
+<span class="autor">Claus O. Wilke</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para todos los lenguajes</span>
+<p>Principios para hacer gráficas claras y honestas, sin depender de un lenguaje: tipos de gráfica, color y escalas. En inglés; gratis en línea.</p>
 <span class="cta">Leer en línea →</span>
 </div>
 </a>
