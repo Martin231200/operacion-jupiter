@@ -140,7 +140,7 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 
 ```{=html}
 <div class="libros-grid">
-<a class="libro" href="https://github.com/BenLauwens/ThinkJulia.jl" target="_blank" rel="noopener" aria-label="Think Julia, de Ben Lauwens y Allen B. Downey. Ver en GitHub (se abre en una pestaña nueva)">
+<a class="libro" href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html" target="_blank" rel="noopener" aria-label="Think Julia, de Ben Lauwens y Allen B. Downey. Leer en línea (se abre en una pestaña nueva)">
 <div class="portada portada-julia" aria-hidden="true">
 <span class="lang">Julia</span>
 <span class="titulo">Think Julia</span>
