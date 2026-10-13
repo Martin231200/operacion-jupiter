@@ -931,6 +931,34 @@
     "text": "Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Víctor Damián Pinilla Morán, y Edgar Ali Ramos Gómez, profesores de la Facultad de Ingeniería de la UNAM. Posteriormente, se integró Armando Moisés Pérez Silva al grupo.\n\n\n\n\n\n\nAnn Godelieve Wellens\n\n\n\n\n\n\n\nVíctor Damián Pinilla Morán\n\n\n\n\n\n\n\nEdgar Ali Ramos Gómez\n\n\n\n\n\n\n\nArmando Moisés Pérez Silva"
   },
   {
+    "objectID": "novedades.html",
+    "href": "novedades.html",
+    "title": "Novedades",
+    "section": "",
+    "text": "Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada corresponde a un cambio publicado en el repositorio."
+  },
+  {
+    "objectID": "novedades.html#octubre-de-2026",
+    "href": "novedades.html#octubre-de-2026",
+    "title": "Novedades",
+    "section": "Octubre de 2026",
+    "text": "Octubre de 2026\n12 de octubre\n\nNuevo tema en tonos guinda y rojo, en modo claro y modo oscuro, inspirado en los colores de la Facultad de Ingeniería.\nEl menú «Más» agrupa Glosario, Recursos, Libros, Semblanza y Novedades para dejar la barra superior más limpia.\nNuevo ícono del sitio (favicon).\nLas opciones del quiz comparativo ahora aparecen en orden aleatorio cada vez que se abre.\nVerificación semanal automática de enlaces rotos.\n\n11 de octubre\n\nGlosario comparativo con 44 términos, buscador y filtros por lenguaje.\nLa sección de libros crece a 13 títulos de acceso libre.\nCorrección de cinco scripts que no se cargaban (tiempo de lectura, compartir, saltar al contenido, «Ver también» y atajos de teclado).\n\n10 de octubre\n\nLibros con portadas en las que se puede hacer clic.\nNuevos libros de acceso libre en la sección de Libros.\n\n4 de octubre\n\nCorrecciones de rutas y una corrección en el material de Python.\nEl sitio se verifica automáticamente antes de aceptar cada cambio."
+  },
+  {
+    "objectID": "novedades.html#septiembre-de-2026",
+    "href": "novedades.html#septiembre-de-2026",
+    "title": "Novedades",
+    "section": "Septiembre de 2026",
+    "text": "Septiembre de 2026\n2 de septiembre\n\nLista de verificación de progreso y ficha comparativa descargable en PDF.\nEjercicios de R que se ejecutan en vivo en el navegador, con webR.\n\n1 de septiembre\n\nNotebook de R y sección de tutoriales."
+  },
+  {
+    "objectID": "novedades.html#agosto-de-2026",
+    "href": "novedades.html#agosto-de-2026",
+    "title": "Novedades",
+    "section": "Agosto de 2026",
+    "text": "Agosto de 2026\n31 de agosto\n\nSemblanza de los profesores.\n\n29 de agosto\n\nPrimera versión del sitio."
+  },
+  {
     "objectID": "glosario.html",
     "href": "glosario.html",
     "title": "Glosario",
