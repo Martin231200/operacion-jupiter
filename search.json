@@ -1593,7 +1593,7 @@
     "href": "julia/07-ejercicios-ingenieria.html",
     "title": "Julia: Ejercicios de ingeniería",
     "section": "",
-    "text": "Importante\n\n\n\nRecuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.\nCuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.",
+    "text": "Importante\n\n\n\nRecuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.\nCinco problemas aplicados a ingeniería industrial, mecánica y aeroespacial — los mismos que en Python y R, para comparar directamente.",
     "crumbs": [
       "Julia",
       "Ejercicios de ingeniería"
@@ -1615,7 +1615,7 @@
     "href": "julia/07-ejercicios-ingenieria.html#control-de-calidad-tolerancia-dimensional",
     "title": "Julia: Ejercicios de ingeniería",
     "section": "2. Control de calidad (tolerancia dimensional)",
-    "text": "2. Control de calidad (tolerancia dimensional)\n\n\nusing Statistics\ndiametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]\nnominal = 20.0\ntolerancia = 0.05\n\nmedia = mean(diametros)\ndentro_tolerancia = all(abs.(diametros .- nominal) .&lt;= tolerancia)\n\n@assert round(media, digits=4) == 20.0012\nprintln(\"Media: \", media, \" mm — dentro de tolerancia: \", dentro_tolerancia)\nSalida: Media: 20.0012 mm — dentro de tolerancia: true\n\n\nPlanteamiento\nUn lote de 8 piezas con diámetro nominal 20 mm y tolerancia ±0.05 mm. Calcula media y verifica si todas caen dentro de tolerancia.\nRelevancia: control estadístico de procesos (SPC).\n\n\nNota de sintaxis: el . antes de operadores (.-, .&lt;=) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).",
+    "text": "2. Control de calidad (tolerancia dimensional)\n\n\nusing Statistics\ndiametros = [20.02, 19.98, 20.04, 19.96, 20.01, 20.03, 19.97, 20.00]\nnominal = 20.0\ntolerancia = 0.05\n\nmedia = mean(diametros)\ndentro_tolerancia = all(abs.(diametros .- nominal) .&lt;= tolerancia)\n\n@assert round(media, digits=4) == 20.0012\nprintln(\"Media: \", media, \" mm — dentro de tolerancia: \", dentro_tolerancia)\nSalida: Media: 20.00125 mm — dentro de tolerancia: true\n\n\nPlanteamiento\nUn lote de 8 piezas con diámetro nominal 20 mm y tolerancia ±0.05 mm. Calcula media y verifica si todas caen dentro de tolerancia.\nRelevancia: control estadístico de procesos (SPC).\n\n\nNota de sintaxis: el . antes de operadores (.-, .&lt;=) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).",
     "crumbs": [
       "Julia",
       "Ejercicios de ingeniería"
@@ -1638,6 +1638,17 @@
     "title": "Julia: Ejercicios de ingeniería",
     "section": "4. Eficiencia de una máquina",
     "text": "4. Eficiencia de una máquina\n\n\ntrabajo_util, energia_entrada = 3200, 4000\neficiencia = trabajo_util / energia_entrada * 100\n\n@assert eficiencia == 80.0\nprintln(\"Eficiencia: \", eficiencia, \"%\")\nSalida: Eficiencia: 80.0%\n\n\nPlanteamiento\nUna máquina recibe 4000 J y entrega 3200 J de trabajo útil.\nRelevancia: comparar el desempeño real contra la capacidad teórica de motores o bombas.",
+    "crumbs": [
+      "Julia",
+      "Ejercicios de ingeniería"
+    ]
+  },
+  {
+    "objectID": "julia/07-ejercicios-ingenieria.html#relación-empuje-peso-aeroespacial",
+    "href": "julia/07-ejercicios-ingenieria.html#relación-empuje-peso-aeroespacial",
+    "title": "Julia: Ejercicios de ingeniería",
+    "section": "5. Relación empuje-peso (aeroespacial)",
+    "text": "5. Relación empuje-peso (aeroespacial)\n\n\nT = 120000     # empuje total en N\nm = 8000       # masa en kg\ng = 9.81       # gravedad en m/s^2\n\nW = m * g      # peso en N\ntwr = T / W\n\n@assert round(twr, digits=3) == 1.529\nprintln(\"Peso: \", W, \" N — T/W: \", round(twr, digits=3))\nSalida: Peso: 78480.0 N — T/W: 1.529\n\n\nPlanteamiento\nAeronave de 8000 kg con empuje total de 120 000 N. Calcula su peso W = m·g y la relación empuje-peso T/W.\nRelevancia: una relación empuje-peso mayor que 1 indica que el empuje supera al peso, requisito para ascender verticalmente.",
     "crumbs": [
       "Julia",
       "Ejercicios de ingeniería"

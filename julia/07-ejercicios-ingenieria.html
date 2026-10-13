@@ -458,6 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#control-de-calidad-tolerancia-dimensional" id="toc-control-de-calidad-tolerancia-dimensional" class="nav-link" data-scroll-target="#control-de-calidad-tolerancia-dimensional">2. Control de calidad (tolerancia dimensional)</a></li>
   <li><a href="#cinemática-mrua" id="toc-cinemática-mrua" class="nav-link" data-scroll-target="#cinemática-mrua">3. Cinemática (MRUA)</a></li>
   <li><a href="#eficiencia-de-una-máquina" id="toc-eficiencia-de-una-máquina" class="nav-link" data-scroll-target="#eficiencia-de-una-máquina">4. Eficiencia de una máquina</a></li>
+  <li><a href="#relación-empuje-peso-aeroespacial" id="toc-relación-empuje-peso-aeroespacial" class="nav-link" data-scroll-target="#relación-empuje-peso-aeroespacial">5. Relación empuje-peso (aeroespacial)</a></li>
   </ul>
 </nav>
     </div>
@@ -503,7 +504,7 @@ Importante
 <p>Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.</p>
 </div>
 </div>
-<p>Cuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.</p>
+<p>Cinco problemas aplicados a ingeniería industrial, mecánica y aeroespacial — los mismos que en Python y R, para comparar directamente.</p>
 <section id="esfuerzo-mecánico-ley-de-hooke" class="level2">
 <h2 class="anchored" data-anchor-id="esfuerzo-mecánico-ley-de-hooke">1. Esfuerzo mecánico (Ley de Hooke)</h2>
 <div class="ejercicio-split">
@@ -539,7 +540,7 @@ Importante
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media, <span class="st">" mm — dentro de tolerancia: "</span>, dentro_tolerancia)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Salida:</strong> <code>Media: 20.0012 mm — dentro de tolerancia: true</code></p>
+<p><strong>Salida:</strong> <code>Media: 20.00125 mm — dentro de tolerancia: true</code></p>
 </div>
 <section id="planteamiento-1" class="level4 ejercicio-instrucciones">
 <h4 class="anchored" data-anchor-id="planteamiento-1">Planteamiento</h4>
@@ -584,6 +585,28 @@ Importante
 <h4 class="anchored" data-anchor-id="planteamiento-3">Planteamiento</h4>
 <p>Una máquina recibe <strong>4000 J</strong> y entrega <strong>3200 J</strong> de trabajo útil.</p>
 <p><em>Relevancia:</em> comparar el desempeño real contra la capacidad teórica de motores o bombas.</p>
+</section>
+</div>
+</section>
+<section id="relación-empuje-peso-aeroespacial" class="level2">
+<h2 class="anchored" data-anchor-id="relación-empuje-peso-aeroespacial">5. Relación empuje-peso (aeroespacial)</h2>
+<div class="ejercicio-split">
+<div class="ejercicio-codigo">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">120000</span>     <span class="co"># empuje total en N</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">8000</span>       <span class="co"># masa en kg</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span>       <span class="co"># gravedad en m/s^2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> m <span class="op">*</span> g      <span class="co"># peso en N</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>twr <span class="op">=</span> T <span class="op">/</span> W</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(twr, digits<span class="op">=</span><span class="fl">3</span>) <span class="op">==</span> <span class="fl">1.529</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Peso: "</span>, W, <span class="st">" N — T/W: "</span>, <span class="fu">round</span>(twr, digits<span class="op">=</span><span class="fl">3</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Salida:</strong> <code>Peso: 78480.0 N — T/W: 1.529</code></p>
+</div>
+<section id="planteamiento-4" class="level4 ejercicio-instrucciones">
+<h4 class="anchored" data-anchor-id="planteamiento-4">Planteamiento</h4>
+<p>Aeronave de <strong>8000 kg</strong> con empuje total de <strong>120 000 N</strong>. Calcula su peso <code>W = m·g</code> y la relación empuje-peso <code>T/W</code>.</p>
+<p><em>Relevancia:</em> una relación empuje-peso mayor que 1 indica que el empuje supera al peso, requisito para ascender verticalmente.</p>
 </section>
 </div>
 
@@ -1069,124 +1092,152 @@ Importante
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Ejercicios de ingeniería"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Cuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Esfuerzo mecánico (Ley de Hooke)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">5000</span>       <span class="co"># fuerza en N</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span>     <span class="co"># área en m^2</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A  <span class="co"># Pa</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Esfuerzo: "</span>, esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, <span class="st">" MPa"</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Esfuerzo: 25.0 MPa`</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal <span class="in">`σ = F / A`</span> en MPa.</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>*Relevancia:* primer cálculo de cualquier análisis de resistencia de materiales.</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>**En Python:** `esfuerzo = F / A` · **En R:** <span class="in">`esfuerzo &lt;- F / A`</span> — la lógica es idéntica, solo cambia el operador de asignación.</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Control de calidad (tolerancia dimensional)</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">20.0</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(diametros)</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>dentro_tolerancia <span class="op">=</span> <span class="fu">all</span>(<span class="fu">abs</span>.(diametros <span class="op">.-</span> nominal) <span class="op">.&lt;=</span> tolerancia)</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media, <span class="st">" mm — dentro de tolerancia: "</span>, dentro_tolerancia)</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Media: 20.0012 mm — dentro de tolerancia: true`</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>Un lote de 8 piezas con diámetro nominal **20 mm** y tolerancia **±0.05 mm**. Calcula media y verifica si todas caen dentro de tolerancia.</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>*Relevancia:* control estadístico de procesos (SPC).</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>Nota de sintaxis: el <span class="in">`.`</span> antes de operadores (<span class="in">`.-`</span>, <span class="in">`.&lt;=`</span>) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Cinemática (MRUA)</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">5</span></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">^</span><span class="fl">2</span></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>velocidad_final <span class="op">=</span> v0 <span class="op">+</span> a<span class="op">*</span>t</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Posición: "</span>, posicion, <span class="st">" m, velocidad final: "</span>, velocidad_final, <span class="st">" m/s"</span>)</span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Posición: 45.0 m, velocidad final: 14 m/s`</span></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**.</span>
-<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>*Relevancia:* diseño de bandas transportadoras o brazos robóticos.</span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Eficiencia de una máquina</span></span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="fl">3200</span>, <span class="fl">4000</span></span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="fl">100</span></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Eficiencia: "</span>, eficiencia, <span class="st">"%"</span>)</span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Eficiencia: 80.0%`</span></span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>Una máquina recibe **4000 J** y entrega **3200 J** de trabajo útil.</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>*Relevancia:* comparar el desempeño real contra la capacidad teórica de motores o bombas.</span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Julia: Ejercicios de ingeniería"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Cinco problemas aplicados a ingeniería industrial, mecánica y aeroespacial — los mismos que en Python y R, para comparar directamente.</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Esfuerzo mecánico (Ley de Hooke)</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">5000</span>       <span class="co"># fuerza en N</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.0002</span>     <span class="co"># área en m^2</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>esfuerzo <span class="op">=</span> F <span class="op">/</span> A  <span class="co"># Pa</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, digits<span class="op">=</span><span class="fl">2</span>) <span class="op">==</span> <span class="fl">25.0</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Esfuerzo: "</span>, esfuerzo <span class="op">/</span> <span class="fl">1e6</span>, <span class="st">" MPa"</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Esfuerzo: 25.0 MPa`</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>Una barra de sección transversal **A = 2 cm² (0.0002 m²)** soporta una carga axial **F = 5000 N**. Calcula el esfuerzo normal <span class="in">`σ = F / A`</span> en MPa.</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>*Relevancia:* primer cálculo de cualquier análisis de resistencia de materiales.</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>**En Python:** `esfuerzo = F / A` · **En R:** <span class="in">`esfuerzo &lt;- F / A`</span> — la lógica es idéntica, solo cambia el operador de asignación.</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Control de calidad (tolerancia dimensional)</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>diametros <span class="op">=</span> [<span class="fl">20.02</span>, <span class="fl">19.98</span>, <span class="fl">20.04</span>, <span class="fl">19.96</span>, <span class="fl">20.01</span>, <span class="fl">20.03</span>, <span class="fl">19.97</span>, <span class="fl">20.00</span>]</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">20.0</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>media <span class="op">=</span> <span class="fu">mean</span>(diametros)</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>dentro_tolerancia <span class="op">=</span> <span class="fu">all</span>(<span class="fu">abs</span>.(diametros <span class="op">.-</span> nominal) <span class="op">.&lt;=</span> tolerancia)</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(media, digits<span class="op">=</span><span class="fl">4</span>) <span class="op">==</span> <span class="fl">20.0012</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Media: "</span>, media, <span class="st">" mm — dentro de tolerancia: "</span>, dentro_tolerancia)</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Media: 20.00125 mm — dentro de tolerancia: true`</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>Un lote de 8 piezas con diámetro nominal **20 mm** y tolerancia **±0.05 mm**. Calcula media y verifica si todas caen dentro de tolerancia.</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>*Relevancia:* control estadístico de procesos (SPC).</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>Nota de sintaxis: el <span class="in">`.`</span> antes de operadores (<span class="in">`.-`</span>, <span class="in">`.&lt;=`</span>) en Julia aplica la operación elemento a elemento sobre el array — en Python esto se logra con comprensión de listas o NumPy, y en R es automático (vectorizado por defecto).</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Cinemática (MRUA)</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>v0, a, t <span class="op">=</span> <span class="fl">4</span>, <span class="fl">2</span>, <span class="fl">5</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>posicion <span class="op">=</span> v0<span class="op">*</span>t <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>a<span class="op">*</span>t<span class="op">^</span><span class="fl">2</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>velocidad_final <span class="op">=</span> v0 <span class="op">+</span> a<span class="op">*</span>t</span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> posicion <span class="op">==</span> <span class="fl">45.0</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Posición: "</span>, posicion, <span class="st">" m, velocidad final: "</span>, velocidad_final, <span class="st">" m/s"</span>)</span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Posición: 45.0 m, velocidad final: 14 m/s`</span></span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>Un carro transportador parte con velocidad inicial **4 m/s** y acelera a **2 m/s²** durante **5 segundos**.</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>*Relevancia:* diseño de bandas transportadoras o brazos robóticos.</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Eficiencia de una máquina</span></span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>trabajo_util, energia_entrada <span class="op">=</span> <span class="fl">3200</span>, <span class="fl">4000</span></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>eficiencia <span class="op">=</span> trabajo_util <span class="op">/</span> energia_entrada <span class="op">*</span> <span class="fl">100</span></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> eficiencia <span class="op">==</span> <span class="fl">80.0</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Eficiencia: "</span>, eficiencia, <span class="st">"%"</span>)</span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Eficiencia: 80.0%`</span></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>Una máquina recibe **4000 J** y entrega **3200 J** de trabajo útil.</span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>*Relevancia:* comparar el desempeño real contra la capacidad teórica de motores o bombas.</span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## 5. Relación empuje-peso (aeroespacial)</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-split}</span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-codigo}</span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">120000</span>     <span class="co"># empuje total en N</span></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">8000</span>       <span class="co"># masa en kg</span></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span>       <span class="co"># gravedad en m/s^2</span></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> m <span class="op">*</span> g      <span class="co"># peso en N</span></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>twr <span class="op">=</span> T <span class="op">/</span> W</span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> <span class="fu">round</span>(twr, digits<span class="op">=</span><span class="fl">3</span>) <span class="op">==</span> <span class="fl">1.529</span></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Peso: "</span>, W, <span class="st">" N — T/W: "</span>, <span class="fu">round</span>(twr, digits<span class="op">=</span><span class="fl">3</span>))</span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Peso: 78480.0 N — T/W: 1.529`</span></span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>::: {.ejercicio-instrucciones}</span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Planteamiento</span></span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a>Aeronave de **8000 kg** con empuje total de **120 000 N**. Calcula su peso <span class="in">`W = m·g`</span> y la relación empuje-peso <span class="in">`T/W`</span>.</span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>*Relevancia:* una relación empuje-peso mayor que 1 indica que el empuje supera al peso, requisito para ascender verticalmente.</span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
