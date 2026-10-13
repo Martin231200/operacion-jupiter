@@ -1,0 +1,16 @@
+# Configuración de lychee para Operación Jupyter
+max_concurrency = 8
+max_retries = 2
+timeout = 20
+user_agent = "Mozilla/5.0 (compatible; operacion-jupiter-link-check)"
+
+# Muchas editoriales y sitios responden 403 o 429 a los robots aunque el enlace funcione.
+accept = ["200..=204", "206", "403", "429"]
+
+exclude_all_private = true
+exclude_mail = true
+exclude = [
+  '^https?://localhost',
+  '^https?://127\.0\.0\.1',
+  '^https://fonts\.(googleapis|gstatic)\.com',
+]
