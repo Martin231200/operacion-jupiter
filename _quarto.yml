@@ -34,10 +34,6 @@ website:
         text: Inicio
       - href: progreso.qmd
         text: Mi progreso
-      - href: glosario.qmd
-        text: Glosario
-      - href: recursos.qmd
-        text: Recursos
       - href: python/01-introduccion.ipynb
         text: Python
       - href: r/01-introduccion.ipynb
@@ -46,10 +42,16 @@ website:
         text: Julia
       - href: tutoriales/index.qmd
         text: Tutoriales
-      - href: libros/index.qmd
-        text: Libros
-      - href: semblanza/index.qmd
-        text: Semblanza de los profesores
+      - text: "Más"
+        menu:
+          - href: glosario.qmd
+            text: Glosario
+          - href: recursos.qmd
+            text: Recursos
+          - href: libros/index.qmd
+            text: Libros
+          - href: semblanza/index.qmd
+            text: Semblanza de los profesores
 
   sidebar:
     - title: "Python"
@@ -142,6 +144,7 @@ format:
       light: [cosmo, custom.scss]
       dark: [darkly, custom-dark.scss]
     css: styles.css
+    respect-user-color-scheme: true
     toc: true
     toc-depth: 2
     lang: es

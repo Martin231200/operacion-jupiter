@@ -38,8 +38,8 @@ main.content {
 .ejercicio-instrucciones {
   flex: 0.9;
   min-width: 0;
-  background: #F7F9FB;
-  border-left: 4px solid #2C5F8A;
+  background: #FBF6F6;
+  border-left: 4px solid #9B1B2A;
   border-radius: 10px;
   padding: 16px 20px;
 }
@@ -57,7 +57,7 @@ main.content {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: #2C5F8A;
+  background: #9B1B2A;
   color: white;
   padding: 10px 16px;
   z-index: 9999;
@@ -69,6 +69,6 @@ main.content {
 
 /* Accesibilidad: contorno de foco visible al navegar con teclado */
 a:focus-visible, button:focus-visible, input:focus-visible {
-  outline: 3px solid #6EA8DC;
+  outline: 3px solid #C8202F;
   outline-offset: 2px;
 }

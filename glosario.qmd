@@ -15,7 +15,7 @@ Términos que aparecen en los tutoriales, explicados una sola vez y comparados e
 .gl-lbl { font-size: .85rem; opacity: .8; margin-right: .2rem; }
 .gl-chip { border: 1px solid currentColor; background: transparent; color: inherit; border-radius: 999px; padding: .2rem .85rem; font-size: .85rem; cursor: pointer; opacity: .85; }
 .gl-chip:hover { opacity: 1; }
-.gl-chip[aria-pressed="true"] { background: #2C5F8A; border-color: #2C5F8A; color: #fff; opacity: 1; }
+.gl-chip[aria-pressed="true"] { background: #9B1B2A; border-color: #9B1B2A; color: #fff; opacity: 1; }
 .gl-chip.py[aria-pressed="true"] { background: var(--c-py); border-color: var(--c-py); }
 .gl-chip.r[aria-pressed="true"]  { background: var(--c-r);  border-color: var(--c-r); }
 .gl-chip.jl[aria-pressed="true"] { background: var(--c-jl); border-color: var(--c-jl); }
