@@ -1,17 +1,27 @@
 .info-term {
-  color: #2C5F8A;
-  border-bottom: 1px dashed #2C5F8A;
+  color: #9B1B2A;
+  border-bottom: 1px dashed #9B1B2A;
   cursor: pointer;
   font-weight: 500;
 }
 .info-bubble {
   display: block;
-  background: #E6F1FB;
-  color: #0C447C;
+  background: #FBEAEC;
+  color: #5E0F1A;
   border-radius: 10px;
   padding: 10px 14px;
   font-size: 13px;
   margin: 6px 0 10px;
   max-width: 480px;
-  border-left: 3px solid #2C5F8A;
+  border-left: 3px solid #9B1B2A;
+}
+/* Modo oscuro */
+body.quarto-dark .info-term {
+  color: #FF8A8F;
+  border-bottom-color: #E5484D;
+}
+body.quarto-dark .info-bubble {
+  background: #2A1A1B;
+  color: #F3DADB;
+  border-left-color: #E5484D;
 }

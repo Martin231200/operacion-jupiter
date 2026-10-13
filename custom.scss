@@ -1,7 +1,10 @@
 /*-- scss:defaults --*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-$primary:   #2C5F8A;
+$fi-guinda:  #9B1B2A;
+$fi-guinda-osc: #5E0F1A;
+$fi-oro:     #B8872B;
+$primary:   $fi-guinda;
 $body-bg:   #FFFFFF;
 $link-color: $primary;
 $font-family-sans-serif: "Inter", -apple-system, sans-serif;
@@ -16,32 +19,46 @@ body { font-family: $font-family-sans-serif; }
 code, pre { font-family: $font-family-monospace !important; }
 
 .navbar {
-  background: linear-gradient(135deg, #2C5F8A 0%, #1B4A6E 100%) !important;
+  background: linear-gradient(120deg, #5E0F1A 0%, #9B1B2A 55%, #7A1422 100%) !important;
+  border-bottom: 3px solid $fi-oro;
+  box-shadow: 0 3px 12px rgba(94,15,26,0.25);
 }
 .navbar-title, .navbar-nav .nav-link {
   color: #FFFFFF !important;
   font-weight: 500;
 }
 .navbar-nav .nav-link:hover {
-  color: #BFDBFE !important;
+  color: #F5D9A8 !important;
+}
+.navbar-nav .nav-link.active {
+  color: #F5D9A8 !important;
+  box-shadow: inset 0 -2px 0 #F5D9A8;
+}
+.navbar .dropdown-menu {
+  border: 1px solid #E5C9CC;
+  box-shadow: 0 8px 20px rgba(94,15,26,0.20);
+}
+.navbar .dropdown-item:hover, .navbar .dropdown-item:focus {
+  background: #FBEAEC;
+  color: $fi-guinda-osc;
 }
 
-h1 { font-weight: 700; color: #1B4A6E; }
-h2 { font-weight: 600; color: #2C5F8A; }
-h3 { font-weight: 600; color: #3D7CB0; }
+h1 { font-weight: 700; color: #5E0F1A; }
+h2 { font-weight: 600; color: #9B1B2A; }
+h3 { font-weight: 600; color: #B23A48; }
 
 .badge-python { background-color: $python-color; color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; }
 .badge-r      { background-color: $r-color;      color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; }
 .badge-julia  { background-color: $julia-color;  color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; }
 
-div.callout-note    { border-left-color: $python-color; }
+div.callout-note    { border-left-color: $fi-guinda; }
 div.callout-tip      { border-left-color: $r-color; }
 div.callout-important{ border-left-color: $julia-color; }
 div.callout-warning  { border-left-color: #D97706; }
 
 code {
-  color: #B4519A;
-  background: #F5F0F7;
+  color: #9B1B2A;
+  background: #FBEFF0;
   padding: 1px 5px;
   border-radius: 4px;
 }
@@ -56,7 +73,7 @@ table {
   overflow: hidden;
 }
 thead {
-  background: linear-gradient(135deg, #2C5F8A 0%, #1B4A6E 100%);
+  background: linear-gradient(135deg, #9B1B2A 0%, #5E0F1A 100%);
 }
 thead th { color: white !important; }
 
