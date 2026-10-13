@@ -85,9 +85,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-5b6f33a0568e9f1a55d5e0d1e7751119.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c43e58afad7f939bcda591b07ac371ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f63f28c949a17ec67fd487afe736b273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2368e30998261b1bb986dc1005612a74.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f63f28c949a17ec67fd487afe736b273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -1829,7 +1829,8 @@ globalThis.qwebrExecuteCode = async function (
       }
     };
     const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
       document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
       document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
@@ -1842,6 +1843,14 @@ globalThis.qwebrExecuteCode = async function (
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -1874,14 +1883,6 @@ globalThis.qwebrExecuteCode = async function (
 <span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../glosario.html"> 
-<span class="menu-text">Glosario</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../recursos.html"> 
-<span class="menu-text">Recursos</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../python/01-introduccion.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
@@ -1897,14 +1898,29 @@ globalThis.qwebrExecuteCode = async function (
     <a class="nav-link active" href="../tutoriales/index.html" aria-current="page"> 
 <span class="menu-text">Tutoriales</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../libros/index.html"> 
-<span class="menu-text">Libros</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-más" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Más</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-más">    
+        <li>
+    <a class="dropdown-item" href="../glosario.html">
+ <span class="dropdown-text">Glosario</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../semblanza/index.html"> 
-<span class="menu-text">Semblanza de los profesores</span></a>
+        <li>
+    <a class="dropdown-item" href="../recursos.html">
+ <span class="dropdown-text">Recursos</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../libros/index.html">
+ <span class="dropdown-text">Libros</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../semblanza/index.html">
+ <span class="dropdown-text">Semblanza de los profesores</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">

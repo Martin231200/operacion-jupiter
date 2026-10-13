@@ -47,7 +47,7 @@
 
     const box = document.createElement("div");
     box.className = "callout callout-note";
-    box.style.cssText = "border-left:4px solid #2C5F8A; border-radius:10px; padding:12px 18px; margin:1.5rem 0;";
+    box.style.cssText = "border-left:4px solid #9B1B2A; border-radius:10px; padding:12px 18px; margin:1.5rem 0;";
 
     const title = document.createElement("p");
     title.style.cssText = "font-weight:600; margin:0 0 6px;";

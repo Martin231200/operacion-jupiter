@@ -83,9 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-5b6f33a0568e9f1a55d5e0d1e7751119.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-c43e58afad7f939bcda591b07ac371ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-22529f08b672ee0d3cc211d861e626cc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f63f28c949a17ec67fd487afe736b273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2368e30998261b1bb986dc1005612a74.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f63f28c949a17ec67fd487afe736b273.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -274,7 +274,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     };
     const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
       document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
       document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
@@ -287,6 +288,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
     };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
       toggleColorMode(true);
@@ -319,14 +328,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Mi progreso</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./glosario.html" aria-current="page"> 
-<span class="menu-text">Glosario</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./recursos.html"> 
-<span class="menu-text">Recursos</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./python/01-introduccion.html"> 
 <span class="menu-text">Python</span></a>
   </li>  
@@ -342,14 +343,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./tutoriales/index.html"> 
 <span class="menu-text">Tutoriales</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./libros/index.html"> 
-<span class="menu-text">Libros</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-más" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Más</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-más">    
+        <li>
+    <a class="dropdown-item" href="./glosario.html">
+ <span class="dropdown-text">Glosario</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./semblanza/index.html"> 
-<span class="menu-text">Semblanza de los profesores</span></a>
+        <li>
+    <a class="dropdown-item" href="./recursos.html">
+ <span class="dropdown-text">Recursos</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./libros/index.html">
+ <span class="dropdown-text">Libros</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./semblanza/index.html">
+ <span class="dropdown-text">Semblanza de los profesores</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -401,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .gl-lbl { font-size: .85rem; opacity: .8; margin-right: .2rem; }
 .gl-chip { border: 1px solid currentColor; background: transparent; color: inherit; border-radius: 999px; padding: .2rem .85rem; font-size: .85rem; cursor: pointer; opacity: .85; }
 .gl-chip:hover { opacity: 1; }
-.gl-chip[aria-pressed="true"] { background: #2C5F8A; border-color: #2C5F8A; color: #fff; opacity: 1; }
+.gl-chip[aria-pressed="true"] { background: #9B1B2A; border-color: #9B1B2A; color: #fff; opacity: 1; }
 .gl-chip.py[aria-pressed="true"] { background: var(--c-py); border-color: var(--c-py); }
 .gl-chip.r[aria-pressed="true"]  { background: var(--c-r);  border-color: var(--c-r); }
 .gl-chip.jl[aria-pressed="true"] { background: var(--c-jl); border-color: var(--c-jl); }
@@ -1062,7 +1078,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-lbl { font-size: .85rem; opacity: .8; margin-right: .2rem; }</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip { border: 1px solid currentColor; background: transparent; color: inherit; border-radius: 999px; padding: .2rem .85rem; font-size: .85rem; cursor: pointer; opacity: .85; }</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip:hover { opacity: 1; }</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip[aria-pressed="true"] { background: #2C5F8A; border-color: #2C5F8A; color: #fff; opacity: 1; }</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip[aria-pressed="true"] { background: #9B1B2A; border-color: #9B1B2A; color: #fff; opacity: 1; }</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip.py[aria-pressed="true"] { background: var(--c-py); border-color: var(--c-py); }</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip.r[aria-pressed="true"]  { background: var(--c-r);  border-color: var(--c-r); }</span></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">.gl-chip.jl[aria-pressed="true"] { background: var(--c-jl); border-color: var(--c-jl); }</span></span>
