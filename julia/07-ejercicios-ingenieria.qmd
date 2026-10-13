@@ -6,7 +6,7 @@ title: "Julia: Ejercicios de ingeniería"
 Recuerda: Julia todavía no corre en vivo en el navegador. El código de abajo es real y las salidas están verificadas (con los mismos valores que Python y R), pero no es editable aquí.
 :::
 
-Cuatro problemas aplicados a ingeniería industrial y mecánica — los mismos que en Python y R, para comparar directamente.
+Cinco problemas aplicados a ingeniería industrial, mecánica y aeroespacial — los mismos que en Python y R, para comparar directamente.
 
 ## 1. Esfuerzo mecánico (Ley de Hooke)
 
@@ -53,7 +53,7 @@ dentro_tolerancia = all(abs.(diametros .- nominal) .<= tolerancia)
 @assert round(media, digits=4) == 20.0012
 println("Media: ", media, " mm — dentro de tolerancia: ", dentro_tolerancia)
 ```
-**Salida:** `Media: 20.0012 mm — dentro de tolerancia: true`
+**Salida:** `Media: 20.00125 mm — dentro de tolerancia: true`
 :::
 
 ::: {.ejercicio-instrucciones}
@@ -113,6 +113,34 @@ println("Eficiencia: ", eficiencia, "%")
 Una máquina recibe **4000 J** y entrega **3200 J** de trabajo útil.
 
 *Relevancia:* comparar el desempeño real contra la capacidad teórica de motores o bombas.
+:::
+
+:::
+
+## 5. Relación empuje-peso (aeroespacial)
+
+::: {.ejercicio-split}
+
+::: {.ejercicio-codigo}
+```julia
+T = 120000     # empuje total en N
+m = 8000       # masa en kg
+g = 9.81       # gravedad en m/s^2
+
+W = m * g      # peso en N
+twr = T / W
+
+@assert round(twr, digits=3) == 1.529
+println("Peso: ", W, " N — T/W: ", round(twr, digits=3))
+```
+**Salida:** `Peso: 78480.0 N — T/W: 1.529`
+:::
+
+::: {.ejercicio-instrucciones}
+#### Planteamiento
+Aeronave de **8000 kg** con empuje total de **120 000 N**. Calcula su peso `W = m·g` y la relación empuje-peso `T/W`.
+
+*Relevancia:* una relación empuje-peso mayor que 1 indica que el empuje supera al peso, requisito para ascender verticalmente.
 :::
 
 :::
