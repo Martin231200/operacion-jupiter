@@ -1,0 +1,53 @@
+---
+title: "Novedades"
+toc: false
+---
+
+Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada corresponde a un cambio publicado en el repositorio.
+
+## Octubre de 2026
+
+**12 de octubre**
+
+- Nuevo tema en tonos guinda y rojo, en modo claro y modo oscuro, inspirado en los colores de la Facultad de Ingeniería.
+- El menú «Más» agrupa Glosario, Recursos, Libros, Semblanza y Novedades para dejar la barra superior más limpia.
+- Nuevo ícono del sitio (favicon).
+- Las opciones del quiz comparativo ahora aparecen en orden aleatorio cada vez que se abre.
+- Verificación semanal automática de enlaces rotos.
+
+**11 de octubre**
+
+- Glosario comparativo con 44 términos, buscador y filtros por lenguaje.
+- La sección de libros crece a 13 títulos de acceso libre.
+- Corrección de cinco scripts que no se cargaban (tiempo de lectura, compartir, saltar al contenido, «Ver también» y atajos de teclado).
+
+**10 de octubre**
+
+- Libros con portadas en las que se puede hacer clic.
+- Nuevos libros de acceso libre en la sección de Libros.
+
+**4 de octubre**
+
+- Correcciones de rutas y una corrección en el material de Python.
+- El sitio se verifica automáticamente antes de aceptar cada cambio.
+
+## Septiembre de 2026
+
+**2 de septiembre**
+
+- Lista de verificación de progreso y ficha comparativa descargable en PDF.
+- Ejercicios de R que se ejecutan en vivo en el navegador, con webR.
+
+**1 de septiembre**
+
+- Notebook de R y sección de tutoriales.
+
+## Agosto de 2026
+
+**31 de agosto**
+
+- Semblanza de los profesores.
+
+**29 de agosto**
+
+- Primera versión del sitio.

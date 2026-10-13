@@ -48,6 +48,8 @@ website:
             text: Glosario
           - href: recursos.qmd
             text: Recursos
+          - href: novedades.qmd
+            text: Novedades
           - href: libros/index.qmd
             text: Libros
           - href: semblanza/index.qmd
