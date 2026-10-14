@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -349,6 +349,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-más">    
         <li>
+    <a class="dropdown-item" href="/operacion-jupiter/comparar.html">
+ <span class="dropdown-text">Comparar los 3 lenguajes</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="/operacion-jupiter/glosario.html">
  <span class="dropdown-text">Glosario</span></a>
   </li>  
@@ -382,9 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -414,15 +416,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>No encontramos esta página — puede que el enlace esté roto o la página se haya movido.</p>
-<p>Prueba desde aquí:</p>
-<ul>
-<li><a href="/operacion-jupiter/./index.html">Volver al Inicio</a></li>
-<li><a href="/operacion-jupiter/./python/01-introduccion.html">Ver los tutoriales de Python</a></li>
-<li><a href="/operacion-jupiter/./r/01-introduccion.html">Ver los tutoriales de R</a></li>
-<li><a href="/operacion-jupiter/./julia/01-introduccion.html">Ver los tutoriales de Julia</a></li>
-<li><a href="/operacion-jupiter/./tutoriales/index.html">Ir a Tutoriales comparativos</a></li>
-</ul>
+<p>No encontramos esta página: puede que el enlace esté roto o que la página se haya movido. Elige a dónde ir:</p>
+<style>
+.nf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 1.2rem 0 1.6rem; }
+.nf-card {
+  display: block; padding: 14px 16px; border-radius: 10px; text-decoration: none !important;
+  border: 1px solid rgba(128,128,128,0.35); border-left: 5px solid var(--nf-color, #9B1B2A);
+  background: rgba(128,128,128,0.07); color: inherit !important;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.nf-card:hover, .nf-card:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.22); border-color: var(--nf-color, #9B1B2A); }
+.nf-card strong { display: block; font-size: 1.05rem; color: var(--nf-color, #9B1B2A); }
+.nf-card span { font-size: .88rem; opacity: .85; }
+body.quarto-dark .nf-card strong { filter: brightness(1.6); }
+.nf-card.nf-py { --nf-color: #2C5F8A; }
+.nf-card.nf-r  { --nf-color: #1B7A5C; }
+.nf-card.nf-jl { --nf-color: #7B4EA3; }
+.nf-sub { font-weight: 600; margin-top: .6rem; }
+</style>
+
+<p class="nf-sub">Tutoriales por lenguaje</p>
+<div class="nf-grid">
+  <a class="nf-card nf-py" href="https://martin231200.github.io/operacion-jupiter/python/01-introduccion.html"><strong>Python</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
+  <a class="nf-card nf-r" href="https://martin231200.github.io/operacion-jupiter/r/01-introduccion.html"><strong>R</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
+  <a class="nf-card nf-jl" href="https://martin231200.github.io/operacion-jupiter/julia/01-introduccion.html"><strong>Julia</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
+</div>
+
+<p class="nf-sub">Más del sitio</p>
+<div class="nf-grid">
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/index.html"><strong>Inicio</strong><span>Volver a la página principal</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/comparar.html"><strong>Comparar los 3</strong><span>El mismo problema, lado a lado</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/glosario.html"><strong>Glosario</strong><span>44 términos comparados</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/libros/index.html"><strong>Libros</strong><span>Lecturas de acceso libre</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/tutoriales/index.html"><strong>Tutoriales</strong><span>Quiz, ejercicios y tablas comparativas</span></a>
+</div>
+<p>Si buscas algo en concreto, usa la lupa de la barra superior.</p>
 
 
 <!-- -->
@@ -895,17 +923,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Página no encontrada"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>No encontramos esta página — puede que el enlace esté roto o la página se haya movido.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Prueba desde aquí:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Volver al Inicio</span><span class="co">](index.qmd)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ver los tutoriales de Python</span><span class="co">](python/01-introduccion.ipynb)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ver los tutoriales de R</span><span class="co">](r/01-introduccion.ipynb)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ver los tutoriales de Julia</span><span class="co">](julia/01-introduccion.qmd)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ir a Tutoriales comparativos</span><span class="co">](tutoriales/index.qmd)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>No encontramos esta página: puede que el enlace esté roto o que la página se haya movido. Elige a dónde ir:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 1.2rem 0 1.6rem; }</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card {</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">  display: block; padding: 14px 16px; border-radius: 10px; text-decoration: none !important;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">  border: 1px solid rgba(128,128,128,0.35); border-left: 5px solid var(--nf-color, #9B1B2A);</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">  background: rgba(128,128,128,0.07); color: inherit !important;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">  transition: transform .15s, box-shadow .15s, border-color .15s;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card:hover, .nf-card:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.22); border-color: var(--nf-color, #9B1B2A); }</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card strong { display: block; font-size: 1.05rem; color: var(--nf-color, #9B1B2A); }</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card span { font-size: .88rem; opacity: .85; }</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">body.quarto-dark .nf-card strong { filter: brightness(1.6); }</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card.nf-py { --nf-color: #2C5F8A; }</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card.nf-r  { --nf-color: #1B7A5C; }</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-card.nf-jl { --nf-color: #7B4EA3; }</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="in">.nf-sub { font-weight: 600; margin-top: .6rem; }</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;p class="nf-sub"&gt;Tutoriales por lenguaje&lt;/p&gt;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div class="nf-grid"&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card nf-py" href="https://martin231200.github.io/operacion-jupiter/python/01-introduccion.html"&gt;&lt;strong&gt;Python&lt;/strong&gt;&lt;span&gt;Ocho subtemas, de la introducción a la visualización&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card nf-r" href="https://martin231200.github.io/operacion-jupiter/r/01-introduccion.html"&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;span&gt;Ocho subtemas, de la introducción a la visualización&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card nf-jl" href="https://martin231200.github.io/operacion-jupiter/julia/01-introduccion.html"&gt;&lt;strong&gt;Julia&lt;/strong&gt;&lt;span&gt;Ocho subtemas, de la introducción a la visualización&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;p class="nf-sub"&gt;Más del sitio&lt;/p&gt;</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div class="nf-grid"&gt;</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/index.html"&gt;&lt;strong&gt;Inicio&lt;/strong&gt;&lt;span&gt;Volver a la página principal&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/comparar.html"&gt;&lt;strong&gt;Comparar los 3&lt;/strong&gt;&lt;span&gt;El mismo problema, lado a lado&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/glosario.html"&gt;&lt;strong&gt;Glosario&lt;/strong&gt;&lt;span&gt;44 términos comparados&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/libros/index.html"&gt;&lt;strong&gt;Libros&lt;/strong&gt;&lt;span&gt;Lecturas de acceso libre&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/tutoriales/index.html"&gt;&lt;strong&gt;Tutoriales&lt;/strong&gt;&lt;span&gt;Quiz, ejercicios y tablas comparativas&lt;/span&gt;&lt;/a&gt;</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Si buscas algo en concreto, usa la lupa de la barra superior.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
