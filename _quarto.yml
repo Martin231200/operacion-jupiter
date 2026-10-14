@@ -44,6 +44,8 @@ website:
         text: Tutoriales
       - text: "Más"
         menu:
+          - href: comparar.qmd
+            text: Comparar los 3 lenguajes
           - href: glosario.qmd
             text: Glosario
           - href: recursos.qmd
