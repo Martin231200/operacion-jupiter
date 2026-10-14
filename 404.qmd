@@ -1,13 +1,44 @@
 ---
 title: "Página no encontrada"
+toc: false
 ---
 
-No encontramos esta página — puede que el enlace esté roto o la página se haya movido.
+No encontramos esta página: puede que el enlace esté roto o que la página se haya movido. Elige a dónde ir:
 
-Prueba desde aquí:
+```{=html}
+<style>
+.nf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 1.2rem 0 1.6rem; }
+.nf-card {
+  display: block; padding: 14px 16px; border-radius: 10px; text-decoration: none !important;
+  border: 1px solid rgba(128,128,128,0.35); border-left: 5px solid var(--nf-color, #9B1B2A);
+  background: rgba(128,128,128,0.07); color: inherit !important;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.nf-card:hover, .nf-card:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.22); border-color: var(--nf-color, #9B1B2A); }
+.nf-card strong { display: block; font-size: 1.05rem; color: var(--nf-color, #9B1B2A); }
+.nf-card span { font-size: .88rem; opacity: .85; }
+body.quarto-dark .nf-card strong { filter: brightness(1.6); }
+.nf-card.nf-py { --nf-color: #2C5F8A; }
+.nf-card.nf-r  { --nf-color: #1B7A5C; }
+.nf-card.nf-jl { --nf-color: #7B4EA3; }
+.nf-sub { font-weight: 600; margin-top: .6rem; }
+</style>
 
-- [Volver al Inicio](index.qmd)
-- [Ver los tutoriales de Python](python/01-introduccion.ipynb)
-- [Ver los tutoriales de R](r/01-introduccion.ipynb)
-- [Ver los tutoriales de Julia](julia/01-introduccion.qmd)
-- [Ir a Tutoriales comparativos](tutoriales/index.qmd)
+<p class="nf-sub">Tutoriales por lenguaje</p>
+<div class="nf-grid">
+  <a class="nf-card nf-py" href="https://martin231200.github.io/operacion-jupiter/python/01-introduccion.html"><strong>Python</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
+  <a class="nf-card nf-r" href="https://martin231200.github.io/operacion-jupiter/r/01-introduccion.html"><strong>R</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
+  <a class="nf-card nf-jl" href="https://martin231200.github.io/operacion-jupiter/julia/01-introduccion.html"><strong>Julia</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
+</div>
+
+<p class="nf-sub">Más del sitio</p>
+<div class="nf-grid">
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/index.html"><strong>Inicio</strong><span>Volver a la página principal</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/comparar.html"><strong>Comparar los 3</strong><span>El mismo problema, lado a lado</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/glosario.html"><strong>Glosario</strong><span>44 términos comparados</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/libros/index.html"><strong>Libros</strong><span>Lecturas de acceso libre</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/tutoriales/index.html"><strong>Tutoriales</strong><span>Quiz, ejercicios y tablas comparativas</span></a>
+</div>
+```
+
+Si buscas algo en concreto, usa la lupa de la barra superior.
