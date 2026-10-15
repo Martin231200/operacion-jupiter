@@ -2,6 +2,18 @@
 title: "Julia: Particularidades"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** ver qué hace distinto a este lenguaje de los otros dos.
+
+**Lo que verás:** R; Python; Julia; Nota sobre JIT en los tres lenguajes; Conclusiones; Ejercicios: particularidades de Julia.
+
+**Para comparar:** el mismo tema en [R](../r/06-particularidades.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** [tema 7](07-ejercicios-ingenieria.html).
+:::
+
 # Particularidades de cada lenguaje
 
 ## R

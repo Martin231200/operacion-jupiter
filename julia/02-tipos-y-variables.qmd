@@ -2,6 +2,18 @@
 title: "Julia: Tipos de datos y variables"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** conocer los tipos de datos básicos y guardarlos en variables.
+
+**Lo que verás:** Enteros y reales; Booleanos; Strings; Declaración de variables; Ejercicios.
+
+**Para comparar:** el mismo tema en [R](../r/02-tipos-y-variables.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** [tema 3](03-estructuras-control.html).
+:::
+
 # Tipos de datos
 
 ## Enteros y reales

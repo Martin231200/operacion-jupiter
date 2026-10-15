@@ -2,6 +2,18 @@
 title: "Julia: Funciones"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** empaquetar un cálculo en una función para reutilizarlo.
+
+**Lo que verás:** Funciones en Julia; Multiple dispatch; Ejercicios.
+
+**Para comparar:** el mismo tema en [R](../r/05-funciones.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** [tema 6](06-particularidades.html).
+:::
+
 ## Funciones en Julia
 
 Definir una función se puede hacer de dos formas equivalentes:

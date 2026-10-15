@@ -14,6 +14,7 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 .portada-python { background: linear-gradient(145deg, #2f77c4, #16487a); }
 .portada-r { background: linear-gradient(145deg, #168a68, #0b5a45); }
 .portada-julia { background: linear-gradient(145deg, #6d64cf, #463e99); }
+.portada-est { background: linear-gradient(145deg, #a8283a, #6e1220); }
 .portada-varios { background: linear-gradient(145deg, #5b6b7d, #2f3b48); }
 .portada .lang { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .9; }
 .portada .titulo { font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
@@ -179,12 +180,36 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 </div>
 ```
 
-## Más allá de un lenguaje
+## Probabilidad y estadística
 
 ```{=html}
 <div class="libros-grid">
+<a class="libro" href="https://www.openintro.org/" target="_blank" rel="noopener" aria-label="OpenIntro Statistics, de Diez, Barr y Çetinkaya-Rundel. Ir a la página oficial (se abre en una pestaña nueva)">
+<div class="portada portada-est" aria-hidden="true">
+<span class="lang">Estadística</span>
+<span class="titulo">OpenIntro Statistics</span>
+<span class="autor">Diez, Barr y Çetinkaya-Rundel</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Introducción a la estadística a nivel universitario, con PDF gratuito y licencia abierta; en el sitio hay videos y laboratorios en R. En inglés.</p>
+<span class="cta">Ir al sitio oficial →</span>
+</div>
+</a>
+<a class="libro" href="https://greenteapress.com/wp/think-stats-3e/" target="_blank" rel="noopener" aria-label="Think Stats, 3.ª edición, de Allen B. Downey. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-est" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">Think Stats, 3.ª edición</span>
+<span class="autor">Allen B. Downey</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Nivel intermedio</span>
+<p>Probabilidad y estadística para quien ya sabe algo de Python, con cuadernos de Jupyter ejecutables. En inglés; licencia Creative Commons.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
 <a class="libro" href="https://www.statlearning.com/" target="_blank" rel="noopener" aria-label="An Introduction to Statistical Learning, de James, Witten, Hastie, Tibshirani (y Taylor). Ir a la página oficial (se abre en una pestaña nueva)">
-<div class="portada portada-varios" aria-hidden="true">
+<div class="portada portada-est" aria-hidden="true">
 <span class="lang">R y Python</span>
 <span class="titulo">An Introduction to Statistical Learning</span>
 <span class="autor">James, Witten, Hastie, Tibshirani (y Taylor)</span>
@@ -195,6 +220,13 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 <span class="cta">Ir a la página oficial →</span>
 </div>
 </a>
+</div>
+```
+
+## Más allá de un lenguaje
+
+```{=html}
+<div class="libros-grid">
 <a class="libro" href="https://clauswilke.com/dataviz/" target="_blank" rel="noopener" aria-label="Fundamentals of Data Visualization, de Claus O. Wilke. Leer en línea (se abre en una pestaña nueva)">
 <div class="portada portada-varios" aria-hidden="true">
 <span class="lang">Visualización</span>

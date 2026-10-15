@@ -2,6 +2,18 @@
 title: "Julia: Visualización"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** graficar datos para explorarlos y presentarlos.
+
+**Lo que verás:** Gráfica de línea; Gráfica de barras.
+
+**Para comparar:** el mismo tema en [Python](../python/08-visualizacion.html) y [R](../r/08-visualizacion.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** vuelve a [Mi progreso](../progreso.html) o prueba el [quiz](../tutoriales/quiz-comparativo.html).
+:::
+
 ::: {.callout-important}
 Código real, salidas ilustrativas generadas con otra herramienta (mismo resultado matemático) — Julia no corre en vivo en este sitio todavía.
 :::

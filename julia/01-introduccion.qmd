@@ -2,6 +2,18 @@
 title: "Introducción a Julia"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** instalar el lenguaje, entender qué es un notebook y correr tus primeras instrucciones.
+
+**Lo que verás:** Nota; Lenguajes de programación de código libre; Julia; Características; Ventajas y desventajas de Julia; Interfases y ambientes colaborativos; Instalar Julia; Usar Julia en Jupyter.
+
+**Para comparar:** el mismo tema en [Python](../python/01-introduccion.html) y [R](../r/01-introduccion.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** [tema 2](02-tipos-y-variables.html).
+:::
+
 ::: {.callout-important}
 
 ## Nota

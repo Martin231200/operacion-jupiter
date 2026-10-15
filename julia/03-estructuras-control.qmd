@@ -2,6 +2,18 @@
 title: "Julia: Estructuras de control"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** decidir y repetir acciones con condicionales y ciclos.
+
+**Lo que verás:** Secuencias; Estructura "if"; Estructura "if-else"; Estructura "for"; Estructura "while"; Ejercicios.
+
+**Para comparar:** el mismo tema en [R](../r/03-estructuras-control.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** [tema 4](04-estructuras-datos.html).
+:::
+
 # Estructuras: secuencias, decisiones y repeticiones
 
 La sintaxis de control en Julia se parece a la de Python en la lógica, pero usa `end` para cerrar cada bloque en vez de indentación — no importa cuántos espacios uses, lo que delimita el bloque es la palabra `end`.
