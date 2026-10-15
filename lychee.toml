@@ -8,7 +8,7 @@ user_agent = "Mozilla/5.0 (compatible; operacion-jupiter-link-check)"
 accept = ["200..=204", "206", "403", "429"]
 
 exclude_all_private = true
-exclude_mail = true
+# Los correos (mailto:) ya se omiten por defecto en las versiones nuevas de lychee.
 exclude = [
   '^https?://localhost',
   '^https?://127\.0\.0\.1',
