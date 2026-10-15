@@ -10,15 +10,47 @@ format:
 
 Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se comparte con nadie más, y se pierde si borras los datos de navegación).
 
-<div style="margin: 1rem 0 1.5rem;">
-  <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="barra-progreso-wrap"
-       style="background: #E5E7EB; border-radius: 8px; height: 14px; overflow: hidden;">
-    <div id="barra-progreso" style="background: #1D9E75; height: 100%; width: 0%; transition: width 0.3s;"></div>
-  </div>
-  <p id="texto-progreso" style="font-size: 13px; color: #6B7280; margin: 6px 0 0;">0 de 0 completado</p>
+<style>
+.pg-continuar{display:none;margin:1rem 0;padding:14px 18px;border-radius:10px;border:1px solid rgba(128,128,128,.35);border-left:6px solid #9B1B2A;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.pg-continuar a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:8px;background:#9B1B2A;color:#fff!important;font-weight:600;text-decoration:none}
+.pg-continuar a:hover,.pg-continuar a:focus-visible{background:#7A1422}
+.pg-total{margin:1rem 0 1.5rem}
+.pg-pista{background:rgba(128,128,128,.25);border-radius:8px;height:14px;overflow:hidden}
+.pg-relleno{background:linear-gradient(90deg,#9B1B2A,#B8872B);height:100%;width:0%;transition:width .3s}
+.pg-nota{font-size:13px;opacity:.75;margin:6px 0 0}
+.pg-desglose{display:flex;gap:14px;margin:0 0 1.5rem;flex-wrap:wrap}
+.pg-card{flex:1;min-width:150px;background:rgba(128,128,128,.12);border-radius:10px;padding:12px 16px;border-top:4px solid var(--c)}
+.pg-card p.t{font-weight:600;margin:0 0 6px;color:var(--c)}
+.pg-card .pista{background:rgba(128,128,128,.25);border-radius:6px;height:8px;overflow:hidden}
+.pg-card .rell{background:var(--c);height:100%;width:0%}
+.pg-card .nota{font-size:12px;opacity:.75;margin:6px 0 0}
+.pg-fila{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;cursor:pointer}
+.pg-fila input{width:20px;height:20px;cursor:pointer;accent-color:#9B1B2A}
+.pg-fiesta{margin-top:14px;padding:14px 18px;border-radius:10px;background:rgba(155,27,42,.14);border:1px solid #9B1B2A;font-weight:600;text-align:center}
+.pg-fiesta input{padding:8px 10px;min-height:44px;border-radius:6px;border:1px solid rgba(128,128,128,.6);font-weight:400;margin:6px 8px 6px 0}
+.pg-fiesta button{min-height:44px;padding:0 16px;border-radius:8px;border:none;background:#9B1B2A;color:#fff;font-weight:600;cursor:pointer}
+.pg-card[data-lang="py-"]{--c:#2C5F8A}.pg-card[data-lang="r-"]{--c:#1B7A5C}.pg-card[data-lang="jl-"]{--c:#7B4EA3}.pg-card[data-lang="tut-"]{--c:#B8872B}
+body.quarto-dark .pg-card[data-lang="py-"]{--c:#6FA8DC}
+body.quarto-dark .pg-card[data-lang="r-"]{--c:#4FC79C}
+body.quarto-dark .pg-card[data-lang="jl-"]{--c:#B38CD9}
+body.quarto-dark .pg-card[data-lang="tut-"]{--c:#E3B65B}
+body.quarto-dark .pg-relleno{background:linear-gradient(90deg,#C8202F,#E3B65B)}
+body.quarto-dark .pg-continuar a,body.quarto-dark .pg-fiesta button{background:#C8202F}
+</style>
+
+<div class="pg-continuar" id="pg-continuar">
+  <span id="pg-continuar-texto"></span>
+  <a id="pg-continuar-enlace" href="#">Continuar</a>
 </div>
 
-<div id="desglose-lenguajes" style="display:flex; gap:14px; margin:0 0 1.5rem; flex-wrap:wrap;"></div>
+<div class="pg-total">
+  <div class="pg-pista" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="barra-progreso-wrap">
+    <div class="pg-relleno" id="barra-progreso"></div>
+  </div>
+  <p class="pg-nota" id="texto-progreso">0 de 0 completado</p>
+</div>
+
+<div class="pg-desglose" id="desglose-lenguajes"></div>
 
 <div id="progreso-container"></div>
 
@@ -96,13 +128,12 @@ secciones.forEach(sec => {
 
   sec.items.forEach(([id, label]) => {
     const row = document.createElement('label');
-    row.style.cssText = 'display:flex;align-items:center;gap:8px;padding:6px 0;font-size:14px;cursor:pointer;';
+    row.className = 'pg-fila';
 
     const cb = document.createElement('input');
     cb.type = 'checkbox';
     cb.checked = !!estado[id];
-    cb.style.cssText = 'width:18px;height:18px;cursor:pointer;';
-    cb.onchange = () => {
+        cb.onchange = () => {
       estado[id] = cb.checked;
       guardarEstado(estado);
       actualizarBarra();
@@ -133,13 +164,13 @@ function generarCertificado() {
   const w = doc.internal.pageSize.getWidth();
   const h = doc.internal.pageSize.getHeight();
 
-  doc.setDrawColor(44, 95, 138);
+  doc.setDrawColor(155, 27, 42);
   doc.setLineWidth(6);
   doc.rect(20, 20, w - 40, h - 40);
 
   doc.setFont("helvetica", "bold");
   doc.setFontSize(26);
-  doc.setTextColor(44, 95, 138);
+  doc.setTextColor(155, 27, 42);
   doc.text("Constancia de finalización", w / 2, 125, { align: "center" });
 
   doc.setFont("helvetica", "normal");
@@ -189,12 +220,11 @@ function actualizarBarra() {
     if (!celebracion) {
       celebracion = document.createElement('div');
       celebracion.id = 'celebracion-progreso';
-      celebracion.style.cssText = 'margin-top:14px;padding:14px 18px;border-radius:10px;background:#E1F5EE;color:#0B4A38;font-weight:600;text-align:center;';
+      celebracion.className = 'pg-fiesta';
       celebracion.innerHTML =
-        '🎉 ¡Completaste todo el recorrido de Operación Jupyter!<br><br>' +
-        '<input id="nombre-certificado" type="text" placeholder="Tu nombre para la constancia" ' +
-        'style="padding:6px 10px;border-radius:6px;border:1px solid #A7D9C4;font-weight:normal;margin-right:8px;">' +
-        '<button onclick="generarCertificado()" style="padding:7px 14px;border-radius:8px;border:none;background:#1D9E75;color:white;font-weight:600;cursor:pointer;">Descargar constancia (PDF)</button>';
+        '🎉 ¡Completaste todo el recorrido de Operación Jupyter!<br>' +
+        '<input id="nombre-certificado" type="text" aria-label="Tu nombre para la constancia" placeholder="Tu nombre para la constancia">' +
+        '<button onclick="generarCertificado()">Descargar constancia (PDF)</button>';
       document.getElementById('progreso-container').insertAdjacentElement('beforebegin', celebracion);
     }
   } else if (celebracion) {
@@ -205,26 +235,33 @@ function actualizarBarra() {
 function actualizarDesglose() {
   const cont = document.getElementById("desglose-lenguajes");
   cont.innerHTML = "";
-  const colores = { "py-": "#378ADD", "r-": "#1D9E75", "jl-": "#7B4EA3", "tut-": "#7B4EA3" };
-
   secciones.forEach(sec => {
     const total = sec.items.length;
     const completados = sec.items.filter(([id]) => estado[id]).length;
     const pct = total ? Math.round((completados / total) * 100) : 0;
-    const color = colores[sec.prefijo] || "#2C5F8A";
-
     const card = document.createElement("div");
-    card.style.cssText = "flex:1; min-width:150px; background:#F7F9FB; border-radius:10px; padding:12px 16px;";
+    card.className = "pg-card";
+    card.setAttribute("data-lang", sec.prefijo);
     card.innerHTML =
-      '<p style="font-weight:600; margin:0 0 6px; color:' + color + ';">' + sec.titulo + '</p>' +
-      '<div style="background:#E5E7EB; border-radius:6px; height:8px; overflow:hidden;">' +
-        '<div style="background:' + color + '; height:100%; width:' + pct + '%;"></div>' +
-      '</div>' +
-      '<p style="font-size:12px; color:#6B7280; margin:6px 0 0;">' + completados + ' de ' + total + ' (' + pct + '%)</p>';
+      '<p class="t">' + sec.titulo + '</p>' +
+      '<div class="pista"><div class="rell" style="width:' + pct + '%"></div></div>' +
+      '<p class="nota">' + completados + ' de ' + total + ' (' + pct + '%)</p>';
     cont.appendChild(card);
   });
 }
 
+function mostrarContinuar() {
+  let u = null;
+  try { u = JSON.parse(localStorage.getItem("operacion-jupiter-ultima")); } catch (e) {}
+  if (!u || !u.href || !/^\/[^/]/.test(u.href)) return;
+  const nombres = { python: "Python", r: "R", julia: "Julia", tutoriales: "Tutoriales" };
+  document.getElementById("pg-continuar-texto").textContent =
+    "Última página que visitaste (" + (nombres[u.seccion] || "tutorial") + "): " + u.titulo;
+  document.getElementById("pg-continuar-enlace").setAttribute("href", u.href);
+  document.getElementById("pg-continuar").style.display = "flex";
+}
+
 actualizarBarra();
 actualizarDesglose();
+mostrarContinuar();
 </script>

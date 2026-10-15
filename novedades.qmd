@@ -9,6 +9,7 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 
 **14 de octubre**
 
+- «Mi progreso» renovado: colores del tema (claro y oscuro), una barra por lenguaje y el botón «Continuar donde lo dejaste».
 - «Comparar los 3 lenguajes» ahora está en el menú «Más».
 - Página de error 404 renovada: tarjetas con enlaces a cada lenguaje y a las secciones principales.
 - README actualizado con el flujo de trabajo por ramas y los flujos automáticos.
