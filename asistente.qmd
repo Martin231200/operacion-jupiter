@@ -1,0 +1,173 @@
+---
+title: "Asistente de búsqueda"
+toc: false
+---
+
+Escribe tu duda con tus propias palabras (por ejemplo, «cómo declaro una lista en R») y el asistente te muestra los términos del glosario y los temas del sitio más relacionados, con el código en los tres lenguajes.
+
+::: {.callout-note}
+**No es una inteligencia artificial.** Es un buscador sobre el contenido de este sitio: no inventa respuestas ni entiende frases complejas. Si no encuentra nada, te lo dice. Lo que escribes no se envía a ningún lado.
+:::
+
+```{=html}
+<style>
+.as-form{display:flex;gap:8px;flex-wrap:wrap;margin:1rem 0 .5rem}
+.as-form input{flex:1;min-width:220px;min-height:44px;padding:8px 12px;border-radius:8px;border:1px solid rgba(128,128,128,.6);background:transparent;color:inherit;font:inherit}
+.as-form button{min-height:44px;padding:0 18px;border-radius:8px;border:none;background:#9B1B2A;color:#fff;font-weight:600;cursor:pointer}
+body.quarto-dark .as-form button{background:#C8202F}
+.as-chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 1rem}
+.as-chip{min-height:44px;padding:0 12px;border-radius:999px;border:1px solid rgba(128,128,128,.5);background:transparent;color:inherit;font:inherit;font-size:.9rem;cursor:pointer}
+.as-chip:hover,.as-chip:focus-visible{border-color:#9B1B2A;background:rgba(155,27,42,.12)}
+.as-card{border:1px solid rgba(128,128,128,.35);border-left:6px solid #9B1B2A;border-radius:10px;padding:12px 16px;margin:12px 0}
+.as-card h3{margin:0 0 6px;font-size:1.1rem}
+.as-card p{margin:0 0 8px}
+.as-card pre{margin:4px 0 8px;white-space:pre-wrap}
+.as-etq{font-size:12px;opacity:.75;margin:0 0 4px}
+.as-lang{font-weight:600;margin:6px 0 0}
+.as-lang.py{color:#2C5F8A}.as-lang.r{color:#1B7A5C}.as-lang.jl{color:#7B4EA3}
+body.quarto-dark .as-lang.py{color:#6FA8DC}body.quarto-dark .as-lang.r{color:#4FC79C}body.quarto-dark .as-lang.jl{color:#B38CD9}
+.as-temas a{display:inline-block;min-height:44px;line-height:44px;margin-right:14px;font-weight:600}
+</style>
+<form class="as-form" id="as-form" role="search">
+  <input id="as-q" type="search" aria-label="Escribe tu duda" placeholder="Ej.: cómo declaro una lista en R" autocomplete="off">
+  <button type="submit">Buscar</button>
+</form>
+<div class="as-chips" id="as-chips"></div>
+<div id="as-res" aria-live="polite"></div>
+<script>
+(function () {
+  var TEMAS = [
+    { t: "Introducción e instalación", kw: "instalar instalacion notebook jupyter kernel empezar primer inicio celda", l: ["python/01-introduccion.html","r/01-introduccion.html","julia/01-introduccion.html"] },
+    { t: "Tipos de datos y variables", kw: "tipo tipos variable variables entero decimal texto booleano string numero declarar asignar", l: ["python/02-entrada-datos-operadores.html","r/02-tipos-y-variables.html","julia/02-tipos-y-variables.html"] },
+    { t: "Estructuras de control", kw: "if else for while ciclo condicional bucle repetir decision break continue", l: ["python/03-funciones.html","r/03-estructuras-control.html","julia/03-estructuras-control.html"] },
+    { t: "Estructuras de datos", kw: "lista vector diccionario tupla conjunto matriz dataframe arreglo coleccion", l: ["python/04-estructuras-datos.html","r/04-estructuras-datos.html","julia/04-estructuras-datos.html"] },
+    { t: "Funciones", kw: "funcion funciones definir argumento retornar devolver lambda anonima", l: ["python/03-funciones.html","r/05-funciones.html","julia/05-funciones.html"] },
+    { t: "Particularidades de cada lenguaje", kw: "diferencia diferencias indexado vectorizacion despacho multiple jit copia referencia", l: ["python/06-funciones-estadisticas.html","r/06-particularidades.html","julia/06-particularidades.html"] },
+    { t: "Ejercicios de ingeniería", kw: "ejercicio ejercicios ingenieria problema practicar esfuerzo tolerancia cinematica", l: ["python/07-ejercicios-ingenieria.html","r/07-ejercicios-ingenieria.html","julia/07-ejercicios-ingenieria.html"] },
+    { t: "Visualización", kw: "grafica graficas grafico plot visualizar visualizacion histograma matplotlib ggplot", l: ["python/08-visualizacion.html","r/08-visualizacion.html","julia/08-visualizacion.html"] }
+  ];
+  var PAGINAS = [
+    { t: "Probabilidad y estadística en los 3 lenguajes", kw: "probabilidad estadistica media mediana desviacion binomial normal regresion", h: "estadistica.html" },
+    { t: "Comparar los 3 lenguajes", kw: "comparar comparacion lado a lado diferencias", h: "comparar.html" },
+    { t: "Quiz interactivo", kw: "quiz examen preguntas evaluar practicar", h: "tutoriales/quiz-comparativo.html" },
+    { t: "Libros de acceso libre", kw: "libro libros leer gratis bibliografia", h: "libros/index.html" },
+    { t: "Recursos oficiales", kw: "recursos documentacion oficial descargar", h: "recursos.html" },
+    { t: "Ruta guiada", kw: "empezar por donde ruta guia recomendar orden", h: "guia.html" }
+  ];
+  var EJEMPLOS = ["¿Cómo declaro una lista en R?", "Instalar el kernel de Julia", "Diferencia entre Python y R al indexar", "Leer un archivo CSV", "Media y desviación estándar"];
+  var STOP = "como que de la el los las un una en y o a es se por para con del al mi me lo quiero puedo hago hacer cual cuales donde cuando python julia lenguaje lenguajes entre al".split(" ");
+  var TERMINOS = [];
+
+  function norm(s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function tokens(q) {
+    return norm(q).split(" ").filter(function (w) { return w.length > 1 && STOP.indexOf(w) < 0; }).map(function (w) {
+      return w.length > 5 ? w.slice(0, 5) : w;
+    });
+  }
+  function puntuar(campos, toks) {
+    var total = 0, acierto = 0;
+    toks.forEach(function (w) {
+      var hit = 0;
+      campos.forEach(function (c) {
+        var pal = " " + c.h + " ";
+        var ok = w.length <= 3 ? pal.indexOf(" " + w + " ") >= 0 : pal.indexOf(" " + w) >= 0;
+        if (ok) hit = Math.max(hit, c.p);
+      });
+      if (hit) { acierto++; total += hit; }
+    });
+    return acierto ? total + acierto * 2 : 0;
+  }
+  function buscar(q) {
+    var toks = tokens(q);
+    if (!toks.length) return { toks: toks, terminos: [], temas: [], paginas: [] };
+    var terminos = TERMINOS.map(function (t) {
+      var campos = [
+        { h: norm(t.term), p: 10 }, { h: norm(t.alias), p: 8 }, { h: norm(t.id), p: 6 },
+        { h: norm(t.defn), p: 3 }, { h: norm(t.key), p: 2 },
+        { h: norm(["py", "r", "jl"].map(function (k) { return t[k] ? (t[k].note || "") + " " + (t[k].code || "") : ""; }).join(" ")), p: 1 }
+      ];
+      return { x: t, s: puntuar(campos, toks) };
+    }).filter(function (o) { return o.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 4);
+    var temas = TEMAS.map(function (t) { return { x: t, s: puntuar([{ h: norm(t.t), p: 8 }, { h: norm(t.kw), p: 5 }], toks) }; })
+      .filter(function (o) { return o.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 2);
+    var paginas = PAGINAS.map(function (t) { return { x: t, s: puntuar([{ h: norm(t.t), p: 8 }, { h: norm(t.kw), p: 5 }], toks) }; })
+      .filter(function (o) { return o.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 2);
+    return { toks: toks, terminos: terminos, temas: temas, paginas: paginas };
+  }
+  window.__asistenteBuscar = buscar;
+
+  function pintar(q) {
+    var out = document.getElementById("as-res");
+    var r = buscar(q);
+    if (!r.toks.length) { out.innerHTML = ""; return; }
+    if (!r.terminos.length && !r.temas.length && !r.paginas.length) {
+      out.innerHTML = '<div class="as-card"><h3>No encontré nada sobre eso</h3><p>Prueba con una o dos palabras clave (por ejemplo «lista», «ciclo for» o «gráfica»), o revisa el <a href="glosario.html">glosario completo</a> y la <a href="guia.html">ruta guiada</a>.</p></div>';
+      return;
+    }
+    var h = "";
+    r.terminos.forEach(function (o) {
+      var t = o.x;
+      h += '<div class="as-card"><p class="as-etq">Glosario</p><h3>' + esc(t.term) + '</h3><p>' + esc(t.defn) + '</p>';
+      [["py", "Python"], ["r", "R"], ["jl", "Julia"]].forEach(function (L) {
+        var c = t[L[0]];
+        if (c && c.code) h += '<p class="as-lang ' + L[0] + '">' + L[1] + '</p><pre><code>' + esc(c.code) + '</code></pre>';
+      });
+      if (t.key) h += '<p><strong>Ojo:</strong> ' + esc(t.key) + '</p>';
+      h += '<p><a href="glosario.html#t-' + encodeURIComponent(t.id) + '">Ver en el glosario</a></p></div>';
+    });
+    if (r.temas.length) {
+      h += '<div class="as-card as-temas"><p class="as-etq">Temas relacionados</p>';
+      r.temas.forEach(function (o) {
+        h += '<p><strong>' + esc(o.x.t) + ':</strong> <a href="' + o.x.l[0] + '">Python</a> <a href="' + o.x.l[1] + '">R</a> <a href="' + o.x.l[2] + '">Julia</a></p>';
+      });
+      h += '</div>';
+    }
+    if (r.paginas.length) {
+      h += '<div class="as-card"><p class="as-etq">También te puede servir</p>';
+      r.paginas.forEach(function (o) { h += '<p><a href="' + o.x.h + '">' + esc(o.x.t) + '</a></p>'; });
+      h += '</div>';
+    }
+    out.innerHTML = h;
+  }
+
+  function extraerTerminos(html) {
+    var marca = "var TERMINOS = ";
+    var i = html.indexOf(marca);
+    if (i < 0) return [];
+    i += marca.length;
+    var prof = 0, enTexto = false, esc1 = false;
+    for (var j = i; j < html.length; j++) {
+      var ch = html[j];
+      if (enTexto) { if (esc1) esc1 = false; else if (ch === "\\") esc1 = true; else if (ch === '"') enTexto = false; continue; }
+      if (ch === '"') enTexto = true;
+      else if (ch === "[") prof++;
+      else if (ch === "]") { prof--; if (prof === 0) { try { return JSON.parse(html.slice(i, j + 1)); } catch (e) { return []; } } }
+    }
+    return [];
+  }
+  window.__asistenteExtraer = extraerTerminos;
+
+  var chips = document.getElementById("as-chips");
+  EJEMPLOS.forEach(function (e) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "as-chip"; b.textContent = e;
+    b.onclick = function () { document.getElementById("as-q").value = e; pintar(e); };
+    chips.appendChild(b);
+  });
+  document.getElementById("as-form").addEventListener("submit", function (ev) {
+    ev.preventDefault(); pintar(document.getElementById("as-q").value);
+  });
+  fetch("glosario.html").then(function (r) { return r.text(); }).then(function (html) {
+    TERMINOS = extraerTerminos(html);
+    if (!TERMINOS.length) document.getElementById("as-res").innerHTML = '<div class="as-card"><p>No se pudo cargar el glosario; el asistente solo mostrará temas y páginas.</p></div>';
+  }).catch(function () {
+    document.getElementById("as-res").innerHTML = '<div class="as-card"><p>No se pudo cargar el glosario; el asistente solo mostrará temas y páginas.</p></div>';
+  });
+})();
+</script>
+```

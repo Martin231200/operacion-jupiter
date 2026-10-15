@@ -32,31 +32,54 @@ const preguntas = [
     ["En el navegador, sin instalar nada", "web"],
     ["Instalando el lenguaje en mi computadora", "local"] ] }
 ];
+// Diagnóstico corto (solo si ya tienes algo de experiencia). Las respuestas correctas están marcadas con 1.
+const diagnostico = [
+  { q: "En Python, si x = [10, 20, 30], ¿qué vale x[1]?", ops: [["10", 0], ["20", 1], ["30", 0]] },
+  { q: "En Python, ¿cuántas veces se ejecuta el cuerpo de «for i in range(3):»?", ops: [["2 veces", 0], ["3 veces", 1], ["4 veces", 0]] },
+  { q: "En Python, ¿cuánto da 10 // 3?", ops: [["3", 1], ["3.33", 0], ["1", 0]] }
+];
 const lenguajes = {
-  python: { nombre: "Python", base: "python/", ext: ".html",
+  python: { nombre: "Python", pre: "py-",
     por: "es de propósito general, tiene una sintaxis legible y un ecosistema enorme para ingeniería y datos. Además puedes ejecutar el código en vivo en el navegador (Pyodide)." },
-  r: { nombre: "R", base: "r/", ext: ".html",
+  r: { nombre: "R", pre: "r-",
     por: "fue creado para estadística y análisis de datos, y trae gran parte de lo necesario de fábrica. También puedes ejecutar el código en vivo en el navegador (webR)." },
-  julia: { nombre: "Julia", base: "julia/", ext: ".html",
+  julia: { nombre: "Julia", pre: "jl-",
     por: "está pensado para cálculo numérico de alto rendimiento. En este sitio no corre en vivo: verás código real con salidas precalculadas, así que conviene instalarlo." }
 };
-const ordenes = {
-  python: [["python/01-introduccion.html","1. Introducción e instalación"],["python/02-entrada-datos-operadores.html","2. Entrada de datos y operadores"],["python/03-funciones.html","3. Funciones"],["python/04-estructuras-datos.html","4. Estructuras de datos"],["python/07-ejercicios-ingenieria.html","7. Ejercicios de ingeniería"]],
-  r: [["r/01-introduccion.html","1. Introducción e instalación"],["r/02-tipos-y-variables.html","2. Tipos de datos y variables"],["r/04-estructuras-datos.html","4. Estructuras de datos"],["r/05-funciones.html","5. Funciones"],["r/07-ejercicios-ingenieria.html","7. Ejercicios de ingeniería"]],
-  julia: [["julia/01-introduccion.html","1. Introducción e instalación"],["julia/02-tipos-y-variables.html","2. Tipos de datos y variables"],["julia/05-funciones.html","5. Funciones"],["julia/07-ejercicios-ingenieria.html","7. Ejercicios de ingeniería"]]
+// Los 8 temas de cada lenguaje, en orden (los mismos ids que usa «Mi progreso»).
+const PAG = {
+  python: [["01","python/01-introduccion.html","Introducción e instalación"],["02","python/02-entrada-datos-operadores.html","Entrada de datos y operadores"],["03","python/03-funciones.html","Funciones"],["04","python/04-estructuras-datos.html","Estructuras de datos"],["05","python/05-arreglos.html","Arreglos"],["06","python/06-funciones-estadisticas.html","Funciones estadísticas"],["07","python/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","python/08-visualizacion.html","Visualización"]],
+  r: [["01","r/01-introduccion.html","Introducción e instalación"],["02","r/02-tipos-y-variables.html","Tipos de datos y variables"],["03","r/03-estructuras-control.html","Estructuras de control"],["04","r/04-estructuras-datos.html","Estructuras de datos"],["05","r/05-funciones.html","Funciones"],["06","r/06-particularidades.html","Particularidades"],["07","r/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","r/08-visualizacion.html","Visualización"]],
+  julia: [["01","julia/01-introduccion.html","Introducción e instalación"],["02","julia/02-tipos-y-variables.html","Tipos de datos y variables"],["03","julia/03-estructuras-control.html","Estructuras de control"],["04","julia/04-estructuras-datos.html","Estructuras de datos"],["05","julia/05-funciones.html","Funciones"],["06","julia/06-particularidades.html","Particularidades"],["07","julia/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","julia/08-visualizacion.html","Visualización"]]
 };
+// Índice de partida (0 = tema 1) según el resultado del diagnóstico.
+function inicioPorNivel(aciertos) { return aciertos >= 3 ? 4 : (aciertos === 2 ? 2 : 0); }
+function progresoGuardado() {
+  try { return JSON.parse(localStorage.getItem("operacion-jupiter-progreso")) || {}; } catch (e) { return {}; }
+}
+function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
 const caja = document.getElementById("gd-caja");
 let resp = [];
+let diag = [];
+
+function pregunta(p, numTxt, alElegir) {
+  caja.innerHTML = '<p class="gd-meta">' + numTxt + '</p><p class="q">' + esc(p.q) + '</p>';
+  p.ops.forEach(([txt, val]) => {
+    const b = document.createElement("button");
+    b.className = "gd-op"; b.type = "button"; b.textContent = txt;
+    b.onclick = () => alElegir(val);
+    caja.appendChild(b);
+  });
+}
+
 function pintar() {
   if (resp.length < preguntas.length) {
-    const p = preguntas[resp.length];
-    caja.innerHTML = '<p class="gd-meta">Pregunta ' + (resp.length + 1) + ' de ' + preguntas.length + '</p><p class="q">' + p.q + '</p>';
-    p.ops.forEach(([txt, val]) => {
-      const b = document.createElement("button");
-      b.className = "gd-op"; b.type = "button"; b.textContent = txt;
-      b.onclick = () => { resp.push(val); pintar(); };
-      caja.appendChild(b);
-    });
+    pregunta(preguntas[resp.length], "Pregunta " + (resp.length + 1) + " de " + preguntas.length, v => { resp.push(v); pintar(); });
+    return;
+  }
+  if (resp[1] === "algo" && diag.length < diagnostico.length) {
+    pregunta(diagnostico[diag.length], "Diagnóstico " + (diag.length + 1) + " de " + diagnostico.length + " (opcional, sin calificación oficial)", v => { diag.push(v); pintar(); });
     return;
   }
   const [meta, exp, modo] = resp;
@@ -64,18 +87,32 @@ function pintar() {
   if (meta === "est") l = "r";
   else if (meta === "num") l = (modo === "web") ? "python" : "julia";
   const L = lenguajes[l];
+  const aciertos = diag.reduce((a, b) => a + b, 0);
+  const ini = exp === "algo" ? inicioPorNivel(aciertos) : 0;
+
   let nota = "";
-  if (meta === "num" && modo === "web") nota = "<p>Como quieres practicar sin instalar, te sugiero empezar con Python; Julia requiere instalación para ejecutarse.</p>";
-  if (meta === "est") nota += '<p>Para estadística, mira también la página <a href="estadistica.html">Probabilidad y estadística en los 3 lenguajes</a>.</p>';
-  if (exp === "nada") nota += "<p>Como estás empezando, sigue los temas en orden y marca tu avance en <a href=\"progreso.html\">Mi progreso</a>.</p>";
-  else nota += "<p>Con algo de experiencia, puedes saltar a los ejercicios de ingeniería (tema 7) y volver a los temas anteriores cuando haga falta.</p>";
-  const ruta = ordenes[l].map(([href, t]) => '<li><a href="' + href + '">' + t + '</a></li>').join("");
+  if (meta === "num" && modo === "web") nota += "<p>Como quieres practicar sin instalar, te sugiero empezar con Python; Julia requiere instalación para ejecutarse.</p>";
+  if (meta === "est") nota += '<p>Para estadística, mira también la página <a href="estadistica.html">Probabilidad y estadística en los 3 lenguajes</a> y prueba el <a href="asistente.html">asistente de búsqueda</a> con tus dudas.</p>';
+  if (exp === "nada") nota += '<p>Como estás empezando, sigue los temas en orden y marca tu avance en <a href="progreso.html">Mi progreso</a>.</p>';
+  else nota += "<p>En el diagnóstico acertaste " + aciertos + " de " + diagnostico.length + ", así que te sugiero empezar en el tema " + (ini + 1) + ". Es solo una sugerencia: puedes volver a los anteriores cuando haga falta.</p>";
+
+  const pag = PAG[l];
+  const prog = progresoGuardado();
+  const sig = pag.findIndex(p => !prog[L.pre + p[0]]);
+  let sigHtml = "";
+  if (sig >= 0 && Object.keys(prog).some(k => prog[k] && k.indexOf(L.pre) === 0)) {
+    sigHtml = '<p><strong>¿Qué sigue?</strong> Según tu progreso guardado en este navegador, el siguiente tema pendiente de ' + L.nombre + ' es <a href="' + pag[sig][1] + '">' + pag[sig][0] + '. ' + esc(pag[sig][2]) + '</a>.</p>';
+  } else if (sig < 0) {
+    sigHtml = "<p><strong>¿Qué sigue?</strong> Ya marcaste completos los 8 temas de " + L.nombre + ". Puedes repasar con el quiz o comparar con otro lenguaje.</p>";
+  }
+
+  const ruta = pag.slice(ini).map((p, k) => (k < 5 ? '<li><a href="' + p[1] + '">' + p[0] + ". " + esc(p[2]) + "</a></li>" : "")).join("");
   caja.innerHTML = '<div class="gd-res"><h3>Te sugiero empezar con ' + L.nombre + '</h3>' +
-    '<p>' + L.nombre + ' ' + L.por + '</p>' + nota +
-    '<p class="gd-ruta"><strong>Ruta sugerida:</strong></p><ol class="gd-ruta">' + ruta + '</ol>' +
-    '<p>Los otros temas (Visualización, Particularidades, etc.) los encuentras en el menú lateral de cada lenguaje.</p>' +
+    '<p>' + L.nombre + ' ' + L.por + '</p>' + nota + sigHtml +
+    '<p class="gd-ruta"><strong>Ruta sugerida:</strong></p><ol class="gd-ruta" start="' + (ini + 1) + '">' + ruta + '</ol>' +
+    '<p>Los demás temas los encuentras en el menú lateral de cada lenguaje.</p>' +
     '<button class="gd-reiniciar" type="button" id="gd-reiniciar">Volver a empezar</button></div>';
-  document.getElementById("gd-reiniciar").onclick = () => { resp = []; pintar(); };
+  document.getElementById("gd-reiniciar").onclick = () => { resp = []; diag = []; pintar(); };
 }
 pintar();
 </script>

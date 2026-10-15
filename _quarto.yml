@@ -49,6 +49,8 @@ website:
             text: Comparar los 3 lenguajes
           - href: guia.qmd
             text: Ruta guiada
+          - href: asistente.qmd
+            text: Asistente de búsqueda
           - href: estadistica.qmd
             text: Probabilidad y estadística
           - href: glosario.qmd
