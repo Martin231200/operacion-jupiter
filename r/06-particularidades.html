@@ -544,13 +544,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conclusiones" class="level1">
 <h1>Conclusiones</h1>
 <p>Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo. Para quien ya conoce uno de los tres, la transición a los otros es principalmente de sintaxis: la lógica de secuencias, condicionales, ciclos y funciones es la misma, y las diferencias reales aparecen en el manejo de estructuras de datos (vectorizado en R y Julia, basado en bibliotecas en Python) y en el ecosistema de cada uno.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>En este tema
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Objetivo:</strong> ver qué hace distinto a este lenguaje de los otros dos.</p>
+<p><strong>Lo que verás:</strong> R; Python; Julia; Conclusiones; Ejercicios: particularidades de R.</p>
+<p><strong>Para comparar:</strong> el mismo tema en <a href="../julia/06-particularidades.html">Julia</a>. También puedes ver <a href="../comparar.html">Comparar los 3 lenguajes</a>.</p>
+<p><strong>Siguiente:</strong> <a href="07-ejercicios-ingenieria.html">tema 7</a>.</p>
+</div>
+</div>
 <section id="ejercicios-particularidades-de-r" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-r">Ejercicios: particularidades de R</h2>
 <p>Tres problemas que muestran características propias del lenguaje.</p>
 <section id="vectorización-básico-nativa-sin-ciclo-explícito" class="level3">
 <h3 class="anchored" data-anchor-id="vectorización-básico-nativa-sin-ciclo-explícito">1. Vectorización <span class="badge-dificultad basico">Básico</span> nativa (sin ciclo explícito)</h3>
 <p>Multiplica el vector <code>c(10, 20, 30, 40)</code> por 2 — en R esto es automático.</p>
-<div id="cell-4" class="cell">
+<div id="cell-5" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
@@ -564,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indexado-básico-desde-1" class="level3">
 <h3 class="anchored" data-anchor-id="indexado-básico-desde-1">2. Indexado <span class="badge-dificultad basico">Básico</span> desde 1</h3>
 <p>Accede al primer elemento de <code>c("sensor1", "sensor2", "sensor3")</code>.</p>
-<div id="cell-6" class="cell">
+<div id="cell-7" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>)</span>
@@ -578,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tipado-dinámico-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="tipado-dinámico-intermedio">3. Tipado dinámico <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>Asigna <code>10</code> a una variable, revisa su clase, luego reasígnale un texto y revisa la clase otra vez.</p>
-<div id="cell-8" class="cell">
+<div id="cell-9" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>

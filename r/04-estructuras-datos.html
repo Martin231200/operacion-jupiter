@@ -515,24 +515,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Data frame</strong>: una tabla donde cada columna puede ser de un tipo distinto (como una hoja de cálculo).</li>
 </ul>
 <p>El acceso a elementos cambia según la estructura: con <code>[ ]</code> obtienes un subconjunto conservando la estructura original, y con <code>[[ ]]</code> obtienes el elemento individual (importante sobre todo en listas).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>En este tema
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Objetivo:</strong> organizar varios datos en listas, vectores, diccionarios y otras estructuras.</p>
+<p><strong>Lo que verás:</strong> Estructuras de datos en R; Estructuras de datos y objetos; Vectores; Factores; Matrices; Arreglos; Dataframes; Listas.</p>
+<p><strong>Para comparar:</strong> el mismo tema en <a href="../python/04-estructuras-datos.html">Python</a> y <a href="../julia/04-estructuras-datos.html">Julia</a>. También puedes ver <a href="../comparar.html">Comparar los 3 lenguajes</a>.</p>
+<p><strong>Siguiente:</strong> <a href="05-funciones.html">tema 5</a>.</p>
+</div>
+</div>
 <section id="estructuras-de-datos-y-objetos" class="level1">
 <h1>Estructuras de datos y objetos</h1>
 <section id="vectores" class="level2">
 <h2 class="anchored" data-anchor-id="vectores">Vectores</h2>
 <p>El vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().</p>
-<div id="cell-3" class="cell">
+<div id="cell-4" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-4" class="cell">
+<div id="cell-5" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">2</span>]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-5" class="cell">
+<div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -543,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Los factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).</p>
-<div id="cell-8" class="cell">
+<div id="cell-9" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"bajo"</span>, <span class="st">"alto"</span>, <span class="st">"medio"</span>))</span>
@@ -553,7 +569,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Una matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.</p>
-<div id="cell-10" class="cell">
+<div id="cell-11" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
@@ -563,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>array() generaliza la matriz a más de dos dimensiones.</p>
-<div id="cell-12" class="cell">
+<div id="cell-13" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
@@ -573,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p>El data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.</p>
-<div id="cell-14" class="cell">
+<div id="cell-15" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
@@ -583,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <p>La lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.</p>
-<div id="cell-16" class="cell">
+<div id="cell-17" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">numero =</span> <span class="dv">1</span>, <span class="at">texto =</span> <span class="st">"hola"</span>, <span class="at">vector =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
@@ -600,7 +616,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="vector-registrar-una-nueva-medición-básico" class="level3">
 <h3 class="anchored" data-anchor-id="vector-registrar-una-nueva-medición-básico">1. Vector: registrar una nueva medición <span class="badge-dificultad basico">Básico</span></h3>
 <p>A <code>c(12.4, 13.1, 11.9)</code> agrégale <code>12.8</code> con <code>c()</code> y confirma que ahora tiene 4 elementos.</p>
-<div id="cell-20" class="cell">
+<div id="cell-21" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mediciones <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">12.4</span>, <span class="fl">13.1</span>, <span class="fl">11.9</span>)</span>
@@ -614,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="lista-consultar-inventario-por-código-básico" class="level3">
 <h3 class="anchored" data-anchor-id="lista-consultar-inventario-por-código-básico">2. Lista: consultar inventario por código <span class="badge-dificultad basico">Básico</span></h3>
 <p>De <code>list(P100=25, P200=40, P300=15)</code>, obtén cuántas piezas hay de <code>P200</code>.</p>
-<div id="cell-22" class="cell">
+<div id="cell-23" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">P100 =</span> <span class="dv">25</span>, <span class="at">P200 =</span> <span class="dv">40</span>, <span class="at">P300 =</span> <span class="dv">15</span>)</span>
@@ -628,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-frame-filtrar-por-columna-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="data-frame-filtrar-por-columna-intermedio">3. Data frame: filtrar por columna <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>De un data frame de piezas, obtén el nombre de la fila cuyo valor es 2.</p>
-<div id="cell-24" class="cell">
+<div id="cell-25" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>

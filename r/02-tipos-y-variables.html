@@ -513,7 +513,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="enteros-y-reales" class="level2">
 <h2 class="anchored" data-anchor-id="enteros-y-reales">Enteros y reales</h2>
 <p>En R, los números se manejan por defecto como “double” (reales de doble precisión); para forzar un valor a tipo entero se agrega el sufijo L. La función class() indica la clase de un objeto y typeof() su tipo interno de almacenamiento.</p>
-<div id="cell-2" class="cell">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>En este tema
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Objetivo:</strong> conocer los tipos de datos básicos y guardarlos en variables.</p>
+<p><strong>Lo que verás:</strong> Enteros y reales; Booleanos; Strings; Declaración de variables; Ejemplo: <code>=</code> fuera y dentro de una llamada; Ejercicios.</p>
+<p><strong>Para comparar:</strong> el mismo tema en <a href="../julia/02-tipos-y-variables.html">Julia</a>. También puedes ver <a href="../comparar.html">Comparar los 3 lenguajes</a>.</p>
+<p><strong>Siguiente:</strong> <a href="03-estructuras-control.html">tema 3</a>.</p>
+</div>
+</div>
+<div id="cell-3" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Real (double) por defecto</span></span>
@@ -529,7 +545,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="booleanos" class="level2">
 <h2 class="anchored" data-anchor-id="booleanos">Booleanos</h2>
 <p>El tipo lógico (logical) toma los valores TRUE y FALSE (o sus abreviaturas T y F). Se generan al evaluar comparaciones y se combinan con los operadores &amp; (y), | (o) y ! (negación); las versiones &amp;&amp; y || evalúan un solo elemento y se usan en condicionales.</p>
-<div id="cell-4" class="cell">
+<div id="cell-5" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
@@ -544,7 +560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="strings" class="level2">
 <h2 class="anchored" data-anchor-id="strings">Strings</h2>
 <p>El tipo character almacena cadenas de texto entre comillas simples o dobles. nchar() devuelve la longitud de la cadena y paste() o paste0() concatenan cadenas.</p>
-<div id="cell-6" class="cell">
+<div id="cell-7" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="st">"Operación Jupyter"</span></span>
@@ -557,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="declaración-de-variables" class="level1">
 <h1>Declaración de variables</h1>
 <p>R no requiere declarar el tipo de una variable: el tipo se infiere del valor asignado y puede cambiar si se reasigna. El operador de asignación preferido es <code>&lt;-</code>; <code>-&gt;</code> asigna de izquierda a derecha. <code>=</code> también asigna, pero <strong>solo a nivel superior</strong> (fuera de una llamada a función) — <strong>dentro</strong> de una llamada, <code>f(x = 3)</code>, el <code>=</code> no asigna: nombra un argumento de esa función. Los nombres de variables deben empezar con una letra o un punto (no seguido de número) y distinguen mayúsculas de minúsculas.</p>
-<div id="cell-8" class="cell">
+<div id="cell-9" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
@@ -565,7 +581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="ot">-&gt;</span> x</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-9" class="cell">
+<div id="cell-10" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mi_variable<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fl">3.14</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -573,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="ejemplo-fuera-y-dentro-de-una-llamada" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-fuera-y-dentro-de-una-llamada">Ejemplo: <code>=</code> fuera y dentro de una llamada</h2>
-<div id="cell-11" class="cell">
+<div id="cell-12" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">5</span>        <span class="co"># asignación, equivalente a x &lt;- 5</span></span>
@@ -588,7 +604,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conversión-de-temperatura-básico-reales" class="level3">
 <h3 class="anchored" data-anchor-id="conversión-de-temperatura-básico-reales">1. Conversión de temperatura <span class="badge-dificultad basico">Básico</span> (reales)</h3>
 <p>Convierte 23.5 °C a Fahrenheit con <code>F = C * 9/5 + 32</code>.</p>
-<div id="cell-14" class="cell">
+<div id="cell-15" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">23.5</span></span>
@@ -602,7 +618,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="verificar-tolerancia-de-una-pieza-básico-booleano" class="level3">
 <h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-básico-booleano">2. Verificar tolerancia de una pieza <span class="badge-dificultad basico">Básico</span> (booleano)</h3>
 <p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
-<div id="cell-16" class="cell">
+<div id="cell-17" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fl">4.97</span></span>
@@ -618,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="etiqueta-de-producto-intermedio-strings" class="level3">
 <h3 class="anchored" data-anchor-id="etiqueta-de-producto-intermedio-strings">3. Etiqueta de producto <span class="badge-dificultad intermedio">Intermedio</span> (strings)</h3>
 <p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para código <code>"ENG"</code>, lote <code>2026</code>, pieza <code>47</code>.</p>
-<div id="cell-18" class="cell">
+<div id="cell-19" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="st">"ENG"</span></span>
