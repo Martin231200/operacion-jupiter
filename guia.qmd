@@ -1,0 +1,99 @@
+---
+title: "Ruta guiada"
+toc: false
+---
+
+Responde tres preguntas y el sitio te sugiere un lenguaje y un orden de lectura. No es una inteligencia artificial: es una guía con reglas sencillas, y lo que respondas **no se guarda ni se envía a ningún lado**.
+
+```{=html}
+<style>
+.gd-caja{border:1px solid rgba(128,128,128,.35);border-left:6px solid #9B1B2A;border-radius:10px;padding:16px 18px;margin:1rem 0}
+.gd-caja p.q{font-weight:600;margin:0 0 10px}
+.gd-op{display:block;width:100%;text-align:left;min-height:44px;margin:6px 0;padding:8px 14px;border-radius:8px;border:1px solid rgba(128,128,128,.5);background:transparent;color:inherit;font:inherit;cursor:pointer}
+.gd-op:hover,.gd-op:focus-visible{border-color:#9B1B2A;background:rgba(155,27,42,.12)}
+.gd-meta{font-size:13px;opacity:.75;margin:0 0 6px}
+.gd-res h3{margin-top:0}
+.gd-ruta a{font-weight:600}
+.gd-reiniciar{margin-top:12px;min-height:44px;padding:0 16px;border-radius:8px;border:none;background:#9B1B2A;color:#fff;font-weight:600;cursor:pointer}
+body.quarto-dark .gd-reiniciar{background:#C8202F}
+</style>
+<div class="gd-caja" id="gd-caja" aria-live="polite"></div>
+<script>
+const preguntas = [
+  { q: "¿Qué quieres lograr principalmente?", ops: [
+    ["Aprender a programar desde cero", "base"],
+    ["Cálculos y problemas de ingeniería", "ing"],
+    ["Probabilidad, estadística y análisis de datos", "est"],
+    ["Cálculo numérico exigente (simulación, rendimiento)", "num"] ] },
+  { q: "¿Cuánta experiencia tienes programando?", ops: [
+    ["Ninguna", "nada"],
+    ["Algo (he usado otro lenguaje o Excel con fórmulas)", "algo"] ] },
+  { q: "¿Cómo prefieres practicar?", ops: [
+    ["En el navegador, sin instalar nada", "web"],
+    ["Instalando el lenguaje en mi computadora", "local"] ] }
+];
+const lenguajes = {
+  python: { nombre: "Python", base: "python/", ext: ".html",
+    por: "es de propósito general, tiene una sintaxis legible y un ecosistema enorme para ingeniería y datos. Además puedes ejecutar el código en vivo en el navegador (Pyodide)." },
+  r: { nombre: "R", base: "r/", ext: ".html",
+    por: "fue creado para estadística y análisis de datos, y trae gran parte de lo necesario de fábrica. También puedes ejecutar el código en vivo en el navegador (webR)." },
+  julia: { nombre: "Julia", base: "julia/", ext: ".html",
+    por: "está pensado para cálculo numérico de alto rendimiento. En este sitio no corre en vivo: verás código real con salidas precalculadas, así que conviene instalarlo." }
+};
+const ordenes = {
+  python: [["python/01-introduccion.html","1. Introducción e instalación"],["python/02-entrada-datos-operadores.html","2. Entrada de datos y operadores"],["python/03-funciones.html","3. Funciones"],["python/04-estructuras-datos.html","4. Estructuras de datos"],["python/07-ejercicios-ingenieria.html","7. Ejercicios de ingeniería"]],
+  r: [["r/01-introduccion.html","1. Introducción e instalación"],["r/02-tipos-y-variables.html","2. Tipos de datos y variables"],["r/04-estructuras-datos.html","4. Estructuras de datos"],["r/05-funciones.html","5. Funciones"],["r/07-ejercicios-ingenieria.html","7. Ejercicios de ingeniería"]],
+  julia: [["julia/01-introduccion.html","1. Introducción e instalación"],["julia/02-tipos-y-variables.html","2. Tipos de datos y variables"],["julia/05-funciones.html","5. Funciones"],["julia/07-ejercicios-ingenieria.html","7. Ejercicios de ingeniería"]]
+};
+const caja = document.getElementById("gd-caja");
+let resp = [];
+function pintar() {
+  if (resp.length < preguntas.length) {
+    const p = preguntas[resp.length];
+    caja.innerHTML = '<p class="gd-meta">Pregunta ' + (resp.length + 1) + ' de ' + preguntas.length + '</p><p class="q">' + p.q + '</p>';
+    p.ops.forEach(([txt, val]) => {
+      const b = document.createElement("button");
+      b.className = "gd-op"; b.type = "button"; b.textContent = txt;
+      b.onclick = () => { resp.push(val); pintar(); };
+      caja.appendChild(b);
+    });
+    return;
+  }
+  const [meta, exp, modo] = resp;
+  let l = "python";
+  if (meta === "est") l = "r";
+  else if (meta === "num") l = (modo === "web") ? "python" : "julia";
+  const L = lenguajes[l];
+  let nota = "";
+  if (meta === "num" && modo === "web") nota = "<p>Como quieres practicar sin instalar, te sugiero empezar con Python; Julia requiere instalación para ejecutarse.</p>";
+  if (meta === "est") nota += '<p>Para estadística, mira también la página <a href="estadistica.html">Probabilidad y estadística en los 3 lenguajes</a>.</p>';
+  if (exp === "nada") nota += "<p>Como estás empezando, sigue los temas en orden y marca tu avance en <a href=\"progreso.html\">Mi progreso</a>.</p>";
+  else nota += "<p>Con algo de experiencia, puedes saltar a los ejercicios de ingeniería (tema 7) y volver a los temas anteriores cuando haga falta.</p>";
+  const ruta = ordenes[l].map(([href, t]) => '<li><a href="' + href + '">' + t + '</a></li>').join("");
+  caja.innerHTML = '<div class="gd-res"><h3>Te sugiero empezar con ' + L.nombre + '</h3>' +
+    '<p>' + L.nombre + ' ' + L.por + '</p>' + nota +
+    '<p class="gd-ruta"><strong>Ruta sugerida:</strong></p><ol class="gd-ruta">' + ruta + '</ol>' +
+    '<p>Los otros temas (Visualización, Particularidades, etc.) los encuentras en el menú lateral de cada lenguaje.</p>' +
+    '<button class="gd-reiniciar" type="button" id="gd-reiniciar">Volver a empezar</button></div>';
+  document.getElementById("gd-reiniciar").onclick = () => { resp = []; pintar(); };
+}
+pintar();
+</script>
+```
+
+## Los 8 temas de cada lenguaje
+
+Cada lenguaje tiene los mismos ocho temas, para que puedas comparar. Esto es lo que cubre cada uno.
+
+| Tema | Qué vas a aprender |
+|---|---|
+| 1. Introducción e instalación | Qué es un notebook, cómo instalar el lenguaje y correr tu primera celda. |
+| 2. Tipos de datos y variables | Números, texto y valores lógicos, y cómo se guardan en variables. |
+| 3. Estructuras de control | Decisiones (`if`) y repeticiones (`for`, `while`) para automatizar cálculos. |
+| 4. Estructuras de datos | Listas, vectores, diccionarios y otras formas de organizar datos. |
+| 5. Funciones | Cómo empaquetar un cálculo para reutilizarlo con distintos datos. |
+| 6. Particularidades | Lo que hace distinto a cada lenguaje (indexado, vectorización, despacho múltiple). |
+| 7. Ejercicios de ingeniería | Problemas aplicados con resultado verificable, iguales en los tres lenguajes. |
+| 8. Visualización | Gráficas para explorar y presentar resultados. |
+
+*Nota:* en Python los temas 2, 3, 5 y 6 se llaman distinto (entrada de datos y operadores, funciones, arreglos y funciones estadísticas), pero no cubren exactamente lo mismo que sus equivalentes en R y Julia.
