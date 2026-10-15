@@ -2,6 +2,18 @@
 title: "Julia: Estructuras de datos"
 ---
 
+::: {.callout-note}
+## En este tema
+
+**Objetivo:** organizar varios datos en listas, vectores, diccionarios y otras estructuras.
+
+**Lo que verás:** Arrays; Diccionarios; Tuplas.
+
+**Para comparar:** el mismo tema en [Python](../python/04-estructuras-datos.html) y [R](../r/04-estructuras-datos.html). También puedes ver [Comparar los 3 lenguajes](../comparar.html).
+
+**Siguiente:** [tema 5](05-funciones.html).
+:::
+
 # Estructuras de datos y objetos
 
 ## Arrays
