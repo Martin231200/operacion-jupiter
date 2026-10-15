@@ -9,6 +9,7 @@ project:
     - keyboard-nav.js
     - info-bubble.js
     - info-bubble.css
+    - ultima-visita.js
 
 execute:
   freeze: auto
@@ -164,3 +165,4 @@ format:
       - text: <script src="/skip-link.js"></script>
       - text: <script src="/ver-tambien.js"></script>
       - text: <script src="/keyboard-nav.js"></script>
+      - text: <script src="/ultima-visita.js"></script>
