@@ -47,6 +47,10 @@ website:
         menu:
           - href: comparar.qmd
             text: Comparar los 3 lenguajes
+          - href: guia.qmd
+            text: Ruta guiada
+          - href: estadistica.qmd
+            text: Probabilidad y estadística
           - href: glosario.qmd
             text: Glosario
           - href: recursos.qmd

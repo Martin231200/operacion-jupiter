@@ -9,6 +9,8 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 
 **14 de octubre**
 
+- Nueva «Ruta guiada»: tres preguntas y el sitio sugiere un lenguaje y un orden de lectura, con la descripción de los 8 temas.
+- Nueva página «Probabilidad y estadística en los 3 lenguajes» con cuatro problemas comparados.
 - «Mi progreso» renovado: colores del tema (claro y oscuro), una barra por lenguaje y el botón «Continuar donde lo dejaste».
 - «Comparar los 3 lenguajes» ahora está en el menú «Más».
 - Página de error 404 renovada: tarjetas con enlaces a cada lenguaje y a las secciones principales.
