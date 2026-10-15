@@ -9,6 +9,9 @@ accept = ["200..=204", "206", "403", "429"]
 
 exclude_all_private = true
 # Los correos (mailto:) ya se omiten por defecto en las versiones nuevas de lychee.
+# La página 404 usa rutas absolutas (/operacion-jupiter/...) porque se sirve desde cualquier ruta;
+# en la revisión local esas rutas no existen y salían como errores falsos.
+exclude_path = ['404\.html$']
 exclude = [
   '^https?://localhost',
   '^https?://127\.0\.0\.1',
