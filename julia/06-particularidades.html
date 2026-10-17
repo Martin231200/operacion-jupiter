@@ -475,6 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
   <li><a href="#nota-sobre-jit-en-los-tres-lenguajes" id="toc-nota-sobre-jit-en-los-tres-lenguajes" class="nav-link" data-scroll-target="#nota-sobre-jit-en-los-tres-lenguajes">Nota sobre JIT en los tres lenguajes</a></li>
   <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios-particularidades-de-julia" id="toc-ejercicios-particularidades-de-julia" class="nav-link" data-scroll-target="#ejercicios-particularidades-de-julia">Ejercicios: particularidades de Julia</a></li>
   </ul></li>
   </ul>
@@ -562,6 +563,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conclusiones" class="level2">
 <h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
 <p>Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo.</p>
+</section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Lo que hace distinto a Julia.</strong> Tres ideas lo diferencian de R y Python. Primera, el <strong>despacho múltiple</strong>, corazón del diseño de Julia: las funciones se escriben por tipos de argumento y Julia escoge automáticamente la versión adecuada. Segunda, la <strong>compilación justo a tiempo</strong>: el código se compila con tipos concretos al primer uso, y por eso es rápido después de ese arranque. Tercera, la <strong>escritura matemática</strong>: nombres con letras griegas, el operador <code>≈</code> y funciones que se aplican a arreglos con un punto (<code>f.(v)</code>) hacen que el código se parezca a una fórmula.</p>
+<p><strong>Estabilidad de tipos.</strong> Para sacar el máximo rendimiento, una función debería devolver siempre el mismo tipo de dato sin importar los valores de entrada. Si una función devuelve a veces un entero y a veces un decimal, el compilador no puede optimizarla igual. No es un error, pero explica por qué dos versiones de un cálculo que parecen equivalentes pueden tardar muy distinto.</p>
+<p><strong>Índices desde 1, como R.</strong> Quien viene de Python debe ajustarse: <code>v[1]</code> es el primer elemento. Pero a diferencia de lo que ocurre en Python con los arreglos de NumPy, las rebanadas de Julia crean copias.</p>
+<p><strong>Para pensar.</strong> ¿En qué tipo de problema de ingeniería te convendría más la velocidad de Julia que la comodidad de un lenguaje ya conocido?</p>
 </section>
 <section id="ejercicios-particularidades-de-julia" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-julia">Ejercicios: particularidades de Julia</h2>
@@ -1129,47 +1137,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo.</span>
 <span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios: particularidades de Julia</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Profundizando en este tema</span></span>
 <span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>Tres problemas que muestran características propias del lenguaje.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>**Lo que hace distinto a Julia.** Tres ideas lo diferencian de R y Python. Primera, el **despacho múltiple**, corazón del diseño de Julia: las funciones se escriben por tipos de argumento y Julia escoge automáticamente la versión adecuada. Segunda, la **compilación justo a tiempo**: el código se compila con tipos concretos al primer uso, y por eso es rápido después de ese arranque. Tercera, la **escritura matemática**: nombres con letras griegas, el operador <span class="in">`≈`</span> y funciones que se aplican a arreglos con un punto (<span class="in">`f.(v)`</span>) hacen que el código se parezca a una fórmula.</span>
 <span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Vectorización &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; nativa (sin ciclo explícito)</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>**Estabilidad de tipos.** Para sacar el máximo rendimiento, una función debería devolver siempre el mismo tipo de dato sin importar los valores de entrada. Si una función devuelve a veces un entero y a veces un decimal, el compilador no puede optimizarla igual. No es un error, pero explica por qué dos versiones de un cálculo que parecen equivalentes pueden tardar muy distinto.</span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> [<span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>]</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> valores <span class="op">.*</span> <span class="fl">2</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>**Índices desde 1, como R.** Quien viene de Python debe ajustarse: <span class="in">`v[1]`</span> es el primer elemento. Pero a diferencia de lo que ocurre en Python con los arreglos de NumPy, las rebanadas de Julia crean copias.</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>**Para pensar.** ¿En qué tipo de problema de ingeniería te convendría más la velocidad de Julia que la comodidad de un lenguaje ya conocido?</span>
 <span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> doble <span class="op">==</span> [<span class="fl">20</span>, <span class="fl">40</span>, <span class="fl">60</span>, <span class="fl">80</span>]</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(doble)</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`[20, 40, 60, 80]`</span></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>Nota de sintaxis: el <span class="in">`.`</span> antes del operador (<span class="in">`.*`</span>) aplica la multiplicación elemento a elemento. En Julia este broadcasting es **explícito** (hay que poner el punto); en R es automático; en Python hace falta NumPy.</span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Indexado &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; desde 1</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>primero <span class="op">=</span> etiquetas[<span class="fl">1</span>]</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> primero <span class="op">==</span> <span class="st">"sensor1"</span></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(primero)</span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`sensor1`</span></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Tipado dinámico &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt;</span></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">10</span></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"ahora soy texto"</span></span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> tipo1 <span class="op">==</span> <span class="dt">Int64</span> <span class="op">&amp;&amp;</span> tipo2 <span class="op">==</span> <span class="dt">String</span></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(tipo1, <span class="st">" "</span>, tipo2)</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Int64 String`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios: particularidades de Julia</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>Tres problemas que muestran características propias del lenguaje.</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Vectorización &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; nativa (sin ciclo explícito)</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> [<span class="fl">10</span>, <span class="fl">20</span>, <span class="fl">30</span>, <span class="fl">40</span>]</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>doble <span class="op">=</span> valores <span class="op">.*</span> <span class="fl">2</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> doble <span class="op">==</span> [<span class="fl">20</span>, <span class="fl">40</span>, <span class="fl">60</span>, <span class="fl">80</span>]</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(doble)</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`[20, 40, 60, 80]`</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>Nota de sintaxis: el <span class="in">`.`</span> antes del operador (<span class="in">`.*`</span>) aplica la multiplicación elemento a elemento. En Julia este broadcasting es **explícito** (hay que poner el punto); en R es automático; en Python hace falta NumPy.</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Indexado &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; desde 1</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>primero <span class="op">=</span> etiquetas[<span class="fl">1</span>]</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> primero <span class="op">==</span> <span class="st">"sensor1"</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(primero)</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`sensor1`</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Tipado dinámico &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt;</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">10</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>tipo1 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"ahora soy texto"</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>tipo2 <span class="op">=</span> <span class="fu">typeof</span>(x)</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> tipo1 <span class="op">==</span> <span class="dt">Int64</span> <span class="op">&amp;&amp;</span> tipo2 <span class="op">==</span> <span class="dt">String</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(tipo1, <span class="st">" "</span>, tipo2)</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Int64 String`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

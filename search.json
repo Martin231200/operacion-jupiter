@@ -66,6 +66,17 @@
     ]
   },
   {
+    "objectID": "julia/06-particularidades.html#profundizando-en-este-tema",
+    "href": "julia/06-particularidades.html#profundizando-en-este-tema",
+    "title": "Julia: Particularidades",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nLo que hace distinto a Julia. Tres ideas lo diferencian de R y Python. Primera, el despacho múltiple, corazón del diseño de Julia: las funciones se escriben por tipos de argumento y Julia escoge automáticamente la versión adecuada. Segunda, la compilación justo a tiempo: el código se compila con tipos concretos al primer uso, y por eso es rápido después de ese arranque. Tercera, la escritura matemática: nombres con letras griegas, el operador ≈ y funciones que se aplican a arreglos con un punto (f.(v)) hacen que el código se parezca a una fórmula.\nEstabilidad de tipos. Para sacar el máximo rendimiento, una función debería devolver siempre el mismo tipo de dato sin importar los valores de entrada. Si una función devuelve a veces un entero y a veces un decimal, el compilador no puede optimizarla igual. No es un error, pero explica por qué dos versiones de un cálculo que parecen equivalentes pueden tardar muy distinto.\nÍndices desde 1, como R. Quien viene de Python debe ajustarse: v[1] es el primer elemento. Pero a diferencia de lo que ocurre en Python con los arreglos de NumPy, las rebanadas de Julia crean copias.\nPara pensar. ¿En qué tipo de problema de ingeniería te convendría más la velocidad de Julia que la comodidad de un lenguaje ya conocido?",
+    "crumbs": [
+      "Julia",
+      "Particularidades"
+    ]
+  },
+  {
     "objectID": "julia/06-particularidades.html#ejercicios-particularidades-de-julia",
     "href": "julia/06-particularidades.html#ejercicios-particularidades-de-julia",
     "title": "Julia: Particularidades",
@@ -143,6 +154,17 @@
     ]
   },
   {
+    "objectID": "julia/01-introduccion.html#profundizando-en-este-tema",
+    "href": "julia/01-introduccion.html#profundizando-en-este-tema",
+    "title": "Introducción a Julia",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nPara qué sirve Julia. Julia busca algo poco común: que escribas código tan cómodo como el de Python o R, pero que pueda acercarse a la velocidad de uno escrito en C. Lo logra compilando cada función en el momento en que la usas por primera vez (compilación just in time), con tipos concretos para los datos.\nUna consecuencia que se nota enseguida. La primera vez que ejecutas una función, o cargas un paquete, Julia tarda unos segundos porque está compilando; las siguientes ejecuciones son rápidas. No es que algo esté mal: es el costo de arranque que se paga a cambio de velocidad.\nLo básico para arrancar: - Los bloques (if, for, function) terminan con la palabra end; la indentación es solo estética. - Los índices empiezan en 1. - Los paquetes se instalan una vez con el administrador Pkg y se cargan con using. - Los textos van con comillas dobles; las comillas simples son para un solo carácter.\nErrores frecuentes. Olvidar un end y recibir un error al final del archivo; asustarse por la lentitud de la primera celda; confundir comillas simples con dobles.\nPara pensar. Si Julia es tan rápido, ¿por qué crees que no ha reemplazado a Python y R en todas partes? Piensa en paquetes, comunidad y costo de aprender.",
+    "crumbs": [
+      "Julia",
+      "Introducción e instalación"
+    ]
+  },
+  {
     "objectID": "julia/01-introduccion.html#ejercicios",
     "href": "julia/01-introduccion.html#ejercicios",
     "title": "Introducción a Julia",
@@ -170,6 +192,17 @@
     "title": "Julia: Estructuras de datos",
     "section": "Arrays",
     "text": "Arrays\nv = [1, 2, 3, 4]   # indexado desde 1\nv[1]\nlength(v)\n\nDiccionariosTuplas\n\n\nd = Dict(\"a\" =&gt; 1, \"b\" =&gt; 2)\nd[\"a\"]\n\n\nt = (1, \"dos\", 3.0)\nt[2]",
+    "crumbs": [
+      "Julia",
+      "Estructuras de datos"
+    ]
+  },
+  {
+    "objectID": "julia/04-estructuras-datos.html#profundizando-en-este-tema",
+    "href": "julia/04-estructuras-datos.html#profundizando-en-este-tema",
+    "title": "Julia: Estructuras de datos",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nEstructuras principales. Julia ofrece el arreglo (Vector para una dimensión y Matrix para dos), la tupla (inmutable), el diccionario (Dict) y el conjunto (Set). Un vector se escribe [1, 2, 3], una tupla (1, 2, 3) y un diccionario Dict(\"a\" =&gt; 1, \"b\" =&gt; 2).\nÍndices desde 1 y end. El primer elemento es v[1] y el último se alcanza con v[end]. Las rebanadas incluyen ambos extremos: v[2:3] toma las posiciones 2 y 3.\nLa convención del signo de exclamación. Las funciones que modifican su argumento llevan un ! al final de su nombre: push!(v, 4) agrega un elemento a v, mientras que una función sin ! devuelve un resultado nuevo sin tocar el original. Es una convención, no una regla del lenguaje, pero casi todos los paquetes la siguen.\nRebanadas, copias y vistas. En Julia, una rebanada como v[2:3] crea una copia. Si prefieres una vista que comparta los datos con el original, usa @view v[2:3]. Y como en Python, b = a no copia: ambas variables apuntan al mismo arreglo; para duplicar usa copy(a).\nOrden en memoria. Las matrices se guardan por columnas, no por filas. Para ti solo importa al recorrerlas: es más rápido recorrer una columna completa que una fila.\nPara pensar. Si llamas sort(v) y luego sort!(v), ¿cuál de las dos deja el vector v ordenado?",
     "crumbs": [
       "Julia",
       "Estructuras de datos"
@@ -214,6 +247,17 @@
     "title": "Julia: Tipos de datos y variables",
     "section": "Strings",
     "text": "Strings\ns = \"Operación Jupyter\"\nlength(s)\ns2 = string(\"Hola\", \" \", \"mundo\")",
+    "crumbs": [
+      "Julia",
+      "Tipos de datos y variables"
+    ]
+  },
+  {
+    "objectID": "julia/02-tipos-y-variables.html#profundizando-en-este-tema",
+    "href": "julia/02-tipos-y-variables.html#profundizando-en-este-tema",
+    "title": "Julia: Tipos de datos y variables",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nTipos concretos. En Julia cada valor tiene un tipo concreto que puedes consultar con typeof: Int64 para enteros, Float64 para decimales, Bool, String y Char. Aunque las variables no se declaran con tipo, el rendimiento de Julia se apoya en que los valores sí lo tienen.\nOperadores que conviene conocer. / siempre da un Float64: 6 / 3 es 2.0. La división entera se escribe ÷ o div(a, b), el residuo es % y la potencia es ^. Los textos se unen con * (no con +) y se pueden construir con interpolación: \"Hola $nombre\" o \"Total: $(a + b)\".\nLos enteros se desbordan en silencio. Un Int64 tiene un máximo (typemax(Int64)), y si lo superas, el resultado «da la vuelta» a un número negativo sin avisar. Es raro en cálculos comunes, pero conviene saberlo; cuando necesites números enormes existe el tipo BigInt.\nComparar decimales. Como en cualquier lenguaje, 0.1 + 0.2 == 0.3 da false. En Julia se usa isapprox(a, b) o el operador ≈ para compararlos con tolerancia.\nTexto con símbolos. Julia acepta nombres con letras griegas, como α o Δt, que se escriben en el notebook con \\alpha y la tecla Tab. Para fórmulas de ingeniería, el código queda muy parecido a la notación matemática.\nPara pensar. ¿Qué tipo tiene 5 / 2? ¿Y 5 ÷ 2? Anticipa la respuesta y verifícala con typeof.",
     "crumbs": [
       "Julia",
       "Tipos de datos y variables"
@@ -588,6 +632,17 @@
     ]
   },
   {
+    "objectID": "r/01-introduccion.html#profundizando-en-este-tema",
+    "href": "r/01-introduccion.html#profundizando-en-este-tema",
+    "title": "Lenguajes de programación de código libre",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nR es un lenguaje y un entorno. R nació para el análisis estadístico, y eso se nota: casi todo en R está pensado para trabajar con conjuntos de datos completos, no con números sueltos. Muchos usuarios lo manejan desde RStudio, un entorno que junta consola, editor, gráficas y ayuda, aunque en este sitio lo usaremos desde notebooks.\nLo básico para arrancar: - Se asigna con &lt;- (también funciona =): x &lt;- 5. - Distingue mayúsculas de minúsculas. - La ayuda de cualquier función se abre con ? y su nombre, por ejemplo ?mean. - Los paquetes extra se instalan una vez con install.packages(\"nombre\") y se cargan en cada sesión con library(nombre). Instalar y cargar son dos pasos distintos, y confundirlos es un tropiezo común.\nErrores frecuentes. Olvidar cargar un paquete que ya instalaste (el error dice que no encuentra la función); escribir library(\"nombre\") con comillas o sin ellas indistintamente está permitido, pero install.packages sí necesita comillas; esperar que los índices empiecen en 0 (en R empiezan en 1, lo verás en el tema 4).\nPara pensar. ¿Por qué crees que un lenguaje hecho para estadística trata hasta un solo número como un vector de longitud 1?",
+    "crumbs": [
+      "R",
+      "Introducción e instalación"
+    ]
+  },
+  {
     "objectID": "r/01-introduccion.html#términos-clave",
     "href": "r/01-introduccion.html#términos-clave",
     "title": "Lenguajes de programación de código libre",
@@ -604,6 +659,17 @@
     "title": "Funciones",
     "section": "",
     "text": "Las funciones se definen con function(), pueden tener argumentos con valores por defecto, y devuelven el valor de la última expresión evaluada (o el indicado con return()).\nA diferencia de Python, R permite argumentos con nombre en cualquier orden al llamar la función, y valores por defecto:\nR también soporta funciones anónimas (sin nombre), útiles para pasarlas como argumento, por ejemplo dentro de sapply():\nVer/ocultar código\nsuma &lt;- function(a, b = 0) {\nreturn(a + b)\n}\nsuma(3, 4)\nsuma(3)",
+    "crumbs": [
+      "R",
+      "Funciones"
+    ]
+  },
+  {
+    "objectID": "r/05-funciones.html#profundizando-en-este-tema",
+    "href": "r/05-funciones.html#profundizando-en-este-tema",
+    "title": "Funciones",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nFunciones en R. Una función se crea con function y se guarda en una variable como cualquier otro valor: area &lt;- function(r, digitos = 2) { ... }. Los parámetros pueden tener valores por defecto, y al llamarla puedes pasar los argumentos por posición o por nombre: area(5, digitos = 3).\nEl valor de retorno. En R, una función devuelve el resultado de la última expresión que evalúa, así que return() no es obligatorio; se usa sobre todo para salir antes de tiempo. Para devolver varios valores, agrúpalos en un vector o, mejor, en una lista con nombres: list(pies = 32.81, pulgadas = 393.7).\nArgumentos que se evalúan tarde. R evalúa un argumento solo cuando la función lo usa por primera vez (evaluación perezosa). En la práctica, eso permite valores por defecto que dependen de otros argumentos.\nFunciones sobre vectores. La mayoría de las funciones matemáticas de R ya trabajan sobre vectores completos: sqrt(c(4, 9, 16)) da 2 3 4. Cuando escribas tus propias funciones, piensa si funcionarán con un vector; si no, sapply(v, f) aplica f a cada elemento.\nPara pensar. ¿Qué ventaja tiene devolver una lista con nombres en lugar de un vector sin nombres cuando una función entrega varios resultados?",
     "crumbs": [
       "R",
       "Funciones"
@@ -698,6 +764,17 @@
     ]
   },
   {
+    "objectID": "python/04-estructuras-datos.html#profundizando-en-este-tema",
+    "href": "python/04-estructuras-datos.html#profundizando-en-este-tema",
+    "title": "Estructuras de datos y objetos",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nElegir bien dónde guardar los datos. Python ofrece cuatro estructuras básicas, y cada una responde a una necesidad distinta: - Lista ([...]): colección ordenada y modificable. Es la opción general. - Tupla ((...)): ordenada pero inmutable; sirve para datos que no deben cambiar, como una coordenada. - Diccionario ({clave: valor}): busca por clave en lugar de por posición. Desde Python 3.7 conserva el orden en que insertaste los elementos. - Conjunto (set): elementos sin repetir y sin orden, útil para eliminar duplicados.\nÍndices y rebanadas. Los índices empiezan en 0. Una rebanada como datos[1:3] toma los elementos de las posiciones 1 y 2: el final no se incluye. Los índices negativos cuentan desde el final, así que datos[-1] es el último elemento.\nCopiar no es lo mismo que asignar. Si haces b = a con una lista, no creas una copia: ambas variables apuntan a la misma lista, y un cambio en una se ve en la otra. Para duplicarla usa a.copy() o a[:].\nErrores frecuentes. Intentar modificar una tupla; pedir una clave que no existe en un diccionario (usa d.get(clave) si no estás seguro de que esté); pensar que datos[1:3] incluye la posición 3.\nPara pensar. Si guardas las lecturas de un sensor, ¿usarías una lista o una tupla? ¿Y si necesitas buscar un instrumento por su código?",
+    "crumbs": [
+      "Python",
+      "Estructuras de datos"
+    ]
+  },
+  {
     "objectID": "python/04-estructuras-datos.html#ejercicios",
     "href": "python/04-estructuras-datos.html#ejercicios",
     "title": "Estructuras de datos y objetos",
@@ -775,6 +852,17 @@
     ]
   },
   {
+    "objectID": "python/02-entrada-datos-operadores.html#profundizando-en-este-tema",
+    "href": "python/02-entrada-datos-operadores.html#profundizando-en-este-tema",
+    "title": "Entrada de datos",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nDatos que entran, datos que se calculan. Cuando pides un dato con input(), Python siempre lo recibe como texto (str), aunque el usuario escriba un número. Para calcular con él hay que convertirlo con int() o float(). Esta es la fuente de errores más común al empezar: \"3\" + \"4\" da \"34\", no 7.\nLos operadores aritméticos que más se confunden: - / siempre devuelve un número decimal: 7 / 2 da 3.5, y también 6 / 3 da 2.0. - // es la división entera, que redondea hacia abajo: 7 // 2 da 3 y -7 // 2 da -4. - % devuelve el residuo y ** es la potencia.\nComparar y combinar condiciones. Las comparaciones (==, !=, &lt;, &gt;=) producen valores True o False, y se combinan con and, or y not. Python permite comparaciones encadenadas como 0 &lt;= x &lt; 10, que se lee casi como en matemáticas.\nCuidado con los decimales. Los números decimales se guardan en binario y algunos no se representan con exactitud: 0.1 + 0.2 da 0.30000000000000004. Por eso, para comparar decimales conviene usar math.isclose(a, b) en lugar de ==.\nPara pensar. ¿Qué resultado esperas de 10 // 3, de 10 % 3 y de 10 / 3? Calcula a mano y luego comprueba en una celda.",
+    "crumbs": [
+      "Python",
+      "Entrada de datos y operadores"
+    ]
+  },
+  {
     "objectID": "python/02-entrada-datos-operadores.html#ejercicios",
     "href": "python/02-entrada-datos-operadores.html#ejercicios",
     "title": "Entrada de datos",
@@ -791,6 +879,17 @@
     "title": "Funciones estadísticas",
     "section": "",
     "text": "NotaEn este tema\n\n\n\nLo que verás: Funciones universales; Ejercicios: particularidades de Python.\nPara comparar: consulta Comparar los 3 lenguajes.\nSiguiente: tema 7.\nVer/ocultar código\nimport numpy as np   # esta página es independiente de 05-arreglos, hay que importar de nuevo\nPython no trae funciones estadísticas avanzadas en su librería estándar más allá del módulo statistics (media, mediana, desviación estándar básicas). Para trabajo estadístico real se usa NumPy.\nVer/ocultar código\nW=np.arange(1,22,2)\nprint(\"Arreglo: \", W)\n\n\nArreglo:  [ 1  3  5  7  9 11 13 15 17 19 21]\nVer/ocultar código\nprint(W.mean())\n\n\n11.0\nVer/ocultar código\nprint(W.sum())\n\n\n121\nVer/ocultar código\nprint(W.min())\n\n\n1\nVer/ocultar código\nprint(W.max())\n\n\n21",
+    "crumbs": [
+      "Python",
+      "Funciones estadísticas"
+    ]
+  },
+  {
+    "objectID": "python/06-funciones-estadisticas.html#profundizando-en-este-tema",
+    "href": "python/06-funciones-estadisticas.html#profundizando-en-este-tema",
+    "title": "Funciones estadísticas",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nResumir datos con una línea. NumPy trae funciones para describir un conjunto de datos: np.mean (media), np.median (mediana), np.min, np.max, np.var (varianza), np.std (desviación estándar) y np.percentile. Todas aceptan el argumento axis: en una tabla de datos, axis=0 resume por columnas y axis=1 por filas.\nUna trampa importante: ¿entre n o entre n − 1? La desviación estándar de una población divide entre n; la de una muestra divide entre n − 1. NumPy usa por defecto la primera (ddof=0), así que np.std(datos) no coincide con statistics.stdev(datos) de la biblioteca estándar, que usa n − 1. Para obtener la versión muestral con NumPy escribe np.std(datos, ddof=1). Siempre pregúntate cuál necesitas: si tus datos son todos los casos posibles, población; si son una muestra de algo más grande, muestra.\nMedia y mediana. Cuando hay valores extremos, la mediana resiste mejor que la media: en [12, 15, 11, 18, 14] ambas valen 14, pero cambia el 18 por 180 y la media sube a 46.4 mientras la mediana sigue siendo 14.\nPara pensar. Mides la resistencia de 8 piezas de un lote de miles. ¿Cuál desviación estándar te interesa, la de población o la de muestra?",
     "crumbs": [
       "Python",
       "Funciones estadísticas"
@@ -857,6 +956,17 @@
     "title": "Arreglos",
     "section": "Añadir y eliminar elementos de un arreglo",
     "text": "Añadir y eliminar elementos de un arreglo\n\n\nVer/ocultar código\nA = np.array([[1,2,3],[4,5,6],[7,8,9]])\nprint(A)\n\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]\n\n\n\n\nVer/ocultar código\nb=np.delete(A,1,axis=0)\nprint(b)\n\n\n[[1 2 3]\n [7 8 9]]\n\n\n\n\nVer/ocultar código\nc=np.append(b,[[10,11,12]],axis=0)\nprint(c)\n\n\n[[ 1  2  3]\n [ 7  8  9]\n [10 11 12]]",
+    "crumbs": [
+      "Python",
+      "Arreglos"
+    ]
+  },
+  {
+    "objectID": "python/05-arreglos.html#profundizando-en-este-tema",
+    "href": "python/05-arreglos.html#profundizando-en-este-tema",
+    "title": "Arreglos",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nPor qué NumPy. Las listas de Python sirven para casi todo, pero son lentas y torpes para cálculo numérico. NumPy agrega el arreglo (ndarray): una colección de números del mismo tipo guardada de forma compacta, sobre la que puedes operar entera de una sola vez.\nVectorización. Con un arreglo, a * 2 multiplica cada elemento, y a + b suma elemento a elemento. Con listas, [1, 2] * 2 repite la lista y [1, 2] + [3] la concatena: no es lo mismo. Escribir operaciones sobre el arreglo completo, en vez de un ciclo for, hace el código más corto y mucho más rápido.\nForma y dimensiones. Un arreglo tiene shape (por ejemplo (3, 4) para tres filas y cuatro columnas) y se puede reorganizar con reshape sin cambiar los datos. np.arange crea secuencias como range, y np.linspace(0, 1, 5) reparte cinco puntos igualmente espaciados entre 0 y 1, incluyendo ambos extremos.\nRebanadas que son vistas. A diferencia de las listas, una rebanada básica de un arreglo (a[1:3]) es una vista de los mismos datos, no una copia: si la modificas, cambias el arreglo original. Para duplicar usa a.copy().\nPara pensar. ¿Qué esperas que dé np.array([1, 2, 3]) * np.array([4, 5, 6]): un número o un arreglo de tres números?",
     "crumbs": [
       "Python",
       "Arreglos"
@@ -944,7 +1054,7 @@
     "href": "novedades.html#octubre-de-2026",
     "title": "Novedades",
     "section": "Octubre de 2026",
-    "text": "Octubre de 2026\n14 de octubre\n\nNuevo «Asistente de búsqueda»: escribe tu duda y te muestra los términos del glosario y los temas relacionados, con el código en los tres lenguajes.\nNueva «Ruta guiada»: tres preguntas, un diagnóstico opcional de nivel y un «¿Qué sigue?» según tu progreso, con la descripción de los 8 temas.\nNueva página «Probabilidad y estadística en los 3 lenguajes» con cuatro problemas comparados.\n«Mi progreso» renovado: colores del tema (claro y oscuro), una barra por lenguaje y el botón «Continuar donde lo dejaste».\n«Comparar los 3 lenguajes» ahora está en el menú «Más».\nPágina de error 404 renovada: tarjetas con enlaces a cada lenguaje y a las secciones principales.\nREADME actualizado con el flujo de trabajo por ramas y los flujos automáticos.\n\n13 de octubre\n\nPruebas automáticas: los ejercicios de ingeniería se ejecutan de verdad en Python, R y Julia y se comprueba que den los mismos resultados.\nLa página de ejercicios de Julia pasa a tener cinco problemas, igual que Python y R, y se corrigió una salida que estaba mal escrita.\n\n12 de octubre\n\nNuevo tema en tonos guinda y rojo, en modo claro y modo oscuro, inspirado en los colores de la Facultad de Ingeniería.\nEl menú «Más» agrupa Glosario, Recursos, Libros, Semblanza y Novedades para dejar la barra superior más limpia.\nNuevo ícono del sitio (favicon).\nLas opciones del quiz comparativo ahora aparecen en orden aleatorio cada vez que se abre.\nVerificación semanal automática de enlaces rotos.\n\n11 de octubre\n\nGlosario comparativo con 44 términos, buscador y filtros por lenguaje.\nLa sección de libros crece a 13 títulos de acceso libre.\nCorrección de cinco scripts que no se cargaban (tiempo de lectura, compartir, saltar al contenido, «Ver también» y atajos de teclado).\n\n10 de octubre\n\nLibros con portadas en las que se puede hacer clic.\nNuevos libros de acceso libre en la sección de Libros.\n\n4 de octubre\n\nCorrecciones de rutas y una corrección en el material de Python.\nEl sitio se verifica automáticamente antes de aceptar cada cambio."
+    "text": "Octubre de 2026\n15 de octubre\n\nMás texto en los temas 01 a 06 de Python, R y Julia: cada uno tiene ahora una sección «Profundizando en este tema» con ideas clave, errores frecuentes, comparaciones y una pregunta para pensar.\nPruebas automáticas ampliadas: los ejercicios de los temas 01 a 06 también se ejecutan en cada cambio.\nAccesibilidad: texto alternativo en las dos gráficas de Julia (Visualización), dorado más oscuro para el texto de «Tutoriales» en «Mi progreso» y casillas con más contraste en modo oscuro.\nVerificación de enlaces corregida: la configuración de lychee tenía una opción que la versión nueva ya no reconoce. Los flujos automáticos usan ahora Ubuntu 24.04.\n\n14 de octubre\n\nCada subtema de Python, R y Julia (salvo los ejercicios de ingeniería) abre con una caja «En este tema»: qué verás, enlaces para comparar con los otros lenguajes y el siguiente tema.\nNueva sección de libros de «Probabilidad y estadística»: OpenIntro Statistics, Think Stats (3.ª edición) y An Introduction to Statistical Learning.\nNuevo «Asistente de búsqueda»: escribe tu duda y te muestra los términos del glosario y los temas relacionados, con el código en los tres lenguajes.\nNueva «Ruta guiada»: tres preguntas, un diagnóstico opcional de nivel y un «¿Qué sigue?» según tu progreso, con la descripción de los 8 temas.\nNueva página «Probabilidad y estadística en los 3 lenguajes» con cuatro problemas comparados.\n«Mi progreso» renovado: colores del tema (claro y oscuro), una barra por lenguaje y el botón «Continuar donde lo dejaste».\n«Comparar los 3 lenguajes» ahora está en el menú «Más».\nPágina de error 404 renovada: tarjetas con enlaces a cada lenguaje y a las secciones principales.\nREADME actualizado con el flujo de trabajo por ramas y los flujos automáticos.\n\n13 de octubre\n\nPruebas automáticas: los ejercicios de ingeniería se ejecutan de verdad en Python, R y Julia y se comprueba que den los mismos resultados.\nLa página de ejercicios de Julia pasa a tener cinco problemas, igual que Python y R, y se corrigió una salida que estaba mal escrita.\n\n12 de octubre\n\nNuevo tema en tonos guinda y rojo, en modo claro y modo oscuro, inspirado en los colores de la Facultad de Ingeniería.\nEl menú «Más» agrupa Glosario, Recursos, Libros, Semblanza y Novedades para dejar la barra superior más limpia.\nNuevo ícono del sitio (favicon).\nLas opciones del quiz comparativo ahora aparecen en orden aleatorio cada vez que se abre.\nVerificación semanal automática de enlaces rotos.\n\n11 de octubre\n\nGlosario comparativo con 44 términos, buscador y filtros por lenguaje.\nLa sección de libros crece a 13 títulos de acceso libre.\nCorrección de cinco scripts que no se cargaban (tiempo de lectura, compartir, saltar al contenido, «Ver también» y atajos de teclado).\n\n10 de octubre\n\nLibros con portadas en las que se puede hacer clic.\nNuevos libros de acceso libre en la sección de Libros.\n\n4 de octubre\n\nCorrecciones de rutas y una corrección en el material de Python.\nEl sitio se verifica automáticamente antes de aceptar cada cambio."
   },
   {
     "objectID": "novedades.html#septiembre-de-2026",
@@ -1095,6 +1205,17 @@
     ]
   },
   {
+    "objectID": "python/03-funciones.html#profundizando-en-este-tema",
+    "href": "python/03-funciones.html#profundizando-en-este-tema",
+    "title": "Funciones nativas",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nDecidir, repetir y empaquetar. Este tema junta tres ideas que convierten una lista de instrucciones en un programa: tomar decisiones (if, elif, else), repetir acciones (for, while) y dar un nombre a un bloque de cálculo para reutilizarlo (def).\nCiclos. Usa for cuando sabes qué recorrer (una lista, un rango) y while cuando repites hasta que algo cambie. range(5) produce 0, 1, 2, 3, 4: empieza en cero y termina antes del número que escribes. Un while necesita que algo dentro del ciclo cambie la condición; si no, el programa nunca termina.\nFunciones. Una función recibe parámetros y devuelve un resultado con return. Si una función no tiene return, devuelve None, que significa «nada». Los parámetros pueden tener valores por defecto, como def area(r, decimales=2), y entonces se pueden omitir al llamar. Las variables creadas dentro de una función son locales: no existen fuera de ella.\nErrores frecuentes. - Olvidar la indentación dentro de un if o un for. - Usar = (asignar) cuando querías == (comparar). - Imprimir con print() dentro de la función cuando lo que necesitabas era devolver el valor con return; el primero solo lo muestra, el segundo permite usarlo después.\nPara pensar. ¿Qué diferencia hay entre una función que hace print(x * 2) y otra que hace return x * 2? ¿Con cuál podrías calcular f(3) + f(4)?",
+    "crumbs": [
+      "Python",
+      "Funciones"
+    ]
+  },
+  {
     "objectID": "python/03-funciones.html#ejercicios",
     "href": "python/03-funciones.html#ejercicios",
     "title": "Funciones nativas",
@@ -1122,6 +1243,17 @@
     "title": "Introducción a Python",
     "section": "",
     "text": "NotaEn este tema\n\n\n\nObjetivo: instalar el lenguaje, entender qué es un notebook y correr tus primeras instrucciones.\nLo que verás: Instalación; Ventajas y desventajas de Python; Comandos básicos.\nPara comparar: el mismo tema en R y Julia. También puedes ver Comparar los 3 lenguajes.\nSiguiente: tema 2.",
+    "crumbs": [
+      "Python",
+      "Introducción e instalación"
+    ]
+  },
+  {
+    "objectID": "python/01-introduccion.html#profundizando-en-este-tema",
+    "href": "python/01-introduccion.html#profundizando-en-este-tema",
+    "title": "Introducción a Python",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nCómo piensa Python. Python lee tu código línea por línea y lo ejecuta en cuanto lo entiende; por eso un notebook funciona tan bien: cada celda es un pedazo de programa que puedes correr, cambiar y volver a correr. Lo que defines en una celda (una variable, una función) sigue existiendo en las siguientes mientras el kernel esté activo. Si reinicias el kernel, todo se borra y hay que volver a ejecutar las celdas en orden.\nLo que debes saber desde el primer día: - Python distingue mayúsculas de minúsculas: Total y total son nombres distintos. - La indentación importa: los bloques (después de if, for o def) se marcan con espacios al inicio de la línea, normalmente cuatro. No hay llaves ni end. - Los comentarios empiezan con # y se ignoran al ejecutar. - print() muestra algo en pantalla; la última expresión de una celda también se muestra sola.\nErrores frecuentes. Ejecutar las celdas fuera de orden y luego no entender por qué una variable «no existe» o tiene un valor viejo; mezclar tabuladores y espacios; olvidar los dos puntos al final de una línea como if x &gt; 3:.\nPara pensar. Si cambias el valor de una variable en la celda 3 pero no vuelves a ejecutar la celda 5, que depende de ella, ¿qué valor verá la celda 5?",
     "crumbs": [
       "Python",
       "Introducción e instalación"
@@ -1302,6 +1434,17 @@
     ]
   },
   {
+    "objectID": "r/02-tipos-y-variables.html#profundizando-en-este-tema",
+    "href": "r/02-tipos-y-variables.html#profundizando-en-este-tema",
+    "title": "Tipos de datos",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nLos tipos básicos de R. Un valor en R es de uno de estos tipos: numérico (numeric, con decimales), entero (integer, que se escribe con una L: 5L), texto (character), lógico (logical: TRUE o FALSE) y el valor especial NULL, que significa «nada». Con class(x) y typeof(x) puedes preguntarle a R qué tipo tiene un dato; verás que 5 es numérico (de doble precisión) y 5L es entero.\nValores faltantes: NA. En estadística es normal que falte un dato. R los representa con NA, y casi cualquier cálculo con un NA da NA: la media de un vector que lo contiene también es NA. Muchas funciones aceptan na.rm = TRUE para ignorarlos, por ejemplo mean(x, na.rm = TRUE).\nCoerción automática. Un vector solo puede guardar un tipo. Si mezclas, R convierte al tipo más general: c(1, \"a\") produce \"1\" \"a\", todo texto. Puedes convertir a propósito con as.numeric(), as.character() o as.integer().\nOperadores. La potencia es ^, el residuo es %% y la división entera es %/%. Y como en cualquier lenguaje, 0.1 + 0.2 == 0.3 da FALSE; para comparar decimales usa isTRUE(all.equal(a, b)).\nPara pensar. ¿Qué tipo tendrá c(TRUE, 2, \"tres\")? Piénsalo y luego compruébalo con class().",
+    "crumbs": [
+      "R",
+      "Tipos de datos y variables"
+    ]
+  },
+  {
     "objectID": "r/02-tipos-y-variables.html#ejercicios",
     "href": "r/02-tipos-y-variables.html#ejercicios",
     "title": "Tipos de datos",
@@ -1357,6 +1500,17 @@
     ]
   },
   {
+    "objectID": "r/06-particularidades.html#profundizando-en-este-tema",
+    "href": "r/06-particularidades.html#profundizando-en-este-tema",
+    "title": "Particularidades de cada lenguaje",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nLo que hace distinto a R. Tres ideas definen a R frente a los otros lenguajes de este sitio. Primera, todo es un vector: no hay números sueltos, solo vectores de longitud 1, y por eso casi cualquier operación se aplica a todo un conjunto de datos sin escribir ciclos. Segunda, los índices empiezan en 1. Tercera, el tipado es dinámico: una variable puede guardar un número ahora y un texto después, y R convierte tipos por su cuenta cuando mezclas.\nValores faltantes de primera clase. R fue diseñado con datos reales en mente, donde siempre falta algo; por eso NA es parte del lenguaje, y funciones como mean o sum aceptan na.rm = TRUE. Otros lenguajes tienen equivalentes, como missing en Julia, pero se manejan de otra forma.\nCopias al modificar. Si asignas b &lt;- a y luego cambias b, a no se altera: R copia el objeto en el momento de modificarlo. Es lo contrario de lo que pasa con las listas de Python, donde ambas variables apuntan a lo mismo.\nPara pensar. Compara con Python: ¿qué ocurriría con a si en Python hicieras b = a con una lista y luego b.append(1)? ¿Y en R con un vector?",
+    "crumbs": [
+      "R",
+      "Particularidades"
+    ]
+  },
+  {
     "objectID": "r/06-particularidades.html#ejercicios-particularidades-de-r",
     "href": "r/06-particularidades.html#ejercicios-particularidades-de-r",
     "title": "Particularidades de cada lenguaje",
@@ -1390,6 +1544,17 @@
     ]
   },
   {
+    "objectID": "r/03-estructuras-control.html#profundizando-en-este-tema",
+    "href": "r/03-estructuras-control.html#profundizando-en-este-tema",
+    "title": "Estructuras: secuencias, decisiones y repeticiones",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nControl del flujo en R. Las decisiones usan if, else if y else, y los ciclos usan for y while. Los bloques se encierran entre llaves { }, y la indentación es solo para que se lea mejor; no es obligatoria como en Python.\nUn detalle de sintaxis que sorprende. Dentro de un script, else debe ir en la misma línea que la llave que cierra el if: } else {. Si lo pones en una línea nueva fuera de un bloque, R lo lee como una instrucción aparte y marca error.\nRecorrer elementos. for (x in v) toma cada elemento de v en turno. Para recorrer por posición, usa seq_along(v) en vez de 1:length(v): si v está vacío, 1:length(v) da 1 0 (cuenta hacia atrás) y el ciclo se ejecuta dos veces cuando no debería ejecutarse ninguna. break sale del ciclo y next salta a la siguiente vuelta.\nLa alternativa vectorizada. Muchas veces no necesitas el ciclo. ifelse(temp &gt; 80, \"alta\", \"normal\") evalúa toda la columna de una vez y es más rápido y más corto que un for con if.\nPara pensar. Si tienes mil temperaturas, ¿prefieres clasificarlas con un for o con ifelse()? ¿Qué ventaja le ves a cada una?",
+    "crumbs": [
+      "R",
+      "Estructuras de control"
+    ]
+  },
+  {
     "objectID": "r/03-estructuras-control.html#ejercicios",
     "href": "r/03-estructuras-control.html#ejercicios",
     "title": "Estructuras: secuencias, decisiones y repeticiones",
@@ -1417,6 +1582,17 @@
     "title": "Estructuras de datos en R",
     "section": "Vectores",
     "text": "Vectores\nEl vector es la estructura base de R: una secuencia unidimensional de elementos del mismo tipo, creada con c().\n\n\nVer/ocultar código\nv &lt;- c(1, 2, 3, 4)\n\n\n\n\nVer/ocultar código\nv[2]\n\n\n\n\nVer/ocultar código\nlength(v)\n\n\n\nFactoresMatricesArreglosDataframesListas\n\n\nLos factores representan variables categóricas; almacenan internamente enteros asociados a etiquetas (niveles).\n\n\nVer/ocultar código\nf &lt;- factor(c(\"bajo\", \"alto\", \"medio\"))\nlevels(f)\n\n\n\n\nUna matriz es un vector con dos dimensiones (filas y columnas), y sus elementos deben ser del mismo tipo.\n\n\nVer/ocultar código\nm &lt;- matrix(1:6, nrow = 2, ncol = 3)\ndim(m)\n\n\n\n\narray() generaliza la matriz a más de dos dimensiones.\n\n\nVer/ocultar código\na &lt;- array(1:24, dim = c(2, 3, 4))\ndim(a)\n\n\n\n\nEl data.frame es la estructura tabular estándar de R: columnas que pueden ser de distinto tipo, análoga a una hoja de cálculo.\n\n\nVer/ocultar código\ndf &lt;- data.frame(nombre = c(\"A\", \"B\"), valor = c(1, 2))\nstr(df)\n\n\n\n\nLa lista es la estructura más flexible: sus elementos pueden ser de tipos y longitudes distintas, incluyendo otras listas.\n\n\nVer/ocultar código\nlst &lt;- list(numero = 1, texto = \"hola\", vector = c(1,2,3))\nlst$texto",
+    "crumbs": [
+      "R",
+      "Estructuras de datos"
+    ]
+  },
+  {
+    "objectID": "r/04-estructuras-datos.html#profundizando-en-este-tema",
+    "href": "r/04-estructuras-datos.html#profundizando-en-este-tema",
+    "title": "Estructuras de datos en R",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nCuatro estructuras, cuatro usos. El vector guarda elementos del mismo tipo; la lista acepta tipos mezclados e incluso otras listas; la matriz es un vector con dos dimensiones; y el data frame es la tabla de siempre: columnas de tipos distintos, pero todas con la misma longitud. Casi todo el análisis de datos en R pasa por data frames.\nÍndices desde 1. El primer elemento de un vector es v[1], no v[0]. Un índice negativo excluye: v[-1] es todo menos el primero. Esto es lo opuesto a Python, donde un índice negativo cuenta desde el final.\nUn corchete o dos. En una lista, l[1] devuelve una lista con un elemento, mientras que l[[1]] devuelve el elemento en sí. Y l$nombre extrae un elemento por su nombre. En un data frame, df$columna extrae una columna completa.\nReciclaje. Si operas dos vectores de distinta longitud, R repite el más corto: c(1, 2, 3, 4) + c(10, 20) da 11 22 13 24. Es útil, pero cuando las longitudes no son múltiplos, R avisa con una advertencia: no la ignores.\nPara pensar. ¿Cuándo usarías una lista en lugar de un data frame? Piensa en un resultado que combine un número, un texto y una tabla.",
     "crumbs": [
       "R",
       "Estructuras de datos"
@@ -1802,6 +1978,17 @@
     ]
   },
   {
+    "objectID": "julia/05-funciones.html#profundizando-en-este-tema",
+    "href": "julia/05-funciones.html#profundizando-en-este-tema",
+    "title": "Julia: Funciones",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nDos formas de escribir una función. La forma completa usa function ... end; la corta sirve para fórmulas de una línea: area(r) = π * r^2. Ambas son equivalentes, y la forma corta queda muy parecida a la notación matemática.\nValor de retorno. Una función devuelve el valor de su última expresión; return es opcional y se usa para salir antes. Para devolver varios valores basta separarlos con comas: en realidad Julia devuelve una tupla, que puedes desempacar al recibirla, como en pies, pulgadas = convertir(10).\nArgumentos por posición y por nombre. Los argumentos con nombre (keyword) se separan de los demás con un punto y coma en la definición: function area(r; decimales = 2). Al llamar escribes area(5; decimales = 3) o simplemente area(5, decimales = 3).\nDespacho múltiple. Puedes definir la misma función varias veces para distintos tipos de argumento, y Julia elige la versión adecuada según los tipos que recibe. Es una de las ideas centrales del lenguaje, mucho más presente en Julia que en Python o R.\nAplicar a cada elemento. Un punto después del nombre aplica la función a todo un arreglo: area.([1, 2, 3]) calcula tres áreas. A esto se le llama broadcasting y evita escribir un ciclo.\nPara pensar. ¿Qué hace sqrt.([4, 9, 16]) y en qué se parece a lo que hace sqrt(c(4, 9, 16)) en R?",
+    "crumbs": [
+      "Julia",
+      "Funciones"
+    ]
+  },
+  {
     "objectID": "julia/05-funciones.html#ejercicios",
     "href": "julia/05-funciones.html#ejercicios",
     "title": "Julia: Funciones",
@@ -1829,6 +2016,17 @@
     "title": "Julia: Estructuras de control",
     "section": "Secuencias",
     "text": "Secuencias\n1:10\ncollect(1:2:10)   # con incremento\n\nEstructura “if”Estructura “if-else”Estructura “for”Estructura “while”\n\n\nif x &gt; 0\n    println(\"positivo\")\nend\n\n\nif x &gt; 0\n    println(\"positivo\")\nelse\n    println(\"no positivo\")\nend\n\n\nfor i in 1:5\n    println(i)\nend\n\n\ni = 1\nwhile i &lt;= 5\n    println(i)\n    i += 1\nend",
+    "crumbs": [
+      "Julia",
+      "Estructuras de control"
+    ]
+  },
+  {
+    "objectID": "julia/03-estructuras-control.html#profundizando-en-este-tema",
+    "href": "julia/03-estructuras-control.html#profundizando-en-este-tema",
+    "title": "Julia: Estructuras de control",
+    "section": "Profundizando en este tema",
+    "text": "Profundizando en este tema\nDecisiones y ciclos en Julia. Las decisiones usan if, elseif y else, y los ciclos usan for y while. Todos los bloques terminan con end. Los rangos se escriben 1:5 y incluyen el último valor, a diferencia de range(5) de Python.\nLa condición debe ser un Bool. Julia no acepta valores «verdaderos» o «falsos» disfrazados, como un 1 o una lista vacía: if 1 produce un error de tipo. Es más estricto, pero evita errores silenciosos.\nOperadores lógicos de cortocircuito. && (y) y || (o) dejan de evaluar en cuanto saben la respuesta. Se usan mucho como atajo: x &gt; 0 && println(\"positivo\") imprime solo si la primera condición es verdadera.\nSalir y saltar. break termina el ciclo y continue pasa a la siguiente vuelta. Un while necesita que algo en su interior cambie la condición, o el programa no termina; si te pasa en un notebook, interrumpe el kernel con el botón de detener.\nVariables dentro de ciclos. Una variable creada dentro de un for existe solo dentro de él. Si necesitas usarla después, defínela antes del ciclo.\nPara pensar. ¿Cuántas veces se ejecuta el cuerpo de for i in 1:5? ¿Y el de for i in 5:1? Piensa por qué la segunda es una trampa y qué escribirías para contar hacia atrás.",
     "crumbs": [
       "Julia",
       "Estructuras de control"

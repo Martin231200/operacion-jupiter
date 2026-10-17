@@ -471,6 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link active" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
   <ul class="collapse">
   <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">Arrays</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -540,6 +541,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Estructuras principales.</strong> Julia ofrece el <strong>arreglo</strong> (<code>Vector</code> para una dimensión y <code>Matrix</code> para dos), la <strong>tupla</strong> (inmutable), el <strong>diccionario</strong> (<code>Dict</code>) y el <strong>conjunto</strong> (<code>Set</code>). Un vector se escribe <code>[1, 2, 3]</code>, una tupla <code>(1, 2, 3)</code> y un diccionario <code>Dict("a" =&gt; 1, "b" =&gt; 2)</code>.</p>
+<p><strong>Índices desde 1 y <code>end</code>.</strong> El primer elemento es <code>v[1]</code> y el último se alcanza con <code>v[end]</code>. Las rebanadas incluyen ambos extremos: <code>v[2:3]</code> toma las posiciones 2 y 3.</p>
+<p><strong>La convención del signo de exclamación.</strong> Las funciones que <strong>modifican</strong> su argumento llevan un <code>!</code> al final de su nombre: <code>push!(v, 4)</code> agrega un elemento a <code>v</code>, mientras que una función sin <code>!</code> devuelve un resultado nuevo sin tocar el original. Es una convención, no una regla del lenguaje, pero casi todos los paquetes la siguen.</p>
+<p><strong>Rebanadas, copias y vistas.</strong> En Julia, una rebanada como <code>v[2:3]</code> crea una <strong>copia</strong>. Si prefieres una vista que comparta los datos con el original, usa <code>@view v[2:3]</code>. Y como en Python, <code>b = a</code> no copia: ambas variables apuntan al mismo arreglo; para duplicar usa <code>copy(a)</code>.</p>
+<p><strong>Orden en memoria.</strong> Las matrices se guardan por columnas, no por filas. Para ti solo importa al recorrerlas: es más rápido recorrer una columna completa que una fila.</p>
+<p><strong>Para pensar.</strong> Si llamas <code>sort(v)</code> y luego <code>sort!(v)</code>, ¿cuál de las dos deja el vector <code>v</code> ordenado?</p>
 
 
 <!-- -->
@@ -1066,7 +1076,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>t[<span class="fl">2</span>]</span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>::::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Profundizando en este tema</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>**Estructuras principales.** Julia ofrece el **arreglo** (`Vector` para una dimensión y `Matrix` para dos), la **tupla** (inmutable), el **diccionario** (`Dict`) y el **conjunto** (<span class="in">`Set`</span>). Un vector se escribe <span class="in">`[1, 2, 3]`</span>, una tupla <span class="in">`(1, 2, 3)`</span> y un diccionario <span class="in">`Dict("a" =&gt; 1, "b" =&gt; 2)`</span>.</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>**Índices desde 1 y `end`.** El primer elemento es <span class="in">`v[1]`</span> y el último se alcanza con <span class="in">`v[end]`</span>. Las rebanadas incluyen ambos extremos: <span class="in">`v[2:3]`</span> toma las posiciones 2 y 3.</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>**La convención del signo de exclamación.** Las funciones que **modifican** su argumento llevan un <span class="in">`!`</span> al final de su nombre: <span class="in">`push!(v, 4)`</span> agrega un elemento a <span class="in">`v`</span>, mientras que una función sin <span class="in">`!`</span> devuelve un resultado nuevo sin tocar el original. Es una convención, no una regla del lenguaje, pero casi todos los paquetes la siguen.</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>**Rebanadas, copias y vistas.** En Julia, una rebanada como `v[2:3]` crea una **copia**. Si prefieres una vista que comparta los datos con el original, usa <span class="in">`@view v[2:3]`</span>. Y como en Python, <span class="in">`b = a`</span> no copia: ambas variables apuntan al mismo arreglo; para duplicar usa <span class="in">`copy(a)`</span>.</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>**Orden en memoria.** Las matrices se guardan por columnas, no por filas. Para ti solo importa al recorrerlas: es más rápido recorrer una columna completa que una fila.</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>**Para pensar.** Si llamas <span class="in">`sort(v)`</span> y luego <span class="in">`sort!(v)`</span>, ¿cuál de las dos deja el vector <span class="in">`v`</span> ordenado?</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

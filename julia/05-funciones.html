@@ -472,6 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#funciones-en-julia" id="toc-funciones-en-julia" class="nav-link active" data-scroll-target="#funciones-en-julia">Funciones en Julia</a></li>
   <li><a href="#multiple-dispatch" id="toc-multiple-dispatch" class="nav-link" data-scroll-target="#multiple-dispatch">Multiple dispatch</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
@@ -555,6 +556,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">area</span>(<span class="fu">Circulo</span>(<span class="fl">5</span>))          <span class="co"># usa el método para Circulo</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">area</span>(<span class="fu">Rectangulo</span>(<span class="fl">4</span>, <span class="fl">3</span>))    <span class="co"># usa el método para Rectangulo — misma función, distinto código según el tipo</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Dos formas de escribir una función.</strong> La forma completa usa <code>function ... end</code>; la corta sirve para fórmulas de una línea: <code>area(r) = π * r^2</code>. Ambas son equivalentes, y la forma corta queda muy parecida a la notación matemática.</p>
+<p><strong>Valor de retorno.</strong> Una función devuelve el valor de su última expresión; <code>return</code> es opcional y se usa para salir antes. Para devolver varios valores basta separarlos con comas: en realidad Julia devuelve una tupla, que puedes desempacar al recibirla, como en <code>pies, pulgadas = convertir(10)</code>.</p>
+<p><strong>Argumentos por posición y por nombre.</strong> Los argumentos con nombre (<em>keyword</em>) se separan de los demás con un punto y coma en la definición: <code>function area(r; decimales = 2)</code>. Al llamar escribes <code>area(5; decimales = 3)</code> o simplemente <code>area(5, decimales = 3)</code>.</p>
+<p><strong>Despacho múltiple.</strong> Puedes definir la misma función varias veces para distintos tipos de argumento, y Julia elige la versión adecuada según los tipos que recibe. Es una de las ideas centrales del lenguaje, mucho más presente en Julia que en Python o R.</p>
+<p><strong>Aplicar a cada elemento.</strong> Un punto después del nombre aplica la función a todo un arreglo: <code>area.([1, 2, 3])</code> calcula tres áreas. A esto se le llama <em>broadcasting</em> y evita escribir un ciclo.</p>
+<p><strong>Para pensar.</strong> ¿Qué hace <code>sqrt.([4, 9, 16])</code> y en qué se parece a lo que hace <code>sqrt(c(4, 9, 16))</code> en R?</p>
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
@@ -1145,54 +1155,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a><span class="fu">area</span>(<span class="fu">Rectangulo</span>(<span class="fl">4</span>, <span class="fl">3</span>))    <span class="co"># usa el método para Rectangulo — misma función, distinto código según el tipo</span></span>
 <span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Profundizando en este tema</span></span>
 <span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>Tres problemas enfocados en definir funciones propias, con contexto de ingeniería.</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>**Dos formas de escribir una función.** La forma completa usa <span class="in">`function ... end`</span>; la corta sirve para fórmulas de una línea: <span class="in">`area(r) = π * r^2`</span>. Ambas son equivalentes, y la forma corta queda muy parecida a la notación matemática.</span>
 <span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Área de una sección circular &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; (valor por defecto)</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>**Valor de retorno.** Una función devuelve el valor de su última expresión; <span class="in">`return`</span> es opcional y se usa para salir antes. Para devolver varios valores basta separarlos con comas: en realidad Julia devuelve una tupla, que puedes desempacar al recibirla, como en <span class="in">`pies, pulgadas = convertir(10)`</span>.</span>
 <span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">area_circular</span>(radio, decimales<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">round</span>(<span class="cn">pi</span> <span class="op">*</span> radio<span class="op">^</span><span class="fl">2</span>, digits<span class="op">=</span>decimales)</span>
-<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="fu">area_circular</span>(<span class="fl">5</span>)</span>
-<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultado <span class="op">==</span> <span class="fl">78.54</span></span>
-<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultado)</span>
-<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`78.54`</span></span>
-<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Conversión con múltiples retornos &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt;</span></span>
-<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">convertir_metros</span>(m)</span>
-<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>    pies <span class="op">=</span> <span class="fu">round</span>(m <span class="op">*</span> <span class="fl">3.28084</span>, digits<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>    pulgadas <span class="op">=</span> <span class="fu">round</span>(m <span class="op">*</span> <span class="fl">39.3701</span>, digits<span class="op">=</span><span class="fl">2</span>)</span>
-<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pies, pulgadas</span>
-<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>pies, pulgadas <span class="op">=</span> <span class="fu">convertir_metros</span>(<span class="fl">10</span>)</span>
-<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> pies <span class="op">==</span> <span class="fl">32.81</span> <span class="op">&amp;&amp;</span> pulgadas <span class="op">==</span> <span class="fl">393.7</span></span>
-<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(pies, <span class="st">" "</span>, pulgadas)</span>
-<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`32.81 393.7`</span></span>
-<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Validación antes de calcular &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt; (raíz cuadrada segura)</span></span>
-<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">raiz_segura</span>(x)</span>
-<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="fl">0</span></span>
-<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="cn">nothing</span></span>
-<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">sqrt</span>(x)</span>
-<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>r1 <span class="op">=</span> <span class="fu">raiz_segura</span>(<span class="fl">16</span>)</span>
-<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> <span class="fu">raiz_segura</span>(<span class="op">-</span><span class="fl">4</span>)</span>
-<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> r1 <span class="op">==</span> <span class="fl">4.0</span> <span class="op">&amp;&amp;</span> r2 <span class="op">===</span> <span class="cn">nothing</span></span>
-<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(r1, <span class="st">" "</span>, r2)</span>
-<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`4.0 nothing`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>**Argumentos por posición y por nombre.** Los argumentos con nombre (*keyword*) se separan de los demás con un punto y coma en la definición: <span class="in">`function area(r; decimales = 2)`</span>. Al llamar escribes <span class="in">`area(5; decimales = 3)`</span> o simplemente <span class="in">`area(5, decimales = 3)`</span>.</span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>**Despacho múltiple.** Puedes definir la misma función varias veces para distintos tipos de argumento, y Julia elige la versión adecuada según los tipos que recibe. Es una de las ideas centrales del lenguaje, mucho más presente en Julia que en Python o R.</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>**Aplicar a cada elemento.** Un punto después del nombre aplica la función a todo un arreglo: <span class="in">`area.([1, 2, 3])`</span> calcula tres áreas. A esto se le llama *broadcasting* y evita escribir un ciclo.</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>**Para pensar.** ¿Qué hace <span class="in">`sqrt.([4, 9, 16])`</span> y en qué se parece a lo que hace <span class="in">`sqrt(c(4, 9, 16))`</span> en R?</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>Tres problemas enfocados en definir funciones propias, con contexto de ingeniería.</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Área de una sección circular &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; (valor por defecto)</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">area_circular</span>(radio, decimales<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">round</span>(<span class="cn">pi</span> <span class="op">*</span> radio<span class="op">^</span><span class="fl">2</span>, digits<span class="op">=</span>decimales)</span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="fu">area_circular</span>(<span class="fl">5</span>)</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultado <span class="op">==</span> <span class="fl">78.54</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultado)</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`78.54`</span></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Conversión con múltiples retornos &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt;</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">convertir_metros</span>(m)</span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>    pies <span class="op">=</span> <span class="fu">round</span>(m <span class="op">*</span> <span class="fl">3.28084</span>, digits<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>    pulgadas <span class="op">=</span> <span class="fu">round</span>(m <span class="op">*</span> <span class="fl">39.3701</span>, digits<span class="op">=</span><span class="fl">2</span>)</span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pies, pulgadas</span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>pies, pulgadas <span class="op">=</span> <span class="fu">convertir_metros</span>(<span class="fl">10</span>)</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> pies <span class="op">==</span> <span class="fl">32.81</span> <span class="op">&amp;&amp;</span> pulgadas <span class="op">==</span> <span class="fl">393.7</span></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(pies, <span class="st">" "</span>, pulgadas)</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`32.81 393.7`</span></span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Validación antes de calcular &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt; (raíz cuadrada segura)</span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">raiz_segura</span>(x)</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="fl">0</span></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="cn">nothing</span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">sqrt</span>(x)</span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a>r1 <span class="op">=</span> <span class="fu">raiz_segura</span>(<span class="fl">16</span>)</span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a>r2 <span class="op">=</span> <span class="fu">raiz_segura</span>(<span class="op">-</span><span class="fl">4</span>)</span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> r1 <span class="op">==</span> <span class="fl">4.0</span> <span class="op">&amp;&amp;</span> r2 <span class="op">===</span> <span class="cn">nothing</span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(r1, <span class="st">" "</span>, r2)</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`4.0 nothing`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

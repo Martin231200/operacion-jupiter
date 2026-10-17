@@ -480,6 +480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
   <ul class="collapse">
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
@@ -618,6 +619,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Salir del REPL</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Para qué sirve Julia.</strong> Julia busca algo poco común: que escribas código tan cómodo como el de Python o R, pero que pueda acercarse a la velocidad de uno escrito en C. Lo logra compilando cada función en el momento en que la usas por primera vez (compilación <em>just in time</em>), con tipos concretos para los datos.</p>
+<p><strong>Una consecuencia que se nota enseguida.</strong> La primera vez que ejecutas una función, o cargas un paquete, Julia tarda unos segundos porque está compilando; las siguientes ejecuciones son rápidas. No es que algo esté mal: es el costo de arranque que se paga a cambio de velocidad.</p>
+<p><strong>Lo básico para arrancar:</strong> - Los bloques (<code>if</code>, <code>for</code>, <code>function</code>) terminan con la palabra <code>end</code>; la indentación es solo estética. - Los índices empiezan en 1. - Los paquetes se instalan una vez con el administrador <code>Pkg</code> y se cargan con <code>using</code>. - Los textos van con comillas dobles; las comillas simples son para un solo carácter.</p>
+<p><strong>Errores frecuentes.</strong> Olvidar un <code>end</code> y recibir un error al final del archivo; asustarse por la lentitud de la primera celda; confundir comillas simples con dobles.</p>
+<p><strong>Para pensar.</strong> Si Julia es tan rápido, ¿por qué crees que no ha reemplazado a Python y R en todas partes? Piensa en paquetes, comunidad y costo de aprender.</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</p>
@@ -1216,40 +1225,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="fu">exit</span>()</span>
 <span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Profundizando en este tema</span></span>
 <span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>**Para qué sirve Julia.** Julia busca algo poco común: que escribas código tan cómodo como el de Python o R, pero que pueda acercarse a la velocidad de uno escrito en C. Lo logra compilando cada función en el momento en que la usas por primera vez (compilación *just in time*), con tipos concretos para los datos.</span>
 <span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Mensaje de bienvenida formateado</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>**Una consecuencia que se nota enseguida.** La primera vez que ejecutas una función, o cargas un paquete, Julia tarda unos segundos porque está compilando; las siguientes ejecuciones son rápidas. No es que algo esté mal: es el costo de arranque que se paga a cambio de velocidad.</span>
 <span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="fl">1</span></span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="st">"Bienvenido a </span><span class="sc">$</span>nombre_proyecto<span class="st"> (v</span><span class="sc">$</span>version<span class="st">)"</span></span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mensaje <span class="op">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span></span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(mensaje)</span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Bienvenido a Operación Jupyter (v1)`</span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>**Lo básico para arrancar:**</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Los bloques (<span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`function`</span>) terminan con la palabra <span class="in">`end`</span>; la indentación es solo estética.</span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Los índices empiezan en 1.</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Los paquetes se instalan una vez con el administrador <span class="in">`Pkg`</span> y se cargan con <span class="in">`using`</span>.</span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Los textos van con comillas dobles; las comillas simples son para un solo carácter.</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>**Errores frecuentes.** Olvidar un <span class="in">`end`</span> y recibir un error al final del archivo; asustarse por la lentitud de la primera celda; confundir comillas simples con dobles.</span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>**Para pensar.** Si Julia es tan rápido, ¿por qué crees que no ha reemplazado a Python y R en todas partes? Piensa en paquetes, comunidad y costo de aprender.</span>
 <span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Verificar el entorno con una operación simple</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
 <span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fl">10</span></span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultado <span class="op">==</span> <span class="fl">1024</span></span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultado)</span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`1024`</span></span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Contar caracteres de un mensaje de bitácora</span></span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="op">=</span> <span class="st">"Sistema iniciado correctamente"</span></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>longitud <span class="op">=</span> <span class="fu">length</span>(mensaje_log)</span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> longitud <span class="op">==</span> <span class="fl">30</span></span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(longitud)</span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`30`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Mensaje de bienvenida formateado</span></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>nombre_proyecto <span class="op">=</span> <span class="st">"Operación Jupyter"</span></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>version <span class="op">=</span> <span class="fl">1</span></span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>mensaje <span class="op">=</span> <span class="st">"Bienvenido a </span><span class="sc">$</span>nombre_proyecto<span class="st"> (v</span><span class="sc">$</span>version<span class="st">)"</span></span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> mensaje <span class="op">==</span> <span class="st">"Bienvenido a Operación Jupyter (v1)"</span></span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(mensaje)</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Bienvenido a Operación Jupyter (v1)`</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Verificar el entorno con una operación simple</span></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="fl">2</span><span class="op">^</span><span class="fl">10</span></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultado <span class="op">==</span> <span class="fl">1024</span></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultado)</span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`1024`</span></span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Contar caracteres de un mensaje de bitácora</span></span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>mensaje_log <span class="op">=</span> <span class="st">"Sistema iniciado correctamente"</span></span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>longitud <span class="op">=</span> <span class="fu">length</span>(mensaje_log)</span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> longitud <span class="op">==</span> <span class="fl">30</span></span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(longitud)</span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`30`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

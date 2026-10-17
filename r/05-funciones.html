@@ -470,7 +470,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link active" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link active" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -539,13 +540,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">suma</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Funciones en R.</strong> Una función se crea con <code>function</code> y se guarda en una variable como cualquier otro valor: <code>area &lt;- function(r, digitos = 2) { ... }</code>. Los parámetros pueden tener valores por defecto, y al llamarla puedes pasar los argumentos por posición o por nombre: <code>area(5, digitos = 3)</code>.</p>
+<p><strong>El valor de retorno.</strong> En R, una función devuelve el resultado de la <strong>última expresión</strong> que evalúa, así que <code>return()</code> no es obligatorio; se usa sobre todo para salir antes de tiempo. Para devolver varios valores, agrúpalos en un vector o, mejor, en una lista con nombres: <code>list(pies = 32.81, pulgadas = 393.7)</code>.</p>
+<p><strong>Argumentos que se evalúan tarde.</strong> R evalúa un argumento solo cuando la función lo usa por primera vez (<em>evaluación perezosa</em>). En la práctica, eso permite valores por defecto que dependen de otros argumentos.</p>
+<p><strong>Funciones sobre vectores.</strong> La mayoría de las funciones matemáticas de R ya trabajan sobre vectores completos: <code>sqrt(c(4, 9, 16))</code> da <code>2 3 4</code>. Cuando escribas tus propias funciones, piensa si funcionarán con un vector; si no, <code>sapply(v, f)</code> aplica <code>f</code> a cada elemento.</p>
+<p><strong>Para pensar.</strong> ¿Qué ventaja tiene devolver una lista con nombres en lugar de un vector sin nombres cuando una función entrega varios resultados?</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas enfocados en definir funciones propias, con contexto de ingeniería.</p>
 <section id="área-de-una-sección-circular-básico-valor-por-defecto" class="level3">
 <h3 class="anchored" data-anchor-id="área-de-una-sección-circular-básico-valor-por-defecto">1. Área de una sección circular <span class="badge-dificultad basico">Básico</span> (valor por defecto)</h3>
 <p>Define <code>area_circular(radio, decimales=2)</code> que regrese el área redondeada. Prueba con radio 5.</p>
-<div id="cell-7" class="cell">
+<div id="cell-8" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>area_circular <span class="ot">&lt;-</span> <span class="cf">function</span>(radio, <span class="at">decimales =</span> <span class="dv">2</span>) {</span>
@@ -561,7 +570,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conversión-con-múltiples-retornos-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="conversión-con-múltiples-retornos-intermedio">2. Conversión con múltiples retornos <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>Define <code>convertir_metros(m)</code> que regrese una lista con <code>pies</code> y <code>pulgadas</code>. Prueba con 10 metros.</p>
-<div id="cell-9" class="cell">
+<div id="cell-10" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>convertir_metros <span class="ot">&lt;-</span> <span class="cf">function</span>(m) {</span>
@@ -579,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="validación-antes-de-calcular-intermedio-raíz-cuadrada-segura" class="level3">
 <h3 class="anchored" data-anchor-id="validación-antes-de-calcular-intermedio-raíz-cuadrada-segura">3. Validación antes de calcular <span class="badge-dificultad intermedio">Intermedio</span> (raíz cuadrada segura)</h3>
 <p>Define <code>raiz_segura(x)</code> que regrese <code>NA</code> si <code>x</code> es negativo. Prueba con 16 y -4.</p>
-<div id="cell-11" class="cell">
+<div id="cell-12" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>raiz_segura <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>

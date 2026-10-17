@@ -475,6 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables">Tipos de variables</a></li>
   <li><a href="#operadores-relacionales" id="toc-operadores-relacionales" class="nav-link" data-scroll-target="#operadores-relacionales">Operadores relacionales</a></li>
   <li><a href="#operadores-lógicos" id="toc-operadores-lógicos" class="nav-link" data-scroll-target="#operadores-lógicos">Operadores lógicos</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
@@ -828,13 +829,21 @@ Hugo</code></pre>
 </div>
 </div>
 </section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Datos que entran, datos que se calculan.</strong> Cuando pides un dato con <code>input()</code>, Python siempre lo recibe como texto (<code>str</code>), aunque el usuario escriba un número. Para calcular con él hay que convertirlo con <code>int()</code> o <code>float()</code>. Esta es la fuente de errores más común al empezar: <code>"3" + "4"</code> da <code>"34"</code>, no <code>7</code>.</p>
+<p><strong>Los operadores aritméticos que más se confunden:</strong> - <code>/</code> siempre devuelve un número decimal: <code>7 / 2</code> da <code>3.5</code>, y también <code>6 / 3</code> da <code>2.0</code>. - <code>//</code> es la división entera, que redondea hacia abajo: <code>7 // 2</code> da <code>3</code> y <code>-7 // 2</code> da <code>-4</code>. - <code>%</code> devuelve el residuo y <code>**</code> es la potencia.</p>
+<p><strong>Comparar y combinar condiciones.</strong> Las comparaciones (<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;=</code>) producen valores <code>True</code> o <code>False</code>, y se combinan con <code>and</code>, <code>or</code> y <code>not</code>. Python permite comparaciones encadenadas como <code>0 &lt;= x &lt; 10</code>, que se lee casi como en matemáticas.</p>
+<p><strong>Cuidado con los decimales.</strong> Los números decimales se guardan en binario y algunos no se representan con exactitud: <code>0.1 + 0.2</code> da <code>0.30000000000000004</code>. Por eso, para comparar decimales conviene usar <code>math.isclose(a, b)</code> en lugar de <code>==</code>.</p>
+<p><strong>Para pensar.</strong> ¿Qué resultado esperas de <code>10 // 3</code>, de <code>10 % 3</code> y de <code>10 / 3</code>? Calcula a mano y luego comprueba en una celda.</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos aplicando lo visto, con contexto de ingeniería.</p>
 <section id="conversión-de-temperatura-básico-reales" class="level3">
 <h3 class="anchored" data-anchor-id="conversión-de-temperatura-básico-reales">1. Conversión de temperatura <span class="badge-dificultad basico">Básico</span> (reales)</h3>
 <p>Convierte 23.5 °C a Fahrenheit con <code>F = C * 9/5 + 32</code>.</p>
-<div id="cell-44" class="cell">
+<div id="cell-45" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">23.5</span></span>
@@ -848,7 +857,7 @@ Hugo</code></pre>
 <section id="verificar-tolerancia-de-una-pieza-básico-booleano" class="level3">
 <h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-básico-booleano">2. Verificar tolerancia de una pieza <span class="badge-dificultad basico">Básico</span> (booleano)</h3>
 <p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
-<div id="cell-46" class="cell">
+<div id="cell-47" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="fl">4.97</span></span>
@@ -864,7 +873,7 @@ Hugo</code></pre>
 <section id="etiqueta-de-producto-intermedio-strings" class="level3">
 <h3 class="anchored" data-anchor-id="etiqueta-de-producto-intermedio-strings">3. Etiqueta de producto <span class="badge-dificultad intermedio">Intermedio</span> (strings)</h3>
 <p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para el código <code>"ENG"</code>, lote <code>2026</code>, pieza número <code>47</code>.</p>
-<div id="cell-48" class="cell">
+<div id="cell-49" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="op">=</span> <span class="st">"ENG"</span></span>

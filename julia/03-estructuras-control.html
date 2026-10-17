@@ -473,6 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#estructuras-secuencias-decisiones-y-repeticiones" id="toc-estructuras-secuencias-decisiones-y-repeticiones" class="nav-link active" data-scroll-target="#estructuras-secuencias-decisiones-y-repeticiones">Estructuras: secuencias, decisiones y repeticiones</a>
   <ul class="collapse">
   <li><a href="#secuencias" id="toc-secuencias" class="nav-link" data-scroll-target="#secuencias">Secuencias</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
@@ -562,6 +563,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Decisiones y ciclos en Julia.</strong> Las decisiones usan <code>if</code>, <code>elseif</code> y <code>else</code>, y los ciclos usan <code>for</code> y <code>while</code>. Todos los bloques terminan con <code>end</code>. Los rangos se escriben <code>1:5</code> y <strong>incluyen</strong> el último valor, a diferencia de <code>range(5)</code> de Python.</p>
+<p><strong>La condición debe ser un <code>Bool</code>.</strong> Julia no acepta valores «verdaderos» o «falsos» disfrazados, como un <code>1</code> o una lista vacía: <code>if 1</code> produce un error de tipo. Es más estricto, pero evita errores silenciosos.</p>
+<p><strong>Operadores lógicos de cortocircuito.</strong> <code>&amp;&amp;</code> (y) y <code>||</code> (o) dejan de evaluar en cuanto saben la respuesta. Se usan mucho como atajo: <code>x &gt; 0 &amp;&amp; println("positivo")</code> imprime solo si la primera condición es verdadera.</p>
+<p><strong>Salir y saltar.</strong> <code>break</code> termina el ciclo y <code>continue</code> pasa a la siguiente vuelta. Un <code>while</code> necesita que algo en su interior cambie la condición, o el programa no termina; si te pasa en un notebook, interrumpe el kernel con el botón de detener.</p>
+<p><strong>Variables dentro de ciclos.</strong> Una variable creada dentro de un <code>for</code> existe solo dentro de él. Si necesitas usarla después, defínela antes del ciclo.</p>
+<p><strong>Para pensar.</strong> ¿Cuántas veces se ejecuta el cuerpo de <code>for i in 1:5</code>? ¿Y el de <code>for i in 5:1</code>? Piensa por qué la segunda es una trampa y qué escribirías para contar hacia atrás.</p>
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
@@ -1170,60 +1180,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>::::</span>
 <span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Profundizando en este tema</span></span>
 <span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.</span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>**Decisiones y ciclos en Julia.** Las decisiones usan `if`, `elseif` y `else`, y los ciclos usan `for` y `while`. Todos los bloques terminan con `end`. Los rangos se escriben `1:5` y **incluyen** el último valor, a diferencia de <span class="in">`range(5)`</span> de Python.</span>
 <span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Consumo total de energía &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; (ciclo `for`)</span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>**La condición debe ser un `Bool`.** Julia no acepta valores «verdaderos» o «falsos» disfrazados, como un <span class="in">`1`</span> o una lista vacía: <span class="in">`if 1`</span> produce un error de tipo. Es más estricto, pero evita errores silenciosos.</span>
 <span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>consumos <span class="op">=</span> [<span class="fl">120</span>, <span class="fl">95</span>, <span class="fl">150</span>, <span class="fl">80</span>, <span class="fl">110</span>]</span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> consumos</span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> total <span class="op">+=</span> c</span>
-<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> total <span class="op">==</span> <span class="fl">555</span></span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Consumo total: "</span>, total, <span class="st">" kWh"</span>)</span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Consumo total: 555 kWh`</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>**Operadores lógicos de cortocircuito.** <span class="in">`&amp;&amp;`</span> (y) y <span class="in">`||`</span> (o) dejan de evaluar en cuanto saben la respuesta. Se usan mucho como atajo: <span class="in">`x &gt; 0 &amp;&amp; println("positivo")`</span> imprime solo si la primera condición es verdadera.</span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>**Salir y saltar.** <span class="in">`break`</span> termina el ciclo y <span class="in">`continue`</span> pasa a la siguiente vuelta. Un <span class="in">`while`</span> necesita que algo en su interior cambie la condición, o el programa no termina; si te pasa en un notebook, interrumpe el kernel con el botón de detener.</span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>**Variables dentro de ciclos.** Una variable creada dentro de un <span class="in">`for`</span> existe solo dentro de él. Si necesitas usarla después, defínela antes del ciclo.</span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>**Para pensar.** ¿Cuántas veces se ejecuta el cuerpo de <span class="in">`for i in 1:5`</span>? ¿Y el de <span class="in">`for i in 5:1`</span>? Piensa por qué la segunda es una trampa y qué escribirías para contar hacia atrás.</span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.</span>
 <span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Clasificar estado por temperatura &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt; (`if`/`elseif`/`else`)</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Consumo total de energía &lt;span class="badge-dificultad basico"&gt;Básico&lt;/span&gt; (ciclo `for`)</span></span>
 <span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">clasificar</span>(temp)</span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">&lt;</span> <span class="fl">60</span></span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"normal"</span></span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> temp <span class="op">&lt;</span> <span class="fl">85</span></span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"alerta"</span></span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"critico"</span></span>
-<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>resultados <span class="op">=</span> [<span class="fu">clasificar</span>(t) for t <span class="kw">in</span> [<span class="fl">45</span>, <span class="fl">70</span>, <span class="fl">90</span>]]</span>
-<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultados <span class="op">==</span> [<span class="st">"normal"</span>, <span class="st">"alerta"</span>, <span class="st">"critico"</span>]</span>
-<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultados)</span>
-<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`["normal", "alerta", "critico"]`</span></span>
-<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Simular llenado de un tanque &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt; (`while`)</span></span>
-<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>nivel <span class="op">=</span> <span class="fl">0</span></span>
-<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>objetivo <span class="op">=</span> <span class="fl">500</span></span>
-<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a>tasa <span class="op">=</span> <span class="fl">45</span></span>
-<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>minutos <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>consumos <span class="op">=</span> [<span class="fl">120</span>, <span class="fl">95</span>, <span class="fl">150</span>, <span class="fl">80</span>, <span class="fl">110</span>]</span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> consumos</span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> total <span class="op">+=</span> c</span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> total <span class="op">==</span> <span class="fl">555</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Consumo total: "</span>, total, <span class="st">" kWh"</span>)</span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Consumo total: 555 kWh`</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Clasificar estado por temperatura &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt; (`if`/`elseif`/`else`)</span></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">clasificar</span>(temp)</span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">&lt;</span> <span class="fl">60</span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"normal"</span></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elseif</span> temp <span class="op">&lt;</span> <span class="fl">85</span></span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"alerta"</span></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"critico"</span></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
 <span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nivel <span class="op">&lt;</span> objetivo</span>
-<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> nivel <span class="op">+=</span> tasa</span>
-<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> minutos <span class="op">+=</span> <span class="fl">1</span></span>
-<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> minutos <span class="op">==</span> <span class="fl">12</span></span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Minutos: "</span>, minutos, <span class="st">", nivel final: "</span>, nivel, <span class="st">" L"</span>)</span>
-<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Minutos: 12, nivel final: 540 L`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>resultados <span class="op">=</span> [<span class="fu">clasificar</span>(t) for t <span class="kw">in</span> [<span class="fl">45</span>, <span class="fl">70</span>, <span class="fl">90</span>]]</span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> resultados <span class="op">==</span> [<span class="st">"normal"</span>, <span class="st">"alerta"</span>, <span class="st">"critico"</span>]</span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(resultados)</span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`["normal", "alerta", "critico"]`</span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Simular llenado de un tanque &lt;span class="badge-dificultad intermedio"&gt;Intermedio&lt;/span&gt; (`while`)</span></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>nivel <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>objetivo <span class="op">=</span> <span class="fl">500</span></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>tasa <span class="op">=</span> <span class="fl">45</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>minutos <span class="op">=</span> <span class="fl">0</span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nivel <span class="op">&lt;</span> objetivo</span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> nivel <span class="op">+=</span> tasa</span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> minutos <span class="op">+=</span> <span class="fl">1</span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> minutos <span class="op">==</span> <span class="fl">12</span></span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"Minutos: "</span>, minutos, <span class="st">", nivel final: "</span>, nivel, <span class="st">" L"</span>)</span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`Minutos: 12, nivel final: 540 L`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

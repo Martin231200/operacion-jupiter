@@ -471,6 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#secuencias" id="toc-secuencias" class="nav-link active" data-scroll-target="#secuencias">Secuencias</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
@@ -603,13 +604,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Control del flujo en R.</strong> Las decisiones usan <code>if</code>, <code>else if</code> y <code>else</code>, y los ciclos usan <code>for</code> y <code>while</code>. Los bloques se encierran entre llaves <code>{ }</code>, y la indentación es solo para que se lea mejor; no es obligatoria como en Python.</p>
+<p><strong>Un detalle de sintaxis que sorprende.</strong> Dentro de un script, <code>else</code> debe ir en la misma línea que la llave que cierra el <code>if</code>: <code>} else {</code>. Si lo pones en una línea nueva fuera de un bloque, R lo lee como una instrucción aparte y marca error.</p>
+<p><strong>Recorrer elementos.</strong> <code>for (x in v)</code> toma cada elemento de <code>v</code> en turno. Para recorrer por posición, usa <code>seq_along(v)</code> en vez de <code>1:length(v)</code>: si <code>v</code> está vacío, <code>1:length(v)</code> da <code>1 0</code> (cuenta hacia atrás) y el ciclo se ejecuta dos veces cuando no debería ejecutarse ninguna. <code>break</code> sale del ciclo y <code>next</code> salta a la siguiente vuelta.</p>
+<p><strong>La alternativa vectorizada.</strong> Muchas veces no necesitas el ciclo. <code>ifelse(temp &gt; 80, "alta", "normal")</code> evalúa toda la columna de una vez y es más rápido y más corto que un <code>for</code> con <code>if</code>.</p>
+<p><strong>Para pensar.</strong> Si tienes mil temperaturas, ¿prefieres clasificarlas con un <code>for</code> o con <code>ifelse()</code>? ¿Qué ventaja le ves a cada una?</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos con estructuras de control, contexto de ingeniería.</p>
 <section id="consumo-total-de-energía-básico-ciclo-for" class="level3">
 <h3 class="anchored" data-anchor-id="consumo-total-de-energía-básico-ciclo-for">1. Consumo total de energía <span class="badge-dificultad basico">Básico</span> (ciclo <code>for</code>)</h3>
 <p>Suma el consumo (kWh) de 5 máquinas: <code>c(120, 95, 150, 80, 110)</code>.</p>
-<div id="cell-18" class="cell">
+<div id="cell-19" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>consumos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">95</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">110</span>)</span>
@@ -626,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="clasificar-estado-por-temperatura-intermedio-ifelse-ifelse" class="level3">
 <h3 class="anchored" data-anchor-id="clasificar-estado-por-temperatura-intermedio-ifelse-ifelse">2. Clasificar estado por temperatura <span class="badge-dificultad intermedio">Intermedio</span> (<code>if</code>/<code>else if</code>/<code>else</code>)</h3>
 <p>Clasifica una máquina: <code>"normal"</code> si temp &lt; 60, <code>"alerta"</code> si &lt; 85, <code>"critico"</code> en otro caso. Prueba con 45, 70 y 90 °C.</p>
-<div id="cell-20" class="cell">
+<div id="cell-21" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>clasificar <span class="ot">&lt;-</span> <span class="cf">function</span>(temp) {</span>
@@ -648,7 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="simular-llenado-de-un-tanque-intermedio-while" class="level3">
 <h3 class="anchored" data-anchor-id="simular-llenado-de-un-tanque-intermedio-while">3. Simular llenado de un tanque <span class="badge-dificultad intermedio">Intermedio</span> (<code>while</code>)</h3>
 <p>Un tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda?</p>
-<div id="cell-22" class="cell">
+<div id="cell-23" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nivel <span class="ot">&lt;-</span> <span class="dv">0</span></span>

@@ -473,6 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#estructuras-de-datos-y-objetos" id="toc-estructuras-de-datos-y-objetos" class="nav-link active" data-scroll-target="#estructuras-de-datos-y-objetos">Estructuras de datos y objetos</a>
   <ul class="collapse">
   <li><a href="#vectores" id="toc-vectores" class="nav-link" data-scroll-target="#vectores">Vectores</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
@@ -610,13 +611,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Cuatro estructuras, cuatro usos.</strong> El <strong>vector</strong> guarda elementos del mismo tipo; la <strong>lista</strong> acepta tipos mezclados e incluso otras listas; la <strong>matriz</strong> es un vector con dos dimensiones; y el <strong>data frame</strong> es la tabla de siempre: columnas de tipos distintos, pero todas con la misma longitud. Casi todo el análisis de datos en R pasa por data frames.</p>
+<p><strong>Índices desde 1.</strong> El primer elemento de un vector es <code>v[1]</code>, no <code>v[0]</code>. Un índice negativo <strong>excluye</strong>: <code>v[-1]</code> es todo menos el primero. Esto es lo opuesto a Python, donde un índice negativo cuenta desde el final.</p>
+<p><strong>Un corchete o dos.</strong> En una lista, <code>l[1]</code> devuelve una lista con un elemento, mientras que <code>l[[1]]</code> devuelve el elemento en sí. Y <code>l$nombre</code> extrae un elemento por su nombre. En un data frame, <code>df$columna</code> extrae una columna completa.</p>
+<p><strong>Reciclaje.</strong> Si operas dos vectores de distinta longitud, R repite el más corto: <code>c(1, 2, 3, 4) + c(10, 20)</code> da <code>11 22 13 24</code>. Es útil, pero cuando las longitudes no son múltiplos, R avisa con una advertencia: no la ignores.</p>
+<p><strong>Para pensar.</strong> ¿Cuándo usarías una lista en lugar de un data frame? Piensa en un resultado que combine un número, un texto y una tabla.</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos, contexto de ingeniería.</p>
 <section id="vector-registrar-una-nueva-medición-básico" class="level3">
 <h3 class="anchored" data-anchor-id="vector-registrar-una-nueva-medición-básico">1. Vector: registrar una nueva medición <span class="badge-dificultad basico">Básico</span></h3>
 <p>A <code>c(12.4, 13.1, 11.9)</code> agrégale <code>12.8</code> con <code>c()</code> y confirma que ahora tiene 4 elementos.</p>
-<div id="cell-21" class="cell">
+<div id="cell-22" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mediciones <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">12.4</span>, <span class="fl">13.1</span>, <span class="fl">11.9</span>)</span>
@@ -630,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="lista-consultar-inventario-por-código-básico" class="level3">
 <h3 class="anchored" data-anchor-id="lista-consultar-inventario-por-código-básico">2. Lista: consultar inventario por código <span class="badge-dificultad basico">Básico</span></h3>
 <p>De <code>list(P100=25, P200=40, P300=15)</code>, obtén cuántas piezas hay de <code>P200</code>.</p>
-<div id="cell-23" class="cell">
+<div id="cell-24" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">P100 =</span> <span class="dv">25</span>, <span class="at">P200 =</span> <span class="dv">40</span>, <span class="at">P300 =</span> <span class="dv">15</span>)</span>
@@ -644,7 +653,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-frame-filtrar-por-columna-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="data-frame-filtrar-por-columna-intermedio">3. Data frame: filtrar por columna <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>De un data frame de piezas, obtén el nombre de la fila cuyo valor es 2.</p>
-<div id="cell-25" class="cell">
+<div id="cell-26" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>

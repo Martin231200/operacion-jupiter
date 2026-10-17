@@ -472,6 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#funciones-universales" id="toc-funciones-universales" class="nav-link active" data-scroll-target="#funciones-universales">Funciones universales</a>
   <ul class="collapse">
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios-particularidades-de-python" id="toc-ejercicios-particularidades-de-python" class="nav-link" data-scroll-target="#ejercicios-particularidades-de-python">Ejercicios: particularidades de Python</a></li>
   </ul></li>
   </ul>
@@ -639,13 +640,20 @@ W2:  [3]</code></pre>
 <pre><code>array([3, 4, 5, 6, 7])</code></pre>
 </div>
 </div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Resumir datos con una línea.</strong> NumPy trae funciones para describir un conjunto de datos: <code>np.mean</code> (media), <code>np.median</code> (mediana), <code>np.min</code>, <code>np.max</code>, <code>np.var</code> (varianza), <code>np.std</code> (desviación estándar) y <code>np.percentile</code>. Todas aceptan el argumento <code>axis</code>: en una tabla de datos, <code>axis=0</code> resume por columnas y <code>axis=1</code> por filas.</p>
+<p><strong>Una trampa importante: ¿entre n o entre n − 1?</strong> La desviación estándar de una <strong>población</strong> divide entre n; la de una <strong>muestra</strong> divide entre n − 1. NumPy usa por defecto la primera (<code>ddof=0</code>), así que <code>np.std(datos)</code> no coincide con <code>statistics.stdev(datos)</code> de la biblioteca estándar, que usa n − 1. Para obtener la versión muestral con NumPy escribe <code>np.std(datos, ddof=1)</code>. Siempre pregúntate cuál necesitas: si tus datos son <em>todos</em> los casos posibles, población; si son una muestra de algo más grande, muestra.</p>
+<p><strong>Media y mediana.</strong> Cuando hay valores extremos, la mediana resiste mejor que la media: en <code>[12, 15, 11, 18, 14]</code> ambas valen 14, pero cambia el <code>18</code> por <code>180</code> y la media sube a 46.4 mientras la mediana sigue siendo 14.</p>
+<p><strong>Para pensar.</strong> Mides la resistencia de 8 piezas de un lote de miles. ¿Cuál desviación estándar te interesa, la de población o la de muestra?</p>
+</section>
 <section id="ejercicios-particularidades-de-python" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-python">Ejercicios: particularidades de Python</h2>
 <p>Tres problemas que muestran características propias del lenguaje.</p>
 <section id="vectorización-básico-con-numpy-sin-ciclo-explícito" class="level3">
 <h3 class="anchored" data-anchor-id="vectorización-básico-con-numpy-sin-ciclo-explícito">1. Vectorización <span class="badge-dificultad basico">Básico</span> con NumPy (sin ciclo explícito)</h3>
 <p>Multiplica <code>[10, 20, 30, 40]</code> por 2, usando NumPy en vez de un <code>for</code>.</p>
-<div id="cell-19" class="cell">
+<div id="cell-20" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>valores <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>])</span>
@@ -659,7 +667,7 @@ W2:  [3]</code></pre>
 <section id="indexado-desde-0-básico" class="level3">
 <h3 class="anchored" data-anchor-id="indexado-desde-0-básico">2. Indexado desde 0 <span class="badge-dificultad basico">Básico</span></h3>
 <p>Accede al primer elemento de <code>["sensor1", "sensor2", "sensor3"]</code>.</p>
-<div id="cell-21" class="cell">
+<div id="cell-22" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="op">=</span> [<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>]</span>
@@ -673,7 +681,7 @@ W2:  [3]</code></pre>
 <section id="tipado-dinámico-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="tipado-dinámico-intermedio">3. Tipado dinámico <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>Asigna <code>10</code>, revisa su tipo, reasigna un texto y revisa otra vez.</p>
-<div id="cell-23" class="cell">
+<div id="cell-24" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>

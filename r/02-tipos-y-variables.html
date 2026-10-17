@@ -476,6 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a>
   <ul class="collapse">
   <li><a href="#ejemplo-fuera-y-dentro-de-una-llamada" id="toc-ejemplo-fuera-y-dentro-de-una-llamada" class="nav-link" data-scroll-target="#ejemplo-fuera-y-dentro-de-una-llamada">Ejemplo: <code>=</code> fuera y dentro de una llamada</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
@@ -598,13 +599,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Los tipos básicos de R.</strong> Un valor en R es de uno de estos tipos: numérico (<code>numeric</code>, con decimales), entero (<code>integer</code>, que se escribe con una L: <code>5L</code>), texto (<code>character</code>), lógico (<code>logical</code>: <code>TRUE</code> o <code>FALSE</code>) y el valor especial <code>NULL</code>, que significa «nada». Con <code>class(x)</code> y <code>typeof(x)</code> puedes preguntarle a R qué tipo tiene un dato; verás que <code>5</code> es numérico (de doble precisión) y <code>5L</code> es entero.</p>
+<p><strong>Valores faltantes: <code>NA</code>.</strong> En estadística es normal que falte un dato. R los representa con <code>NA</code>, y casi cualquier cálculo con un <code>NA</code> da <code>NA</code>: la media de un vector que lo contiene también es <code>NA</code>. Muchas funciones aceptan <code>na.rm = TRUE</code> para ignorarlos, por ejemplo <code>mean(x, na.rm = TRUE)</code>.</p>
+<p><strong>Coerción automática.</strong> Un vector solo puede guardar un tipo. Si mezclas, R convierte al tipo más general: <code>c(1, "a")</code> produce <code>"1" "a"</code>, todo texto. Puedes convertir a propósito con <code>as.numeric()</code>, <code>as.character()</code> o <code>as.integer()</code>.</p>
+<p><strong>Operadores.</strong> La potencia es <code>^</code>, el residuo es <code>%%</code> y la división entera es <code>%/%</code>. Y como en cualquier lenguaje, <code>0.1 + 0.2 == 0.3</code> da <code>FALSE</code>; para comparar decimales usa <code>isTRUE(all.equal(a, b))</code>.</p>
+<p><strong>Para pensar.</strong> ¿Qué tipo tendrá <code>c(TRUE, 2, "tres")</code>? Piénsalo y luego compruébalo con <code>class()</code>.</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos aplicando lo visto, con contexto de ingeniería.</p>
 <section id="conversión-de-temperatura-básico-reales" class="level3">
 <h3 class="anchored" data-anchor-id="conversión-de-temperatura-básico-reales">1. Conversión de temperatura <span class="badge-dificultad basico">Básico</span> (reales)</h3>
 <p>Convierte 23.5 °C a Fahrenheit con <code>F = C * 9/5 + 32</code>.</p>
-<div id="cell-15" class="cell">
+<div id="cell-16" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fl">23.5</span></span>
@@ -618,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="verificar-tolerancia-de-una-pieza-básico-booleano" class="level3">
 <h3 class="anchored" data-anchor-id="verificar-tolerancia-de-una-pieza-básico-booleano">2. Verificar tolerancia de una pieza <span class="badge-dificultad basico">Básico</span> (booleano)</h3>
 <p>Una pieza pesa 4.97 kg; el nominal es 5.0 kg con tolerancia ±0.05 kg. ¿Pasa la prueba?</p>
-<div id="cell-17" class="cell">
+<div id="cell-18" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fl">4.97</span></span>
@@ -634,7 +643,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="etiqueta-de-producto-intermedio-strings" class="level3">
 <h3 class="anchored" data-anchor-id="etiqueta-de-producto-intermedio-strings">3. Etiqueta de producto <span class="badge-dificultad intermedio">Intermedio</span> (strings)</h3>
 <p>Arma la etiqueta <code>CÓDIGO-LOTE-NÚMERO</code> (número con 4 dígitos) para código <code>"ENG"</code>, lote <code>2026</code>, pieza <code>47</code>.</p>
-<div id="cell-19" class="cell">
+<div id="cell-20" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>codigo <span class="ot">&lt;-</span> <span class="st">"ENG"</span></span>

@@ -469,7 +469,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link active" data-scroll-target="#términos-clave">Términos clave</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link active" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
+  <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
   <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación">Instalación</a></li>
   <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
   <li><a href="#mensaje" id="toc-mensaje" class="nav-link" data-scroll-target="#mensaje">Mensaje</a></li>
@@ -540,6 +541,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Comparación de una celda de código (se ejecuta y muestra resultado) contra una celda de texto Markdown (solo se renderiza)</figcaption>
 </figure>
 </div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Cómo piensa Python.</strong> Python lee tu código línea por línea y lo ejecuta en cuanto lo entiende; por eso un notebook funciona tan bien: cada celda es un pedazo de programa que puedes correr, cambiar y volver a correr. Lo que defines en una celda (una variable, una función) sigue existiendo en las siguientes mientras el <em>kernel</em> esté activo. Si reinicias el kernel, todo se borra y hay que volver a ejecutar las celdas en orden.</p>
+<p><strong>Lo que debes saber desde el primer día:</strong> - Python distingue mayúsculas de minúsculas: <code>Total</code> y <code>total</code> son nombres distintos. - La <strong>indentación importa</strong>: los bloques (después de <code>if</code>, <code>for</code> o <code>def</code>) se marcan con espacios al inicio de la línea, normalmente cuatro. No hay llaves ni <code>end</code>. - Los comentarios empiezan con <code>#</code> y se ignoran al ejecutar. - <code>print()</code> muestra algo en pantalla; la última expresión de una celda también se muestra sola.</p>
+<p><strong>Errores frecuentes.</strong> Ejecutar las celdas fuera de orden y luego no entender por qué una variable «no existe» o tiene un valor viejo; mezclar tabuladores y espacios; olvidar los dos puntos al final de una línea como <code>if x &gt; 3:</code>.</p>
+<p><strong>Para pensar.</strong> Si cambias el valor de una variable en la celda 3 pero no vuelves a ejecutar la celda 5, que depende de ella, ¿qué valor verá la celda 5?</p>
+</section>
 <section id="términos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
 <p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
@@ -583,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="mensaje" class="level2">
 <h2 class="anchored" data-anchor-id="mensaje">Mensaje</h2>
-<div id="cell-11" class="cell">
+<div id="cell-12" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bienvenido a Operación Jupyter"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>

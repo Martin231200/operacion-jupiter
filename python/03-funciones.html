@@ -501,6 +501,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#declaración-import" id="toc-declaración-import" class="nav-link active" data-scroll-target="#declaración-import">Declaración “import”</a></li>
   <li><a href="#funciones-definidas-por-el-usuario" id="toc-funciones-definidas-por-el-usuario" class="nav-link" data-scroll-target="#funciones-definidas-por-el-usuario">Funciones definidas por el usuario</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   <li><a href="#más-ejercicios-funciones" id="toc-más-ejercicios-funciones" class="nav-link" data-scroll-target="#más-ejercicios-funciones">Más ejercicios: funciones</a></li>
   </ul>
@@ -1026,13 +1027,21 @@ Spam, Spam,
 </div>
 </section>
 </section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Decidir, repetir y empaquetar.</strong> Este tema junta tres ideas que convierten una lista de instrucciones en un programa: tomar decisiones (<code>if</code>, <code>elif</code>, <code>else</code>), repetir acciones (<code>for</code>, <code>while</code>) y dar un nombre a un bloque de cálculo para reutilizarlo (<code>def</code>).</p>
+<p><strong>Ciclos.</strong> Usa <code>for</code> cuando sabes qué recorrer (una lista, un rango) y <code>while</code> cuando repites hasta que algo cambie. <code>range(5)</code> produce <code>0, 1, 2, 3, 4</code>: empieza en cero y <strong>termina antes</strong> del número que escribes. Un <code>while</code> necesita que algo dentro del ciclo cambie la condición; si no, el programa nunca termina.</p>
+<p><strong>Funciones.</strong> Una función recibe parámetros y devuelve un resultado con <code>return</code>. Si una función no tiene <code>return</code>, devuelve <code>None</code>, que significa «nada». Los parámetros pueden tener valores por defecto, como <code>def area(r, decimales=2)</code>, y entonces se pueden omitir al llamar. Las variables creadas dentro de una función son <strong>locales</strong>: no existen fuera de ella.</p>
+<p><strong>Errores frecuentes.</strong> - Olvidar la indentación dentro de un <code>if</code> o un <code>for</code>. - Usar <code>=</code> (asignar) cuando querías <code>==</code> (comparar). - Imprimir con <code>print()</code> dentro de la función cuando lo que necesitabas era devolver el valor con <code>return</code>; el primero solo lo muestra, el segundo permite usarlo después.</p>
+<p><strong>Para pensar.</strong> ¿Qué diferencia hay entre una función que hace <code>print(x * 2)</code> y otra que hace <code>return x * 2</code>? ¿Con cuál podrías calcular <code>f(3) + f(4)</code>?</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos con estructuras de control, contexto de ingeniería.</p>
 <section id="consumo-total-de-energía-básico-ciclo-for" class="level3">
 <h3 class="anchored" data-anchor-id="consumo-total-de-energía-básico-ciclo-for">1. Consumo total de energía <span class="badge-dificultad basico">Básico</span> (ciclo <code>for</code>)</h3>
 <p>Suma el consumo (kWh) de 5 máquinas: <code>[120, 95, 150, 80, 110]</code>.</p>
-<div id="cell-63" class="cell">
+<div id="cell-64" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>consumos <span class="op">=</span> [<span class="dv">120</span>, <span class="dv">95</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">110</span>]</span>
@@ -1048,7 +1057,7 @@ Spam, Spam,
 <section id="clasificar-estado-por-temperatura-intermedio-ifelifelse" class="level3">
 <h3 class="anchored" data-anchor-id="clasificar-estado-por-temperatura-intermedio-ifelifelse">2. Clasificar estado por temperatura <span class="badge-dificultad intermedio">Intermedio</span> (<code>if</code>/<code>elif</code>/<code>else</code>)</h3>
 <p>Clasifica una máquina: <code>normal</code> si temp &lt; 60, <code>alerta</code> si &lt; 85, <code>crítico</code> en otro caso. Prueba con 45, 70 y 90 °C.</p>
-<div id="cell-65" class="cell">
+<div id="cell-66" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clasificar(temp):</span>
@@ -1068,7 +1077,7 @@ Spam, Spam,
 <section id="simular-llenado-de-un-tanque-intermedio-while" class="level3">
 <h3 class="anchored" data-anchor-id="simular-llenado-de-un-tanque-intermedio-while">3. Simular llenado de un tanque <span class="badge-dificultad intermedio">Intermedio</span> (<code>while</code>)</h3>
 <p>Un tanque se llena a 45 L/min hasta llegar a 500 L. ¿Cuántos minutos completos tarda?</p>
-<div id="cell-67" class="cell">
+<div id="cell-68" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>nivel <span class="op">=</span> <span class="dv">0</span></span>
@@ -1092,7 +1101,7 @@ Spam, Spam,
 <section id="área-de-una-sección-circular-básico-valor-por-defecto" class="level3">
 <h3 class="anchored" data-anchor-id="área-de-una-sección-circular-básico-valor-por-defecto">4. Área de una sección circular <span class="badge-dificultad basico">Básico</span> (valor por defecto)</h3>
 <p>Define <code>area_circular(radio, decimales=2)</code> que regrese el área redondeada. Prueba con radio 5.</p>
-<div id="cell-70" class="cell">
+<div id="cell-71" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1109,7 +1118,7 @@ Spam, Spam,
 <section id="conversión-con-múltiples-retornos-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="conversión-con-múltiples-retornos-intermedio">5. Conversión con múltiples retornos <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>Define <code>convertir_metros(m)</code> que regrese <code>(pies, pulgadas)</code> redondeados a 2 decimales. Prueba con 10 metros.</p>
-<div id="cell-72" class="cell">
+<div id="cell-73" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convertir_metros(m):</span>
@@ -1126,7 +1135,7 @@ Spam, Spam,
 <section id="validación-antes-de-calcular-intermedio-raíz-cuadrada-segura" class="level3">
 <h3 class="anchored" data-anchor-id="validación-antes-de-calcular-intermedio-raíz-cuadrada-segura">6. Validación antes de calcular <span class="badge-dificultad intermedio">Intermedio</span> (raíz cuadrada segura)</h3>
 <p>Define <code>raiz_segura(x)</code> que regrese <code>None</code> si <code>x</code> es negativo, o la raíz cuadrada si no. Prueba con 16 y -4.</p>
-<div id="cell-74" class="cell">
+<div id="cell-75" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raiz_segura(x):</span>

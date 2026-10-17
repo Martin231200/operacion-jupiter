@@ -475,6 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
   <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a>
   <ul class="collapse">
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios-particularidades-de-r" id="toc-ejercicios-particularidades-de-r" class="nav-link" data-scroll-target="#ejercicios-particularidades-de-r">Ejercicios: particularidades de R</a></li>
   </ul></li>
   </ul>
@@ -560,13 +561,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Siguiente:</strong> <a href="07-ejercicios-ingenieria.html">tema 7</a>.</p>
 </div>
 </div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Lo que hace distinto a R.</strong> Tres ideas definen a R frente a los otros lenguajes de este sitio. Primera, <strong>todo es un vector</strong>: no hay números sueltos, solo vectores de longitud 1, y por eso casi cualquier operación se aplica a todo un conjunto de datos sin escribir ciclos. Segunda, los <strong>índices empiezan en 1</strong>. Tercera, el <strong>tipado es dinámico</strong>: una variable puede guardar un número ahora y un texto después, y R convierte tipos por su cuenta cuando mezclas.</p>
+<p><strong>Valores faltantes de primera clase.</strong> R fue diseñado con datos reales en mente, donde siempre falta algo; por eso <code>NA</code> es parte del lenguaje, y funciones como <code>mean</code> o <code>sum</code> aceptan <code>na.rm = TRUE</code>. Otros lenguajes tienen equivalentes, como <code>missing</code> en Julia, pero se manejan de otra forma.</p>
+<p><strong>Copias al modificar.</strong> Si asignas <code>b &lt;- a</code> y luego cambias <code>b</code>, <code>a</code> no se altera: R copia el objeto en el momento de modificarlo. Es lo contrario de lo que pasa con las listas de Python, donde ambas variables apuntan a lo mismo.</p>
+<p><strong>Para pensar.</strong> Compara con Python: ¿qué ocurriría con <code>a</code> si en Python hicieras <code>b = a</code> con una lista y luego <code>b.append(1)</code>? ¿Y en R con un vector?</p>
+</section>
 <section id="ejercicios-particularidades-de-r" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-particularidades-de-r">Ejercicios: particularidades de R</h2>
 <p>Tres problemas que muestran características propias del lenguaje.</p>
 <section id="vectorización-básico-nativa-sin-ciclo-explícito" class="level3">
 <h3 class="anchored" data-anchor-id="vectorización-básico-nativa-sin-ciclo-explícito">1. Vectorización <span class="badge-dificultad basico">Básico</span> nativa (sin ciclo explícito)</h3>
 <p>Multiplica el vector <code>c(10, 20, 30, 40)</code> por 2 — en R esto es automático.</p>
-<div id="cell-5" class="cell">
+<div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
@@ -580,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indexado-básico-desde-1" class="level3">
 <h3 class="anchored" data-anchor-id="indexado-básico-desde-1">2. Indexado <span class="badge-dificultad basico">Básico</span> desde 1</h3>
 <p>Accede al primer elemento de <code>c("sensor1", "sensor2", "sensor3")</code>.</p>
-<div id="cell-7" class="cell">
+<div id="cell-8" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>etiquetas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"sensor1"</span>, <span class="st">"sensor2"</span>, <span class="st">"sensor3"</span>)</span>
@@ -594,7 +602,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tipado-dinámico-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="tipado-dinámico-intermedio">3. Tipado dinámico <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>Asigna <code>10</code> a una variable, revisa su clase, luego reasígnale un texto y revisa la clase otra vez.</p>
-<div id="cell-9" class="cell">
+<div id="cell-10" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>

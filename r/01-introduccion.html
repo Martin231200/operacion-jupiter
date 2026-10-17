@@ -478,6 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#primeros-pasos" id="toc-primeros-pasos" class="nav-link" data-scroll-target="#primeros-pasos">Primeros pasos</a>
   <ul class="collapse">
   <li><a href="#comandos-básicos" id="toc-comandos-básicos" class="nav-link" data-scroll-target="#comandos-básicos">Comandos básicos</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#términos-clave" id="toc-términos-clave" class="nav-link" data-scroll-target="#términos-clave">Términos clave</a></li>
   </ul></li>
   </ul>
@@ -653,11 +654,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><img src="../images/tipos-celda-jupyter.svg" class="img-fluid"></p>
 </section>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>R es un lenguaje y un entorno.</strong> R nació para el análisis estadístico, y eso se nota: casi todo en R está pensado para trabajar con conjuntos de datos completos, no con números sueltos. Muchos usuarios lo manejan desde RStudio, un entorno que junta consola, editor, gráficas y ayuda, aunque en este sitio lo usaremos desde notebooks.</p>
+<p><strong>Lo básico para arrancar:</strong> - Se asigna con <code>&lt;-</code> (también funciona <code>=</code>): <code>x &lt;- 5</code>. - Distingue mayúsculas de minúsculas. - La ayuda de cualquier función se abre con <code>?</code> y su nombre, por ejemplo <code>?mean</code>. - Los paquetes extra se instalan una vez con <code>install.packages("nombre")</code> y se cargan en cada sesión con <code>library(nombre)</code>. Instalar y cargar son dos pasos distintos, y confundirlos es un tropiezo común.</p>
+<p><strong>Errores frecuentes.</strong> Olvidar cargar un paquete que ya instalaste (el error dice que no encuentra la función); escribir <code>library("nombre")</code> con comillas o sin ellas indistintamente está permitido, pero <code>install.packages</code> <strong>sí</strong> necesita comillas; esperar que los índices empiecen en 0 (en R empiezan en 1, lo verás en el tema 4).</p>
+<p><strong>Para pensar.</strong> ¿Por qué crees que un lenguaje hecho para estadística trata hasta un solo número como un vector de longitud 1?</p>
+</section>
 <section id="términos-clave" class="level2">
 <h2 class="anchored" data-anchor-id="términos-clave">Términos clave</h2>
 <p>Un <span class="info-term" data-info="Documento que combina celdas de código (se ejecutan) y celdas de texto (solo explican). Extensión .ipynb.">notebook</span> corre gracias a un <span class="info-term" data-info="El motor que ejecuta el código. Cada lenguaje tiene el suyo: python3, ir (para R), IJulia (para Julia).">kernel</span>, y cada <span class="info-term" data-info="Cada bloque independiente de un notebook — de código o de texto/Markdown.">celda</span> se ejecuta con <span class="info-term" data-info="Atajo de teclado: corre la celda actual y salta a la siguiente.">Shift + Enter</span>. El texto explicativo se escribe en <span class="info-term" data-info="Un lenguaje simple de formato de texto: # para títulos, ** ** para negritas, etc.">Markdown</span>.</p>
 <p><em>(Dale clic a cualquier término subrayado para ver su explicación.)</em></p>
-<div id="cell-5" class="cell">
+<div id="cell-6" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Licencia de R</span></span>
@@ -669,7 +677,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>La ultima línea genera una cita en R, así como la información para generar una entrada BibTex. Si se agrega entre las paréntesis el nombre de un paquete, se genera la cita de ese paquete. Si se deja vacío el espacio, se genera la cita para el lenguaje de programación, en cuyo caso los resultados son: ## To cite R in publications use: R Core Team (2024). <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing, Vienna, Austria. &lt;<a href="https://www.r-project.org/">https://www.R-project.org/</a>&gt;. A BibTeX entry for LaTeX users is @Manual{, title = {R: A Language and Environment for Statistical Computing}, author = {{R Core Team}}, organization = {R Foundation for Statistical Computing}, address = {Vienna, Austria}, year = {2024}, url = {<a href="https://www.r-project.org/">https://www.R-project.org/</a>}, } We have invested a lot of time and effort in creating R, please cite it when using it for data analysis. See also ‘citation(“pkgname”)’ for citing R packages. {#to-cite-r-in-publications-use-r-core-team-2024.-<em>r-a-language-and-environment-for-statistical-computing</em>.-r-foundation-for-statistical-computing-vienna-austria.-httpswww.r-project.org.-a-bibtex-entry-for-latex-users-is-manual-title-r-a-language-and-environment-for-statistical-computing-author-r-core-team-organization-r-foundation-for-statistical-computing-address-vienna-austria-year-2024-url-httpswww.r-project.org-we-have-invested-a-lot-of-time-and-effort-in-creating-r-please-cite-it-when-using-it-for-data-analysis.-see-also-citationpkgname-for-citing-r-packages. .unnumbered} Es importante citar adecuadamente los recursos generados en posibles publicaciones como tesis, artículos u otros trabajos. Para encontrar ayuda con alguno de comandos, por ejemplo, la función seq, se pueden usar las siguientes instrucciones.</p>
-<div id="cell-7" class="cell">
+<div id="cell-8" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ayuda</span></span>

@@ -470,7 +470,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul class="collapse">
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link active" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link active" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -1214,13 +1215,21 @@ saluda</code></pre>
 </div>
 </div>
 </div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Elegir bien dónde guardar los datos.</strong> Python ofrece cuatro estructuras básicas, y cada una responde a una necesidad distinta: - <strong>Lista</strong> (<code>[...]</code>): colección ordenada y modificable. Es la opción general. - <strong>Tupla</strong> (<code>(...)</code>): ordenada pero <strong>inmutable</strong>; sirve para datos que no deben cambiar, como una coordenada. - <strong>Diccionario</strong> (<code>{clave: valor}</code>): busca por clave en lugar de por posición. Desde Python 3.7 conserva el orden en que insertaste los elementos. - <strong>Conjunto</strong> (<code>set</code>): elementos sin repetir y sin orden, útil para eliminar duplicados.</p>
+<p><strong>Índices y rebanadas.</strong> Los índices empiezan en 0. Una rebanada como <code>datos[1:3]</code> toma los elementos de las posiciones 1 y 2: el final <strong>no se incluye</strong>. Los índices negativos cuentan desde el final, así que <code>datos[-1]</code> es el último elemento.</p>
+<p><strong>Copiar no es lo mismo que asignar.</strong> Si haces <code>b = a</code> con una lista, no creas una copia: ambas variables apuntan a la misma lista, y un cambio en una se ve en la otra. Para duplicarla usa <code>a.copy()</code> o <code>a[:]</code>.</p>
+<p><strong>Errores frecuentes.</strong> Intentar modificar una tupla; pedir una clave que no existe en un diccionario (usa <code>d.get(clave)</code> si no estás seguro de que esté); pensar que <code>datos[1:3]</code> incluye la posición 3.</p>
+<p><strong>Para pensar.</strong> Si guardas las lecturas de un sensor, ¿usarías una lista o una tupla? ¿Y si necesitas buscar un instrumento por su código?</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres problemas cortos con listas, diccionarios y tuplas, contexto de ingeniería.</p>
 <section id="lista-registrar-una-nueva-medición-básico" class="level3">
 <h3 class="anchored" data-anchor-id="lista-registrar-una-nueva-medición-básico">1. Lista: registrar una nueva medición <span class="badge-dificultad basico">Básico</span></h3>
 <p>A la lista <code>[12.4, 13.1, 11.9]</code> agrégale <code>12.8</code> y confirma que ahora tiene 4 elementos.</p>
-<div id="cell-112" class="cell">
+<div id="cell-113" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>mediciones <span class="op">=</span> [<span class="fl">12.4</span>, <span class="fl">13.1</span>, <span class="fl">11.9</span>]</span>
@@ -1234,7 +1243,7 @@ saluda</code></pre>
 <section id="diccionario-consultar-inventario-por-código-básico" class="level3">
 <h3 class="anchored" data-anchor-id="diccionario-consultar-inventario-por-código-básico">2. Diccionario: consultar inventario por código <span class="badge-dificultad basico">Básico</span></h3>
 <p>De <code>{"P100": 25, "P200": 40, "P300": 15}</code>, obtén cuántas piezas hay de <code>"P200"</code>.</p>
-<div id="cell-114" class="cell">
+<div id="cell-115" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>inventario <span class="op">=</span> {<span class="st">"P100"</span>: <span class="dv">25</span>, <span class="st">"P200"</span>: <span class="dv">40</span>, <span class="st">"P300"</span>: <span class="dv">15</span>}</span>
@@ -1248,7 +1257,7 @@ saluda</code></pre>
 <section id="tupla-coordenadas-de-un-punto-de-inspección-intermedio" class="level3">
 <h3 class="anchored" data-anchor-id="tupla-coordenadas-de-un-punto-de-inspección-intermedio">3. Tupla: coordenadas de un punto de inspección <span class="badge-dificultad intermedio">Intermedio</span></h3>
 <p>Desempaqueta la tupla <code>(12.5, 8.3)</code> en <code>x, y</code> y verifica ambos valores.</p>
-<div id="cell-116" class="cell">
+<div id="cell-117" class="cell">
 <details open="" class="code-fold">
 <summary>Ver/ocultar código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>punto <span class="op">=</span> (<span class="fl">12.5</span>, <span class="fl">8.3</span>)</span>

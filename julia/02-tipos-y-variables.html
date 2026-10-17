@@ -478,6 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#declaración-de-variables" id="toc-declaración-de-variables" class="nav-link" data-scroll-target="#declaración-de-variables">Declaración de variables</a>
   <ul class="collapse">
+  <li><a href="#profundizando-en-este-tema" id="toc-profundizando-en-este-tema" class="nav-link" data-scroll-target="#profundizando-en-este-tema">Profundizando en este tema</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul></li>
   </ul>
@@ -562,6 +563,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    z<span class="op">::</span><span class="dt">Int64 </span><span class="op">=</span> <span class="fl">10</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="profundizando-en-este-tema" class="level2">
+<h2 class="anchored" data-anchor-id="profundizando-en-este-tema">Profundizando en este tema</h2>
+<p><strong>Tipos concretos.</strong> En Julia cada valor tiene un tipo concreto que puedes consultar con <code>typeof</code>: <code>Int64</code> para enteros, <code>Float64</code> para decimales, <code>Bool</code>, <code>String</code> y <code>Char</code>. Aunque las variables no se declaran con tipo, el rendimiento de Julia se apoya en que los valores sí lo tienen.</p>
+<p><strong>Operadores que conviene conocer.</strong> <code>/</code> siempre da un <code>Float64</code>: <code>6 / 3</code> es <code>2.0</code>. La división entera se escribe <code>÷</code> o <code>div(a, b)</code>, el residuo es <code>%</code> y la potencia es <code>^</code>. Los textos se unen con <code>*</code> (no con <code>+</code>) y se pueden construir con <strong>interpolación</strong>: <code>"Hola $nombre"</code> o <code>"Total: $(a + b)"</code>.</p>
+<p><strong>Los enteros se desbordan en silencio.</strong> Un <code>Int64</code> tiene un máximo (<code>typemax(Int64)</code>), y si lo superas, el resultado «da la vuelta» a un número negativo sin avisar. Es raro en cálculos comunes, pero conviene saberlo; cuando necesites números enormes existe el tipo <code>BigInt</code>.</p>
+<p><strong>Comparar decimales.</strong> Como en cualquier lenguaje, <code>0.1 + 0.2 == 0.3</code> da <code>false</code>. En Julia se usa <code>isapprox(a, b)</code> o el operador <code>≈</code> para compararlos con tolerancia.</p>
+<p><strong>Texto con símbolos.</strong> Julia acepta nombres con letras griegas, como <code>α</code> o <code>Δt</code>, que se escriben en el notebook con <code>\alpha</code> y la tecla Tab. Para fórmulas de ingeniería, el código queda muy parecido a la notación matemática.</p>
+<p><strong>Para pensar.</strong> ¿Qué tipo tiene <code>5 / 2</code>? ¿Y <code>5 ÷ 2</code>? Anticipa la respuesta y verifícala con <code>typeof</code>.</p>
+</section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</p>
@@ -1143,46 +1153,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
 <span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Profundizando en este tema</span></span>
 <span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>**Tipos concretos.** En Julia cada valor tiene un tipo concreto que puedes consultar con <span class="in">`typeof`</span>: <span class="in">`Int64`</span> para enteros, <span class="in">`Float64`</span> para decimales, <span class="in">`Bool`</span>, <span class="in">`String`</span> y <span class="in">`Char`</span>. Aunque las variables no se declaran con tipo, el rendimiento de Julia se apoya en que los valores sí lo tienen.</span>
 <span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Conversión de temperatura</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>**Operadores que conviene conocer.** `/` siempre da un `Float64`: `6 / 3` es `2.0`. La división entera se escribe `÷` o `div(a, b)`, el residuo es `%` y la potencia es `^`. Los textos se unen con `*` (no con `+`) y se pueden construir con **interpolación**: <span class="in">`"Hola $nombre"`</span> o <span class="in">`"Total: $(a + b)"`</span>.</span>
 <span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">23.5</span></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> c <span class="op">*</span> <span class="fl">9</span><span class="op">/</span><span class="fl">5</span> <span class="op">+</span> <span class="fl">32</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>**Los enteros se desbordan en silencio.** Un <span class="in">`Int64`</span> tiene un máximo (<span class="in">`typemax(Int64)`</span>), y si lo superas, el resultado «da la vuelta» a un número negativo sin avisar. Es raro en cálculos comunes, pero conviene saberlo; cuando necesites números enormes existe el tipo <span class="in">`BigInt`</span>.</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>**Comparar decimales.** Como en cualquier lenguaje, <span class="in">`0.1 + 0.2 == 0.3`</span> da <span class="in">`false`</span>. En Julia se usa <span class="in">`isapprox(a, b)`</span> o el operador <span class="in">`≈`</span> para compararlos con tolerancia.</span>
 <span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> f <span class="op">==</span> <span class="fl">74.3</span></span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(c, <span class="st">" °C = "</span>, f, <span class="st">" °F"</span>)</span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`23.5 °C = 74.3 °F`</span></span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Verificar tolerancia de una pieza (booleano)</span></span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="fl">4.97</span></span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">5.0</span></span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>pasa <span class="op">=</span> <span class="fu">abs</span>(peso <span class="op">-</span> nominal) <span class="op">&lt;=</span> tolerancia</span>
-<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> pasa <span class="op">==</span> <span class="cn">true</span></span>
-<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"¿Pasa la prueba? "</span>, pasa)</span>
-<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`¿Pasa la prueba? true`</span></span>
-<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Etiqueta de producto (strings)</span></span>
-<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
-<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>codigo <span class="op">=</span> <span class="st">"ENG"</span></span>
-<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>lote <span class="op">=</span> <span class="fl">2026</span></span>
-<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>numero_pieza <span class="op">=</span> <span class="fl">47</span></span>
-<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="op">=</span> <span class="st">"</span><span class="sc">$</span>codigo<span class="st">-</span><span class="sc">$</span>lote<span class="st">-"</span> <span class="op">*</span> <span class="fu">lpad</span>(numero_pieza, <span class="fl">4</span>, <span class="st">"0"</span>)</span>
-<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> etiqueta <span class="op">==</span> <span class="st">"ENG-2026-0047"</span></span>
-<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(etiqueta)</span>
-<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`ENG-2026-0047`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>**Texto con símbolos.** Julia acepta nombres con letras griegas, como <span class="in">`α`</span> o <span class="in">`Δt`</span>, que se escriben en el notebook con <span class="in">`\alpha`</span> y la tecla Tab. Para fórmulas de ingeniería, el código queda muy parecido a la notación matemática.</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>**Para pensar.** ¿Qué tipo tiene <span class="in">`5 / 2`</span>? ¿Y <span class="in">`5 ÷ 2`</span>? Anticipa la respuesta y verifícala con <span class="in">`typeof`</span>.</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Conversión de temperatura</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="fl">23.5</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> c <span class="op">*</span> <span class="fl">9</span><span class="op">/</span><span class="fl">5</span> <span class="op">+</span> <span class="fl">32</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> f <span class="op">==</span> <span class="fl">74.3</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(c, <span class="st">" °C = "</span>, f, <span class="st">" °F"</span>)</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`23.5 °C = 74.3 °F`</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Verificar tolerancia de una pieza (booleano)</span></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>peso <span class="op">=</span> <span class="fl">4.97</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>nominal <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>tolerancia <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>pasa <span class="op">=</span> <span class="fu">abs</span>(peso <span class="op">-</span> nominal) <span class="op">&lt;=</span> tolerancia</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> pasa <span class="op">==</span> <span class="cn">true</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"¿Pasa la prueba? "</span>, pasa)</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`¿Pasa la prueba? true`</span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Etiqueta de producto (strings)</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="in">```julia</span></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>codigo <span class="op">=</span> <span class="st">"ENG"</span></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>lote <span class="op">=</span> <span class="fl">2026</span></span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>numero_pieza <span class="op">=</span> <span class="fl">47</span></span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="op">=</span> <span class="st">"</span><span class="sc">$</span>codigo<span class="st">-</span><span class="sc">$</span>lote<span class="st">-"</span> <span class="op">*</span> <span class="fu">lpad</span>(numero_pieza, <span class="fl">4</span>, <span class="st">"0"</span>)</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="pp">@assert</span> etiqueta <span class="op">==</span> <span class="st">"ENG-2026-0047"</span></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(etiqueta)</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>**Salida:** <span class="in">`ENG-2026-0047`</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
