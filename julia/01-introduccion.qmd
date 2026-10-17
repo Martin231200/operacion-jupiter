@@ -87,6 +87,22 @@ VERSION
 exit()
 ```
 
+## Profundizando en este tema
+
+**Para qué sirve Julia.** Julia busca algo poco común: que escribas código tan cómodo como el de Python o R, pero que pueda acercarse a la velocidad de uno escrito en C. Lo logra compilando cada función en el momento en que la usas por primera vez (compilación *just in time*), con tipos concretos para los datos.
+
+**Una consecuencia que se nota enseguida.** La primera vez que ejecutas una función, o cargas un paquete, Julia tarda unos segundos porque está compilando; las siguientes ejecuciones son rápidas. No es que algo esté mal: es el costo de arranque que se paga a cambio de velocidad.
+
+**Lo básico para arrancar:**
+- Los bloques (`if`, `for`, `function`) terminan con la palabra `end`; la indentación es solo estética.
+- Los índices empiezan en 1.
+- Los paquetes se instalan una vez con el administrador `Pkg` y se cargan con `using`.
+- Los textos van con comillas dobles; las comillas simples son para un solo carácter.
+
+**Errores frecuentes.** Olvidar un `end` y recibir un error al final del archivo; asustarse por la lentitud de la primera celda; confundir comillas simples con dobles.
+
+**Para pensar.** Si Julia es tan rápido, ¿por qué crees que no ha reemplazado a Python y R en todas partes? Piensa en paquetes, comunidad y costo de aprender.
+
 ## Ejercicios
 
 Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).

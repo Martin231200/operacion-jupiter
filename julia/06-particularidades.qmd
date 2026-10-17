@@ -46,6 +46,16 @@ No solo Julia usa compilación JIT: Julia está diseñada desde cero alrededor d
 
 Los tres lenguajes permiten resolver problemas similares de programación y análisis de datos, pero parten de objetivos distintos: R nació para estadística y gráficos, Python como lenguaje general que se volvió estándar en ciencia de datos gracias a sus bibliotecas, y Julia como respuesta al costo de desempeño de los otros dos en cómputo numérico intensivo.
 
+## Profundizando en este tema
+
+**Lo que hace distinto a Julia.** Tres ideas lo diferencian de R y Python. Primera, el **despacho múltiple**, corazón del diseño de Julia: las funciones se escriben por tipos de argumento y Julia escoge automáticamente la versión adecuada. Segunda, la **compilación justo a tiempo**: el código se compila con tipos concretos al primer uso, y por eso es rápido después de ese arranque. Tercera, la **escritura matemática**: nombres con letras griegas, el operador `≈` y funciones que se aplican a arreglos con un punto (`f.(v)`) hacen que el código se parezca a una fórmula.
+
+**Estabilidad de tipos.** Para sacar el máximo rendimiento, una función debería devolver siempre el mismo tipo de dato sin importar los valores de entrada. Si una función devuelve a veces un entero y a veces un decimal, el compilador no puede optimizarla igual. No es un error, pero explica por qué dos versiones de un cálculo que parecen equivalentes pueden tardar muy distinto.
+
+**Índices desde 1, como R.** Quien viene de Python debe ajustarse: `v[1]` es el primer elemento. Pero a diferencia de lo que ocurre en Python con los arreglos de NumPy, las rebanadas de Julia crean copias.
+
+**Para pensar.** ¿En qué tipo de problema de ingeniería te convendría más la velocidad de Julia que la comodidad de un lenguaje ya conocido?
+
 ## Ejercicios: particularidades de Julia
 
 Tres problemas que muestran características propias del lenguaje.

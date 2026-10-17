@@ -7,8 +7,17 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 
 ## Octubre de 2026
 
+**15 de octubre**
+
+- Más texto en los temas 01 a 06 de Python, R y Julia: cada uno tiene ahora una sección «Profundizando en este tema» con ideas clave, errores frecuentes, comparaciones y una pregunta para pensar.
+- Pruebas automáticas ampliadas: los ejercicios de los temas 01 a 06 también se ejecutan en cada cambio.
+- Accesibilidad: texto alternativo en las dos gráficas de Julia (Visualización), dorado más oscuro para el texto de «Tutoriales» en «Mi progreso» y casillas con más contraste en modo oscuro.
+- Verificación de enlaces corregida: la configuración de `lychee` tenía una opción que la versión nueva ya no reconoce. Los flujos automáticos usan ahora Ubuntu 24.04.
+
 **14 de octubre**
 
+- Cada subtema de Python, R y Julia (salvo los ejercicios de ingeniería) abre con una caja «En este tema»: qué verás, enlaces para comparar con los otros lenguajes y el siguiente tema.
+- Nueva sección de libros de «Probabilidad y estadística»: *OpenIntro Statistics*, *Think Stats* (3.ª edición) y *An Introduction to Statistical Learning*.
 - Nuevo «Asistente de búsqueda»: escribe tu duda y te muestra los términos del glosario y los temas relacionados, con el código en los tres lenguajes.
 - Nueva «Ruta guiada»: tres preguntas, un diagnóstico opcional de nivel y un «¿Qué sigue?» según tu progreso, con la descripción de los 8 temas.
 - Nueva página «Probabilidad y estadística en los 3 lenguajes» con cuatro problemas comparados.
