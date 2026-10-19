@@ -1,0 +1,43 @@
+---
+title: "Aviso de privacidad"
+toc: true
+---
+
+Este sitio es un proyecto de servicio social de la Facultad de Ingeniería, UNAM. Esta página explica, en palabras sencillas, qué hace el sitio con tu información. Describe el funcionamiento técnico del sitio y no sustituye los avisos de privacidad institucionales de la UNAM.
+
+## Qué no hace el sitio
+
+- No tiene cuentas, contraseñas ni formularios.
+- No te pide nombre, correo ni número de cuenta.
+- No envía lo que escribes en el sitio a ningún servidor del proyecto.
+- Por ahora no usa herramientas de analítica ni de seguimiento de visitas.
+
+## Qué se guarda en tu navegador
+
+Solo en tu propio dispositivo, mediante el almacenamiento local del navegador, el sitio guarda dos cosas:
+
+- **Tu progreso:** qué temas marcaste como completados en «Mi progreso».
+- **La última página de tutorial que visitaste**, para ofrecerte «Continuar donde lo dejaste».
+
+Esos datos no salen de tu navegador. Puedes borrarlos en cualquier momento eliminando los datos del sitio desde la configuración del navegador.
+
+## La constancia
+
+Si escribes tu nombre para descargar la constancia, el nombre se usa en tu navegador para generar el PDF y no se envía a ningún lado ni se guarda.
+
+## Servicios de terceros
+
+Para funcionar, el sitio usa servicios externos, que pueden recibir datos técnicos de tu visita, como tu dirección IP, conforme a sus propias políticas:
+
+- **GitHub Pages**, que aloja el sitio.
+- **Google Fonts**, de donde se cargan las tipografías.
+- **cdnjs (Cloudflare)**, de donde se carga, en la página «Mi progreso», la biblioteca que genera la constancia en PDF.
+- **Los intérpretes en vivo** (Pyodide para Python y webR para R), que se descargan de servidores de sus proyectos cuando ejecutas código en una página.
+
+## Reportes en GitHub
+
+Si reportas un problema desde la página de [Ayuda](ayuda.qmd), el aviso se publica en GitHub con tu usuario y es visible para cualquiera. No escribas datos personales en él.
+
+## Cambios
+
+Si el sitio cambia la forma en que trata la información (por ejemplo, si se agrega una herramienta de analítica), esta página se actualizará antes. Última revisión: octubre de 2026.

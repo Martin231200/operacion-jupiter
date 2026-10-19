@@ -1,0 +1,23 @@
+{
+  "name": "Operación Jupyter",
+  "short_name": "Op. Jupyter",
+  "description": "Tutoriales comparados de Python, R y Julia (servicio social, Facultad de Ingeniería, UNAM).",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#9B1B2A",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
