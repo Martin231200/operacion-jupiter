@@ -48,6 +48,7 @@ body.quarto-dark .as-lang.py{color:#6FA8DC}body.quarto-dark .as-lang.r{color:#4F
   ];
   var PAGINAS = [
     { t: "Probabilidad y estadística en los 3 lenguajes", kw: "probabilidad estadistica media mediana desviacion binomial normal regresion", h: "estadistica.html" },
+    { t: "Álgebra lineal en los 3 lenguajes", kw: "algebra lineal matriz matrices determinante inversa transpuesta sistema ecuaciones valores propios eigen", h: "algebra-lineal.html" },
     { t: "Comparar los 3 lenguajes", kw: "comparar comparacion lado a lado diferencias", h: "comparar.html" },
     { t: "Quiz interactivo", kw: "quiz examen preguntas evaluar practicar", h: "tutoriales/quiz-comparativo.html" },
     { t: "Libros de acceso libre", kw: "libro libros leer gratis bibliografia", h: "libros/index.html" },

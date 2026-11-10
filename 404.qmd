@@ -35,7 +35,7 @@ body.quarto-dark .nf-card strong { filter: brightness(1.6); }
 <div class="nf-grid">
   <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/index.html"><strong>Inicio</strong><span>Volver a la página principal</span></a>
   <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/comparar.html"><strong>Comparar los 3</strong><span>El mismo problema, lado a lado</span></a>
-  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/glosario.html"><strong>Glosario</strong><span>44 términos comparados</span></a>
+  <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/glosario.html"><strong>Glosario</strong><span>57 términos comparados</span></a>
   <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/libros/index.html"><strong>Libros</strong><span>Lecturas de acceso libre</span></a>
   <a class="nf-card" href="https://martin231200.github.io/operacion-jupiter/tutoriales/index.html"><strong>Tutoriales</strong><span>Quiz, ejercicios y tablas comparativas</span></a>
 </div>
