@@ -73,6 +73,20 @@ end
 
 ::::
 
+## Profundizando en este tema
+
+**Decisiones y ciclos en Julia.** Las decisiones usan `if`, `elseif` y `else`, y los ciclos usan `for` y `while`. Todos los bloques terminan con `end`. Los rangos se escriben `1:5` y **incluyen** el último valor, a diferencia de `range(5)` de Python.
+
+**La condición debe ser un `Bool`.** Julia no acepta valores «verdaderos» o «falsos» disfrazados, como un `1` o una lista vacía: `if 1` produce un error de tipo. Es más estricto, pero evita errores silenciosos.
+
+**Operadores lógicos de cortocircuito.** `&&` (y) y `||` (o) dejan de evaluar en cuanto saben la respuesta. Se usan mucho como atajo: `x > 0 && println("positivo")` imprime solo si la primera condición es verdadera.
+
+**Salir y saltar.** `break` termina el ciclo y `continue` pasa a la siguiente vuelta. Un `while` necesita que algo en su interior cambie la condición, o el programa no termina; si te pasa en un notebook, interrumpe el kernel con el botón de detener.
+
+**Variables dentro de ciclos.** Una variable creada dentro de un `for` existe solo dentro de él. Si necesitas usarla después, defínela antes del ciclo.
+
+**Para pensar.** ¿Cuántas veces se ejecuta el cuerpo de `for i in 1:5`? ¿Y el de `for i in 5:1`? Piensa por qué la segunda es una trampa y qué escribirías para contar hacia atrás.
+
 ## Ejercicios
 
 Tres problemas cortos con estructuras de control, contexto de ingeniería. Mismos valores verificados que en Python y R.

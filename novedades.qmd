@@ -9,10 +9,7 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 
 **15 de octubre**
 
-- Nuevas páginas de «Ayuda» (problemas comunes, cómo instalar el sitio en el celular y un botón para reportar fallos) y «Aviso de privacidad», con enlaces en el pie de página.
-- El sitio ya se puede añadir a la pantalla de inicio del celular, con su propio ícono y color de barra.
-- Nueva página «Álgebra lineal en los 3 lenguajes»: producto de matrices, determinante e inversa, sistemas de ecuaciones y valores propios.
-- El glosario crece de 44 a 57 términos, con dos secciones nuevas («Álgebra lineal» y «Probabilidad y estadística») y términos como clase y objeto, comprensión de listas, varianza, correlación y semilla aleatoria.
+«Dentro de esta normativa se contemplan diferentes clases de equipos, principalmente las clases A y B. Las dos incluyen la alerta anticipada del terreno y la detección de un descenso prematuro. La diferencia principal es que la clase A exige además una pantalla que muestre el terreno a la tripulación, y es la que se requiere en transporte comercial. La clase B está orientada a instalaciones con requisitos distintos, por ejemplo aeronaves más pequeñas, y no exige esa pantalla.»
 - Más texto en los temas 01 a 06 de Python, R y Julia: cada uno tiene ahora una sección «Profundizando en este tema» con ideas clave, errores frecuentes, comparaciones y una pregunta para pensar.
 - Pruebas automáticas ampliadas: los ejercicios de los temas 01 a 06 también se ejecutan en cada cambio.
 - Accesibilidad: texto alternativo en las dos gráficas de Julia (Visualización), dorado más oscuro para el texto de «Tutoriales» en «Mi progreso» y casillas con más contraste en modo oscuro.

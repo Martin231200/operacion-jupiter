@@ -62,6 +62,20 @@ area(Circulo(5))          # usa el método para Circulo
 area(Rectangulo(4, 3))    # usa el método para Rectangulo — misma función, distinto código según el tipo
 ```
 
+## Profundizando en este tema
+
+**Dos formas de escribir una función.** La forma completa usa `function ... end`; la corta sirve para fórmulas de una línea: `area(r) = π * r^2`. Ambas son equivalentes, y la forma corta queda muy parecida a la notación matemática.
+
+**Valor de retorno.** Una función devuelve el valor de su última expresión; `return` es opcional y se usa para salir antes. Para devolver varios valores basta separarlos con comas: en realidad Julia devuelve una tupla, que puedes desempacar al recibirla, como en `pies, pulgadas = convertir(10)`.
+
+**Argumentos por posición y por nombre.** Los argumentos con nombre (*keyword*) se separan de los demás con un punto y coma en la definición: `function area(r; decimales = 2)`. Al llamar escribes `area(5; decimales = 3)` o simplemente `area(5, decimales = 3)`.
+
+**Despacho múltiple.** Puedes definir la misma función varias veces para distintos tipos de argumento, y Julia elige la versión adecuada según los tipos que recibe. Es una de las ideas centrales del lenguaje, mucho más presente en Julia que en Python o R.
+
+**Aplicar a cada elemento.** Un punto después del nombre aplica la función a todo un arreglo: `area.([1, 2, 3])` calcula tres áreas. A esto se le llama *broadcasting* y evita escribir un ciclo.
+
+**Para pensar.** ¿Qué hace `sqrt.([4, 9, 16])` y en qué se parece a lo que hace `sqrt(c(4, 9, 16))` en R?
+
 ## Ejercicios
 
 Tres problemas enfocados en definir funciones propias, con contexto de ingeniería.
