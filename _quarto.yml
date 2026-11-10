@@ -8,6 +8,9 @@ project:
     - ver-tambien.js
     - keyboard-nav.js
     - info-bubble.js
+    - manifest.webmanifest
+    - images/icon-192.png
+    - images/icon-512.png
     - info-bubble.css
     - ultima-visita.js
 
@@ -53,6 +56,10 @@ website:
             text: Asistente de búsqueda
           - href: estadistica.qmd
             text: Probabilidad y estadística
+          - href: algebra-lineal.qmd
+            text: Álgebra lineal
+          - href: ayuda.qmd
+            text: Ayuda
           - href: glosario.qmd
             text: Glosario
           - href: recursos.qmd
@@ -148,6 +155,10 @@ website:
     right:
       - href: tutoriales/ficha-comparativa.pdf
         text: "Descargar ficha comparativa (PDF)"
+      - href: ayuda.qmd
+        text: "Ayuda"
+      - href: privacidad.qmd
+        text: "Aviso de privacidad"
 
 format:
   html:
@@ -165,6 +176,7 @@ format:
     code-copy: true
     include-in-header:
       - text: <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      - text: '<link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/images/icon-192.png"><meta name="theme-color" content="#9B1B2A"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#140F0F"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Op. Jupyter">'
     include-after-body:
       - text: <script src="/reading-time.js"></script>
       - text: <script src="/share-button.js"></script>

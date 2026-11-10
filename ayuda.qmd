@@ -1,0 +1,46 @@
+---
+title: "Ayuda"
+toc: false
+---
+
+Respuestas rápidas a los problemas más comunes. Si no encuentras la tuya, al final puedes reportarla.
+
+::: {.callout-note collapse="true"}
+## El código en vivo tarda en arrancar
+La primera vez que ejecutas código de Python o R en una página, el navegador descarga el intérprete (Pyodide para Python y webR para R). Puede tardar varios segundos, según tu conexión; después va más rápido. Sin internet no se ejecuta.
+:::
+
+::: {.callout-note collapse="true"}
+## Julia no se ejecuta en la página
+Es normal: Julia no tiene todavía un equivalente maduro para correr en el navegador. Las páginas de Julia muestran código real con sus salidas ya calculadas. Para ejecutarlo, instálalo en tu computadora siguiendo el tema 1 de Julia.
+:::
+
+::: {.callout-note collapse="true"}
+## Veo una versión vieja de la página
+El navegador guarda copias por unos minutos. Recarga sin usar la copia guardada: **Ctrl + F5** en Windows, **Cmd + Mayús + R** en Mac. En el celular, cierra la pestaña y vuelve a abrirla.
+:::
+
+::: {.callout-note collapse="true"}
+## Mi progreso desapareció
+«Mi progreso» se guarda solo en tu navegador, en este dispositivo. Se pierde si borras los datos de navegación, si usas una ventana privada o si entras desde otro navegador o dispositivo. No se comparte ni se sincroniza.
+:::
+
+::: {.callout-note collapse="true"}
+## Un enlace no abre
+Prueba primero recargando la página. Si sigue sin abrir, repórtalo con el botón de abajo e indica en qué página lo viste.
+:::
+
+## Instalar el sitio en tu celular
+
+Puedes dejar un acceso directo en la pantalla de inicio. Es un acceso al sitio, no una aplicación sin conexión: sigue necesitando internet.
+
+- **Android (Chrome):** menú ⋮ → «Añadir a pantalla de inicio» o «Instalar aplicación».
+- **iPhone (Safari):** botón Compartir → «Añadir a pantalla de inicio».
+
+## Reportar un problema
+
+El botón abre un aviso en GitHub con una plantilla para llenar. Necesitas una cuenta de GitHub; si no tienes, avísale a quien te compartió el sitio.
+
+[Reportar un problema](https://github.com/Martin231200/operacion-jupiter/issues/new?title=Problema%20en%20el%20sitio%3A%20&body=%2A%2AP%C3%A1gina%20donde%20ocurri%C3%B3%3A%2A%2A%20%0A%0A%2A%2AQu%C3%A9%20esperabas%20que%20pasara%3A%2A%2A%20%0A%0A%2A%2AQu%C3%A9%20pas%C3%B3%20en%20realidad%3A%2A%2A%20%0A%0A%2A%2ANavegador%20y%20dispositivo%20%28por%20ejemplo%2C%20Chrome%20en%20Windows%20o%20Safari%20en%20iPhone%29%3A%2A%2A%20%0A%0A_No%20escribas%20datos%20personales%3A%20los%20avisos%20de%20GitHub%20son%20p%C3%BAblicos._%0A){.btn .btn-primary}
+
+Antes de enviar, revisa el [aviso de privacidad](privacidad.qmd): los avisos de GitHub son públicos, así que no escribas datos personales.

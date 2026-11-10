@@ -9,6 +9,7 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 
 **15 de octubre**
 
+«Dentro de esta normativa se contemplan diferentes clases de equipos, principalmente las clases A y B. Las dos incluyen la alerta anticipada del terreno y la detección de un descenso prematuro. La diferencia principal es que la clase A exige además una pantalla que muestre el terreno a la tripulación, y es la que se requiere en transporte comercial. La clase B está orientada a instalaciones con requisitos distintos, por ejemplo aeronaves más pequeñas, y no exige esa pantalla.»
 - Más texto en los temas 01 a 06 de Python, R y Julia: cada uno tiene ahora una sección «Profundizando en este tema» con ideas clave, errores frecuentes, comparaciones y una pregunta para pensar.
 - Pruebas automáticas ampliadas: los ejercicios de los temas 01 a 06 también se ejecutan en cada cambio.
 - Accesibilidad: texto alternativo en las dos gráficas de Julia (Visualización), dorado más oscuro para el texto de «Tutoriales» en «Mi progreso» y casillas con más contraste en modo oscuro.
