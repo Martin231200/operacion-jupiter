@@ -14,6 +14,14 @@ Cuatro operaciones de álgebra lineal que aparecen todo el tiempo en ingeniería
 **Datos:** `A = [[1, 2], [3, 4]]` y `B = [[0, 1], [1, 0]]`. Multiplicar por `B` por la derecha intercambia las columnas de `A`, así que `A·B = [[2, 1], [4, 3]]`. La transpuesta de `A` es `[[1, 3], [2, 4]]`.
 
 ::: {.panel-tabset}
+## Julia
+```julia
+A = [1 2; 3 4]
+B = [0 1; 1 0]
+A * B
+A'
+```
+
 ## Python
 ```python
 import numpy as np
@@ -32,13 +40,6 @@ A %*% B
 t(A)
 ```
 
-## Julia
-```julia
-A = [1 2; 3 4]
-B = [0 1; 1 0]
-A * B
-A'
-```
 :::
 
 *Ojo:* el mismo símbolo `*` significa cosas distintas. En Python (con NumPy) y en R multiplica **elemento a elemento**; en Julia, entre matrices, es el **producto matricial**. Por eso en Python se usa `@` y en R `%*%`.
@@ -48,6 +49,14 @@ A'
 **Datos:** `A = [[2, 1], [1, 3]]`. Su determinante es 2·3 − 1·1 = 5, y su inversa es 1/5 · `[[3, −1], [−1, 2]]` = `[[0.6, −0.2], [−0.2, 0.4]]`.
 
 ::: {.panel-tabset}
+## Julia
+```julia
+using LinearAlgebra
+A = [2 1; 1 3]
+det(A)
+inv(A)
+```
+
 ## Python
 ```python
 A = np.array([[2, 1], [1, 3]])
@@ -63,13 +72,6 @@ det(A)
 solve(A)      # sin segundo argumento, devuelve la inversa
 ```
 
-## Julia
-```julia
-using LinearAlgebra
-A = [2 1; 1 3]
-det(A)
-inv(A)
-```
 :::
 
 *Ojo:* con decimales, el determinante puede salir como `5.000000000000001`; por eso aquí se redondea en Python. Para saber si una matriz es singular no compares el determinante con `== 0`: usa una tolerancia.
@@ -79,6 +81,12 @@ inv(A)
 **Problema:** resolver `2x + y = 3` y `x + 3y = 5`, es decir, `A·x = b` con la `A` de arriba y `b = [3, 5]`. La solución es `x = 0.8` y `y = 1.4`. Comprobación: 2·0.8 + 1.4 = 3 y 0.8 + 3·1.4 = 5.
 
 ::: {.panel-tabset}
+## Julia
+```julia
+b = [3, 5]
+A \ b
+```
+
 ## Python
 ```python
 b = np.array([3, 5])
@@ -92,11 +100,6 @@ b <- c(3, 5)
 solve(A, b)
 ```
 
-## Julia
-```julia
-b = [3, 5]
-A \ b
-```
 :::
 
 *Ojo:* para resolver un sistema no conviene calcular la inversa y multiplicar; `solve` en Python y R, y el operador `\` en Julia, son más precisos y rápidos.
@@ -106,6 +109,12 @@ A \ b
 **Problema:** hallar los valores propios de la `A` simétrica de arriba. Salen de resolver λ² − 5λ + 5 = 0, es decir, λ = (5 ± √5)/2 ≈ 1.3820 y 3.6180.
 
 ::: {.panel-tabset}
+## Julia
+```julia
+using LinearAlgebra
+eigvals(A)
+```
+
 ## Python
 ```python
 print(np.linalg.eigvalsh(A))
@@ -117,11 +126,6 @@ print(np.linalg.eigvalsh(A))
 eigen(A)$values
 ```
 
-## Julia
-```julia
-using LinearAlgebra
-eigvals(A)
-```
 :::
 
 *Ojo:* los tres lenguajes dan los mismos dos números, pero no en el mismo orden: R los devuelve de mayor a menor, y Python (`eigvalsh`) y Julia (en matrices simétricas) de menor a mayor. Compáralos como conjunto, no por posición.

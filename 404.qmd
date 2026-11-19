@@ -18,17 +18,17 @@ No encontramos esta página: puede que el enlace esté roto o que la página se 
 .nf-card strong { display: block; font-size: 1.05rem; color: var(--nf-color, #9B1B2A); }
 .nf-card span { font-size: .88rem; opacity: .85; }
 body.quarto-dark .nf-card strong { filter: brightness(1.6); }
+.nf-card.nf-jl { --nf-color: #7B4EA3; }
 .nf-card.nf-py { --nf-color: #2C5F8A; }
 .nf-card.nf-r  { --nf-color: #1B7A5C; }
-.nf-card.nf-jl { --nf-color: #7B4EA3; }
 .nf-sub { font-weight: 600; margin-top: .6rem; }
 </style>
 
 <p class="nf-sub">Tutoriales por lenguaje</p>
 <div class="nf-grid">
+  <a class="nf-card nf-jl" href="https://martin231200.github.io/operacion-jupiter/julia/01-introduccion.html"><strong>Julia</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
   <a class="nf-card nf-py" href="https://martin231200.github.io/operacion-jupiter/python/01-introduccion.html"><strong>Python</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
   <a class="nf-card nf-r" href="https://martin231200.github.io/operacion-jupiter/r/01-introduccion.html"><strong>R</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
-  <a class="nf-card nf-jl" href="https://martin231200.github.io/operacion-jupiter/julia/01-introduccion.html"><strong>Julia</strong><span>Ocho subtemas, de la introducción a la visualización</span></a>
 </div>
 
 <p class="nf-sub">Más del sitio</p>

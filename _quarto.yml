@@ -38,12 +38,12 @@ website:
         text: Inicio
       - href: progreso.qmd
         text: Mi progreso
+      - href: julia/01-introduccion.qmd
+        text: Julia
       - href: python/01-introduccion.ipynb
         text: Python
       - href: r/01-introduccion.ipynb
         text: R
-      - href: julia/01-introduccion.qmd
-        text: Julia
       - href: tutoriales/index.qmd
         text: Tutoriales
       - text: "Más"
@@ -72,6 +72,26 @@ website:
             text: Semblanza de los profesores
 
   sidebar:
+    - title: "Julia"
+      style: docked
+      contents:
+        - href: julia/01-introduccion.qmd
+          text: "Introducción e instalación"
+        - href: julia/02-tipos-y-variables.qmd
+          text: "Tipos de datos y variables"
+        - href: julia/03-estructuras-control.qmd
+          text: "Estructuras de control"
+        - href: julia/04-estructuras-datos.qmd
+          text: "Estructuras de datos"
+        - href: julia/05-funciones.qmd
+          text: "Funciones"
+        - href: julia/06-particularidades.qmd
+          text: "Particularidades"
+        - href: julia/07-ejercicios-ingenieria.qmd
+          text: "Ejercicios de ingeniería"
+        - href: julia/08-visualizacion.qmd
+          text: "Visualización"
+
     - title: "Python"
       style: docked
       contents:
@@ -110,26 +130,6 @@ website:
         - href: r/07-ejercicios-ingenieria.qmd
           text: "Ejercicios de ingeniería"
         - href: r/08-visualizacion.ipynb
-          text: "Visualización"
-
-    - title: "Julia"
-      style: docked
-      contents:
-        - href: julia/01-introduccion.qmd
-          text: "Introducción e instalación"
-        - href: julia/02-tipos-y-variables.qmd
-          text: "Tipos de datos y variables"
-        - href: julia/03-estructuras-control.qmd
-          text: "Estructuras de control"
-        - href: julia/04-estructuras-datos.qmd
-          text: "Estructuras de datos"
-        - href: julia/05-funciones.qmd
-          text: "Funciones"
-        - href: julia/06-particularidades.qmd
-          text: "Particularidades"
-        - href: julia/07-ejercicios-ingenieria.qmd
-          text: "Ejercicios de ingeniería"
-        - href: julia/08-visualizacion.qmd
           text: "Visualización"
 
     - title: "Tutoriales"

@@ -39,18 +39,20 @@ const diagnostico = [
   { q: "En Python, ¿cuánto da 10 // 3?", ops: [["3", 1], ["3.33", 0], ["1", 0]] }
 ];
 const lenguajes = {
+  julia: { nombre: "Julia", pre: "jl-",
+    por: "está pensado para cálculo numérico de alto rendimiento. En este sitio no corre en vivo: verás código real con salidas precalculadas, así que conviene instalarlo." },
   python: { nombre: "Python", pre: "py-",
     por: "es de propósito general, tiene una sintaxis legible y un ecosistema enorme para ingeniería y datos. Además puedes ejecutar el código en vivo en el navegador (Pyodide)." },
   r: { nombre: "R", pre: "r-",
-    por: "fue creado para estadística y análisis de datos, y trae gran parte de lo necesario de fábrica. También puedes ejecutar el código en vivo en el navegador (webR)." },
-  julia: { nombre: "Julia", pre: "jl-",
-    por: "está pensado para cálculo numérico de alto rendimiento. En este sitio no corre en vivo: verás código real con salidas precalculadas, así que conviene instalarlo." }
+    por: "fue creado para estadística y análisis de datos, y trae gran parte de lo necesario de fábrica. También puedes ejecutar el código en vivo en el navegador (webR)." }
+
 };
 // Los 8 temas de cada lenguaje, en orden (los mismos ids que usa «Mi progreso»).
 const PAG = {
+  julia: [["01","julia/01-introduccion.html","Introducción e instalación"],["02","julia/02-tipos-y-variables.html","Tipos de datos y variables"],["03","julia/03-estructuras-control.html","Estructuras de control"],["04","julia/04-estructuras-datos.html","Estructuras de datos"],["05","julia/05-funciones.html","Funciones"],["06","julia/06-particularidades.html","Particularidades"],["07","julia/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","julia/08-visualizacion.html","Visualización"]],
   python: [["01","python/01-introduccion.html","Introducción e instalación"],["02","python/02-entrada-datos-operadores.html","Entrada de datos y operadores"],["03","python/03-funciones.html","Funciones"],["04","python/04-estructuras-datos.html","Estructuras de datos"],["05","python/05-arreglos.html","Arreglos"],["06","python/06-funciones-estadisticas.html","Funciones estadísticas"],["07","python/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","python/08-visualizacion.html","Visualización"]],
-  r: [["01","r/01-introduccion.html","Introducción e instalación"],["02","r/02-tipos-y-variables.html","Tipos de datos y variables"],["03","r/03-estructuras-control.html","Estructuras de control"],["04","r/04-estructuras-datos.html","Estructuras de datos"],["05","r/05-funciones.html","Funciones"],["06","r/06-particularidades.html","Particularidades"],["07","r/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","r/08-visualizacion.html","Visualización"]],
-  julia: [["01","julia/01-introduccion.html","Introducción e instalación"],["02","julia/02-tipos-y-variables.html","Tipos de datos y variables"],["03","julia/03-estructuras-control.html","Estructuras de control"],["04","julia/04-estructuras-datos.html","Estructuras de datos"],["05","julia/05-funciones.html","Funciones"],["06","julia/06-particularidades.html","Particularidades"],["07","julia/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","julia/08-visualizacion.html","Visualización"]]
+  r: [["01","r/01-introduccion.html","Introducción e instalación"],["02","r/02-tipos-y-variables.html","Tipos de datos y variables"],["03","r/03-estructuras-control.html","Estructuras de control"],["04","r/04-estructuras-datos.html","Estructuras de datos"],["05","r/05-funciones.html","Funciones"],["06","r/06-particularidades.html","Particularidades"],["07","r/07-ejercicios-ingenieria.html","Ejercicios de ingeniería"],["08","r/08-visualizacion.html","Visualización"]]
+
 };
 // Índice de partida (0 = tema 1) según el resultado del diagnóstico.
 function inicioPorNivel(aciertos) { return aciertos >= 3 ? 4 : (aciertos === 2 ? 2 : 0); }

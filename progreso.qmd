@@ -29,7 +29,8 @@ Marca lo que ya revisaste. Tu progreso se guarda en este navegador (no se compar
 .pg-fiesta{margin-top:14px;padding:14px 18px;border-radius:10px;background:rgba(155,27,42,.14);border:1px solid #9B1B2A;font-weight:600;text-align:center}
 .pg-fiesta input{padding:8px 10px;min-height:44px;border-radius:6px;border:1px solid rgba(128,128,128,.6);font-weight:400;margin:6px 8px 6px 0}
 .pg-fiesta button{min-height:44px;padding:0 16px;border-radius:8px;border:none;background:#9B1B2A;color:#fff;font-weight:600;cursor:pointer}
-.pg-card[data-lang="py-"]{--c:#2C5F8A}.pg-card[data-lang="r-"]{--c:#1B7A5C}.pg-card[data-lang="jl-"]{--c:#7B4EA3}.pg-card[data-lang="tut-"]{--c:#B8872B}
+.pg-card[data-lang="py-"]{--c:#2C5F8A}.pg-card[data-lang="r-"]{--c:#1B7A5C}.pg-card[data-lang="jl-"]{--c:#7B4EA3}.pg-card[data-lang="tut-"]{--c:#7D5A14}
+body.quarto-dark .pg-fila input{accent-color:#E5484D}
 body.quarto-dark .pg-card[data-lang="py-"]{--c:#6FA8DC}
 body.quarto-dark .pg-card[data-lang="r-"]{--c:#4FC79C}
 body.quarto-dark .pg-card[data-lang="jl-"]{--c:#B38CD9}
@@ -56,6 +57,16 @@ body.quarto-dark .pg-continuar a,body.quarto-dark .pg-fiesta button{background:#
 
 <script>
 const secciones = [
+  { titulo: "Julia", prefijo: "jl-", items: [
+    ["jl-01", "Introducción e instalación"],
+    ["jl-02", "Tipos de datos y variables"],
+    ["jl-03", "Estructuras de control"],
+    ["jl-04", "Estructuras de datos"],
+    ["jl-05", "Funciones"],
+    ["jl-06", "Particularidades"],
+    ["jl-07", "Ejercicios de ingeniería"],
+    ["jl-08", "Visualización"],
+  ]},
   { titulo: "Python", prefijo: "py-", items: [
     ["py-01", "Introducción e instalación"],
     ["py-02", "Entrada de datos y operadores"],
@@ -75,16 +86,6 @@ const secciones = [
     ["r-06", "Particularidades"],
     ["r-07", "Ejercicios de ingeniería"],
     ["r-08", "Visualización"],
-  ]},
-  { titulo: "Julia", prefijo: "jl-", items: [
-    ["jl-01", "Introducción e instalación"],
-    ["jl-02", "Tipos de datos y variables"],
-    ["jl-03", "Estructuras de control"],
-    ["jl-04", "Estructuras de datos"],
-    ["jl-05", "Funciones"],
-    ["jl-06", "Particularidades"],
-    ["jl-07", "Ejercicios de ingeniería"],
-    ["jl-08", "Visualización"],
   ]},
   { titulo: "Tutoriales", prefijo: "tut-", items: [
     ["tut-quiz", "Quiz interactivo"],
@@ -176,7 +177,7 @@ function generarCertificado() {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(13);
   doc.setTextColor(60, 60, 60);
-  doc.text("Operación Jupyter — Tutoriales de Python, R y Julia", w / 2, 158, { align: "center" });
+  doc.text("Operación Jupyter — Tutoriales de Julia, Python y R", w / 2, 158, { align: "center" });
 
   // Nombre: se ajusta el tamaño de letra si es muy largo, para que no se salga del PDF
   let fontSize = 22;

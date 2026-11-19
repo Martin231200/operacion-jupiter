@@ -8,6 +8,17 @@ Mismo ejercicio, mismo resultado, sintaxis lado a lado. (Por ahora un ejemplo �
 
 ::: {layout-ncol=3}
 
+#### Julia
+```julia
+peso = 4.97
+nominal = 5.0
+tolerancia = 0.05
+
+pasa = abs(peso - nominal) <= tolerancia
+@assert pasa == true
+println(pasa)
+```
+
 #### Python
 ```python
 peso = 4.97
@@ -30,17 +41,6 @@ stopifnot(pasa == TRUE)
 print(pasa)
 ```
 
-#### Julia
-```julia
-peso = 4.97
-nominal = 5.0
-tolerancia = 0.05
-
-pasa = abs(peso - nominal) <= tolerancia
-@assert pasa == true
-println(pasa)
-```
-
 :::
 
 **Salida en los tres:** `TRUE` / `True` / `true` — misma lógica, mismo resultado.
@@ -48,6 +48,18 @@ println(pasa)
 ## Consumo total de energía (ciclo `for`)
 
 ::: {layout-ncol=3}
+
+#### Julia
+```julia
+consumos = [120, 95, 150, 80, 110]
+total = 0
+for c in consumos
+    global total += c
+end
+
+@assert total == 555
+println(total)
+```
 
 #### Python
 ```python
@@ -72,18 +84,6 @@ stopifnot(total == 555)
 print(total)
 ```
 
-#### Julia
-```julia
-consumos = [120, 95, 150, 80, 110]
-total = 0
-for c in consumos
-    global total += c
-end
-
-@assert total == 555
-println(total)
-```
-
 :::
 
 **Salida en los tres:** `555`
@@ -91,6 +91,15 @@ println(total)
 ## Área de una sección circular (valor por defecto)
 
 ::: {layout-ncol=3}
+
+#### Julia
+```julia
+function area_circular(radio, tolerancia=0)
+    return round(pi * radio^2, digits=2) + tolerancia
+end
+
+@assert area_circular(5) == 78.54
+```
 
 #### Python
 ```python
@@ -110,15 +119,6 @@ area_circular <- function(radio, tolerancia = 0) {
 stopifnot(area_circular(5) == 78.54)
 ```
 
-#### Julia
-```julia
-function area_circular(radio, tolerancia=0)
-    return round(pi * radio^2, digits=2) + tolerancia
-end
-
-@assert area_circular(5) == 78.54
-```
-
 :::
 
 **Salida en los tres:** `78.54`
@@ -126,6 +126,16 @@ end
 ## Tipado dinámico
 
 ::: {layout-ncol=3}
+
+#### Julia
+```julia
+x = 10
+tipo1 = typeof(x)
+x = "ahora soy texto"
+tipo2 = typeof(x)
+println(tipo1, " ", tipo2)
+```
+`Int64 String`
 
 #### Python
 ```python
@@ -146,16 +156,6 @@ tipo2 <- class(x)
 cat(tipo1, tipo2)
 ```
 `numeric character`
-
-#### Julia
-```julia
-x = 10
-tipo1 = typeof(x)
-x = "ahora soy texto"
-tipo2 = typeof(x)
-println(tipo1, " ", tipo2)
-```
-`Int64 String`
 
 :::
 

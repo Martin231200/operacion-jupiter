@@ -37,14 +37,14 @@ body.quarto-dark .as-lang.py{color:#6FA8DC}body.quarto-dark .as-lang.r{color:#4F
 <script>
 (function () {
   var TEMAS = [
-    { t: "Introducción e instalación", kw: "instalar instalacion notebook jupyter kernel empezar primer inicio celda", l: ["python/01-introduccion.html","r/01-introduccion.html","julia/01-introduccion.html"] },
-    { t: "Tipos de datos y variables", kw: "tipo tipos variable variables entero decimal texto booleano string numero declarar asignar", l: ["python/02-entrada-datos-operadores.html","r/02-tipos-y-variables.html","julia/02-tipos-y-variables.html"] },
-    { t: "Estructuras de control", kw: "if else for while ciclo condicional bucle repetir decision break continue", l: ["python/03-funciones.html","r/03-estructuras-control.html","julia/03-estructuras-control.html"] },
-    { t: "Estructuras de datos", kw: "lista vector diccionario tupla conjunto matriz dataframe arreglo coleccion", l: ["python/04-estructuras-datos.html","r/04-estructuras-datos.html","julia/04-estructuras-datos.html"] },
-    { t: "Funciones", kw: "funcion funciones definir argumento retornar devolver lambda anonima", l: ["python/03-funciones.html","r/05-funciones.html","julia/05-funciones.html"] },
-    { t: "Particularidades de cada lenguaje", kw: "diferencia diferencias indexado vectorizacion despacho multiple jit copia referencia", l: ["python/06-funciones-estadisticas.html","r/06-particularidades.html","julia/06-particularidades.html"] },
-    { t: "Ejercicios de ingeniería", kw: "ejercicio ejercicios ingenieria problema practicar esfuerzo tolerancia cinematica", l: ["python/07-ejercicios-ingenieria.html","r/07-ejercicios-ingenieria.html","julia/07-ejercicios-ingenieria.html"] },
-    { t: "Visualización", kw: "grafica graficas grafico plot visualizar visualizacion histograma matplotlib ggplot", l: ["python/08-visualizacion.html","r/08-visualizacion.html","julia/08-visualizacion.html"] }
+    { t: "Introducción e instalación", kw: "instalar instalacion notebook jupyter kernel empezar primer inicio celda", l: ["julia/01-introduccion.html","python/01-introduccion.html","r/01-introduccion.html"] },
+    { t: "Tipos de datos y variables", kw: "tipo tipos variable variables entero decimal texto booleano string numero declarar asignar", l: ["julia/02-tipos-y-variables.html","python/02-entrada-datos-operadores.html","r/02-tipos-y-variables.html"] },
+    { t: "Estructuras de control", kw: "if else for while ciclo condicional bucle repetir decision break continue", l: ["julia/03-estructuras-control.html","python/03-funciones.html","r/03-estructuras-control.html"] },
+    { t: "Estructuras de datos", kw: "lista vector diccionario tupla conjunto matriz dataframe arreglo coleccion", l: ["julia/04-estructuras-datos.html","python/04-estructuras-datos.html","r/04-estructuras-datos.html"] },
+    { t: "Funciones", kw: "funcion funciones definir argumento retornar devolver lambda anonima", l: ["julia/05-funciones.html","python/03-funciones.html","r/05-funciones.html"] },
+    { t: "Particularidades de cada lenguaje", kw: "diferencia diferencias indexado vectorizacion despacho multiple jit copia referencia", l: ["julia/06-particularidades.html","python/06-funciones-estadisticas.html","r/06-particularidades.html"] },
+    { t: "Ejercicios de ingeniería", kw: "ejercicio ejercicios ingenieria problema practicar esfuerzo tolerancia cinematica", l: ["julia/07-ejercicios-ingenieria.html","python/07-ejercicios-ingenieria.html","r/07-ejercicios-ingenieria.html"] },
+    { t: "Visualización", kw: "grafica graficas grafico plot visualizar visualizacion histograma matplotlib ggplot", l: ["julia/08-visualizacion.html","python/08-visualizacion.html","r/08-visualizacion.html"] }
   ];
   var PAGINAS = [
     { t: "Probabilidad y estadística en los 3 lenguajes", kw: "probabilidad estadistica media mediana desviacion binomial normal regresion", h: "estadistica.html" },
@@ -114,7 +114,7 @@ body.quarto-dark .as-lang.py{color:#6FA8DC}body.quarto-dark .as-lang.r{color:#4F
     r.terminos.forEach(function (o) {
       var t = o.x;
       h += '<div class="as-card"><p class="as-etq">Glosario</p><h3>' + esc(t.term) + '</h3><p>' + esc(t.defn) + '</p>';
-      [["py", "Python"], ["r", "R"], ["jl", "Julia"]].forEach(function (L) {
+      [["jl", "Julia"], ["py", "Python"], ["r", "R"]].forEach(function (L) {
         var c = t[L[0]];
         if (c && c.code) h += '<p class="as-lang ' + L[0] + '">' + L[1] + '</p><pre><code>' + esc(c.code) + '</code></pre>';
       });

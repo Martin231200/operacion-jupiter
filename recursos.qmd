@@ -4,6 +4,12 @@ title: "Recursos"
 
 Enlaces oficiales para instalar, aprender más, o resolver dudas en cada lenguaje.
 
+## Julia
+
+- [julialang.org](https://julialang.org/downloads/) — instalación oficial
+- [Documentación oficial](https://docs.julialang.org/)
+- [JuliaHub](https://juliahub.com/) — paquetes y recursos
+
 ## Python
 
 - [python.org](https://www.python.org/downloads/) — instalación oficial
@@ -16,12 +22,6 @@ Enlaces oficiales para instalar, aprender más, o resolver dudas en cada lenguaj
 - [posit.co](https://posit.co/) — RStudio
 - [Manual de referencia (CRAN)](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 - [statmethods.net](https://www.statmethods.net/index.html)
-
-## Julia
-
-- [julialang.org](https://julialang.org/downloads/) — instalación oficial
-- [Documentación oficial](https://docs.julialang.org/)
-- [JuliaHub](https://juliahub.com/) — paquetes y recursos
 
 ## Entornos
 
