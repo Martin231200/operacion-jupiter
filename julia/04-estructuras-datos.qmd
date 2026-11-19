@@ -41,3 +41,17 @@ t[2]
 ```
 
 ::::
+
+## Profundizando en este tema
+
+**Estructuras principales.** Julia ofrece el **arreglo** (`Vector` para una dimensión y `Matrix` para dos), la **tupla** (inmutable), el **diccionario** (`Dict`) y el **conjunto** (`Set`). Un vector se escribe `[1, 2, 3]`, una tupla `(1, 2, 3)` y un diccionario `Dict("a" => 1, "b" => 2)`.
+
+**Índices desde 1 y `end`.** El primer elemento es `v[1]` y el último se alcanza con `v[end]`. Las rebanadas incluyen ambos extremos: `v[2:3]` toma las posiciones 2 y 3.
+
+**La convención del signo de exclamación.** Las funciones que **modifican** su argumento llevan un `!` al final de su nombre: `push!(v, 4)` agrega un elemento a `v`, mientras que una función sin `!` devuelve un resultado nuevo sin tocar el original. Es una convención, no una regla del lenguaje, pero casi todos los paquetes la siguen.
+
+**Rebanadas, copias y vistas.** En Julia, una rebanada como `v[2:3]` crea una **copia**. Si prefieres una vista que comparta los datos con el original, usa `@view v[2:3]`. Y como en Python, `b = a` no copia: ambas variables apuntan al mismo arreglo; para duplicar usa `copy(a)`.
+
+**Orden en memoria.** Las matrices se guardan por columnas, no por filas. Para ti solo importa al recorrerlas: es más rápido recorrer una columna completa que una fila.
+
+**Para pensar.** Si llamas `sort(v)` y luego `sort!(v)`, ¿cuál de las dos deja el vector `v` ordenado?

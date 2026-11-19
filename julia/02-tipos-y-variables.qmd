@@ -61,6 +61,20 @@ function ejemplo()
 end
 ```
 
+## Profundizando en este tema
+
+**Tipos concretos.** En Julia cada valor tiene un tipo concreto que puedes consultar con `typeof`: `Int64` para enteros, `Float64` para decimales, `Bool`, `String` y `Char`. Aunque las variables no se declaran con tipo, el rendimiento de Julia se apoya en que los valores sí lo tienen.
+
+**Operadores que conviene conocer.** `/` siempre da un `Float64`: `6 / 3` es `2.0`. La división entera se escribe `÷` o `div(a, b)`, el residuo es `%` y la potencia es `^`. Los textos se unen con `*` (no con `+`) y se pueden construir con **interpolación**: `"Hola $nombre"` o `"Total: $(a + b)"`.
+
+**Los enteros se desbordan en silencio.** Un `Int64` tiene un máximo (`typemax(Int64)`), y si lo superas, el resultado «da la vuelta» a un número negativo sin avisar. Es raro en cálculos comunes, pero conviene saberlo; cuando necesites números enormes existe el tipo `BigInt`.
+
+**Comparar decimales.** Como en cualquier lenguaje, `0.1 + 0.2 == 0.3` da `false`. En Julia se usa `isapprox(a, b)` o el operador `≈` para compararlos con tolerancia.
+
+**Texto con símbolos.** Julia acepta nombres con letras griegas, como `α` o `Δt`, que se escriben en el notebook con `\alpha` y la tecla Tab. Para fórmulas de ingeniería, el código queda muy parecido a la notación matemática.
+
+**Para pensar.** ¿Qué tipo tiene `5 / 2`? ¿Y `5 ÷ 2`? Anticipa la respuesta y verifícala con `typeof`.
+
 ## Ejercicios
 
 Tres calentamientos para confirmar que tu entorno funciona (código real, salidas verificadas con los mismos valores que Python y R).
