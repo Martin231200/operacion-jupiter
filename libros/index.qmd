@@ -27,6 +27,49 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 </style>
 ```
 
+## Julia
+
+```{=html}
+<div class="libros-grid">
+<a class="libro" href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html" target="_blank" rel="noopener" aria-label="Think Julia, de Ben Lauwens y Allen B. Downey. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-julia" aria-hidden="true">
+<span class="lang">Julia</span>
+<span class="titulo">Think Julia</span>
+<span class="autor">Ben Lauwens y Allen B. Downey</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Programar desde cero con Julia, con ejercicios en cada capítulo. En inglés.</p>
+<span class="cta">Ver en GitHub →</span>
+</div>
+</a>
+<a class="libro" href="https://juliadatascience.io" target="_blank" rel="noopener" aria-label="Julia Data Science, de Storopoli, Huijzer y Alonso. Leer en línea (se abre en una pestaña nueva)">
+<div class="portada portada-julia" aria-hidden="true">
+<span class="lang">Julia</span>
+<span class="titulo">Julia Data Science</span>
+<span class="autor">Storopoli, Huijzer y Alonso</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Nivel intermedio</span>
+<p>Ciencia de datos con Julia para investigadores de cualquier área. En inglés; también en PDF.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://ocw.mit.edu/courses/18-s191-introduction-to-computational-thinking-fall-2020/" target="_blank" rel="noopener" aria-label="Introduction to Computational Thinking, de Edelman, Sanders, Sanderson, Schloss y Drake (MIT). Ver curso (se abre en una pestaña nueva)">
+<div class="portada portada-julia" aria-hidden="true">
+<span class="lang">Julia</span>
+<span class="titulo">Introduction to Computational Thinking</span>
+<span class="autor">Edelman, Sanders, Sanderson, Schloss y Drake (MIT)</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Curso abierto</span>
+<p>Curso del MIT que usa Julia para analizar imágenes, simular partículas y modelar epidemias y clima. En inglés; videos y tareas gratis.</p>
+<span class="cta">Ver curso →</span>
+</div>
+</a>
+</div>
+```
+
 ## Python
 
 ```{=html}
@@ -132,49 +175,6 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 <span class="nivel">Nivel avanzado</span>
 <p>Cómo funciona R por dentro: funciones, entornos, objetos y depuración. En inglés.</p>
 <span class="cta">Leer en línea →</span>
-</div>
-</a>
-</div>
-```
-
-## Julia
-
-```{=html}
-<div class="libros-grid">
-<a class="libro" href="https://benlauwens.github.io/ThinkJulia.jl/latest/book.html" target="_blank" rel="noopener" aria-label="Think Julia, de Ben Lauwens y Allen B. Downey. Leer en línea (se abre en una pestaña nueva)">
-<div class="portada portada-julia" aria-hidden="true">
-<span class="lang">Julia</span>
-<span class="titulo">Think Julia</span>
-<span class="autor">Ben Lauwens y Allen B. Downey</span>
-</div>
-<div class="libro-info">
-<span class="nivel">Para empezar</span>
-<p>Programar desde cero con Julia, con ejercicios en cada capítulo. En inglés.</p>
-<span class="cta">Ver en GitHub →</span>
-</div>
-</a>
-<a class="libro" href="https://juliadatascience.io" target="_blank" rel="noopener" aria-label="Julia Data Science, de Storopoli, Huijzer y Alonso. Leer en línea (se abre en una pestaña nueva)">
-<div class="portada portada-julia" aria-hidden="true">
-<span class="lang">Julia</span>
-<span class="titulo">Julia Data Science</span>
-<span class="autor">Storopoli, Huijzer y Alonso</span>
-</div>
-<div class="libro-info">
-<span class="nivel">Nivel intermedio</span>
-<p>Ciencia de datos con Julia para investigadores de cualquier área. En inglés; también en PDF.</p>
-<span class="cta">Leer en línea →</span>
-</div>
-</a>
-<a class="libro" href="https://ocw.mit.edu/courses/18-s191-introduction-to-computational-thinking-fall-2020/" target="_blank" rel="noopener" aria-label="Introduction to Computational Thinking, de Edelman, Sanders, Sanderson, Schloss y Drake (MIT). Ver curso (se abre en una pestaña nueva)">
-<div class="portada portada-julia" aria-hidden="true">
-<span class="lang">Julia</span>
-<span class="titulo">Introduction to Computational Thinking</span>
-<span class="autor">Edelman, Sanders, Sanderson, Schloss y Drake (MIT)</span>
-</div>
-<div class="libro-info">
-<span class="nivel">Curso abierto</span>
-<p>Curso del MIT que usa Julia para analizar imágenes, simular partículas y modelar epidemias y clima. En inglés; videos y tareas gratis.</p>
-<span class="cta">Ver curso →</span>
 </div>
 </a>
 </div>

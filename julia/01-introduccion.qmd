@@ -14,6 +14,12 @@ title: "Introducción a Julia"
 **Siguiente:** [tema 2](02-tipos-y-variables.html).
 :::
 
+::: {.callout-warning}
+## Las salidas de Julia están precalculadas
+
+A diferencia de Python (Pyodide) y R (webR), **Julia no se ejecuta en vivo en el navegador**: todavía no existe una tecnología madura para ello. El código que ves es real, pero sus resultados se calcularon antes y se muestran ya guardados. Para ejecutarlo tú mismo, instala Julia en tu computadora (ver más abajo).
+:::
+
 ::: {.callout-important}
 
 ## Nota
