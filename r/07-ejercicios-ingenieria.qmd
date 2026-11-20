@@ -7,6 +7,16 @@ filters:
 
 Cuatro problemas aplicados a ingeniería industrial y mecánica. Edita el código de la izquierda y dale **Run**. A la derecha tienes el planteamiento y, al final, cómo se ve en Python y Julia.
 
+::: {.callout-note collapse="true"}
+## ¿Qué es esto? R que corre en tu navegador
+El código de esta página se ejecuta con **webR**, una versión del lenguaje R compilada a WebAssembly para el navegador. No instalas nada: el motor se descarga al abrir la página (la primera vez puede tardar unos segundos) y el cálculo ocurre en tu computadora, no en un servidor. Más en el [glosario](../glosario.qmd).
+:::
+
+::: {.callout-tip collapse="true"}
+## Cómo correr solo una parte del código
+Dentro de cada editor: **Shift + Enter** ejecuta toda la celda; **Ctrl + Enter** (en Mac, **Cmd + Enter**) ejecuta solo la línea donde está el cursor o, si seleccionas varias líneas, solo la selección. Si una línea usa una variable que se define más arriba, ejecútala antes.
+:::
+
 ## 1. Cálculo de esfuerzo (no es la Ley de Hooke)
 
 ::: {.ejercicio-split}

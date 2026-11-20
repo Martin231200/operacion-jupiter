@@ -140,16 +140,20 @@ website:
           text: "Comparación"
         - href: tutoriales/quiz-comparativo.qmd
           text: "Quiz interactivo"
+        - href: tutoriales/ejercicios-julia.qmd
+          text: "Ejercicios Julia"
         - href: tutoriales/ejercicios-python.ipynb
           text: "Ejercicios Python"
         - href: tutoriales/ejercicios-python-pyodide.qmd
           text: "Ejercicios Python (en vivo)"
+        - href: tutoriales/celdas-python.qmd
+          text: "Celdas pequeñas Python (en vivo)"
         - href: tutoriales/ejercicios-r.ipynb
           text: "Ejercicios R"
         - href: tutoriales/ejercicios-r-webr.qmd
           text: "Ejercicios R (en vivo)"
-        - href: tutoriales/ejercicios-julia.qmd
-          text: "Ejercicios Julia"
+        - href: tutoriales/celdas-r.qmd
+          text: "Celdas pequeñas R (en vivo)"
 
   page-footer:
     left: "Operación Jupyter — Servicio Social, Facultad de Ingeniería, UNAM"
