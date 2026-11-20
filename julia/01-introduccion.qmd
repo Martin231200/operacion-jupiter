@@ -14,6 +14,16 @@ title: "Introducción a Julia"
 **Siguiente:** [tema 2](02-tipos-y-variables.html).
 :::
 
+::: {.callout-note collapse="true"}
+## ¿Qué es esto? Las herramientas de este sitio
+- **Notebook:** documento con celdas de código, que se ejecutan, y celdas de texto, que solo se muestran con formato.
+- **Kernel:** el motor que ejecuta el código del notebook; cada lenguaje tiene el suyo.
+- **Quarto:** sistema de publicación de código abierto con el que se construye este sitio a partir de notebooks y archivos de texto.
+- **GitHub Pages:** servicio de GitHub que publica los archivos del sitio en la web.
+- **Salidas precalculadas:** Julia todavía no tiene un equivalente maduro de webR o Pyodide, así que aquí el código se muestra con resultados que ya se calcularon.
+Todos estos términos tienen su entrada en el [glosario](../glosario.html).
+:::
+
 ::: {.callout-warning}
 ## Las salidas de Julia están precalculadas
 

@@ -1,0 +1,90 @@
+---
+title: "Celdas pequeñas en vivo: Python (Pyodide)"
+engine: knitr
+filters:
+  - pyodide
+---
+
+Piloto de **código en celdas pequeñas**: el tema de estructuras de control (condicional, `for`, `while`) dividido en pasos cortos, para que ejecutes cada pieza por separado. Edita el código y dale **Run**. Cada celda trae sus propios datos, así que puedes correrlas en cualquier orden.
+
+::: {.callout-note collapse="true"}
+## ¿Qué es esto? Python que corre en tu navegador
+El código de esta página se ejecuta con **Pyodide**, una distribución de Python para el navegador basada en WebAssembly. No instalas nada: el motor se descarga al abrir la página (la primera vez puede tardar unos segundos) y el cálculo ocurre en tu computadora, no en un servidor. Más en el [glosario](../glosario.qmd).
+:::
+
+::: {.callout-tip}
+## Cómo correr solo una parte del código
+Dentro de cada editor: **Shift + Enter** ejecuta toda la celda; **Ctrl + Enter** (en Mac, **Cmd + Enter**) ejecuta solo la línea donde está el cursor o, si seleccionas varias líneas, solo la selección. Prueba esto en la celda 5: selecciona solo las líneas del `for` y presiona Ctrl + Enter.
+:::
+
+## 1. Condicional: clasificar una temperatura
+
+```{pyodide-python}
+temperatura = 85
+umbral = 80
+
+if temperatura > umbral + 10:
+    estado = "crítico"
+elif temperatura > umbral:
+    estado = "alerta"
+else:
+    estado = "normal"
+
+print(estado)
+```
+
+Cambia `temperatura` a 95 y a 70 y vuelve a correr la celda.
+
+## 2. Un recorrido con `for`
+
+```{pyodide-python}
+lecturas = [72, 78, 85, 91]
+
+for t in lecturas:
+    print(t, "°C")
+```
+
+## 3. Un ciclo con `while`
+
+```{pyodide-python}
+nivel = 0
+
+while nivel < 100:
+    nivel += 30
+
+print(nivel)
+```
+
+¿Por qué termina en 120 y no en 100? El ciclo se detiene cuando la condición deja de cumplirse, y el último paso suma 30 a 90.
+
+## 4. Un conteo con `for` y condicional
+
+```{pyodide-python}
+lecturas = [72, 78, 85, 91]
+alertas = 0
+
+for t in lecturas:
+    if t > 80:
+        alertas += 1
+
+print(alertas)
+assert alertas == 2
+```
+
+## 5. Todo junto, para correr por partes
+
+```{pyodide-python}
+lecturas = [72, 78, 85, 91]
+umbral = 80
+
+for t in lecturas:
+    if t > umbral:
+        print(t, "alerta")
+    else:
+        print(t, "normal")
+
+promedio = sum(lecturas) / len(lecturas)
+print("Promedio:", promedio)
+```
+
+Compara con el mismo tema en [R](celdas-r.qmd).

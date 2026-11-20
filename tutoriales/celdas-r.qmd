@@ -1,0 +1,95 @@
+---
+title: "Celdas pequeñas en vivo: R (webR)"
+engine: knitr
+filters:
+  - pyodide
+---
+
+Piloto de **código en celdas pequeñas**: el tema de estructuras de control (condicional, `for`, `while`) dividido en pasos cortos, para que ejecutes cada pieza por separado. Edita el código y dale **Run**. Cada celda trae sus propios datos, así que puedes correrlas en cualquier orden.
+
+::: {.callout-note collapse="true"}
+## ¿Qué es esto? R que corre en tu navegador
+El código de esta página se ejecuta con **webR**, una versión del lenguaje R compilada a WebAssembly para el navegador. No instalas nada: el motor se descarga al abrir la página (la primera vez puede tardar unos segundos) y el cálculo ocurre en tu computadora, no en un servidor. Más en el [glosario](../glosario.qmd).
+:::
+
+::: {.callout-tip}
+## Cómo correr solo una parte del código
+Dentro de cada editor: **Shift + Enter** ejecuta toda la celda; **Ctrl + Enter** (en Mac, **Cmd + Enter**) ejecuta solo la línea donde está el cursor o, si seleccionas varias líneas, solo la selección. Prueba esto en la celda 5: selecciona solo las líneas del `for` y presiona Ctrl + Enter.
+:::
+
+## 1. Condicional: clasificar una temperatura
+
+```{webr-r}
+temperatura <- 85
+umbral <- 80
+
+if (temperatura > umbral + 10) {
+  estado <- "crítico"
+} else if (temperatura > umbral) {
+  estado <- "alerta"
+} else {
+  estado <- "normal"
+}
+
+print(estado)
+```
+
+Cambia `temperatura` a 95 y a 70 y vuelve a correr la celda.
+
+## 2. Un recorrido con `for`
+
+```{webr-r}
+lecturas <- c(72, 78, 85, 91)
+
+for (t in lecturas) {
+  cat(t, "°C\n")
+}
+```
+
+## 3. Un ciclo con `while`
+
+```{webr-r}
+nivel <- 0
+
+while (nivel < 100) {
+  nivel <- nivel + 30
+}
+
+print(nivel)
+```
+
+¿Por qué termina en 120 y no en 100? El ciclo se detiene cuando la condición deja de cumplirse, y el último paso suma 30 a 90.
+
+## 4. Un conteo con `for` y condicional
+
+```{webr-r}
+lecturas <- c(72, 78, 85, 91)
+alertas <- 0
+
+for (t in lecturas) {
+  if (t > 80) alertas <- alertas + 1
+}
+
+print(alertas)
+stopifnot(alertas == 2)
+```
+
+## 5. Todo junto, para correr por partes
+
+```{webr-r}
+lecturas <- c(72, 78, 85, 91)
+umbral <- 80
+
+for (t in lecturas) {
+  if (t > umbral) {
+    cat(t, "alerta\n")
+  } else {
+    cat(t, "normal\n")
+  }
+}
+
+promedio <- sum(lecturas) / length(lecturas)
+cat("Promedio:", promedio, "\n")
+```
+
+Compara con el mismo tema en [Python](celdas-python.qmd).
