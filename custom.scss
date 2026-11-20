@@ -96,3 +96,9 @@ img {
 .navbar-nav .dropdown-menu {
   border-radius: 8px;
 }
+
+/* Comentarios del código: verde oliva (contraste 4.7 sobre #F8F9FA), distinto del verde de R */
+div.sourceCode code span.co, pre code span.co, code span.co {
+  color: #4D7C0F !important;
+  font-style: italic;
+}

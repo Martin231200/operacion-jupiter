@@ -190,3 +190,9 @@ hr { border-color: var(--fi-borde); opacity: 1; }
   background: rgba(229,72,77,0.16);
   color: #fff;
 }
+
+/* Comentarios del código: verde oliva claro (contraste 8.3 sobre #2B2B2B), distinto del verde de R */
+div.sourceCode code span.co, pre code span.co, code span.co {
+  color: #A3D65C !important;
+  font-style: italic;
+}
