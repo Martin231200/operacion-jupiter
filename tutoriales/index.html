@@ -442,6 +442,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../tutoriales/ejercicios-julia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ejercicios Julia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tutoriales/ejercicios-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ejercicios Python</span></a>
   </div>
@@ -450,6 +456,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../tutoriales/ejercicios-python-pyodide.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ejercicios Python (en vivo)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutoriales/celdas-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Celdas pequeñas Python (en vivo)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -466,8 +478,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tutoriales/ejercicios-julia.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ejercicios Julia</span></a>
+  <a href="../tutoriales/celdas-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Celdas pequeñas R (en vivo)</span></a>
   </div>
 </li>
     </ul>
@@ -519,9 +531,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado.</p>
 <ul>
 <li><a href="../tutoriales/quiz-comparativo.html">Quiz interactivo</a> — preguntas con retroalimentación al instante (✓ / ✗)</li>
+<li><a href="../tutoriales/ejercicios-julia.html">Ejercicios en Julia</a></li>
 <li><a href="../tutoriales/ejercicios-python.html">Ejercicios en Python</a></li>
 <li><a href="../tutoriales/ejercicios-r.html">Ejercicios en R</a></li>
-<li><a href="../tutoriales/ejercicios-julia.html">Ejercicios en Julia</a></li>
+<li>Código en vivo en celdas pequeñas: <a href="../tutoriales/celdas-python.html">Python (Pyodide)</a> y <a href="../tutoriales/celdas-r.html">R (webR)</a></li>
 </ul>
 <section id="un-mismo-dato-tres-formas-de-contarlo" class="level2">
 <h2 class="anchored" data-anchor-id="un-mismo-dato-tres-formas-de-contarlo">Un mismo dato, tres formas de contarlo</h2>
@@ -553,71 +566,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th>Aspecto</th>
+<th>Julia</th>
 <th>Python</th>
 <th>R</th>
-<th>Julia</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Indexado</td>
-<td>Desde 0</td>
 <td>Desde 1</td>
+<td>Desde 0</td>
 <td>Desde 1</td>
 </tr>
 <tr class="even">
 <td>Bloques de código</td>
+<td><code>end</code> para cerrar bloques</td>
 <td>Indentación obligatoria</td>
 <td>Llaves <code>{ }</code></td>
-<td><code>end</code> para cerrar bloques</td>
 </tr>
 <tr class="odd">
 <td>Asignación</td>
 <td><code>=</code></td>
-<td><code>&lt;-</code> (convención)</td>
 <td><code>=</code></td>
+<td><code>&lt;-</code> (convención)</td>
 </tr>
 <tr class="even">
 <td>Tipado</td>
-<td>Dinámico</td>
-<td>Dinámico</td>
 <td>Dinámico, con despacho múltiple</td>
+<td>Dinámico</td>
+<td>Dinámico</td>
 </tr>
 <tr class="odd">
 <td>Estructura de datos principal</td>
+<td>Array (nativo)</td>
 <td>Lista / <code>numpy.array</code></td>
 <td>Vector (nativo)</td>
-<td>Array (nativo)</td>
 </tr>
 <tr class="even">
 <td>Manejo de datos tabulares</td>
+<td><code>DataFrames.jl</code></td>
 <td><code>pandas.DataFrame</code></td>
 <td><code>data.frame</code> (nativo)</td>
-<td><code>DataFrames.jl</code></td>
 </tr>
 <tr class="odd">
 <td>Visualización</td>
+<td><code>Plots.jl</code></td>
 <td><code>matplotlib</code></td>
 <td><code>plot()</code> / <code>ggplot2</code></td>
-<td><code>Plots.jl</code></td>
 </tr>
 <tr class="even">
 <td>Enfoque original</td>
+<td>Cómputo numérico de alto desempeño</td>
 <td>Propósito general</td>
 <td>Estadística y gráficos</td>
-<td>Cómputo numérico de alto desempeño</td>
 </tr>
 <tr class="odd">
 <td>Ejecución</td>
-<td>Interpretado</td>
-<td>Interpretado</td>
 <td>Compilado JIT (más rápido en cómputo pesado)</td>
+<td>Interpretado</td>
+<td>Interpretado</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="ventajas-y-desventajas" class="level2">
 <h2 class="anchored" data-anchor-id="ventajas-y-desventajas">Ventajas y desventajas</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Julia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.</li>
+<li>En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).</li>
+</ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -647,22 +676,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>A favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.</li>
 <li>En contra: fuera de estadística y visualización es menos versátil que Python.</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Julia
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.</li>
-<li>En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).</li>
 </ul>
 </div>
 </div>
@@ -1264,51 +1277,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Ejercicios de matemáticas, estadística y gráficas, resueltos y verificados en los tres lenguajes, para comparar sintaxis y comportamiento lado a lado.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quiz interactivo</span><span class="co">](quiz-comparativo.qmd)</span> — preguntas con retroalimentación al instante (✓ / ✗)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ejercicios en Python</span><span class="co">](ejercicios-python.ipynb)</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ejercicios en R</span><span class="co">](ejercicios-r.ipynb)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ejercicios en Julia</span><span class="co">](ejercicios-julia.qmd)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Un mismo dato, tres formas de contarlo</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="al">![Comparación visual: Python indexa un vector desde 0, mientras que R y Julia lo indexan desde 1](../images/indexado-comparativo.svg)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Las mismas ideas, tres cajas de herramientas</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="al">![Comparación de estructuras de datos: lista en Python, vector en R, array en Julia](../images/estructuras-datos-comparativo.svg)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparación de lenguajes</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Aspecto <span class="pp">|</span> Python <span class="pp">|</span> R <span class="pp">|</span> Julia <span class="pp">|</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Indexado <span class="pp">|</span> Desde 0 <span class="pp">|</span> Desde 1 <span class="pp">|</span> Desde 1 <span class="pp">|</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bloques de código <span class="pp">|</span> Indentación obligatoria <span class="pp">|</span> Llaves <span class="in">`{ }`</span> <span class="pp">|</span> <span class="in">`end`</span> para cerrar bloques <span class="pp">|</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Asignación <span class="pp">|</span> <span class="in">`=`</span> <span class="pp">|</span> <span class="in">`&lt;-`</span> (convención) <span class="pp">|</span> <span class="in">`=`</span> <span class="pp">|</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tipado <span class="pp">|</span> Dinámico <span class="pp">|</span> Dinámico <span class="pp">|</span> Dinámico, con despacho múltiple <span class="pp">|</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Estructura de datos principal <span class="pp">|</span> Lista / <span class="in">`numpy.array`</span> <span class="pp">|</span> Vector (nativo) <span class="pp">|</span> Array (nativo) <span class="pp">|</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Manejo de datos tabulares <span class="pp">|</span> <span class="in">`pandas.DataFrame`</span> <span class="pp">|</span> <span class="in">`data.frame`</span> (nativo) <span class="pp">|</span> <span class="in">`DataFrames.jl`</span> <span class="pp">|</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Visualización <span class="pp">|</span> <span class="in">`matplotlib`</span> <span class="pp">|</span> <span class="in">`plot()`</span> / <span class="in">`ggplot2`</span> <span class="pp">|</span> <span class="in">`Plots.jl`</span> <span class="pp">|</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Enfoque original <span class="pp">|</span> Propósito general <span class="pp">|</span> Estadística y gráficos <span class="pp">|</span> Cómputo numérico de alto desempeño <span class="pp">|</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Ejecución <span class="pp">|</span> Interpretado <span class="pp">|</span> Interpretado <span class="pp">|</span> Compilado JIT (más rápido en cómputo pesado) <span class="pp">|</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ventajas y desventajas</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## R</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: fuera de estadística y visualización es menos versátil que Python.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Julia</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ejercicios en Julia</span><span class="co">](ejercicios-julia.qmd)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ejercicios en Python</span><span class="co">](ejercicios-python.ipynb)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Ejercicios en R</span><span class="co">](ejercicios-r.ipynb)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Código en vivo en celdas pequeñas: <span class="co">[</span><span class="ot">Python (Pyodide)</span><span class="co">](celdas-python.qmd)</span> y <span class="co">[</span><span class="ot">R (webR)</span><span class="co">](celdas-r.qmd)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Un mismo dato, tres formas de contarlo</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="al">![Comparación visual: Python indexa un vector desde 0, mientras que R y Julia lo indexan desde 1](../images/indexado-comparativo.svg)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Las mismas ideas, tres cajas de herramientas</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="al">![Comparación de estructuras de datos: lista en Python, vector en R, array en Julia](../images/estructuras-datos-comparativo.svg)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparación de lenguajes</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Aspecto <span class="pp">|</span> Julia <span class="pp">|</span> Python <span class="pp">|</span> R <span class="pp">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">| ---</span> <span class="pp">| ---</span> <span class="pp">| ---</span> <span class="pp">| ---</span> <span class="pp">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Indexado <span class="pp">|</span> Desde 1 <span class="pp">|</span> Desde 0 <span class="pp">|</span> Desde 1 <span class="pp">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bloques de código <span class="pp">|</span> <span class="in">`end`</span> para cerrar bloques <span class="pp">|</span> Indentación obligatoria <span class="pp">|</span> Llaves <span class="in">`{ }`</span> <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Asignación <span class="pp">|</span> <span class="in">`=`</span> <span class="pp">|</span> <span class="in">`=`</span> <span class="pp">|</span> <span class="in">`&lt;-`</span> (convención) <span class="pp">|</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tipado <span class="pp">|</span> Dinámico, con despacho múltiple <span class="pp">|</span> Dinámico <span class="pp">|</span> Dinámico <span class="pp">|</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Estructura de datos principal <span class="pp">|</span> Array (nativo) <span class="pp">|</span> Lista / <span class="in">`numpy.array`</span> <span class="pp">|</span> Vector (nativo) <span class="pp">|</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Manejo de datos tabulares <span class="pp">|</span> <span class="in">`DataFrames.jl`</span> <span class="pp">|</span> <span class="in">`pandas.DataFrame`</span> <span class="pp">|</span> <span class="in">`data.frame`</span> (nativo) <span class="pp">|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Visualización <span class="pp">|</span> <span class="in">`Plots.jl`</span> <span class="pp">|</span> <span class="in">`matplotlib`</span> <span class="pp">|</span> <span class="in">`plot()`</span> / <span class="in">`ggplot2`</span> <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Enfoque original <span class="pp">|</span> Cómputo numérico de alto desempeño <span class="pp">|</span> Propósito general <span class="pp">|</span> Estadística y gráficos <span class="pp">|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Ejecución <span class="pp">|</span> Compilado JIT (más rápido en cómputo pesado) <span class="pp">|</span> Interpretado <span class="pp">|</span> Interpretado <span class="pp">|</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ventajas y desventajas</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Julia</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: desempeño cercano a lenguajes compilados con sintaxis de alto nivel.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: comunidad y ecosistema de paquetes más pequeños; primera ejecución de una función puede sentirse lenta (compilación JIT).</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: comunidad enorme, ecosistema muy amplio, fácil de aprender.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: más lento que Julia en cómputo numérico puro sin bibliotecas optimizadas.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## R</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A favor: diseñado para estadística — pruebas, modelos y gráficos con poco código.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En contra: fuera de estadística y visualización es menos versátil que Python.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
