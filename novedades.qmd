@@ -12,6 +12,7 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 - Nuevo orden de presentación en todo el sitio: Julia, Python y R (menú, barra lateral, portada, ruta guiada, asistente, glosario, comparar, estadística, álgebra lineal, progreso, recursos, libros y página 404).
 - Aviso en la portada y en el tema 01 de Julia: sus salidas están precalculadas, porque Julia no se ejecuta en vivo en el navegador (Python y R sí).
 - Los comentarios del código se muestran en verde oliva y cursiva (claro `#4D7C0F`, oscuro `#A3D65C`), un verde distinto del que identifica a R.
+- Un color para cada lenguaje en todo el sitio: Julia en morado, Python en azul y R en verde azulado (menú, barra lateral, pestañas, encabezados, tablas comparativas, tarjetas de la portada y título de cada página), en modo claro y oscuro.
 - Se retiró de esta página un párrafo que no correspondía al proyecto.
 
 ## Octubre de 2026

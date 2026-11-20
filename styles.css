@@ -72,3 +72,47 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   outline: 3px solid #C8202F;
   outline-offset: 2px;
 }
+
+/* ===== Un color por lenguaje: Julia morado, Python azul, R verde azulado ===== */
+:root {
+  --c-jl: #7B4EA3; --c-py: #2C5F8A; --c-r: #1B7A5C;
+  --bg-jl: rgba(123, 78, 163, 0.09); --bg-py: rgba(44, 95, 138, 0.09); --bg-r: rgba(27, 122, 92, 0.09);
+}
+body.quarto-dark {
+  --c-jl: #B38CD9; --c-py: #6FA8DC; --c-r: #4FC79C;
+  --bg-jl: rgba(179, 140, 217, 0.14); --bg-py: rgba(111, 168, 220, 0.14); --bg-r: rgba(79, 199, 156, 0.14);
+}
+[data-lang="jl"] { --lc: var(--c-jl); --lbg: var(--bg-jl); }
+[data-lang="py"] { --lc: var(--c-py); --lbg: var(--bg-py); }
+[data-lang="r"]  { --lc: var(--c-r);  --lbg: var(--bg-r); }
+
+/* Texto, enlaces, encabezados y cabeceras de tabla que nombran un lenguaje */
+.navbar-nav .nav-link[data-lang], .sidebar .menu-text[data-lang],
+main h2[data-lang], main h3[data-lang], main h4[data-lang],
+main th[data-lang], main summary[data-lang], main strong[data-lang], main a[data-lang] {
+  color: var(--lc) !important;
+  font-weight: 700;
+}
+main th[data-lang] { border-bottom: 3px solid var(--lc); }
+main h2[data-lang], main h3[data-lang], main h4[data-lang] { border-left: 4px solid var(--lc); padding-left: .5rem; }
+
+/* Pestañas (panel-tabset) por lenguaje */
+.panel-tabset .nav-link[data-lang] { border-top: 3px solid transparent; }
+.panel-tabset .nav-link[data-lang].active {
+  color: var(--lc) !important; border-top-color: var(--lc); background: var(--lbg);
+}
+
+/* Páginas de cada lenguaje: título, subtítulos, barra lateral y citas con su color */
+body[data-lang] { --acento: var(--lc); }
+body[data-lang] h1.title { border-left: 6px solid var(--lc); padding-left: .7rem; }
+body[data-lang] main h2:not([data-lang]) { border-bottom: 2px solid var(--lc); padding-bottom: .2rem; }
+body[data-lang] .sidebar-item .active, body[data-lang] .sidebar-item a.active {
+  color: var(--lc) !important; font-weight: 700; border-left: 3px solid var(--lc);
+}
+body[data-lang] .callout.callout-style-default { border-left-color: var(--lc) !important; }
+body[data-lang] main blockquote { border-left: 4px solid var(--lc); }
+
+/* Tarjetas de lenguaje de la portada */
+.lang-card { flex: 1; min-width: 220px; border-radius: 10px; padding: 18px;
+  border-left: 4px solid var(--lc); background: var(--lbg); }
+.lang-card h3 { color: var(--lc); margin-top: 0; }

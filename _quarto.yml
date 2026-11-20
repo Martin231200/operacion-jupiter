@@ -13,6 +13,7 @@ project:
     - images/icon-512.png
     - info-bubble.css
     - ultima-visita.js
+    - lang-color.js
 
 execute:
   freeze: auto
@@ -184,3 +185,4 @@ format:
       - text: <script src="/ver-tambien.js"></script>
       - text: <script src="/keyboard-nav.js"></script>
       - text: <script src="/ultima-visita.js"></script>
+      - text: <script src="/lang-color.js"></script>
