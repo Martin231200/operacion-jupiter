@@ -362,7 +362,7 @@
     "href": "novedades.html#noviembre-de-2026",
     "title": "Novedades",
     "section": "Noviembre de 2026",
-    "text": "Noviembre de 2026\n19 de noviembre\n\nNuevo orden de presentación en todo el sitio: Julia, Python y R (menú, barra lateral, portada, ruta guiada, asistente, glosario, comparar, estadística, álgebra lineal, progreso, recursos, libros y página 404).\nAviso en la portada y en el tema 01 de Julia: sus salidas están precalculadas, porque Julia no se ejecuta en vivo en el navegador (Python y R sí).\nLos comentarios del código se muestran en verde oliva y cursiva (claro #4D7C0F, oscuro #A3D65C), un verde distinto del que identifica a R.\nSe retiró de esta página un párrafo que no correspondía al proyecto."
+    "text": "Noviembre de 2026\n19 de noviembre\n\nNuevo orden de presentación en todo el sitio: Julia, Python y R (menú, barra lateral, portada, ruta guiada, asistente, glosario, comparar, estadística, álgebra lineal, progreso, recursos, libros y página 404).\nAviso en la portada y en el tema 01 de Julia: sus salidas están precalculadas, porque Julia no se ejecuta en vivo en el navegador (Python y R sí).\nLos comentarios del código se muestran en verde oliva y cursiva (claro #4D7C0F, oscuro #A3D65C), un verde distinto del que identifica a R.\nUn color para cada lenguaje en todo el sitio: Julia en morado, Python en azul y R en verde azulado (menú, barra lateral, pestañas, encabezados, tablas comparativas, tarjetas de la portada y título de cada página), en modo claro y oscuro.\nSe retiró de esta página un párrafo que no correspondía al proyecto."
   },
   {
     "objectID": "novedades.html#octubre-de-2026",
