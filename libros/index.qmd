@@ -11,9 +11,9 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 .libro:focus-visible { outline: 3px solid #378ADD; outline-offset: 4px; border-radius: 8px; }
 .portada { aspect-ratio: 3 / 4; display: flex; flex-direction: column; justify-content: space-between; padding: 1.1rem 1rem 1rem 1.5rem; color: #fff; border-radius: 3px 10px 10px 3px; box-shadow: inset 9px 0 0 rgba(0,0,0,.22), 0 6px 14px rgba(0,0,0,.28); transition: transform .15s ease, box-shadow .15s ease; }
 .libro:hover .portada, .libro:focus-visible .portada { transform: translateY(-5px); box-shadow: inset 9px 0 0 rgba(0,0,0,.22), 0 12px 20px rgba(0,0,0,.32); }
-.portada-python { background: linear-gradient(145deg, #2f77c4, #16487a); }
-.portada-r { background: linear-gradient(145deg, #168a68, #0b5a45); }
-.portada-julia { background: linear-gradient(145deg, #6d64cf, #463e99); }
+.portada-python { background: linear-gradient(145deg, #2C5F8A, #183850); }
+.portada-r { background: linear-gradient(145deg, #1B7A5C, #0D4A37); }
+.portada-julia { background: linear-gradient(145deg, #7B4EA3, #46285F); }
 .portada-est { background: linear-gradient(145deg, #a8283a, #6e1220); }
 .portada-varios { background: linear-gradient(145deg, #5b6b7d, #2f3b48); }
 .portada .lang { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .9; }
@@ -74,6 +74,18 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 
 ```{=html}
 <div class="libros-grid">
+<a class="libro" href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener" aria-label="El tutorial de Python, documentación oficial. Se abre en una pestaña nueva.">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">El tutorial de Python</span>
+<span class="autor">Guido van Rossum y el equipo de Python</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para quien ya programa</span>
+<p>Recorrido oficial por el lenguaje: control de flujo, estructuras de datos, módulos y clases. Está pensado para programadores nuevos en Python, no para quien empieza a programar. En inglés; gratis en línea.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
 <a class="libro" href="https://do1.dr-chuck.com/pythonlearn/ES_es/pythonlearn.pdf" target="_blank" rel="noopener" aria-label="Python para todos, de Charles R. Severance. Abrir PDF (se abre en una pestaña nueva)">
 <div class="portada portada-python" aria-hidden="true">
 <span class="lang">Python</span>
@@ -134,6 +146,18 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 <span class="cta">Leer en línea →</span>
 </div>
 </a>
+<a class="libro" href="https://inventwithpython.com/bigbookpython/" target="_blank" rel="noopener" aria-label="The Big Book of Small Python Projects, de Al Sweigart. Se abre en una pestaña nueva.">
+<div class="portada portada-python" aria-hidden="true">
+<span class="lang">Python</span>
+<span class="titulo">The Big Book of Small Python Projects</span>
+<span class="autor">Al Sweigart</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para practicar</span>
+<p>81 programas cortos y completos para practicar después de un tutorial básico. En inglés; el autor lo publica gratis en línea.</p>
+<span class="cta">Leer en línea →</span>
+</div>
+</a>
 </div>
 ```
 
@@ -175,6 +199,18 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 <span class="nivel">Nivel avanzado</span>
 <p>Cómo funciona R por dentro: funciones, entornos, objetos y depuración. En inglés.</p>
 <span class="cta">Leer en línea →</span>
+</div>
+</a>
+<a class="libro" href="https://leanpub.com/rprogramming" target="_blank" rel="noopener" aria-label="R Programming for Data Science, de Roger D. Peng, en Leanpub. Se abre en una pestaña nueva.">
+<div class="portada portada-r" aria-hidden="true">
+<span class="lang">R</span>
+<span class="titulo">R Programming for Data Science</span>
+<span class="autor">Roger D. Peng</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para empezar</span>
+<p>Fundamentos de R: manipular datos, escribir funciones y depurar y optimizar código. En inglés; en Leanpub el precio mínimo es gratis (hay paquetes de pago con código y datos).</p>
+<span class="cta">Ver en Leanpub →</span>
 </div>
 </a>
 </div>
@@ -220,6 +256,18 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 <span class="cta">Ir a la página oficial →</span>
 </div>
 </a>
+<a class="libro" href="https://cims.nyu.edu/~cfgranda" target="_blank" rel="noopener" aria-label="Probability and Statistics for Data Science, de Carlos Fernandez-Granda, en el sitio del autor. Se abre en una pestaña nueva.">
+<div class="portada portada-est" aria-hidden="true">
+<span class="lang">Estadística</span>
+<span class="titulo">Probability and Statistics for Data Science</span>
+<span class="autor">Carlos Fernandez-Granda</span>
+</div>
+<div class="libro-info">
+<span class="nivel">Para profundizar</span>
+<p>Probabilidad y estadística desde sus principios, con enfoque en ciencia de datos. El autor ofrece en su sitio un preimpreso, videos y código; el libro lo publicó Cambridge University Press en 2025. En inglés.</p>
+<span class="cta">Ver en el sitio del autor →</span>
+</div>
+</a>
 </div>
 ```
 
@@ -241,6 +289,62 @@ Libros y cursos de apoyo, de acceso libre y gratuito, para quien quiere profundi
 </a>
 </div>
 ```
+
+## Bibliografía de apoyo
+
+::: {.callout-note}
+Estos libros forman parte del material que compartió la Dra. Ann Wellens para el proyecto. **No llevan enlace**: no se ha verificado una página oficial de acceso libre para ellos, y el sitio no enlaza archivos. Consúltalos en tu biblioteca o en la página de su editorial. Se indica la edición que se revisó, que puede no ser la más reciente.
+:::
+
+### Python
+
+- *Learning Python*, 4.ª ed. Mark Lutz. O'Reilly, 2009.
+- *Programming Python*, 4.ª ed. Mark Lutz. O'Reilly, 2011.
+- *Python Cookbook*, 3.ª ed. David Beazley y Brian K. Jones. O'Reilly, 2013.
+- *Python Crash Course*, 1.ª ed. Eric Matthes. No Starch Press, 2016.
+- *Fluent Python*, 1.ª ed. Luciano Ramalho. O'Reilly, 2015.
+- *Effective Python*, 2.ª ed. Brett Slatkin. Pearson, 2020.
+- *Python for Programmers*. Paul Deitel y Harvey Deitel. Pearson, 2019.
+- *Learn Python the Hard Way*, 3.ª ed. Zed A. Shaw.
+- *Learn Python 3 the Hard Way*. Zed A. Shaw, 2017.
+- *Learn Python the Right Way*, 2.ª ed. Ritza, 2021.
+- *Dive Into Python 3*. Mark Pilgrim (Apress, 2009). Su texto tiene licencia CC BY-SA 3.0, pero aquí no se enlaza porque no se verificó la página original del autor.
+- *Introducción a la programación en Python*. Valentina Álvarez Gálvez y Adrián Soto Suárez. Curso del primer semestre de 2020.
+
+### Ciencia de datos y aprendizaje automático
+
+- *Data Science from Scratch*, 1.ª ed. Joel Grus. O'Reilly, 2015.
+- *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*, 2.ª ed. Aurélien Géron. O'Reilly, 2019.
+- *Introduction to Machine Learning with Python*, 1.ª ed. Andreas C. Müller y Sarah Guido. O'Reilly, 2017.
+- *Machine Learning in Python*. Michael Bowles, 2015.
+- *Introducing Data Science*. Davy Cielen, Arno D. B. Meysman y Mohamed Ali. Manning, 2016.
+- *Neural Networks from Scratch in Python*. Harrison Kinsley y Daniel Kukieła, 2020.
+
+### Estadística y series de tiempo
+
+- *The Art of Statistics*. David Spiegelhalter, 2019.
+- *Practical Statistics for Data Scientists*. Peter Bruce, Andrew Bruce y Peter Gedeck. O'Reilly, 2020.
+- *Time Series Analysis: Forecasting and Control*, 5.ª ed. George E. P. Box, Gwilym M. Jenkins y colaboradores. Wiley, 2016.
+- *An Introduction to Applied Multivariate Analysis with R*. Brian Everitt y Torsten Hothorn. Springer (colección Use R!), 2011.
+- *The Art of Data Science*. Roger D. Peng y Elizabeth Matsui. Leanpub, 2015; en Leanpub el precio mínimo es de USD 20.
+
+### R
+
+- *Introducción a la ciencia de datos en R. Un enfoque práctico*. José Nelson Pérez Castillo. Universidad Distrital Francisco José de Caldas.
+
+### Visualización y comunicación de datos
+
+- *Storytelling with Data*. Cole Nussbaumer Knaflic, 2015.
+- *Good Charts*. Scott Berinato, 2016.
+- *Information Visualization: An Introduction*, 3.ª ed. Robert Spence. Springer, 2014.
+- *Visualization: Theory and Practice in Science Education*. John K. Gilbert (ed.) y otros. Springer, 2008.
+- *Data Visualization*. Robert Grant, 2019.
+- *R Visualizations: Derive Meaning from Data*. David W. Gerbing, 2020.
+- *Visualización de Datos & Storytelling*. Ali Fenwick, Marybeth Sandell y Jose Berengueres; edición de Bárbara Covarrubias, 2020.
+
+### Otros
+
+- *Curso completo de HTML*. Jorge Ferrer, Víctor García y Rodrigo García.
 
 ::: {.callout-note}
 Todos los libros pertenecen a sus autores. Las portadas de esta página son ilustrativas, y los enlaces llevan a las copias que los propios autores publican; si alguno deja de funcionar, avísanos.
