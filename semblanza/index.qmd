@@ -13,3 +13,7 @@ Este material fue desarrollado conjuntamente entre Ann Godelieve Wellens, Vícto
 
 ![Armando Moisés Pérez Silva](img/armando_perez.png)
 :::
+
+## Créditos del material
+
+El material original, «Operación Jupyter: Introducción a Julia, Python y R», fue elaborado en la División de Ciencias Básicas de la Facultad de Ingeniería de la UNAM (Ciudad Universitaria, junio de 2025) por Ann Godelieve Wellens, Víctor Damián Pinilla Morán y Ali Ramos.

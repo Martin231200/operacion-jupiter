@@ -16,6 +16,8 @@ Historial de cambios del sitio, del más reciente al más antiguo. Cada entrada 
 - Más explicaciones: cinco términos nuevos en el glosario (webR, Pyodide, WebAssembly, Quarto y GitHub Pages; ya son 62), cajas «¿Qué es esto?» en el tema 01 de cada lenguaje y en las páginas con código en vivo.
 - Código en vivo por partes: las páginas con Pyodide y webR explican cómo ejecutar solo una línea o una selección (Ctrl + Enter) y hay dos páginas piloto con celdas pequeñas, «Celdas pequeñas» de Python y de R.
 - «Tutoriales comparativos» también sigue ahora el orden Julia, Python y R.
+- Libros: nuevas entradas de acceso libre (el tutorial oficial de Python, *The Big Book of Small Python Projects*, *R Programming for Data Science* y *Probability and Statistics for Data Science*), portadas con los colores de cada lenguaje y una «Bibliografía de apoyo» con los demás títulos del material de la profesora, sin enlaces de descarga.
+- Créditos del material original en la página de Semblanza.
 - Se retiró de esta página un párrafo que no correspondía al proyecto.
 
 ## Octubre de 2026
